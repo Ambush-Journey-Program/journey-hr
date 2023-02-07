@@ -3,6 +3,7 @@ import { theme } from "./styles/theme"
 import { GlobalStyles } from "./styles/global"
 import { Input } from "./design-system/input/index"
 import { useState } from "react"
+import { Form } from "./design-system/input/input.styled"
 
 // const [inputUser, setInputUser] = useState("")
 
@@ -10,19 +11,21 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <Input
-        label="Input 1"
-        placeholder="Label 2"
-        type="text"
-        onChange={() => console.log("AQUI")}
-      />
-      <Input
-        variant="old"
-        label="Input 2"
-        placeholder="Label 3"
-        type="text"
-        onChange={() => console.log("AQUI")}
-      />
+      <Form>
+        <Input
+          label="Title"
+          placeholder="Label"
+          type="text"
+          onChange={() => console.log("AQUI")}
+        />
+        <Input
+          variant="old"
+          label="Title"
+          placeholder="Label"
+          type="text"
+          onChange={() => console.log("AQUI")}
+        />
+      </Form>
     </ThemeProvider>
   )
 }

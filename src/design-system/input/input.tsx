@@ -10,10 +10,10 @@ export function Input({ label, ...props }: IInputProps) {
   // const [inputParams, setInputParams] = useState("")
   return (
     <>
-      <form>
+      <div>
         <Label>{label}</Label>
         <Inputi {...props} />
-      </form>
+      </div>
     </>
   )
 }
