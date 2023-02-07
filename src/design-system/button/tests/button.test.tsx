@@ -3,18 +3,19 @@ import * as React from 'react'
 import { render, screen } from '@testing-library/react'
 
 
+
 import { Button } from '..'
+import { ThemeProvider } from 'styled-components'
+import { theme } from '../../../styles/theme'
 
 describe('<Button />', () => {
-  describe('should have this remove', () => {
-    it('when the component is actually used', () => {
-      const label = 'it works'
-      const props = { label }
+  test('Render correctly', () => {
+    render(
+      <ThemeProvider theme={theme}>
+        <Button>Label</Button>
+      </ThemeProvider>
+    );
 
-      render(<Button {...props} />)
-      const labelSpan = screen.getByText(label)
-
-      expect(labelSpan).toBeInTheDocument()
-    })
+    expect(screen.getByText(`Label`)).toBeInTheDocument()
   })
 })
