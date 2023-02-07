@@ -35,7 +35,6 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.5.2",
     "@types/node": "^16.18.12",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
@@ -45,20 +44,18 @@
     "eslint": "^8.0.1",
     "eslint-config-prettier": "^8.6.0",
     "eslint-config-standard-with-typescript": "^34.0.0",
-    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-n": "^15.0.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.32.2",
-    "eslint-plugin-simple-import-sort": "^10.0.0",
-    "jest-styled-components": "^7.1.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "jsdom": "^21.1.0",
-    "prettier": "^2.3.0",
-    "prop-types": "^15.8.1",
+    "prettier": "^2.8.3",
     "vite": "^4.1.1",
     "vite-plugin-svgr": "^2.4.0",
     "vite-tsconfig-paths": "^4.0.5",
-    "vitest": "^0.28.4",
-    "webpack": "^5.75.0"
+    "vitest": "^0.28.4"
   }
 }
