@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import { IInputStyleProps } from "../input/types"
 import { IContainerInputProps } from "./types"
 
 export const Wrapper = styled.div<IContainerInputProps>`

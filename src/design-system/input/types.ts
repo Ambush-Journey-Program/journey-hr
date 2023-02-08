@@ -1,11 +1,5 @@
 import { InputHTMLAttributes } from "react"
 
-export interface IInputProps
-  extends IInputStyleProps,
-    InputHTMLAttributes<HTMLInputElement> {
+export type IInputProps = InputHTMLAttributes<HTMLInputElement> & {
   label: string
-}
-
-export interface IInputStyleProps {
-  variant?: string
 }
