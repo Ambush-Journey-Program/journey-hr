@@ -10,7 +10,7 @@ export const Label = styled.label`
   font-weight: 300;
   font-size: 14px;
   line-height: 150%;
-  color: #5c4c73;
+  color: ${(props) => props.theme.color.labelColor};
   margin-top: 37px;
 `
 
@@ -22,17 +22,17 @@ export const Input = styled.input`
   font-weight: 300;
   font-size: 16px;
   color: ${(props) => props.theme.color.purple};
-  border: 1px solid #cdc5d9;
+  border: 1px solid ${(props) => props.theme.color.disable};
   border-radius: 12px;
   padding-left: 20px;
   margin-top: 4px;
   &:focus {
     outline: none;
-    box-shadow: 0 0 2px #5c4c73;
+    box-shadow: 0 0 2px ${(props) => props.theme.color.labelColor};
   }
   &:active {
     outline: none;
-    box-shadow: 0 0 2px #9b9ad6;
+    box-shadow: 0 0 2px ${(props) => props.theme.color.blue};
   }
 
   ${(props) => props.disabled && disabledInput};
