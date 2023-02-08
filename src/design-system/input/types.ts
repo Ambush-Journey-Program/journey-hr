@@ -4,7 +4,6 @@ export interface IInputProps
   extends IInputStyleProps,
     InputHTMLAttributes<HTMLInputElement> {
   label: string
-  form: string
 }
 
 export interface IInputStyleProps {

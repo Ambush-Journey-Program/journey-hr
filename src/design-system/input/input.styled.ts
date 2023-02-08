@@ -1,16 +1,16 @@
 import styled, { css } from "styled-components"
 import { IInputProps, IInputStyleProps } from "./types"
 
-export const Form = styled.form<IInputStyleProps>`
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  align-items: center;
-  justify-content: center;
-  padding: 73px 92px;
-  gap: 4px;
-  background: #ffffff;
-`
+// export const Form = styled.form<IInputStyleProps>`
+//   display: flex;
+//   flex-direction: column;
+//   min-height: 100vh;
+//   align-items: center;
+//   justify-content: center;
+//   padding: 73px 92px;
+//   gap: 4px;
+//   background: #ffffff;
+// `
 
 export const Label = styled.label`
   display: flex;
@@ -25,7 +25,7 @@ export const Label = styled.label`
   margin-top: 37px;
 `
 
-export const Inputi = styled.input<IInputStyleProps>`
+export const Input = styled.input<IInputStyleProps>`
   width: 391px;
   height: 52px;
   font-family: mundial, sans-serif;
