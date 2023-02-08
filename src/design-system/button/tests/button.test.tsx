@@ -9,7 +9,7 @@ import { ThemeProvider } from 'styled-components'
 import { theme } from '../../../styles/theme'
 
 describe('<Button />', () => {
-  test('Render correctly', () => {
+  test('Renders correctly', () => {
     render(
       <ThemeProvider theme={theme}>
         <Button>Label</Button>
