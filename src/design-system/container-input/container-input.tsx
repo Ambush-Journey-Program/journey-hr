@@ -15,7 +15,6 @@ export const ContainerInput: FC<IContainerInputProps> = ({
 
   return (
     <Wrapper>
-      {/* {label} */}
       <Input
         label="Title"
         placeholder="Label"
@@ -28,6 +27,7 @@ export const ContainerInput: FC<IContainerInputProps> = ({
         placeholder="Label"
         type="text"
         onChange={() => console.log("AQUI")}
+        disabled
       />
     </Wrapper>
   )
