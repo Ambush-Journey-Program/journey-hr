@@ -10,19 +10,16 @@ type Variants = {
 
 const variants: Variants = {
   large: css`
-    width: 104px;
     height: 53px;
     font-size: 22px;
   `,
 
   default: css`
-    width: 94px;
     height: 47px;
     font-size: 18px;
   `,
 
   small: css`
-    width: 89px;
     height: 39px;
     font-size: 16px;
   `,
@@ -36,6 +33,7 @@ const disabledButton = css`
 `;
 
 export const ButtonStyle = styled.button<StyleProps>`
+  padding: 0 24px;
   font-weight: 600;
   line-height: 150%;
   font-family: Mundial, sans-serif;
