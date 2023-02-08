@@ -1,6 +1,6 @@
 import { ButtonHTMLAttributes } from "react";
 
-type ButtonSizeProp = "default" | "large" | "small";
+export type ButtonSizeProp = "default" | "large" | "small";
 
 export type IButtonProps = {
   sizeVariant?: ButtonSizeProp;

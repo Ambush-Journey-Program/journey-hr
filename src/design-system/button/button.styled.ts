@@ -1,7 +1,8 @@
 import styled, { css, FlattenSimpleInterpolation } from "styled-components";
+import { ButtonSizeProp } from "./types";
 
 type StyleProps = {
-  sizeVariant: string;
+  sizeVariant: ButtonSizeProp;
 };
 
 type Variants = {
@@ -10,17 +11,15 @@ type Variants = {
 
 const variants: Variants = {
   large: css`
-    height: 53px;
     font-size: 22px;
   `,
 
   default: css`
-    height: 47px;
     font-size: 18px;
   `,
 
   small: css`
-    height: 39px;
+    padding: 8px 24px 7px 24px;
     font-size: 16px;
   `,
 };
@@ -33,7 +32,7 @@ const disabledButton = css`
 `;
 
 export const ButtonStyle = styled.button<StyleProps>`
-  padding: 0 24px;
+  padding: 10px 24px;
   font-weight: 600;
   line-height: 150%;
   font-family: Mundial, sans-serif;
