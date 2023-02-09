@@ -16,7 +16,9 @@ function App() {
       >
         Label
       </Button>
-      <Input label={"Title"}></Input>
+      <Input label={"Title"} optional></Input>
+      <Input label={"Title"} readOnly></Input>
+      <Input label={"Title"} disabled></Input>
     </ThemeProvider>
   )
 }

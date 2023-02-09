@@ -3,10 +3,18 @@ import styled, { css } from "styled-components"
 const disabledInput = css`
   background-color: ${(props) => props.theme.color.white};
 `
-export const Label = styled.label`
+
+const spanOptional = css`
+  display: block;
+`
+export const Wrapper = styled.div`
+  width: 391px;
+`
+
+export const Label = styled.label<DivContainerProps>`
   display: flex;
-  flex-direction: column;
   align-items: flex-start;
+  justify-content: space-between;
   font-family: mundial, sans-serif;
   font-style: normal;
   font-weight: 300;
@@ -14,6 +22,11 @@ export const Label = styled.label`
   line-height: 150%;
   color: ${(props) => props.theme.color.veryDarkPurple};
   margin-top: 37px;
+
+  span {
+    display: none;
+    ${({ optional }) => optional && spanOptional}
+  }
 `
 
 export const Input = styled.label`
@@ -21,9 +34,16 @@ export const Input = styled.label`
   font-style: normal;
   font-weight: 300;
   font-size: 16px;
+  line-height: 24px;
 `
+type DivContainerProps = {
+  disabled?: boolean
+  optional?: boolean
+}
 
-export const InputContainer = styled.div`
+export const InputContainer = styled.div<DivContainerProps>`
+  display: flex;
+  align-items: center;
   width: 391px;
   height: 52px;
   font-family: mundial, sans-serif;
@@ -35,13 +55,17 @@ export const InputContainer = styled.div`
   border-radius: 12px;
   padding-left: 20px;
   margin-top: 4px;
+  ${({ disabled }) => disabled && disabledInput}
+
   &:focus-within {
     outline: none;
     box-shadow: 0 0 2px ${(props) => props.theme.color.labelColor};
     border: 1px solid red;
   }
-  & input:active {
+  & input {
+    padding: 14px 20px;
+    width: 329px;
     outline: none;
-    box-shadow: 0 0 2px ${(props) => props.theme.color.blue};
+    border: none;
   }
 `
