@@ -1,12 +1,22 @@
-import styled, { css, FlattenSimpleInterpolation } from "styled-components";
-import { ButtonSizeProp } from "./types";
+import styled, {
+  css,
+  FlattenSimpleInterpolation,
+  FlattenInterpolation,
+  ThemeProps,
+} from "styled-components";
+import { SizeProp, ColorProp } from "./types";
 
-type StyleProps = {
-  sizeVariant: ButtonSizeProp;
+type ButtonProps = {
+  sizeVariant: SizeProp;
+  colorVariant: ColorProp;
 };
 
 type Variants = {
   [key: string]: FlattenSimpleInterpolation;
+};
+
+type ColorVariant = {
+  [key: string]: FlattenInterpolation<ThemeProps<any>>;
 };
 
 const variants: Variants = {
@@ -24,6 +34,18 @@ const variants: Variants = {
   `,
 };
 
+const colorVariants: ColorVariant = {
+  default: css`
+    background-color: ${(props) => props.theme.color.red};
+  `,
+  blue: css`
+    background-color: ${(props) => props.theme.color.blue};
+  `,
+  purple: css`
+    background-color: ${(props) => props.theme.color.purple};
+  `,
+};
+
 const disabledButton = css`
   background-color: ${(props) => props.theme.color.disable};
   &:hover {
@@ -31,13 +53,12 @@ const disabledButton = css`
   }
 `;
 
-export const ButtonStyle = styled.button<StyleProps>`
+export const ButtonStyle = styled.button<ButtonProps>`
   padding: 10px 24px;
   font-weight: 600;
   line-height: 150%;
   font-family: Mundial, sans-serif;
   color: ${(props) => props.theme.color.white};
-  background-color: ${(props) => props.theme.color.red};
   border-radius: 50px;
 
   &:hover {
@@ -45,5 +66,6 @@ export const ButtonStyle = styled.button<StyleProps>`
   }
 
   ${({ sizeVariant }) => variants[sizeVariant]}
+  ${({ colorVariant }) => colorVariants[colorVariant]}
   ${({ disabled }) => disabled && disabledButton}
 `;

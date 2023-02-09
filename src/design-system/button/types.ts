@@ -1,7 +1,10 @@
 import { ButtonHTMLAttributes } from "react";
 
-export type ButtonSizeProp = "default" | "large" | "small";
+export type SizeProp = "default" | "large" | "small";
+
+export type ColorProp = "default" | "blue" | "purple";
 
 export type IButtonProps = {
-  sizeVariant?: ButtonSizeProp;
+  colorVariant?: ColorProp;
+  sizeVariant?: SizeProp;
 } & ButtonHTMLAttributes<HTMLButtonElement>;
