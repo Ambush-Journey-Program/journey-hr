@@ -7,6 +7,6 @@ export const theme = {
     lightPurple: "#9588A9",
     purple: "#45365A",
     white: "#F7F4FA",
-    labelColor: "#5c4c73",
+    veryDarkPurple: "#5c4c73",
   },
 }

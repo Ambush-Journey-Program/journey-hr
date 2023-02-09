@@ -1,6 +1,9 @@
 import { isDisabled } from "@testing-library/user-event/dist/utils"
 import styled, { css } from "styled-components"
 
+const disabledInput = css`
+  background-color: ${(props) => props.theme.color.white};
+`
 export const Label = styled.label`
   display: flex;
   flex-direction: column;
@@ -10,7 +13,7 @@ export const Label = styled.label`
   font-weight: 300;
   font-size: 14px;
   line-height: 150%;
-  color: ${(props) => props.theme.color.labelColor};
+  color: ${(props) => props.theme.color.veryDarkPurple};
   margin-top: 37px;
 `
 
@@ -36,7 +39,4 @@ export const Input = styled.input`
   }
 
   ${(props) => props.disabled && disabledInput};
-`
-const disabledInput = css`
-  background-color: ${(props) => props.theme.color.white};
 `
