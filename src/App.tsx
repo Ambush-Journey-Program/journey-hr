@@ -8,17 +8,6 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <Button
-        onClick={() => {
-          console.log("teste")
-        }}
-        disabled
-      >
-        Label
-      </Button>
-      <Input label={"Title"} optional></Input>
-      <Input label={"Title"} readOnly></Input>
-      <Input label={"Title"} disabled></Input>
     </ThemeProvider>
   )
 }
