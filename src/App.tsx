@@ -2,7 +2,7 @@ import { ThemeProvider } from "styled-components"
 import { theme } from "./styles/theme"
 import { GlobalStyles } from "./styles/global"
 import { Button } from "./design-system/button"
-import { ContainerInput } from "./design-system/container-input"
+import { Input } from "./design-system/input/input"
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
       >
         Label
       </Button>
-      <ContainerInput></ContainerInput>
+      <Input label={"Title"}></Input>
     </ThemeProvider>
   )
 }

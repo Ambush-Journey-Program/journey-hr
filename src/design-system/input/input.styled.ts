@@ -16,7 +16,14 @@ export const Label = styled.label`
   margin-top: 37px;
 `
 
-export const Input = styled.input`
+export const Input = styled.label`
+  font-family: mundial, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+`
+
+export const InputContainer = styled.div`
   width: 391px;
   height: 52px;
   font-family: mundial, sans-serif;
@@ -28,14 +35,13 @@ export const Input = styled.input`
   border-radius: 12px;
   padding-left: 20px;
   margin-top: 4px;
-  &:focus {
+  &:focus-within {
     outline: none;
     box-shadow: 0 0 2px ${(props) => props.theme.color.labelColor};
+    border: 1px solid red;
   }
-  &:active {
+  & input:active {
     outline: none;
     box-shadow: 0 0 2px ${(props) => props.theme.color.blue};
   }
-
-  ${(props) => props.disabled && disabledInput};
 `
