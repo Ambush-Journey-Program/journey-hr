@@ -1,18 +1,14 @@
-import { FC } from "react"
+import { FC, useState } from "react"
 import { Input } from "../input"
-
 import { ContainerInputSkeleton } from "./container-input.skeleton"
 import { Wrapper } from "./container-input.styled"
 import { IContainerInputProps } from "./types"
-import { IInputProps } from "../input/types"
-export const ContainerInput: FC<IContainerInputProps> = ({
-  isLoading,
-  // label,
-}) => {
+
+export const ContainerInput: FC<IContainerInputProps> = ({ isLoading }) => {
   if (isLoading) {
     return <ContainerInputSkeleton />
   }
-
+  const [isDisabled, setIsDisabled] = useState(true)
   return (
     <Wrapper>
       <Input
@@ -27,7 +23,7 @@ export const ContainerInput: FC<IContainerInputProps> = ({
         placeholder="Label"
         type="text"
         onChange={() => console.log("AQUI")}
-        disabled
+        disabled={isDisabled}
       />
     </Wrapper>
   )

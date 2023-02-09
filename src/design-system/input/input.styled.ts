@@ -1,4 +1,3 @@
-import { isDisabled } from "@testing-library/user-event/dist/utils"
 import styled, { css } from "styled-components"
 
 const disabledInput = css`
