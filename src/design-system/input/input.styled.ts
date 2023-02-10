@@ -1,7 +1,11 @@
 import styled, { css } from "styled-components"
 
-const disabledInput = css`
+const notEditableInput = css`
+  border-color: ${(props) => props.theme.color.white};
   background-color: ${(props) => props.theme.color.white};
+`
+export const Wrapper = styled.div`
+  width: 391px;
 `
 export const Label = styled.label`
   display: flex;
@@ -15,8 +19,13 @@ export const Label = styled.label`
   color: ${(props) => props.theme.color.veryDarkPurple};
   margin-top: 37px;
 `
+type DivContainerProps = {
+  readOnly?: boolean
+}
 
-export const Input = styled.input`
+export const InputContainer = styled.div<DivContainerProps>`
+  display: flex;
+  align-items: center;
   width: 391px;
   height: 52px;
   font-family: mundial, sans-serif;
@@ -24,18 +33,17 @@ export const Input = styled.input`
   font-weight: 300;
   font-size: 16px;
   color: ${(props) => props.theme.color.purple};
-  border: 1px solid ${(props) => props.theme.color.disable};
+  border: 1px solid ${(props) => props.theme.color.purple};
   border-radius: 12px;
   padding-left: 20px;
   margin-top: 4px;
-  &:focus {
-    outline: none;
-    box-shadow: 0 0 2px ${(props) => props.theme.color.labelColor};
-  }
-  &:active {
-    outline: none;
-    box-shadow: 0 0 2px ${(props) => props.theme.color.blue};
-  }
+  ${({ readOnly }) => readOnly && notEditableInput}
 
-  ${(props) => props.disabled && disabledInput};
+  & input {
+    padding: 14px 20px;
+    width: 329px;
+    outline: none;
+    border: none;
+    ${({ readOnly }) => readOnly && notEditableInput}
+  }
 `
