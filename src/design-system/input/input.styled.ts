@@ -10,6 +10,13 @@ const spanError = css`
   font-weight: 400;
   font-size: 12px;
   line-height: 18px;
+  & input::placeholder {
+    color: ${(props) => props.theme.color.red};
+  }
+
+  & input:active {
+    border-color: red;
+  }
 `
 
 const errorDisplay = css`
@@ -71,6 +78,5 @@ export const InputContainer = styled.div<DivContainerProps>`
     width: 329px;
     outline: none;
     border: none;
-    ${({ error }) => error && errorDisplay}
   }
 `
