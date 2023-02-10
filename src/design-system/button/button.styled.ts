@@ -17,11 +17,13 @@ type Variants = {
 };
 
 type ColorVariant = {
-  [key: string]: any;
+  [key: string]: {
+    [key: string]: FlattenInterpolation<ThemeProps<ButtonType>>;
+  };
 };
 
 type DisabledButton = {
-  [key: string]: any;
+  [key: string]: FlattenInterpolation<ThemeProps<ButtonType>>;
 };
 
 const variants: Variants = {
@@ -40,8 +42,8 @@ const variants: Variants = {
 };
 
 const colorVariants: ColorVariant = {
-  default: {
-    default: css`
+  defaultColor: {
+    defaultType: css`
       color: ${(props) => props.theme.color.white};
       background-color: ${(props) => props.theme.color.red};
     `,
@@ -68,7 +70,7 @@ const colorVariants: ColorVariant = {
   },
 
   blue: {
-    default: css`
+    defaultType: css`
       color: ${(props) => props.theme.color.white};
       background-color: ${(props) => props.theme.color.blue}; ;
     `,
@@ -85,7 +87,7 @@ const colorVariants: ColorVariant = {
   },
 
   purple: {
-    default: css`
+    defaultType: css`
       color: ${(props) => props.theme.color.white};
       background-color: ${(props) => props.theme.color.purple};
     `,
@@ -103,7 +105,7 @@ const colorVariants: ColorVariant = {
 };
 
 const disabledButton: DisabledButton = {
-  default: css`
+  defaultType: css`
     background-color: ${(props) => props.theme.color.disable};
 
     &:hover {

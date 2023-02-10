@@ -3,8 +3,8 @@ import { IButtonProps } from "./types";
 
 export default function Button({
   sizeVariant = "default",
-  colorVariant = "default",
-  buttonVariant = "default",
+  colorVariant = "defaultColor",
+  buttonVariant = "defaultType",
   disabled,
   children,
   ...props
