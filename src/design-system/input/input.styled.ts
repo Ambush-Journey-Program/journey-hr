@@ -11,7 +11,7 @@ export const Label = styled.label`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  font-family: mundial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 300;
   font-size: 14px;
@@ -28,7 +28,7 @@ export const InputContainer = styled.div<DivContainerProps>`
   align-items: center;
   width: 391px;
   height: 52px;
-  font-family: mundial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 300;
   font-size: 16px;
