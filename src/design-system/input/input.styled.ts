@@ -8,7 +8,7 @@ const spanError = css`
   color: ${(props) => props.theme.color.red};
   margin-top: 4px;
   font-weight: 400;
-  font-size: ${(props) => props.theme.fontSize.small};
+  font-size: 12px;
   line-height: 18px;
   & input::placeholder {
     color: ${(props) => props.theme.color.red};
@@ -34,7 +34,7 @@ export const Label = styled.label<DivContainerProps>`
   justify-content: space-between;
   font-style: normal;
   font-weight: 300;
-  font-size: ${(props) => props.theme.fontSize.medium};
+  font-size: 14px;
   line-height: 150%;
   color: ${(props) => props.theme.color.veryDarkPurple};
   margin-top: 37px;
@@ -43,7 +43,7 @@ export const Label = styled.label<DivContainerProps>`
 export const Input = styled.label`
   font-style: normal;
   font-weight: 300;
-  font-size: ${(props) => props.theme.fontSize.large};
+  font-size: 16px;
   line-height: 24px;
 `
 type DivContainerProps = {
@@ -58,10 +58,10 @@ export const InputContainer = styled.div<DivContainerProps>`
   height: 52px;
   font-style: normal;
   font-weight: 300;
-  font-size: ${(props) => props.theme.fontSize.large};
+  font-size: 16px;
   color: ${(props) => props.theme.color.purple};
   border: 1px solid ${(props) => props.theme.color.disable};
-  border-radius: ${(props) => props.theme.fontSize.small};
+  border-radius: 12px;
   padding-left: 20px;
   margin-top: 4px;
   ${({ error }) => error && errorDisplay}
