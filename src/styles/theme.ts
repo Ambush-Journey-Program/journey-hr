@@ -1,7 +1,7 @@
 export const theme = {
   color: {
     red: '#EC6D75',
-    disable: '#CDC5D9',
+    gray: '#CDC5D9',
     blue: '#9B9AD6',
     darkPurple: '#422D5F',
     lightPurple: '#9588A9',

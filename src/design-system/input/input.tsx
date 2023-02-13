@@ -1,32 +1,37 @@
-import * as Styled from "./input.styled"
-import { IInputProps } from "./types"
+import { useState } from 'react';
+import * as Styled from './input.styled';
+import { IInputProps } from './types';
 
 export function Input({
   label,
-  disabled,
   required,
+  value,
+  disabled,
   readOnly,
   error,
   optional,
-  ...props
+  name,
+  onTextChange = () => {},
 }: IInputProps) {
-  const { name } = props
-
   return (
-    <Styled.Wrapper>
-      <Styled.Label htmlFor={name} optional={optional}>
-        {label} <span>Optional</span>
-      </Styled.Label>
-      <Styled.InputContainer disabled={disabled}>
-        <input
-          placeholder="Label"
-          type="text"
-          onChange={() => console.log("AQUI")}
-          required={required}
-          disabled={disabled}
-          readOnly={readOnly}
-        />
-      </Styled.InputContainer>
-    </Styled.Wrapper>
-  )
+    <div>
+      <Styled.Wrapper error={error}>
+        <Styled.Label htmlFor={name} optional={optional}>
+          {label} <span>Optional</span>
+        </Styled.Label>
+        <Styled.InputContainer error={error} disabled={disabled}>
+          <input
+            placeholder="Label"
+            type="text"
+            required={required}
+            disabled={disabled}
+            readOnly={readOnly}
+            value={value}
+            onChange={(e) => onTextChange(e.target.value)}
+          />
+        </Styled.InputContainer>
+        {!!error && <span>{error}</span>}
+      </Styled.Wrapper>
+    </div>
+  );
 }

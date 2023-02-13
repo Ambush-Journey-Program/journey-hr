@@ -1,16 +1,23 @@
-import { InputHTMLAttributes } from "react"
+import { InputHTMLAttributes, ChangeEvent } from 'react';
 
 export type IInputProps = InputHTMLAttributes<HTMLInputElement> & {
-  label: string
-  error?: string
-  optional?: boolean
-}
+  label: string;
+  error?: string | null;
+  onTextChange?: (value: string) => void;
+  optional?: boolean;
+};
 
 type StyledProps = {
-  disabled?: boolean
-  optional?: boolean
-}
+  disabled?: boolean;
+  optional?: boolean;
+};
 
-export type StyledLabelProps = StyledProps
+export type StyleWrapper = {
+  error?: string;
+};
 
-export type StyledInputProps = StyledProps
+export type StyledLabelProps = StyledProps;
+
+export type StyledInputProps = StyledProps & {
+  error?: string;
+};
