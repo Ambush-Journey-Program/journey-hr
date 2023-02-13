@@ -1,7 +1,14 @@
+import { useState } from "react"
 import * as Styled from "./input.styled"
 import { IInputProps } from "./types"
 
-export function Input({ label, required, ...props }: IInputProps) {
+export function Input({
+  label,
+  required,
+  value,
+  onTextChange = () => {},
+  ...props
+}: IInputProps) {
   const { name, error } = props
 
   return (
@@ -12,7 +19,8 @@ export function Input({ label, required, ...props }: IInputProps) {
           <input
             placeholder="Label"
             type="text"
-            onChange={() => console.log("AQUI")}
+            value={value}
+            onChange={(e) => onTextChange(e.target.value)}
           />
         </Styled.InputContainer>
         {!!error && <span>{error}</span>}
