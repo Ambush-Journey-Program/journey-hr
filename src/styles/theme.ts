@@ -9,10 +9,4 @@ export const theme = {
     white: "#F7F4FA",
     veryDarkPurple: "#5c4c73",
   },
-
-  fontSize: {
-    small: "12px",
-    medium: "14px",
-    large: "16px",
-  },
 }
