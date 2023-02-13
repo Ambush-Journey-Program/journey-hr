@@ -1,3 +1,3 @@
 export interface IMockComponentProps {
-  label: string
+  label: string;
 }
