@@ -7,5 +7,6 @@ export const theme = {
     lightPurple: "#9588A9",
     purple: "#45365A",
     white: "#F7F4FA",
+    lightred: "rgba(236, 109, 117, 0.1)",
   },
 };

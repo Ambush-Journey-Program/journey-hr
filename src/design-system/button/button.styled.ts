@@ -4,11 +4,12 @@ import styled, {
   FlattenInterpolation,
   ThemeProps,
 } from "styled-components";
-import { SizeProp, ColorProp } from "./types";
+import { SizeProp, ColorProp, ButtonType } from "./types";
 
 type ButtonProps = {
   sizeVariant: SizeProp;
-  colorVariant: ColorProp;
+  color: ColorProp;
+  variant: ButtonType;
 };
 
 type Variants = {
@@ -16,7 +17,13 @@ type Variants = {
 };
 
 type ColorVariant = {
-  [key: string]: FlattenInterpolation<ThemeProps<any>>;
+  [key: string]: {
+    [key: string]: FlattenInterpolation<ThemeProps<ButtonType>>;
+  };
+};
+
+type DisabledButton = {
+  [key: string]: FlattenInterpolation<ThemeProps<ButtonType>>;
 };
 
 const variants: Variants = {
@@ -35,30 +42,100 @@ const variants: Variants = {
 };
 
 const colorVariants: ColorVariant = {
-  default: css`
-    background-color: ${(props) => props.theme.color.red};
-  `,
-  blue: css`
-    background-color: ${(props) => props.theme.color.blue};
-  `,
-  purple: css`
-    background-color: ${(props) => props.theme.color.purple};
-  `,
+  defaultColor: {
+    defaultType: css`
+      color: ${(props) => props.theme.color.white};
+      background-color: ${(props) => props.theme.color.red};
+    `,
+    outlined: css`
+      color: ${(props) => props.theme.color.red};
+      background-color: transparent;
+      border: solid 1px ${(props) => props.theme.color.red};
+
+      &:hover {
+        background-color: ${(props) => props.theme.color.lightred};
+        opacity: 1;
+      }
+    `,
+    ghost: css`
+      color: ${(props) => props.theme.color.purple};
+      background-color: transparent;
+
+      &:hover {
+        opacity: 1;
+        border-bottom: solid 2px ${(props) => props.theme.color.blue};
+        border-radius: 0;
+      }
+    `,
+  },
+
+  blue: {
+    defaultType: css`
+      color: ${(props) => props.theme.color.white};
+      background-color: ${(props) => props.theme.color.blue}; ;
+    `,
+    outlined: css`
+      color: ${(props) => props.theme.color.blue};
+      background-color: transparent;
+      border: solid 1px ${(props) => props.theme.color.blue};
+
+      &:hover {
+        background-color: ${(props) => props.theme.color.white};
+        opacity: 1;
+      }
+    `,
+  },
+
+  purple: {
+    defaultType: css`
+      color: ${(props) => props.theme.color.white};
+      background-color: ${(props) => props.theme.color.purple};
+    `,
+    outlined: css`
+      color: ${(props) => props.theme.color.purple};
+      background-color: transparent;
+      border: solid 1px ${(props) => props.theme.color.purple};
+
+      &:hover {
+        background-color: ${(props) => props.theme.color.white};
+        opacity: 1;
+      }
+    `,
+  },
 };
 
-const disabledButton = css`
-  background-color: ${(props) => props.theme.color.disable};
-  &:hover {
-    opacity: 1;
-  }
-`;
+const disabledButton: DisabledButton = {
+  defaultType: css`
+    background-color: ${(props) => props.theme.color.disable};
+
+    &:hover {
+      background-color: ${(props) => props.theme.color.disable};
+      opacity: 1;
+    }
+  `,
+  outlined: css`
+    background-color: transparent;
+    color: ${(props) => props.theme.color.disable};
+    border: solid 1px ${(props) => props.theme.color.disable};
+
+    &:hover {
+      background-color: transparent;
+    }
+  `,
+  ghost: css`
+    color: ${(props) => props.theme.color.lightPurple};
+
+    &:hover {
+      border-bottom: none;
+    }
+  `,
+};
 
 export const ButtonStyle = styled.button<ButtonProps>`
   padding: 10px 24px;
   font-weight: 600;
   line-height: 150%;
   font-family: Mundial, sans-serif;
-  color: ${(props) => props.theme.color.white};
   border-radius: 50px;
 
   &:hover {
@@ -66,6 +143,7 @@ export const ButtonStyle = styled.button<ButtonProps>`
   }
 
   ${({ sizeVariant }) => variants[sizeVariant]}
-  ${({ colorVariant }) => colorVariants[colorVariant]}
-  ${({ disabled }) => disabled && disabledButton}
+  ${({ variant, color }) => colorVariants[color]?.[variant]}
+
+  ${({ disabled, variant }) => disabled && disabledButton[variant]}
 `;
