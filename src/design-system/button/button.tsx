@@ -1,7 +1,23 @@
-import { FC, PropsWithChildren } from 'react'
-import { ButtonStyle } from './button.styled'
-import { IButtonProps } from './types'
+import { ButtonStyle } from "./button.styled";
+import { IButtonProps } from "./types";
 
-export const Button: FC<PropsWithChildren <IButtonProps>> = ({ sizeVariant="default", disabled, children, ...props }) => {
-  return <ButtonStyle sizeVariant={sizeVariant} disabled={disabled} {...props}>{children}</ButtonStyle>
+export default function Button({
+  sizeVariant = "default",
+  color = "defaultColor",
+  variant = "defaultType",
+  disabled,
+  children,
+  ...props
+}: IButtonProps) {
+  return (
+    <ButtonStyle
+      sizeVariant={sizeVariant}
+      color={color}
+      variant={variant}
+      disabled={disabled}
+      {...props}
+    >
+      {children}
+    </ButtonStyle>
+  );
 }
