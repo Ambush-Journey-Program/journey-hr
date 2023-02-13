@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components"
 
-import { DivContainerProps } from "./types"
+import { StyledLabelProps, StyledInputProps } from "./types"
 
 const disabledInput = css`
   background-color: ${(props) => props.theme.color.white};
@@ -13,7 +13,7 @@ export const Wrapper = styled.div`
   width: 391px;
 `
 
-export const Label = styled.label<DivContainerProps>`
+export const Label = styled.label<StyledLabelProps>`
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -39,7 +39,7 @@ export const Input = styled.label`
   line-height: 24px;
 `
 
-export const InputContainer = styled.div<DivContainerProps>`
+export const InputContainer = styled.div<StyledInputProps>`
   display: flex;
   align-items: center;
   width: 391px;

@@ -6,7 +6,11 @@ export type IInputProps = InputHTMLAttributes<HTMLInputElement> & {
   optional?: boolean
 }
 
-export type DivContainerProps = {
+type StyledProps = {
   disabled?: boolean
   optional?: boolean
 }
+
+export type StyledLabelProps = StyledProps
+
+export type StyledInputProps = StyledProps
