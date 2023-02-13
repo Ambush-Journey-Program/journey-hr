@@ -7,7 +7,7 @@ export type ColorProp = "defaultColor" | "blue" | "purple";
 export type ButtonType = "defaultType" | "outlined" | "ghost";
 
 export type IButtonProps = {
-  colorVariant?: ColorProp;
+  color?: ColorProp;
   sizeVariant?: SizeProp;
-  buttonVariant?: ButtonType;
+  variant?: ButtonType;
 } & ButtonHTMLAttributes<HTMLButtonElement>;

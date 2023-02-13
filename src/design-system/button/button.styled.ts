@@ -8,8 +8,8 @@ import { SizeProp, ColorProp, ButtonType } from "./types";
 
 type ButtonProps = {
   sizeVariant: SizeProp;
-  colorVariant: ColorProp;
-  buttonVariant: ButtonType;
+  color: ColorProp;
+  variant: ButtonType;
 };
 
 type Variants = {
@@ -143,8 +143,7 @@ export const ButtonStyle = styled.button<ButtonProps>`
   }
 
   ${({ sizeVariant }) => variants[sizeVariant]}
-  ${({ buttonVariant, colorVariant }) =>
-    colorVariants[colorVariant]?.[buttonVariant]}
+  ${({ variant, color }) => colorVariants[color]?.[variant]}
 
-  ${({ disabled, buttonVariant }) => disabled && disabledButton[buttonVariant]}
+  ${({ disabled, variant }) => disabled && disabledButton[variant]}
 `;
