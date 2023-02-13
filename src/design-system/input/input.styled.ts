@@ -1,5 +1,7 @@
 import styled, { css } from "styled-components"
 
+import { DivContainerProps } from "./types"
+
 const disabledInput = css`
   background-color: ${(props) => props.theme.color.white};
 `
@@ -36,10 +38,6 @@ export const Input = styled.label`
   font-size: 16px;
   line-height: 24px;
 `
-type DivContainerProps = {
-  disabled?: boolean
-  optional?: boolean
-}
 
 export const InputContainer = styled.div<DivContainerProps>`
   display: flex;

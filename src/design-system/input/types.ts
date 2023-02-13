@@ -5,3 +5,8 @@ export type IInputProps = InputHTMLAttributes<HTMLInputElement> & {
   error?: string
   optional?: boolean
 }
+
+export type DivContainerProps = {
+  disabled?: boolean
+  optional?: boolean
+}
