@@ -1,22 +1,26 @@
 import { Wrapper } from './select-input.styled'
 import { ISelectInputProps } from './types'
-
-
+import * as Styled from './select-input.styled';
 
 export function SelectInput({
   placeholder,title, options
 }: ISelectInputProps){
   return (
-    <Wrapper>
-      <legend>{title}</legend>
-      <select>
+    <>
+      <Styled.Wrapper>
+        <legend>{title}</legend>
+        <Styled.Select>
+          <Styled.Option>teste1</Styled.Option>
+          <Styled.Option>teste1</Styled.Option>
+          <Styled.Option>teste1</Styled.Option>
         
-      {/* <div  {options.map(option => (key={option.value}></div>
-          <span>{option.label}</span>
-        ))}
-*/}
-      </select> 
-    </Wrapper>
-  )
+          {/* {options.map(option => (
+            key={option.value}
+              <span>{option.label}</span>
+            ))} */}
+        </Styled.Select>
+      </Styled.Wrapper>
+    </>
 
+  )
 }

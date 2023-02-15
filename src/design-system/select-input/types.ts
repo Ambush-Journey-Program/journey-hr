@@ -8,6 +8,6 @@ type Option = {
 export type ISelectInputProps = SelectHTMLAttributes<HTMLSelectElement> & {
   placeholder?: string;
   title:string;
-  options: Option[];
+  options: Option;
 };
 

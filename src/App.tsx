@@ -3,7 +3,8 @@ import { theme } from './styles/theme';
 import { GlobalStyles } from './styles/global';
 import { SelectInput } from './design-system/select-input';
 
-const options: Option[] = [
+const options =
+[
   {
     label: 'Text',
     value: 'text-value'
