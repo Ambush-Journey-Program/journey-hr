@@ -3,9 +3,12 @@ import { ISelectInputProps } from './types';
 import * as Styled from './select-input.styled';
 
 export function SelectInput({
-  placeholder,
   title,
   options,
+  required,
+  disabled,
+  error,
+  optional,
 }: ISelectInputProps) {
   function handleSelect(selectedValue: string) {
     console.log({ selectedValue });
@@ -13,12 +16,17 @@ export function SelectInput({
 
   return (
     <>
-      <Styled.Wrapper>
-        <legend>{title}</legend>
+      <Styled.Wrapper error={error}>
+        <Styled.Legend optional={optional}>
+          {title} <span>Optional</span>
+        </Styled.Legend>
         <Styled.Select
+          error={error}
           onChange={(e) => {
             handleSelect(e.target.value);
           }}
+          required={required}
+          disabled={disabled}
         >
           <Styled.Option value="0">Selecione uma opção...</Styled.Option>
           {options.map((option) => (
@@ -27,6 +35,7 @@ export function SelectInput({
             </Styled.Option>
           ))}
         </Styled.Select>
+        {!!error && <span>{error}</span>}
       </Styled.Wrapper>
     </>
   );

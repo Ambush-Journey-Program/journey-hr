@@ -6,7 +6,22 @@ type Option = {
 };
 
 export type ISelectInputProps = SelectHTMLAttributes<HTMLSelectElement> & {
-  placeholder?: string;
   title: string;
   options: Option[];
+  error?: string;
+  optional?: boolean;
 };
+
+type StyledProps = {
+  disabled?: boolean;
+  optional?: boolean;
+};
+
+export type StyledSelectProps = StyledProps & {
+  error?: string;
+};
+export type StyleWrapper = {
+  error?: string;
+};
+
+export type StyledLegendProps = StyledProps;
