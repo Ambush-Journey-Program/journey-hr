@@ -1,9 +1,9 @@
 import * as React from 'react';
-// import { expect, describe, test } from 'vitest';
+import { describe, test, expect } from 'vitest';
 
 import { render, screen } from '@testing-library/react';
 
-import { Button } from '.';
+import { Button } from './button';
 import { ThemeProvider } from 'styled-components';
 import { theme } from '../../styles/theme';
 
@@ -12,12 +12,12 @@ describe('<Button />', () => {
     const labelText: string = 'My Button';
     render(
       <ThemeProvider theme={theme}>
-        <Button />
+        <Button>{labelText}</Button>
       </ThemeProvider>,
     );
 
     const buttonEl = screen.getByText(labelText);
 
-    expect(buttonEl).toBe;
+    expect(buttonEl);
   });
 });
