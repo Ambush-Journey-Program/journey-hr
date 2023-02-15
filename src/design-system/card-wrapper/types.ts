@@ -1,6 +1,6 @@
-export type WrapperType = 'horizontal' | 'vertical';
+export type CardWrapperType = 'desktop' | 'mobile';
 
-export type WrapperProps = {
+export type CardWrapperProps = {
   children: any;
-  variant: WrapperType;
+  variant: CardWrapperType;
 };
