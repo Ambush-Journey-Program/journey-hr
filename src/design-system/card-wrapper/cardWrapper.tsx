@@ -1,6 +1,6 @@
 import * as Styled from './cardWrapper.styled';
-import { CardWrapperProps } from './types';
+import { CardProps } from './cardWrapper.styled';
 
-export default function CardWrapper({ children, variant }: CardWrapperProps) {
-  return <Styled.CardWrapper variant={variant}>{children}</Styled.CardWrapper>;
+export default function CardWrapper({ children }: CardProps) {
+  return <Styled.Card>{children}</Styled.Card>;
 }

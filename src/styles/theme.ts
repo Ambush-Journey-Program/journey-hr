@@ -11,3 +11,7 @@ export const theme = {
     lightred: 'rgba(236, 109, 117, 0.1)',
   },
 };
+
+export const devices = {
+  mobile: '(max-width: 550px)',
+};
