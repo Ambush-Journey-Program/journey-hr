@@ -1,5 +1,5 @@
 import { ButtonStyle } from './button.styled';
-import { type IButtonProps } from './types';
+import type { IButtonProps } from './types';
 
 export function Button({
   sizeVariant = 'default',
