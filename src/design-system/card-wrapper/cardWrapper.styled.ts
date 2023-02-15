@@ -25,7 +25,7 @@ export const CardWrapper = styled.div<CardWrapperProps>`
     0px 0px 30px rgba(231, 222, 209, 0.5);
   background-color: white;
   border-radius: 1.25rem;
-  width: 100%;
+  max-width: 100%;
 
   ${({ variant }) => variants[variant]}
 `;
