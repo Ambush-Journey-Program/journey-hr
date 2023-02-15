@@ -1,15 +1,14 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   select:first-child {
     color: gray;
-   
   }
-  margin-left:40%
-`
+  margin-left: 40%;
+`;
 
-export const Select= styled.select`
-display: flex;
+export const Select = styled.select`
+  display: flex;
   align-items: center;
   width: 391px;
   height: 52px;
@@ -21,12 +20,12 @@ display: flex;
   border-radius: 12px;
   padding-left: 20px;
   margin-top: 4px;
-  & .option{
-    background-color:red;
+  & .option {
+    background-color: red;
   }
-`
+`;
 
-export const Option =styled.option`
+export const Option = styled.option`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -36,9 +35,8 @@ export const Option =styled.option`
   position: relative;
   width: 391px;
   height: 304px;
-  background: #FFFFFF;
-
-  box-shadow: 0px 4px 6px rgba(149, 136, 169, 0.05), 0px 0px 30px rgba(231, 222, 209, 0.5);
+  background: #ffffff;
+  box-shadow: 0px 4px 6px rgba(149, 136, 169, 0.05),
+    0px 0px 30px rgba(231, 222, 209, 0.5);
   border-radius: 10px;
-`
-
+`;

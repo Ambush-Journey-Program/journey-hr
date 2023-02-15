@@ -3,43 +3,26 @@ import { theme } from './styles/theme';
 import { GlobalStyles } from './styles/global';
 import { SelectInput } from './design-system/select-input';
 
-const options =
-[
+const options = [
   {
-    label: 'Text',
-    value: 'text-value'
+    label: 'Text 1',
+    value: '1',
   },
   {
-    label: 'Text',
-    value: 'text-value'
+    label: 'Text 2',
+    value: '2',
   },
   {
-    label: 'Text',
-    value: 'text-value'
+    label: 'Text 3',
+    value: '3',
   },
-  {
-    label: 'Text',
-    value: 'text-value'
-  },
-  {
-    label: 'Text',
-    value: 'text-value'
-  },
-  {
-    label: 'Text',
-    value: 'text-value'
-  }
-]
+];
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <SelectInput 
-      title= "Title" 
-      placeholder='Selecione uma opção...'
-      options={options}
-      />
+      <SelectInput title="Title" options={options} />
     </ThemeProvider>
   );
 }
