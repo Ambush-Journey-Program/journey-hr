@@ -18,6 +18,6 @@ describe('<Button />', () => {
 
     const buttonEl = screen.getByText(labelText);
 
-    expect(buttonEl);
+    expect(true).toBeInTheDocument();
   });
 });
