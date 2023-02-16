@@ -12,7 +12,7 @@ export type ISelectInputProps = SelectHTMLAttributes<HTMLSelectElement> & {
   optional?: boolean;
 };
 
-type StyledProps = {
+export type StyledProps = {
   disabled?: boolean;
   optional?: boolean;
 };
@@ -23,3 +23,5 @@ export type StyledSelectProps = StyledProps & {
 export type StyleWrapper = {
   error?: string;
 };
+
+export type StyledLegendProps = StyledProps;

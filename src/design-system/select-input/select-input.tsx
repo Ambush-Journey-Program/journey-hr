@@ -1,5 +1,6 @@
 import { ISelectInputProps } from './types';
 import * as Styled from './select-input.styled';
+import { ChangeEvent } from 'react';
 
 export function SelectInput({
   title,
@@ -12,30 +13,30 @@ export function SelectInput({
   // function handleSelect(selectedValue: string) {
   //   console.log({ selectedValue });
   // }
-  function handleSelect(event: ChangeEvent<HTMLInputElement>) {
-    console.log(e.target.value);
+  function handleSelect(event: ChangeEvent<HTMLSelectElement>) {
+    console.log(event.target.value);
   }
   return (
     <>
       <Styled.Wrapper error={error}>
-        <Styled.Legend optional={optional}>
-          {title} <span>optional</span>
+        <Styled.Legend>
+          {title}
+          {!required && <Styled.SpanRequired>Optional</Styled.SpanRequired>}
         </Styled.Legend>
         <Styled.Select
           error={error}
           onChange={handleSelect}
-          // {...props}
           required={required}
           disabled={disabled}
         >
-          <Styled.Option value="0">Selecione uma opção...</Styled.Option>
+          <option value="0">Selecione uma opção...</option>
           {options.map((option) => (
-            <Styled.Option key={option.value} value={option.value}>
+            <option key={option.value} value={option.value}>
               {option.label}
-            </Styled.Option>
+            </option>
           ))}
         </Styled.Select>
-        {!!error && <span>{error}</span>}
+        {!!error && <Styled.SpanError>{error}</Styled.SpanError>}
       </Styled.Wrapper>
     </>
   );

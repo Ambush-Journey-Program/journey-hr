@@ -22,8 +22,8 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <SelectInput title="Title" options={options} />
-      <SelectInput optional title="Title" options={options} />
+      {/* <SelectInput title="Title" options={options} />
+      <SelectInput title="Title" options={options} /> */}
       <SelectInput
         error="Oops! An error occured"
         title="Title"
