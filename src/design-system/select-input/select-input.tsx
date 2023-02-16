@@ -1,4 +1,3 @@
-import { Wrapper } from './select-input.styled';
 import { ISelectInputProps } from './types';
 import * as Styled from './select-input.styled';
 
@@ -10,21 +9,22 @@ export function SelectInput({
   error,
   optional,
 }: ISelectInputProps) {
-  function handleSelect(selectedValue: string) {
-    console.log({ selectedValue });
+  // function handleSelect(selectedValue: string) {
+  //   console.log({ selectedValue });
+  // }
+  function handleSelect(event: ChangeEvent<HTMLInputElement>) {
+    console.log(e.target.value);
   }
-
   return (
     <>
       <Styled.Wrapper error={error}>
         <Styled.Legend optional={optional}>
-          {title} <span>Optional</span>
+          {title} <span>optional</span>
         </Styled.Legend>
         <Styled.Select
           error={error}
-          onChange={(e) => {
-            handleSelect(e.target.value);
-          }}
+          onChange={handleSelect}
+          // {...props}
           required={required}
           disabled={disabled}
         >

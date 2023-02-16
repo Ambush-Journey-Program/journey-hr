@@ -23,5 +23,3 @@ export type StyledSelectProps = StyledProps & {
 export type StyleWrapper = {
   error?: string;
 };
-
-export type StyledLegendProps = StyledProps;
