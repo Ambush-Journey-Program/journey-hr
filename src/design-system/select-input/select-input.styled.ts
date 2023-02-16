@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { StyledSelectProps, StyleWrapper, StyledProps } from './types';
+import { StyledSelectProps, StyledProps } from './types';
 
 const disabledSelect = css`
   background-color: ${(props) => props.theme.color.white};
@@ -10,7 +10,7 @@ export const SpanRequired = styled.span`
   display: block;
 `;
 
-export const SpanError = styled.span<StyleWrapper>`
+export const SpanError = styled.span`
   display: block;
   color: ${(props) => props.theme.color.red};
   margin-top: 0.25rem;
@@ -18,21 +18,12 @@ export const SpanError = styled.span<StyleWrapper>`
   font-size: 0.75rem;
   line-height: 1.125rem;
 `;
-
-// const spanError = css`
-//   display: block;
-//   color: ${(props) => props.theme.color.red};
-//   margin-top: 0.25rem;
-//   font-weight: 400;
-//   font-size: 0.75rem;
-//   line-height: 1.125rem;
-// `;
 const errorDisplay = css`
   color: ${(props) => props.theme.color.red};
   border: ${(props) => `1px solid ${props.theme.color.red}`};
 `;
 
-export const Wrapper = styled.div<StyleWrapper>`
+export const Wrapper = styled.div`
   width: 24.438rem;
 `;
 
@@ -54,7 +45,10 @@ export const Select = styled.select<StyledSelectProps>`
   width: 100%;
   display: flex;
   border-radius: 0.75rem;
-  padding-left: 1.25rem;
+  padding: 0.875rem;
   margin-top: 0.25rem;
   ${({ error }) => error && errorDisplay}
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 `;

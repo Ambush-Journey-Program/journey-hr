@@ -1,7 +1,7 @@
 import { ThemeProvider } from 'styled-components';
 import { theme } from './styles/theme';
 import { GlobalStyles } from './styles/global';
-import { SelectInput } from './design-system/Select-input';
+import { SelectInput } from './design-system/select-input';
 
 const options = [
   {
@@ -22,15 +22,15 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      {/* <SelectInput title="Title" options={options} />
-      <SelectInput title="Title" options={options} /> */}
       <SelectInput
         error="Oops! An error occured"
         title="Title"
         options={options}
+        onSelect={(value) => alert(value)}
+        required
       />
-      <SelectInput disabled title="Title" options={options} />
-      <SelectInput title="Title" options={options} required />
+      {/* <SelectInput required disabled title="Title" options={options} />
+      <SelectInput title="Title" options={options} /> */}
     </ThemeProvider>
   );
 }
