@@ -1,8 +1,6 @@
 import { Meta, Story } from '@storybook/react';
-
 import { ThemeProvider } from 'styled-components';
 import { theme } from '../../styles/theme';
-
 import { SelectInput } from './select-input';
 import { ISelectInputProps } from './types';
 
