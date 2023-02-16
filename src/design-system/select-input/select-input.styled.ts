@@ -21,7 +21,7 @@ const errorDisplay = css`
 `;
 
 export const Wrapper = styled.div<StyleWrapper>`
-  width: 24.438rem;
+  width: 100%;
 `;
 
 export const Legend = styled.legend<StyledProps>`
