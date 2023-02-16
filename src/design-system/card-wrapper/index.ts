@@ -1,1 +1,1 @@
-export { Wrapper } from './cardWrapper';
+export { CardWrapper } from './cardWrapper';
