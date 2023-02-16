@@ -26,6 +26,7 @@ export default {
     title: 'Title',
     required: true,
     options: exampleOptions,
+    disabled: false,
   },
 } as Meta;
 
@@ -42,4 +43,5 @@ SelectInputStory.args = {
   title: 'Title',
   required: true,
   options: exampleOptions,
+  disabled: false,
 };
