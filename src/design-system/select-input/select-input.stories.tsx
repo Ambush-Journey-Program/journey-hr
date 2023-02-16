@@ -6,15 +6,6 @@ import { theme } from '../../styles/theme';
 import { SelectInput } from './select-input';
 import { ISelectInputProps } from './types';
 
-export default {
-  component: SelectInput,
-  title: 'UI/SelectInput',
-  parameters: {
-    isLoading: false,
-    label: 'SelectInput text',
-  },
-} as Meta;
-
 const exampleOptions = [
   {
     label: 'Text 1',
@@ -30,6 +21,16 @@ const exampleOptions = [
   },
 ];
 
+export default {
+  component: SelectInput,
+  title: 'UI/SelectInput',
+  parameters: {
+    title: 'Title',
+    required: true,
+    options: exampleOptions,
+  },
+} as Meta;
+
 const Template: Story<ISelectInputProps> = (args) => {
   return (
     <ThemeProvider theme={theme}>
@@ -40,7 +41,7 @@ const Template: Story<ISelectInputProps> = (args) => {
 
 export const SelectInputStory = Template.bind({});
 SelectInputStory.args = {
-  title: 'Title Example',
+  title: 'Title',
   required: true,
   options: exampleOptions,
 };
