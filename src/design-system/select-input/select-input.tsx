@@ -8,6 +8,7 @@ export function SelectInput({
   required,
   disabled,
   error,
+  optional,
 }: ISelectInputProps) {
   // function handleSelect(selectedValue: string) {
   //   console.log({ selectedValue });

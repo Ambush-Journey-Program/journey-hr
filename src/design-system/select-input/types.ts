@@ -9,10 +9,12 @@ export type ISelectInputProps = SelectHTMLAttributes<HTMLSelectElement> & {
   title: string;
   options: Option[];
   error?: string;
+  optional?: boolean;
 };
 
 export type StyledProps = {
   disabled?: boolean;
+  optional?: boolean;
 };
 
 export type StyledSelectProps = StyledProps & {
