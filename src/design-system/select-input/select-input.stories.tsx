@@ -22,6 +22,9 @@ const exampleOptions = [
 export default {
   component: SelectInput,
   title: 'UI/SelectInput',
+  argTypes: {
+    onSelect: { action: 'selected' },
+  },
   parameters: {
     title: 'Title',
     required: true,
