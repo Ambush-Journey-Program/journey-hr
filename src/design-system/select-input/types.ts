@@ -6,10 +6,10 @@ type Option = {
 };
 
 export type ISelectInputProps = SelectHTMLAttributes<HTMLSelectElement> & {
-  title: string;
-  options: Option[];
+  title?: string;
+  options?: Option[];
   error?: string;
-  onSelect: (selectedValue: string) => void;
+  onSelect?: (selectedValue: string) => void;
 };
 
 export type StyledProps = {

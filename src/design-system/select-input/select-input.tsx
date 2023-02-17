@@ -8,6 +8,7 @@ export function SelectInput({
   error,
   required,
   onSelect,
+  disabled,
   ...props
 }: ISelectInputProps) {
   function handleSelect(event: ChangeEvent<HTMLSelectElement>) {
@@ -19,7 +20,13 @@ export function SelectInput({
         {title}
         {!required && <Styled.SpanRequired>Optional</Styled.SpanRequired>}
       </Styled.Legend>
-      <Styled.Select error={error} onChange={handleSelect} {...props}>
+      <Styled.Select
+        data-testid="input-select-test"
+        disabled={disabled}
+        error={error}
+        onChange={handleSelect}
+        {...props}
+      >
         <option value="">Selecione uma opção...</option>
         {options.map((option) => (
           <option key={option.value} value={option.value}>
