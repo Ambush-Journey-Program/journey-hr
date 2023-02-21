@@ -9,7 +9,7 @@ import { ThemeProvider } from 'styled-components';
 import { theme } from '../../styles/theme';
 
 describe('<Button />', () => {
-  it('using button tag, then render the label text from children', () => {
+  it('renders the simple Button component', () => {
     const label = 'My Button';
 
     render(
@@ -22,7 +22,7 @@ describe('<Button />', () => {
     expect(buttonEl).toBeInTheDocument();
   });
 
-  it('should be disabled', () => {
+  it('is disabled, when disabled is true', () => {
     render(
       <ThemeProvider theme={theme}>
         <Button disabled>My Button</Button>
@@ -34,7 +34,7 @@ describe('<Button />', () => {
     expect(buttonEl).not.toBeEnabled();
   });
 
-  it('should call onClick function', async () => {
+  it('calls onClick function when clicked', async () => {
     const onClickMock = vi.fn();
     render(
       <ThemeProvider theme={theme}>
