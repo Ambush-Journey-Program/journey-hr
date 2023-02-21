@@ -1,10 +1,10 @@
-import { ButtonStyle } from "./button.styled";
-import { IButtonProps } from "./types";
+import { ButtonStyle } from './button.styled';
+import type { IButtonProps } from './types';
 
-export default function Button({
-  sizeVariant = "default",
-  color = "defaultColor",
-  variant = "defaultType",
+export function Button({
+  sizeVariant = 'default',
+  color = 'defaultColor',
+  variant = 'defaultType',
   disabled,
   children,
   ...props
