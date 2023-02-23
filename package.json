@@ -18,8 +18,7 @@
     "test": "vitest",
     "lint": "eslint ./src --ext ts,tsx,js,jsx",
     "generate-component": "plop",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "storybook": "start-storybook -p 6006", "build-storybook": "build-storybook"
   },
   "browserslist": {
     "production": [

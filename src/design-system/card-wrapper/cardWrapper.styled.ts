@@ -1,9 +1,6 @@
 import styled, { css } from 'styled-components';
 import { devices } from '../../styles/theme';
-
-export type CardProps = {
-  children: JSX.Element | string;
-};
+import {CardProps } from './cardWrapper';
 
 export const Card = styled.div<CardProps>`
   padding: 1.25rem 2.5rem;
