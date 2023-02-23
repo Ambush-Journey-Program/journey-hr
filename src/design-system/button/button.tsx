@@ -1,5 +1,6 @@
 import { ButtonStyle } from './button.styled';
 import type { IButtonProps } from './types';
+import { PlusIcon } from '@heroicons/react/24/solid';
 
 export function Button({
   sizeVariant = 'default',
@@ -7,17 +8,23 @@ export function Button({
   variant = 'defaultType',
   disabled,
   children,
+  icon,
   ...props
 }: IButtonProps) {
+  const buttonIcon = icon ? <PlusIcon /> : undefined;
+
   return (
-    <ButtonStyle
-      sizeVariant={sizeVariant}
-      color={color}
-      variant={variant}
-      disabled={disabled}
-      {...props}
-    >
-      {children}
-    </ButtonStyle>
+    <>
+      <ButtonStyle
+        sizeVariant={sizeVariant}
+        color={color}
+        variant={variant}
+        disabled={disabled}
+        {...props}
+      >
+        {buttonIcon}
+        {children}
+      </ButtonStyle>
+    </>
   );
 }
