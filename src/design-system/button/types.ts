@@ -1,4 +1,5 @@
 import { ButtonHTMLAttributes } from 'react';
+import * as HeroIcons from '@heroicons/react/24/solid';
 
 export type SizeProp = 'default' | 'large' | 'small';
 
@@ -10,5 +11,5 @@ export type IButtonProps = {
   color?: ColorProp;
   sizeVariant?: SizeProp;
   variant?: ButtonType;
-  icon?: boolean;
+  icon?: keyof typeof HeroIcons;
 } & ButtonHTMLAttributes<HTMLButtonElement>;

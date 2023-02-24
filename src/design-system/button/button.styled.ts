@@ -26,6 +26,9 @@ type DisabledButton = {
   [key: string]: FlattenInterpolation<ThemeProps<ButtonType>>;
 };
 
+// const IconHero: IconProps = {
+//     const TheIcon: JSX.Element = icons[props.icon]
+// };
 const variants: Variants = {
   large: css`
     font-size: 22px;
@@ -161,7 +164,7 @@ const disabledButton: DisabledButton = {
 };
 
 export const ButtonStyle = styled.button<ButtonProps>`
-  display:flex;
+  display: flex;
   padding: 10px 24px;
   font-weight: 600;
   line-height: 150%;
