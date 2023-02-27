@@ -1,6 +1,6 @@
-export type ColorProp = 'defaultColor' | 'transparent';
+export type ColorProp = 'default' | 'transparent';
 
 export type CardProps = {
   children: JSX.Element | string;
-  color?: ColorProp;
+  colorVariant: ColorProp;
 };
