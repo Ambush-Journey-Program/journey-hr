@@ -1,10 +1,9 @@
 import * as Styled from './cardWrapper.styled';
+import { CardProps } from './types';
 
-
-export type CardProps = {
-  children: JSX.Element | string;
-};
-
-export default function CardWrapper({ children }: CardProps) {
-  return <Styled.Card>{children}</Styled.Card>;
+export default function CardWrapper({
+  color = 'defaultColor',
+  children,
+}: CardProps) {
+  return <Styled.Card color={color}>{children}</Styled.Card>;
 }
