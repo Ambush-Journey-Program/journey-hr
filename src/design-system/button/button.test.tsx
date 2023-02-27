@@ -46,4 +46,24 @@ describe('<Button />', () => {
 
     expect(onClickMock).toHaveBeenCalled();
   });
+
+  it('renders icons', async () => {
+    render(
+      <ThemeProvider theme={theme}>
+        <Button icon={'PlusIcon'}>Label</Button>
+      </ThemeProvider>,
+    );
+    const iconEl = screen.getByTestId('button-icon');
+    expect(iconEl).toBeInTheDocument();
+  });
+
+  it('Not renders icons', async () => {
+    render(
+      <ThemeProvider theme={theme}>
+        <Button>Label</Button>
+      </ThemeProvider>,
+    );
+    const iconEl = screen.queryByTestId('button-icon');
+    expect(iconEl).toBeNull();
+  });
 });

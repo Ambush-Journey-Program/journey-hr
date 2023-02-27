@@ -1,6 +1,6 @@
 import { ButtonStyle } from './button.styled';
 import type { IButtonProps } from './types';
-import { PlusIcon } from '@heroicons/react/24/solid';
+import * as Icons from '@heroicons/react/24/solid';
 
 export function Button({
   sizeVariant = 'default',
@@ -11,7 +11,10 @@ export function Button({
   icon,
   ...props
 }: IButtonProps) {
-  const buttonIcon = icon ? <PlusIcon /> : undefined;
+  // @ts-ignore /
+
+  const TheIcon = Icons[icon];
+  const buttonIcon = icon && <TheIcon data-testid="button-icon" />;
 
   return (
     <>
