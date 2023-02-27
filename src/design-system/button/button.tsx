@@ -14,7 +14,7 @@ export function Button({
   // @ts-ignore /
 
   const TheIcon = Icons[icon];
-  const buttonIcon = icon && <TheIcon />;
+  const buttonIcon = icon && <TheIcon data-testid="button-icon" />;
 
   return (
     <>
