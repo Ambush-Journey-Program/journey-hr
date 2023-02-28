@@ -1,4 +1,10 @@
-import { ImgHTMLAttributes } from "react";
+import { ImgHTMLAttributes } from 'react';
 
-export type AvatarProps = {
-  } & ImgHTMLAttributes<HTMLImageElement>;
+type WithRequiredProperty<Type, Key extends keyof Type> = Type & {
+  [Property in Key]-?: Type[Property];
+};
+
+export type AvatarProps = WithRequiredProperty<
+  ImgHTMLAttributes<HTMLImageElement>,
+  'src'
+>;
