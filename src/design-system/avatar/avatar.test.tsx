@@ -10,7 +10,7 @@ describe('<Avatar />', () => {
   it('renders the Avatar', () => {
     render(
       <ThemeProvider theme={theme}>
-        <Avatar src="none" />
+        <Avatar src="user-picture-link" />
       </ThemeProvider>,
     );
 
