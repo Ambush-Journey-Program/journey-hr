@@ -6,11 +6,11 @@ import styled, {
 import { devices } from '../../styles/theme';
 import { CardProps, ColorProp } from './types';
 
-export type ColorVariant = {
+export type Background = {
   [key: string]: FlattenInterpolation<ThemeProps<ColorProp>>;
 };
 
-const backgroundVariants: ColorVariant = {
+const backgroundVariants: Background = {
   default: css`
     box-shadow: 0px 4px 6px rgba(149, 136, 169, 0.05),
       0px 0px 30px rgba(231, 222, 209, 0.5);
@@ -32,5 +32,5 @@ export const Card = styled.div<CardProps>`
     padding: 0.75rem 1.25rem;
   }
 
-  ${({ colorVariant }) => backgroundVariants[colorVariant]}
+  ${({ background }) => backgroundVariants[background || 'default']}
 `;
