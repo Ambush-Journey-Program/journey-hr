@@ -3,13 +3,15 @@ import styled from 'styled-components';
 export const TooltipWrapper = styled.div`
   position: relative;
   display: inline-flex;
+  margin-top: 50%;
+  margin-left: 50%;
 `;
 
 export const TooltipTarget = styled.button`
   border: none;
   background: inherit;
   padding: 5px;
-  margin: -1px;
+  margin: 1px;
   font-size: inherit;
 `;
 export const CenterContainer = styled.div`
@@ -26,12 +28,14 @@ export const CenterContainer = styled.div`
 
 export const TooltipBox = styled.span`
   position: relative;
-  background-color: ${(props) => props.theme.color.white};
-  color: #fff;
+  background-color: ${(props) => props.theme.color.strongWhite};
+  color: ${(props) => props.theme.color.purple};
   text-align: center;
-  border-radius: 5px;
-  padding: 10px 8px;
-  font-size: 1.25rem;
+  border-radius: 15px;
+  padding: 12px;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 150%;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15), 0 4px 8px rgba(0, 0, 0, 0.2);
   &:after {
     content: '';

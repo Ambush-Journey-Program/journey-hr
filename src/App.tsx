@@ -8,9 +8,9 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <Tooltip text="Hello World" position="Top">
+      <Tooltip text="Copied!" position="Top">
         {' '}
-        <TooltipTarget>I am a Target</TooltipTarget>
+        <TooltipTarget></TooltipTarget>
       </Tooltip>
     </ThemeProvider>
   );
