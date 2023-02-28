@@ -7,7 +7,7 @@ export default {
   component: CardWrapper,
   title: 'UI/CardWrapper',
   parameters: {
-    children : "Label"
+    children: 'Label',
   },
 } as Meta;
 
@@ -21,5 +21,6 @@ const Template: Story<CardProps> = (args) => {
 
 export const SelectCardStory = Template.bind({});
 SelectCardStory.args = {
-  children : "Label"
+  children: 'Label',
+  background: '',
 };
