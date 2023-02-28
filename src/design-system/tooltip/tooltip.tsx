@@ -9,6 +9,9 @@ export function Tooltip({ text, children }) {
   return (
     <Styled.TooltipWrapper>
       <Styled.TooltipTarget>{children}</Styled.TooltipTarget>
+      <Styled.CenterContainer>
+        <Styled.TooltipBox>{text}</Styled.TooltipBox>
+      </Styled.CenterContainer>
     </Styled.TooltipWrapper>
   );
 }
