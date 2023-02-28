@@ -8,7 +8,7 @@ export default {
   component: Avatar,
   title: 'UI/Avatar',
   parameters: {
-    src: 'user-picture-link',
+    src: 'src/design-system/avatar/User-Photo.png',
   },
 } as Meta;
 
@@ -22,5 +22,5 @@ const Template: Story<AvatarProps> = (args) => {
 
 export const SelectCardStory = Template.bind({});
 SelectCardStory.args = {
-  src: 'user-picture-link',
+  src: 'src/design-system/avatar/User-Photo.png',
 };
