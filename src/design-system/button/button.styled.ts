@@ -65,7 +65,7 @@ const variants: Variants = {
 const colorVariants: ColorVariant = {
   defaultColor: {
     defaultType: css`
-      color: ${(props) => props.theme.color.white};
+      color: ${(props) => props.theme.color.grayish};
       background-color: ${(props) => props.theme.color.red};
     `,
     outlined: css`
@@ -96,7 +96,7 @@ const colorVariants: ColorVariant = {
 
   blue: {
     defaultType: css`
-      color: ${(props) => props.theme.color.white};
+      color: ${(props) => props.theme.color.grayish};
       background-color: ${(props) => props.theme.color.blue};
     `,
     outlined: css`
@@ -105,7 +105,7 @@ const colorVariants: ColorVariant = {
       border: solid 1px ${(props) => props.theme.color.blue};
 
       &:hover {
-        background-color: ${(props) => props.theme.color.white};
+        background-color: ${(props) => props.theme.color.grayish};
         opacity: 1;
       }
     `,
@@ -113,7 +113,7 @@ const colorVariants: ColorVariant = {
 
   purple: {
     defaultType: css`
-      color: ${(props) => props.theme.color.white};
+      color: ${(props) => props.theme.color.grayish};
       background-color: ${(props) => props.theme.color.purple};
     `,
     outlined: css`
@@ -122,7 +122,7 @@ const colorVariants: ColorVariant = {
       border: solid 1px ${(props) => props.theme.color.purple};
 
       &:hover {
-        background-color: ${(props) => props.theme.color.white};
+        background-color: ${(props) => props.theme.color.grayish};
         opacity: 1;
       }
     `,

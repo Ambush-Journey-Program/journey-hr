@@ -26,7 +26,7 @@ export const CenterContainer = styled.div`
 
 export const TooltipBox = styled.span`
   position: absolute;
-  background-color: ${(props) => props.theme.color.strongWhite};
+  background-color: ${(props) => props.theme.color.white};
   color: ${(props) => props.theme.color.purple};
   text-align: center;
   border-radius: 0.938rem;
@@ -48,8 +48,8 @@ export const TooltipBox = styled.span`
     width: 0.063rem;
     border-width: 0.5rem;
     border-style: solid;
-    border-color: ${(props) => props.theme.color.strongWhite} transparent
-      transparent transparent;
+    border-color: ${(props) => props.theme.color.white} transparent transparent
+      transparent;
     left: calc(50% - 0.5rem);
     top: 100%;
   }
