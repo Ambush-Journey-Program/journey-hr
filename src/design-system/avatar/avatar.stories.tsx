@@ -1,25 +1,26 @@
 import { Meta, Story } from '@storybook/react';
 import { ThemeProvider } from 'styled-components';
 import { theme } from '../../styles/theme';
-import CardWrapper, { CardProps } from './cardWrapper';
+import { Avatar } from './avatar';
+import { AvatarProps } from './types';
 
 export default {
-  component: CardWrapper,
-  title: 'UI/CardWrapper',
+  component: Avatar,
+  title: 'UI/Avatar',
   parameters: {
-    children: 'Label',
+    src: 'src/design-system/avatar/User-Photo.png',
   },
 } as Meta;
 
-const Template: Story<CardProps> = (args) => {
+const Template: Story<AvatarProps> = (args) => {
   return (
     <ThemeProvider theme={theme}>
-      <CardWrapper {...args} />
+      <Avatar {...args} />
     </ThemeProvider>
   );
 };
 
 export const SelectCardStory = Template.bind({});
 SelectCardStory.args = {
-  children: 'Label',
+  src: 'src/design-system/avatar/User-Photo.png',
 };
