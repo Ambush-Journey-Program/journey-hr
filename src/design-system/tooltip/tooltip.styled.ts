@@ -12,19 +12,6 @@ export const TooltipWrapper = styled.div`
   }
 `;
 
-export const CenterContainer = styled.div`
-  position: absolute;
-  width: 12.5rem;
-  margin-left: -6.25rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  left: 50%;
-  bottom: calc(100% + 0.313rem);
-  pointer-events: none;
-  background-color: red;
-`;
-
 export const TooltipBox = styled.span`
   position: absolute;
   background-color: ${(props) => props.theme.color.white};
