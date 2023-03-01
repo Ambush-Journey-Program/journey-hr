@@ -7,8 +7,21 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <Tooltip text="Copied asudhuashduhasuhuahsuhdsuhu!" position="Top">
-        <button>Hi</button>
+      <Tooltip text="Copied asudhuashduhasuhuahsuhdsuhu!" position="right">
+        <button>Right</button>
+      </Tooltip>
+      <Tooltip text="Copied asudhuashduhasuhuahsuhdsuhu!" position="left">
+        <button>Left</button>
+      </Tooltip>
+      <Tooltip text="Copied asudhuashduhasuhuahsuhdsuhu!" position="bottom">
+        <button>Bottom</button>
+      </Tooltip>
+      <Tooltip text="Copied asudhuashduhasuhuahsuhdsuhu!" position="top">
+        <button>Top</button>
+      </Tooltip>
+
+      <Tooltip text="Copied asudhuashduhasuhuahsuhdsuhu!">
+        <button>Padrão</button>
       </Tooltip>
     </ThemeProvider>
   );
