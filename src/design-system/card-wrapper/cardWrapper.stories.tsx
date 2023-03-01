@@ -22,4 +22,5 @@ const Template: Story<CardProps> = (args) => {
 export const SelectCardStory = Template.bind({});
 SelectCardStory.args = {
   children: 'Label',
+  background: '',
 };
