@@ -4,9 +4,9 @@ export function Tooltip({ text, children }) {
   return (
     <Styled.TooltipWrapper>
       {children}
-      <Styled.TooltipBox>
-        <div>{text}</div>
-      </Styled.TooltipBox>
+      <Styled.CenterContainer>
+        <Styled.TooltipBox>{text}</Styled.TooltipBox>
+      </Styled.CenterContainer>
     </Styled.TooltipWrapper>
   );
 }

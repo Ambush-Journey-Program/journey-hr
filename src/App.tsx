@@ -7,7 +7,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <Tooltip text="Copied asudhuashduhasuhuahsuhdsuhu!" position="Top">
+      <Tooltip text="Copied asudhuashduhasuhuahsuhdsuhu!">
         <button>Hi</button>
       </Tooltip>
     </ThemeProvider>
