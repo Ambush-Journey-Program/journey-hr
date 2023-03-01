@@ -1,6 +1,7 @@
 import * as Styled from './tooltip.styled';
+import { ITooltipProps } from './types';
 
-export function Tooltip({ text, children }) {
+export function Tooltip({ text, children, position }: ITooltipProps) {
   return (
     <Styled.TooltipWrapper>
       {children}
