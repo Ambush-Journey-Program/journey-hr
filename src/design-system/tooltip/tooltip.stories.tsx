@@ -9,8 +9,8 @@ export default {
   component: Tooltip,
   title: 'UI/Tooltip',
   parameters: {
-    children: 'Test',
-    variantPosition: '',
+    children: 'Teste',
+    position: '',
     text: 'Copied!',
   },
 } as Meta;
@@ -27,6 +27,6 @@ export const TooltipStory = Template.bind({});
 
 TooltipStory.args = {
   children: 'Test',
-  variantPosition: ,
+  variantPosition: 'top',
   text: 'Copied!',
 };
