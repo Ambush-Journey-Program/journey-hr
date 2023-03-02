@@ -1,4 +1,10 @@
-import styled, { css } from 'styled-components';
+import styled, {
+  css,
+  FlattenInterpolation,
+  FlattenSimpleInterpolation,
+  ThemeProps,
+} from 'styled-components';
+import { PositionsType } from './types';
 
 export const TooltipWrapper = styled.div`
   position: relative;
@@ -13,7 +19,59 @@ export const TooltipWrapper = styled.div`
   }
 `;
 export type StyledProps = {
-  position: string;
+  // position: string;
+  variantPosition: PositionsType;
+};
+type Variants = {
+  [key: string]: FlattenInterpolation<ThemeProps<StyledProps>>;
+};
+const variants: Variants = {
+  left: css`
+    transform: translateY(-50%);
+    top: 50%;
+    right: calc(100% + 15px);
+    &:after {
+      border-color: transparent transparent transparent #${(props) => props.theme.color.white};
+      left: calc(100% + -1.5px);
+      top: calc(50% + -0.5rem);
+      transform: rotate(-90deg);
+    }
+  `,
+  right: css`
+    top: 50%;
+    transform: translateY(-50%);
+    left: calc(100% + 15px);
+    z-index: 10;
+
+    &:after {
+      border-color: transparent #${(props) => props.theme.color.white} transparent
+        transparent;
+      right: calc(100% + -1.5px);
+      left: unset;
+      top: calc(50% - 0.5rem);
+      transform: rotate(90deg);
+    }
+  `,
+  bottom: css`
+    top: calc(100% + 15px);
+    left: 50%;
+    transform: translateX(-50%);
+    &:after {
+      border-color: transparent transparent #${(props) =>
+          props.theme.color.white} transparent;
+      top: unset;
+      width: 1px;
+      bottom: 100%;
+      left: calc(50% - 0.5rem);
+      transform: rotate(180deg);
+    }
+  `,
+  top: css`
+    bottom: calc(100% + 15px);
+    left: 50%;
+    transform: translateX(-50%);
+  `,
+  default: css``,
 };
 
 export const TooltipBox = styled.span<StyledProps>`
@@ -44,61 +102,5 @@ export const TooltipBox = styled.span<StyledProps>`
     top: 100%;
   }
 
-  ${({ position }) => {
-    switch (position) {
-      case 'left':
-        return css`
-          transform: translateY(-50%);
-          top: 50%;
-          right: calc(100% + 15px);
-          &:after {
-            border-color: transparent transparent transparent #${(props) => props.theme.color.white};
-            left: calc(100% + -1.5px);
-            top: calc(50% + -0.5rem);
-            transform: rotate(-90deg);
-          }
-        `;
-      case 'right':
-        return css`
-          top: 50%;
-          transform: translateY(-50%);
-          left: calc(100% + 15px);
-          z-index: 10;
-
-          &:after {
-            border-color: transparent #${(props) => props.theme.color.white} transparent
-              transparent;
-            right: calc(100% + -1.5px);
-            left: unset;
-            top: calc(50% - 0.5rem);
-            transform: rotate(90deg);
-          }
-        `;
-
-      case 'bottom':
-        return css`
-          top: calc(100% + 15px);
-          left: 50%;
-          transform: translateX(-50%);
-          &:after {
-            border-color: transparent transparent #${(props) =>
-                props.theme.color.white} transparent;
-            top: unset;
-            width: 1px;
-            bottom: 100%;
-            left: calc(50% - 0.5rem);
-            transform: rotate(180deg);
-          }
-        `;
-
-      case 'top':
-        return css`
-          bottom: calc(100% + 15px);
-          left: 50%;
-          transform: translateX(-50%);
-        `;
-      default:
-        return css``;
-    }
-  }}
+  ${({ variantPosition }) => variants[variantPosition]}
 `;

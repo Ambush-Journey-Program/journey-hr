@@ -10,7 +10,7 @@ export default {
   title: 'UI/Tooltip',
   parameters: {
     children: 'Test',
-    position: '',
+    variantPosition: '',
     text: 'Copied!',
   },
 } as Meta;
@@ -27,6 +27,6 @@ export const TooltipStory = Template.bind({});
 
 TooltipStory.args = {
   children: 'Test',
-  position: 'top',
+  variantPosition: 'left',
   text: 'Copied!',
 };
