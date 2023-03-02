@@ -1,5 +1,7 @@
+export type PositionsType = 'right' | 'top' | 'bottom' | 'left';
+
 export interface ITooltipProps {
   text: string;
-  position?: 'right' | 'top' | 'bottom' | 'left';
+  variantPosition?: PositionsType;
   children: JSX.Element | string;
 }
