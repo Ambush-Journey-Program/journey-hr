@@ -1,15 +1,14 @@
 import * as Styled from './tooltip.styled';
 import { ITooltipProps } from './types';
 
-export function Tooltip({ text, children, position }: ITooltipProps) {
+export function Tooltip({ text, children, position = 'top' }: ITooltipProps) {
   return (
-    <Styled.TooltipWrapper>
+    <Styled.TooltipWrapper data-testId="tooltipWrapper">
       {children}
-      <Styled.CenterContainer position={position}>
-        <Styled.TooltipBox position={position}>
-          <div>{text}</div>
-        </Styled.TooltipBox>
-      </Styled.CenterContainer>
+
+      <Styled.TooltipBox position={position}>
+        <div>{text}</div>
+      </Styled.TooltipBox>
     </Styled.TooltipWrapper>
   );
 }

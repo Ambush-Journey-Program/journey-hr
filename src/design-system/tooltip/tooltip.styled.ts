@@ -15,55 +15,14 @@ export type StyledProps = {
   position: string;
 };
 
-export const CenterContainer = styled.div`
+export const TooltipBox = styled.span<StyledProps>`
   position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  left: 50%;
-
-  ${({ position }) => {
-    switch (position) {
-      case 'bottom':
-        return css`
-          top: calc(100% + 5px);
-        `;
-      case 'left':
-        return css`
-          margin-right: 0;
-          width: 100%;
-          left: unset;
-          top: 50%;
-          right: calc(100% + 5px);
-          width: max-content;
-          transform: translate(-50%, -50%);
-        `;
-      case 'right':
-        return css`
-          margin-left: 0;
-          width: 100%;
-          top: 50%;
-          left: calc(100% + 5px);
-          width: max-content;
-        `;
-      default:
-        return css`
-          bottom: calc(100% + 5px);
-        `;
-    }
-  }}
-`;
-
-export const TooltipBox = styled.span`
-  position: absolute;
+  width: 100%;
   background-color: ${(props) => props.theme.color.white};
   color: ${(props) => props.theme.color.purple};
   text-align: center;
   border-radius: 0.938rem;
   padding: 0.75rem;
-  left: 50%;
-  transform: translate(-50%, 0);
-  bottom: calc(100% + 0.75rem);
   min-width: 6.25rem;
   max-width: 12.5rem;
   font-weight: 600;
@@ -88,29 +47,27 @@ export const TooltipBox = styled.span`
     switch (position) {
       case 'left':
         return css`
-          transform: translate(-100%, 50%);
+          transform: translateY(-50%);
+          top: 50%;
+          right: calc(100% + 15px);
           &:after {
-            position: absolute;
-            width: 0.063rem;
-            border-width: 0.5rem;
-            border-style: solid;
             border-color: transparent transparent transparent #${(props) => props.theme.color.white};
-            left: 99.75%;
-            top: calc(50% - 0.5rem);
+            left: calc(100% + -1.5px);
+            top: calc(50% + -0.5rem);
             transform: rotate(-90deg);
           }
         `;
       case 'right':
         return css`
-          transform: translate(0, 50%);
+          top: 50%;
+          transform: translateY(-50%);
+          left: calc(100% + 15px);
+          z-index: 10;
+
           &:after {
-            position: absolute;
-            width: 0.063rem;
-            border-width: 0.5rem;
-            border-style: solid;
             border-color: transparent #${(props) => props.theme.color.white} transparent
               transparent;
-            right: 99.75%;
+            right: calc(100% + -1.5px);
             left: unset;
             top: calc(50% - 0.5rem);
             transform: rotate(90deg);
@@ -119,12 +76,10 @@ export const TooltipBox = styled.span`
 
       case 'bottom':
         return css`
-          bottom: calc(100% + -3.25rem);
+          top: calc(100% + 15px);
+          left: 50%;
+          transform: translateX(-50%);
           &:after {
-            position: absolute;
-            width: 0.063rem;
-            border-width: 0.5rem;
-            border-style: solid;
             border-color: transparent transparent #${(props) =>
                 props.theme.color.white} transparent;
             top: unset;
@@ -133,6 +88,13 @@ export const TooltipBox = styled.span`
             left: calc(50% - 0.5rem);
             transform: rotate(180deg);
           }
+        `;
+
+      case 'top':
+        return css`
+          bottom: calc(100% + 15px);
+          left: 50%;
+          transform: translateX(-50%);
         `;
       default:
         return css``;
