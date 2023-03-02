@@ -27,6 +27,6 @@ export const TooltipStory = Template.bind({});
 
 TooltipStory.args = {
   children: 'Test',
-  variantPosition: 'left',
+  variantPosition: ,
   text: 'Copied!',
 };

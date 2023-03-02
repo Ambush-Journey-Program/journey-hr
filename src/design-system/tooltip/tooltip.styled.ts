@@ -19,7 +19,6 @@ export const TooltipWrapper = styled.div`
   }
 `;
 export type StyledProps = {
-  // position: string;
   variantPosition: PositionsType;
 };
 type Variants = {
