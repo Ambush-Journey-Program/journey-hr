@@ -9,7 +9,7 @@ export default {
   component: Tooltip,
   title: 'UI/Tooltip',
   parameters: {
-    children: <p>Ambush</p>,
+    children: 'Test',
     position: '',
     text: 'Copied!',
   },
@@ -26,7 +26,7 @@ const Template: Story<ITooltipProps> = (args) => {
 export const TooltipStory = Template.bind({});
 
 TooltipStory.args = {
-  children: <p>Ambush</p>,
+  children: 'Test',
   position: 'top',
   text: 'Copied!',
 };
