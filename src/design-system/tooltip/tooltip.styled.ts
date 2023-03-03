@@ -37,7 +37,6 @@ const variants: Variants = {
     top: 50%;
     transform: translateY(-50%);
     left: calc(100% + 15px);
-    z-index: 10;
 
     &:after {
       border-color: transparent #${(props) => props.theme.color.white} transparent
@@ -88,6 +87,7 @@ export const TooltipBox = styled.span<StyledProps>`
 
   &:after {
     content: '';
+    z-index: 10;
     position: absolute;
     width: 0.063rem;
     border-width: 0.5rem;
