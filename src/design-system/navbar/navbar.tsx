@@ -2,8 +2,14 @@ import * as Styled from './navbar.styled';
 import { Avatar } from '../avatar';
 import { ReactComponent as AmbushLogo } from './Union.svg';
 import { CardWrapper } from '../card-wrapper';
+import { NavBarProps } from './type';
+import { NavBarLinks } from './navbarlinks';
 
-export function NavBar() {
+export function NavBar({
+  navigationLinks,
+  avatarSrc = 'src/design-system/avatar/User-Photo.png',
+  avatarSize,
+}: NavBarProps) {
   console.log('teste');
   return (
     <Styled.NavBarWrapper>
@@ -13,24 +19,8 @@ export function NavBar() {
             <AmbushLogo />
             <span>Ambush</span>
           </Styled.LogoContainer>
-          <Styled.LinkContainer>
-            <li>
-              <a href="#">Interviews</a>
-            </li>
-            <li>
-              <a href="#">Happy Hour</a>
-            </li>
-            <li>
-              <a href="#">Feedbacks</a>
-            </li>
-            <li>
-              <a href="#">Send a Invite</a>
-            </li>
-            <li>
-              <a href="#">Shorty</a>
-            </li>
-          </Styled.LinkContainer>
-          <Avatar src="src/design-system/avatar/User-Photo.png" />
+          <NavBarLinks navigationLinks={navigationLinks} />
+          <Avatar src={avatarSrc} sizeVariant={avatarSize} />
         </Styled.NavBar>
       </CardWrapper>
     </Styled.NavBarWrapper>

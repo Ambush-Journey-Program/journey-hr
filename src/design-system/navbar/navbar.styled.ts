@@ -14,12 +14,6 @@ export const NavBar = styled.div`
   max-width: 100%;
   padding: 1.25rem 0;
 
-  img {
-    height: 4rem;
-    width: 4rem;
-    border-radius: 4rem;
-  }
-
   @media ${devices.mobile} {
   }
 `;
