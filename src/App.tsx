@@ -7,6 +7,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
+      <Tooltip text="Copied" children={'Hover me'}></Tooltip>
     </ThemeProvider>
   );
 }
