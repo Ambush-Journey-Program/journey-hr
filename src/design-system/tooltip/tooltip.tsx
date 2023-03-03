@@ -7,10 +7,10 @@ export function Tooltip({
   variantPosition = 'top',
 }: ITooltipProps) {
   return (
-    <Styled.TooltipWrapper>
+    <Styled.TooltipWrapper data-testid="wrapper">
       {children}
 
-      <Styled.TooltipBox variantPosition={variantPosition}>
+      <Styled.TooltipBox data-testid="popUp" variantPosition={variantPosition}>
         {text}
       </Styled.TooltipBox>
     </Styled.TooltipWrapper>

@@ -8,14 +8,11 @@ import { PositionsType } from './types';
 
 export const TooltipWrapper = styled.div`
   position: relative;
-  display: inline-block;
-  margin-top: 10%;
-  margin-left: 10%;
   cursor: pointer;
-  box-sizing: border-box;
-
+  display: inline-block;
+  cursor: pointer;
   &:hover > span {
-    display: block;
+    visibility: visible;
   }
 `;
 export type StyledProps = {
@@ -87,7 +84,7 @@ export const TooltipBox = styled.span<StyledProps>`
   font-size: 0.75rem;
   box-shadow: 0 0.25rem 0.875rem rgba(0, 0, 0, 0.15),
     0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
-  display: none;
+  visibility: hidden;
 
   &:after {
     content: '';
