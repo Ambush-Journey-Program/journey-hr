@@ -21,7 +21,7 @@ export const NavBar = styled.div`
 export const LinkContainer = styled.ul`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
   margin: 0 6rem;
   width: 100%;
   max-width: 100%;

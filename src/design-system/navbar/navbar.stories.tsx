@@ -21,6 +21,5 @@ const Template: Story<NavBarProps> = (args) => {
 
 export const NavBarStory = Template.bind({});
 NavBarStory.args = {
-  avatarSize: 'small',
   navigationLinks: navLinksJourneyHR,
 };

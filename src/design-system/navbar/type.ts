@@ -9,7 +9,6 @@ type LinkList = Link[];
 export type NavBarProps = {
   navigationLinks: LinkList;
   avatarSrc?: string;
-  avatarSize?: string;
 };
 
 export type LinksProps = {
