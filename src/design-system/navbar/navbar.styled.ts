@@ -28,12 +28,19 @@ export const LinkContainer = styled.ul`
   list-style: none;
 
   li {
+    margin: 0 1.125rem;
     a {
       text-decoration: none;
       font-size: 16px;
       font-weight: 600;
       color: ${(props) => props.theme.color.purple};
     }
+  }
+  li:first-of-type {
+    margin-left: 0;
+  }
+  li:last-of-type {
+    margin-right: 0;
   }
 `;
 
