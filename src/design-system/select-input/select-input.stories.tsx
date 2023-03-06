@@ -1,6 +1,4 @@
 import { Meta, Story } from '@storybook/react';
-import { ThemeProvider } from 'styled-components';
-import { theme } from '../../styles/theme';
 import { SelectInput } from './select-input';
 import { ISelectInputProps } from './types';
 
@@ -34,11 +32,7 @@ export default {
 } as Meta;
 
 const Template: Story<ISelectInputProps> = (args) => {
-  return (
-    <ThemeProvider theme={theme}>
-      <SelectInput {...args} />
-    </ThemeProvider>
-  );
+  return <SelectInput {...args} />;
 };
 
 export const SelectInputStory = Template.bind({});

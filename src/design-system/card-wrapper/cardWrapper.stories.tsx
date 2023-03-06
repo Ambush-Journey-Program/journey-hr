@@ -1,7 +1,6 @@
 import { Meta, Story } from '@storybook/react';
-import { ThemeProvider } from 'styled-components';
-import { theme } from '../../styles/theme';
-import CardWrapper, { CardProps } from './cardWrapper';
+import { CardWrapper } from './cardWrapper';
+import { CardProps } from './types';
 
 export default {
   component: CardWrapper,
@@ -12,15 +11,10 @@ export default {
 } as Meta;
 
 const Template: Story<CardProps> = (args) => {
-  return (
-    <ThemeProvider theme={theme}>
-      <CardWrapper {...args} />
-    </ThemeProvider>
-  );
+  return <CardWrapper {...args} />;
 };
 
 export const SelectCardStory = Template.bind({});
 SelectCardStory.args = {
   children: 'Label',
-  background: '',
 };
