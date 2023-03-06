@@ -4,6 +4,7 @@ import styled, {
   ThemeProps,
 } from 'styled-components';
 import { devices } from '../../styles/theme';
+
 import { CardProps, ColorProp } from './types';
 
 export type Background = {

@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import { StyledLabelProps, StyledInputProps, StyleWrapper } from './types';
 
 const disabledInput = css`
-  background-color: ${(props) => props.theme.color.white};
+  background-color: ${(props) => props.theme.color.grayish};
 `;
 const spanError = css`
   display: block;
