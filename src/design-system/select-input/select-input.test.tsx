@@ -1,8 +1,6 @@
 import * as React from 'react';
 import { describe, expect } from 'vitest';
-import { render, screen } from '@testing-library/react';
-import { ThemeProvider } from 'styled-components';
-import { theme } from '../../styles/theme';
+import { render, screen } from '../../tests/renderWithProviders';
 import { SelectInput } from './select-input';
 
 const title = 'My title';
@@ -24,13 +22,9 @@ const exampleOptions = [
 
 describe('<SelectInput />', () => {
   it('has a title', () => {
-    render(
-      <ThemeProvider theme={theme}>
-        <SelectInput options={exampleOptions} title={title} />
-      </ThemeProvider>,
-    );
+    render(<SelectInput options={exampleOptions} title={title} />);
     const inputEl = screen.getByText(title);
-    expect(inputEl).toBeInTheDocument(title);
+    expect(inputEl).toBeInTheDocument();
   });
 
   it('should have options', () => {
@@ -51,22 +45,14 @@ describe('<SelectInput />', () => {
       },
     ];
 
-    render(
-      <ThemeProvider theme={theme}>
-        <SelectInput options={exampleOptions} title={title} />
-      </ThemeProvider>,
-    );
+    render(<SelectInput options={exampleOptions} title={title} />);
 
     const inputOptions = screen.getAllByRole('option');
     expect(inputOptions.length).toBe(4);
   });
 
   it('should be disabled', () => {
-    render(
-      <ThemeProvider theme={theme}>
-        <SelectInput options={exampleOptions} title="title" disabled />
-      </ThemeProvider>,
-    );
+    render(<SelectInput options={exampleOptions} title="title" disabled />);
 
     const inputEl = screen.getByTestId('input-select-test');
     expect(inputEl).toBeDisabled();

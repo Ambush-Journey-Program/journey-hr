@@ -1,21 +1,15 @@
 import * as React from 'react';
 import { describe, expect } from 'vitest';
 
-import { render, screen } from '@testing-library/react';
+import { render, screen } from '../../tests/renderWithProviders';
 
 import CardWrapper from './cardWrapper';
-import { ThemeProvider } from 'styled-components';
-import { theme } from '../../styles/theme';
 
 describe('<CardWrapper />', () => {
   it('renders the CardWrapper with a child string', () => {
     const label = 'My CardWrapper';
 
-    render(
-      <ThemeProvider theme={theme}>
-        <CardWrapper>{label}</CardWrapper>
-      </ThemeProvider>,
-    );
+    render(<CardWrapper>{label}</CardWrapper>);
 
     const wrapperEl = screen.getByText(label);
     expect(wrapperEl).toBeInTheDocument();
@@ -25,13 +19,11 @@ describe('<CardWrapper />', () => {
     const label = 'My CardWrapper';
 
     render(
-      <ThemeProvider theme={theme}>
-        <CardWrapper>
-          <div>
-            <h1>{label}</h1>
-          </div>
-        </CardWrapper>
-      </ThemeProvider>,
+      <CardWrapper>
+        <div>
+          <h1>{label}</h1>
+        </div>
+      </CardWrapper>,
     );
 
     const wrapperEl = screen.getByText(label);

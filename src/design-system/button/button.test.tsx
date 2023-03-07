@@ -1,33 +1,21 @@
 import * as React from 'react';
 import { describe, test, expect } from 'vitest';
-
-import { render, screen } from '@testing-library/react';
+import { render, screen } from '../../tests/renderWithProviders';
 import userEvent from '@testing-library/user-event';
-
 import { Button } from './button';
-import { ThemeProvider } from 'styled-components';
-import { theme } from '../../styles/theme';
 
 describe('<Button />', () => {
   it('renders the simple Button component', () => {
     const label = 'My Button';
 
-    render(
-      <ThemeProvider theme={theme}>
-        <Button disabled>{label}</Button>
-      </ThemeProvider>,
-    );
+    render(<Button disabled>{label}</Button>);
 
     const buttonEl = screen.getByText(label);
     expect(buttonEl).toBeInTheDocument();
   });
 
   it('is disabled, when disabled is true', () => {
-    render(
-      <ThemeProvider theme={theme}>
-        <Button disabled>My Button</Button>
-      </ThemeProvider>,
-    );
+    render(<Button disabled>My Button</Button>);
 
     const buttonEl = screen.getByText('My Button');
     expect(buttonEl).toBeDisabled();
@@ -36,11 +24,7 @@ describe('<Button />', () => {
 
   it('calls onClick function when clicked', async () => {
     const onClickMock = vi.fn();
-    render(
-      <ThemeProvider theme={theme}>
-        <Button onClick={onClickMock}>My Button</Button>
-      </ThemeProvider>,
-    );
+    render(<Button onClick={onClickMock}>My Button</Button>);
 
     await userEvent.click(screen.getByText('My Button'));
 
@@ -48,21 +32,13 @@ describe('<Button />', () => {
   });
 
   it('renders icons', async () => {
-    render(
-      <ThemeProvider theme={theme}>
-        <Button icon={'PlusIcon'}>Label</Button>
-      </ThemeProvider>,
-    );
+    render(<Button icon={'PlusIcon'}>Label</Button>);
     const iconEl = screen.getByTestId('button-icon');
     expect(iconEl).toBeInTheDocument();
   });
 
   it('Not renders icons', async () => {
-    render(
-      <ThemeProvider theme={theme}>
-        <Button>Label</Button>
-      </ThemeProvider>,
-    );
+    render(<Button>Label</Button>);
     const iconEl = screen.queryByTestId('button-icon');
     expect(iconEl).toBeNull();
   });

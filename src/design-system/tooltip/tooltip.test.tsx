@@ -1,16 +1,11 @@
 import * as React from 'react';
 
-import {
-  fireEvent,
-  render,
-  screen,
-  waitFor,
-} from '../../tests/renderWithProviders';
+import { render, screen } from '../../tests/renderWithProviders';
 
 import { Tooltip } from '.';
-import { ThemeProvider } from 'styled-components';
+
 import { theme } from '../../styles/theme';
-import userEvent from '@testing-library/user-event';
+
 import 'jest-styled-components';
 
 describe('<Tooltip />', async () => {
