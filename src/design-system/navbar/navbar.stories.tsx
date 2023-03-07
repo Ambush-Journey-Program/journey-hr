@@ -1,9 +1,35 @@
 import { Meta, Story } from '@storybook/react';
-import { ThemeProvider } from 'styled-components';
-import { theme } from '../../styles/theme';
 import { NavBar } from './navbar';
 import { NavBarProps } from './type';
-import { navLinksJourneyHR, navLinksWebsite } from '../../navLinks';
+import { Link } from './type';
+
+const navLinksJourneyHR: Link[] = [
+  {
+    url: `/Interviews`,
+    label: `Interviews`,
+    active: false,
+  },
+  {
+    url: `/Happy-Hour`,
+    label: `Happy Hour`,
+    active: false,
+  },
+  {
+    url: `/Feedbacks`,
+    label: `Feedbacks`,
+    active: false,
+  },
+  {
+    url: `/Send-a-invite`,
+    label: `Send a Invite`,
+    active: false,
+  },
+  {
+    url: `/Shorty`,
+    label: `Shorty`,
+    active: false,
+  },
+];
 
 export default {
   component: NavBar,
