@@ -48,7 +48,7 @@ export const LogoContainer = styled.div`
   max-width: 3.75rem 2.5rem;
   justify-content: space-between;
 
-  span {
+  h1 {
     margin-left: 0.5625rem;
     color: ${(props) => props.theme.color.darkPurple};
     font-size: 18px;
