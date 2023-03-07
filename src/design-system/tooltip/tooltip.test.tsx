@@ -6,6 +6,7 @@ import { Tooltip } from '.';
 
 import { theme } from '../../styles/theme';
 import userEvent from '@testing-library/user-event';
+import 'jest-styled-components';
 
 import 'jest-styled-components';
 
