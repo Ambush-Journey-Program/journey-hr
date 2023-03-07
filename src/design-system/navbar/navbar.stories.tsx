@@ -12,11 +12,7 @@ export default {
 } as Meta;
 
 const Template: Story<NavBarProps> = (args) => {
-  return (
-    <ThemeProvider theme={theme}>
-      <NavBar {...args} />
-    </ThemeProvider>
-  );
+  return <NavBar {...args} />;
 };
 
 export const NavBarStory = Template.bind({});
