@@ -67,7 +67,7 @@ describe('<NavBar />', () => {
   it('renders the Nav. Bar', () => {
     render(
       <ThemeProvider theme={theme}>
-        <NavBar navigationLinks={navLinksJourneyHR}></NavBar>
+        <NavBar navigationLinks={navLinksJourneyHR} />
       </ThemeProvider>,
     );
 
@@ -78,7 +78,7 @@ describe('<NavBar />', () => {
   it('renders the Nav. Bar with the avatar profile picture', () => {
     render(
       <ThemeProvider theme={theme}>
-        <NavBar navigationLinks={navLinksWebsite}></NavBar>
+        <NavBar navigationLinks={navLinksWebsite} />
       </ThemeProvider>,
     );
     const avatarEl = screen.getByTestId('Avatar');
@@ -88,7 +88,7 @@ describe('<NavBar />', () => {
   it('renders the Nav. Bar and validate JourneyHR links quantity', () => {
     render(
       <ThemeProvider theme={theme}>
-        <NavBar navigationLinks={navLinksJourneyHR}></NavBar>
+        <NavBar navigationLinks={navLinksJourneyHR} />
       </ThemeProvider>,
     );
 
@@ -99,7 +99,7 @@ describe('<NavBar />', () => {
   it('renders the Nav. Bar and validate website links quantity', () => {
     render(
       <ThemeProvider theme={theme}>
-        <NavBar navigationLinks={navLinksWebsite}></NavBar>
+        <NavBar navigationLinks={navLinksWebsite} />
       </ThemeProvider>,
     );
 
