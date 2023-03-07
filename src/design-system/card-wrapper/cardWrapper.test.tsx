@@ -3,7 +3,7 @@ import { describe, expect } from 'vitest';
 
 import { render, screen } from '@testing-library/react';
 
-import CardWrapper from './cardWrapper';
+import { CardWrapper } from './cardWrapper';
 import { ThemeProvider } from 'styled-components';
 import { theme } from '../../styles/theme';
 
