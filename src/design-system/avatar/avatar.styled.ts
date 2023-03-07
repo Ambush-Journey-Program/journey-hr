@@ -22,16 +22,12 @@ const variants: Variants = {
 };
 
 export const Image = styled.img<AvatarProps>`
-  height: 7rem;
-  width: 7rem;
   border-radius: 7rem;
 
   @media ${devices.mobile} {
-    height: 4rem;
-    width: 4rem;
     border-radius: 4rem;
-    ${({ sizeVariant }) => variants[sizeVariant]}
+    ${variants['small']}
   }
 
-  ${({ sizeVariant }) => variants[sizeVariant]}
+  ${variants['small']}
 `;

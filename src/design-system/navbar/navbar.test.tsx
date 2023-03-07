@@ -6,7 +6,63 @@ import { render, screen } from '@testing-library/react';
 import { NavBar } from './navbar';
 import { ThemeProvider } from 'styled-components';
 import { theme } from '../../styles/theme';
-import { navLinksJourneyHR, navLinksWebsite } from '../../navLinks';
+
+type Link = {
+  url: string;
+  label: string;
+  active: boolean;
+};
+
+const navLinksJourneyHR: Link[] = [
+  {
+    url: `/Interviews`,
+    label: `Interviews`,
+    active: false,
+  },
+  {
+    url: `/Happy-Hour`,
+    label: `Happy Hour`,
+    active: false,
+  },
+  {
+    url: `/Feedbacks`,
+    label: `Feedbacks`,
+    active: false,
+  },
+  {
+    url: `/Send-a-invite`,
+    label: `Send a Invite`,
+    active: false,
+  },
+  {
+    url: `/Shorty`,
+    label: `Shorty`,
+    active: false,
+  },
+];
+
+const navLinksWebsite: Link[] = [
+  {
+    url: `/Why-us`,
+    label: `Why us`,
+    active: false,
+  },
+  {
+    url: `/Compliant`,
+    label: `Compliant`,
+    active: false,
+  },
+  {
+    url: `/Skill-&-Technology`,
+    label: `Skill & Technology`,
+    active: false,
+  },
+  {
+    url: `/Careers`,
+    label: `Careers`,
+    active: false,
+  },
+];
 
 describe('<NavBar />', () => {
   it('renders the Nav. Bar', () => {
@@ -30,7 +86,6 @@ describe('<NavBar />', () => {
     expect(avatarEl).toBeInTheDocument();
   });
 
-  //  Teste de quantidade link de acordo com NavLinks
   it('renders the Nav. Bar and validate JourneyHR links quantity', () => {
     render(
       <ThemeProvider theme={theme}>

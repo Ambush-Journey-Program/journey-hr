@@ -5,20 +5,17 @@ import { CardWrapper } from '../card-wrapper';
 import { NavBarProps } from './type';
 import { NavBarLinks } from './navbarlinks';
 
-console.log(AmbushLogo);
-
 export function NavBar({
   navigationLinks,
   avatarSrc = 'src/design-system/avatar/User-Photo.png',
 }: NavBarProps) {
-  console.log('teste');
   return (
     <Styled.NavBarWrapper data-testid="NavBar">
       <CardWrapper>
         <Styled.NavBar>
           <Styled.LogoContainer>
             <AmbushLogo />
-            <span>Ambush</span>
+            <h1>Ambush</h1>
           </Styled.LogoContainer>
           <NavBarLinks navigationLinks={navigationLinks} data-testid="Links" />
           <Avatar src={avatarSrc} sizeVariant="small" data-testid="Avatar" />

@@ -13,9 +13,6 @@ export const NavBar = styled.div`
   width: 100%;
   max-width: 100%;
   padding: 1.25rem 0;
-
-  @media ${devices.mobile} {
-  }
 `;
 
 export const LinkContainer = styled.ul`
