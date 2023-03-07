@@ -13,21 +13,20 @@ const variants: Variants = {
   large: css`
     height: 7rem;
     width: 7rem;
+    border-radius: 7rem;
   `,
 
   small: css`
     height: 4rem;
     width: 4rem;
+    border-radius: 4rem;
   `,
 };
 
 export const Image = styled.img<AvatarProps>`
-  border-radius: 7rem;
+  ${({ sizeVariant }) => variants[sizeVariant]}
 
   @media ${devices.mobile} {
-    border-radius: 4rem;
     ${variants['small']}
   }
-
-  ${variants['small']}
 `;
