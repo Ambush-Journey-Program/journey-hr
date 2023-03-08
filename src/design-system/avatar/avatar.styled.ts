@@ -1,14 +1,32 @@
-import styled from 'styled-components';
+import styled, { css, FlattenSimpleInterpolation } from 'styled-components';
 import { devices } from '../../styles/theme';
 
-export const Image = styled.img`
-  height: 7rem;
-  width: 7rem;
-  border-radius: 7rem;
+type AvatarProps = {
+  sizeVariant: string;
+};
 
-  @media ${devices.mobile} {
+type Variants = {
+  [key: string]: FlattenSimpleInterpolation;
+};
+
+const variants: Variants = {
+  large: css`
+    height: 7rem;
+    width: 7rem;
+    border-radius: 7rem;
+  `,
+
+  small: css`
     height: 4rem;
     width: 4rem;
     border-radius: 4rem;
+  `,
+};
+
+export const Image = styled.img<AvatarProps>`
+  ${({ sizeVariant }) => variants[sizeVariant]}
+
+  @media ${devices.mobile} {
+    ${variants['small']}
   }
 `;

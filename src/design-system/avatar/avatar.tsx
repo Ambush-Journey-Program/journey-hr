@@ -1,6 +1,13 @@
 import * as Styled from './avatar.styled';
 import { AvatarProps } from './types';
 
-export function Avatar({ ...props }: AvatarProps) {
-  return <Styled.Image data-testid="Avatar" {...props} />;
+export function Avatar({ src, sizeVariant = 'small', ...props }: AvatarProps) {
+  return (
+    <Styled.Image
+      data-testid="Avatar"
+      src={src}
+      sizeVariant={sizeVariant}
+      {...props}
+    />
+  );
 }
