@@ -3,7 +3,6 @@ import { describe, expect } from 'vitest';
 import { theme } from '../../styles/theme';
 
 import { render, screen } from '../../tests/renderWithProviders';
-
 import CardWrapper from './cardWrapper';
 
 describe('<CardWrapper />', () => {

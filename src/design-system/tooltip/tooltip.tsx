@@ -9,7 +9,6 @@ export function Tooltip({
   return (
     <Styled.TooltipWrapper data-testid="wrapper">
       {children}
-
       <Styled.TooltipBox data-testid="popUp" variantPosition={variantPosition}>
         {text}
       </Styled.TooltipBox>

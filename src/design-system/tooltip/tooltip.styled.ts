@@ -70,6 +70,7 @@ const variants: Variants = {
 };
 
 export const TooltipBox = styled.span<StyledProps>`
+
   position: absolute;
   width: 100%;
   background-color: ${(props) => props.theme.color.white};
@@ -83,6 +84,7 @@ export const TooltipBox = styled.span<StyledProps>`
   font-size: 0.75rem;
   box-shadow: 0 0.25rem 0.875rem rgba(0, 0, 0, 0.15),
     0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+  overflow-wrap: break-word;
   visibility: hidden;
 
   &:after {
