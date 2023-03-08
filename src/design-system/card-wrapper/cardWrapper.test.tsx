@@ -1,9 +1,7 @@
 import * as React from 'react';
 import { describe, expect } from 'vitest';
-import { theme } from '../../styles/theme';
-
 import { render, screen } from '../../tests/renderWithProviders';
-import CardWrapper from './cardWrapper';
+import { CardWrapper } from './cardWrapper';
 
 describe('<CardWrapper />', () => {
   it('renders the CardWrapper with a child string', () => {

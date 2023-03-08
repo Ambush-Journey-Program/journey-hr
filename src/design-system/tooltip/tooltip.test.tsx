@@ -7,9 +7,8 @@ import { Tooltip } from '.';
 import { theme } from '../../styles/theme';
 
 import 'jest-styled-components';
-
 describe('<Tooltip />', async () => {
-  it.skip('should be visible when hovering the child element', async () => {
+  it('should be visible when hovering the child element', async () => {
     const text = 'Hi';
     render(<Tooltip text={text}>Hover me</Tooltip>);
     expect(screen.getByText(text)).toHaveStyleRule(

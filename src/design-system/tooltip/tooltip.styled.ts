@@ -37,7 +37,6 @@ const variants: Variants = {
     top: 50%;
     transform: translateY(-50%);
     left: calc(100% + 15px);
-
     &:after {
       border-color: transparent #${(props) => props.theme.color.white} transparent
         transparent;
@@ -70,7 +69,6 @@ const variants: Variants = {
 };
 
 export const TooltipBox = styled.span<StyledProps>`
-
   position: absolute;
   width: 100%;
   background-color: ${(props) => props.theme.color.white};
@@ -86,7 +84,6 @@ export const TooltipBox = styled.span<StyledProps>`
     0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
   overflow-wrap: break-word;
   visibility: hidden;
-
   &:after {
     content: '';
     z-index: 10;
@@ -99,6 +96,5 @@ export const TooltipBox = styled.span<StyledProps>`
     left: calc(50% - 0.5rem);
     top: 100%;
   }
-
   ${({ variantPosition }) => variants[variantPosition]}
 `;
