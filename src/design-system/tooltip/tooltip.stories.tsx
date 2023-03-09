@@ -16,11 +16,7 @@ export default {
 } as Meta;
 
 const Template: Story<ITooltipProps> = (args) => {
-  return (
-    <ThemeProvider theme={theme}>
-      <Tooltip {...args} />
-    </ThemeProvider>
-  );
+  return <Tooltip {...args} />;
 };
 
 export const TooltipStory = Template.bind({});
