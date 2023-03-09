@@ -23,4 +23,5 @@ const Template: Story<AvatarProps> = (args) => {
 export const SelectCardStory = Template.bind({});
 SelectCardStory.args = {
   src: 'src/design-system/avatar/User-Photo.png',
+  sizeVariant: 'small',
 };
