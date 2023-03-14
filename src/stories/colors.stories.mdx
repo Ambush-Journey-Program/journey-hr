@@ -1,0 +1,42 @@
+import { Meta, ColorPalette, ColorItem } from '@storybook/addon-docs';
+
+<Meta title="Docs/Colors" />
+
+# Solid Colors
+
+<style>
+  {`
+.colors{
+  
+}
+`}
+</style>
+
+<div className="colors">
+  <h2>Brand Colors</h2>
+  <ColorPalette className="group_Colors">
+    <ColorItem title="red" colors={['#EC6D75']} />
+    <ColorItem title="purple" colors={['#9B9AD6']} />
+    <ColorItem title="yellow" colors={['#FFCE3E']} />
+    <ColorItem title="dark" colors={['#422D5F']} />
+    <ColorItem title="light" colors={['#FAF7F3']} />
+  </ColorPalette>
+
+<h2>Auxiliary</h2>
+<ColorPalette className="group_Colors">
+  <ColorItem title="white" colors={['#FFFFFF']} />
+  <ColorItem title="white dark mode" colors={['#735D93']} />
+  <ColorItem title="blue" colors={['#48B6E5']} />
+</ColorPalette>
+
+  <ColorPalette className="group_Colors">
+  
+    <ColorItem title="Text" colors={{
+      highContrast: '#45365A',
+      mediumContrast: '#5C4C73',
+      lowContrast: '#9588A9',
+      lowestConttrast: '#CDC5D9',
+    }} />
+  
+  </ColorPalette>
+</div>
