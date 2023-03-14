@@ -2,18 +2,33 @@ import { Meta, ColorPalette, ColorItem } from '@storybook/addon-docs';
 
 <Meta title="Docs/Colors" />
 
-# Solid Colors
-
 <style>
   {`
 .colors{
   
+  
+}
+h2{
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 40px;
+  color: #301F47;
+}
+
+h3{
+  margin-top:30px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 150%;
+  color: #301F47;
+  margin-bottom:30px;
 }
 `}
 </style>
 
-<div className="colors">
-  <h2>Brand Colors</h2>
+<div className="colors_Solid">
+  <h2>Solid Colors</h2>
+  <h3>Brand Colors</h3>
   <ColorPalette className="group_Colors">
     <ColorItem title="red" colors={['#EC6D75']} />
     <ColorItem title="purple" colors={['#9B9AD6']} />
@@ -21,22 +36,63 @@ import { Meta, ColorPalette, ColorItem } from '@storybook/addon-docs';
     <ColorItem title="dark" colors={['#422D5F']} />
     <ColorItem title="light" colors={['#FAF7F3']} />
   </ColorPalette>
-
-<h2>Auxiliary</h2>
-<ColorPalette className="group_Colors">
-  <ColorItem title="white" colors={['#FFFFFF']} />
-  <ColorItem title="white dark mode" colors={['#735D93']} />
-  <ColorItem title="blue" colors={['#48B6E5']} />
+  <h3>Auxiliary</h3>
+  <ColorPalette className="group_Colors">
+    <ColorItem title="white" colors={['#FFFFFF']} />
+    <ColorItem title="white dark mode" colors={['#735D93']} />
+    <ColorItem title="blue" colors={['#48B6E5']} />
 </ColorPalette>
 
+  <h3>Text</h3>
   <ColorPalette className="group_Colors">
-  
-    <ColorItem title="Text" colors={{
-      highContrast: '#45365A',
-      mediumContrast: '#5C4C73',
-      lowContrast: '#9588A9',
-      lowestConttrast: '#CDC5D9',
-    }} />
-  
+    <ColorItem
+      title="Text"
+      colors={{
+        highContrast: '#45365A',
+        mediumContrast: '#5C4C73',
+        lowContrast: '#9588A9',
+        lowestContrast: '#CDC5D9',
+      }}
+    />
   </ColorPalette>
 </div>
+
+<h2>Gradients</h2>
+<h3>Brand Colors / Up</h3>
+<ColorPalette className="group_Colors">
+  <ColorItem
+    title="red"
+    colors={['linear-gradient(180deg, #EB7474 0%, #FF8E8E 100%)']}
+  />
+  <ColorItem
+    title="purple"
+    colors={['linear-gradient(0.46deg, #BBBAE2 0.45%, #7F7FCF 122.9%)']}
+  />
+  <ColorItem
+    title="yellow"
+    colors={['linear-gradient(0deg, #FCE258 0%, #FFC063 100%)']}
+  />
+  <ColorItem
+    title="light"
+    colors={[' linear-gradient(0deg, #FCFBF8 0%, #F7F3EE 100.74%)']}
+  />
+</ColorPalette>
+<h3>Brand Colors / Down</h3>
+<ColorPalette className="group_Colors">
+  <ColorItem
+    title="red"
+    colors={['linear-gradient(180deg, #FF8E8E 0%, #EB7474 100%)']}
+  />
+  <ColorItem
+    title="purple"
+    colors={[' linear-gradient(0.46deg, #7F7FCF 0.45%, #BBBAE2 122.9%)']}
+  />
+  <ColorItem
+    title="yellow"
+    colors={['linear-gradient(0deg, #FFC063 0%, #FCE258 100%)']}
+  />
+  <ColorItem
+    title="light"
+    colors={['linear-gradient(0deg, #FCFBF8 0%, #F6F3EE 100.74%)']}
+  />
+</ColorPalette>
