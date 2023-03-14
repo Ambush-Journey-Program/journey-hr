@@ -72,7 +72,7 @@ export const TooltipBox = styled.span<StyledProps>`
   position: absolute;
   width: 100%;
   background-color: ${(props) => props.theme.color.white};
-  color: ${(props) => props.theme.color.purple};
+  color: ${(props) => props.theme.color.contrasts.highContrast};
   text-align: center;
   border-radius: 0.938rem;
   padding: 0.75rem;

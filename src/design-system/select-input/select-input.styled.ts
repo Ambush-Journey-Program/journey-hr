@@ -32,7 +32,7 @@ export const Legend = styled.legend<StyledProps>`
   font-weight: 300;
   font-size: 0.875rem;
   line-height: 150%;
-  color: ${(props) => props.theme.color.veryDarkPurple};
+  color: ${(props) => props.theme.color.contrasts.mediumContrast};
 `;
 
 export const Select = styled.select<StyledSelectProps>`

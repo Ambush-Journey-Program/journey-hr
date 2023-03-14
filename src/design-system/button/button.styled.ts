@@ -65,7 +65,7 @@ const variants: Variants = {
 const colorVariants: ColorVariant = {
   defaultColor: {
     defaultType: css`
-      color: ${(props) => props.theme.color.grayish};
+      color: ${(props) => props.theme.color.light};
       background-color: ${(props) => props.theme.color.red};
     `,
     outlined: css`
@@ -74,21 +74,21 @@ const colorVariants: ColorVariant = {
       border: solid 1px ${(props) => props.theme.color.red};
 
       &:hover {
-        background-color: ${(props) => props.theme.color.lightred};
+        background-color: ${(props) => props.theme.color.red};
         opacity: 1;
       }
     `,
     ghost: css`
-      color: ${(props) => props.theme.color.purple};
+      color: ${(props) => props.theme.color.contrasts.highContrast};
       background-color: transparent;
 
       svg {
-        fill: ${(props) => props.theme.color.purple};
+        fill: ${(props) => props.theme.color.contrasts.highContrast};
       }
 
       &:hover {
         opacity: 1;
-        border-bottom: solid 2px ${(props) => props.theme.color.blue};
+        border-bottom: solid 2px ${(props) => props.theme.color.purple};
         border-radius: 0;
       }
     `,
@@ -96,24 +96,7 @@ const colorVariants: ColorVariant = {
 
   blue: {
     defaultType: css`
-      color: ${(props) => props.theme.color.grayish};
-      background-color: ${(props) => props.theme.color.blue};
-    `,
-    outlined: css`
-      color: ${(props) => props.theme.color.blue};
-      background-color: transparent;
-      border: solid 1px ${(props) => props.theme.color.blue};
-
-      &:hover {
-        background-color: ${(props) => props.theme.color.grayish};
-        opacity: 1;
-      }
-    `,
-  },
-
-  purple: {
-    defaultType: css`
-      color: ${(props) => props.theme.color.grayish};
+      color: ${(props) => props.theme.color.light};
       background-color: ${(props) => props.theme.color.purple};
     `,
     outlined: css`
@@ -122,7 +105,24 @@ const colorVariants: ColorVariant = {
       border: solid 1px ${(props) => props.theme.color.purple};
 
       &:hover {
-        background-color: ${(props) => props.theme.color.grayish};
+        background-color: ${(props) => props.theme.color.light};
+        opacity: 1;
+      }
+    `,
+  },
+
+  purple: {
+    defaultType: css`
+      color: ${(props) => props.theme.color.light};
+      background-color: ${(props) => props.theme.color.contrasts.highContrast};
+    `,
+    outlined: css`
+      color: ${(props) => props.theme.color.contrasts.highContrast};
+      background-color: transparent;
+      border: solid 1px ${(props) => props.theme.color.contrasts.highContrast};
+
+      &:hover {
+        background-color: ${(props) => props.theme.color.light};
         opacity: 1;
       }
     `,
@@ -131,27 +131,27 @@ const colorVariants: ColorVariant = {
 
 const disabledButton: DisabledButton = {
   defaultType: css`
-    background-color: ${(props) => props.theme.color.disable};
+    background-color: ${(props) => props.theme.color.light};
 
     &:hover {
-      background-color: ${(props) => props.theme.color.disable};
+      background-color: ${(props) => props.theme.color.light};
       opacity: 1;
     }
   `,
   outlined: css`
     background-color: transparent;
-    color: ${(props) => props.theme.color.disable};
-    border: solid 1px ${(props) => props.theme.color.disable};
+    color: ${(props) => props.theme.color.light};
+    border: solid 1px ${(props) => props.theme.color.light};
 
     &:hover {
       background-color: transparent;
     }
   `,
   ghost: css`
-    color: ${(props) => props.theme.color.lightPurple};
+    color: ${(props) => props.theme.color.contrasts.lowContrast};
 
     svg {
-      fill: ${(props) => props.theme.color.lightPurple};
+      fill: ${(props) => props.theme.color.contrasts.lowContrast};
     }
 
     &:hover {

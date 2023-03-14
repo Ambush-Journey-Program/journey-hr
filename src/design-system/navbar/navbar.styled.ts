@@ -29,7 +29,7 @@ export const LinkContainer = styled.ul`
       text-decoration: none;
       font-size: 16px;
       font-weight: 600;
-      color: ${(props) => props.theme.color.purple};
+      color: ${(props) => props.theme.color.contrasts.highContrast};
     }
   }
   li:first-of-type {
