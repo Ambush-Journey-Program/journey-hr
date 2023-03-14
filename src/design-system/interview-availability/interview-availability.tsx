@@ -1,11 +1,8 @@
-import { Input } from '../input';
+import { SelectInput } from '../select-input';
 import * as Styled from './interview-availability.styled';
 import { IInterviewAvailabilityProps } from './types';
 
-export function InterviewAvailability({
-  placeholder,
-  ...props
-}: IInterviewAvailabilityProps) {
+export function InterviewAvailability(IInterviewAvailabilityProps) {
   return (
     <>
       <Styled.InterviewAvailability>
@@ -14,10 +11,10 @@ export function InterviewAvailability({
           Schedule a technical interview for a candidate.
         </Styled.Subtitle>
       </Styled.InterviewAvailability>
-      <Input label={'Date:'}></Input>
-      <Input label={'Shift:'}></Input>
-      <Input label={'Area:'}></Input>
-      <Input label={'Opportunity:'}></Input>
+      <SelectInput label={'Date:'}></SelectInput>
+      <SelectInput label={'Shift:'}></SelectInput>
+      <SelectInput label={'Area:'}></SelectInput>
+      <SelectInput label={'Opportunity:'}></SelectInput>
     </>
   );
 }
