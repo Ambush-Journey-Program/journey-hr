@@ -1,5 +1,4 @@
 import { Meta, Story } from '@storybook/react';
-
 import { InterviewAvailability } from './interview-availability';
 import { IInterviewAvailabilityProps } from './types';
 
@@ -23,7 +22,7 @@ export default {
   title: 'UI/InterviewAvailability',
   parameters: {
     isLoading: false,
-    label: 'InterviewAvailability text',
+    title: 'InterviewAvailability text',
     options: exampleOptions,
     required: true,
   },
@@ -35,7 +34,7 @@ const Template: Story<IInterviewAvailabilityProps> = (args) => {
 
 export const InterviewAvailabilityStory = Template.bind({});
 InterviewAvailabilityStory.args = {
-  label: 'Title',
-  required: true,
+  title: 'Title',
   options: exampleOptions,
+  required: true,
 };
