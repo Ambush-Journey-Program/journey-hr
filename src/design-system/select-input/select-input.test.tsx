@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { describe, expect } from 'vitest';
 import { render, screen } from '../../tests/renderWithProviders';
 import { SelectInput } from './select-input';
