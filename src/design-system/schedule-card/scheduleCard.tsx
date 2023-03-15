@@ -5,7 +5,7 @@ import { Button } from '../button';
 
 export function ScheduleCard({ interviews }: ScheduleCardProps) {
   return (
-    <Styled.scheduleCardWrapper>
+    <Styled.scheduleCardWrapper data-testid="ScheduleCard">
       <CardWrapper>
         <div>
           {interviews.map((interview) => (
@@ -18,7 +18,13 @@ export function ScheduleCard({ interviews }: ScheduleCardProps) {
                   <p>{details.interviewTime}</p>
                 </li>
               ))}
-              <Button icon="CalendarIcon">Schedule</Button>
+              <Button
+                data-testid="Button"
+                icon="CalendarIcon"
+                onClick={() => {}}
+              >
+                Schedule
+              </Button>
             </Styled.scheduleCardList>
           ))}
         </div>
