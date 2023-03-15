@@ -9,6 +9,7 @@ export function SelectInput({
   required,
   onSelect,
   disabled,
+  placeholder,
   ...props
 }: ISelectInputProps) {
   function handleSelect(event: ChangeEvent<HTMLSelectElement>) {
@@ -27,7 +28,7 @@ export function SelectInput({
         onChange={handleSelect}
         {...props}
       >
-        <option value="">Selecione uma opção...</option>
+        <option value="">{placeholder ?? 'Selecione uma opção...'}</option>
         {options.map((option) => (
           <option key={option.value} value={option.value}>
             {option.label}

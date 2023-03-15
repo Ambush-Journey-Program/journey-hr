@@ -31,7 +31,7 @@ const spanOptional = css`
   display: block;
 `;
 export const Wrapper = styled.div<StyleWrapper>`
-  width: 391px;
+  /* width: 391px; */
   ${({ error }) => error && spanError}
 `;
 
@@ -63,7 +63,7 @@ export const Input = styled.label`
 export const InputContainer = styled.div<StyledInputProps>`
   display: flex;
   align-items: center;
-  width: 391px;
+  /* width: 391px; */
   height: 52px;
   font-style: normal;
   font-weight: 300;
@@ -82,7 +82,7 @@ export const InputContainer = styled.div<StyledInputProps>`
     border: 1px solid ${(props) => props.theme.color.brandColors.purple};
   }
   & input {
-    width: 329px;
+    /* width: 329px; */
     outline: none;
     border: none;
   }

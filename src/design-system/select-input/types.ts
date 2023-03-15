@@ -10,6 +10,7 @@ export type ISelectInputProps = SelectHTMLAttributes<HTMLSelectElement> & {
   options: Option[];
   error?: string;
   onSelect?: (selectedValue: string) => void;
+  placeholder?: string;
 };
 
 export type StyledProps = {

@@ -1,59 +1,59 @@
 export const exampleDate = [
   {
     label: '01/04/2024',
-    value: '1',
+    value: '01/04/2024',
   },
   {
     label: '01/05/2024',
-    value: '2',
+    value: '01/05/2024',
   },
   {
     label: '01/06/2024',
-    value: '3',
+    value: '01/06/2024',
   },
 ];
 
 export const exampleOptions = [
   {
     label: 'Morning',
-    value: '1',
+    value: 'morning',
   },
   {
     label: 'Afternoon',
-    value: '2',
+    value: 'afternoon',
   },
   {
     label: 'Evening',
-    value: '3',
+    value: 'evening',
   },
 ];
 
 export const exampleAre = [
   {
     label: 'Frontend',
-    value: '1',
+    value: 'brontend',
   },
   {
     label: 'Backend',
-    value: '2',
+    value: 'backend',
   },
   {
     label: 'Devops',
-    value: '3',
+    value: 'devops',
   },
 ];
 
 export const exampleOpportunity = [
   {
     label: 'React Developer',
-    value: '1',
+    value: 'react developer',
   },
   {
     label: 'Java Developer',
-    value: '2',
+    value: 'java developer',
   },
   {
     label: 'Product Designer',
-    value: '3',
+    value: 'product designer',
   },
 ];
