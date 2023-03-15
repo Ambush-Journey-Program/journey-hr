@@ -23,7 +23,7 @@ export default {
   parameters: {
     isLoading: false,
     title: 'InterviewAvailability text',
-    options: exampleOptions,
+    // options: exampleOptions,
     required: true,
   },
 } as Meta;
@@ -35,6 +35,6 @@ const Template: Story<IInterviewAvailabilityProps> = (args) => {
 export const InterviewAvailabilityStory = Template.bind({});
 InterviewAvailabilityStory.args = {
   title: 'Title',
-  options: exampleOptions,
+  // options: exampleOptions,
   required: true,
 };

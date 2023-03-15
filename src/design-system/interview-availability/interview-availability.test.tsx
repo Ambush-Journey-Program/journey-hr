@@ -10,7 +10,7 @@ describe('<InterviewAvailability />', () => {
       const label = 'it works';
       const props = { label };
 
-      render(<InterviewAvailability {...props} />);
+      render(<InterviewAvailability required={true} {...props} />);
       const labelSpan = screen.getByText(label);
 
       expect(labelSpan).toBeInTheDocument();

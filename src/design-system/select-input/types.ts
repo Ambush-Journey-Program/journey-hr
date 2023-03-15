@@ -7,7 +7,7 @@ type Option = {
 
 export type ISelectInputProps = SelectHTMLAttributes<HTMLSelectElement> & {
   title?: string;
-  options?: Option[];
+  options: Option[];
   error?: string;
   onSelect?: (selectedValue: string) => void;
 };
