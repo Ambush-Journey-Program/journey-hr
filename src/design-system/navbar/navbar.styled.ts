@@ -29,7 +29,7 @@ export const LinkContainer = styled.ul`
       text-decoration: none;
       font-size: 16px;
       font-weight: 600;
-      color: ${(props) => props.theme.color.purple};
+      color: ${(props) => props.theme.color.contrasts.highContrast};
     }
   }
   li:first-of-type {
@@ -50,7 +50,7 @@ export const LogoContainer = styled.div`
 
   h1 {
     margin-left: 0.5625rem;
-    color: ${(props) => props.theme.color.darkPurple};
+    color: ${(props) => props.theme.color.brandColors.darkPurple};
     font-size: 18px;
     font-weight: 700;
   }

@@ -8,7 +8,7 @@ export const SpanRequired = styled.span`
 
 export const SpanError = styled.span<StyledProps>`
   display: block;
-  color: ${(props) => props.theme.color.red};
+  color: ${(props) => props.theme.color.auxiliary.error};
   margin-top: 0.25rem;
   font-weight: 400;
   font-size: 0.75rem;
@@ -16,8 +16,8 @@ export const SpanError = styled.span<StyledProps>`
 `;
 
 const errorDisplay = css`
-  color: ${(props) => props.theme.color.red};
-  border: ${(props) => `1px solid ${props.theme.color.red}`};
+  color: ${(props) => props.theme.color.auxiliary.error};
+  border: ${(props) => `1px solid ${props.theme.color.auxiliary.error}`};
 `;
 
 export const Wrapper = styled.div<StyleWrapper>`
@@ -32,7 +32,7 @@ export const Legend = styled.legend<StyledProps>`
   font-weight: 300;
   font-size: 0.875rem;
   line-height: 150%;
-  color: ${(props) => props.theme.color.veryDarkPurple};
+  color: ${(props) => props.theme.color.contrasts.mediumContrast};
 `;
 
 export const Select = styled.select<StyledSelectProps>`

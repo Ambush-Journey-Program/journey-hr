@@ -19,4 +19,5 @@ const Template: Story<IButtonProps> = (args) => {
 export const ButtonStory = Template.bind({});
 ButtonStory.args = {
   children: 'Button',
+  disabled: false,
 };

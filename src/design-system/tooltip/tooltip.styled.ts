@@ -27,7 +27,7 @@ const variants: Variants = {
     top: 50%;
     right: calc(100% + 15px);
     &:after {
-      border-color: transparent transparent transparent #${(props) => props.theme.color.white};
+      border-color: transparent transparent transparent #${(props) => props.theme.color.auxiliary.white};
       left: calc(100% + -1.5px);
       top: calc(50% + -0.5rem);
       transform: rotate(-90deg);
@@ -38,8 +38,8 @@ const variants: Variants = {
     transform: translateY(-50%);
     left: calc(100% + 15px);
     &:after {
-      border-color: transparent #${(props) => props.theme.color.white} transparent
-        transparent;
+      border-color: transparent #${(props) => props.theme.color.auxiliary.white}
+        transparent transparent;
       right: calc(100% + -1.5px);
       left: unset;
       top: calc(50% - 0.5rem);
@@ -52,7 +52,7 @@ const variants: Variants = {
     transform: translateX(-50%);
     &:after {
       border-color: transparent transparent #${(props) =>
-          props.theme.color.white} transparent;
+          props.theme.color.auxiliary.white} transparent;
       top: unset;
       width: 1px;
       bottom: 100%;
@@ -71,8 +71,8 @@ const variants: Variants = {
 export const TooltipBox = styled.span<StyledProps>`
   position: absolute;
   width: 100%;
-  background-color: ${(props) => props.theme.color.white};
-  color: ${(props) => props.theme.color.purple};
+  background-color: ${(props) => props.theme.color.auxiliary.white};
+  color: ${(props) => props.theme.color.contrasts.highContrast};
   text-align: center;
   border-radius: 0.938rem;
   padding: 0.75rem;
@@ -91,8 +91,8 @@ export const TooltipBox = styled.span<StyledProps>`
     width: 0.063rem;
     border-width: 0.5rem;
     border-style: solid;
-    border-color: ${(props) => props.theme.color.white} transparent transparent
-      transparent;
+    border-color: ${(props) => props.theme.color.auxiliary.white} transparent
+      transparent transparent;
     left: calc(50% - 0.5rem);
     top: 100%;
   }
