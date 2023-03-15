@@ -29,15 +29,13 @@ export function InterviewAvailability(props: { callBack: Function }) {
         </div>
         <div>
           <Styled.Form action="">
-            <Input label={'Testando'}></Input>
-            <SelectInput
-              title={'Date:'}
+            <Input
+              label={'Date:'}
               placeholder={'01/06/2025'}
               required
-              options={exampleDate}
               value={inputData}
               onChange={(e) => setInputData(e.target.value)}
-            ></SelectInput>
+            ></Input>
             <SelectInput
               title={'Area:'}
               placeholder={'UX Designer'}

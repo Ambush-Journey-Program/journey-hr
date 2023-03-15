@@ -39,7 +39,6 @@ export const Label = styled.label<StyledLabelProps>`
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  font-family: mundial, sans-serif;
   font-style: normal;
   font-weight: 300;
   font-size: 14px;
@@ -63,7 +62,6 @@ export const Input = styled.label`
 export const InputContainer = styled.div<StyledInputProps>`
   display: flex;
   align-items: center;
-  /* width: 391px; */
   height: 52px;
   font-style: normal;
   font-weight: 300;
@@ -82,7 +80,6 @@ export const InputContainer = styled.div<StyledInputProps>`
     border: 1px solid ${(props) => props.theme.color.brandColors.purple};
   }
   & input {
-    /* width: 329px; */
     outline: none;
     border: none;
   }
