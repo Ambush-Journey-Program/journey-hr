@@ -3,17 +3,17 @@ import styled, { css } from 'styled-components';
 import { StyledLabelProps, StyledInputProps, StyleWrapper } from './types';
 
 const disabledInput = css`
-  background-color: ${(props) => props.theme.color.light};
+  background-color: ${(props) => props.theme.color.brandColors.light};
 `;
 const spanError = css`
   display: block;
-  color: ${(props) => props.theme.color.red};
+  color: ${(props) => props.theme.color.auxiliary.error};
   margin-top: 4px;
   font-weight: 400;
   font-size: 12px;
   line-height: 18px;
   & input::placeholder {
-    color: ${(props) => props.theme.color.red};
+    color: ${(props) => props.theme.color.auxiliary.error};
     border-color: red;
   }
 
@@ -23,8 +23,8 @@ const spanError = css`
 `;
 
 const errorDisplay = css`
-  color: ${(props) => props.theme.color.red};
-  border: ${(props) => `1px solid ${props.theme.color.red}`};
+  color: ${(props) => props.theme.color.auxiliary.error};
+  border: ${(props) => `1px solid ${props.theme.color.auxiliary.error}`};
 `;
 
 const spanOptional = css`
@@ -79,7 +79,7 @@ export const InputContainer = styled.div<StyledInputProps>`
   &:focus-within {
     outline: none;
     box-shadow: 0 0 2px ${(props) => props.theme.color.contrasts.mediumContrast};
-    border: 1px solid ${(props) => props.theme.color.purple};
+    border: 1px solid ${(props) => props.theme.color.brandColors.purple};
   }
   & input {
     width: 329px;

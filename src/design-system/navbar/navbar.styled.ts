@@ -50,7 +50,7 @@ export const LogoContainer = styled.div`
 
   h1 {
     margin-left: 0.5625rem;
-    color: ${(props) => props.theme.color.darkPurple};
+    color: ${(props) => props.theme.color.brandColors.darkPurple};
     font-size: 18px;
     font-weight: 700;
   }
