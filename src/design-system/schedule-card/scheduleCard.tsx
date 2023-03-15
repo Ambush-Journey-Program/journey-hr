@@ -10,9 +10,9 @@ export function ScheduleCard({ interviews }: ScheduleCardProps) {
         <div>
           {interviews.map((interview) => (
             <Styled.scheduleCardList>
-              <h2>Option #{interview.option}</h2>
+              <h2 key={interview.option}>Option #{interview.option}</h2>
               {interview.interviewList.map((details) => (
-                <li>
+                <li key={details.title}>
                   <h3>{details.title}</h3>
                   <p>{details.interviewerName}</p>
                   <p>{details.interviewTime}</p>
