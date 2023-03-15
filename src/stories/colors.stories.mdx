@@ -1,4 +1,5 @@
 import { Meta, ColorPalette, ColorItem } from '@storybook/addon-docs';
+import { theme } from '../styles/theme';
 
 <Meta title="Docs/Colors" />
 
@@ -27,20 +28,23 @@ h3{
   <h2>Solid Colors</h2>
   <h3>Brand Colors</h3>
   <ColorPalette className="group_Colors">
-    <ColorItem title="red" colors={['#EC6D75']} />
-    <ColorItem title="purple" colors={['#9B9AD6']} />
-    <ColorItem title="yellow" colors={['#FFCE3E']} />
-    <ColorItem title="dark" colors={['#422D5F']} />
-    <ColorItem title="light" colors={['#FAF7F3']} />
+    <ColorItem title="red" colors={[theme.color.brandColors.red]} />
+    <ColorItem title="purple" colors={[theme.color.brandColors.purple]} />
+    <ColorItem title="yellow" colors={[theme.color.brandColors.yellow]} />
+    <ColorItem title="dark" colors={[theme.color.brandColors.dark]} />
+    <ColorItem title="light" colors={[theme.color.brandColors.light]} />
   </ColorPalette>
 
 <h3>Auxiliary</h3>
 <ColorPalette className="group_Colors">
-  <ColorItem title="white" colors={['#FFFFFF']} />
-  <ColorItem title="white dark mode" colors={['#735D93']} />
-  <ColorItem title="blue" colors={['#48B6E5']} />
-  <ColorItem title="error" colors={['#D94949']} />
-  <ColorItem title="accepted" colors={['#49D971']} />
+  <ColorItem title="white" colors={[theme.color.auxiliary.white]} />
+  <ColorItem
+    title="white dark mode"
+    colors={[theme.color.auxiliary.whiteDarkMode]}
+  />
+  <ColorItem title="blue" colors={[theme.color.auxiliary.blue]} />
+  <ColorItem title="error" colors={[theme.color.auxiliary.error]} />
+  <ColorItem title="accepted" colors={[theme.color.auxiliary.accepted]} />
 </ColorPalette>
 
   <h3>Text</h3>
@@ -48,11 +52,11 @@ h3{
     <ColorItem
       title="Text"
       colors={{
-        highContrast: '#45365A',
-        mediumContrast: '#5C4C73',
-        lowContrast: '#9588A9',
-        lowestContrast: '#CDC5D9',
-        lightContrast:'#F7F4FA',
+        highContrast: theme.color.contrasts.highContrast,
+        mediumContrast: theme.color.contrasts.mediumContrast,
+        lowContrast: theme.color.contrasts.lowContrast,
+        lowestContrast: theme.color.contrasts.lowestContrast,
+        lightContrast:theme.color.contrasts.lightContrast,
       }}
     />
   </ColorPalette>
@@ -60,49 +64,28 @@ h3{
 
 <h2>Button</h2>
 <ColorPalette className="group_Colors">
-  <ColorItem title="primary" colors={['#EC6D75']} />
-  <ColorItem title="primary|hover" colors={['#C0444C']} />
-  <ColorItem title="secondary" colors={['#9B9AD6']} />
-  <ColorItem title="secondary|hover" colors={['#6866BE']} />
-  <ColorItem title="disabled" colors={['#F7F4FA']} />
+  <ColorItem title="primary" colors={[theme.color.button.primary]} />
+  <ColorItem title="primary|hover" colors={[theme.color.button.primaryHover]} />
+  <ColorItem title="secondary" colors={[theme.color.button.secondary]} />
+  <ColorItem
+    title="secondary|hover"
+    colors={[theme.color.button.secondaryHover]}
+  />
+  <ColorItem title="disabled" colors={[theme.color.button.disabled]} />
 </ColorPalette>
 
 <h2>Gradients</h2>
 <h3>Brand Colors / Up</h3>
 <ColorPalette className="group_Colors">
-  <ColorItem
-    title="red"
-    colors={['linear-gradient(180deg, #EB7474 0%, #FF8E8E 100%)']}
-  />
-  <ColorItem
-    title="purple"
-    colors={['linear-gradient(0.46deg, #BBBAE2 0.45%, #7F7FCF 122.9%)']}
-  />
-  <ColorItem
-    title="yellow"
-    colors={['linear-gradient(0deg, #FCE258 0%, #FFC063 100%)']}
-  />
-  <ColorItem
-    title="light"
-    colors={[' linear-gradient(0deg, #FCFBF8 0%, #F7F3EE 100.74%)']}
-  />
+  <ColorItem title="red" colors={[theme.color.gradients.up.red]} />
+  <ColorItem title="purple" colors={[theme.color.gradients.up.purple]} />
+  <ColorItem title="yellow" colors={[theme.color.gradients.up.yellow]} />
+  <ColorItem title="light" colors={[theme.color.gradients.up.light]} />
 </ColorPalette>
 <h3>Brand Colors / Down</h3>
 <ColorPalette className="group_Colors">
-  <ColorItem
-    title="red"
-    colors={['linear-gradient(180deg, #FF8E8E 0%, #EB7474 100%)']}
-  />
-  <ColorItem
-    title="purple"
-    colors={[' linear-gradient(0.46deg, #7F7FCF 0.45%, #BBBAE2 122.9%)']}
-  />
-  <ColorItem
-    title="yellow"
-    colors={['linear-gradient(0deg, #FFC063 0%, #FCE258 100%)']}
-  />
-  <ColorItem
-    title="light"
-    colors={['linear-gradient(0deg, #FCFBF8 0%, #F6F3EE 100.74%)']}
-  />
+  <ColorItem title="red" colors={[theme.color.gradients.down.red]} />
+  <ColorItem title="purple" colors={[theme.color.gradients.down.purple]} />
+  <ColorItem title="yellow" colors={[theme.color.gradients.down.yellow]} />
+  <ColorItem title="light" colors={[theme.color.gradients.down.disabled]} />
 </ColorPalette>

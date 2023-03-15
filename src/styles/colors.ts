@@ -36,7 +36,10 @@ export const gradients = {
   },
 };
 
-export const hover = {
-  primary: '#C0444C',
-  secondary: '#6866BE;',
+export const button = {
+  primaryHover: '#C0444C',
+  secondaryHover: '#6866BE;',
+  primary: '#EC6D75',
+  secondary: '#9B9AD6',
+  disabled: '#F7F4FA',
 };

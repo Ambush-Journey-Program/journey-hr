@@ -74,7 +74,7 @@ const colorVariants: ColorVariant = {
       border: solid 1px ${(props) => props.theme.color.brandColors.red};
 
       &:hover {
-        background-color: ${(props) => props.theme.color.hover.primary};
+        background-color: ${(props) => props.theme.color.button.primary};
       }
     `,
     ghost: css`
@@ -105,8 +105,7 @@ const colorVariants: ColorVariant = {
       border: solid 1px ${(props) => props.theme.color.brandColors.purple};
 
       &:hover {
-        background-color: ${(props) =>
-          props.theme.color.contrasts.lightContrast};
+        background-color: ${(props) => props.theme.color.button.secondaryHover};
         opacity: 1;
       }
     `,
@@ -123,8 +122,7 @@ const colorVariants: ColorVariant = {
       border: solid 1px ${(props) => props.theme.color.contrasts.highContrast};
 
       &:hover {
-        background-color: ${(props) =>
-          props.theme.color.contrasts.lightContrast};
+        background-color: ${(props) => props.theme.color.button.secondaryHover};
         opacity: 1;
       }
     `,
