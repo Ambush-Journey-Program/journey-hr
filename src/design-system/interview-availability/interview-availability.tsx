@@ -1,7 +1,13 @@
+import { Button } from '../button';
 import { CardWrapper } from '../card-wrapper';
 import { Input } from '../input';
 import { SelectInput } from '../select-input';
-import { exampleAre, exampleOpportunity, exampleOptions } from './helper';
+import {
+  exampleAre,
+  exampleDate,
+  exampleOpportunity,
+  exampleOptions,
+} from './helper';
 import * as Styled from './interview-availability.styled';
 
 export function InterviewAvailability() {
@@ -15,8 +21,12 @@ export function InterviewAvailability() {
           </Styled.Subtitle>
         </div>
         <div>
-          <form action="">
-            <Input label={'Date:'} required></Input>
+          <Styled.Form action="">
+            <SelectInput
+              title={'Date:'}
+              required
+              options={exampleDate}
+            ></SelectInput>
             <SelectInput
               title={'Area:'}
               options={exampleAre}
@@ -32,7 +42,10 @@ export function InterviewAvailability() {
               options={exampleOpportunity}
               required
             ></SelectInput>
-          </form>
+          </Styled.Form>
+          <Styled.ContainerBtn>
+            <Button sizeVariant={'default'}>Search</Button>
+          </Styled.ContainerBtn>
         </div>
       </Styled.InterviewAvailability>
     </CardWrapper>

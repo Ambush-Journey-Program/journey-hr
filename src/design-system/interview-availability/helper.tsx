@@ -1,3 +1,18 @@
+export const exampleDate = [
+  {
+    label: '01/04/2024',
+    value: '1',
+  },
+  {
+    label: '01/05/2024',
+    value: '2',
+  },
+  {
+    label: '01/06/2024',
+    value: '3',
+  },
+];
+
 export const exampleOptions = [
   {
     label: 'Morning',

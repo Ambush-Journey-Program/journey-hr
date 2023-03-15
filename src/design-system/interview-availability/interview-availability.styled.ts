@@ -20,3 +20,17 @@ export const Subtitle = styled.h2`
   line-height: 150%;
   color: ${(props) => props.theme.color.veryDarkPurple};
 `;
+
+export const Form = styled.form`
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 12px;
+  margin-top: 32px;
+  margin-bottom: 20px;
+`;
+
+export const ContainerBtn = styled.div`
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+`;
