@@ -5,7 +5,6 @@ type Interview = {
 };
 
 export type Interviews = {
-  option: number;
   interviewList: Interview[];
 };
 

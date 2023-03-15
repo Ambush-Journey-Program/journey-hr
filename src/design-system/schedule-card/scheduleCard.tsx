@@ -5,30 +5,22 @@ import { Button } from '../button';
 
 export function ScheduleCard({ interviews }: ScheduleCardProps) {
   return (
-    <Styled.scheduleCardWrapper data-testid="ScheduleCard">
-      <CardWrapper>
-        <div>
-          {interviews.map((interview) => (
-            <Styled.scheduleCardList>
-              <h2 key={interview.option}>Option #{interview.option}</h2>
-              {interview.interviewList.map((details) => (
-                <li key={details.title}>
-                  <h3>{details.title}</h3>
-                  <p>{details.interviewerName}</p>
-                  <p>{details.interviewTime}</p>
-                </li>
-              ))}
-              <Button
-                data-testid="Button"
-                icon="CalendarIcon"
-                onClick={() => {}}
-              >
-                Schedule
-              </Button>
-            </Styled.scheduleCardList>
+    <CardWrapper>
+      {interviews.map((interview, index) => (
+        <Styled.scheduleCardList data-testid="ScheduleCard">
+          <h2 key={index}>Option #{index + 1}</h2>
+          {interview.interviewList.map((details, index) => (
+            <li key={index}>
+              <h3>{details.title}</h3>
+              <p>{details.interviewerName}</p>
+              <p>{details.interviewTime}</p>
+            </li>
           ))}
-        </div>
-      </CardWrapper>
-    </Styled.scheduleCardWrapper>
+          <Button data-testid="Button" icon="CalendarIcon" onClick={() => {}}>
+            Schedule
+          </Button>
+        </Styled.scheduleCardList>
+      ))}
+    </CardWrapper>
   );
 }

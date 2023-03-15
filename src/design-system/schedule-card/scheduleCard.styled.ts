@@ -1,13 +1,5 @@
 import styled from 'styled-components';
 
-export const scheduleCardWrapper = styled.div`
-  width: 276px;
-
-  div {
-    padding: 0;
-  }
-`;
-
 export const scheduleCardList = styled.ul`
   padding: 24px;
   text-align: center;

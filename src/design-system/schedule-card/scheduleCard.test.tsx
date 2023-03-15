@@ -1,10 +1,8 @@
 import { describe, expect } from 'vitest';
 
-import { render, screen } from '@testing-library/react';
+import { render, screen } from '../../tests/renderWithProviders';
 
 import { ScheduleCard } from './scheduleCard';
-import { ThemeProvider } from 'styled-components';
-import { theme } from '../../styles/theme';
 
 type Interview = {
   title: string;
@@ -37,32 +35,20 @@ const interviews: Interviews[] = [
 
 describe('<ScheduleCard />', () => {
   it('renders the ScheduleCard', () => {
-    render(
-      <ThemeProvider theme={theme}>
-        <ScheduleCard interviews={interviews} />
-      </ThemeProvider>,
-    );
+    render(<ScheduleCard interviews={interviews} />);
 
     const ScheduleCardEl = screen.getByTestId('ScheduleCard');
     expect(ScheduleCardEl).toBeInTheDocument();
   });
 
   it('renders the ScheduleCard with the button', () => {
-    render(
-      <ThemeProvider theme={theme}>
-        <ScheduleCard interviews={interviews} />
-      </ThemeProvider>,
-    );
-    const buttonEl = screen.getByTestId('Button');
+    render(<ScheduleCard interviews={interviews} />);
+    const buttonEl = screen.getByText('Schedule');
     expect(buttonEl).toBeInTheDocument();
   });
 
   it('renders the ScheduleCard and validate interview list quantity', () => {
-    render(
-      <ThemeProvider theme={theme}>
-        <ScheduleCard interviews={interviews} />
-      </ThemeProvider>,
-    );
+    render(<ScheduleCard interviews={interviews} />);
 
     const listItems = screen.getAllByRole('listitem');
     expect(listItems).toHaveLength(2);
