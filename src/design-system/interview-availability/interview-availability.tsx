@@ -1,23 +1,23 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Button } from '../button';
 import { CardWrapper } from '../card-wrapper';
 import { Input } from '../input';
 import { SelectInput } from '../select-input';
-import {
-  exampleAre,
-  exampleDate,
-  exampleOpportunity,
-  exampleOptions,
-} from './constants';
+import { exampleAre, exampleOpportunity, exampleOptions } from './constants';
 import * as Styled from './interview-availability.styled';
+import { IInterviewAvailabilityProps } from './types';
 
-export function InterviewAvailability(props: { callBack: Function }) {
+export function InterviewAvailability({
+  onChange,
+}: IInterviewAvailabilityProps) {
   const [inputData, setInputData] = useState('');
   const [inputArea, setInputArea] = useState('');
   const [inputShift, setInputShift] = useState('');
   const [inputOpportunity, setInputOpportunity] = useState('');
-  console.log(inputData);
 
+  useEffect(() => {
+    console.log(inputOpportunity, inputShift, inputArea, inputData);
+  }, [inputOpportunity, inputShift, inputArea, inputData]);
   return (
     <CardWrapper background="default">
       <Styled.InterviewAvailability>
@@ -37,6 +37,7 @@ export function InterviewAvailability(props: { callBack: Function }) {
               onChange={(e) => setInputData(e.target.value)}
             ></Input>
             <SelectInput
+              icon={true}
               title={'Area:'}
               placeholder={'UX Designer'}
               options={exampleAre}
@@ -60,15 +61,15 @@ export function InterviewAvailability(props: { callBack: Function }) {
               value={inputOpportunity}
               onChange={(e) => setInputOpportunity(e.target.value)}
             ></SelectInput>
+            <Styled.ContainerBtn>
+              <Button
+                sizeVariant={'default'}
+                // onClick={() => props.callBack()}
+              >
+                Search
+              </Button>
+            </Styled.ContainerBtn>
           </Styled.Form>
-          <Styled.ContainerBtn>
-            <Button
-              sizeVariant={'default'}
-              // onClickCallback={() => props.callBack(inputParam)}
-            >
-              Search
-            </Button>
-          </Styled.ContainerBtn>
         </div>
       </Styled.InterviewAvailability>
     </CardWrapper>

@@ -1,18 +1,3 @@
-export const exampleDate = [
-  {
-    label: '01/04/2024',
-    value: '01/04/2024',
-  },
-  {
-    label: '01/05/2024',
-    value: '01/05/2024',
-  },
-  {
-    label: '01/06/2024',
-    value: '01/06/2024',
-  },
-];
-
 export const exampleOptions = [
   {
     label: 'Morning',

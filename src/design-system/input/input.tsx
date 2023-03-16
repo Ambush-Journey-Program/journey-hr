@@ -10,6 +10,7 @@ export function Input({
   readOnly,
   error,
   optional,
+  placeholder,
   name,
   onTextChange = () => {},
 }: IInputProps) {
@@ -21,14 +22,14 @@ export function Input({
         </Styled.Label>
         <Styled.InputContainer error={error} disabled={disabled}>
           <input
-            placeholder="Label"
             type="text"
+            placeholder={placeholder ?? 'Label'}
             required={required}
             disabled={disabled}
             readOnly={readOnly}
             value={value}
             onChange={(e) => onTextChange(e.target.value)}
-          />
+          ></input>
         </Styled.InputContainer>
         {!!error && <span>{error}</span>}
       </Styled.Wrapper>
