@@ -1,1 +1,0 @@
-export { ScheduleCard } from './scheduleCard';

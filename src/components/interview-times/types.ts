@@ -8,6 +8,13 @@ export type Interviews = {
   interviewList: Interview[];
 };
 
+export type InterviewTimesProps = {
+  interviewsList: Interviews[];
+  onClick: () => void;
+};
+
 export type ScheduleCardProps = {
-  interviews: Interviews[];
+  interviews: Interviews;
+  index: number;
+  onClick: () => void;
 };
