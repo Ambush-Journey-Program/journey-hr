@@ -1,20 +1,20 @@
-type Interview = {
+type Schedule = {
   title: string;
   interviewerName: string;
-  interviewTime: string;
+  scheduleTime: string;
 };
 
-export type Interviews = {
-  interviewList: Interview[];
+export type InterviewOption = {
+  Schedules: Schedule[];
 };
 
 export type InterviewTimesProps = {
-  interviewsList: Interviews[];
+  interviewOptions: InterviewOption[];
   onClick: () => void;
 };
 
 export type ScheduleCardProps = {
-  interviews: Interviews;
+  interviews: InterviewOption;
   index: number;
   onClick: () => void;
 };
