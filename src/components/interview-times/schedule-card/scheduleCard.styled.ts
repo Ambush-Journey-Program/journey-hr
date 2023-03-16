@@ -1,32 +1,32 @@
 import styled from 'styled-components';
 
 export const scheduleCardList = styled.ul`
-  padding: 24px;
+  padding: 1.5rem;
   text-align: center;
 
   h2 {
     color: ${(props) => props.theme.color.veryDarkPurple};
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: 500;
-    line-height: 30px;
-    padding-bottom: 24px;
+    line-height: 1.875rem;
+    padding-bottom: 1.5rem;
   }
 
   li {
-    padding-bottom: 24px;
+    padding-bottom: 1.5rem;
 
     h3 {
       color: ${(props) => props.theme.color.veryDarkPurple};
-      font-size: 20px;
+      font-size: 1.25rem;
       font-weight: 700;
       line-height: 125%;
-      padding-bottom: 8px;
+      padding-bottom: 0.5rem;
     }
 
     p {
       color: ${(props) => props.theme.color.lightPurple};
       font-weight: 600;
-      font-size: 16px;
+      font-size: 1rem;
       line-height: 150%;
     }
   }
