@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import * as Styled from './input.styled';
 import { IInputProps } from './types';
 

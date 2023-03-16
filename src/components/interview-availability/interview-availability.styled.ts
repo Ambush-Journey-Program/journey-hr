@@ -10,7 +10,7 @@ export const Title = styled.h1`
   font-weight: 700;
   font-size: 28px;
   line-height: 125%;
-  color: ${(props) => props.theme.color.purple};
+  color: ${(props) => props.theme.color.contrasts.highContrast};
 `;
 
 export const Subtitle = styled.h2`
@@ -18,7 +18,7 @@ export const Subtitle = styled.h2`
   font-weight: 300;
   font-size: 18px;
   line-height: 150%;
-  color: ${(props) => props.theme.color.veryDarkPurple};
+  color: ${(props) => props.theme.color.contrasts.mediumContrast};
 `;
 
 export const Form = styled.form`

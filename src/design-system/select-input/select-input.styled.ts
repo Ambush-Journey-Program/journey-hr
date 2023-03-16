@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components';
-import { ChevronDownIcon } from '@heroicons/react/24/solid';
 import { StyledSelectProps, StyleWrapper, StyledProps } from './types';
 
 export const SpanRequired = styled.span`
@@ -61,14 +60,14 @@ export const Select = styled.select<StyledSelectProps>`
     calc(100% - 15px) calc(1em + 2px), calc(100% - 0.5em) 0.5em;
   background-size: 5px 5px, 5px 5px, 1.5em 1.5em;
   background-repeat: no-repeat;
-  color: ${(props) => props.theme.color.purple};
-  border: 1px solid ${(props) => props.theme.color.gray};
+  color: ${(props) => props.theme.color.contrasts.highContrast};
+  border: 1px solid ${(props) => props.theme.color.contrasts.lowestContrast};
   ${({ error }) => error && errorDisplay}
 
   &:focus-within {
     outline: none;
-    box-shadow: 0 0 2px ${(props) => props.theme.color.veryDarkPurple};
-    border: 1px solid ${(props) => props.theme.color.blue};
+    box-shadow: 0 0 2px ${(props) => props.theme.color.contrasts.mediumContrast};
+    border: 1px solid ${(props) => props.theme.color.brandColors.purple};
   }
 
   & input {

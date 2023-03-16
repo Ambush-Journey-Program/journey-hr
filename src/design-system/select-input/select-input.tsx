@@ -1,24 +1,20 @@
 import { ISelectInputProps } from './types';
 import * as Styled from './select-input.styled';
 import { ChangeEvent } from 'react';
-import { ChevronDoubleDownIcon } from '@heroicons/react/24/solid';
 
 export function SelectInput({
   title,
   options,
   error,
   required,
-  onSelect,
+  handleSelect,
   disabled,
   placeholder,
-  icon,
   ...props
 }: ISelectInputProps) {
-  function handleSelect(event: ChangeEvent<HTMLSelectElement>) {
-    onSelect(event.target.value);
+  function handleSelectEvent(event: ChangeEvent<HTMLSelectElement>) {
+    handleSelect(event.target.value);
   }
-
-  const buttonIcon = icon ? <ChevronDoubleDownIcon /> : undefined;
 
   return (
     <Styled.Wrapper>
@@ -30,12 +26,10 @@ export function SelectInput({
         data-testid="input-select-test"
         disabled={disabled}
         error={error}
-        onChange={handleSelect}
+        onChange={handleSelectEvent}
         {...props}
       >
-        <option value="">
-          {placeholder ?? 'Selecione uma opção...'} {buttonIcon}
-        </option>
+        <option value="">{placeholder ?? 'Selecione uma opção...'}</option>
         {options.map((option) => (
           <option key={option.value} value={option.value}>
             {option.label}

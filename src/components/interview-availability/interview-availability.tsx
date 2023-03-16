@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react';
-import { Button } from '../button';
-import { CardWrapper } from '../card-wrapper';
-import { Input } from '../input';
-import { SelectInput } from '../select-input';
+import { SetStateAction, useEffect, useState } from 'react';
+import { Button } from '../../design-system/button';
+import { CardWrapper } from '../../design-system/card-wrapper';
+import { Input } from '../../design-system/input';
+import { SelectInput } from '../../design-system/select-input';
 import { exampleAre, exampleOpportunity, exampleOptions } from './constants';
 import * as Styled from './interview-availability.styled';
 import { IInterviewAvailabilityProps } from './types';
@@ -18,6 +18,7 @@ export function InterviewAvailability({
   useEffect(() => {
     console.log(inputOpportunity, inputShift, inputArea, inputData);
   }, [inputOpportunity, inputShift, inputArea, inputData]);
+
   return (
     <CardWrapper background="default">
       <Styled.InterviewAvailability>
@@ -29,21 +30,14 @@ export function InterviewAvailability({
         </div>
         <div>
           <Styled.Form action="">
-            <Input
-              label={'Date:'}
-              placeholder={'01/06/2025'}
-              required
-              value={inputData}
-              onChange={(e) => setInputData(e.target.value)}
-            ></Input>
+            <Input label={'Date:'} onTextChange={setInputData}></Input>
             <SelectInput
-              icon={true}
               title={'Area:'}
               placeholder={'UX Designer'}
               options={exampleAre}
               required
               value={inputArea}
-              onChange={(e) => setInputArea(e.target.value)}
+              handleSelect={(value) => setInputArea(value)}
             ></SelectInput>
             <SelectInput
               title={'Shift:'}
@@ -51,7 +45,7 @@ export function InterviewAvailability({
               options={exampleOptions}
               required
               value={inputShift}
-              onChange={(e) => setInputShift(e.target.value)}
+              handleSelect={(value) => setInputShift(value)}
             ></SelectInput>
             <SelectInput
               title={'Opportunity:'}
@@ -59,10 +53,11 @@ export function InterviewAvailability({
               options={exampleOpportunity}
               required
               value={inputOpportunity}
-              onChange={(e) => setInputOpportunity(e.target.value)}
+              handleSelect={(value) => setInputOpportunity(value)}
             ></SelectInput>
             <Styled.ContainerBtn>
               <Button
+                // disabled
                 sizeVariant={'default'}
                 // onClick={() => props.callBack()}
               >
