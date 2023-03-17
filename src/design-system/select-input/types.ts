@@ -1,5 +1,4 @@
 import { SelectHTMLAttributes } from 'react';
-import * as HeroIcons from '@heroicons/react/24/solid';
 
 type Option = {
   label: string;

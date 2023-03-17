@@ -1,4 +1,4 @@
-import { SetStateAction, useEffect, useState } from 'react';
+import { SetStateAction, useEffect, useRef, useState } from 'react';
 import { Button } from '../../design-system/button';
 import { CardWrapper } from '../../design-system/card-wrapper';
 import { Input } from '../../design-system/input';
@@ -14,10 +14,17 @@ export function InterviewAvailability({
   const [inputArea, setInputArea] = useState('');
   const [inputShift, setInputShift] = useState('');
   const [inputOpportunity, setInputOpportunity] = useState('');
+  const CountInput = [inputOpportunity, inputShift, inputArea, inputData];
+  const AraSelected = [];
+  const formRef = useRef(null);
 
   useEffect(() => {
-    console.log(inputOpportunity, inputShift, inputArea, inputData);
+    AllInputs();
   }, [inputOpportunity, inputShift, inputArea, inputData]);
+
+  function AllInputs() {
+    console.log(inputOpportunity, inputShift, inputArea, inputData);
+  }
 
   return (
     <CardWrapper background="default">
@@ -29,7 +36,15 @@ export function InterviewAvailability({
           </Styled.Subtitle>
         </div>
         <div>
-          <Styled.Form action="">
+          <Styled.Form
+            onSubmit={(e) => {
+              alert(CountInput);
+            }}
+            action=""
+            // onChange={(e) => {
+            //   console.log(formRef);
+            // }}
+          >
             <Input label={'Date:'} onTextChange={setInputData}></Input>
             <SelectInput
               title={'Area:'}
@@ -54,10 +69,11 @@ export function InterviewAvailability({
               required
               value={inputOpportunity}
               handleSelect={(value) => setInputOpportunity(value)}
+              disabled={AraSelected.length === 0}
             ></SelectInput>
             <Styled.ContainerBtn>
               <Button
-                // disabled
+                disabled={CountInput.length === 0}
                 sizeVariant={'default'}
                 // onClick={() => props.callBack()}
               >

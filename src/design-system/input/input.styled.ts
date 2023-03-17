@@ -31,7 +31,6 @@ const spanOptional = css`
   display: block;
 `;
 export const Wrapper = styled.div<StyleWrapper>`
-  /* width: 391px; */
   ${({ error }) => error && spanError}
 `;
 
@@ -44,7 +43,6 @@ export const Label = styled.label<StyledLabelProps>`
   font-size: 14px;
   line-height: 150%;
   color: ${(props) => props.theme.color.contrasts.mediumContrast};
-  margin-top: 37px;
 
   span {
     display: none;

@@ -43,22 +43,11 @@ export const Select = styled.select<StyledSelectProps>`
   border-radius: 0.75rem;
   padding-left: 1.25rem;
   padding: 0.875rem;
-
-  /* reset */
-
-  margin: 0;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
   -webkit-appearance: none;
   -moz-appearance: none;
-
-  background-image: linear-gradient(45deg, transparent 50%, gray 50%),
-    linear-gradient(135deg, gray 50%, transparent 50%),
-    radial-gradient(#ddd 70%, transparent 72%);
-  background-position: calc(100% - 20px) calc(1em + 2px),
-    calc(100% - 15px) calc(1em + 2px), calc(100% - 0.5em) 0.5em;
-  background-size: 5px 5px, 5px 5px, 1.5em 1.5em;
+  background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%3E%3Ctitle%3Edown-arrow%3C%2Ftitle%3E%3Cg%20fill%3D%22%23000000%22%3E%3Cpath%20d%3D%22M10.293%2C3.293%2C6%2C7.586%2C1.707%2C3.293A1%2C1%2C0%2C0%2C0%2C.293%2C4.707l5%2C5a1%2C1%2C0%2C0%2C0%2C1.414%2C0l5-5a1%2C1%2C0%2C1%2C0-1.414-1.414Z%22%20fill%3D%22%23000000%22%3E%3C%2Fpath%3E%3C%2Fg%3E%3C%2Fsvg%3E');
+  background-position: calc(100% - 1.6em) center;
+  background-size: 0.9em;
   background-repeat: no-repeat;
   color: ${(props) => props.theme.color.contrasts.highContrast};
   border: 1px solid ${(props) => props.theme.color.contrasts.lowestContrast};
