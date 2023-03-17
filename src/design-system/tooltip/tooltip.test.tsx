@@ -7,6 +7,7 @@ import { Tooltip } from '.';
 import { theme } from '../../styles/theme';
 
 import 'jest-styled-components';
+
 describe('<Tooltip />', async () => {
   it('should be visible when hovering the child element', async () => {
     const text = 'Hi';
