@@ -1,31 +1,27 @@
-import {
-  TitleStyled,
-  SubtitleStyled,
-  ParagraphStyled,
-} from './typografy.styled';
+import * as Styled from './typografy.styled';
 
 import { TitleProps, SubtitleProps, ParagraphsProps } from './types';
 
 export function Title({ titleVariant, children }: TitleProps) {
-  return <TitleStyled titleVariant={titleVariant}>{children}</TitleStyled>;
+  return <Styled.Title titleVariant={titleVariant}>{children}</Styled.Title>;
 }
 
 export function Subtitle({ subtitleVariant, children }: SubtitleProps) {
   return (
-    <SubtitleStyled subtitleVariant={subtitleVariant}>
+    <Styled.Subtitle subtitleVariant={subtitleVariant}>
       {children}
-    </SubtitleStyled>
+    </Styled.Subtitle>
   );
 }
 
 export function Paragraphs({
-  sizeVariant,
-  fontWeight,
+  sizeVariant = 'default',
+  fontWeight = 'light',
   children,
 }: ParagraphsProps) {
   return (
-    <ParagraphStyled sizeVariant={sizeVariant} fontWeight={fontWeight}>
+    <Styled.Paragraph sizeVariant={sizeVariant} fontWeight={fontWeight}>
       {children}
-    </ParagraphStyled>
+    </Styled.Paragraph>
   );
 }

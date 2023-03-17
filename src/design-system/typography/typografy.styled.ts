@@ -93,7 +93,7 @@ const titleEl: TitleStyle = {
   `,
 };
 
-export const TitleStyled = styled.text<TitleProps>`
+export const Title = styled.text<TitleProps>`
   font-family: 'Poppins', sans-serif;
   font-style: normal;
   font-weight: 700;
@@ -178,7 +178,7 @@ const subtitleEl: SubtitleStyle = {
   `,
 };
 
-export const SubtitleStyled = styled.text<SubtitleProps>`
+export const Subtitle = styled.text<SubtitleProps>`
   font-family: 'Poppins', sans-serif;
   font-style: normal;
   font-weight: 500;
@@ -237,7 +237,7 @@ const paragraphsWeightEl: WeightStyle = {
   `,
 };
 
-export const ParagraphStyled = styled.text<ParagraphsProps>`
+export const Paragraph = styled.text<ParagraphsProps>`
   font-family: 'Mundial', sans-serif;
   color: ${(props) => props.theme.color.contrasts.highContrast};
 
