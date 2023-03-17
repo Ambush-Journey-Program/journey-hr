@@ -5,7 +5,7 @@ export const scheduleCardList = styled.ul`
   text-align: center;
 
   h2 {
-    color: ${(props) => props.theme.color.veryDarkPurple};
+    color: ${(props) => props.theme.color.contrasts.mediumContrast};
     font-size: 1.25rem;
     font-weight: 500;
     line-height: 1.875rem;
@@ -16,7 +16,7 @@ export const scheduleCardList = styled.ul`
     padding-bottom: 1.5rem;
 
     h3 {
-      color: ${(props) => props.theme.color.veryDarkPurple};
+      color: ${(props) => props.theme.color.contrasts.mediumContrast};
       font-size: 1.25rem;
       font-weight: 700;
       line-height: 125%;
@@ -24,7 +24,7 @@ export const scheduleCardList = styled.ul`
     }
 
     p {
-      color: ${(props) => props.theme.color.lightPurple};
+      color: ${(props) => props.theme.color.contrasts.lowContrast};
       font-weight: 600;
       font-size: 1rem;
       line-height: 150%;

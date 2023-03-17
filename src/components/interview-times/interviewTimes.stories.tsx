@@ -4,7 +4,8 @@ import { InterviewOption, InterviewTimesProps } from './types';
 
 const interviews: InterviewOption[] = [
   {
-    Schedules: [
+    id: 1,
+    schedules: [
       {
         title: `UX Interview`,
         interviewerName: `Robson Lopes`,
@@ -18,7 +19,8 @@ const interviews: InterviewOption[] = [
     ],
   },
   {
-    Schedules: [
+    id: 2,
+    schedules: [
       {
         title: `UX Interview`,
         interviewerName: `Robson Lopes`,

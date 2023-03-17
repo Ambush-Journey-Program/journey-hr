@@ -1,5 +1,5 @@
 import styled, { css, FlattenSimpleInterpolation } from 'styled-components';
-import { devices } from '../../styles/theme';
+import { devices } from '../../styles/devices';
 
 type AvatarProps = {
   sizeVariant: string;

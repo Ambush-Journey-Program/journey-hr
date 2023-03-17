@@ -5,7 +5,8 @@ type Schedule = {
 };
 
 export type InterviewOption = {
-  Schedules: Schedule[];
+  id: number;
+  schedules: Schedule[];
 };
 
 export type InterviewTimesProps = {

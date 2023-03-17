@@ -11,7 +11,7 @@ export function InterviewTimes({
       {interviewOptions.map((interview, index) => (
         <ScheduleCard
           interviews={interview}
-          key={index}
+          key={interview.id}
           index={index}
           onClick={onClick}
         />
