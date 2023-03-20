@@ -1,5 +1,4 @@
-import React from 'react';
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import { Button } from '../../design-system/button';
 import { CardWrapper } from '../../design-system/card-wrapper';
 import { Input } from '../../design-system/input';
@@ -13,12 +12,9 @@ export function InterviewAvailability() {
   const [inputShift, setInputShift] = useState('');
   const [inputOpportunity, setInputOpportunity] = useState('');
 
-  const dataNameRef = React.useRef() as React.HTMLProps<HTMLInputElement>;
-  console.log(dataNameRef);
-
   const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
-    console.log(dataNameRef);
+    console.log(inputData, inputArea, inputShift, inputOpportunity);
   };
   return (
     <CardWrapper background="default">
@@ -31,7 +27,12 @@ export function InterviewAvailability() {
         </div>
         <div>
           <Styled.Form onSubmit={handleSubmit} action="">
-            <Input ref={dataNameRef} name="data" label={'Date:'}></Input>
+            <Input
+              name="data"
+              type={'date'}
+              label={'Date:'}
+              onTextChange={setInputData}
+            ></Input>
             <SelectInput
               name="area"
               title={'Area:'}
@@ -39,6 +40,7 @@ export function InterviewAvailability() {
               options={exampleAre}
               required
               value={inputArea}
+              handleSelect={(value) => setInputArea(value)}
             ></SelectInput>
             <SelectInput
               name="shift"
@@ -47,6 +49,7 @@ export function InterviewAvailability() {
               options={exampleOptions}
               required
               value={inputShift}
+              handleSelect={(value) => setInputShift(value)}
             ></SelectInput>
             <SelectInput
               name="opportunity"
@@ -55,6 +58,8 @@ export function InterviewAvailability() {
               options={exampleOpportunity}
               required
               value={inputOpportunity}
+              handleSelect={(value) => setInputOpportunity(value)}
+              disabled={setInputArea.length === 0}
             ></SelectInput>
             <Styled.ContainerBtn>
               <Button sizeVariant={'default'}>Search</Button>

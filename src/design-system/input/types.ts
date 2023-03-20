@@ -6,7 +6,7 @@ export type IInputProps = InputHTMLAttributes<HTMLInputElement> & {
   onTextChange?: (value: string) => void;
   optional?: boolean;
   placeholder?: string;
-  ref?: React.HTMLProps<HTMLInputElement>;
+  type?: string;
 };
 
 type StyledProps = {

@@ -10,8 +10,8 @@ export function Input({
   error,
   optional,
   placeholder,
+  type,
   name,
-  ref,
   onTextChange = () => {},
 }: IInputProps) {
   return (
@@ -22,8 +22,7 @@ export function Input({
         </Styled.Label>
         <Styled.InputContainer error={error} disabled={disabled}>
           <input
-            ref={ref}
-            type="text"
+            type={type ?? 'text'}
             placeholder={placeholder ?? 'Label'}
             required={required}
             disabled={disabled}

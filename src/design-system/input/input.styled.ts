@@ -78,7 +78,9 @@ export const InputContainer = styled.div<StyledInputProps>`
     border: 1px solid ${(props) => props.theme.color.brandColors.purple};
   }
   & input {
-    outline: none;
+    width: calc(100% - 16px);
     border: none;
+    color: ${(props) => props.theme.color.contrasts.highContrast};
+    font-size: 16px;
   }
 `;
