@@ -7,15 +7,14 @@ export function SelectInput({
   options,
   error,
   required,
-  handleSelect,
+  onSelect,
   disabled,
   placeholder,
   ...props
 }: ISelectInputProps) {
-  function handleSelectEvent(event: ChangeEvent<HTMLSelectElement>) {
-    handleSelect(event.target.value);
+  function handleSelect(event: ChangeEvent<HTMLSelectElement>) {
+    onSelect(event.target.value);
   }
-
   return (
     <>
       <Styled.Wrapper>
@@ -27,7 +26,7 @@ export function SelectInput({
           data-testid="input-select-test"
           disabled={disabled}
           error={error}
-          onChange={handleSelectEvent}
+          onChange={handleSelect}
           {...props}
         >
           <option value="">{placeholder ?? 'Selecione uma opção...'}</option>

@@ -1,4 +1,4 @@
-import { InputHTMLAttributes, ChangeEvent } from 'react';
+import { InputHTMLAttributes, ChangeEvent, MutableRefObject } from 'react';
 
 export type IInputProps = InputHTMLAttributes<HTMLInputElement> & {
   label: string;
@@ -6,6 +6,7 @@ export type IInputProps = InputHTMLAttributes<HTMLInputElement> & {
   onTextChange?: (value: string) => void;
   optional?: boolean;
   placeholder?: string;
+  ref?: React.HTMLProps<HTMLInputElement>;
 };
 
 type StyledProps = {

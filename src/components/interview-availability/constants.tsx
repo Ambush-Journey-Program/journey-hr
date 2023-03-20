@@ -16,7 +16,7 @@ export const exampleOptions = [
 export const exampleAre = [
   {
     label: 'Frontend',
-    value: 'brontend',
+    value: 'frontend',
   },
   {
     label: 'Backend',
