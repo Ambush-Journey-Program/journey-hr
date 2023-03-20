@@ -14,8 +14,13 @@ export function InterviewAvailability() {
 
   const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
-    console.log(inputData, inputArea, inputShift, inputOpportunity);
+    console.log(`Your state values: \n
+    Date: ${inputData} \n
+    Area: ${inputArea} \n
+    Area: ${inputShift} \n
+    Area: ${inputOpportunity}`);
   };
+
   return (
     <CardWrapper background="default">
       <Styled.InterviewAvailability>
@@ -62,7 +67,14 @@ export function InterviewAvailability() {
               disabled={setInputArea.length === 0}
             ></SelectInput>
             <Styled.ContainerBtn>
-              <Button sizeVariant={'default'}>Search</Button>
+              <Button
+                sizeVariant={'default'}
+                disabled={
+                  !inputData || !inputArea || !inputShift || !inputOpportunity
+                }
+              >
+                Search
+              </Button>
             </Styled.ContainerBtn>
           </Styled.Form>
         </div>

@@ -38,8 +38,7 @@ export const Select = styled.select<StyledSelectProps>`
   display: flex;
   align-items: center;
   width: 100%;
-  height: 52px;
-  display: flex;
+  height: 3.25rem;
   border-radius: 0.75rem;
   padding-left: 1.25rem;
   padding: 0.875rem;
@@ -55,8 +54,9 @@ export const Select = styled.select<StyledSelectProps>`
 
   &:focus-within {
     outline: none;
-    box-shadow: 0 0 2px ${(props) => props.theme.color.contrasts.mediumContrast};
-    border: 1px solid ${(props) => props.theme.color.brandColors.purple};
+    box-shadow: 0 0 0.125rem
+      ${(props) => props.theme.color.contrasts.mediumContrast};
+    border: 0.063rem solid ${(props) => props.theme.color.brandColors.purple};
   }
 
   & input {

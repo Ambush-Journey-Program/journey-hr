@@ -10,7 +10,7 @@ const spanError = css`
   color: ${(props) => props.theme.color.auxiliary.error};
   margin-top: 4px;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 0.75rem;
   line-height: 18px;
   & input::placeholder {
     color: ${(props) => props.theme.color.auxiliary.error};
@@ -40,7 +40,7 @@ export const Label = styled.label<StyledLabelProps>`
   justify-content: space-between;
   font-style: normal;
   font-weight: 300;
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 150%;
   color: ${(props) => props.theme.color.contrasts.mediumContrast};
 
@@ -53,34 +53,36 @@ export const Label = styled.label<StyledLabelProps>`
 export const Input = styled.label`
   font-style: normal;
   font-weight: 300;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 1rem;
+  line-height: 1.5rem;
 `;
 
 export const InputContainer = styled.div<StyledInputProps>`
   display: flex;
   align-items: center;
-  height: 52px;
+  height: 3.25rem;
   font-style: normal;
   font-weight: 300;
-  font-size: 16px;
+  font-size: 1rem;
   color: ${(props) => props.theme.color.contrasts.highContrast};
   border: 1px solid ${(props) => props.theme.color.contrasts.lowestContrast};
-  border-radius: 12px;
-  padding-left: 20px;
-  margin-top: 4px;
+  border-radius: 0.75rem;
+  padding-left: 1.25rem;
+  margin-top: 0.25rem;
   ${({ error }) => error && errorDisplay}
   ${({ disabled }) => disabled && disabledInput};
 
   &:focus-within {
     outline: none;
-    box-shadow: 0 0 2px ${(props) => props.theme.color.contrasts.mediumContrast};
+    box-shadow: 0 0 0.125rem
+      ${(props) => props.theme.color.contrasts.mediumContrast};
     border: 1px solid ${(props) => props.theme.color.brandColors.purple};
   }
   & input {
-    width: calc(100% - 16px);
+    outline: none;
+    width: calc(100% - 1rem);
     border: none;
     color: ${(props) => props.theme.color.contrasts.highContrast};
-    font-size: 16px;
+    font-size: 1rem;
   }
 `;
