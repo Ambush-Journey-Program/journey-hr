@@ -16,7 +16,7 @@ export function InterviewAvailability() {
   const dataNameRef = React.useRef() as React.HTMLProps<HTMLInputElement>;
   console.log(dataNameRef);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
     console.log(dataNameRef);
   };
