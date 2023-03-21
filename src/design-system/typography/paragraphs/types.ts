@@ -8,7 +8,7 @@ export type ParagraphType =
   | 'extrasmall'
   | 'tiny';
 
-export type WheightType = 'hair' | 'light' | 'semibold';
+type WheightType = 'hair' | 'light' | 'semibold';
 
 export type ParagraphsProps = {
   children: string;
