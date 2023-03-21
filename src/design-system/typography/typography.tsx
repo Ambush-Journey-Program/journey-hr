@@ -2,25 +2,25 @@ import * as Styled from './typografy.styled';
 
 import { TitleProps, SubtitleProps, ParagraphsProps } from './types';
 
-export function Title({ titleVariant, children }: TitleProps) {
-  return <Styled.Title titleVariant={titleVariant}>{children}</Styled.Title>;
-}
-
-export function Subtitle({ subtitleVariant, children }: SubtitleProps) {
+export function Title({ variant, children }: TitleProps) {
   return (
-    <Styled.Subtitle subtitleVariant={subtitleVariant}>
+    <Styled.Title variant={variant} as={variant}>
       {children}
-    </Styled.Subtitle>
+    </Styled.Title>
   );
 }
 
+export function Subtitle({ variant, children }: SubtitleProps) {
+  return <Styled.Subtitle variant={variant}>{children}</Styled.Subtitle>;
+}
+
 export function Paragraphs({
-  sizeVariant = 'default',
+  size = 'default',
   fontWeight = 'light',
   children,
 }: ParagraphsProps) {
   return (
-    <Styled.Paragraph sizeVariant={sizeVariant} fontWeight={fontWeight}>
+    <Styled.Paragraph size={size} fontWeight={fontWeight}>
       {children}
     </Styled.Paragraph>
   );

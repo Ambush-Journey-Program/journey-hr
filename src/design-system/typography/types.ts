@@ -16,16 +16,16 @@ export type WheightType = 'hair' | 'light' | 'demibold';
 
 export type TitleProps = {
   children: string;
-  titleVariant: TitleType;
+  variant: TitleType;
 };
 
 export type SubtitleProps = {
   children: string;
-  subtitleVariant: SubtitleType;
+  variant: SubtitleType;
 };
 
 export type ParagraphsProps = {
   children: string;
-  sizeVariant: ParagraphType;
+  size: ParagraphType;
   fontWeight: WheightType;
 };

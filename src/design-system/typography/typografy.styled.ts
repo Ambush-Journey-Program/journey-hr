@@ -93,13 +93,13 @@ const titleEl: TitleStyle = {
   `,
 };
 
-export const Title = styled.text<TitleProps>`
-  font-family: 'Poppins', sans-serif;
+export const Title = styled.div<TitleProps>`
+  font-family: ${(props) => props.theme.font.fontFamilyTitle};
   font-style: normal;
   font-weight: 700;
   color: ${(props) => props.theme.color.contrasts.highContrast};
 
-  ${({ titleVariant }) => titleEl[titleVariant]}
+  ${({ variant }) => titleEl[variant]}
 `;
 
 //  ********************** Subtitle *******************
@@ -179,12 +179,12 @@ const subtitleEl: SubtitleStyle = {
 };
 
 export const Subtitle = styled.text<SubtitleProps>`
-  font-family: 'Poppins', sans-serif;
+  font-family: ${(props) => props.theme.font.fontFamilyTitle};
   font-style: normal;
   font-weight: 500;
   color: ${(props) => props.theme.color.contrasts.highContrast};
 
-  ${({ subtitleVariant }) => subtitleEl[subtitleVariant]}
+  ${({ variant }) => subtitleEl[variant]}
 `;
 
 //  ********************** Paragraphs *******************
@@ -237,10 +237,10 @@ const paragraphsWeightEl: WeightStyle = {
   `,
 };
 
-export const Paragraph = styled.text<ParagraphsProps>`
-  font-family: 'Mundial', sans-serif;
+export const Paragraph = styled.p<ParagraphsProps>`
+  font-family: ${(props) => props.theme.font.fontFamilyBody};
   color: ${(props) => props.theme.color.contrasts.highContrast};
 
-  ${({ sizeVariant }) => paragraphsEl[sizeVariant]}
+  ${({ size }) => paragraphsEl[size]}
   ${({ fontWeight }) => paragraphsWeightEl[fontWeight]}
 `;
