@@ -7,7 +7,6 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <Doodles src=".spinning_arrow" fill="red"></Doodles>
     </ThemeProvider>
   );
 }

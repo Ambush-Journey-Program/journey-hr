@@ -1,7 +1,7 @@
-import { Meta, Story } from '@storybook/react'
+import { Meta, Story } from '@storybook/react';
 
-import { Doodles } from './doodles'
-import { IDoodlesProps } from './types'
+import { Doodles } from './doodles';
+import { IDoodlesProps } from './types';
 
 export default {
   component: Doodles,
@@ -10,10 +10,13 @@ export default {
     isLoading: false,
     label: 'Doodles text',
   },
-} as Meta
+} as Meta;
 
 const Template: Story<IDoodlesProps> = (args) => {
-  return <Doodles {...args} />
-}
+  return <Doodles {...args} />;
+};
 
-export const DoodlesStory = Template.bind({})
+export const DoodlesStory = Template.bind({});
+DoodlesStory.args = {
+  colors: 'dark',
+};

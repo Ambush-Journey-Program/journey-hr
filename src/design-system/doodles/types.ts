@@ -1,13 +1,9 @@
 import { ImgHTMLAttributes } from 'react';
-import { theme } from '../../styles/theme';
-export interface IDoodlesProps {
-  label: string;
-}
+import { DoodlesLib } from './svgLibrary';
 
-export type DoodlesProps = {
-  src: {};
-  colors: Colors;
-  fill: string;
+export type ColorsProps = 'red' | 'purple' | 'yellow' | 'light' | 'dark';
+
+export type IDoodlesProps = {
+  icon?: keyof typeof DoodlesLib;
+  colors: ColorsProps;
 } & ImgHTMLAttributes<HTMLImageElement>;
-
-export type Colors = 'red' | 'blue' | 'yellow';
