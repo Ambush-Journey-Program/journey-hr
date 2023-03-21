@@ -5,6 +5,7 @@ import { StyledLabelProps, StyledInputProps, StyleWrapper } from './types';
 const disabledInput = css`
   background-color: ${(props) => props.theme.color.brandColors.light};
 `;
+
 const spanError = css`
   display: block;
   color: ${(props) => props.theme.color.auxiliary.error};

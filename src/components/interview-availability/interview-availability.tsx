@@ -17,8 +17,8 @@ export function InterviewAvailability() {
     console.log(`Your state values: \n
     Date: ${inputData} \n
     Area: ${inputArea} \n
-    Area: ${inputShift} \n
-    Area: ${inputOpportunity}`);
+    Shift: ${inputShift} \n
+    Opportunity: ${inputOpportunity}`);
   };
 
   return (
@@ -64,7 +64,6 @@ export function InterviewAvailability() {
               required
               value={inputOpportunity}
               handleSelect={(value) => setInputOpportunity(value)}
-              disabled={setInputArea.length === 0}
             ></SelectInput>
             <Styled.ContainerBtn>
               <Button
