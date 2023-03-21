@@ -52,7 +52,7 @@ const paragraphsWeightEl: WeightStyle = {
     font-weight: 400;
   `,
 
-  demibold: css`
+  semibold: css`
     font-weight: 600;
   `,
 };
