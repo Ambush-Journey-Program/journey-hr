@@ -1,19 +1,46 @@
-import * as React from 'react';
-
 import { render, screen } from '@testing-library/react';
-
+import { ThemeProvider } from 'styled-components';
 import { InterviewAvailability } from '.';
+import { theme } from '../../styles/theme';
 
-describe('<InterviewAvailability />', () => {
-  describe('should have this remove', () => {
-    it('when the component is actually used', () => {
-      const label = 'it works';
-      const props = { label };
+describe('<InterviewAvailability>', () => {
+  test('It should have a title an subtitle', () => {
+    render(
+      <ThemeProvider theme={theme}>
+        <InterviewAvailability />
+      </ThemeProvider>,
+    );
 
-      render(<InterviewAvailability required={true} {...props} />);
-      const labelSpan = screen.getByText(label);
-
-      expect(labelSpan).toBeInTheDocument();
-    });
+    const interviewtitle = screen.getByTestId('interview-title-test');
+    const interviewsubtitle = screen.getByTestId('interview-subtitle-test');
+    expect(interviewtitle).toBeInTheDocument();
+    expect(interviewsubtitle).toBeInTheDocument();
+  });
+  test('It should have a form', () => {
+    render(
+      <ThemeProvider theme={theme}>
+        <InterviewAvailability />
+      </ThemeProvider>,
+    );
+    const interviewform = screen.getByTestId('interview-form-test');
+    expect(interviewform).toBeInTheDocument();
+  });
+  it('It should have a button', () => {
+    render(
+      <ThemeProvider theme={theme}>
+        <InterviewAvailability />
+      </ThemeProvider>,
+    );
+    const interviewButton = screen.getByRole('button');
+    expect(interviewButton).toBeInTheDocument();
+  });
+  it('It should have a input', () => {
+    render(
+      <ThemeProvider theme={theme}>
+        <InterviewAvailability />
+      </ThemeProvider>,
+    );
+    const interviewInput = screen.getByTestId('interview-input-test');
+    expect(interviewInput).toBeInTheDocument();
   });
 });

@@ -25,13 +25,19 @@ export function InterviewAvailability() {
     <CardWrapper background="default">
       <Styled.InterviewAvailability>
         <div>
-          <Styled.Title>Technical Interview Availability</Styled.Title>
-          <Styled.Subtitle>
+          <Styled.Title data-testId="interview-title-test">
+            Technical Interview Availability
+          </Styled.Title>
+          <Styled.Subtitle data-testId="interview-subtitle-test">
             Schedule a technical interview for a candidate.
           </Styled.Subtitle>
         </div>
         <div>
-          <Styled.Form onSubmit={handleSubmit} action="">
+          <Styled.Form
+            data-testId="interview-form-test"
+            onSubmit={handleSubmit}
+            action=""
+          >
             <Input
               name="data"
               type={'date'}
@@ -39,6 +45,7 @@ export function InterviewAvailability() {
               onTextChange={setInputData}
             ></Input>
             <SelectInput
+              data-testId="interview-input-test"
               name="area"
               title={'Area:'}
               placeholder={'UX Designer'}
