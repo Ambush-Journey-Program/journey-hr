@@ -4,7 +4,7 @@ import { InterviewAvailability } from '.';
 import { theme } from '../../styles/theme';
 
 describe('<InterviewAvailability>', () => {
-  test('It should have a title an subtitle', () => {
+  it('It should have a title an subtitle', () => {
     render(
       <ThemeProvider theme={theme}>
         <InterviewAvailability />
@@ -16,7 +16,7 @@ describe('<InterviewAvailability>', () => {
     expect(interviewtitle).toBeInTheDocument();
     expect(interviewsubtitle).toBeInTheDocument();
   });
-  test('It should have a form', () => {
+  it('It should have a form', () => {
     render(
       <ThemeProvider theme={theme}>
         <InterviewAvailability />
