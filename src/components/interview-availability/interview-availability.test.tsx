@@ -1,5 +1,6 @@
-import { render, screen } from '../../tests/renderWithProviders';
+import { render, screen } from '@testing-library/react';
 import { InterviewAvailability } from '.';
+import { theme } from '@/styles/theme';
 
 describe('<InterviewAvailability>', () => {
   it('It should have a title an subtitle', () => {
