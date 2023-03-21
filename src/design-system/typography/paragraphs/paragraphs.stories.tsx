@@ -1,5 +1,5 @@
 import { Meta, Story } from '@storybook/react';
-import { Paragraphs } from './typography';
+import { Paragraphs } from './paragraphs';
 import { ParagraphsProps } from './types';
 
 export default {

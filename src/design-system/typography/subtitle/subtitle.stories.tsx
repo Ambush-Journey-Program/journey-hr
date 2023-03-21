@@ -1,5 +1,5 @@
 import { Meta, Story } from '@storybook/react';
-import { Subtitle } from './typography';
+import { Subtitle } from './subtitle';
 import { SubtitleProps } from './types';
 
 export default {

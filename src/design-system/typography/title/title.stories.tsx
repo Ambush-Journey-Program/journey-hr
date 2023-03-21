@@ -1,5 +1,5 @@
 import { Meta, Story } from '@storybook/react';
-import { Title } from './typography';
+import { Title } from './title';
 import { TitleProps } from './types';
 
 export default {
