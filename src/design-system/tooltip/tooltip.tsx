@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import * as Styled from './tooltip.styled';
 import { ITooltipProps } from './types';
 
@@ -6,12 +7,31 @@ export function Tooltip({
   children,
   variantPosition = 'top',
 }: ITooltipProps) {
+  const [visible, setVisible] = useState(false);
+
+  function changeVisible() {
+    if (visible) {
+      setVisible(false);
+      return;
+    }
+    setVisible(true);
+  }
+
   return (
-    <Styled.TooltipWrapper data-testid="wrapper">
+    <Styled.TooltipWrapper
+      data-testid="wrapper"
+      onMouseOver={changeVisible}
+      onMouseLeave={changeVisible}
+    >
       {children}
-      <Styled.TooltipBox data-testid="popUp" variantPosition={variantPosition}>
-        {text}
-      </Styled.TooltipBox>
+      {visible && (
+        <Styled.TooltipBox
+          data-testid="popUp"
+          variantPosition={variantPosition}
+        >
+          {text}
+        </Styled.TooltipBox>
+      )}
     </Styled.TooltipWrapper>
   );
 }
