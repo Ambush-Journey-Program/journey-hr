@@ -3,9 +3,33 @@ import styled, {
   FlattenInterpolation,
   ThemeProps,
 } from 'styled-components';
-import { IDoodlesProps } from './types';
 
-export const wrapper = styled.span<IDoodlesProps>`
+import { DoodlesStyleProps } from './types';
+
+type ColorVariant = {
+  [key: string]: FlattenInterpolation<ThemeProps<DoodlesStyleProps>>;
+};
+const colorsVariants: ColorVariant = {
+  red: css`
+    stroke: ${(props) => props.theme.color.brandColors.red};
+  `,
+
+  purple: css`
+    stroke: ${(props) => props.theme.color.brandColors.purple};
+  `,
+
+  yellow: css`
+    stroke: ${(props) => props.theme.color.brandColors.yellow};
+  `,
+  light: css`
+    stroke: ${(props) => props.theme.color.brandColors.light};
+  `,
+  dark: css`
+    stroke: ${(props) => props.theme.color.contrasts.mediumContrast};
+  `,
+};
+
+export const wrapper = styled.span<DoodlesStyleProps>`
   svg {
     width: 100px;
     height: 100px;
@@ -14,26 +38,3 @@ export const wrapper = styled.span<IDoodlesProps>`
     }
   }
 `;
-
-type ColorVariant = {
-  [key: string]: FlattenInterpolation<ThemeProps<IDoodlesProps>>;
-};
-const colorsVariants: ColorVariant = {
-  red: css`
-    stroke: ${(props) => props.theme.color.brandColors.red}!important;
-  `,
-
-  purple: css`
-    stroke: ${(props) => props.theme.color.brandColors.purple}!important;
-  `,
-
-  yellow: css`
-    stroke: ${(props) => props.theme.color.brandColors.yellow}!important;
-  `,
-  light: css`
-    stroke: ${(props) => props.theme.color.brandColors.light}!important;
-  `,
-  dark: css`
-    stroke: ${(props) => props.theme.color.contrasts.mediumContrast}!important;
-  `,
-};

@@ -1,19 +1,13 @@
 import * as React from 'react';
 
-import { render, screen } from '@testing-library/react';
+import { render, screen } from '../../tests/renderWithProviders';
 
 import { Doodles } from '.';
 
 describe('<Doodles />', () => {
-  describe('should have this remove', () => {
-    it('when the component is actually used', () => {
-      const label = 'it works';
-      const props = { label };
-
-      render(<Doodles {...props} />);
-      const labelSpan = screen.getByText(label);
-
-      expect(labelSpan).toBeInTheDocument();
-    });
+  it('it shoulb be displayed', () => {
+    render(<Doodles icon={'arrow1'} colors={'red'} />);
+    const Doodle = screen.getByTestId('doodles');
+    expect(Doodle).toBeInTheDocument();
   });
 });
