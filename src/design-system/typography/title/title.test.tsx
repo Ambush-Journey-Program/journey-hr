@@ -12,8 +12,8 @@ describe('<Title />', () => {
 
     render(<Title variant="h1">{label}</Title>);
 
-    const wrapperEl = screen.getByText(label);
-    expect(wrapperEl).toBeInTheDocument();
+    const titleEl = screen.getByText(label);
+    expect(titleEl).toBeInTheDocument();
   });
 
   it.each(HEADINGS)('render the tag H%s', (level) => {
@@ -21,7 +21,7 @@ describe('<Title />', () => {
     const heading = `h${level}` as TitleType;
     render(<Title variant={heading}>{label}</Title>);
 
-    const wrapperEl = screen.getByRole('heading', { level });
-    expect(wrapperEl).toBeInTheDocument();
+    const titleEl = screen.getByRole('heading', { level });
+    expect(titleEl).toBeInTheDocument();
   });
 });

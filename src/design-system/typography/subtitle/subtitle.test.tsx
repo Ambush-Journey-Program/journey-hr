@@ -9,7 +9,7 @@ describe('<Subtitle />', () => {
 
     render(<Subtitle variant="s1">{label}</Subtitle>);
 
-    const wrapperEl = screen.getByText(label);
-    expect(wrapperEl).toBeInTheDocument();
+    const subtitleEl = screen.getByText(label);
+    expect(subtitleEl).toBeInTheDocument();
   });
 });

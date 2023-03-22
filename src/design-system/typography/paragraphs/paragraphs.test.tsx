@@ -13,7 +13,7 @@ describe('<Paragraphs />', () => {
       </Paragraphs>,
     );
 
-    const wrapperEl = screen.getByText(label);
-    expect(wrapperEl).toBeInTheDocument();
+    const paragraphsEl = screen.getByText(label);
+    expect(paragraphsEl).toBeInTheDocument();
   });
 });
