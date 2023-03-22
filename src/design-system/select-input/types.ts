@@ -19,4 +19,5 @@ export type StyledProps = {
 
 export type StyledSelectProps = StyledProps & {
   error?: string;
+  touched?: boolean;
 };

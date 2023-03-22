@@ -1,4 +1,4 @@
-import { InputHTMLAttributes, ChangeEvent, MutableRefObject } from 'react';
+import { InputHTMLAttributes } from 'react';
 
 export type IInputProps = InputHTMLAttributes<HTMLInputElement> & {
   label: string;
@@ -9,11 +9,11 @@ export type IInputProps = InputHTMLAttributes<HTMLInputElement> & {
   type?: string;
 };
 
-type StyledProps = {
+type NewType = {
   disabled?: boolean;
   optional?: boolean;
 };
-
+type StyledProps = NewType;
 export type StyleWrapper = {
   error?: string;
 };
@@ -22,4 +22,5 @@ export type StyledLabelProps = StyledProps;
 
 export type StyledInputProps = StyledProps & {
   error?: string;
+  touched?: boolean;
 };

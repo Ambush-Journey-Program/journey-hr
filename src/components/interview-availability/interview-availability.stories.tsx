@@ -19,7 +19,7 @@ const exampleOptions = [
 
 export default {
   component: InterviewAvailability,
-  title: 'UI/InterviewAvailability',
+  title: 'Components/InterviewAvailability',
   parameters: {
     isLoading: false,
     title: 'InterviewAvailability text',

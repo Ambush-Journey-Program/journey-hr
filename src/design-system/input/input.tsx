@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import * as Styled from './input.styled';
 import { IInputProps } from './types';
 
@@ -14,6 +15,7 @@ export function Input({
   name,
   onTextChange = () => {},
 }: IInputProps) {
+  const [touched, setTouched] = useState('');
   return (
     <div>
       <Styled.Wrapper error={error}>
@@ -22,13 +24,17 @@ export function Input({
         </Styled.Label>
         <Styled.InputContainer error={error} disabled={disabled}>
           <input
-            type={type ?? 'text'}
+            type={type}
+            touched={touched}
             placeholder={placeholder ?? 'Label'}
             required={required}
             disabled={disabled}
             readOnly={readOnly}
             value={value}
-            onChange={(e) => onTextChange(e.target.value)}
+            onChange={(e) => {
+              onTextChange(e.target.value);
+              setTouched(true);
+            }}
           ></input>
         </Styled.InputContainer>
         {!!error && <span>{error}</span>}

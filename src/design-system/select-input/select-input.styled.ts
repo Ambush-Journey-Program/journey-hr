@@ -48,7 +48,10 @@ export const Select = styled.select<StyledSelectProps>`
   background-position: calc(100% - 1.6em) center;
   background-size: 0.9em;
   background-repeat: no-repeat;
-  color: ${(props) => props.theme.color.contrasts.highContrast};
+  color: ${(props) =>
+    props.touched
+      ? props.theme.color.contrasts.highContrast
+      : props.theme.color.contrasts.lowestContrast};
   border: 1px solid ${(props) => props.theme.color.contrasts.lowestContrast};
   ${({ error }) => error && errorDisplay}
 

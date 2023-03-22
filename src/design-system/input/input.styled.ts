@@ -83,7 +83,10 @@ export const InputContainer = styled.div<StyledInputProps>`
     outline: none;
     width: calc(100% - 1rem);
     border: none;
-    color: ${(props) => props.theme.color.contrasts.highContrast};
+    color: ${(props) =>
+      props.touched
+        ? props.theme.color.contrasts.highContrast
+        : props.theme.color.contrasts.lowestContrast};
     font-size: 1rem;
   }
 `;

@@ -1,15 +1,9 @@
-import { render, screen } from '@testing-library/react';
-import { ThemeProvider } from 'styled-components';
+import { render, screen } from '../../tests/renderWithProviders';
 import { InterviewAvailability } from '.';
-import { theme } from '../../styles/theme';
 
 describe('<InterviewAvailability>', () => {
   it('It should have a title an subtitle', () => {
-    render(
-      <ThemeProvider theme={theme}>
-        <InterviewAvailability />
-      </ThemeProvider>,
-    );
+    render(<InterviewAvailability />);
 
     const interviewtitle = screen.getByTestId('interview-title-test');
     const interviewsubtitle = screen.getByTestId('interview-subtitle-test');
@@ -17,29 +11,17 @@ describe('<InterviewAvailability>', () => {
     expect(interviewsubtitle).toBeInTheDocument();
   });
   it('It should have a form', () => {
-    render(
-      <ThemeProvider theme={theme}>
-        <InterviewAvailability />
-      </ThemeProvider>,
-    );
+    render(<InterviewAvailability />);
     const interviewform = screen.getByTestId('interview-form-test');
     expect(interviewform).toBeInTheDocument();
   });
   it('It should have a button', () => {
-    render(
-      <ThemeProvider theme={theme}>
-        <InterviewAvailability />
-      </ThemeProvider>,
-    );
+    render(<InterviewAvailability />);
     const interviewButton = screen.getByRole('button');
     expect(interviewButton).toBeInTheDocument();
   });
   it('It should have a input', () => {
-    render(
-      <ThemeProvider theme={theme}>
-        <InterviewAvailability />
-      </ThemeProvider>,
-    );
+    render(<InterviewAvailability />);
     const interviewInput = screen.getByTestId('interview-input-test');
     expect(interviewInput).toBeInTheDocument();
   });

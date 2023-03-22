@@ -28,6 +28,7 @@ export default {
     required: true,
     options: exampleOptions,
     disabled: false,
+    placeholder: 'Label',
   },
 } as Meta;
 
@@ -41,4 +42,5 @@ SelectInputStory.args = {
   required: true,
   options: exampleOptions,
   disabled: false,
+  placeholder: 'Label',
 };
