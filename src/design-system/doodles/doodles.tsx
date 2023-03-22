@@ -4,7 +4,7 @@ import * as Styled from './doodles.styled';
 import { DoodlesLib } from './svgLibrary';
 
 export function Doodles({ colors, icon }: IDoodlesProps) {
-  const doodleIcon = icon ? DoodlesLib[icon] : undefined;
+  const doodleIcon = icon && DoodlesLib[icon];
 
   return <Styled.wrapper colors={colors}>{doodleIcon}</Styled.wrapper>;
 }
