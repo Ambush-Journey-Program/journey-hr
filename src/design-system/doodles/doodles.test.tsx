@@ -5,7 +5,7 @@ import { render, screen } from '../../tests/renderWithProviders';
 import { Doodles } from '.';
 
 describe('<Doodles />', () => {
-  it('it shoulb be displayed', () => {
+  it('it shoulbd be displayed', () => {
     render(<Doodles icon={'arrow1'} colors={'red'} />);
     const Doodle = screen.getByTestId('doodles');
     expect(Doodle).toBeInTheDocument();
