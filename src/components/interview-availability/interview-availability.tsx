@@ -1,14 +1,20 @@
-import { useCallback, useState } from 'react';
+import { useState } from 'react';
 import { Button } from '../../design-system/button';
 import { CardWrapper } from '../../design-system/card-wrapper';
 import { Input } from '../../design-system/input';
 import { SelectInput } from '../../design-system/select-input';
-import { exampleAre, exampleOpportunity, exampleOptions } from './constants';
+import { exampleAre, exampleOpportunity, exampleShift } from './constants';
 import * as Styled from './interview-availability.styled';
+
+type Opportunities = number | string;
 
 export function InterviewAvailability() {
   const [inputData, setInputData] = useState('');
-  const [valuesInput, setValuesInput] = useState({
+  const [valuesInput, setValuesInput] = useState<{
+    area: Opportunities;
+    shift: Opportunities;
+    opportunity: Opportunities;
+  }>({
     area: '',
     shift: '',
     opportunity: '',
@@ -29,7 +35,7 @@ export function InterviewAvailability() {
     {
       id: '2',
       name: 'shift',
-      options: exampleOptions,
+      options: exampleShift,
       title: 'Shift',
       required: true,
       dataTestId: 'interview-input-test',
@@ -88,7 +94,7 @@ export function InterviewAvailability() {
             <Styled.ContainerBtn>
               <Button
                 sizeVariant={'default'}
-                disabled={!inputData || !setValuesInput}
+                disabled={!valuesInput && !inputData ? true : false}
               >
                 Search
               </Button>

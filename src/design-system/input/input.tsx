@@ -15,17 +15,20 @@ export function Input({
   name,
   onTextChange = () => {},
 }: IInputProps) {
-  const [touched, setTouched] = useState('');
+  const [touched, setTouched] = useState(false);
   return (
     <div>
       <Styled.Wrapper error={error}>
         <Styled.Label htmlFor={name} optional={optional}>
           {label} <span>Optional</span>
         </Styled.Label>
-        <Styled.InputContainer error={error} disabled={disabled}>
+        <Styled.InputContainer
+          error={error}
+          disabled={disabled}
+          touched={touched}
+        >
           <input
             type={type}
-            touched={touched}
             placeholder={placeholder ?? 'Label'}
             required={required}
             disabled={disabled}

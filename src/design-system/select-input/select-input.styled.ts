@@ -39,6 +39,7 @@ export const Select = styled.select<StyledSelectProps>`
   align-items: center;
   width: 100%;
   height: 3.25rem;
+  font-size: 1rem;
   border-radius: 0.75rem;
   padding-left: 1.25rem;
   padding: 0.875rem;

@@ -1,4 +1,4 @@
-export const exampleOptions = [
+export const exampleShift = [
   {
     label: 'Morning',
     value: 'morning',
@@ -31,14 +31,14 @@ export const exampleAre = [
 export const exampleOpportunity = [
   {
     label: 'React Developer',
-    value: 'react developer',
+    value: 'react_developer',
   },
   {
     label: 'Java Developer',
-    value: 'java developer',
+    value: 'java_developer',
   },
   {
     label: 'Product Designer',
-    value: 'product designer',
+    value: 'product_designer',
   },
 ];
