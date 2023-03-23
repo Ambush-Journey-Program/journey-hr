@@ -11,9 +11,6 @@ export const TooltipWrapper = styled.div`
   cursor: pointer;
   display: inline-block;
   cursor: pointer;
-  &:hover > span {
-    visibility: visible;
-  }
 `;
 export type StyledProps = {
   variantPosition: PositionsType;
@@ -83,7 +80,6 @@ export const TooltipBox = styled.span<StyledProps>`
   box-shadow: 0 0.25rem 0.875rem rgba(0, 0, 0, 0.15),
     0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
   overflow-wrap: break-word;
-  visibility: hidden;
   &:after {
     content: '';
     z-index: 10;
