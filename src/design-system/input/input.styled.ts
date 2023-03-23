@@ -80,13 +80,21 @@ export const InputContainer = styled.div<StyledInputProps>`
     border: 1px solid ${(props) => props.theme.color.brandColors.purple};
   }
   & input {
-    outline: none;
     width: calc(100% - 1rem);
+    font-size: 1rem;
     border: none;
+    outline: none;
     color: ${(props) =>
       props.touched
         ? props.theme.color.contrasts.highContrast
         : props.theme.color.contrasts.lowestContrast};
-    font-size: 1rem;
+    background-image: url('src/design-system/select-input/assets/calendar.svg');
+    background-position: calc(100% - 0.625rem) center;
+    background-size: 1.25em;
+    background-repeat: no-repeat;
+  }
+  & input::-webkit-calendar-picker-indicator {
+    background: transparent;
+    background-position: calc(100% - 0.625rem) center;
   }
 `;

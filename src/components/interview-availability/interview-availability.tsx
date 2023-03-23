@@ -6,15 +6,9 @@ import { SelectInput } from '../../design-system/select-input';
 import { exampleAre, exampleOpportunity, exampleShift } from './constants';
 import * as Styled from './interview-availability.styled';
 
-type Opportunities = number | string;
-
 export function InterviewAvailability() {
   const [inputData, setInputData] = useState('');
-  const [valuesInput, setValuesInput] = useState<{
-    area: Opportunities;
-    shift: Opportunities;
-    opportunity: Opportunities;
-  }>({
+  const [valuesInput, setValuesInput] = useState({
     area: '',
     shift: '',
     opportunity: '',
@@ -94,7 +88,14 @@ export function InterviewAvailability() {
             <Styled.ContainerBtn>
               <Button
                 sizeVariant={'default'}
-                disabled={!valuesInput && !inputData ? true : false}
+                disabled={
+                  valuesInput.area &&
+                  valuesInput.shift &&
+                  valuesInput.opportunity &&
+                  inputData
+                    ? false
+                    : true
+                }
               >
                 Search
               </Button>
