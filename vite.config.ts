@@ -22,4 +22,8 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: './src/tests/setupTest.ts',
   },
+  define: {
+    'process.env': {},
+    global: {},
+  },
 });

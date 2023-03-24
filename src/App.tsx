@@ -6,12 +6,10 @@ import { GoogleOAuthProvider } from '@react-oauth/google';
 
 function App() {
   return (
-    <GoogleOAuthProvider clientId="412217370844-lilgs9rb0vj31pcqn4bcrr1oiikpoods.apps.googleusercontent.com">
-      <ThemeProvider theme={theme}>
-        <GlobalStyles />
-        <Calendar></Calendar>
-      </ThemeProvider>
-    </GoogleOAuthProvider>
+    <ThemeProvider theme={theme}>
+      <GlobalStyles />
+      <Calendar></Calendar>
+    </ThemeProvider>
   );
 }
 export default App;
