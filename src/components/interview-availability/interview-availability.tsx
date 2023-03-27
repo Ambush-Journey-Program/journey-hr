@@ -52,6 +52,11 @@ export function InterviewAvailability() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    console.log(`Your state values: \n
+    Date: ${inputData} \n
+    Area: ${valuesInput.area} \n
+    Shift: ${valuesInput.shift} \n
+    Opportunity: ${valuesInput.opportunity}`);
   };
 
   return (
