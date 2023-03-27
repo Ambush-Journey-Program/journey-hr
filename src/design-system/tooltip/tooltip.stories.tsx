@@ -1,6 +1,6 @@
 import { Meta, Story } from '@storybook/react';
 import { ThemeProvider } from 'styled-components';
-import { theme } from '../../styles/theme';
+import { theme } from '@/styles/theme';
 import { Tooltip } from './tooltip';
 
 import { ITooltipProps } from './types';

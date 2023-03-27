@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { describe, expect } from 'vitest';
-import { render, screen } from '../../../tests/renderWithProviders';
+import { render, screen } from '@/tests/renderWithProviders';
 import { Subtitle } from './subtitle';
 
 describe('<Subtitle />', () => {

@@ -1,8 +1,7 @@
 import 'jest-styled-components';
 import userEvent from '@testing-library/user-event';
-
-import { render, screen } from '../../tests/renderWithProviders';
-import { Tooltip } from '.';
+import { render, screen } from '@/tests/renderWithProviders';
+import { Tooltip } from './tooltip';
 
 describe('<Tooltip />', async () => {
   it('should be visible when hovering the child element', async () => {

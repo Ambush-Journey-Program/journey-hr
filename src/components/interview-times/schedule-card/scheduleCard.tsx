@@ -1,7 +1,7 @@
-import { CardWrapper } from '../../../design-system/card-wrapper';
+import { CardWrapper } from '@/design-system/card-wrapper';
 import { ScheduleCardProps } from '../types';
 import * as Styled from './scheduleCard.styled';
-import { Button } from '../../../design-system/button';
+import { Button } from '@/design-system/button';
 
 export function ScheduleCard({
   interviews,
