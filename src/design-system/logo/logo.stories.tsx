@@ -1,8 +1,9 @@
 import { Meta, Story } from '@storybook/react';
-import { ThemeProvider } from 'styled-components';
+import { css, ThemeProvider } from 'styled-components';
 import { theme } from '../../styles/theme';
 import { Logo } from './logo';
 import { ILogoProps } from './types';
+import styled from 'styled-components';
 
 export default {
   component: Logo,
@@ -10,11 +11,21 @@ export default {
   parameters: {},
 } as Meta;
 
+const LogoStoryWrapper = styled.div<{ alternate?: boolean }>`
+  padding: 32px;
+  width: 200px;
+  ${(props) =>
+    props.alternate &&
+    css`
+      background-color: darkgray;
+    `}
+`;
+
 const Template: Story<ILogoProps> = (args) => {
   return (
-    <ThemeProvider theme={theme}>
+    <LogoStoryWrapper alternate={args.colorVariant === 'light'}>
       <Logo {...args} />
-    </ThemeProvider>
+    </LogoStoryWrapper>
   );
 };
 
