@@ -1,6 +1,4 @@
 import { Meta, Story } from '@storybook/react';
-import { Label } from '../input/input.styled';
-
 import { Button } from './button';
 import { IButtonProps } from './types';
 
@@ -20,4 +18,7 @@ export const ButtonStory = Template.bind({});
 ButtonStory.args = {
   children: 'Button',
   disabled: false,
+  color: 'defaultColor',
+  sizeVariant: 'default',
+  variant: 'defaultType',
 };
