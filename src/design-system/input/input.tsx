@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 import * as Styled from './input.styled';
 import { IInputProps } from './types';
 
@@ -16,6 +16,10 @@ export function Input({
   onTextChange = () => {},
 }: IInputProps) {
   const [touched, setTouched] = useState(false);
+  function onInputChange(e: ChangeEvent<HTMLInputElement>) {
+    onTextChange(e.target.value);
+    setTouched(true);
+  }
   return (
     <div>
       <Styled.Wrapper error={error}>
@@ -35,8 +39,7 @@ export function Input({
             readOnly={readOnly}
             value={value}
             onChange={(e) => {
-              onTextChange(e.target.value);
-              setTouched(true);
+              onInputChange(e);
             }}
           ></input>
         </Styled.InputContainer>

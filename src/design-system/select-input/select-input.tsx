@@ -14,6 +14,7 @@ export function SelectInput({
 }: ISelectInputProps) {
   function handleSelectEvent(event: ChangeEvent<HTMLSelectElement>) {
     handleSelect(event.target.value);
+    setTouched(true);
   }
   const [touched, setTouched] = useState(false);
   return (
@@ -27,12 +28,8 @@ export function SelectInput({
         data-testid="input-select-test"
         disabled={disabled}
         error={error}
-        onSelect={() => {
-          setTouched(true);
-        }}
         onChange={(e) => {
           handleSelectEvent(e);
-          setTouched(true);
         }}
         {...props}
       >

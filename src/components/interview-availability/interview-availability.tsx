@@ -1,3 +1,4 @@
+import { Subtitle, Title } from '@/design-system/typography';
 import { useState } from 'react';
 import { Button } from '../../design-system/button';
 import { CardWrapper } from '../../design-system/card-wrapper';
@@ -59,17 +60,25 @@ export function InterviewAvailability() {
     Opportunity: ${valuesInput.opportunity}`);
   };
 
+  const isButtonEnabled =
+    valuesInput.area &&
+    valuesInput.shift &&
+    valuesInput.opportunity &&
+    inputData;
+
   return (
     <CardWrapper>
       <Styled.InterviewAvailability>
-        <div>
-          <Styled.Title data-testid="interview-title-test">
+        <Styled.ContainerTitle>
+          <Title variant="h1" data-testid="interview-title-test">
             Technical Interview Availability
-          </Styled.Title>
-          <Styled.Subtitle data-testid="interview-subtitle-test">
+          </Title>
+        </Styled.ContainerTitle>
+        <Styled.ContainerTitle>
+          <Subtitle variant="s4" data-testid="interview-subtitle-test">
             Schedule a technical interview for a candidate.
-          </Styled.Subtitle>
-        </div>
+          </Subtitle>
+        </Styled.ContainerTitle>
         <div>
           <Styled.Form
             data-testid="interview-form-test"
@@ -78,25 +87,15 @@ export function InterviewAvailability() {
           >
             <Input
               name="data"
-              type={'date'}
-              label={'Date:'}
+              type="date"
+              label="Date:"
               onTextChange={setInputData}
             />
             {selectInputsData.map((input) => (
               <SelectInput key={input.id} {...input} />
             ))}
             <Styled.ContainerBtn>
-              <Button
-                sizeVariant={'default'}
-                disabled={
-                  valuesInput.area &&
-                  valuesInput.shift &&
-                  valuesInput.opportunity &&
-                  inputData
-                    ? false
-                    : true
-                }
-              >
+              <Button sizeVariant={'default'} disabled={!isButtonEnabled}>
                 Search
               </Button>
             </Styled.ContainerBtn>

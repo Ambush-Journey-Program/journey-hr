@@ -9,18 +9,15 @@ export type IInputProps = InputHTMLAttributes<HTMLInputElement> & {
   type?: string;
 };
 
-type NewType = {
-  disabled?: boolean;
-  optional?: boolean;
-};
-type StyledProps = NewType;
 export type StyleWrapper = {
   error?: string;
 };
 
-export type StyledLabelProps = StyledProps;
+export type StyledLabelProps = { disabled?: boolean; optional?: boolean };
 
-export type StyledInputProps = StyledProps & {
+export type StyledInputProps = {
+  disabled?: boolean;
+  optional?: boolean;
   error?: string;
   touched?: boolean;
 };

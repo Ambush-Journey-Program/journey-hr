@@ -2,24 +2,10 @@ import styled from 'styled-components';
 
 export const InterviewAvailability = styled.div``;
 
-export const Title = styled.h1`
+export const ContainerTitle = styled.div`
   display: flex;
   justify-content: center;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 1.125rem;
-  line-height: 125%;
-  color: ${(props) => props.theme.color.contrasts.highContrast};
-`;
-
-export const Subtitle = styled.h2`
-  display: flex;
-  justify-content: center;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 1rem;
-  line-height: 150%;
-  color: ${(props) => props.theme.color.contrasts.mediumContrast};
+  margin-bottom: 4px;
 `;
 
 export const Form = styled.form`
