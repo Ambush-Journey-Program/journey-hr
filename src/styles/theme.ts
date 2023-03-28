@@ -1,12 +1,6 @@
-import {
-  contrasts,
-  auxiliary,
-  gradients,
-  brandColors,
-  button,
-  shadows,
-} from './colors';
+import { contrasts, auxiliary, gradients, brandColors, button } from './colors';
 import { font } from './fonts';
+import { shadows } from './shadows';
 
 export const theme = {
   color: {
@@ -17,5 +11,6 @@ export const theme = {
     button,
     shadows,
   },
+  shadows: shadows,
   font: font,
 };

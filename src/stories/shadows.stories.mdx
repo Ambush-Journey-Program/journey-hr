@@ -1,0 +1,42 @@
+import { theme } from '../styles/theme';
+
+<Meta title="Docs/Shadows" />
+
+<style>
+  {`
+
+h2{
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 40px;
+  color: #301F47;
+  margin-bottom:50px;
+}
+
+.btn{
+  display:flex;
+  gap:65px;
+}
+button{
+  padding:100px;
+  color:#301F47;
+  border-radius: 40px;
+  background-color:${[theme.color.auxiliary.white]}
+}
+
+#btnCream{
+  box-shadow:${[theme.shadows.cream]};
+}
+
+#btnPurple{
+ box-shadow:${[theme.shadows.purple]};
+}
+
+`}
+</style>
+
+<h2>Shadows</h2>
+<div className="btn">
+  <button id="btnCream"> Cream </button>
+  <button id="btnPurple"> Purple </button>
+</div>

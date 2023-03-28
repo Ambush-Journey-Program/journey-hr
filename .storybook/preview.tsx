@@ -24,6 +24,11 @@ export const parameters = {
             url: 'https://www.figma.com/file/EUiXXvcSD4TdupzlRRd8Uk/Ambush-Tokens?node-id=2%3A804&t=WcI5jns5q5TpQbxH-1',
             description: 'This is the Figma of the Colors and its variations.',
           },
+          {
+            text: 'Shadows',
+            url: 'https://www.figma.com/file/EUiXXvcSD4TdupzlRRd8Uk/Ambush-Tokens?node-id=310%3A29354&t=WcI5jns5q5TpQbxH-1',
+            description: 'This is the Figma of the Colors and its variations.',
+          },
         ],
       },
     ],
