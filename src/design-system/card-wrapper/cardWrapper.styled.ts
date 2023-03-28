@@ -3,7 +3,7 @@ import styled, {
   FlattenInterpolation,
   ThemeProps,
 } from 'styled-components';
-import { devices } from '../../styles/devices';
+import { devices } from '@/styles/devices';
 
 import { CardProps, ColorProp } from './types';
 

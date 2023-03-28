@@ -4,7 +4,7 @@ import { render, screen } from '@testing-library/react';
 
 import { NavBar } from './navbar';
 import { ThemeProvider } from 'styled-components';
-import { theme } from '../../styles/theme';
+import { theme } from '@/styles/theme';
 
 type Link = {
   url: string;
