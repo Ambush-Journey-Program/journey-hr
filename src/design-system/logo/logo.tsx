@@ -6,7 +6,11 @@ export function Logo({ colorVariant = 'red', variant }: LogoProps) {
   const logoVariant = variant && Logos[variant];
 
   return (
-    <Styled.Image data-testid="Logo" colorVariant={colorVariant}>
+    <Styled.Image
+      data-testid="Logo"
+      colorVariant={colorVariant}
+      alt={'Ambush logo'}
+    >
       {logoVariant}
     </Styled.Image>
   );
