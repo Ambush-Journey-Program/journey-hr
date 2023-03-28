@@ -9,6 +9,7 @@ import { DoodlesStyleProps } from './types';
 type ColorVariant = {
   [key: string]: FlattenInterpolation<ThemeProps<DoodlesStyleProps>>;
 };
+
 const colorsVariants: ColorVariant = {
   red: css`
     stroke: ${(props) => props.theme.color.brandColors.red};
@@ -21,9 +22,11 @@ const colorsVariants: ColorVariant = {
   yellow: css`
     stroke: ${(props) => props.theme.color.brandColors.yellow};
   `,
+
   light: css`
     stroke: ${(props) => props.theme.color.brandColors.light};
   `,
+
   dark: css`
     stroke: ${(props) => props.theme.color.contrasts.mediumContrast};
   `,
