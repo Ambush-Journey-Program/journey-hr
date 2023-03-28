@@ -1,4 +1,4 @@
-export const exampleShift = [
+export const shiftOptions = [
   {
     label: 'Morning',
     value: 'morning',

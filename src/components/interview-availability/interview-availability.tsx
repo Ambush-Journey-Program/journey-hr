@@ -4,7 +4,7 @@ import { Button } from '../../design-system/button';
 import { CardWrapper } from '../../design-system/card-wrapper';
 import { Input } from '../../design-system/input';
 import { SelectInput } from '../../design-system/select-input';
-import { exampleAre, exampleOpportunity, exampleShift } from './constants';
+import { exampleAre, exampleOpportunity, shiftOptions } from './constants';
 import * as Styled from './interview-availability.styled';
 
 export function InterviewAvailability() {
@@ -14,42 +14,6 @@ export function InterviewAvailability() {
     shift: '',
     opportunity: '',
   });
-
-  const selectInputsData = [
-    {
-      id: '1',
-      name: 'area',
-      options: exampleAre,
-      title: 'Area',
-      required: true,
-      dataTestId: 'interview-input-test',
-      value: valuesInput.area,
-      handleSelect: (value: string) =>
-        setValuesInput({ ...valuesInput, area: value }),
-    },
-    {
-      id: '2',
-      name: 'shift',
-      options: exampleShift,
-      title: 'Shift',
-      required: true,
-      dataTestId: 'interview-input-test',
-      value: valuesInput.shift,
-      handleSelect: (value: string) =>
-        setValuesInput({ ...valuesInput, shift: value }),
-    },
-    {
-      id: '3',
-      name: 'opportunity',
-      options: exampleOpportunity,
-      title: 'Opportunity',
-      required: true,
-      dataTestId: 'interview-input-test',
-      value: valuesInput.opportunity,
-      handleSelect: (value: string) =>
-        setValuesInput({ ...valuesInput, opportunity: value }),
-    },
-  ];
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -81,7 +45,7 @@ export function InterviewAvailability() {
         </Styled.ContainerTitle>
         <div>
           <Styled.Form
-            data-testid="interview-form-test"
+            data-testId="interview-form-test"
             onSubmit={handleSubmit}
             action=""
           >
@@ -91,9 +55,40 @@ export function InterviewAvailability() {
               label="Date:"
               onTextChange={setInputData}
             />
-            {selectInputsData.map((input) => (
-              <SelectInput key={input.id} {...input} />
-            ))}
+            <SelectInput
+              data-testId="interview-input-test"
+              name="area"
+              title={'Area:'}
+              placeholder={'UX Designer'}
+              options={exampleAre}
+              required
+              value={valuesInput.area}
+              handleSelect={(value) =>
+                setValuesInput({ ...valuesInput, area: value })
+              }
+            ></SelectInput>
+            <SelectInput
+              name="shift"
+              title={'Shift:'}
+              placeholder={'Morning'}
+              options={shiftOptions}
+              required
+              value={valuesInput.shift}
+              handleSelect={(value) =>
+                setValuesInput({ ...valuesInput, shift: value })
+              }
+            ></SelectInput>
+            <SelectInput
+              name="opportunity"
+              title={'Opportunity:'}
+              placeholder={'Product Designer'}
+              options={exampleOpportunity}
+              required
+              value={valuesInput.opportunity}
+              handleSelect={(value) =>
+                setValuesInput({ ...valuesInput, opportunity: value })
+              }
+            ></SelectInput>
             <Styled.ContainerBtn>
               <Button sizeVariant={'default'} disabled={!isButtonEnabled}>
                 Search

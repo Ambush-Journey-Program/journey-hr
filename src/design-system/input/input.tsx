@@ -10,8 +10,7 @@ export function Input({
   readOnly,
   error,
   optional,
-  placeholder,
-  type,
+  type = 'text',
   name,
   onTextChange = () => {},
 }: IInputProps) {
@@ -33,7 +32,7 @@ export function Input({
         >
           <input
             type={type}
-            placeholder={placeholder ?? 'Label'}
+            placeholder="Label"
             required={required}
             disabled={disabled}
             readOnly={readOnly}
@@ -41,7 +40,7 @@ export function Input({
             onChange={(e) => {
               onInputChange(e);
             }}
-          ></input>
+          />
         </Styled.InputContainer>
         {!!error && <span>{error}</span>}
       </Styled.Wrapper>
