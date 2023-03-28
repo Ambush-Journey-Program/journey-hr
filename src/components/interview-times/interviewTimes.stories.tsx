@@ -38,7 +38,22 @@ const interviews: InterviewOption[] = [
 export default {
   component: InterviewTimes,
   title: 'Component/InterviewTimes',
-  parameters: {},
+  parameters: {
+    relatedLinks: {
+      sections: [
+        {
+          title: 'Figma',
+          links: [
+            {
+              text: 'Schedule Card ',
+              url: 'https://www.figma.com/file/yOF5DjTKrtqxLiP7A5DsOy/Ambush-Atoms?node-id=522%3A270&t=lXp9G2678yes8yDk-1',
+              description: 'This is the Figma of Schedule Card',
+            },
+          ],
+        },
+      ],
+    },
+  },
 } as Meta;
 
 const Template: Story<InterviewTimesProps> = (args) => {

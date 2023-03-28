@@ -9,6 +9,20 @@ export default {
   title: 'UI/Avatar',
   parameters: {
     src: 'src/design-system/avatar/User-Photo.png',
+    relatedLinks: {
+      sections: [
+        {
+          title: 'Figma',
+          links: [
+            {
+              text: 'User Avatar ',
+              url: 'https://www.figma.com/file/yOF5DjTKrtqxLiP7A5DsOy/Ambush-Atoms?node-id=1045%3A695&t=i4ddngmKFF26EqjW-1',
+              description: 'This is the Figma of the Avatar Component',
+            },
+          ],
+        },
+      ],
+    },
   },
 } as Meta;
 
