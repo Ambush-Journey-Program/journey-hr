@@ -28,6 +28,21 @@ export default {
     required: true,
     options: exampleOptions,
     disabled: false,
+    relatedLinks: {
+      sections: [
+        {
+          title: 'Figma',
+          links: [
+            {
+              text: 'Select Input',
+              url: 'https://www.figma.com/file/yOF5DjTKrtqxLiP7A5DsOy/Ambush-Atoms?node-id=3%3A32&t=i4ddngmKFF26EqjW-1',
+              description:
+                'This is the Figma of the Select Input and its variations.',
+            },
+          ],
+        },
+      ],
+    },
   },
 } as Meta;
 

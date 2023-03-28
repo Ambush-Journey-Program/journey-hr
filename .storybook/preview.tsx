@@ -14,6 +14,20 @@ export const parameters = {
       },
     ],
   },
+  relatedLinks: {
+    sections: [
+      {
+        title: 'Figma',
+        links: [
+          {
+            text: 'Colors',
+            url: 'https://www.figma.com/file/EUiXXvcSD4TdupzlRRd8Uk/Ambush-Tokens?node-id=2%3A804&t=WcI5jns5q5TpQbxH-1',
+            description: 'This is the Figma of the Colors and its variations.',
+          },
+        ],
+      },
+    ],
+  },
 };
 
 const withGlobalStyle = (Story) => (
