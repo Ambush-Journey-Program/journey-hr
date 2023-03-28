@@ -1,11 +1,10 @@
+import { devices } from '@/styles/devices';
 import styled, {
-  css,
   FlattenInterpolation,
   ThemeProps,
+  css,
 } from 'styled-components';
-import { devices } from '@/styles/devices';
-
-import { CardProps, ColorProp } from './types';
+import { ColorProp, CardProps } from './types';
 
 export type Background = {
   [key: string]: FlattenInterpolation<ThemeProps<ColorProp>>;
