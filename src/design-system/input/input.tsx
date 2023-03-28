@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Paragraphs } from '../typography/paragraphs/paragraphs';
 import * as Styled from './input.styled';
 import { IInputProps } from './types';
 
@@ -30,7 +31,11 @@ export function Input({
             onChange={(e) => onTextChange(e.target.value)}
           />
         </Styled.InputContainer>
-        {!!error && <span>{error}</span>}
+        {!!error && (
+          <Paragraphs size="extrasmall" fontWeight="light" colorVariant="red">
+            {error}
+          </Paragraphs>
+        )}
       </Styled.Wrapper>
     </div>
   );
