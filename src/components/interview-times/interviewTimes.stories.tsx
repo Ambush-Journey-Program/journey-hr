@@ -37,7 +37,7 @@ const interviews: InterviewOption[] = [
 
 export default {
   component: InterviewTimes,
-  title: 'Component/InterviewTimes',
+  title: 'Components/InterviewTimes',
   parameters: {
     relatedLinks: {
       sections: [

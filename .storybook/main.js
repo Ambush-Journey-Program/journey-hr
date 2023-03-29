@@ -22,6 +22,10 @@ module.exports = {
             find: '@',
             replacement: path.resolve(__dirname, '../src'),
           },
+          {
+            find: '@ambush/ui',
+            replacement: path.resolve(__dirname, '../src/design-system'),
+          },
         ],
       },
     };

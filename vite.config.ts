@@ -30,7 +30,7 @@ export default defineConfig({
         replacement: fileURLToPath(new URL('./src', import.meta.url)),
       },
       {
-        find: '@components',
+        find: '@ambush/ui',
         replacement: fileURLToPath(
           new URL('./src/design-system', import.meta.url),
         ),

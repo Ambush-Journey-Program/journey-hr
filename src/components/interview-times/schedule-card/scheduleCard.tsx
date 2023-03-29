@@ -1,4 +1,4 @@
-import { CardWrapper, Button } from '@components';
+import { CardWrapper, Button } from '@ambush/ui';
 import { ScheduleCardProps } from '../types';
 import * as Styled from './scheduleCard.styled';
 
