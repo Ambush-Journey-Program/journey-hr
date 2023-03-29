@@ -18,7 +18,8 @@
     "jsx": "react-jsx",
     "rootDir": "./",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@components": ["./src/design-system/"]
     }
   },
   "include": ["src"]

@@ -29,6 +29,12 @@ export default defineConfig({
         find: '@',
         replacement: fileURLToPath(new URL('./src', import.meta.url)),
       },
+      {
+        find: '@components',
+        replacement: fileURLToPath(
+          new URL('./src/design-system', import.meta.url),
+        ),
+      },
     ],
   },
 });
