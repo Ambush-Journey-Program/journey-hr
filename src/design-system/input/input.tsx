@@ -39,6 +39,7 @@ export function Input({
             readOnly={readOnly}
             value={value}
             onChange={onInputChange}
+            data-testid="input-test"
           />
         </Styled.InputContainer>
         {!!error && (
