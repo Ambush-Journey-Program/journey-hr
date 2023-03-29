@@ -1,5 +1,4 @@
-import { Button } from '@/design-system/button';
-import { CardWrapper } from '@/design-system/card-wrapper';
+import { CardWrapper, Button } from '@components';
 import { ScheduleCardProps } from '../types';
 import * as Styled from './scheduleCard.styled';
 
