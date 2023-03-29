@@ -16,5 +16,5 @@ export type ParagraphsProps = {
   children: string;
   size: ParagraphType;
   fontWeight: WheightType;
-  colorVariant: ColorType;
+  colorVariant?: ColorType;
 };

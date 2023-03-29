@@ -4,6 +4,7 @@ import styled, {
   FlattenInterpolation,
   ThemeProps,
 } from 'styled-components';
+import { WithRequiredProperty } from '../../../types';
 import { ParagraphsProps, ColorType } from './types';
 
 type ParagraphsStyle = {
@@ -84,7 +85,9 @@ const paragraphsWeightEl: WeightStyle = {
   `,
 };
 
-export const Paragraph = styled.p<ParagraphsProps>`
+export const Paragraph = styled.p<
+  WithRequiredProperty<ParagraphsProps, 'colorVariant'>
+>`
   font-family: ${(props) => props.theme.font.fontFamilyBody};
   ${({ colorVariant }) => color[colorVariant]}
 
