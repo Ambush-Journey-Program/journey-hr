@@ -5,9 +5,11 @@ import { StyledLabelProps, StyledInputProps, StyleWrapper } from './types';
 const disabledInput = css`
   background-color: ${(props) => props.theme.color.brandColors.light};
 `;
+
 const spanError = css`
   display: block;
   margin-top: 4px;
+
   & input::placeholder {
     color: ${(props) => props.theme.color.auxiliary.error};
     border-color: red;
@@ -27,7 +29,6 @@ const spanOptional = css`
   display: block;
 `;
 export const Wrapper = styled.div<StyleWrapper>`
-  width: 391px;
   ${({ error }) => error && spanError}
 `;
 
@@ -35,13 +36,11 @@ export const Label = styled.label<StyledLabelProps>`
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  font-family: mundial, sans-serif;
   font-style: normal;
   font-weight: 300;
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 150%;
   color: ${(props) => props.theme.color.contrasts.mediumContrast};
-  margin-top: 37px;
 
   span {
     display: none;
@@ -52,34 +51,47 @@ export const Label = styled.label<StyledLabelProps>`
 export const Input = styled.label`
   font-style: normal;
   font-weight: 300;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 1rem;
+  line-height: 1.5rem;
 `;
 
 export const InputContainer = styled.div<StyledInputProps>`
   display: flex;
   align-items: center;
-  width: 391px;
-  height: 52px;
+  height: 3.25rem;
   font-style: normal;
   font-weight: 300;
-  font-size: 16px;
+  font-size: 1rem;
   color: ${(props) => props.theme.color.contrasts.highContrast};
   border: 1px solid ${(props) => props.theme.color.contrasts.lowestContrast};
-  border-radius: 12px;
-  padding-left: 20px;
-  margin-top: 4px;
+  border-radius: 0.75rem;
+  padding-left: 1.25rem;
+  margin-top: 0.25rem;
   ${({ error }) => error && errorDisplay}
   ${({ disabled }) => disabled && disabledInput};
 
   &:focus-within {
     outline: none;
-    box-shadow: 0 0 2px ${(props) => props.theme.color.contrasts.mediumContrast};
+    box-shadow: 0 0 0.125rem
+      ${(props) => props.theme.color.contrasts.mediumContrast};
     border: 1px solid ${(props) => props.theme.color.brandColors.purple};
   }
   & input {
-    width: 329px;
-    outline: none;
+    width: calc(100% - 1rem);
+    font-size: 1rem;
     border: none;
+    outline: none;
+    color: ${(props) =>
+      props.touched
+        ? props.theme.color.contrasts.highContrast
+        : props.theme.color.contrasts.lowestContrast};
+    background-image: url('src/design-system/input/assets/calendar-day.svg');
+    background-position: calc(100% - 0.625rem) center;
+    background-size: 1.25em;
+    background-repeat: no-repeat;
+  }
+  & input::-webkit-calendar-picker-indicator {
+    background: transparent;
+    background-position: calc(100% - 0.625rem) center;
   }
 `;

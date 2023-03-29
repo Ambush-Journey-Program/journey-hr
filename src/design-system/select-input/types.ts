@@ -7,9 +7,10 @@ type Option = {
 
 export type ISelectInputProps = SelectHTMLAttributes<HTMLSelectElement> & {
   title?: string;
-  options?: Option[];
+  options: Option[];
   error?: string;
-  onSelect?: (selectedValue: string) => void;
+  handleSelect: (selectedValue: string) => void;
+  placeholder?: string;
 };
 
 export type StyledProps = {
@@ -18,4 +19,5 @@ export type StyledProps = {
 
 export type StyledSelectProps = StyledProps & {
   error?: string;
+  touched?: boolean;
 };
