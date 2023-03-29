@@ -9,8 +9,7 @@ export const theme = {
     contrasts,
     gradients,
     button,
-    shadows,
   },
-  shadows: shadows,
+  shadows,
   font: font,
 };
