@@ -33,6 +33,7 @@ module.exports = {
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
     'storybook-color-picker',
+    'storybook-dark-mode',
   ],
   framework: '@storybook/react',
   core: {

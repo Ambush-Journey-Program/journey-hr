@@ -1,16 +1,17 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
+import { themes } from '@storybook/theming';
 import { GlobalStyles } from '../src/styles/global';
 import { theme } from '../src/styles/theme';
 
 export const parameters = {
   layout: 'centered',
   colorPicker: {
-    primaryPalette: 'Brand Colors', // Name of primary palette for all components and its stories. Optional (fallback to first palette from the palettes array).
+    primaryPalette: 'Brand Colors',
     palettes: [
       {
-        name: 'Solid Colors', // string
-        palette: theme.color, // Palette as an Object or an Array. See bellow.
+        name: 'Solid Colors',
+        palette: theme.color,
       },
     ],
   },
@@ -32,6 +33,10 @@ export const parameters = {
         ],
       },
     ],
+  },
+  darkMode: {
+    dark: { ...themes.dark, appBg: 'black' },
+    light: { ...themes.normal, appBg: 'white' },
   },
 };
 
