@@ -1,19 +1,23 @@
 import { ISelectInputProps } from './types';
 import * as Styled from './select-input.styled';
-import { ChangeEvent } from 'react';
+import { ChangeEvent, useState } from 'react';
+import { Paragraphs } from '../typography/paragraphs/paragraphs';
 
 export function SelectInput({
   title,
   options,
   error,
   required,
-  onSelect,
+  handleSelect,
   disabled,
+  placeholder,
   ...props
 }: ISelectInputProps) {
-  function handleSelect(event: ChangeEvent<HTMLSelectElement>) {
-    onSelect(event.target.value);
+  function handleSelectEvent(event: ChangeEvent<HTMLSelectElement>) {
+    handleSelect(event.target.value);
+    setTouched(true);
   }
+  const [touched, setTouched] = useState(false);
   return (
     <Styled.Wrapper>
       <Styled.Legend>
@@ -21,20 +25,27 @@ export function SelectInput({
         {!required && <Styled.SpanRequired>Optional</Styled.SpanRequired>}
       </Styled.Legend>
       <Styled.Select
+        touched={touched}
         data-testid="input-select-test"
         disabled={disabled}
         error={error}
-        onChange={handleSelect}
+        onChange={handleSelectEvent}
         {...props}
       >
-        <option value="">Selecione uma opção...</option>
+        <option value="">{placeholder}</option>
         {options.map((option) => (
           <option key={option.value} value={option.value}>
             {option.label}
           </option>
         ))}
       </Styled.Select>
-      {!!error && <Styled.SpanError>{error}</Styled.SpanError>}
+      {!!error && (
+        <Styled.SpanError>
+          <Paragraphs size="extrasmall" fontWeight="light" colorVariant="red">
+            {error}
+          </Paragraphs>
+        </Styled.SpanError>
+      )}
     </Styled.Wrapper>
   );
 }

@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components';
-
 import { StyledSelectProps, StyleWrapper, StyledProps } from './types';
 
 export const SpanRequired = styled.span`
@@ -8,10 +7,8 @@ export const SpanRequired = styled.span`
 
 export const SpanError = styled.span<StyledProps>`
   display: block;
-  color: ${(props) => props.theme.color.auxiliary.error};
   margin-top: 0.25rem;
-  font-weight: 400;
-  font-size: 0.75rem;
+
   line-height: 1.125rem;
 `;
 
@@ -39,9 +36,33 @@ export const Select = styled.select<StyledSelectProps>`
   display: flex;
   align-items: center;
   width: 100%;
-  display: flex;
+  height: 3.25rem;
+  font-size: 1rem;
   border-radius: 0.75rem;
   padding-left: 1.25rem;
   padding: 0.875rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url('src/design-system/select-input/assets/chevron-down.svg');
+  background-position: calc(100% - 1.6em) center;
+  background-size: 1.25em;
+  background-repeat: no-repeat;
+  color: ${(props) =>
+    props.touched
+      ? props.theme.color.contrasts.highContrast
+      : props.theme.color.contrasts.lowestContrast};
+  border: 1px solid ${(props) => props.theme.color.contrasts.lowestContrast};
   ${({ error }) => error && errorDisplay}
+
+  &:focus-within {
+    outline: none;
+    box-shadow: 0 0 0.125rem
+      ${(props) => props.theme.color.contrasts.mediumContrast};
+    border: 0.063rem solid ${(props) => props.theme.color.brandColors.purple};
+  }
+
+  & input {
+    outline: none;
+    border: none;
+  }
 `;

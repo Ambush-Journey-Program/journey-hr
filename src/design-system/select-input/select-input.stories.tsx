@@ -56,4 +56,5 @@ SelectInputStory.args = {
   required: true,
   options: exampleOptions,
   disabled: false,
+  placeholder: 'Label',
 };

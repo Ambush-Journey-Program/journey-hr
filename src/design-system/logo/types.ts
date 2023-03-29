@@ -1,4 +1,5 @@
 import { ImgHTMLAttributes } from 'react';
+import { WithOptionalProperty } from '../../types';
 
 import { Logos } from './logosrc';
 
@@ -9,9 +10,5 @@ export type ILogoProps = {
   colorVariant: ColorType;
 } & ImgHTMLAttributes<HTMLImageElement>;
 
-type WithOptionalProperty<
-  Type,
-  TypeRequired extends keyof Type,
-> = Partial<Type> & Required<Pick<Type, TypeRequired>>;
 type RequiredProps = 'colorVariant';
 export type LogoProps = WithOptionalProperty<ILogoProps, RequiredProps>;
