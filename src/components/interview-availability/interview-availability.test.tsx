@@ -25,7 +25,7 @@ describe('<InterviewAvailability>', () => {
   });
   it('It should have a button', () => {
     render(<InterviewAvailability />);
-    const interviewButton = screen.getByRole('button');
+    const interviewButton = screen.getByRole('button', { name: 'Search' });
     expect(interviewButton).toBeInTheDocument();
   });
   it('It should have a input', () => {
