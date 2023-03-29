@@ -7,11 +7,7 @@ const disabledInput = css`
 `;
 const spanError = css`
   display: block;
-  color: ${(props) => props.theme.color.auxiliary.error};
   margin-top: 4px;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 18px;
   & input::placeholder {
     color: ${(props) => props.theme.color.auxiliary.error};
     border-color: red;
