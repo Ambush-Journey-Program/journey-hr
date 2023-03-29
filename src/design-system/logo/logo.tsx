@@ -9,7 +9,7 @@ export function Logo({ colorVariant = 'red', variant }: LogoProps) {
     <Styled.Image
       data-testid="Logo"
       colorVariant={colorVariant}
-      alt={'Ambush logo'}
+      alt="Ambush logo"
     >
       {logoVariant}
     </Styled.Image>

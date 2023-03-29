@@ -37,9 +37,7 @@ export function Input({
             disabled={disabled}
             readOnly={readOnly}
             value={value}
-            onChange={(e) => {
-              onInputChange(e);
-            }}
+            onChange={onInputChange}
           />
         </Styled.InputContainer>
         {!!error && <span>{error}</span>}

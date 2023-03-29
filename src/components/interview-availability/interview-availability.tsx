@@ -34,18 +34,16 @@ export function InterviewAvailability() {
     <CardWrapper>
       <Styled.InterviewAvailability>
         <Styled.ContainerTitle>
-          <Title variant="h1" data-testid="interview-title-test">
-            Technical Interview Availability
-          </Title>
+          <Title variant="h1">Technical Interview Availability</Title>
         </Styled.ContainerTitle>
         <Styled.ContainerTitle>
-          <Subtitle variant="s4" data-testid="interview-subtitle-test">
+          <Subtitle variant="s4">
             Schedule a technical interview for a candidate.
           </Subtitle>
         </Styled.ContainerTitle>
         <div>
           <Styled.Form
-            data-testId="interview-form-test"
+            data-testid="interview-form-test"
             onSubmit={handleSubmit}
             action=""
           >
@@ -56,7 +54,6 @@ export function InterviewAvailability() {
               onTextChange={setInputData}
             />
             <SelectInput
-              data-testId="interview-input-test"
               name="area"
               title={'Area:'}
               placeholder={'UX Designer'}
@@ -66,7 +63,7 @@ export function InterviewAvailability() {
               handleSelect={(value) =>
                 setValuesInput({ ...valuesInput, area: value })
               }
-            ></SelectInput>
+            />
             <SelectInput
               name="shift"
               title={'Shift:'}
@@ -77,7 +74,7 @@ export function InterviewAvailability() {
               handleSelect={(value) =>
                 setValuesInput({ ...valuesInput, shift: value })
               }
-            ></SelectInput>
+            />
             <SelectInput
               name="opportunity"
               title={'Opportunity:'}
@@ -88,7 +85,7 @@ export function InterviewAvailability() {
               handleSelect={(value) =>
                 setValuesInput({ ...valuesInput, opportunity: value })
               }
-            ></SelectInput>
+            />
             <Styled.ContainerBtn>
               <Button sizeVariant={'default'} disabled={!isButtonEnabled}>
                 Search

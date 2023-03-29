@@ -14,7 +14,7 @@ const backgroundVariants: Background = {
   default: css`
     box-shadow: 0px 4px 6px rgba(149, 136, 169, 0.05),
       0px 0px 30px rgba(231, 222, 209, 0.5);
-    background-color: ${(props) => props.theme.color.brandColors.light};
+    background-color: ${(props) => props.theme.color.brandColors.white};
   `,
   transparent: css`
     box-shadow: none;

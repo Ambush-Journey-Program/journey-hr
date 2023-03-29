@@ -28,9 +28,7 @@ export function SelectInput({
         data-testid="input-select-test"
         disabled={disabled}
         error={error}
-        onChange={(e) => {
-          handleSelectEvent(e);
-        }}
+        onChange={handleSelectEvent}
         {...props}
       >
         <option value="">{placeholder}</option>
