@@ -4,39 +4,42 @@ import { theme } from '../styles/theme';
 
 <style>
   {`
+    h2{
+      font-weight: 700;
+      font-size: 22px;
+      line-height: 40px;
+      color: #301F47;
+      margin-bottom:50px;
+    }
 
-h2{
-  font-weight: 700;
-  font-size: 22px;
-  line-height: 40px;
-  color: #301F47;
-  margin-bottom:50px;
-}
+    .shadows{
+      display:flex;
+      gap:65px;
+    }
 
-.btn{
-  display:flex;
-  gap:65px;
-}
-button{
-  padding:100px;
-  color:#301F47;
-  border-radius: 40px;
-  background-color:${[theme.color.auxiliary.white]}
-}
+    .shadow_element{
+      padding:100px;
+      color:#301F47;
+      border-radius: 40px;
+      background-color:${[theme.color.auxiliary.white]}
+    }
 
-#btnCream{
-  box-shadow:${[theme.shadows.cream]};
-}
+    #shadowCream{
+      box-shadow:${[theme.shadows.cream]};
+    }
 
-#btnPurple{
- box-shadow:${[theme.shadows.purple]};
-}
-
-`}
+    #shadowPurple{
+    box-shadow:${[theme.shadows.purple]};
+    }
+  `}
 </style>
 
 <h2>Shadows</h2>
-<div className="btn">
-  <button id="btnCream"> Cream </button>
-  <button id="btnPurple"> Purple </button>
+<div className="shadows">
+  <div className="shadow_element" id="shadowCream">
+    Cream
+  </div>
+  <div className="shadow_element" id="shadowPurple">
+    Purple
+  </div>
 </div>
