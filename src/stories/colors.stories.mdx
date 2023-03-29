@@ -6,34 +6,33 @@ import { theme } from '../styles/theme';
 <style>
   {`
 
-h2{
-  font-weight: 700;
-  font-size: 22px;
-  line-height: 40px;
-  color: #301F47;
-}
+    h2{
+      font-weight: 700;
+      font-size: 22px;
+      line-height: 40px;
+      color: #301F47;
+    }
 
-h3{
-  margin-top:30px;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 150%;
-  color: #301F47;
-  margin-bottom:30px;
-}
+    h3{
+    margin-top:30px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 150%;
+    color: #301F47;
+    margin-bottom:30px;
+  }
 `}
 </style>
 
-<div className="colors_Solid">
-  <h2>Solid Colors</h2>
-  <h3>Brand Colors</h3>
-  <ColorPalette className="group_Colors">
-    <ColorItem title="red" colors={[theme.color.brandColors.red]} />
-    <ColorItem title="purple" colors={[theme.color.brandColors.purple]} />
-    <ColorItem title="yellow" colors={[theme.color.brandColors.yellow]} />
-    <ColorItem title="dark" colors={[theme.color.brandColors.dark]} />
-    <ColorItem title="light" colors={[theme.color.brandColors.light]} />
-  </ColorPalette>
+<h2>Solid Colors</h2>
+<h3>Brand Colors</h3>
+<ColorPalette className="group_Colors">
+  <ColorItem title="red" colors={[theme.color.brandColors.red]} />
+  <ColorItem title="purple" colors={[theme.color.brandColors.purple]} />
+  <ColorItem title="yellow" colors={[theme.color.brandColors.yellow]} />
+  <ColorItem title="dark" colors={[theme.color.brandColors.dark]} />
+  <ColorItem title="light" colors={[theme.color.brandColors.light]} />
+</ColorPalette>
 
 <h3>Auxiliary</h3>
 <ColorPalette className="group_Colors">
@@ -47,20 +46,19 @@ h3{
   <ColorItem title="accepted" colors={[theme.color.auxiliary.accepted]} />
 </ColorPalette>
 
-  <h3>Text</h3>
-  <ColorPalette className="group_Colors">
-    <ColorItem
-      title="Text"
-      colors={{
-        highContrast: theme.color.contrasts.highContrast,
-        mediumContrast: theme.color.contrasts.mediumContrast,
-        lowContrast: theme.color.contrasts.lowContrast,
-        lowestContrast: theme.color.contrasts.lowestContrast,
-        lightContrast:theme.color.contrasts.lightContrast,
-      }}
-    />
-  </ColorPalette>
-</div>
+<h3>Text</h3>
+<ColorPalette className="group_Colors">
+  <ColorItem
+    title="Text"
+    colors={{
+      highContrast: theme.color.contrasts.highContrast,
+      mediumContrast: theme.color.contrasts.mediumContrast,
+      lowContrast: theme.color.contrasts.lowContrast,
+      lowestContrast: theme.color.contrasts.lowestContrast,
+      lightContrast: theme.color.contrasts.lightContrast,
+    }}
+  />
+</ColorPalette>
 
 <h2>Button</h2>
 <ColorPalette className="group_Colors">
@@ -82,10 +80,11 @@ h3{
   <ColorItem title="yellow" colors={[theme.color.gradients.up.yellow]} />
   <ColorItem title="light" colors={[theme.color.gradients.up.light]} />
 </ColorPalette>
+
 <h3>Brand Colors / Down</h3>
 <ColorPalette className="group_Colors">
   <ColorItem title="red" colors={[theme.color.gradients.down.red]} />
   <ColorItem title="purple" colors={[theme.color.gradients.down.purple]} />
   <ColorItem title="yellow" colors={[theme.color.gradients.down.yellow]} />
-  <ColorItem title="light" colors={[theme.color.gradients.down.disabled]} />
+  <ColorItem title="light" colors={[theme.color.gradients.down.light]} />
 </ColorPalette>
