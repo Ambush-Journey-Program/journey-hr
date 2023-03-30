@@ -3,7 +3,7 @@ import { Title } from '@/design-system/typography/title/title.styled';
 import { ModalProps } from './types';
 import * as Styled from './modal.styled';
 
-export default function Modal({
+export function Modal({
   onConfirm,
   isOpen = false,
   onClose,
@@ -18,7 +18,7 @@ export default function Modal({
 
   return (
     <Styled.ModalScreen>
-      <Styled.ModalBox>
+      <Styled.ModalBox data-testid="modal">
         <Button
           className="closeButton"
           color="blue"
@@ -30,13 +30,20 @@ export default function Modal({
         </Title>
         {children}
         <Styled.ModalButton>
-          <Button variant="outlined" color="blue" onClick={onClose}>
+          <Button
+            variant="outlined"
+            color="blue"
+            onClick={onClose}
+            data-testid="CancelButton"
+          >
             {cancelButtonText}
           </Button>
-          <Button onClick={onConfirm}>{confirmButtonText}</Button>
+          <Button onClick={onConfirm} data-testid="ConfirmButton">
+            {confirmButtonText}
+          </Button>
         </Styled.ModalButton>
       </Styled.ModalBox>
-      <Styled.ModalLayer onClick={onClose} />
+      <Styled.ModalLayer onClick={onClose} data-testid="CloseButton" />
     </Styled.ModalScreen>
   );
 }
