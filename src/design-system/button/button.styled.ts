@@ -105,8 +105,7 @@ const colorVariants: ColorVariant = {
       border: solid 1px ${(props) => props.theme.color.brandColors.purple};
 
       &:hover {
-        background-color: ${(props) => props.theme.color.button.secondaryHover};
-        opacity: 1;
+        opacity: 0.75;
       }
     `,
   },
@@ -150,6 +149,7 @@ export const ButtonStyle = styled.button<ButtonProps>`
   line-height: 150%;
   font-family: Mundial, sans-serif;
   border-radius: 50px;
+  cursor: pointer;
 
   &:hover {
     opacity: 70%;
