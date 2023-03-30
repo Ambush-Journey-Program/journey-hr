@@ -1,23 +1,23 @@
-import { Meta, Story } from "@storybook/react";
-import { ThemeProvider } from "styled-components";
-import { theme } from "../../styles/theme";
-import { Avatar } from "./avatar";
-import { AvatarProps } from "./types";
+import { Meta, Story } from '@storybook/react';
+import { ThemeProvider } from 'styled-components';
+import { theme } from '@/styles/theme';
+import { Avatar } from './avatar';
+import { AvatarProps } from './types';
 
 export default {
   component: Avatar,
-  title: "UI/Avatar",
+  title: 'UI/Avatar',
   parameters: {
-    src: "src/design-system/avatar/User-Photo.png",
+    src: 'https://placehold.co/600x600',
     relatedLinks: {
       sections: [
         {
-          title: "Figma",
+          title: 'Figma',
           links: [
             {
-              text: "User Avatar ",
-              url: "https://www.figma.com/file/yOF5DjTKrtqxLiP7A5DsOy/Ambush-Atoms?node-id=1045%3A695&t=i4ddngmKFF26EqjW-1",
-              description: "This is the Figma of the Avatar Component",
+              text: 'User Avatar ',
+              url: 'https://www.figma.com/file/yOF5DjTKrtqxLiP7A5DsOy/Ambush-Atoms?node-id=1045%3A695&t=i4ddngmKFF26EqjW-1',
+              description: 'This is the Figma of the Avatar Component',
             },
           ],
         },
@@ -36,6 +36,6 @@ const Template: Story<AvatarProps> = (args) => {
 
 export const SelectCardStory = Template.bind({});
 SelectCardStory.args = {
-  src: "src/design-system/avatar/User-Photo.png",
-  sizeVariant: "small",
+  src: 'src/design-system/avatar/User-Photo.png',
+  sizeVariant: 'small',
 };

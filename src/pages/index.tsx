@@ -1,8 +1,9 @@
-import Head from "next/head";
-import { Inter } from "next/font/google";
-import { Input } from "@/design-system";
+import Head from 'next/head';
+import { Inter } from 'next/font/google';
+import { Doodles, Input } from '@/design-system';
+import { Logo } from '@ambush/ui';
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
   return (

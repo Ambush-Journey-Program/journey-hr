@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "ESnext",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -14,8 +14,9 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    "rootDir": "./",
     "paths": {
-      "@/components": ["./src/components/*"],
+      "@/*": ["./src/*"],
       "@ambush/ui": ["./src/design-system"]
     },
     "plugins": [{ "name": "typescript-plugin-css-modules" }]

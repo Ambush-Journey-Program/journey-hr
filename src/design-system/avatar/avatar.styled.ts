@@ -1,5 +1,5 @@
-import styled, { css, FlattenSimpleInterpolation } from "styled-components";
-import { devices } from "../../styles/devices";
+import styled, { css, FlattenSimpleInterpolation } from 'styled-components';
+import { devices } from '@/styles/devices';
 
 type AvatarProps = {
   sizeVariant: string;
@@ -27,6 +27,6 @@ export const Image = styled.img<AvatarProps>`
   ${({ sizeVariant }) => variants[sizeVariant]}
 
   @media ${devices.mobile} {
-    ${variants["small"]}
+    ${variants['small']}
   }
 `;

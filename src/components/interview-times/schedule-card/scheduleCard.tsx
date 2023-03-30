@@ -1,6 +1,6 @@
-import { CardWrapper, Button } from "@ambush/ui";
-import { ScheduleCardProps } from "../types";
-import * as Styled from "./scheduleCard.styled";
+import { CardWrapper, Button } from '@ambush/ui';
+import { ScheduleCardProps } from '../types';
+import * as Styled from './scheduleCard.styled';
 
 export function ScheduleCard({
   interviews,

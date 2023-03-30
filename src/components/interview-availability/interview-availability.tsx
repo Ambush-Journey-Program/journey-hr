@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from 'react';
 import {
   Subtitle,
   Title,
@@ -6,17 +6,17 @@ import {
   CardWrapper,
   Input,
   SelectInput,
-} from "@ambush/ui";
+} from '@ambush/ui';
 
-import { exampleAre, exampleOpportunity, shiftOptions } from "./constants";
-import * as Styled from "./interview-availability.styled";
+import { exampleAre, exampleOpportunity, shiftOptions } from './constants';
+import * as Styled from './interview-availability.styled';
 
 export function InterviewAvailability() {
-  const [inputData, setInputData] = useState("");
+  const [inputData, setInputData] = useState('');
   const [valuesInput, setValuesInput] = useState({
-    area: "",
-    shift: "",
-    opportunity: "",
+    area: '',
+    shift: '',
+    opportunity: '',
   });
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -59,8 +59,8 @@ export function InterviewAvailability() {
             />
             <SelectInput
               name="area"
-              title={"Area:"}
-              placeholder={"UX Designer"}
+              title={'Area:'}
+              placeholder={'UX Designer'}
               options={exampleAre}
               required
               value={valuesInput.area}
@@ -70,8 +70,8 @@ export function InterviewAvailability() {
             />
             <SelectInput
               name="shift"
-              title={"Shift:"}
-              placeholder={"Morning"}
+              title={'Shift:'}
+              placeholder={'Morning'}
               options={shiftOptions}
               required
               value={valuesInput.shift}
@@ -81,8 +81,8 @@ export function InterviewAvailability() {
             />
             <SelectInput
               name="opportunity"
-              title={"Opportunity:"}
-              placeholder={"Product Designer"}
+              title={'Opportunity:'}
+              placeholder={'Product Designer'}
               options={exampleOpportunity}
               required
               value={valuesInput.opportunity}
@@ -91,7 +91,7 @@ export function InterviewAvailability() {
               }
             />
             <Styled.ContainerBtn>
-              <Button sizeVariant={"default"} disabled={!isButtonEnabled}>
+              <Button sizeVariant={'default'} disabled={!isButtonEnabled}>
                 Search
               </Button>
             </Styled.ContainerBtn>

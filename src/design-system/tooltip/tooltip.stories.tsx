@@ -1,27 +1,25 @@
-import { Meta, Story } from "@storybook/react";
-import { ThemeProvider } from "styled-components";
-import { theme } from "../../../styles/themetheme";
-import { Tooltip } from "./tooltip";
+import { Meta, Story } from '@storybook/react';
+import { Tooltip } from './tooltip';
 
-import { ITooltipProps } from "./types";
+import { ITooltipProps } from './types';
 
 export default {
   component: Tooltip,
-  title: "UI/Tooltip",
+  title: 'UI/Tooltip',
   parameters: {
-    children: "Teste",
-    position: "",
-    text: "Copied!",
+    children: 'Teste',
+    position: '',
+    text: 'Copied!',
     relatedLinks: {
       sections: [
         {
-          title: "Figma",
+          title: 'Figma',
           links: [
             {
-              text: "Tooltip",
-              url: "https://www.figma.com/file/yOF5DjTKrtqxLiP7A5DsOy/Ambush-Atoms?node-id=48%3A71&t=i4ddngmKFF26EqjW-1",
+              text: 'Tooltip',
+              url: 'https://www.figma.com/file/yOF5DjTKrtqxLiP7A5DsOy/Ambush-Atoms?node-id=48%3A71&t=i4ddngmKFF26EqjW-1',
               description:
-                "This is the Figma of the Tooltip and its variations.",
+                'This is the Figma of the Tooltip and its variations.',
             },
           ],
         },
@@ -37,7 +35,7 @@ const Template: Story<ITooltipProps> = (args) => {
 export const TooltipStory = Template.bind({});
 
 TooltipStory.args = {
-  children: "Test",
-  variantPosition: "top",
-  text: "Copied!",
+  children: 'Test',
+  variantPosition: 'top',
+  text: 'Copied!',
 };
