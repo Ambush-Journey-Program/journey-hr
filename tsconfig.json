@@ -15,7 +15,8 @@
     "jsx": "preserve",
     "incremental": true,
     "paths": {
-      "@/*": ["./src/*"]
+      "@/components": ["./src/components/*"],
+      "@ambush/ui": ["./src/design-system"]
     },
     "plugins": [{ "name": "typescript-plugin-css-modules" }]
   },

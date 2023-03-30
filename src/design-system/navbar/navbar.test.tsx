@@ -1,10 +1,10 @@
-import { describe, expect } from 'vitest';
+import { describe, expect } from "vitest";
 
-import { render, screen } from '@testing-library/react';
+import { render, screen } from "@testing-library/react";
 
-import { NavBar } from './navbar';
-import { ThemeProvider } from 'styled-components';
-import { theme } from '@/styles/theme';
+import { NavBar } from "./navbar";
+import { ThemeProvider } from "styled-components";
+import { theme } from "../../styles/theme";
 
 type Link = {
   url: string;
@@ -63,47 +63,47 @@ const navLinksWebsite: Link[] = [
   },
 ];
 
-describe('<NavBar />', () => {
-  it('renders the Nav. Bar', () => {
+describe("<NavBar />", () => {
+  it("renders the Nav. Bar", () => {
     render(
       <ThemeProvider theme={theme}>
         <NavBar navigationLinks={navLinksJourneyHR} />
-      </ThemeProvider>,
+      </ThemeProvider>
     );
 
-    const NavBarEl = screen.getByTestId('NavBar');
+    const NavBarEl = screen.getByTestId("NavBar");
     expect(NavBarEl).toBeInTheDocument();
   });
 
-  it('renders the Nav. Bar with the avatar profile picture', () => {
+  it("renders the Nav. Bar with the avatar profile picture", () => {
     render(
       <ThemeProvider theme={theme}>
         <NavBar navigationLinks={navLinksWebsite} />
-      </ThemeProvider>,
+      </ThemeProvider>
     );
-    const avatarEl = screen.getByTestId('Avatar');
+    const avatarEl = screen.getByTestId("Avatar");
     expect(avatarEl).toBeInTheDocument();
   });
 
-  it('renders the Nav. Bar and validate JourneyHR links quantity', () => {
+  it("renders the Nav. Bar and validate JourneyHR links quantity", () => {
     render(
       <ThemeProvider theme={theme}>
         <NavBar navigationLinks={navLinksJourneyHR} />
-      </ThemeProvider>,
+      </ThemeProvider>
     );
 
-    const listItems = screen.getAllByRole('listitem');
+    const listItems = screen.getAllByRole("listitem");
     expect(listItems).toHaveLength(5);
   });
 
-  it('renders the Nav. Bar and validate website links quantity', () => {
+  it("renders the Nav. Bar and validate website links quantity", () => {
     render(
       <ThemeProvider theme={theme}>
         <NavBar navigationLinks={navLinksWebsite} />
-      </ThemeProvider>,
+      </ThemeProvider>
     );
 
-    const listItems = screen.getAllByRole('listitem');
+    const listItems = screen.getAllByRole("listitem");
     expect(listItems).toHaveLength(4);
   });
 });

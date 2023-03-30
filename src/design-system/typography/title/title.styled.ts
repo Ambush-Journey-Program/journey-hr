@@ -1,6 +1,6 @@
-import styled, { css, FlattenSimpleInterpolation } from 'styled-components';
-import { devices } from '@/styles/devices';
-import { TitleProps } from './types';
+import styled, { css, FlattenSimpleInterpolation } from "styled-components";
+import { devices } from "../../../styles/devices";
+import { TitleProps } from "./types";
 
 type TitleStyle = {
   [key: string]: FlattenSimpleInterpolation;
