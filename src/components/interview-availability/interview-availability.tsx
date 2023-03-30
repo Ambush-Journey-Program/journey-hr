@@ -1,9 +1,12 @@
-import { Subtitle, Title } from '@/design-system/typography';
 import { useState } from 'react';
-import { Button } from '../../design-system/button';
-import { CardWrapper } from '../../design-system/card-wrapper';
-import { Input } from '../../design-system/input';
-import { SelectInput } from '../../design-system/select-input';
+import {
+  Subtitle,
+  Title,
+  Button,
+  CardWrapper,
+  Input,
+  SelectInput,
+} from '@ambush/ui';
 import { exampleAre, exampleOpportunity, shiftOptions } from './constants';
 import * as Styled from './interview-availability.styled';
 
