@@ -5,7 +5,7 @@ export type IBigInputProps = InputHTMLAttributes<HTMLInputElement> & {
   onTextChange?: (value: string) => void;
   rows: number;
   minLength: number;
-  spellCheck: true;
+  spellCheck: boolean;
 };
 
 export type StyleWrapper = {
