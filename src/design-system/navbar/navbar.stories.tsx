@@ -60,4 +60,5 @@ const Template: Story<NavBarProps> = (args) => {
 export const NavBarStory = Template.bind({});
 NavBarStory.args = {
   navigationLinks: navLinksJourneyHR,
+  colors: 'dark',
 };
