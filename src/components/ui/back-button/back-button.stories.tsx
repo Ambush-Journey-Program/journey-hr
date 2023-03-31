@@ -6,7 +6,10 @@ import { IBackButtonProps } from './types';
 export default {
   component: BackButton,
   title: 'UI/BackButton',
-  parameters: {},
+  parameters: {
+    onClick: () => {},
+    disabled: false,
+  },
 } as Meta;
 
 const Template: Story<IBackButtonProps> = (args) => {
@@ -14,3 +17,6 @@ const Template: Story<IBackButtonProps> = (args) => {
 };
 
 export const BackButtonStory = Template.bind({});
+BackButtonStory.args = {
+  disabled: false,
+};
