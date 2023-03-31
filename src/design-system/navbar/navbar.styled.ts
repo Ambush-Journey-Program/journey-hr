@@ -1,4 +1,13 @@
-import styled from 'styled-components';
+import styled, {
+  css,
+  FlattenInterpolation,
+  ThemeProps,
+} from 'styled-components';
+import { ColorProps } from './type';
+
+type LinkColors = {
+  colors: ColorProps;
+};
 
 export const NavBarWrapper = styled.div`
   width: 992px;
@@ -14,7 +23,7 @@ export const NavBar = styled.div`
   padding: 1.25rem 0;
 `;
 
-export const LinkContainer = styled.ul`
+export const LinkContainer = styled.ul<LinkColors>`
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -29,7 +38,7 @@ export const LinkContainer = styled.ul`
       text-decoration: none;
       font-size: 16px;
       font-weight: 600;
-      color: ${(props) => props.theme.color.contrasts.highContrast};
+      ${({ colors }) => colorsVariants[colors]};
     }
   }
   li:first-of-type {
@@ -55,3 +64,17 @@ export const LogoContainer = styled.div`
     font-weight: 700;
   }
 `;
+
+type ColorVariant = {
+  [key: string]: FlattenInterpolation<ThemeProps<LinkColors>>;
+};
+
+const colorsVariants: ColorVariant = {
+  light: css`
+    color: ${(props) => props.theme.color.brandColors.light};
+  `,
+
+  dark: css`
+    color: ${(props) => props.theme.color.contrasts.mediumContrast};
+  `,
+};
