@@ -1,6 +1,6 @@
 import { Meta, Story } from '@storybook/react';
 
-import { BackButton } from './back-button';
+import { BackButton } from '.';
 import { IBackButtonProps } from './types';
 
 export default {
@@ -14,7 +14,3 @@ const Template: Story<IBackButtonProps> = (args) => {
 };
 
 export const BackButtonStory = Template.bind({});
-BackButtonStory.args = {
-  disabled: false,
-  children: 'Back',
-};
