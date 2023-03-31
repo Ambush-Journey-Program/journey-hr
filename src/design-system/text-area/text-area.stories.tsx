@@ -1,10 +1,10 @@
 import { Meta, Story } from '@storybook/react';
-import { BigInput } from './big-input';
-import { IBigInputProps } from './types';
+import { TextArea } from './text-area';
+import { TextAreaProps } from './types';
 
 export default {
-  component: BigInput,
-  title: 'UI/Big Input',
+  component: TextArea,
+  title: 'UI/Text Area',
   argTypes: {},
   parameters: {
     minLength: 50,
@@ -16,10 +16,10 @@ export default {
           title: 'Figma',
           links: [
             {
-              text: 'Big Input',
+              text: 'Text Area',
               url: 'https://www.figma.com/file/MRpGlW5tom04XStEIw5th9/HH-Sort?node-id=9-31268&t=crxIvUD123577MuX-0',
               description:
-                'This is the Figma of the Big Input and its variations.',
+                'This is the Figma of the Text Area and its variations.',
             },
           ],
         },
@@ -28,8 +28,8 @@ export default {
   },
 } as Meta;
 
-const Template: Story<IBigInputProps> = (args) => {
-  return <BigInput {...args} />;
+const Template: Story<TextAreaProps> = (args) => {
+  return <TextArea {...args} />;
 };
 
 export const SelectInputStory = Template.bind({});

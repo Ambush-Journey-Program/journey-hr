@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { StyledInputProps, StyleWrapper } from './types';
+import { StyledProps, StyleWrapper } from './types';
 
 const spanError = css`
   display: block;
@@ -25,7 +25,7 @@ export const Wrapper = styled.div<StyleWrapper>`
   ${({ error }) => error && spanError}
 `;
 
-export const InputContainer = styled.div<StyledInputProps>`
+export const TextAreaContainer = styled.div<StyledProps>`
   display: flex;
   align-items: center;
   width: 100%;
