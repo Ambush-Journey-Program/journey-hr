@@ -22,7 +22,9 @@ const interviews: InterviewOption[] = [
 
 describe('<ScheduleCard />', () => {
   it('renders the InterviewTimes', () => {
-    render(<InterviewTimes onClick={jest.fn()} interewOptions={interviews} />);
+    render(
+      <InterviewTimes onClick={jest.fn()} interviewOptions={interviews} />,
+    );
 
     const InterviewTimesEl = screen.getByTestId('InterviewTimes');
     expect(InterviewTimesEl).toBeInTheDocument();

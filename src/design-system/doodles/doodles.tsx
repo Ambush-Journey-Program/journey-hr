@@ -8,7 +8,7 @@ export function Doodles({ colors, icon }: IDoodlesProps) {
   console.log(doodleIcon);
 
   return (
-    <Styled.wrapper data-testId="doodles" colors={colors}>
+    <Styled.wrapper data-testid="doodles" colors={colors}>
       {doodleIcon}
     </Styled.wrapper>
   );
