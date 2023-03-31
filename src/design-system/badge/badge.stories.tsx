@@ -30,6 +30,7 @@ const Template: Story<IBadgeProps> = (args) => {
   return <Badge {...args} />;
 };
 
-export const BadgeStory = Template.bind({
+export const BadgeStory = Template.bind({});
+BadgeStory.args = {
   text: 'Dev Team',
-});
+};
