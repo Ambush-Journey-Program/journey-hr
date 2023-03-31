@@ -30,17 +30,10 @@ export function Modal({
         </Title>
         {children}
         <Styled.ModalButton>
-          <Button
-            variant="outlined"
-            color="blue"
-            onClick={onClose}
-            data-testid="CancelButton"
-          >
+          <Button variant="outlined" color="blue" onClick={onClose}>
             {cancelButtonText}
           </Button>
-          <Button onClick={onConfirm} data-testid="ConfirmButton">
-            {confirmButtonText}
-          </Button>
+          <Button onClick={onConfirm}>{confirmButtonText}</Button>
         </Styled.ModalButton>
       </Styled.ModalBox>
       <Styled.ModalLayer onClick={onClose} data-testid="CloseButton" />

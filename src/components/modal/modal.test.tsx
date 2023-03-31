@@ -5,95 +5,88 @@ import { render, screen } from '@/tests/renderWithProviders';
 import { Modal } from './modal';
 import userEvent from '@testing-library/user-event';
 
-describe('<ScheduleCard />', () => {
-  it('renders the InterviewTimes', async () => {
-    const onClickMock = vi.fn();
+describe('<Modal />', () => {
+  it('renders the Modal component', async () => {
     const test = 'Hello';
     render(
-      <>
-        <Modal
-          title="Are you sure?"
-          onClose={onClickMock}
-          onConfirm={onClickMock}
-          isOpen={true}
-          cancelButtonText="No, Edit Event"
-          confirmButtonText="Yes, it`s done"
-        >
-          {test}
-        </Modal>
-      </>,
+      <Modal
+        title="Are you sure?"
+        onClose={vi.fn()}
+        onConfirm={vi.fn()}
+        isOpen={true}
+        cancelButtonText="No, Edit Event"
+        confirmButtonText="Yes, it`s done"
+      >
+        {test}
+      </Modal>,
     );
 
     const modalEl = screen.getByTestId('modal');
     expect(modalEl).toBeInTheDocument();
   });
 
-  it('renders the InterviewTimes', async () => {
-    const onClickMock = vi.fn();
+  it('call`s back the cancel button', async () => {
+    const onCancelMock = vi.fn();
     const test = 'Hello';
     render(
-      <>
-        <Modal
-          title="Are you sure?"
-          onClose={onClickMock}
-          onConfirm={onClickMock}
-          isOpen={true}
-          cancelButtonText="No, Edit Event"
-          confirmButtonText="Yes, it`s done"
-        >
-          {test}
-        </Modal>
-      </>,
+      <Modal
+        title="Are you sure?"
+        onClose={onCancelMock}
+        onConfirm={onCancelMock}
+        isOpen={true}
+        cancelButtonText="No, Edit Event"
+        confirmButtonText="Yes, it`s done"
+      >
+        {test}
+      </Modal>,
     );
 
-    await userEvent.click(screen.getByTestId('CancelButton'));
-
-    expect(onClickMock).toHaveBeenCalled();
+    await userEvent.click(
+      screen.getByRole('button', { name: 'No, Edit Event' }),
+    );
+    expect(onCancelMock).toHaveBeenCalled();
   });
 
-  it('renders the InterviewTimes', async () => {
-    const onClickMock = vi.fn();
+  it('call`s back the confirm button', async () => {
+    const onConfirmMock = vi.fn();
     const test = 'Hello';
     render(
-      <>
-        <Modal
-          title="Are you sure?"
-          onClose={onClickMock}
-          onConfirm={onClickMock}
-          isOpen={true}
-          cancelButtonText="No, Edit Event"
-          confirmButtonText="Yes, it`s done"
-        >
-          {test}
-        </Modal>
-      </>,
+      <Modal
+        title="Are you sure?"
+        onClose={onConfirmMock}
+        onConfirm={onConfirmMock}
+        isOpen={true}
+        cancelButtonText="No, Edit Event"
+        confirmButtonText="Yes, it`s done"
+      >
+        {test}
+      </Modal>,
     );
 
-    await userEvent.click(screen.getByTestId('ConfirmButton'));
-
-    expect(onClickMock).toHaveBeenCalled();
+    await userEvent.click(
+      screen.getByRole('button', { name: 'Yes, it`s done' }),
+    );
+    expect(onConfirmMock).toHaveBeenCalled();
   });
 
-  it('renders the InterviewTimes', async () => {
-    const onClickMock = vi.fn();
+  it('call`s back the Close button', async () => {
+    const onCloseMock = vi.fn();
     const test = 'Hello';
     render(
-      <>
-        <Modal
-          title="Are you sure?"
-          onClose={onClickMock}
-          onConfirm={onClickMock}
-          isOpen={true}
-          cancelButtonText="No, Edit Event"
-          confirmButtonText="Yes, it`s done"
-        >
-          {test}
-        </Modal>
-      </>,
+      <Modal
+        title="Are you sure?"
+        onClose={onCloseMock}
+        onConfirm={onCloseMock}
+        isOpen={true}
+        cancelButtonText="No, Edit Event"
+        confirmButtonText="Yes, it`s done"
+      >
+        {test}
+      </Modal>,
     );
 
     await userEvent.click(screen.getByTestId('CloseButton'));
 
-    expect(onClickMock).toHaveBeenCalled();
+    expect(onCloseMock).toHaveBeenCalled();
   });
 });
