@@ -23,15 +23,11 @@ export const ModalScreen = styled.div`
   z-index: 101;
   background-size: cover;
   padding: 20px;
-
-  &--disable {
-    display: none;
-  }
 `;
 
 export const ModalBox = styled.div`
-  width: 27.75rem;
-  height: 20.1875rem;
+  min-width: 30rem;
+  min-height: 20rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -60,12 +56,12 @@ export const ModalBox = styled.div`
     padding-top: 1.4375rem;
     padding-bottom: 1rem;
   }
+`;
 
-  p {
-    line-height: 27px;
-    padding: 0 2.6875rem;
-    text-align: center;
-  }
+export const ModalChildren = styled.div`
+  line-height: 27px;
+  padding: 0 2.6875rem;
+  text-align: center;
 `;
 
 export const ModalButton = styled.div`

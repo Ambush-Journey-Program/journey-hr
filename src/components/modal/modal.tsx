@@ -28,7 +28,7 @@ export function Modal({
         <Title className="title" variant="h2">
           {title}
         </Title>
-        {children}
+        <Styled.ModalChildren>{children}</Styled.ModalChildren>
         <Styled.ModalButton>
           <Button variant="outlined" color="blue" onClick={onClose}>
             {cancelButtonText}
