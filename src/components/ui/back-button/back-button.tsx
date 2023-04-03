@@ -6,8 +6,8 @@ export function BackButton({ disabled, onClick }: BackButtonProps) {
     <BackBtn
       onClick={onClick}
       disabled={disabled}
-      variant="ghost"
       sizeVariant="small"
+      variant="ghost"
       icon="ChevronLeftIcon"
     >
       Back
