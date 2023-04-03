@@ -8,11 +8,11 @@ const spanError = css`
 
   & input::placeholder {
     color: ${(props) => props.theme.color.auxiliary.error};
-    border-color: red;
+    border-color: ${(props) => props.theme.color.auxiliary.error};
   }
 
   & input:active {
-    border-color: red;
+    border-color: ${(props) => props.theme.color.auxiliary.error};
   }
 `;
 

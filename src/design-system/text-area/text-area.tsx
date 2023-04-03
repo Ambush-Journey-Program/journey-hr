@@ -17,24 +17,22 @@ export function TextArea({
     setTouched(true);
   }
   return (
-    <div>
-      <Styled.Wrapper error={error}>
-        <Paragraphs size="small" fontWeight="hair">
-          {'Description'}
+    <Styled.Wrapper error={error}>
+      <Paragraphs size="small" fontWeight="hair">
+        {'Description'}
+      </Paragraphs>
+      <Styled.TextAreaContainer error={error} touched={touched}>
+        <Styled.TextArea
+          placeholder={placeholder}
+          onChange={onInputChange}
+          {...props}
+        />
+      </Styled.TextAreaContainer>
+      {!!error && (
+        <Paragraphs size="extrasmall" fontWeight="light" colorVariant="red">
+          Description Required
         </Paragraphs>
-        <Styled.TextAreaContainer error={error} touched={touched}>
-          <Styled.TextArea
-            placeholder={placeholder}
-            onChange={onInputChange}
-            {...props}
-          />
-        </Styled.TextAreaContainer>
-        {!!error && (
-          <Paragraphs size="extrasmall" fontWeight="light" colorVariant="red">
-            Description Required
-          </Paragraphs>
-        )}
-      </Styled.Wrapper>
-    </div>
+      )}
+    </Styled.Wrapper>
   );
 }
