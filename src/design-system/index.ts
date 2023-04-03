@@ -8,3 +8,4 @@ export { NavBar } from '../design-system/navbar';
 export { SelectInput } from '../design-system/select-input';
 export { Tooltip } from '../design-system/tooltip';
 export { Title, Subtitle, Paragraphs } from '../design-system/typography';
+export { BackButton } from '../components/ui/back-button';
