@@ -23,7 +23,7 @@ export function TextArea({
           {'Description'}
         </Paragraphs>
         <Styled.TextAreaContainer error={error} touched={touched}>
-          <textarea
+          <Styled.TextArea
             placeholder={placeholder}
             onChange={onInputChange}
             {...props}

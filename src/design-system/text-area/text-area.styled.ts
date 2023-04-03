@@ -45,24 +45,21 @@ export const TextAreaContainer = styled.div<StyledProps>`
       ${(props) => props.theme.color.contrasts.mediumContrast};
     border: 1px solid ${(props) => props.theme.color.brandColors.purple};
   }
-  & textarea {
-    width: 100%;
-    height: 100%;
-    border: none;
-    overflow: auto;
-    outline: none;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-    resize: none;
-    border: none;
-    outline: none;
-    font-family: 'Mundial', sans-serif;
-    font-weight: 300;
-    font-size: 1rem;
-    color: ${(props) =>
-      props.touched
-        ? props.theme.color.contrasts.highContrast
-        : props.theme.color.contrasts.lowestContrast};
-  }
+`;
+export const TextArea = styled.textarea<StyledProps>`
+  width: 100%;
+  height: 100%;
+  border: none;
+  overflow: auto;
+  outline: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  resize: none;
+  border: none;
+  outline: none;
+  font-family: 'Mundial', sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  color: ${(props) => props.theme.color.contrasts.highContrast};
 `;
