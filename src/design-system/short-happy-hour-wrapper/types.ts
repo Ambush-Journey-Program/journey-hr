@@ -1,7 +1,6 @@
-export type ShortHappyHourWrapperProps = {
-  childrenAppointment: childrenAppointment;
-  childrenDate: styleChildrenDate;
-};
+import { ReactElement } from 'react';
 
-export type styleChildrenDate = { childrenDate: string };
-export type childrenAppointment = { childrenAppointment: string };
+export type ShortHappyHourWrapperProps = {
+  childrenAppointment: ReactElement | string;
+  childrenDate: ReactElement | string;
+};
