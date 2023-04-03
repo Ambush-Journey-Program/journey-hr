@@ -1,5 +1,4 @@
-import { render } from '@/tests/renderWithProviders';
-import { screen } from '@testing-library/dom';
+import { render, screen } from '@/tests/renderWithProviders';
 import userEvent from '@testing-library/user-event';
 import { BackButton } from '.';
 
