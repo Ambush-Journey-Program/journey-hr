@@ -2,9 +2,11 @@ import { devices } from '@/styles/devices';
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 0.75rem;
+  margin-top: 2rem;
+  margin-bottom: 1.25rem;
   padding: 12px;
   gap: 18px;
   padding: 12px;
