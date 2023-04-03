@@ -4,17 +4,21 @@ import { BackButton } from '.';
 
 describe('<BackButton />', () => {
   describe('should display Back button', () => {
-    it('The button is not disabled and clickable', () => {
+    it('calls onClick button when the button is not disabled', async () => {
       const onClickMock = vi.fn();
       render(<BackButton onClick={onClickMock} />);
-      expect(screen.getByText('Back')).not.toBeDisabled();
+      const backButton = screen.getByText('Back');
+      await userEvent.click(backButton);
+      expect(onClickMock).toBeCalled();
+      expect(backButton).not.toBeDisabled();
     });
 
-    it('The button is disabled and unclickable', () => {
+    it('not calls onClick button when the button is disabled', async () => {
       const onClickMock = vi.fn();
       render(<BackButton disabled onClick={onClickMock} />);
       const backButton = screen.getByText('Back');
-      userEvent.click(backButton);
+      await userEvent.click(backButton);
+      expect(onClickMock).not.toBeCalled();
       expect(backButton).toBeDisabled();
     });
   });
