@@ -30,13 +30,13 @@ export const Wrapper = styled.div`
   }
 `;
 
-// export const ContainerAppointment = styled.p<childrenAppointment>`
-//   color: ${(props) => props.theme.color.contrasts.highContrast};
-// `;
+export const ContainerAppointment = styled.div<childrenAppointment>`
+  color: ${(props) => props.theme.color.contrasts.highContrast};
+`;
 
-// export const ContainerDate = styled.p<styleChildrenDate>`
-//   color: ${(props) => props.theme.color.contrasts.mediumContrast};
-//   line-height: 30px;
-//   font-size: 20px;
-//   font-family: ${(props) => props.theme.fonts.font.fontFamilyBody};
-// `;
+export const ContainerDate = styled.div<styleChildrenDate>`
+  color: ${(props) => props.theme.color.contrasts.mediumContrast};
+  line-height: 30px;
+  font-size: 20px;
+  font-family: ${(props) => props.theme.font.fontFamilyBody};
+`;

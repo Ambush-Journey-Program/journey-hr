@@ -8,16 +8,16 @@ export function ShortHappyHourWrapper({
 }: ShortHappyHourWrapperProps) {
   return (
     <Styled.Wrapper>
-      <div>
+      <Styled.ContainerAppointment>
         <Paragraph fontWeight={'semibold'} size={'small'} colorVariant="dark">
           Name of the event
         </Paragraph>
         {childrenAppointment}
-      </div>
+      </Styled.ContainerAppointment>
       <Paragraph fontWeight={'semibold'} size={'small'} colorVariant="dark">
         Date:
       </Paragraph>
-      <div>{childrenDate}</div>
+      <Styled.ContainerDate>{childrenDate}</Styled.ContainerDate>
     </Styled.Wrapper>
   );
 }
