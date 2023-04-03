@@ -1,7 +1,7 @@
 import { BackBtn } from './back-button.styled';
-import { IBackButtonProps } from './types';
+import { BackButtonProps } from './types';
 
-export function BackButton({ disabled, onClick }: IBackButtonProps) {
+export function BackButton({ disabled, onClick }: BackButtonProps) {
   return (
     <BackBtn
       onClick={onClick}
