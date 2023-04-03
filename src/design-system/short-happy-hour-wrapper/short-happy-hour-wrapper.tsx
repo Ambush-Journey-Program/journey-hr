@@ -1,18 +1,21 @@
-import { Subtitle } from '../typography';
-import { Wrapper } from './short-happy-hour-wrapper.styled';
+import { Paragraph } from '../typography/paragraphs/paragraphs.styled';
+import * as Styled from './short-happy-hour-wrapper.styled';
 import { ShortHappyHourWrapperProps } from './types';
 
 export function ShortHappyHourWrapper({
-  children,
+  childrenAppointment,
+  childrenDate,
 }: ShortHappyHourWrapperProps) {
   return (
-    <Wrapper>
-      <div>
-        <Subtitle variant="s4">Name of the event</Subtitle>
-        {children}
-      </div>
-      <Subtitle variant="s4">Date:</Subtitle>
-      {children}
-    </Wrapper>
+    <Styled.Wrapper>
+      <Paragraph fontWeight={'semibold'} size={'small'} colorVariant="dark">
+        Name of the event
+      </Paragraph>
+      {childrenAppointment}
+      <Paragraph fontWeight={'semibold'} size={'small'} colorVariant="dark">
+        Date:
+      </Paragraph>
+      {childrenDate}
+    </Styled.Wrapper>
   );
 }

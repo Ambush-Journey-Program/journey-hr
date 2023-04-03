@@ -1,5 +1,10 @@
 import { devices } from '@/styles/devices';
 import styled from 'styled-components';
+import {
+  childrenAppointment,
+  ShortHappyHourWrapperProps,
+  styleChildrenDate,
+} from './types';
 
 export const Wrapper = styled.div`
   display: grid;
@@ -9,8 +14,6 @@ export const Wrapper = styled.div`
   margin-bottom: 1.25rem;
   padding: 12px;
   gap: 18px;
-  padding: 12px;
-  padding-bottom: 23px;
   border-radius: 10px;
   width: 100%;
   max-width: 100%;
@@ -26,3 +29,14 @@ export const Wrapper = styled.div`
     padding-bottom: 20px;
   }
 `;
+
+// export const ContainerAppointment = styled.p<childrenAppointment>`
+//   color: ${(props) => props.theme.color.contrasts.highContrast};
+// `;
+
+// export const ContainerDate = styled.p<styleChildrenDate>`
+//   color: ${(props) => props.theme.color.contrasts.mediumContrast};
+//   line-height: 30px;
+//   font-size: 20px;
+//   font-family: ${(props) => props.theme.fonts.font.fontFamilyBody};
+// `;
