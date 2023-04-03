@@ -19,7 +19,7 @@
     "rootDir": "./",
     "paths": {
       "@/*": ["./src/*"],
-      "@ambush/ui": ["./src/design-system"]
+      "@ambush/ui": ["./src/design-system/"]
     }
   },
   "include": ["src"]
