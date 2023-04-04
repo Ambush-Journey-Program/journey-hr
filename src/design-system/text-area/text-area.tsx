@@ -27,6 +27,7 @@ export function TextArea({
           touched={touched}
           onChange={onInputChange}
           rows={rows}
+          spellCheck={spellCheck}
           {...props}
         />
       </Styled.TextAreaContainer>
