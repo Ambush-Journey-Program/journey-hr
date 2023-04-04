@@ -2,9 +2,8 @@ import styled, { css } from 'styled-components';
 
 import { StyledProps, StyleWrapper } from './types';
 
-const spanError = css`
+const spanErrorStyles = css`
   display: block;
-  margin-top: 4px;
 
   & input::placeholder {
     color: ${(props) => props.theme.color.auxiliary.error};
@@ -22,7 +21,7 @@ const errorDisplay = css`
 `;
 
 export const Wrapper = styled.div<StyleWrapper>`
-  ${({ error }) => error && spanError}
+  ${({ error }) => error && spanErrorStyles}
 `;
 
 export const TextAreaContainer = styled.div<StyledProps>`
@@ -35,8 +34,9 @@ export const TextAreaContainer = styled.div<StyledProps>`
   color: ${(props) => props.theme.color.contrasts.highContrast};
   border: 1px solid ${(props) => props.theme.color.contrasts.lowestContrast};
   border-radius: 0.75rem;
-  padding: 1.375rem;
+  padding: 0.75rem 1.375rem;
   margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
   ${({ error }) => error && errorDisplay}
 
   &:focus-within {
@@ -46,6 +46,7 @@ export const TextAreaContainer = styled.div<StyledProps>`
     border: 1px solid ${(props) => props.theme.color.brandColors.purple};
   }
 `;
+
 export const TextArea = styled.textarea<StyledProps>`
   width: 100%;
   height: 100%;
@@ -62,4 +63,8 @@ export const TextArea = styled.textarea<StyledProps>`
   font-weight: 300;
   font-size: 1rem;
   color: ${(props) => props.theme.color.contrasts.highContrast};
+
+  &:invalid {
+    color: ${(props) => props.theme.color.auxiliary.error};
+  }
 `;

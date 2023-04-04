@@ -11,7 +11,7 @@ describe('<TextArea />', () => {
     expect(inputEl).toBeInTheDocument();
   });
 
-  it('could be required', () => {
+  it('shows required message when passing required prop', () => {
     render(
       <TextArea
         rows={3}
@@ -31,6 +31,20 @@ describe('<TextArea />', () => {
       <TextArea rows={3} minLength={3} spellCheck placeholder="placeholder" />,
     );
     const inputEl = screen.getByPlaceholderText('placeholder');
+    expect(inputEl).toBeInTheDocument();
+  });
+
+  it('renders the error message', () => {
+    render(
+      <TextArea
+        rows={3}
+        minLength={3}
+        error
+        spellCheck
+        placeholder="placeholder"
+      />,
+    );
+    const inputEl = screen.getByText('Description Required');
     expect(inputEl).toBeInTheDocument();
   });
 });

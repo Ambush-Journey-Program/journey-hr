@@ -19,12 +19,14 @@ export function TextArea({
   return (
     <Styled.Wrapper error={error}>
       <Paragraphs size="small" fontWeight="hair">
-        {'Description'}
+        Description
       </Paragraphs>
       <Styled.TextAreaContainer error={error} touched={touched}>
         <Styled.TextArea
           placeholder={placeholder}
+          touched={touched}
           onChange={onInputChange}
+          rows={rows}
           {...props}
         />
       </Styled.TextAreaContainer>
