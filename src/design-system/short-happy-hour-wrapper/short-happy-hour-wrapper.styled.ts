@@ -1,6 +1,5 @@
 import { devices } from '@/styles/devices';
 import styled from 'styled-components';
-import { childrenAppointment, styleChildrenDate } from './types';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -24,7 +23,7 @@ export const ContainerName = styled.div`
   word-break: break-word;
 `;
 
-export const ContainerAppointment = styled.div<childrenAppointment>`
+export const ContainerAppointment = styled.div`
   margin-top: 6px;
   margin-bottom: 18px;
   font-size: 18px;
@@ -39,7 +38,7 @@ export const ContainerAppointment = styled.div<childrenAppointment>`
   }
 `;
 
-export const ContainerDate = styled.div<styleChildrenDate>`
+export const ContainerDate = styled.div`
   margin-top: 6px;
   font-size: 18px;
   font-weight: 300;
