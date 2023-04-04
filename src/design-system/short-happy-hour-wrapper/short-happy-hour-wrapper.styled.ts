@@ -32,7 +32,7 @@ export const ContainerAppointment = styled.div`
   font-family: ${(props) => props.theme.font.fontFamilyTitle};
   color: ${(props) => props.theme.color.contrasts.highContrast};
 
-  @media ${devices.tabletLarge} {
+  @media ${devices.tabletLarge}, ${devices.desktop} {
     font-size: 20px;
     line-height: 25px;
   }
@@ -45,4 +45,9 @@ export const ContainerDate = styled.div`
   line-height: 27px;
   font-family: ${(props) => props.theme.font.fontFamilyBody};
   color: ${(props) => props.theme.color.contrasts.mediumContrast};
+
+  @media ${devices.desktop} {
+    font-size: 20px;
+    line-height: 30px;
+  }
 `;
