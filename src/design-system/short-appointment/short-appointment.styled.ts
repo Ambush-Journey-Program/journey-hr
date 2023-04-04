@@ -4,8 +4,8 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 12px;
-  border-radius: 10px;
+  padding: 0.75rem;
+  border-radius: 0.625rem;
   width: 100%;
   background-color: ${(props) => props.theme.color.contrasts.lightContrast};
 
@@ -15,7 +15,7 @@ export const Wrapper = styled.div`
   }
 
   @media ${devices.desktop} {
-    padding-bottom: 20px;
+    padding-bottom: 1.25rem;
   }
 `;
 
@@ -24,30 +24,30 @@ export const ContainerName = styled.div`
 `;
 
 export const ContainerAppointment = styled.div`
-  margin-top: 6px;
-  margin-bottom: 18px;
-  font-size: 18px;
+  margin-top: 0.375rem;
+  margin-bottom: 1.125rem;
+  font-size: 1.125rem;
   font-weight: 700;
-  line-height: 22.5px;
+  line-height: 1.406rem;
   font-family: ${(props) => props.theme.font.fontFamilyTitle};
   color: ${(props) => props.theme.color.contrasts.highContrast};
 
   @media ${devices.tabletLarge}, ${devices.desktop} {
-    font-size: 20px;
-    line-height: 25px;
+    font-size: 1.25rem;
+    line-height: 1.563rem;
   }
 `;
 
 export const ContainerDate = styled.div`
-  margin-top: 6px;
-  font-size: 18px;
+  margin-top: 0.375rem;
+  font-size: 1.125rem;
   font-weight: 300;
-  line-height: 27px;
+  line-height: 1.688rem;
   font-family: ${(props) => props.theme.font.fontFamilyBody};
   color: ${(props) => props.theme.color.contrasts.mediumContrast};
 
   @media ${devices.desktop} {
-    font-size: 20px;
-    line-height: 30px;
+    font-size: 1.25rem;
+    line-height: 1.875rem;
   }
 `;

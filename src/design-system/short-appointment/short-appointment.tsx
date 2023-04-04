@@ -1,26 +1,21 @@
 import { Paragraph } from '../typography/paragraphs/paragraphs.styled';
-import * as Styled from './short-happy-hour-wrapper.styled';
-import { ShortHappyHourWrapperProps } from './types';
+import * as Styled from './short-appointment.styled';
+import { ShortHappyHourProps } from './types';
 
-export function ShortHappyHourWrapper({
-  childrenAppointment,
-  childrenDate,
-}: ShortHappyHourWrapperProps) {
+export function ShortHappyHour({ Appointment, Date }: ShortHappyHourProps) {
   return (
     <Styled.Wrapper>
       <Styled.ContainerName>
         <Paragraph fontWeight={'semihair'} size={'small'} colorVariant="dark">
           Name of the event
         </Paragraph>
-        <Styled.ContainerAppointment>
-          {childrenAppointment}
-        </Styled.ContainerAppointment>
+        <Styled.ContainerAppointment>{Appointment}</Styled.ContainerAppointment>
       </Styled.ContainerName>
       <div>
         <Paragraph fontWeight={'semihair'} size={'small'} colorVariant="dark">
           Date:
         </Paragraph>
-        <Styled.ContainerDate>{childrenDate}</Styled.ContainerDate>
+        <Styled.ContainerDate>{Date}</Styled.ContainerDate>
       </div>
     </Styled.Wrapper>
   );
