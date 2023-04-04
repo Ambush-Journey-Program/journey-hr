@@ -1,14 +1,16 @@
-import { CardWrapper, Subtitle, Title } from '@/design-system';
-import { Paragraph } from '@/design-system/typography/paragraphs/paragraphs.styled';
-import { IPageHeaderProps } from './types';
+import { Title, Paragraphs } from '@ambush/ui';
+import { PageHeaderProps } from './types';
+import * as Styled from './page-header.styled';
 
-export function PageHeader({ title, subtitle }: IPageHeaderProps) {
+export function PageHeader({ title, subtitle }: PageHeaderProps) {
   return (
-    <CardWrapper>
-      <Title variant={'h3'}>{title}</Title>
-      <Paragraph size="large" fontWeight="hair" colorVariant="dark">
-        {subtitle}
-      </Paragraph>
-    </CardWrapper>
+    <>
+      <Title variant={'h5'}>{title}</Title>
+      <Styled.Wrapper>
+        <Paragraphs size="large" fontWeight="hair" colorVariant="dark">
+          {subtitle}
+        </Paragraphs>
+      </Styled.Wrapper>
+    </>
   );
 }
