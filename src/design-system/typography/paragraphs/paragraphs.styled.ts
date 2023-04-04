@@ -75,7 +75,9 @@ const paragraphsWeightEl: WeightStyle = {
   hair: css`
     font-weight: 200;
   `,
-
+  semihair: css`
+    font-weight: 300;
+  `,
   light: css`
     font-weight: 400;
   `,

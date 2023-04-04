@@ -1,16 +1,31 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen } from '@/tests/renderWithProviders';
 import { ShortHappyHourWrapper } from '.';
 
 describe('<ShortHappyHourWrapper />', () => {
-  describe('should have this remove', () => {
-    it('when the component is actually used', () => {
-      const label = 'it works';
-      const props = { label };
-
-      render(<ShortHappyHourWrapper children={undefined} {...props} />);
-      const labelSpan = screen.getByText(label);
-
-      expect(labelSpan).toBeInTheDocument();
+  describe('should have this ', () => {
+    const title = 'Pizza and Games';
+    const date = '01/20/2023';
+    it('should have two children', () => {
+      render(
+        <ShortHappyHourWrapper
+          childrenAppointment={title}
+          childrenDate={date}
+        />,
+      );
+      const labelTitle = screen.getByText(title);
+      const labelDate = screen.getByText(date);
+      expect(labelDate && labelTitle).toBeInTheDocument();
+    });
+    it('should have two paragraphs', () => {
+      render(
+        <ShortHappyHourWrapper
+          childrenAppointment={title}
+          childrenDate={date}
+        />,
+      );
+      const labelTitle = screen.getByText('Name of the event');
+      const labelDate = screen.getByText('Date:');
+      expect(labelTitle && labelDate).toBeInTheDocument();
     });
   });
 });

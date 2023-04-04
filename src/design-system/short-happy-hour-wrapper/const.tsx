@@ -1,2 +1,2 @@
-export const title = 'Birthday';
-export const date = '11/11/2023';
+export const title = 'Pizza and Games';
+export const date = '01/20/2023';

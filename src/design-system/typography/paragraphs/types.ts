@@ -8,7 +8,7 @@ export type ParagraphType =
   | 'extrasmall'
   | 'tiny';
 
-type WheightType = 'hair' | 'light' | 'semibold';
+type WheightType = 'hair' | 'semihair' | 'light' | 'semibold';
 
 export type ColorType = 'red' | 'purple' | 'yellow' | 'dark' | 'light';
 
