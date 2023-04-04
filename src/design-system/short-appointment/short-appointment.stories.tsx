@@ -17,6 +17,6 @@ const Template: Story<ShortHappyHourProps> = (args) => {
 
 export const ShortHappyHourStory = Template.bind({});
 ShortHappyHourStory.args = {
-  Appointment: title,
-  Date: date,
+  appointment: title,
+  date: date,
 };

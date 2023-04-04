@@ -1,4 +1,4 @@
 export type ShortHappyHourProps = {
-  Appointment: string;
-  Date: string;
+  appointment: string;
+  date: string;
 };
