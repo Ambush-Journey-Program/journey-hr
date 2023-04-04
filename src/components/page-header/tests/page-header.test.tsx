@@ -1,20 +1,11 @@
-import * as React from 'react'
+import * as React from 'react';
+import { render, screen } from '@/tests/renderWithProviders';
+import { PageHeader } from '..';
 
-import { render, screen } from '@testing-library/react'
-
-
-import { PageHeader } from '..'
-
-describe('<PageHeader />', () => {
-  describe('should have this remove', () => {
-    it('when the component is actually used', () => {
-      const label = 'it works'
-      const props = { label }
-
-      render(<PageHeader {...props} />)
-      const labelSpan = screen.getByText(label)
-
-      expect(labelSpan).toBeInTheDocument()
-    })
-  })
-})
+describe('<PageHeader  />', () => {
+  render(<PageHeader title={'Happy'} subtitle={'Choose'} />);
+  it('should exist', () => {
+    const textTest = screen.getByTestId('page-header');
+    expect(textTest).toHaveTextContent('Back');
+  });
+});

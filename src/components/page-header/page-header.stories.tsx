@@ -1,6 +1,6 @@
 import { Meta, Story } from '@storybook/react';
 import { PageHeader } from './page-header';
-import { IPageHeaderProps } from './types';
+import { PageHeaderProps } from './types';
 
 export default {
   component: PageHeader,
@@ -25,12 +25,12 @@ export default {
   },
 } as Meta;
 
-const Template: Story<IPageHeaderProps> = (args) => {
+const Template: Story<PageHeaderProps> = (args) => {
   return <PageHeader {...args} />;
 };
 
 export const PageHeaderStory = Template.bind({});
 PageHeaderStory.args = {
   title: 'Happy Hour Schedule',
-  subtitle: 'Chose the best dates to celebrate',
+  subtitle: 'Choose the best dates to celebrate',
 };
