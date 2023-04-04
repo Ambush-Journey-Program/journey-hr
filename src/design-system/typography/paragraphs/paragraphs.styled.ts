@@ -89,6 +89,7 @@ export const Paragraph = styled.p<
   WithRequiredProperty<ParagraphsProps, 'colorVariant'>
 >`
   font-family: ${(props) => props.theme.font.fontFamilyBody};
+  width: 100%;
   ${({ colorVariant }) => color[colorVariant]}
 
   ${({ size }) => paragraphsEl[size]}

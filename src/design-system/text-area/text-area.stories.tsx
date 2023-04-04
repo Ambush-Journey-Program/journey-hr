@@ -7,7 +7,6 @@ export default {
   title: 'UI/Text Area',
   argTypes: {},
   parameters: {
-    minLength: 50,
     rows: 3,
     spellCheck: true,
     required: true,
@@ -36,7 +35,8 @@ const Template: Story<TextAreaProps> = (args) => {
 export const SelectInputStory = Template.bind({});
 SelectInputStory.args = {
   error: false,
-  minLength: 50,
   spellCheck: true,
   rows: 3,
+  required: true,
+  minLength: 10,
 };
