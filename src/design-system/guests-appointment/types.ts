@@ -1,4 +1,6 @@
+import { ListGuest } from './const';
+type ListGuest = [];
+
 export type GuestsAppointmentProps = {
-  groupNum: number | string;
-  guests: string;
+  guests: ListGuest;
 };

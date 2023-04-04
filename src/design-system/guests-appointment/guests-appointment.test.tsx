@@ -10,7 +10,7 @@ describe('<GuestsAppointment />', () => {
       const label = 'it works';
       const props = { label };
 
-      render(<GuestsAppointment {...props} />);
+      render(<GuestsAppointment groupNum={''} guests={''} {...props} />);
       const labelSpan = screen.getByText(label);
 
       expect(labelSpan).toBeInTheDocument();

@@ -1,16 +1,15 @@
-import { FC } from 'react';
-
-import { Wrapper } from './guests-appointment.styled';
+import * as Styled from './guests-appointment.styled';
 import { GuestsAppointmentProps } from './types';
 
-export function GuestsAppointment({
-  groupNum,
-  guests,
-}: GuestsAppointmentProps) {
+export function GuestsAppointment({ guests }: GuestsAppointmentProps) {
   return (
-    <Wrapper>
-      <Wrapper>{groupNum}</Wrapper>
-      <Wrapper>{guests}</Wrapper>
-    </Wrapper>
+    <Styled.Wrapper>
+      <Styled.ContainerName>
+        <Styled.ContainerNumber>
+          Group of {guests.length}
+        </Styled.ContainerNumber>
+        <Styled.Guests>{guests}</Styled.Guests>
+      </Styled.ContainerName>
+    </Styled.Wrapper>
   );
 }
