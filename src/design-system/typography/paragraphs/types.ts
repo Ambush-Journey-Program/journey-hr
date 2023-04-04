@@ -8,13 +8,13 @@ export type ParagraphType =
   | 'extrasmall'
   | 'tiny';
 
-type WheightType = 'hair' | 'light' | 'semibold';
+type TextWeight = 'hair' | 'semihair' | 'light' | 'semibold';
 
 export type ColorType = 'red' | 'purple' | 'yellow' | 'dark' | 'light';
 
 export type ParagraphsProps = {
   children: string;
   size: ParagraphType;
-  fontWeight: WheightType;
+  fontWeight: TextWeight;
   colorVariant?: ColorType;
 };

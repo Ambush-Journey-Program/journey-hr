@@ -11,7 +11,7 @@ type ParagraphsStyle = {
   [key: string]: FlattenSimpleInterpolation;
 };
 
-type WeightStyle = {
+type TextWeight = {
   [key: string]: FlattenSimpleInterpolation;
 };
 
@@ -71,11 +71,13 @@ const color: ColorVariants = {
   `,
 };
 
-const paragraphsWeightEl: WeightStyle = {
+const paragraphsWeightEl: TextWeight = {
   hair: css`
     font-weight: 200;
   `,
-
+  semihair: css`
+    font-weight: 300;
+  `,
   light: css`
     font-weight: 400;
   `,
