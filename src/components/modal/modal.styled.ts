@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const ModalLayer = styled.div`
+export const ModalLayer = styled.button`
   position: fixed;
   left: 0;
   top: 0;
@@ -8,6 +8,7 @@ export const ModalLayer = styled.div`
   bottom: 0;
   background-color: rgba(20, 20, 20, 0.5);
   z-index: 100;
+  border: none;
 `;
 
 export const ModalScreen = styled.div`
