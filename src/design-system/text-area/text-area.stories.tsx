@@ -8,6 +8,7 @@ export default {
   argTypes: {},
   parameters: {
     minLength: 50,
+    rows: 3,
     spellCheck: true,
     required: true,
     relatedLinks: {
@@ -37,4 +38,5 @@ SelectInputStory.args = {
   error: false,
   minLength: 50,
   spellCheck: true,
+  rows: 3,
 };
