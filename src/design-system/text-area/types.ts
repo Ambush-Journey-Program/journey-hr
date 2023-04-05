@@ -1,9 +1,10 @@
 import { InputHTMLAttributes, TextareaHTMLAttributes } from 'react';
 
 export type TextAreaProps = InputHTMLAttributes<HTMLInputElement> & {
+  label: string;
   error?: boolean;
   onTextChange?: (value: string) => void;
-  spellCheck: boolean;
+  spellCheck?: boolean;
   touched?: boolean;
 } & TextareaHTMLAttributes<HTMLTextAreaElement>;
 

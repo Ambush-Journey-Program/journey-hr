@@ -1,35 +1,34 @@
 import { describe, expect } from 'vitest';
+import userEvent from '@testing-library/user-event';
 import { render, screen } from '@/src/../tests/renderWithProviders';
 import { TextArea } from './text-area';
 
 describe('<TextArea />', () => {
-  it('renders the Big Input', () => {
+  it('renders the Text Area', () => {
     render(
-      <TextArea rows={3} minLength={3} spellCheck placeholder="placeholder" />,
+      <TextArea
+        rows={3}
+        minLength={3}
+        spellCheck
+        placeholder="placeholder"
+        label={''}
+      />,
     );
     const inputEl = screen.getByPlaceholderText('placeholder');
     expect(inputEl).toBeInTheDocument();
   });
 
-  it('shows required message when passing required prop', () => {
+  it('has a placeholder value', () => {
     render(
       <TextArea
         rows={3}
-        required
         minLength={3}
         spellCheck
         placeholder="placeholder"
+        label={''}
       />,
     );
 
-    const inputEl = screen.getByPlaceholderText('placeholder');
-    expect(inputEl).toBeRequired();
-  });
-
-  it('has a placeholder value', () => {
-    render(
-      <TextArea rows={3} minLength={3} spellCheck placeholder="placeholder" />,
-    );
     const inputEl = screen.getByPlaceholderText('placeholder');
     expect(inputEl).toBeInTheDocument();
   });
@@ -42,9 +41,54 @@ describe('<TextArea />', () => {
         touched
         spellCheck
         placeholder="placeholder"
+        label={''}
       />,
     );
-    const inputEl = screen.getByText('Required');
+    const inputEl = screen.getByText('Description Required');
     expect(inputEl).toBeInTheDocument();
+  });
+
+  it('has a required message when the component is touched and no value is provided', async () => {
+    render(
+      <TextArea
+        rows={3}
+        required
+        minLength={3}
+        spellCheck
+        placeholder="placeholder"
+        label={''}
+      />,
+    );
+
+    const inputEl = screen.getByPlaceholderText('placeholder');
+    expect(inputEl).toBeRequired();
+
+    await userEvent.type(inputEl, 'A');
+    await userEvent.type(inputEl, '{Backspace}');
+
+    const msgError = screen.getByText('Description Required');
+    expect(msgError).toBeInTheDocument();
+  });
+
+  it('has a message declaring that the minimum length of characters are required', async () => {
+    render(
+      <TextArea
+        rows={3}
+        required
+        minLength={3}
+        label={''}
+        spellCheck
+        placeholder="placeholder"
+      />,
+    );
+
+    const inputEl = screen.getByPlaceholderText('placeholder');
+    expect(inputEl).toBeRequired();
+
+    await userEvent.type(inputEl, 'AB');
+    await userEvent.type(inputEl, '{Backspace}');
+
+    const msgError = screen.getByText('Minimal length must be greater than 3');
+    expect(msgError).toBeInTheDocument();
   });
 });

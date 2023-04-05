@@ -1,4 +1,5 @@
 import { ChangeEvent, useEffect, useState } from 'react';
+import { Label } from '../input/input.styled';
 import { Paragraphs } from '../typography/paragraphs/paragraphs';
 import * as Styled from './text-area.styled';
 import { TextAreaProps } from './types';
@@ -10,14 +11,16 @@ export function TextArea({
   onTextChange = () => {},
   required = true,
   touched = false,
-
+  label,
   ...props
 }: TextAreaProps) {
-  const [internalTouched, setTouched] = useState(touched);
-  const [error, setError] = useState('Required');
+  const [internalTouched, setTouched] = useState(false);
+  const [error, setError] = useState('Description Required');
+
   useEffect(() => {
     setTouched(touched);
   }, [touched]);
+
   function onInputChange(e: ChangeEvent<HTMLTextAreaElement>) {
     onTextChange(e.target.value);
     setTouched(true);
@@ -35,11 +38,10 @@ export function TextArea({
 
   return (
     <>
-      <Paragraphs size="small" fontWeight="hair">
-        Description
-      </Paragraphs>
+      <Label htmlFor={`textArea-${label}`}>{label}</Label>
       <Styled.TextAreaContainer>
         <Styled.TextArea
+          id={`textArea-${label}`}
           placeholder={placeholder}
           internalTouched={internalTouched}
           onChange={onInputChange}
