@@ -4,12 +4,12 @@ import { GuestsAppointmentProps } from './types';
 export function GuestsAppointment({ guests }: GuestsAppointmentProps) {
   return (
     <Styled.Wrapper>
-      <Styled.ContainerName>
-        <Styled.ContainerNumber>
-          Group of {guests.length}
-        </Styled.ContainerNumber>
-        <Styled.Guests>{guests}</Styled.Guests>
-      </Styled.ContainerName>
+      <Styled.ContainerNumber>Group of {guests.length}</Styled.ContainerNumber>
+      <Styled.Guests>
+        {guests.map((name, index) => (
+          <li key={index}>{name}</li>
+        ))}
+      </Styled.Guests>
     </Styled.Wrapper>
   );
 }

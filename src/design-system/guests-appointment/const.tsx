@@ -1,1 +1,2 @@
-export const ListGuest = ['Barbara', 'Marcello', 'Lucas', 'Mariana'];
+const listGuests = [];
+export const listGuestsSort = listGuests.sort();
