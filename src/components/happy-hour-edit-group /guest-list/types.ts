@@ -1,8 +1,13 @@
-export type InterviewTimesProps = {
-  interviewOptions: InterviewOption[];
-  onClick: () => void;
+export type GuestListProps = {
+  guestList: Guests[];
+  onDelete: () => void;
 };
 
-export type GuestName = {
-  [key: string]: FlattenSimpleInterpolation;
+export type Guests = {
+  guest: Profile;
+};
+
+type Profile = {
+  name: string;
+  team: string;
 };

@@ -1,4 +1,5 @@
 import styled, { FlattenSimpleInterpolation } from 'styled-components';
+import { UserIcon, TrashIcon } from '@heroicons/react/24/solid';
 
 export const GuestListWrapper = styled.ul`
   display: flex;
@@ -14,4 +15,9 @@ export const ListComponent = styled.li`
   align-items: center;
   width: 100%;
   max-width: 100%;
+`;
+
+export const TrashIconButton = styled.button`
+  display: flex;
+  width: 1rem;
 `;
