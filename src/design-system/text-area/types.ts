@@ -4,13 +4,10 @@ export type TextAreaProps = InputHTMLAttributes<HTMLInputElement> & {
   error?: boolean;
   onTextChange?: (value: string) => void;
   spellCheck: boolean;
+  touched?: boolean;
 } & TextareaHTMLAttributes<HTMLTextAreaElement>;
-
-export type StyleWrapper = {
-  error?: boolean;
-};
 
 export type StyledProps = {
   error?: boolean;
-  touched?: boolean;
+  internalTouched?: boolean;
 };

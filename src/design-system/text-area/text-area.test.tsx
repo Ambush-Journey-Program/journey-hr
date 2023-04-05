@@ -39,12 +39,12 @@ describe('<TextArea />', () => {
       <TextArea
         rows={3}
         minLength={3}
-        error
+        touched
         spellCheck
         placeholder="placeholder"
       />,
     );
-    const inputEl = screen.getByText('Description Required');
+    const inputEl = screen.getByText('Required');
     expect(inputEl).toBeInTheDocument();
   });
 });

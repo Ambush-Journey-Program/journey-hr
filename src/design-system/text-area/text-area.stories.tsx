@@ -7,10 +7,11 @@ export default {
   title: 'UI/Text Area',
   argTypes: {},
   parameters: {
-    minLength: 50,
+    minLength: 10,
     rows: 3,
     spellCheck: true,
     required: true,
+    touched: false,
     relatedLinks: {
       sections: [
         {
@@ -35,8 +36,8 @@ const Template: Story<TextAreaProps> = (args) => {
 
 export const SelectInputStory = Template.bind({});
 SelectInputStory.args = {
-  error: false,
-  minLength: 50,
+  minLength: 10,
   spellCheck: true,
   rows: 3,
+  touched: false,
 };
