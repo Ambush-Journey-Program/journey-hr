@@ -1,8 +1,7 @@
 import { Meta, Story } from '@storybook/react';
-
 import { HappyHourSchedule } from './happy-hour-schedule';
 import { IHappyHourScheduleProps } from './types';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 export default {
   component: HappyHourSchedule,

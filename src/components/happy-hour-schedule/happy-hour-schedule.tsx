@@ -1,11 +1,15 @@
-import { Input, SelectInput } from '@/design-system';
+import { Button, Input, SelectInput, TextArea } from '@/design-system';
 import { PageHeader } from '../page-header';
 import { example } from './constants';
 import * as Styled from './happy-hour-schedule.styled';
 
 export function HappyHourSchedule() {
+  function handleSelectEvent(selectedValue: string): void {
+    throw new Error('Function not implemented.');
+  }
+
   return (
-    <Styled.Wrapper>
+    <Styled.MainWrapper>
       <PageHeader
         title={'Happy Hour Schedule '}
         subtitle={'Choose the best dates to celebrate'}
@@ -18,11 +22,15 @@ export function HappyHourSchedule() {
           title="Amount of people"
           required
           options={example}
-          handleSelect={function (selectedValue: string): void {
-            throw new Error('Function not implemented.');
-          }}
+          handleSelect={handleSelectEvent}
         />
       </Styled.InputsWrapper>
-    </Styled.Wrapper>
+      <Styled.wrapper>
+        <TextArea label={'Description'} />
+      </Styled.wrapper>
+      <Styled.wrapper>
+        <Styled.StyledButton>Generate List</Styled.StyledButton>
+      </Styled.wrapper>
+    </Styled.MainWrapper>
   );
 }
