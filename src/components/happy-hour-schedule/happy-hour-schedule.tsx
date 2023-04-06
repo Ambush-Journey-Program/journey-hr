@@ -2,11 +2,17 @@ import { Button, Input, SelectInput, TextArea } from '@/design-system';
 import { PageHeader } from '../page-header';
 import { example } from './constants';
 import * as Styled from './happy-hour-schedule.styled';
+import { ChangeEvent, useState } from 'react';
+import { IHappyHourScheduleProps } from './types';
 
-export function HappyHourSchedule() {
-  function handleSelectEvent(selectedValue: string): void {
-    throw new Error('Function not implemented.');
+export function HappyHourSchedule({
+  handleSelect = () => {},
+}: IHappyHourScheduleProps) {
+  function handleSelectEvent(event: ChangeEvent<HTMLSelectElement>) {
+    handleSelect(event.target.value);
+    setTouched(true);
   }
+  const [touched, setTouched] = useState(false);
 
   return (
     <Styled.MainWrapper data-testid="happyHourSchedule">
@@ -19,10 +25,11 @@ export function HappyHourSchedule() {
 
         <Input type="date" label={'Date'}></Input>
         <SelectInput
+          touched={touched}
           title="Amount of people"
           required
           options={example}
-          handleSelect={handleSelectEvent}
+          onChange={handleSelectEvent}
         />
       </Styled.InputsWrapper>
       <Styled.wrapper>
@@ -33,4 +40,7 @@ export function HappyHourSchedule() {
       </Styled.wrapper>
     </Styled.MainWrapper>
   );
+}
+function setTouched(arg0: boolean) {
+  throw new Error('Function not implemented.');
 }

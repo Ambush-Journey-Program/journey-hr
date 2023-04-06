@@ -1,8 +1,9 @@
 import { Button, SelectInput } from '@/design-system';
 import { devices } from '@/styles/devices';
 import styled from 'styled-components';
+import { IHappyHourScheduleProps } from './types';
 
-export const select = styled(SelectInput)``;
+export const select = styled(SelectInput)<IHappyHourScheduleProps>``;
 
 export const MainWrapper = styled.div`
   display: flex;
