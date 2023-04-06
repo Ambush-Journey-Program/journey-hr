@@ -1,3 +1,4 @@
 export type HappyHourEditProps = {
-  label: string;
+  guests: string[];
+  totalGuests: number;
 };
