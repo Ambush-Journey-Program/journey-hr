@@ -1,5 +1,4 @@
-import { useState, useMemo } from 'react';
-import { CardWrapper, SelectInput, Tooltip } from '@/design-system';
+import { Button, CardWrapper, Input } from '@/design-system';
 import { HappyHourEditProps } from './types';
 import { Paragraphs } from '@/design-system/typography';
 import * as Styled from './happy-hour-edit.styled';
