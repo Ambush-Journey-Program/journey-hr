@@ -41,6 +41,3 @@ export function HappyHourSchedule({
     </Styled.MainWrapper>
   );
 }
-function setTouched(arg0: boolean) {
-  throw new Error('Function not implemented.');
-}
