@@ -1,7 +1,7 @@
 import { InputHTMLAttributes } from 'react';
 
 export type IInputProps = InputHTMLAttributes<HTMLInputElement> & {
-  label: string;
+  label?: string;
   error?: string;
   onTextChange?: (value: string) => void;
   type?: string;

@@ -327,6 +327,7 @@ const disabledButton: DisabledButton = {
 export const ButtonStyle = styled.button<ButtonProps>`
   display: flex;
   justify-content: center;
+  align-items: center;
   padding: 10px 24px;
   font-weight: 600;
   line-height: 150%;
