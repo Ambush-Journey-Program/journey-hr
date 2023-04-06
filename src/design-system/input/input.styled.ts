@@ -85,7 +85,7 @@ export const InputContainer = styled.div<StyledInputProps>`
       props.touched
         ? props.theme.color.contrasts.highContrast
         : props.theme.color.contrasts.lowestContrast};
-    background-image: url('src/design-system/input/assets/calendar-day.svg');
+
     background-position: calc(100% - 0.625rem) center;
     background-size: 1.25em;
     background-repeat: no-repeat;
@@ -93,5 +93,9 @@ export const InputContainer = styled.div<StyledInputProps>`
   & input::-webkit-calendar-picker-indicator {
     background: transparent;
     background-position: calc(100% - 0.625rem) center;
+  }
+
+  & input[type='date'] {
+    background-image: url('src/design-system/input/assets/calendar-day.svg');
   }
 `;
