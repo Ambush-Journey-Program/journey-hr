@@ -1,20 +1,11 @@
-import * as React from 'react'
-
-import { render, screen } from '@testing-library/react'
-
-
-import { HappyHourSchedule } from '..'
+import { describe, expect } from 'vitest';
+import { render, screen } from '@/tests/renderWithProviders';
+import { HappyHourSchedule } from '../happy-hour-schedule';
 
 describe('<HappyHourSchedule />', () => {
-  describe('should have this remove', () => {
-    it('when the component is actually used', () => {
-      const label = 'it works'
-      const props = { label }
-
-      render(<HappyHourSchedule {...props} />)
-      const labelSpan = screen.getByText(label)
-
-      expect(labelSpan).toBeInTheDocument()
-    })
-  })
-})
+  it('renders the Happy Hour Schedule', () => {
+    render(<HappyHourSchedule />);
+    const element = screen.getByTestId('happyHourSchedule');
+    expect(element).toHaveTextContent('Schedule');
+  });
+});

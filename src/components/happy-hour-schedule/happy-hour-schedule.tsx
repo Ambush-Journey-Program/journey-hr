@@ -9,7 +9,7 @@ export function HappyHourSchedule() {
   }
 
   return (
-    <Styled.MainWrapper>
+    <Styled.MainWrapper data-testid="happyHourSchedule">
       <PageHeader
         title={'Happy Hour Schedule '}
         subtitle={'Choose the best dates to celebrate'}
