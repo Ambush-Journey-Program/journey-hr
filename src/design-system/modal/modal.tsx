@@ -1,5 +1,4 @@
-import { Button } from '@/design-system';
-import { Title } from '@/design-system/typography/title/title.styled';
+import { Button, Title } from '@ambush/ui';
 import { ModalProps } from './types';
 import * as Styled from './modal.styled';
 import { useEffect } from 'react';
@@ -39,18 +38,16 @@ export function Modal({
           onClick={onClose}
           aria-label="Close Button"
         />
-
-        <Title className="title" variant="h2">
-          {title}
-        </Title>
-
-        <Styled.ModalChildren>{children}</Styled.ModalChildren>
-        <Styled.ModalButton>
+        <Styled.modalContent>
+          <Title variant="h2">{title}</Title>
+          <Styled.ModalChildren>{children}</Styled.ModalChildren>
+        </Styled.modalContent>
+        <Styled.ModalFooter>
           <Button variant="outlined" color="blue" onClick={onClose}>
             {cancelButtonText}
           </Button>
           <Button onClick={onConfirm}>{confirmButtonText}</Button>
-        </Styled.ModalButton>
+        </Styled.ModalFooter>
       </Styled.ModalBox>
       <Styled.ModalLayer tabIndex={-1} aria-hidden="true" />
     </Styled.ModalScreen>
