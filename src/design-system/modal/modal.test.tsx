@@ -20,7 +20,7 @@ describe('<Modal />', () => {
       </Modal>,
     );
 
-    const modalEl = screen.getByTestId('modal');
+    const modalEl = screen.getByRole('dialog');
     expect(modalEl).toBeInTheDocument();
   });
 
@@ -63,6 +63,25 @@ describe('<Modal />', () => {
     await userEvent.click(
       screen.getByRole('button', { name: 'Yes, it`s done' }),
     );
+    expect(onConfirmMock).toHaveBeenCalled();
+  });
+
+  it('call`s back the Close Button', async () => {
+    const onConfirmMock = vi.fn();
+    const test = 'Hello';
+    render(
+      <Modal
+        title="Are you sure?"
+        onClose={onConfirmMock}
+        onConfirm={onConfirmMock}
+        cancelButtonText="No, Edit Event"
+        confirmButtonText="Yes, it`s done"
+      >
+        {test}
+      </Modal>,
+    );
+
+    await userEvent.click(screen.getByRole('button', { name: 'Close Button' }));
     expect(onConfirmMock).toHaveBeenCalled();
   });
 });

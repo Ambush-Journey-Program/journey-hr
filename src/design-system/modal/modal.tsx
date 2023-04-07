@@ -26,19 +26,18 @@ export function Modal({
     };
 
     window.addEventListener('click', onClickOutside, true);
-    return () => window.removeEventListener('click', onClickOutside);
+    return () => window.removeEventListener('click', onClickOutside, true);
   }, []);
 
   return (
     <Styled.ModalScreen>
-      <Styled.ModalBox id="modal" data-testid="modal">
+      <Styled.ModalBox id="modal" role="dialog">
         <Button
           className="closeButton"
           color="blue"
           icon="XMarkIcon"
           onClick={onClose}
           aria-label="Close Button"
-          data-testid="CloseButton"
         />
 
         <Title className="title" variant="h2">
@@ -47,17 +46,10 @@ export function Modal({
 
         <Styled.ModalChildren>{children}</Styled.ModalChildren>
         <Styled.ModalButton>
-          <Button
-            aria-label={cancelButtonText}
-            variant="outlined"
-            color="blue"
-            onClick={onClose}
-          >
+          <Button variant="outlined" color="blue" onClick={onClose}>
             {cancelButtonText}
           </Button>
-          <Button aria-label={confirmButtonText} onClick={onConfirm}>
-            {confirmButtonText}
-          </Button>
+          <Button onClick={onConfirm}>{confirmButtonText}</Button>
         </Styled.ModalButton>
       </Styled.ModalBox>
       <Styled.ModalLayer tabIndex={-1} aria-hidden="true" />
