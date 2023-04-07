@@ -17,19 +17,18 @@ export const InputsWrapper = styled.div`
   flex-direction: column;
   gap: 24px;
   width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-column-gap: 24px;
 
   @media ${devices.desktop} {
-    display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-column-gap: 24px;
   }
 `;
 export const wrapper = styled.div``;
 
 export const StyledButton = styled(Button)`
   float: right;
-  padding: 10px 24px;
-  height: 48px;
 
   @media ${devices.mobile} {
     width: 100%;

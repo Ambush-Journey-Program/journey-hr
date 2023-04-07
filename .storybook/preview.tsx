@@ -31,7 +31,7 @@ const customViewports = {
     name: 'mobile',
     styles: {
       width: '768px',
-      height: '667px',
+      height: '770px',
     },
   },
 };
