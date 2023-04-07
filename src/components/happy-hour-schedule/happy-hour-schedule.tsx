@@ -2,17 +2,9 @@ import { Input, SelectInput, TextArea } from '@/design-system';
 import { PageHeader } from '../page-header';
 import { generateAmountPeopleOptions } from './constants';
 import * as Styled from './happy-hour-schedule.styled';
-import { ChangeEvent, useState } from 'react';
 import { IHappyHourScheduleProps } from './types';
 
-export function HappyHourSchedule({
-  handleSelect = () => {},
-}: IHappyHourScheduleProps) {
-  function handleSelectEvent(event: ChangeEvent<HTMLSelectElement>) {
-    handleSelect(event.target.value);
-    setTouched(true);
-  }
-  const [touched, setTouched] = useState(false);
+export function HappyHourSchedule({}: IHappyHourScheduleProps) {
   const amountOfPeople = generateAmountPeopleOptions();
   return (
     <Styled.MainWrapper data-testid="happyHourSchedule">
@@ -25,11 +17,12 @@ export function HappyHourSchedule({
 
         <Input type="date" label="Date" />
         <SelectInput
-          touched={touched}
           title="Amount of people"
           required
           options={amountOfPeople}
-          onChange={handleSelectEvent}
+          handleSelect={(value) => {
+            console.log(value);
+          }}
         />
       </Styled.InputsWrapper>
       <Styled.wrapper>
