@@ -13,8 +13,14 @@ export function Modal({
   confirmButtonText,
 }: ModalProps) {
   useEffect(() => {
-    const onClickOutside = (event: any) => {
-      if (!event.target?.closest('#modal')) {
+    const onClickOutside = (event: MouseEvent) => {
+      const isElement = event.target instanceof Element;
+
+      if (!isElement) {
+        return;
+      }
+
+      if (!event.target.closest('#modal')) {
         onClose();
       }
     };
@@ -32,6 +38,7 @@ export function Modal({
           icon="XMarkIcon"
           onClick={onClose}
           aria-label="Close Button"
+          data-testid="CloseButton"
         />
 
         <Title className="title" variant="h2">
@@ -41,19 +48,19 @@ export function Modal({
         <Styled.ModalChildren>{children}</Styled.ModalChildren>
         <Styled.ModalButton>
           <Button
-            aria-label="Cancel Button"
+            aria-label={cancelButtonText}
             variant="outlined"
             color="blue"
             onClick={onClose}
           >
             {cancelButtonText}
           </Button>
-          <Button aria-label="Confirm Button" onClick={onConfirm}>
+          <Button aria-label={confirmButtonText} onClick={onConfirm}>
             {confirmButtonText}
           </Button>
         </Styled.ModalButton>
       </Styled.ModalBox>
-      <Styled.ModalLayer tabIndex={-1} data-testid="CloseButton" />
+      <Styled.ModalLayer tabIndex={-1} aria-hidden="true" />
     </Styled.ModalScreen>
   );
 }

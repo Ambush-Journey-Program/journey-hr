@@ -1,5 +1,3 @@
-import { JsxAttribute } from 'typescript';
-
 export type ModalProps = {
   onConfirm: () => void;
   onClose: () => void;

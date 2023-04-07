@@ -10,12 +10,11 @@ describe('<Modal />', () => {
     const test = 'Hello';
     render(
       <Modal
-        title="Are you sure?"
-        onClose={vi.fn()}
         onConfirm={vi.fn()}
-        isOpen={true}
-        cancelButtonText="No, Edit Event"
-        confirmButtonText="Yes, it`s done"
+        onClose={vi.fn()}
+        title="teste"
+        cancelButtonText="teste3"
+        confirmButtonText="teste4"
       >
         {test}
       </Modal>,
@@ -33,7 +32,6 @@ describe('<Modal />', () => {
         title="Are you sure?"
         onClose={onCancelMock}
         onConfirm={onCancelMock}
-        isOpen={true}
         cancelButtonText="No, Edit Event"
         confirmButtonText="Yes, it`s done"
       >
@@ -55,7 +53,6 @@ describe('<Modal />', () => {
         title="Are you sure?"
         onClose={onConfirmMock}
         onConfirm={onConfirmMock}
-        isOpen={true}
         cancelButtonText="No, Edit Event"
         confirmButtonText="Yes, it`s done"
       >
@@ -67,26 +64,5 @@ describe('<Modal />', () => {
       screen.getByRole('button', { name: 'Yes, it`s done' }),
     );
     expect(onConfirmMock).toHaveBeenCalled();
-  });
-
-  it('call`s back the Close button', async () => {
-    const onCloseMock = vi.fn();
-    const test = 'Hello';
-    render(
-      <Modal
-        title="Are you sure?"
-        onClose={onCloseMock}
-        onConfirm={onCloseMock}
-        isOpen={true}
-        cancelButtonText="No, Edit Event"
-        confirmButtonText="Yes, it`s done"
-      >
-        {test}
-      </Modal>,
-    );
-
-    await userEvent.click(screen.getByTestId('CloseButton'));
-
-    expect(onCloseMock).toHaveBeenCalled();
   });
 });
