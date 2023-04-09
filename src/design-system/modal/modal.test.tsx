@@ -10,18 +10,17 @@ describe('<Modal />', () => {
     const test = 'Hello';
     render(
       <Modal
-        title="Are you sure?"
-        onClose={vi.fn()}
         onConfirm={vi.fn()}
-        isOpen={true}
-        cancelButtonText="No, Edit Event"
-        confirmButtonText="Yes, it`s done"
+        onClose={vi.fn()}
+        title="teste"
+        cancelButtonText="teste3"
+        confirmButtonText="teste4"
       >
         {test}
       </Modal>,
     );
 
-    const modalEl = screen.getByTestId('modal');
+    const modalEl = screen.getByRole('dialog');
     expect(modalEl).toBeInTheDocument();
   });
 
@@ -33,7 +32,6 @@ describe('<Modal />', () => {
         title="Are you sure?"
         onClose={onCancelMock}
         onConfirm={onCancelMock}
-        isOpen={true}
         cancelButtonText="No, Edit Event"
         confirmButtonText="Yes, it`s done"
       >
@@ -55,7 +53,6 @@ describe('<Modal />', () => {
         title="Are you sure?"
         onClose={onConfirmMock}
         onConfirm={onConfirmMock}
-        isOpen={true}
         cancelButtonText="No, Edit Event"
         confirmButtonText="Yes, it`s done"
       >
@@ -69,15 +66,14 @@ describe('<Modal />', () => {
     expect(onConfirmMock).toHaveBeenCalled();
   });
 
-  it('call`s back the Close button', async () => {
-    const onCloseMock = vi.fn();
+  it('call`s back the Close Button', async () => {
+    const onConfirmMock = vi.fn();
     const test = 'Hello';
     render(
       <Modal
         title="Are you sure?"
-        onClose={onCloseMock}
-        onConfirm={onCloseMock}
-        isOpen={true}
+        onClose={onConfirmMock}
+        onConfirm={onConfirmMock}
         cancelButtonText="No, Edit Event"
         confirmButtonText="Yes, it`s done"
       >
@@ -85,8 +81,7 @@ describe('<Modal />', () => {
       </Modal>,
     );
 
-    await userEvent.click(screen.getByTestId('CloseButton'));
-
-    expect(onCloseMock).toHaveBeenCalled();
+    await userEvent.click(screen.getByRole('button', { name: 'Close Button' }));
+    expect(onConfirmMock).toHaveBeenCalled();
   });
 });
