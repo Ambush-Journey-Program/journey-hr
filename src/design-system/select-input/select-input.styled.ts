@@ -40,6 +40,7 @@ export const Select = styled.select<StyledSelectProps>`
   font-size: 1rem;
   border-radius: 0.75rem;
   padding-left: 1.25rem;
+  margin-top: 0.25rem;
   padding: 0.875rem;
   -webkit-appearance: none;
   -moz-appearance: none;

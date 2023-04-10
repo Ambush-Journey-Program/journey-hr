@@ -38,6 +38,7 @@ module.exports = {
     '@storybook/addon-interactions',
     'storybook-color-picker',
     'storybook-dark-mode',
+    '@storybook/addon-viewport',
   ],
   framework: '@storybook/react',
   core: {

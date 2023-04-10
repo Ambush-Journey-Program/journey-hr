@@ -4,7 +4,40 @@ import { themes } from '@storybook/theming';
 import { GlobalStyles } from '../src/styles/global';
 import { theme } from '../src/styles/theme';
 
+const customViewports = {
+  desktop: {
+    name: 'Desktop',
+    styles: {
+      width: '1200px',
+      height: '1200px',
+    },
+  },
+  tabletLarge: {
+    name: 'Tablet Large',
+    styles: {
+      width: '992px',
+      height: '1200px',
+    },
+  },
+
+  tablet: {
+    name: 'Tablet',
+    styles: {
+      width: '769px',
+      height: '1200px',
+    },
+  },
+  mobile: {
+    name: 'mobile',
+    styles: {
+      width: '768px',
+      height: '770px',
+    },
+  },
+};
+
 export const parameters = {
+  viewport: { viewports: customViewports },
   layout: 'centered',
   colorPicker: {
     primaryPalette: 'Brand Colors',
