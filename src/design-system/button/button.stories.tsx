@@ -5,6 +5,14 @@ import { IButtonProps } from './types';
 export default {
   component: Button,
   title: 'UI/Button',
+  argTypes: {
+    color: {
+      control: 'radio',
+
+      options: ['defaultColor', 'blue', 'purple'],
+      if: { arg: 'variant', neq: 'ghost' },
+    },
+  },
   parameters: {
     isLoading: false,
     relatedLinks: {
