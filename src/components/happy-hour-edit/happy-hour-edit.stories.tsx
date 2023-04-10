@@ -5,10 +5,9 @@ import { HappyHourEditProps } from './types';
 
 export default {
   component: HappyHourEdit,
-  title: 'UI/HappyHourEdit',
+  title: 'Components/HappyHourEdit',
   parameters: {
     isLoading: false,
-    label: 'HappyHourEdit text',
   },
 } as Meta;
 

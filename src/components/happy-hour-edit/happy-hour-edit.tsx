@@ -1,59 +1,31 @@
-import { CardWrapper, Input } from '@/design-system';
+import { useState, useMemo } from 'react';
+import { CardWrapper, SelectInput } from '@/design-system';
 import { HappyHourEditProps } from './types';
 import { Paragraphs } from '@/design-system/typography';
 import * as Styled from './happy-hour-edit.styled';
-import { useCallback, useState } from 'react';
 import { employees, guestsList } from './const';
 
-export function HappyHourEdit({ guests, maxGuests }: HappyHourEditProps) {
-  const [nameGuest, setNameGuest] = useState('');
-  const [list, setList] = useState(guestsList);
-  const [guestToAdd, setGuestToAdd] = useState<typeof employees[0] | null>(
-    null,
+export function HappyHourEdit({ addGuest, maxGuests }: HappyHourEditProps) {
+  const [valuesInput, setValuesInput] = useState('');
+
+  const formattedOptions = useMemo(
+    () =>
+      employees.map((employee) => ({
+        value: employee.id,
+        label: employee.name,
+      })),
+    [employees],
   );
 
-  function handleChange(input: string) {
-    setNameGuest(input);
-
-    const employeesToAdd = employees.filter((employee) => {
-      const lowerCaseEmployeeName = employee.name.toLowerCase();
-      const lowerCaseEmployeeSurname = employee.surname.toLowerCase();
-      const lowerCaseInput = input.toLowerCase();
-
-      const nameWithSurname = lowerCaseEmployeeName.concat(
-        ' ',
-        lowerCaseEmployeeSurname,
-      );
-
-      return (
-        lowerCaseEmployeeName === lowerCaseInput ||
-        nameWithSurname === lowerCaseInput
-      );
+  const handleSubmit = (e: React.MouseEventHandler<HTMLButtonElement>) => {
+    const addItem = employees.find((el) => {
+      if (el.id === valuesInput) {
+        const updatedList = [...guestsList, el];
+        addGuest(updatedList);
+      }
     });
-
-    if (employeesToAdd.length !== 1) {
-      return;
-    }
-    const [employeeToAdd] = employeesToAdd;
-
-    const employeeAlreadyInvited = list.find(
-      (employee) => employee.id === employeeToAdd.id,
-    );
-
-    if (employeeAlreadyInvited) {
-      return;
-    }
-
-    setGuestToAdd(employeeToAdd);
-  }
-
-  function handleAdd(guest: typeof employees[0]) {
-    const newList = [guest, ...list];
-    setList(newList);
-    setGuestToAdd(null);
-  }
-  console.log(list);
-
+  };
+  const isButtonEnabled = guestsList.length >= maxGuests;
   return (
     <CardWrapper>
       <Styled.Header>
@@ -66,21 +38,24 @@ export function HappyHourEdit({ guests, maxGuests }: HappyHourEditProps) {
             size={'medium'}
             colorVariant="dark"
           >
-            ({guests.length}/{maxGuests}) People
+            ({[guestsList.length]}/{maxGuests}) People
           </Paragraphs>
         </Styled.ContainerTitle>
         <Styled.ContainerInput>
-          <Input
-            type="text"
-            value={nameGuest}
-            onTextChange={handleChange}
-          ></Input>
+          <SelectInput
+            name="guest"
+            placeholder={'Label'}
+            options={formattedOptions}
+            required
+            id={valuesInput}
+            handleSelect={setValuesInput}
+          ></SelectInput>
           <Styled.BoxButton
-            disabled={!guestToAdd || list.length === maxGuests}
             variant="iconBtn"
             icon="PlusIcon"
             color="purple"
-            onClick={() => guestToAdd && handleAdd(guestToAdd)}
+            onClick={handleSubmit}
+            disabled={isButtonEnabled}
           >
             Add Name
           </Styled.BoxButton>

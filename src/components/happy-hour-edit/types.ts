@@ -1,4 +1,11 @@
+export type Guest = {
+  id: string;
+  name: string;
+  team: string;
+};
+
 export type HappyHourEditProps = {
-  guests: string[];
+  guestsList: Guest[];
   maxGuests: number;
+  addGuest: (guests: Guest[]) => void;
 };
