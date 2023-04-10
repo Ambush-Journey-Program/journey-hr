@@ -12,4 +12,5 @@ export type IButtonProps = {
   sizeVariant?: SizeProp;
   variant?: ButtonType;
   icon?: keyof typeof HeroIcons;
+  handleClick: () => void;
 } & ButtonHTMLAttributes<HTMLButtonElement>;

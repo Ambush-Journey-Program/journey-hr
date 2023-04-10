@@ -6,6 +6,7 @@ export function Button({
   sizeVariant = 'default',
   color = 'defaultColor',
   variant = 'defaultType',
+  handleClick = () => {},
   disabled,
   children,
   icon,
@@ -23,6 +24,7 @@ export function Button({
         color={color}
         variant={variant}
         disabled={disabled}
+        onClick={handleClick}
         {...props}
       >
         {buttonIcon}

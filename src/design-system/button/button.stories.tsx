@@ -7,10 +7,10 @@ export default {
   title: 'UI/Button',
   argTypes: {
     color: {
-      control: 'radio',
-
-      options: ['defaultColor', 'blue', 'purple'],
       if: { arg: 'variant', neq: 'ghost' },
+    },
+    handleClick: {
+      if: { arg: 'disabled', truthy: false },
     },
   },
   parameters: {
@@ -43,4 +43,5 @@ ButtonStory.args = {
   color: 'defaultColor',
   sizeVariant: 'default',
   variant: 'defaultType',
+  handleClick: () => {},
 };
