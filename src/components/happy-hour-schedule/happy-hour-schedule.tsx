@@ -8,6 +8,8 @@ export function HappyHourSchedule({}: IHappyHourScheduleProps) {
   const amountOfPeople = generateAmountPeopleOptions();
   return (
     <Styled.MainWrapper data-testid="happyHourSchedule">
+      <Styled.StyledBackButton onClick={() => {}} />
+
       <PageHeader
         title="Happy Hour Schedule "
         subtitle="Choose the best dates to celebrate"

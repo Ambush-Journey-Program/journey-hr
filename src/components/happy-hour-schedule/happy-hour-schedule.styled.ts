@@ -2,6 +2,7 @@ import { Button, SelectInput } from '@/design-system';
 import { devices } from '@/styles/devices';
 import styled from 'styled-components';
 import { IHappyHourScheduleProps } from './types';
+import { BackButton } from '../ui/back-button';
 
 export const select = styled(SelectInput)<IHappyHourScheduleProps>``;
 
@@ -33,4 +34,9 @@ export const StyledButton = styled(Button)`
   @media ${devices.mobile} {
     width: 100%;
   }
+`;
+
+export const StyledBackButton = styled(BackButton)`
+  padding-left: 0;
+  margin-bottom: 12px;
 `;
