@@ -1,13 +1,14 @@
 export type GuestListProps = {
-  guestList: Guests[];
-  onDelete: () => void;
+  guestsList: Guests[];
+  onDelete?: () => void;
 };
 
 export type Guests = {
   guest: Profile;
 };
 
-type Profile = {
+export type Profile = {
+  id: string;
   name: string;
   team: string;
 };
