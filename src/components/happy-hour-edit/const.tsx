@@ -1,4 +1,4 @@
-import { Guest } from './types';
+import { Employees, Guest } from './types';
 
 export let guestsList: Guest[] = [
   {
@@ -14,7 +14,7 @@ export let guestsList: Guest[] = [
     team: 'design',
   },
 ];
-export const employees: Guest[] = [
+export const employees: Employees[] = [
   {
     id: '5',
     name: 'Ana Urbano',

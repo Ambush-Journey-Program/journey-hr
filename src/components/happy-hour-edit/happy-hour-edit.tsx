@@ -7,25 +7,31 @@ import { employees, guestsList } from './const';
 
 export function HappyHourEdit({ addGuest, maxGuests }: HappyHourEditProps) {
   const [valuesInput, setValuesInput] = useState('');
+  const [employeesList, setEmployeesList] = useState(employees);
+  const [guestsListList, setGuestsListList] = useState(guestsList);
 
   const formattedOptions = useMemo(
     () =>
-      employees.map((employee) => ({
+      employeesList.map((employee) => ({
         value: employee.id,
         label: employee.name,
       })),
-    [employees],
+    [employeesList],
   );
 
   const handleSubmit = (e: React.MouseEventHandler<HTMLButtonElement>) => {
-    const addItem = employees.find((el) => {
+    const addItem = employeesList.find((el) => {
       if (el.id === valuesInput) {
-        const updatedList = [...guestsList, el];
-        addGuest(updatedList);
+        const removeItem = employeesList.filter((el) => el.id !== valuesInput);
+        const updatedList = [...guestsListList, el];
+        const newEmployeesList = [...removeItem];
+        setEmployeesList(newEmployeesList);
+        setGuestsListList(updatedList);
+        addGuest(updatedList, newEmployeesList);
       }
     });
   };
-  const isButtonEnabled = guestsList.length >= maxGuests;
+  const isButtonEnabled = guestsListList.length >= maxGuests;
   return (
     <CardWrapper>
       <Styled.Header>
@@ -38,7 +44,7 @@ export function HappyHourEdit({ addGuest, maxGuests }: HappyHourEditProps) {
             size={'medium'}
             colorVariant="dark"
           >
-            ({[guestsList.length]}/{maxGuests}) People
+            ({[guestsListList.length]}/{maxGuests}) People
           </Paragraphs>
         </Styled.ContainerTitle>
         <Styled.ContainerInput>
