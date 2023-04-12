@@ -11,7 +11,7 @@ export type Employees = {
 };
 
 export type HappyHourEditProps = {
-  guestsList: Guest[];
+  guestsListData: Guest[];
   maxGuests: number;
   addGuest: (guests: Guest[], employees: Employees[]) => void;
 };

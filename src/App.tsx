@@ -2,7 +2,7 @@ import { ThemeProvider } from 'styled-components';
 import { theme } from './styles/theme';
 import { GlobalStyles } from './styles/global';
 import { HappyHourEdit } from './components/happy-hour-edit';
-import { guestsList } from './components/happy-hour-edit/const';
+import { guestsListData } from './components/happy-hour-edit/const';
 import { Employees, Guest } from './components/happy-hour-edit/types';
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <HappyHourEdit
-        guestsList={guestsList}
+        guestsListData={guestsListData}
         maxGuests={6}
         addGuest={addGuest}
       ></HappyHourEdit>
