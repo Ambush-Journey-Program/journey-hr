@@ -41,5 +41,5 @@ export const button = {
   secondaryHover: '#6866BE;',
   primary: '#EC6D75',
   secondary: '#9B9AD6',
-  disabled: '#F7F4FA',
+  disabled: '#CDC5D9',
 };
