@@ -15,11 +15,10 @@ export function Button({
 
   const TheIcon = Icons[icon];
   const buttonIcon = icon && <TheIcon data-testid="button-icon" />;
-  console.log({ children });
   return (
     <>
       <ButtonStyle
-        haveChildren={!Boolean(children)}
+        haveChildren={Boolean(children)}
         sizeVariant={sizeVariant}
         color={color}
         variant={variant}

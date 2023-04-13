@@ -29,7 +29,7 @@ type DisabledButton = {
   };
 };
 
-const children = css`
+const childrenPadding = css`
   padding: 10px 14px;
 `;
 
@@ -335,7 +335,7 @@ export const ButtonStyle = styled.button<ButtonProps>`
   gap: 0.375rem;
   cursor: pointer;
 
-  ${({ haveChildren }) => haveChildren && children}
+  ${({ haveChildren }) => !haveChildren && childrenPadding}
   ${({ sizeVariant }) => variants[sizeVariant]}
   ${({ variant, color }) => colorVariants[color]?.[variant]}
   ${({ disabled, variant, color }) =>
