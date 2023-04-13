@@ -1,20 +1,48 @@
-import * as React from 'react'
-
-import { render, screen } from '@testing-library/react'
-
-
-import { Checkbox } from '..'
+import { CheckBox } from '../checkbox';
+import { render, screen } from '@/tests/renderWithProviders';
 
 describe('<Checkbox />', () => {
-  describe('should have this remove', () => {
-    it('when the component is actually used', () => {
-      const label = 'it works'
-      const props = { label }
+  it('CheckBox is rendered', () => {
+    render(
+      <CheckBox
+        onChange={() => console.log('teste')}
+        isChecked={false}
+        label="Label"
+        description={'Description'}
+      />,
+    );
+    const label = screen.getByText('Label');
 
-      render(<Checkbox {...props} />)
-      const labelSpan = screen.getByText(label)
+    expect(label).toBeInTheDocument();
+  });
 
-      expect(labelSpan).toBeInTheDocument()
-    })
-  })
-})
+  it('CheckBox is disabled', () => {
+    render(
+      <CheckBox
+        onChange={() => console.log('teste')}
+        isChecked={false}
+        label="Label"
+        description="Description"
+        disabled={true}
+      />,
+    );
+    const checkbox = screen.getByTestId('checkbox-test');
+
+    expect(checkbox).toBeDisabled();
+  });
+
+  it('CheckBox is checked', () => {
+    render(
+      <CheckBox
+        onChange={() => console.log('teste')}
+        isChecked={true}
+        label="Label"
+        description="Description"
+        disabled={true}
+      />,
+    );
+    const checkbox = screen.getByTestId('checkbox-test');
+
+    expect(checkbox).toBeChecked();
+  });
+});

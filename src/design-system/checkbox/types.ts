@@ -1,4 +1,9 @@
+import { InputHTMLAttributes } from 'react';
+
 export type CheckboxProps = {
-  onChange: () => {};
+  onChange: () => void;
   isChecked: boolean;
-} & HTMLInputElement;
+  label: string;
+  description: string;
+  disabled?: boolean;
+} & InputHTMLAttributes<HTMLInputElement>;

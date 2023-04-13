@@ -19,4 +19,6 @@ const Template: Story<CheckboxProps> = (args) => {
 export const CheckboxStory = Template.bind({});
 CheckboxStory.args = {
   disabled: false,
+  label: 'Label',
+  description: 'Description',
 };

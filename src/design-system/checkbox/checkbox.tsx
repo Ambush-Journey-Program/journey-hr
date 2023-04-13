@@ -1,32 +1,30 @@
 import { CheckboxProps } from './types';
 import * as Styled from './checkbox.styled';
 import { Paragraphs, Subtitle } from '../typography';
-import { generateSizeList } from './constants';
 
-export function CheckBox({ onChange, isChecked, disabled }: CheckboxProps) {
-  const sizeList = generateSizeList();
-
+export function CheckBox({
+  onChange,
+  isChecked,
+  disabled = false,
+  label,
+  description,
+}: CheckboxProps) {
   return (
-    <>
-      {sizeList.map((list) => (
-        <Styled.Wrapper>
-          <Styled.CheckBox
-            onChange={onChange}
-            type="checkbox"
-            checked={isChecked}
-            disabled={disabled}
-          />
-          <Styled.Label>
-            <Subtitle variant={'s6'}>{list.label}</Subtitle>
+    <Styled.Label disabled={disabled}>
+      <Styled.CheckBox
+        data-testid="checkbox-test"
+        onChange={onChange}
+        type="checkbox"
+        checked={isChecked}
+        disabled={disabled}
+      />
+      <Styled.StyledDiv>
+        <Subtitle variant={'s6'}>{label}</Subtitle>
 
-            <Paragraphs
-              children={list.description}
-              size={'small'}
-              fontWeight={'hair'}
-            />
-          </Styled.Label>
-        </Styled.Wrapper>
-      ))}
-    </>
+        <Paragraphs size={'medium'} fontWeight={'hair'}>
+          {description}
+        </Paragraphs>
+      </Styled.StyledDiv>
+    </Styled.Label>
   );
 }

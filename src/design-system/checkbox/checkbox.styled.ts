@@ -1,36 +1,55 @@
 import styled, { css } from 'styled-components';
 
+type checkboxProps = {
+  disabled: boolean;
+};
+
 const disabledInput = css`
   background-color: ${(props) => props.theme.color.button.disabled};
   border: solid ${(props) => props.theme.color.button.disabled};
+
+  &:hover {
+    background-color: ${(props) => props.theme.color.button.disabled};
+    color: ${(props) => props.theme.color.button.disabled};
+    border: none;
+  }
+  cursor: default;
 `;
 
-export const Wrapper = styled.form`
-  display: flex;
-  align-items: baseline;
-  justify-content: center;
-  margin-bottom: 22px;
-  gap: 10px;
-  color: ${(props) => props.theme.color.contrasts.highContrast};
-  display: flex;
-  &:hover {
-    color: ${(props) => props.theme.color.button.secondaryHover};
+const disabledLabel = css`
+  p {
+    color: ${(props) => props.theme.color.button.disabled};
   }
+  &:hover {
+    color: ${(props) => props.theme.color.button.disabled};
+    p {
+      color: ${(props) => props.theme.color.button.disabled};
+    }
+  }
+`;
+
+export const Label = styled.label<checkboxProps>`
+  gap: 10px;
+  display: flex;
+  align-items: flex-start;
+
+  &:hover {
+    p {
+      color: ${(props) => props.theme.color.button.secondaryHover};
+    }
+  }
+
+  ${({ disabled }) => disabled && disabledLabel};
 `;
 
 export const CheckBox = styled.input`
   background-color: ${(props) => props.theme.color.brandColors.white};
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  -o-appearance: none;
-
+  appearance: none;
   display: block;
   width: 20px;
   height: 20px;
   border: 3px solid ${(props) => props.theme.color.contrasts.highContrast};
   border-radius: 2px;
-  color: ${(props) => props.theme.color.contrasts.highContrast};
-  ${({ disabled }) => disabled && disabledInput};
   cursor: pointer;
 
   &:hover {
@@ -40,12 +59,12 @@ export const CheckBox = styled.input`
 
   &:checked {
     background: ${(props) => props.theme.color.contrasts.highContrast};
-    align-items: baseline;
-    ${({ disabled }) => disabled && disabledInput};
+
     &:hover {
       background-color: ${(props) => props.theme.color.button.secondaryHover};
-      border-color: ${(props) => props.theme.color.button.secondaryHover};
     }
+
+    ${({ disabled }) => disabled && disabledInput};
 
     &:checked:after {
       content: '\u2714';
@@ -53,10 +72,11 @@ export const CheckBox = styled.input`
       padding: 2px;
     }
   }
+  ${({ disabled }) => disabled && disabledInput};
 `;
 
-export const Label = styled.label`
-  gap: 10px;
+export const StyledDiv = styled.div`
   display: flex;
   flex-direction: column;
+  gap: 5px;
 `;
