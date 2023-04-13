@@ -1,6 +1,4 @@
-import { Paragraphs } from '@/design-system';
-import { isDisabled } from '@testing-library/user-event/dist/types/utils';
-import { SetStateAction, useState } from 'react';
+import { useState } from 'react';
 import * as Styled from './radio-button.styled';
 import { RadioButtonProps } from './types';
 
@@ -31,9 +29,13 @@ export function RadioButton({
             disabled={disabled}
           />
           <Styled.containerLabel htmlFor={name} disabled={disabled}>
-            <Paragraphs size={'small'} fontWeight={fontWeight}>
+            <Styled.paragraphLabel
+              colorVariant="dark"
+              size="medium"
+              fontWeight={fontWeight}
+            >
               {name}
-            </Paragraphs>
+            </Styled.paragraphLabel>
           </Styled.containerLabel>
         </Styled.itemRadio>
       ))}

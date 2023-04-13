@@ -1,4 +1,4 @@
-import { Paragraphs, Subtitle } from '@/design-system';
+import { Paragraph } from '@/design-system/typography/paragraphs/paragraphs.styled';
 import styled, { css } from 'styled-components';
 
 type LabelProps = {
@@ -32,12 +32,21 @@ export const radioInput = styled.input`
   display: flex;
   margin: 0px;
   margin-right: 10px;
+  width: 20px;
+  height: 20px;
 `;
+
 export const containerLabel = styled.label<LabelProps>`
   display: flex;
+
   color: ${(props) => props.theme.color.contrasts.highContrast};
   &:hover {
     color: ${(props) => props.theme.color.button.secondaryHover};
   }
   ${({ disabled }) => disabled && disabledLabel};
+`;
+
+export const paragraphLabel = styled(Paragraph)`
+  display: flex;
+  align-items: center;
 `;
