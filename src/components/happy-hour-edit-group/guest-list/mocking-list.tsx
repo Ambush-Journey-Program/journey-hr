@@ -5,6 +5,7 @@ export let guestsList: Guests[] = [
   { guest: { id: '2', name: 'Marcello Aragoni', team: 'Developer' } },
   { guest: { id: '3', name: 'Lucas Medeiros', team: 'Developer' } },
   { guest: { id: '4', name: 'Claudia da Silva', team: 'Design' } },
+  { guest: { id: '5', name: 'Test', team: 'list' } },
 ];
 
 export const employees: Guests[] = [

@@ -12,7 +12,6 @@ export const GuestListWrapper = styled.ul`
 
 export const ListComponent = styled.li`
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-between;
   width: 100%;
@@ -31,7 +30,6 @@ export const TrashIconButton = styled(Button)`
 
 export const UserContainer = styled.span`
   display: flex;
-  flex-direction: row;
   align-items: baseline;
   gap: 17px;
 `;

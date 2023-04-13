@@ -10,20 +10,20 @@ describe('<GuestList/>', () => {
   it('renders the GuestList', () => {
     render(<GuestList guestsList={guestsList} onDelete={() => {}} />);
 
-    const titleEl = screen.getByTestId('GuestList');
-    expect(titleEl).toBeInTheDocument();
+    const guestListEl = screen.getByTestId('GuestList');
+    expect(guestListEl).toBeInTheDocument();
   });
 
   it('renders the list profile', () => {
     render(<GuestList guestsList={guestsList} onDelete={() => {}} />);
 
-    const titleEl = screen.getByText('Test');
-    expect(titleEl).toBeInTheDocument();
+    const guestListEl = screen.getByText('Test');
+    expect(guestListEl).toBeInTheDocument();
   });
 
   it('has a functional button', async () => {
     const onDeleteMock = vi.fn();
-    render(<GuestList guestsList={guestsList} onDelete={onDeleteMock} />);
+    render(<GuestList guestsList={[guestsList[0]]} onDelete={onDeleteMock} />);
 
     await userEvent.click(
       screen.getByRole('button', { name: 'Delete Button' }),
