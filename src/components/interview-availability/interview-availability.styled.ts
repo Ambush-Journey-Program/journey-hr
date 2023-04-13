@@ -17,19 +17,15 @@ export const Form = styled.form`
   margin-bottom: 1.25rem;
 
   @media ${devices.tablet}, ${devices.tabletLarge}, ${devices.desktop} {
-    display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 40px;
   }
 `;
 
 export const ContainerBtn = styled.div`
-  display: flex;
-  align-items: stretch;
-  flex-direction: column;
+  display: grid;
 
   @media ${devices.tablet}, ${devices.tabletLarge}, ${devices.desktop} {
-    display: grid;
     grid-column: 2;
     justify-content: flex-end;
   }

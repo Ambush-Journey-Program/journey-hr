@@ -31,9 +31,9 @@ export function InterviewAvailability() {
     <CardWrapper>
       <Styled.InterviewAvailability>
         <PageHeader
-          title={'Technical Interview Availability'}
-          subtitle={'Schedule a technical interview for a candidate.'}
-        ></PageHeader>
+          title="Technical Interview Availability"
+          subtitle="Schedule a technical interview for a candidate."
+        />
         <div>
           <Styled.Form
             data-testid="interview-form-test"
