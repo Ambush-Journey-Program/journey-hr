@@ -32,7 +32,7 @@ export const ButtonStory = Template.bind({});
 ButtonStory.args = {
   children: 'Button',
   disabled: false,
-  color: 'defaultColor',
-  sizeVariant: 'default',
-  variant: 'defaultType',
+  color: 'primary',
+  sizeVariant: 'medium',
+  variant: 'default',
 };

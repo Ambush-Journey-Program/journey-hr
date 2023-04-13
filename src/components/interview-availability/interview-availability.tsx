@@ -90,7 +90,7 @@ export function InterviewAvailability() {
               }
             />
             <Styled.ContainerBtn>
-              <Button sizeVariant={'default'} disabled={!isButtonEnabled}>
+              <Button sizeVariant="medium" disabled={!isButtonEnabled}>
                 Search
               </Button>
             </Styled.ContainerBtn>

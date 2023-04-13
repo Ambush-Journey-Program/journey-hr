@@ -7,6 +7,7 @@ import styled, {
 import { SizeProp, ColorProp, ButtonType } from './types';
 
 type ButtonProps = {
+  haveChildren: boolean;
   sizeVariant: SizeProp;
   color: ColorProp;
   variant: ButtonType;
@@ -23,26 +24,30 @@ type ColorVariant = {
 };
 
 type DisabledButton = {
-  [key: string]: FlattenInterpolation<ThemeProps<ButtonType>>;
+  [key: string]: {
+    [key: string]: FlattenInterpolation<ThemeProps<ColorProp>>;
+  };
 };
+
+const childrenPadding = css`
+  padding: 10px 14px;
+`;
 
 const variants: Variants = {
   large: css`
     font-size: 22px;
 
     svg {
-      margin-right: 0.375rem;
       align-self: center;
       width: 1.125rem;
       height: 1.125rem;
     }
   `,
 
-  default: css`
+  medium: css`
     font-size: 1.125rem;
 
     svg {
-      margin-right: 0.375rem;
       align-self: center;
       width: 1.031rem;
       height: 1.031rem;
@@ -50,11 +55,9 @@ const variants: Variants = {
   `,
 
   small: css`
-    padding: 8px 24px 7px 24px;
     font-size: 1rem;
 
     svg {
-      margin-right: 0.375rem;
       align-self: center;
       width: 0.938rem;
       height: 0.938rem;
@@ -63,20 +66,158 @@ const variants: Variants = {
 };
 
 const colorVariants: ColorVariant = {
-  defaultColor: {
-    defaultType: css`
+  primary: {
+    default: css`
       color: ${(props) => props.theme.color.brandColors.light};
       background-color: ${(props) => props.theme.color.brandColors.red};
-    `,
-    outlined: css`
-      color: ${(props) => props.theme.color.brandColors.red};
-      background-color: transparent;
-      border: solid 1px ${(props) => props.theme.color.brandColors.red};
+
+      &:focus {
+        opacity: 70%;
+        background-color: ${(props) => props.theme.color.button.primary};
+        box-shadow: 0px 0px 0px 4px rgba(236, 109, 117, 0.2);
+      }
 
       &:hover {
-        background-color: ${(props) => props.theme.color.button.primary};
+        background-color: ${(props) => props.theme.color.button.primaryHover};
       }
     `,
+
+    outlined: css`
+      color: ${(props) => props.theme.color.button.primary};
+      background-color: transparent;
+      border: solid 1px ${(props) => props.theme.color.button.primary};
+
+      svg {
+        fill: ${(props) => props.theme.color.button.primary};
+      }
+
+      &:focus {
+        box-shadow: 0px 0px 0px 4px rgba(236, 109, 117, 0.2);
+      }
+
+      &:hover {
+        background-color: rgba(236, 109, 117, 0.1);
+      }
+    `,
+
+    ghost: css`
+      color: ${(props) => props.theme.color.button.primary};
+      background-color: transparent;
+
+      svg {
+        fill: ${(props) => props.theme.color.button.primary};
+      }
+
+      &:focus {
+        box-shadow: 0px 0px 0px 4px rgba(236, 109, 117, 0.25);
+      }
+
+      &:hover {
+        color: ${(props) => props.theme.color.button.primaryHover};
+
+        svg {
+          fill: ${(props) => props.theme.color.button.primaryHover};
+        }
+      }
+    `,
+  },
+
+  secondary: {
+    default: css`
+      color: ${(props) => props.theme.color.brandColors.light};
+      background-color: ${(props) => props.theme.color.button.secondary};
+
+      &:focus {
+        opacity: 70%;
+        background-color: ${(props) => props.theme.color.button.secondary};
+        box-shadow: 0px 0px 0px 4px rgba(155, 154, 214, 0.2);
+      }
+
+      &:hover {
+        background-color: ${(props) => props.theme.color.button.secondaryHover};
+      }
+    `,
+    outlined: css`
+      color: ${(props) => props.theme.color.button.secondary};
+      background-color: transparent;
+      border: solid 1px ${(props) => props.theme.color.button.secondary};
+
+      svg {
+        fill: ${(props) => props.theme.color.button.secondary};
+      }
+
+      &:focus {
+        box-shadow: 0px 0px 0px 4px rgba(155, 154, 214, 0.2);
+      }
+
+      &:hover {
+        color: ${(props) => props.theme.color.button.secondaryHover};
+        background-color: ${(props) =>
+          props.theme.color.contrasts.lightContrast};
+
+        svg {
+          fill: ${(props) => props.theme.color.button.secondaryHover};
+        }
+      }
+    `,
+
+    ghost: css`
+      color: ${(props) => props.theme.color.button.secondary};
+      background-color: transparent;
+
+      svg {
+        fill: ${(props) => props.theme.color.button.secondary};
+      }
+
+      &:focus {
+        box-shadow: 0px 0px 0px 4px rgba(155, 154, 214, 0.2);
+      }
+
+      &:hover {
+        color: ${(props) => props.theme.color.button.secondaryHover};
+
+        svg {
+          fill: ${(props) => props.theme.color.button.secondaryHover};
+        }
+      }
+    `,
+  },
+
+  alternative: {
+    default: css`
+      color: ${(props) => props.theme.color.brandColors.light};
+      background-color: ${(props) => props.theme.color.brandColors.dark};
+
+      &:focus {
+        background-color: ${(props) => props.theme.color.brandColors.dark};
+        box-shadow: 0px 0px 0px 4px rgba(92, 76, 115, 0.2);
+      }
+
+      &:hover {
+        background-color: ${(props) => props.theme.color.contrasts.lowContrast};
+      }
+    `,
+
+    outlined: css`
+      color: ${(props) => props.theme.color.brandColors.dark};
+      background-color: transparent;
+      border: solid 1px ${(props) => props.theme.color.brandColors.dark};
+
+      svg {
+        fill: ${(props) => props.theme.color.brandColors.dark};
+      }
+
+      &:focus {
+        background-color: rgba(255, 255, 255, 1e-6);
+        box-shadow: 0px 0px 0px 4px rgba(92, 76, 115, 0.2);
+      }
+
+      &:hover {
+        background-color: ${(props) =>
+          props.theme.color.contrasts.lightContrast};
+      }
+    `,
+
     ghost: css`
       color: ${(props) => props.theme.color.contrasts.highContrast};
       background-color: transparent;
@@ -85,60 +226,102 @@ const colorVariants: ColorVariant = {
         fill: ${(props) => props.theme.color.contrasts.highContrast};
       }
 
-      &:hover {
-        opacity: 1;
-        border-bottom: solid 2px
-          ${(props) => props.theme.color.brandColors.purple};
-        border-radius: 0;
+      &:focus {
+        box-shadow: 0px 0px 0px 4px rgba(92, 76, 115, 0.25);
       }
-    `,
-  },
-
-  blue: {
-    defaultType: css`
-      color: ${(props) => props.theme.color.brandColors.light};
-      background-color: ${(props) => props.theme.color.brandColors.purple};
-    `,
-    outlined: css`
-      color: ${(props) => props.theme.color.brandColors.purple};
-      background-color: transparent;
-      border: solid 1px ${(props) => props.theme.color.brandColors.purple};
 
       &:hover {
-        opacity: 0.75;
-      }
-    `,
-  },
-
-  purple: {
-    defaultType: css`
-      color: ${(props) => props.theme.color.brandColors.light};
-      background-color: ${(props) => props.theme.color.contrasts.highContrast};
-    `,
-    outlined: css`
-      color: ${(props) => props.theme.color.contrasts.highContrast};
-      background-color: transparent;
-      border: solid 1px ${(props) => props.theme.color.contrasts.highContrast};
-
-      &:hover {
-        background-color: ${(props) => props.theme.color.button.secondaryHover};
-        opacity: 1;
+        color: ${(props) => props.theme.color.contrasts.highContrast};
       }
     `,
   },
 };
 
 const disabledButton: DisabledButton = {
-  defaultType: css`
-    opacity: 70%;
-  `,
-  outlined: css`
-    background-color: transparent;
-    opacity: 70%;
-  `,
-  ghost: css`
-    opacity: 70%;
-  `,
+  default: {
+    primary: css`
+      opacity: 70%;
+
+      &:hover {
+        background-color: ${(props) => props.theme.color.button.primary};
+      }
+    `,
+    secondary: css`
+      opacity: 70%;
+
+      &:hover {
+        background-color: ${(props) => props.theme.color.button.secondary};
+      }
+    `,
+    alternative: css`
+      opacity: 70%;
+
+      &:hover {
+        background-color: ${(props) => props.theme.color.brandColors.dark};
+      }
+    `,
+  },
+  outlined: {
+    primary: css`
+      opacity: 70%;
+
+      &:hover {
+        background-color: transparent;
+      }
+    `,
+    secondary: css`
+      opacity: 70%;
+
+      &:hover {
+        color: ${(props) => props.theme.color.button.secondary};
+        background-color: transparent;
+
+        svg {
+          fill: ${(props) => props.theme.color.button.secondary};
+        }
+      }
+    `,
+    alternative: css`
+      opacity: 70%;
+
+      &:hover {
+        background-color: transparent;
+      }
+    `,
+  },
+  ghost: {
+    primary: css`
+      opacity: 70%;
+
+      &:hover {
+        background-color: transparent;
+        color: ${(props) => props.theme.color.button.primary};
+
+        svg {
+          fill: ${(props) => props.theme.color.button.primary};
+        }
+      }
+    `,
+    secondary: css`
+      opacity: 70%;
+
+      &:hover {
+        background-color: transparent;
+        color: ${(props) => props.theme.color.button.secondary};
+
+        svg {
+          fill: ${(props) => props.theme.color.button.secondary};
+        }
+      }
+    `,
+    alternative: css`
+      opacity: 70%;
+
+      &:hover {
+        background-color: transparent;
+      }
+    `,
+  },
 };
 
 export const ButtonStyle = styled.button<ButtonProps>`
@@ -149,14 +332,12 @@ export const ButtonStyle = styled.button<ButtonProps>`
   line-height: 150%;
   font-family: Mundial, sans-serif;
   border-radius: 50px;
+  gap: 0.375rem;
   cursor: pointer;
 
-  &:hover {
-    opacity: 70%;
-  }
-
+  ${({ haveChildren }) => !haveChildren && childrenPadding}
   ${({ sizeVariant }) => variants[sizeVariant]}
   ${({ variant, color }) => colorVariants[color]?.[variant]}
-
-  ${({ disabled, variant }) => disabled && disabledButton[variant]}
+  ${({ disabled, variant, color }) =>
+    disabled && disabledButton[variant]?.[color]}
 `;

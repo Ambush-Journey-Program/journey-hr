@@ -1,11 +1,11 @@
 import { ButtonHTMLAttributes } from 'react';
 import * as HeroIcons from '@heroicons/react/24/solid';
 
-export type SizeProp = 'default' | 'large' | 'small';
+export type SizeProp = 'medium' | 'large' | 'small';
 
-export type ColorProp = 'defaultColor' | 'blue' | 'purple';
+export type ColorProp = 'primary' | 'secondary' | 'alternative';
 
-export type ButtonType = 'defaultType' | 'outlined' | 'ghost';
+export type ButtonType = 'default' | 'outlined' | 'ghost';
 
 export type IButtonProps = {
   color?: ColorProp;
