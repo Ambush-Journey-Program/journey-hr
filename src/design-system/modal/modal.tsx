@@ -33,7 +33,7 @@ export function Modal({
       <Styled.ModalBox id="modal" role="dialog">
         <Button
           className="closeButton"
-          color="blue"
+          color="secondary"
           icon="XMarkIcon"
           onClick={onClose}
           aria-label="Close Button"
@@ -43,7 +43,7 @@ export function Modal({
           <Styled.ModalChildren>{children}</Styled.ModalChildren>
         </Styled.modalContent>
         <Styled.ModalFooter>
-          <Button variant="outlined" color="blue" onClick={onClose}>
+          <Button variant="outlined" color="secondary" onClick={onClose}>
             {cancelButtonText}
           </Button>
           <Button onClick={onConfirm}>{confirmButtonText}</Button>
