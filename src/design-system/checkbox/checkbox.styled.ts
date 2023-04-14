@@ -20,7 +20,7 @@ const disabledInput = css`
 
   &:hover {
     color: ${(props) => props.theme.color.button.disabled};
-    border-color: transparent;
+    /* border-color: transparent; */
   }
 `;
 
