@@ -6,9 +6,7 @@ type LabelProps = {
 };
 
 const disabledLabel = css`
-  p {
-    color: ${(props) => props.theme.color.contrasts.lowestContrast};
-  }
+  p,
   p:hover {
     color: ${(props) => props.theme.color.contrasts.lowestContrast};
   }
@@ -20,7 +18,7 @@ export const containerRadio = styled.div`
 
 export const itemRadio = styled.li<LabelProps>`
   display: flex;
-  margin-bottom: 16px;
+  margin-bottom: 1rem;
   cursor: pointer;
   accent-color: ${(props) => props.theme.color.contrasts.highContrast};
   &:hover {
@@ -36,10 +34,10 @@ export const itemRadio = styled.li<LabelProps>`
 `;
 export const radioInput = styled.input`
   display: flex;
-  margin: 0px;
-  margin-right: 10px;
-  width: 20px;
-  height: 20px;
+  margin: 0rem;
+  margin-right: 0.625rem;
+  width: 1.25rem;
+  height: 1.25rem;
 `;
 
 export const containerLabel = styled.label<LabelProps>`
