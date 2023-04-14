@@ -6,7 +6,10 @@ type LabelProps = {
 };
 
 const disabledLabel = css`
-  &:hover {
+  p {
+    color: ${(props) => props.theme.color.contrasts.lowestContrast};
+  }
+  p:hover {
     color: ${(props) => props.theme.color.contrasts.lowestContrast};
   }
 `;
@@ -15,18 +18,21 @@ export const containerRadio = styled.div`
   display: block;
 `;
 
-export const itemRadio = styled.li`
+export const itemRadio = styled.li<LabelProps>`
   display: flex;
   margin-bottom: 16px;
   cursor: pointer;
   accent-color: ${(props) => props.theme.color.contrasts.highContrast};
   &:hover {
     accent-color: ${(props) => props.theme.color.button.secondaryHover};
-    color: ${(props) => props.theme.color.button.secondaryHover};
   }
   &:disabled {
     accent-color: ${(props) => props.theme.color.contrasts.lowestContrast};
   }
+  p:hover {
+    color: ${(props) => props.theme.color.button.secondaryHover};
+  }
+  ${({ disabled }) => disabled && disabledLabel};
 `;
 export const radioInput = styled.input`
   display: flex;
@@ -37,16 +43,8 @@ export const radioInput = styled.input`
 `;
 
 export const containerLabel = styled.label<LabelProps>`
-  display: flex;
-
   color: ${(props) => props.theme.color.contrasts.highContrast};
-  &:hover {
-    color: ${(props) => props.theme.color.button.secondaryHover};
-  }
   ${({ disabled }) => disabled && disabledLabel};
 `;
 
-export const paragraphLabel = styled(Paragraph)`
-  display: flex;
-  align-items: center;
-`;
+export const paragraphLabel = styled(Paragraph)``;
