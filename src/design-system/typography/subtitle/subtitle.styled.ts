@@ -6,20 +6,12 @@ type SubtitleStyle = {
   [key: string]: FlattenSimpleInterpolation;
 };
 
+type TextWeight = {
+  [key: string]: FlattenSimpleInterpolation;
+};
+
 const subtitleEl: SubtitleStyle = {
   s1: css`
-    font-size: 2rem;
-
-    @media ${devices.tablet} {
-      font-size: 2.5rem;
-    }
-
-    @media ${devices.desktop} {
-      font-size: 3rem;
-    }
-  `,
-
-  s2: css`
     font-size: 1.75rem;
 
     @media ${devices.tablet} {
@@ -31,7 +23,7 @@ const subtitleEl: SubtitleStyle = {
     }
   `,
 
-  s3: css`
+  s2: css`
     font-size: 1.5rem;
 
     @media ${devices.tablet} {
@@ -43,7 +35,7 @@ const subtitleEl: SubtitleStyle = {
     }
   `,
 
-  s4: css`
+  s3: css`
     font-size: 1.25rem;
 
     @media ${devices.tablet} {
@@ -55,7 +47,7 @@ const subtitleEl: SubtitleStyle = {
     }
   `,
 
-  s5: css`
+  s4: css`
     font-size: 1.125rem;
 
     @media ${devices.tablet} {
@@ -67,7 +59,7 @@ const subtitleEl: SubtitleStyle = {
     }
   `,
 
-  s6: css`
+  s5: css`
     font-size: 1rem;
 
     @media ${devices.tablet} {
@@ -75,15 +67,39 @@ const subtitleEl: SubtitleStyle = {
     }
 
     @media ${devices.desktop} {
-      font-size: 1.25;
+      font-size: 1.25rem;
     }
+  `,
+
+  s6: css`
+    font-size: 0.875rem;
+
+    @media ${devices.tablet} {
+      font-size: 1rem;
+    }
+
+    @media ${devices.desktop} {
+      font-size: 1.125;
+    }
+  `,
+};
+
+const subtitleWeightEl: TextWeight = {
+  hair: css`
+    font-weight: 300;
+  `,
+  regular: css`
+    font-weight: 400;
+  `,
+  medium: css`
+    font-weight: 500;
   `,
 };
 
 export const Subtitle = styled.p<SubtitleProps>`
   font-family: ${(props) => props.theme.font.fontFamilyTitle};
   font-style: normal;
-  font-weight: 500;
+  ${({ fontWeight }) => subtitleWeightEl[fontWeight]}
   color: ${(props) => props.theme.color.contrasts.highContrast};
 
   ${({ variant }) => subtitleEl[variant]}
