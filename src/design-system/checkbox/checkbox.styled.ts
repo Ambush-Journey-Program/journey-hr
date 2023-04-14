@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import checkboxSVGpath from './assets/checked.svg';
+import checkboxHoverSVGpath from './assets/checkedHover.svg';
 
 type checkboxProps = {
   disabled: boolean;
@@ -10,12 +11,13 @@ const disabledInput = css`
   border: solid ${(props) => props.theme.color.button.disabled};
   cursor: default;
 
-  &:checked {
+  &:checked,
+  :checked:hover {
     border: ${(props) => props.theme.color.button.disabled};
-    filter: grayscale(1) brightness(2.5);
+    content: url('${checkboxSVGpath}');
+    filter: grayscale(0.8) brightness(2.4);
   }
 
-  &:checked:hover,
   &:hover {
     color: ${(props) => props.theme.color.button.disabled};
     border-color: transparent;
@@ -66,6 +68,9 @@ export const CheckBox = styled.input`
     background: none;
     border: none;
     content: url('${checkboxSVGpath}');
+  }
+  &:checked:hover {
+    content: url('${checkboxHoverSVGpath}');
   }
   &:hover {
     border-color: ${(props) => props.theme.color.button.secondaryHover};
