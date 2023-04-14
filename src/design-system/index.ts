@@ -1,4 +1,5 @@
 export { Avatar } from '../design-system/avatar';
+export { Badge } from '../design-system/badge';
 export { Button } from '../design-system/button';
 export { CardWrapper } from '../design-system/card-wrapper';
 export { Doodles } from '../design-system/doodles';
