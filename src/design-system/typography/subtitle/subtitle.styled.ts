@@ -6,7 +6,7 @@ type SubtitleStyle = {
   [key: string]: FlattenSimpleInterpolation;
 };
 
-type TextWeight = {
+type TextStyle = {
   [key: string]: FlattenSimpleInterpolation;
 };
 
@@ -84,7 +84,7 @@ const subtitleEl: SubtitleStyle = {
   `,
 };
 
-const subtitleWeightEl: TextWeight = {
+const subtitleWeightEl: TextStyle = {
   hair: css`
     font-weight: 300;
   `,
