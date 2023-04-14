@@ -18,6 +18,7 @@ export function CheckBox({
         checked={isChecked}
         disabled={disabled}
       />
+
       <Styled.StyledDiv>
         <Subtitle variant="s6">{label}</Subtitle>
 

@@ -1,4 +1,3 @@
-import { CheckBadgeIcon } from '@heroicons/react/24/solid';
 import styled, { css } from 'styled-components';
 import checkboxSVGpath from './assets/checked.svg';
 
@@ -12,15 +11,8 @@ const disabledInput = css`
   cursor: default;
 
   &:checked {
-    background: none;
-    border: none;
-  }
-  &:checked:after {
-    svg path {
-      fill: red;
-      fill-rule: red;
-      stroke: red;
-    }
+    border: ${(props) => props.theme.color.button.disabled};
+    filter: grayscale(1) brightness(2.5);
   }
 
   &:checked:hover,
@@ -73,14 +65,10 @@ export const CheckBox = styled.input`
   &:checked {
     background: none;
     border: none;
+    content: url('${checkboxSVGpath}');
   }
   &:hover {
     border-color: ${(props) => props.theme.color.button.secondaryHover};
-  }
-
-  &:checked:after {
-    content: url('${checkboxSVGpath}');
-    padding: 2px;
   }
 
   ${({ disabled }) => disabled && disabledInput};
