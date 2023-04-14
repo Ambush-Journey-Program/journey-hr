@@ -2,7 +2,7 @@ import { Paragraph } from '@/design-system/typography/paragraphs/paragraphs.styl
 import styled, { css } from 'styled-components';
 
 type LabelProps = {
-  disabled: boolean;
+  disabled?: boolean;
 };
 
 const disabledLabel = css`
