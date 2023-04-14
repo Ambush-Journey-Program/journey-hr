@@ -1,4 +1,6 @@
+import { CheckBadgeIcon } from '@heroicons/react/24/solid';
 import styled, { css } from 'styled-components';
+import checkboxSVGpath from './assets/checked.svg';
 
 type checkboxProps = {
   disabled: boolean;
@@ -7,13 +9,25 @@ type checkboxProps = {
 const disabledInput = css`
   background-color: ${(props) => props.theme.color.button.disabled};
   border: solid ${(props) => props.theme.color.button.disabled};
+  cursor: default;
 
-  &:hover {
-    background-color: ${(props) => props.theme.color.button.disabled};
-    color: ${(props) => props.theme.color.button.disabled};
+  &:checked {
+    background: none;
     border: none;
   }
-  cursor: default;
+  &:checked:after {
+    svg path {
+      fill: red;
+      fill-rule: red;
+      stroke: red;
+    }
+  }
+
+  &:checked:hover,
+  &:hover {
+    color: ${(props) => props.theme.color.button.disabled};
+    border-color: transparent;
+  }
 `;
 
 const disabledLabel = css`
@@ -53,25 +67,22 @@ export const CheckBox = styled.input`
   cursor: pointer;
 
   &:hover {
-    background-color: ${(props) => props.theme.color.button.secondaryHover};
     border-color: ${(props) => props.theme.color.button.secondaryHover};
   }
 
   &:checked {
-    background: ${(props) => props.theme.color.contrasts.highContrast};
-
-    &:hover {
-      background-color: ${(props) => props.theme.color.button.secondaryHover};
-    }
-
-    ${({ disabled }) => disabled && disabledInput};
-
-    &:checked:after {
-      content: '\u2714';
-      color: white;
-      padding: 2px;
-    }
+    background: none;
+    border: none;
   }
+  &:hover {
+    border-color: ${(props) => props.theme.color.button.secondaryHover};
+  }
+
+  &:checked:after {
+    content: url('${checkboxSVGpath}');
+    padding: 2px;
+  }
+
   ${({ disabled }) => disabled && disabledInput};
 `;
 

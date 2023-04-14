@@ -19,9 +19,9 @@ export function CheckBox({
         disabled={disabled}
       />
       <Styled.StyledDiv>
-        <Subtitle variant={'s6'}>{label}</Subtitle>
+        <Subtitle variant="s6">{label}</Subtitle>
 
-        <Paragraphs size={'medium'} fontWeight={'hair'}>
+        <Paragraphs size="medium" fontWeight="hair">
           {description}
         </Paragraphs>
       </Styled.StyledDiv>
