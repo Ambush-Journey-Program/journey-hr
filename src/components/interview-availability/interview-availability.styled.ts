@@ -16,7 +16,7 @@ export const Form = styled.form`
   margin-top: 2rem;
   margin-bottom: 1.25rem;
 
-  @media ${devices.tablet}, ${devices.tabletLarge}, ${devices.desktop} {
+  @media ${devices.tablet} {
     grid-template-columns: 1fr 1fr;
     column-gap: 40px;
   }
@@ -25,7 +25,7 @@ export const Form = styled.form`
 export const ContainerBtn = styled.div`
   display: grid;
 
-  @media ${devices.tablet}, ${devices.tabletLarge}, ${devices.desktop} {
+  @media ${devices.tablet} {
     grid-column: 2;
     justify-content: flex-end;
   }
