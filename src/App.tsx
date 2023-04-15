@@ -7,7 +7,11 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <RadioButton option1={'Medium'} option2={'Large'}></RadioButton>
+      <RadioButton
+        optionDefault="optionDefault"
+        option2={'option 2'}
+        disabled={false}
+      ></RadioButton>
     </ThemeProvider>
   );
 }
