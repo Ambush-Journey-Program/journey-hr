@@ -27,7 +27,13 @@ export function RadioButton({
           disabled={disabled}
         />
         <Styled.containerLabel htmlFor="optionDefault" disabled={disabled}>
-          optionDefault
+          <Styled.paragraphLabel
+            colorVariant="dark"
+            size="medium"
+            fontWeight={fontWeight}
+          >
+            optionDefault
+          </Styled.paragraphLabel>
         </Styled.containerLabel>
       </Styled.containerInput>
 
@@ -41,7 +47,13 @@ export function RadioButton({
           disabled={disabled}
         />
         <Styled.containerLabel htmlFor={option2} disabled={disabled}>
-          {option2}
+          <Styled.paragraphLabel
+            colorVariant="dark"
+            size="medium"
+            fontWeight={fontWeight}
+          >
+            {option2}
+          </Styled.paragraphLabel>
         </Styled.containerLabel>
       </Styled.containerInput>
     </Styled.containerRadio>
