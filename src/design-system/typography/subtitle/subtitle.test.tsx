@@ -8,7 +8,7 @@ describe('<Subtitle />', () => {
     const label = 'Subtitle';
 
     render(
-      <Subtitle variant="s1" fontWeight={'medium'}>
+      <Subtitle variant="s1" fontWeight="medium">
         {label}
       </Subtitle>,
     );
