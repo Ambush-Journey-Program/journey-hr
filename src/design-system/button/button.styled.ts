@@ -234,6 +234,36 @@ const colorVariants: ColorVariant = {
         color: ${(props) => props.theme.color.contrasts.highContrast};
       }
     `,
+    ghost: css`
+      color: ${(props) => props.theme.color.button.secondary};
+      background-color: transparent;
+
+      svg {
+        fill: ${(props) => props.theme.color.contrasts.highContrast};
+      }
+
+      &:hover {
+        opacity: 1;
+        border-bottom: solid 2px
+          ${(props) => props.theme.color.contrasts.lowContrast};
+        border-radius: 0;
+      }
+    `,
+    ghost2: css`
+      color: ${(props) => props.theme.color.button.secondary};
+      background-color: transparent;
+      padding: 10px 0px;
+
+      svg {
+        fill: ${(props) => props.theme.color.contrasts.highContrast};
+      }
+
+      &:hover {
+        color: ${(props) => props.theme.color.contrasts.lowContrast};
+        opacity: 1;
+        border-radius: 0;
+      }
+    `,
   },
 };
 

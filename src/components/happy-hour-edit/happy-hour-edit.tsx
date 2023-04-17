@@ -1,6 +1,6 @@
 import { Button, CardWrapper, Input } from '@/design-system';
 import { HappyHourEditProps } from './types';
-import { Paragraphs, Title } from '@/design-system/typography';
+import { Paragraphs } from '@/design-system/typography';
 import * as Styled from './happy-hour-edit.styled';
 
 export function HappyHourEdit({ guests, totalGuests }: HappyHourEditProps) {
@@ -21,15 +21,9 @@ export function HappyHourEdit({ guests, totalGuests }: HappyHourEditProps) {
         </Styled.ContainerTitle>
         <Styled.ContainerInput>
           <Input type="text"></Input>
-          <Button variant="ghost" icon="PlusIcon">
-            <Paragraphs
-              fontWeight={'semibold'}
-              size={'default'}
-              colorVariant="purple"
-            >
-              Add Name
-            </Paragraphs>
-          </Button>
+          <Styled.BoxButton variant="ghost2" icon="PlusIcon" color="purple">
+            Add Name
+          </Styled.BoxButton>
         </Styled.ContainerInput>
       </Styled.Header>
     </CardWrapper>

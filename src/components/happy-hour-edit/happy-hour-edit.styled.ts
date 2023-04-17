@@ -1,3 +1,4 @@
+import { Button } from '@/design-system';
 import { devices } from '@/styles/devices';
 import styled from 'styled-components';
 
@@ -21,6 +22,9 @@ export const ContainerInput = styled.div`
   }
 `;
 
+export const BoxButton = styled(Button)`
+  margin-left: 24px;
+`;
 export const TextTitle = styled.h2`
   font-size: 18px;
   font-weight: 700;
