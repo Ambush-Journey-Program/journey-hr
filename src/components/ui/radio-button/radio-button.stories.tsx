@@ -1,5 +1,4 @@
 import { Meta, Story } from '@storybook/react';
-import { mockLabel } from './const';
 import { RadioButton } from './radio-button';
 import { RadioButtonProps } from './types';
 
@@ -15,5 +14,8 @@ const Template: Story<RadioButtonProps> = (args) => {
 
 export const RadioButtonStory = Template.bind({});
 RadioButtonStory.args = {
-  optionsLabel: mockLabel,
+  optionDefault: 'Large',
+  option2: 'Medium',
+  fontWeight: 'hair',
+  disabled: false,
 };

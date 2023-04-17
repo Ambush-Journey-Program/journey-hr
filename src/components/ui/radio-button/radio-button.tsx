@@ -4,35 +4,32 @@ import { RadioButtonProps } from './types';
 
 export function RadioButton({
   option2,
+  optionDefault,
   fontWeight = 'hair',
   disabled = false,
 }: RadioButtonProps) {
-  const [radioSelected, setRadioSelected] = useState('optionDefault');
-
   function optionChange(e) {
-    setRadioSelected(e.target.value);
-    console.log(radioSelected);
+    console.log(e.target.value);
   }
-  [radioSelected];
-
   return (
     <Styled.containerRadio>
       <Styled.containerInput>
         <Styled.radioInput
           type="radio"
           name="select"
-          value="optionDefault"
-          checked={radioSelected === 'optionDefault'}
+          id={optionDefault}
+          value={optionDefault}
+          checked
           onChange={optionChange}
           disabled={disabled}
         />
-        <Styled.containerLabel htmlFor="optionDefault" disabled={disabled}>
+        <Styled.containerLabel htmlFor={optionDefault} disabled={disabled}>
           <Styled.paragraphLabel
             colorVariant="dark"
             size="medium"
             fontWeight={fontWeight}
           >
-            optionDefault
+            {optionDefault}
           </Styled.paragraphLabel>
         </Styled.containerLabel>
       </Styled.containerInput>
@@ -41,8 +38,8 @@ export function RadioButton({
         <Styled.radioInput
           type="radio"
           name="select"
+          id={option2}
           value={option2}
-          checked={radioSelected === option2}
           onChange={optionChange}
           disabled={disabled}
         />
