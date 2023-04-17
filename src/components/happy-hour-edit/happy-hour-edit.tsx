@@ -1,52 +1,50 @@
-import { useState, useMemo } from 'react';
-import { Button, CardWrapper, SelectInput } from '@/design-system';
+import { useState, useMemo, ButtonHTMLAttributes } from 'react';
+import { CardWrapper, SelectInput } from '@/design-system';
 import { HappyHourEditProps } from './types';
 import { Paragraphs } from '@/design-system/typography';
 import * as Styled from './happy-hour-edit.styled';
-import { employees, guestsListData } from './const';
+import { employees } from './const';
+import { GuestList } from './guest-list';
 
-export function HappyHourEdit({ addGuest, maxGuests }: HappyHourEditProps) {
+export function HappyHourEdit({ maxGuests }: HappyHourEditProps) {
   const [valueInput, setValueInput] = useState('');
-  const [employeesList, setEmployeesList] = useState(employees);
-  const [guestsList, setGuestsListList] = useState(guestsListData);
+  const [guestsIdList, setGuestsIdList] = useState<string[]>([]);
+
+  const filteredEmployeesList = useMemo(() => {
+    return employees.filter(
+      (employee) => !guestsIdList.includes(employee.guest.id),
+    );
+  }, [employees, guestsIdList]);
+
+  const filteredGuestList = useMemo(() => {
+    return employees.filter((employee) =>
+      guestsIdList.includes(employee.guest.id),
+    );
+  }, [employees, guestsIdList]);
 
   const formattedOptions = useMemo(
     () =>
-      employeesList.map((employee) => ({
-        value: employee.id,
-        label: employee.name,
+      filteredEmployeesList.map((employee) => ({
+        value: employee.guest.id,
+        label: employee.guest.name,
       })),
-    [employeesList],
+    [filteredEmployeesList],
   );
 
-  const handleSubmit = (e: React.MouseEventHandler<HTMLButtonElement>) => {
-    const addItem = employeesList.find((el) => {
-      if (el.id === valueInput) {
-        const updatedGuestList = [...guestsList, el]; //find at employ and add to guest
-        const cleanEmployeesList = employeesList.filter(
-          (el) => el.id !== valueInput, //stay with elemente not selected on employes
-        );
-        const updatedEmployeesList = [...cleanEmployeesList]; //delete
-        setEmployeesList(updatedEmployeesList);
-        setGuestsListList(updatedGuestList);
-        addGuest(updatedGuestList, updatedEmployeesList);
-      }
-    });
+  const handleSubmit = () => {
+    const newId = filteredEmployeesList.find(
+      (item) => item.guest.id === valueInput,
+    )?.guest.id;
+
+    if (newId) {
+      setGuestsIdList((state) => [...state, newId]);
+    }
   };
 
-  const handleDelete = (e: React.MouseEventHandler<HTMLButtonElement>) => {
-    const deleteItem = guestsList.find((el) => {
-      const updatedEmployeesList = [...employeesList, el]; //find at guest and add to employ
-      const cleanGuestsList = guestsList.filter(
-        (el) => el.id !== valueInput, //stay with element not selected on guests
-      );
-      const updatedGuestList = [...cleanGuestsList]; //delete
-      setEmployeesList(updatedEmployeesList);
-      setGuestsListList(updatedGuestList);
-      addGuest(updatedGuestList, updatedEmployeesList);
-    });
+  const handleDelete = (id: string) => {
+    setGuestsIdList((state) => state.filter((item) => item !== id));
   };
-  const isButtonEnabled = guestsList.length >= maxGuests;
+  const isButtonEnabled = guestsIdList.length >= maxGuests;
   return (
     <CardWrapper>
       <Styled.Header>
@@ -59,7 +57,7 @@ export function HappyHourEdit({ addGuest, maxGuests }: HappyHourEditProps) {
             size={'medium'}
             colorVariant="dark"
           >
-            ({[guestsList.length]}/{maxGuests}) People
+            {`(${[guestsIdList.length]}/{maxGuests}) People`}
           </Paragraphs>
         </Styled.ContainerTitle>
         <Styled.ContainerInput>
@@ -70,35 +68,18 @@ export function HappyHourEdit({ addGuest, maxGuests }: HappyHourEditProps) {
             required
             id={valueInput}
             handleSelect={setValueInput}
-          ></SelectInput>
+          />
           <Styled.BoxButton
-            variant="iconBtn"
+            variant="ghost"
             icon="PlusIcon"
-            color="purple"
+            color="secondary"
             onClick={handleSubmit}
             disabled={isButtonEnabled}
           >
             Add Name
           </Styled.BoxButton>
-          <ul>
-            {guestsList.map((item) => {
-              return (
-                <li key={item.id}>
-                  <span>{item.name}</span>
-                  <Button
-                    variant="iconBtn"
-                    icon="CakeIcon"
-                    color="purple"
-                    onClick={handleDelete}
-                    disabled={false}
-                  >
-                    Add Name
-                  </Button>
-                </li>
-              );
-            })}
-          </ul>
         </Styled.ContainerInput>
+        <GuestList guestsList={filteredGuestList} onDelete={handleDelete} />
       </Styled.Header>
     </CardWrapper>
   );

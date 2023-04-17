@@ -1,17 +1,18 @@
-export type Guest = {
-  id: string;
-  name: string;
-  team: string;
-};
-
-export type Employees = {
+export type Profile = {
   id: string;
   name: string;
   team: string;
 };
 
 export type HappyHourEditProps = {
-  guestsListData: Guest[];
+  guestsListData: Guests[];
   maxGuests: number;
-  addGuest: (guests: Guest[], employees: Employees[]) => void;
+};
+
+export type Guests = {
+  guest: Profile;
+};
+
+export type Employees = {
+  guest: Profile;
 };

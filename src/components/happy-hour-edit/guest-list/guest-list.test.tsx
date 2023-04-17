@@ -4,7 +4,7 @@ import { describe, expect } from 'vitest';
 
 import { GuestList } from './guest-list';
 
-import { guestsList } from './mocking-list';
+import { guestsList } from '../const';
 
 describe('<GuestList/>', () => {
   it('renders the GuestList', () => {

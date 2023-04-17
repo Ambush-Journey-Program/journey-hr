@@ -23,7 +23,8 @@ export default {
           links: [
             {
               text: 'Guest-List',
-              url: 'https://www.figma.com/file/MRpGlW5tom04XStEIw5th9/HH-Sort?node-id=14-32493&t=fFoku2dhra99oAz4-0&fuid=1196819673068025271',
+              url:
+                'https://www.figma.com/file/MRpGlW5tom04XStEIw5th9/HH-Sort?node-id=14-32493&t=fFoku2dhra99oAz4-0&fuid=1196819673068025271',
               description: 'This is the Figma of Guest-List',
             },
           ],

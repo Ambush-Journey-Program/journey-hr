@@ -6,22 +6,23 @@ import { ReactComponent as UserIcon } from './userIcon.svg';
 export function GuestList({ guestsList, onDelete }: GuestListProps) {
   return (
     <Styled.GuestListWrapper data-testid="GuestList">
-      {guestsList.map((guestsList, index) => (
-        <Styled.ListComponent key={index}>
+      {guestsList.map((item) => (
+        <Styled.ListComponent key={item.guest.id}>
           <Styled.UserContainer>
             <UserIcon />
-            <Paragraphs size="large" fontWeight="semibold">
-              {guestsList.guest.name}
-            </Paragraphs>
-
-            <Badge text={guestsList.guest.team} />
+            <Styled.ContainerProfile>
+              <Paragraphs size="large" fontWeight="semibold">
+                {item.guest.name}
+              </Paragraphs>
+              <Badge text={item.guest.team} />
+            </Styled.ContainerProfile>
           </Styled.UserContainer>
 
           <Button
-            icon="TrashIcon"
-            color="defaultColor"
             variant="ghost"
-            onClick={onDelete}
+            icon="TrashIcon"
+            color="alternative"
+            onClick={() => onDelete && onDelete(item.guest.id)}
             aria-label="Delete Button"
           />
         </Styled.ListComponent>
