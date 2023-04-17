@@ -1,6 +1,6 @@
 import { Employees, Guests } from './types';
 
-export let guestsListData: Guests[] = [];
+export const guestsListData: Guests[] = [];
 export const employees: Employees[] = [
   { guest: { id: '1', name: 'Ana Urbano', team: 'Design' } },
   { guest: { id: '2', name: 'Marcello Aragoni', team: 'Developer' } },
