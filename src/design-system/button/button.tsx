@@ -3,7 +3,9 @@ import type { IButtonProps } from './types';
 import * as Icons from '@heroicons/react/24/solid';
 
 export function Button({
-  sizeVariant = 'medium',
+  type = "button",
+  onClick,
+  sizeVariant= "medium",
   color = 'primary',
   variant = 'default',
   disabled,
