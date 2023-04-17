@@ -8,7 +8,8 @@
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "standard-with-typescript",
-    "prettier"
+    "prettier",
+    "plugin:jsx-a11y/recommended"
   ],
   "parserOptions": {
     "project": "./tsconfig.json",
