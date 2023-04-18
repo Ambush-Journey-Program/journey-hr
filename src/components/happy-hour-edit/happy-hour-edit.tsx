@@ -7,11 +7,12 @@ import { employees } from './const';
 import { GuestList } from './guest-list';
 
 export function HappyHourEdit({
-  minGuests = 2,
+  minGuests = 8,
   maxGuests,
 }: HappyHourEditProps) {
   const [valueInput, setValueInput] = useState('');
   const [guestsIdList, setGuestsIdList] = useState<string[]>([]);
+  const [validationError, setValidationError] = useState<string>('');
 
   const filteredEmployeesList = useMemo(() => {
     return employees.filter(
@@ -40,7 +41,10 @@ export function HappyHourEdit({
     )?.guest.id;
 
     if (newId) {
-      setGuestsIdList((state) => [...state, newId]);
+      const newState = [...guestsIdList, newId];
+      const error = getError(newState);
+      setGuestsIdList(newState);
+      setValidationError(error);
     }
   }
 
@@ -48,30 +52,29 @@ export function HappyHourEdit({
     setGuestsIdList((state) => state.filter((item) => item !== id));
   }
 
-  function handleSubmit() {
-    console.log(guestsIdList);
-    handleValidationError();
+  function handleOnClick() {
+    const error = getError(guestsIdList);
+    setValidationError(error);
+
+    if (error) {
+      return;
+    }
+    console.log('Scheduled!');
   }
 
-  function handleValidationError() {
-    // if (guestsIdList.length === 0) {
-    //   return setError('Guests Required');
-    // }
-    // if (minGuests > guestsIdList.length) {
-    //   return setError('Minimal length must be greater than ' + minGuests);
-    // }
-  }
-  function errorText() {
-    if (guestsIdList.length === 0) {
-      return text1;
+  function getError(guestList: string[]) {
+    if (guestList.length === 0) {
+      return 'Guests Required';
     }
+
+    if (minGuests > guestList.length) {
+      return 'Minimal length must be greater than ' + (minGuests - 1);
+    }
+
+    return '';
   }
-  const text1 =
-    guestsIdList.length === 0
-      ? 'Guests Required'
-      : 'Minimal length must be greater than ' + minGuests;
+
   const isButtonEnabled = guestsIdList.length >= maxGuests;
-  const isSubmitEnabled = guestsIdList.length <= minGuests;
   return (
     <CardWrapper>
       <Styled.Header>
@@ -108,11 +111,8 @@ export function HappyHourEdit({
         </Styled.ContainerInput>
         <GuestList guestsList={filteredGuestList} onDelete={handleDelete} />
         <Styled.ContainerButton>
-          <Tooltip text={text1}>
-            <Styled.SubmitButton
-              disabled={isSubmitEnabled}
-              onClick={handleSubmit}
-            >
+          <Tooltip text={validationError}>
+            <Styled.SubmitButton onClick={handleOnClick}>
               Schedule
             </Styled.SubmitButton>
           </Tooltip>

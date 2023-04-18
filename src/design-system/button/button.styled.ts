@@ -341,4 +341,9 @@ export const ButtonStyle = styled.button<ButtonProps>`
   ${({ variant, color }) => colorVariants[color]?.[variant]}
   ${({ disabled, variant, color }) =>
     disabled && disabledButton[variant]?.[color]}
+   ${({ disabled }) =>
+     disabled &&
+     css`
+       cursor: not-allowed;
+     `}
 `;

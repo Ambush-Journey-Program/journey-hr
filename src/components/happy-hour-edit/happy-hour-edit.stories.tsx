@@ -1,6 +1,5 @@
 import { Meta, Story } from '@storybook/react';
 import styled from 'styled-components';
-
 import { HappyHourEdit } from './happy-hour-edit';
 import { HappyHourEditProps } from './types';
 
@@ -27,7 +26,11 @@ const StyledDiv = styled.div`
 `;
 
 const Template: Story<HappyHourEditProps> = (args) => {
-  return <HappyHourEdit {...args} />;
+  return (
+    <StyledDiv>
+      <HappyHourEdit {...args} />
+    </StyledDiv>
+  );
 };
 
 export const HappyHourEditStory = Template.bind({});
