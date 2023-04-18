@@ -1,8 +1,10 @@
 import { ButtonStyle } from './button.styled';
-import type { IButtonProps } from './types';
+import type { ButtonProps } from './types';
 import * as Icons from '@heroicons/react/24/solid';
 
 export function Button({
+  type = 'button',
+  onClick,
   sizeVariant = 'medium',
   color = 'primary',
   variant = 'default',
@@ -10,7 +12,7 @@ export function Button({
   children,
   icon,
   ...props
-}: IButtonProps) {
+}: ButtonProps) {
   // @ts-ignore /
 
   const TheIcon = Icons[icon];

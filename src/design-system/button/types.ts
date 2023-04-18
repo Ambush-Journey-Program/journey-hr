@@ -7,9 +7,23 @@ export type ColorProp = 'primary' | 'secondary' | 'alternative';
 
 export type ButtonType = 'default' | 'outlined' | 'ghost';
 
-export type IButtonProps = {
+type BaseButtonProps = {
   color?: ColorProp;
   sizeVariant?: SizeProp;
   variant?: ButtonType;
   icon?: keyof typeof HeroIcons;
 } & ButtonHTMLAttributes<HTMLButtonElement>;
+
+type ButtonSubmit = {
+  type?: 'submit' | 'reset';
+  onClick?: () => void;
+};
+
+type DefaultButton = {
+  type: Exclude<'button', 'submit' | 'reset'>;
+  onClick: () => void;
+};
+
+type ButtonPropsVariable = ButtonSubmit | DefaultButton;
+
+export type ButtonProps = BaseButtonProps & ButtonPropsVariable;
