@@ -6,6 +6,13 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
+<<<<<<< HEAD
+=======
+      <HappyHourEdit
+        guestsListData={guestsListData}
+        maxGuests={10}
+      ></HappyHourEdit>
+>>>>>>> 80d5525 (Feat: start to do Tooltip.)
     </ThemeProvider>
   );
 }

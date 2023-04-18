@@ -74,6 +74,7 @@ export function HappyHourEdit({
   }
 
   const isButtonEnabled = guestsIdList.length >= maxGuests;
+  const isSubmitEnabled = guestsIdList.length <= minGuests;
   return (
     <CardWrapper>
       <Styled.Header>
