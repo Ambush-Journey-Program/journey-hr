@@ -6,7 +6,7 @@ export function RadioButton({
   value,
   fontWeight = 'hair',
   disabled = false,
-  checked = false,
+  defaultChecked = false,
   label,
   name,
 }: RadioButtonProps) {
@@ -21,7 +21,7 @@ export function RadioButton({
           name={name}
           id={value}
           value={value}
-          {...(checked && { checked: true })}
+          {...(defaultChecked && { defaultChecked: true })}
           onChange={optionChange}
           disabled={disabled}
         />

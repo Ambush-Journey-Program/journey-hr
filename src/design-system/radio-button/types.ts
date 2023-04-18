@@ -3,6 +3,6 @@ export type RadioButtonProps = {
   fontWeight?: 'semibold' | 'hair';
   disabled?: boolean;
   label: string;
-  checked?: boolean;
+  defaultChecked?: boolean;
   name: string;
 };
