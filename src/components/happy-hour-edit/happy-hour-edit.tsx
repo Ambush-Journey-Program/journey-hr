@@ -61,7 +61,15 @@ export function HappyHourEdit({
     //   return setError('Minimal length must be greater than ' + minGuests);
     // }
   }
-
+  function errorText() {
+    if (guestsIdList.length === 0) {
+      return text1;
+    }
+  }
+  const text1 =
+    guestsIdList.length === 0
+      ? 'Guests Required'
+      : 'Minimal length must be greater than ' + minGuests;
   const isButtonEnabled = guestsIdList.length >= maxGuests;
   const isSubmitEnabled = guestsIdList.length <= minGuests;
   return (
@@ -100,7 +108,7 @@ export function HappyHourEdit({
         </Styled.ContainerInput>
         <GuestList guestsList={filteredGuestList} onDelete={handleDelete} />
         <Styled.ContainerButton>
-          <Tooltip text={handleValidationError}>
+          <Tooltip text={text1}>
             <Styled.SubmitButton
               disabled={isSubmitEnabled}
               onClick={handleSubmit}
