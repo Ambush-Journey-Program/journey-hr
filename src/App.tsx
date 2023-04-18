@@ -10,7 +10,7 @@ function App() {
       <GlobalStyles />
       <HappyHourEdit
         guestsListData={guestsListData}
-        maxGuests={6}
+        maxGuests={10}
       ></HappyHourEdit>
     </ThemeProvider>
   );

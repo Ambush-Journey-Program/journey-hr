@@ -1,5 +1,3 @@
-import { ButtonHTMLAttributes } from 'react';
-
 export type Profile = {
   id: string;
   name: string;

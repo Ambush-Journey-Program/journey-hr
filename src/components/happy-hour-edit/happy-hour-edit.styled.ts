@@ -3,7 +3,7 @@ import { devices } from '@/styles/devices';
 import styled from 'styled-components';
 
 export const Header = styled.div`
-  margin: 20px 0px;
+  margin: 20px 0px 28px 0px;
 `;
 
 export const ContainerTitle = styled.div`
@@ -22,8 +22,10 @@ export const ContainerInput = styled.div`
   }
 `;
 
-export const BoxButton = styled(Button)`
-  margin-left: 24px;
+export const IncreaseButton = styled(Button)`
+  @media ${devices.tablet} {
+    margin-left: 24px;
+  }
 `;
 export const TextTitle = styled.h2`
   font-size: 18px;
@@ -32,12 +34,30 @@ export const TextTitle = styled.h2`
   font-family: ${(props) => props.theme.font.fontFamilyTitle};
   color: ${(props) => props.theme.color.contrasts.highContrast};
 
-  @media ${devices.tablet}, ${devices.tabletLarge} {
+  @media ${devices.tablet} {
     font-size: 20px;
     line-height: 25px;
   }
   @media ${devices.desktop} {
     font-size: 24px;
     line-height: 30px;
+  }
+`;
+
+export const ContainerButton = styled.div`
+  width: 100%;
+  margin-top: 18px;
+  @media ${devices.tablet} {
+    display: flex;
+    width: auto;
+    justify-content: flex-end;
+  }
+`;
+
+export const SubmitButton = styled(Button)`
+  width: 100%;
+  @media ${devices.tablet} {
+    width: auto;
+    margin-right: 0px;
   }
 `;

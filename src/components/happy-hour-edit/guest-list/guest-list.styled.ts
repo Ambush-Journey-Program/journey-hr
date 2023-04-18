@@ -9,7 +9,7 @@ export const GuestListWrapper = styled.ul`
   width: 100%;
   max-width: 100%;
   padding: 7px 4px;
-  margin: 46px;
+  margin-top: 46px;
 `;
 
 export const UserContainer = styled.span`
