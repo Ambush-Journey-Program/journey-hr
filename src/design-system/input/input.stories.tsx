@@ -1,6 +1,6 @@
-import { Meta, Story } from '@storybook/react';
+import { type Meta, type Story } from '@storybook/react';
 import { Input } from './input';
-import { IInputProps } from './types';
+import { type IInputProps } from './types';
 
 export default {
   component: Input,

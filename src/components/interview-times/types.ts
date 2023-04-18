@@ -1,21 +1,21 @@
-type Schedule = {
+interface Schedule {
   title: string;
   interviewerName: string;
   scheduleTime: string;
-};
+}
 
-export type InterviewOption = {
+export interface InterviewOption {
   id: number;
   schedules: Schedule[];
-};
+}
 
-export type InterviewTimesProps = {
+export interface InterviewTimesProps {
   interviewOptions: InterviewOption[];
   onClick: () => void;
-};
+}
 
-export type ScheduleCardProps = {
+export interface ScheduleCardProps {
   interviews: InterviewOption;
   index: number;
   onClick: () => void;
-};
+}

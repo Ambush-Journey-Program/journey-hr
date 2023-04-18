@@ -1,13 +1,13 @@
 import styled, {
   css,
-  FlattenInterpolation,
-  ThemeProps,
+  type FlattenInterpolation,
+  type ThemeProps,
 } from 'styled-components';
-import { ColorProps } from './type';
+import { type ColorProps } from './type';
 
-type LinkColors = {
+interface LinkColors {
   colors: ColorProps;
-};
+}
 
 export const NavBarWrapper = styled.div`
   width: 992px;
@@ -65,9 +65,10 @@ export const LogoContainer = styled.div`
   }
 `;
 
-type ColorVariant = {
-  [key: string]: FlattenInterpolation<ThemeProps<LinkColors>>;
-};
+type ColorVariant = Record<
+  string,
+  FlattenInterpolation<ThemeProps<LinkColors>>
+>;
 
 const colorsVariants: ColorVariant = {
   light: css`

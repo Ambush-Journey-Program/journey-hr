@@ -1,4 +1,4 @@
-export type PageHeaderProps = {
+export interface PageHeaderProps {
   title: string;
   subtitle: string;
-};
+}

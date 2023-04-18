@@ -1,5 +1,5 @@
 import { ScheduleCard } from '.';
-import { InterviewTimesProps } from './types';
+import { type InterviewTimesProps } from './types';
 import * as Styled from './interviewTimes.styled';
 
 export function InterviewTimes({

@@ -1,4 +1,4 @@
-import { CheckboxProps } from './types';
+import { type CheckboxProps } from './types';
 import * as Styled from './checkbox.styled';
 import { Paragraphs, Subtitle } from '../typography';
 

@@ -1,7 +1,6 @@
-import { Meta, Story } from '@storybook/react';
+import { type Meta, type Story } from '@storybook/react';
 import { NavBar } from './navbar';
-import { NavBarProps } from './type';
-import { Link } from './type';
+import { type NavBarProps, type Link } from './type';
 
 const navLinksJourneyHR: Link[] = [
   {

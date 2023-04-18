@@ -1,6 +1,6 @@
-import { Meta, Story } from '@storybook/react';
+import { type Meta, type Story } from '@storybook/react';
 import { SelectInput } from './select-input';
-import { ISelectInputProps } from './types';
+import { type ISelectInputProps } from './types';
 
 const exampleOptions = [
   {

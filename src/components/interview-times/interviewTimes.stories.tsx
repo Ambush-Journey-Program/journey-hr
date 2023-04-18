@@ -1,6 +1,6 @@
-import { Meta, Story } from '@storybook/react';
+import { type Meta, type Story } from '@storybook/react';
 import { InterviewTimes } from './interviewTimes';
-import { InterviewOption, InterviewTimesProps } from './types';
+import { type InterviewOption, type InterviewTimesProps } from './types';
 
 const interviews: InterviewOption[] = [
   {

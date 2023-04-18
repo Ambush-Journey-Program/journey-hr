@@ -1,6 +1,6 @@
-import { Meta, Story } from '@storybook/react';
+import { type Meta, type Story } from '@storybook/react';
 import { PageHeader } from './page-header';
-import { PageHeaderProps } from './types';
+import { type PageHeaderProps } from './types';
 
 export default {
   component: PageHeader,

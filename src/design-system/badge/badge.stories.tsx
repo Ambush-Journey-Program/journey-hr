@@ -1,6 +1,6 @@
-import { Meta, Story } from '@storybook/react';
+import { type Meta, type Story } from '@storybook/react';
 import { Badge } from './badge';
-import { IBadgeProps } from './types';
+import { type IBadgeProps } from './types';
 
 export default {
   component: Badge,

@@ -1,6 +1,6 @@
-import { Meta, Story } from '@storybook/react';
+import { type Meta, type Story } from '@storybook/react';
 import { TextArea } from './text-area';
-import { TextAreaProps } from './types';
+import { type TextAreaProps } from './types';
 
 export default {
   component: TextArea,

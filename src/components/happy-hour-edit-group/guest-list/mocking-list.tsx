@@ -1,6 +1,6 @@
-import { Guests } from './types';
+import { type Guests } from './types';
 
-export let guestsList: Guests[] = [
+export const guestsList: Guests[] = [
   { guest: { id: '1', name: 'Mariana Maia', team: 'Design' } },
   { guest: { id: '2', name: 'Marcello Aragoni', team: 'Developer' } },
   { guest: { id: '3', name: 'Lucas Medeiros', team: 'Developer' } },

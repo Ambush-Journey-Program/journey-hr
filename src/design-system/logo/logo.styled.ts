@@ -1,13 +1,14 @@
 import styled, {
   css,
-  FlattenInterpolation,
-  ThemeProps,
+  type FlattenInterpolation,
+  type ThemeProps,
 } from 'styled-components';
-import { LogoProps, ColorType } from './types';
+import { type LogoProps, type ColorType } from './types';
 
-type ColorVariants = {
-  [key: string]: FlattenInterpolation<ThemeProps<ColorType>>;
-};
+type ColorVariants = Record<
+  string,
+  FlattenInterpolation<ThemeProps<ColorType>>
+>;
 
 const color: ColorVariants = {
   dark: css`

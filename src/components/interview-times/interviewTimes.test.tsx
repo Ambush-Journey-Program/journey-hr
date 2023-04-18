@@ -1,7 +1,7 @@
 import { describe, expect } from 'vitest';
 import { render, screen } from '@/tests/renderWithProviders';
 import { InterviewTimes } from './interviewTimes';
-import { InterviewOption } from './types';
+import { type InterviewOption } from './types';
 
 const interviews: InterviewOption[] = [
   {

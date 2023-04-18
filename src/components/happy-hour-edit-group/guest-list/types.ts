@@ -1,14 +1,14 @@
-export type GuestListProps = {
+export interface GuestListProps {
   guestsList: Guests[];
   onDelete?: () => void;
-};
+}
 
-export type Guests = {
+export interface Guests {
   guest: Profile;
-};
+}
 
-export type Profile = {
+export interface Profile {
   id: string;
   name: string;
   team: string;
-};
+}

@@ -1,6 +1,6 @@
-import { Meta, Story } from '@storybook/react';
+import { type Meta, type Story } from '@storybook/react';
 import { HappyHourSchedule } from './happy-hour-schedule';
-import { IHappyHourScheduleProps } from './types';
+import { type IHappyHourScheduleProps } from './types';
 import styled from 'styled-components';
 
 export default {

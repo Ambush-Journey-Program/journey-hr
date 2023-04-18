@@ -1,7 +1,7 @@
-import { Meta, Story } from '@storybook/react';
+import { type Meta, type Story } from '@storybook/react';
 
 import { BackButton } from '.';
-import { IBackButtonProps } from './types';
+import { type IBackButtonProps } from './types';
 
 export default {
   component: BackButton,

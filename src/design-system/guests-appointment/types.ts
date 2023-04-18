@@ -1,3 +1,3 @@
-export type GuestsAppointmentProps = {
+export interface GuestsAppointmentProps {
   guests: string[];
-};
+}

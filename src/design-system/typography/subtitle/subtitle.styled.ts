@@ -1,14 +1,13 @@
-import styled, { css, FlattenSimpleInterpolation } from 'styled-components';
+import styled, {
+  css,
+  type FlattenSimpleInterpolation,
+} from 'styled-components';
 import { devices } from '@/styles/devices';
-import { SubtitleProps } from './types';
+import { type SubtitleProps } from './types';
 
-type SubtitleStyle = {
-  [key: string]: FlattenSimpleInterpolation;
-};
+type SubtitleStyle = Record<string, FlattenSimpleInterpolation>;
 
-type TextStyle = {
-  [key: string]: FlattenSimpleInterpolation;
-};
+type TextStyle = Record<string, FlattenSimpleInterpolation>;
 
 const subtitleEl: SubtitleStyle = {
   s1: css`

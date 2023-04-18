@@ -1,4 +1,4 @@
-import { IDoodlesProps } from './types';
+import { type IDoodlesProps } from './types';
 import * as Styled from './doodles.styled';
 
 import { DoodlesLib } from './svgLibrary';

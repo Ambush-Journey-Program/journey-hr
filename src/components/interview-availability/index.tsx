@@ -1,1 +1,1 @@
-export { InterviewAvailability } from './interview-availability'
+export { InterviewAvailability } from './interview-availability';

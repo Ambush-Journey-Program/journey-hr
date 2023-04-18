@@ -1,14 +1,15 @@
 import styled, {
   css,
-  FlattenInterpolation,
-  ThemeProps,
+  type FlattenInterpolation,
+  type ThemeProps,
 } from 'styled-components';
 
-import { DoodlesStyleProps } from './types';
+import { type DoodlesStyleProps } from './types';
 
-type ColorVariant = {
-  [key: string]: FlattenInterpolation<ThemeProps<DoodlesStyleProps>>;
-};
+type ColorVariant = Record<
+  string,
+  FlattenInterpolation<ThemeProps<DoodlesStyleProps>>
+>;
 
 const colorsVariants: ColorVariant = {
   red: css`

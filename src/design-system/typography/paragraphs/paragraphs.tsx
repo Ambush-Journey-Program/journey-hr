@@ -1,6 +1,6 @@
 import * as Styled from './paragraphs.styled';
 
-import { ParagraphsProps } from './types';
+import { type ParagraphsProps } from './types';
 
 export function Paragraphs({
   size = 'default',

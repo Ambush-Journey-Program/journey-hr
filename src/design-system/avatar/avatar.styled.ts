@@ -1,13 +1,14 @@
-import styled, { css, FlattenSimpleInterpolation } from 'styled-components';
+import styled, {
+  css,
+  type FlattenSimpleInterpolation,
+} from 'styled-components';
 import { devices } from '@/styles/devices';
 
-type AvatarProps = {
+interface AvatarProps {
   sizeVariant: string;
-};
+}
 
-type Variants = {
-  [key: string]: FlattenSimpleInterpolation;
-};
+type Variants = Record<string, FlattenSimpleInterpolation>;
 
 const variants: Variants = {
   large: css`
@@ -27,6 +28,6 @@ export const Image = styled.img<AvatarProps>`
   ${({ sizeVariant }) => variants[sizeVariant]}
 
   @media ${devices.mobile} {
-    ${variants['small']}
+    ${variants.small}
   }
 `;

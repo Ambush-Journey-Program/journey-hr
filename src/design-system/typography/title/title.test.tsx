@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { describe, expect } from 'vitest';
 import { render, screen } from '@/tests/renderWithProviders';
-import { TitleType } from './types';
+import { type TitleType } from './types';
 import { Title } from './title';
 
 const HEADINGS = [1, 2, 3, 4, 5, 6];

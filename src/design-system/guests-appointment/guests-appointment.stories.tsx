@@ -1,6 +1,6 @@
-import { Meta, Story } from '@storybook/react';
+import { type Meta, type Story } from '@storybook/react';
 import { GuestsAppointment } from './guests-appointment';
-import { GuestsAppointmentProps } from './types';
+import { type GuestsAppointmentProps } from './types';
 
 const listGuests = [
   'Mariana',

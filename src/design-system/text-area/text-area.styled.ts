@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { StyledProps } from './types';
+import { type StyledProps } from './types';
 
 const error = css`
   &:invalid {

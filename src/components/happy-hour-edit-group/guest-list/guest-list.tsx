@@ -1,6 +1,6 @@
 import * as Styled from './guest-list.styled';
 import { Paragraphs, Badge, Button } from '@ambush/ui';
-import { GuestListProps } from './types';
+import { type GuestListProps } from './types';
 import { ReactComponent as UserIcon } from './userIcon.svg';
 
 export function GuestList({ guestsList, onDelete }: GuestListProps) {

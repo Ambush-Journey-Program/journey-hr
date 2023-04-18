@@ -1,5 +1,5 @@
 import * as Styled from './title.styled';
-import { TitleProps } from './types';
+import { type TitleProps } from './types';
 
 export function Title({ variant, children }: TitleProps) {
   return (

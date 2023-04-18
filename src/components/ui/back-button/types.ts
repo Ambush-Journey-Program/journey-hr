@@ -1,4 +1,4 @@
-export type BackButtonProps = {
+export interface BackButtonProps {
   onClick: () => void;
   disabled?: boolean;
-};
+}

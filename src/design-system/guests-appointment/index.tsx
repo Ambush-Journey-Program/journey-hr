@@ -1,1 +1,1 @@
-export { GuestsAppointment } from './guests-appointment'
+export { GuestsAppointment } from './guests-appointment';

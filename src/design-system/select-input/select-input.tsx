@@ -1,6 +1,6 @@
-import { ISelectInputProps } from './types';
+import { type ISelectInputProps } from './types';
 import * as Styled from './select-input.styled';
-import { ChangeEvent, useState } from 'react';
+import { type ChangeEvent, useState } from 'react';
 import { Paragraphs } from '../typography/paragraphs/paragraphs';
 
 export function SelectInput({

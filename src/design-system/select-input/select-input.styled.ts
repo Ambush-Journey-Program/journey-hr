@@ -1,5 +1,9 @@
 import styled, { css } from 'styled-components';
-import { StyledSelectProps, StyleWrapper, StyledProps } from './types';
+import {
+  type StyledSelectProps,
+  type StyleWrapper,
+  type StyledProps,
+} from './types';
 
 export const SpanRequired = styled.span`
   display: block;

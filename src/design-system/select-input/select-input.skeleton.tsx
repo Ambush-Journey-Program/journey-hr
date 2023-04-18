@@ -1,7 +1,7 @@
-import { FC } from 'react'
+import { type FC } from 'react';
 
-import Skeleton from 'react-loading-skeleton'
+import Skeleton from 'react-loading-skeleton';
 
 export const SelectInputSkeleton: FC = () => {
-  return <Skeleton />
-}
+  return <Skeleton />;
+};

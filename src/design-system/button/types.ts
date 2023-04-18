@@ -1,5 +1,5 @@
-import { ButtonHTMLAttributes } from 'react';
-import * as HeroIcons from '@heroicons/react/24/solid';
+import { type ButtonHTMLAttributes } from 'react';
+import type * as HeroIcons from '@heroicons/react/24/solid';
 
 export type SizeProp = 'medium' | 'large' | 'small';
 
@@ -14,15 +14,15 @@ type BaseButtonProps = {
   icon?: keyof typeof HeroIcons;
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
-type ButtonSubmit = {
+interface ButtonSubmit {
   type?: 'submit' | 'reset';
   onClick?: () => void;
-};
+}
 
-type DefaultButton = {
+interface DefaultButton {
   type: Exclude<'button', 'submit' | 'reset'>;
   onClick: () => void;
-};
+}
 
 type ButtonPropsVariable = ButtonSubmit | DefaultButton;
 

@@ -1,6 +1,6 @@
-import { Meta, Story } from '@storybook/react';
+import { type Meta, type Story } from '@storybook/react';
 import { Paragraphs } from './paragraphs';
-import { ParagraphsProps } from './types';
+import { type ParagraphsProps } from './types';
 
 export default {
   component: Paragraphs,

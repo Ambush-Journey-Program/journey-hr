@@ -1,10 +1,10 @@
 import styled, {
   css,
-  FlattenInterpolation,
+  type FlattenInterpolation,
   FlattenSimpleInterpolation,
-  ThemeProps,
+  type ThemeProps,
 } from 'styled-components';
-import { PositionsType } from './types';
+import { type PositionsType } from './types';
 
 export const TooltipWrapper = styled.div`
   position: relative;
@@ -12,12 +12,10 @@ export const TooltipWrapper = styled.div`
   display: inline-block;
   cursor: pointer;
 `;
-export type StyledProps = {
+export interface StyledProps {
   variantPosition: PositionsType;
-};
-type Variants = {
-  [key: string]: FlattenInterpolation<ThemeProps<StyledProps>>;
-};
+}
+type Variants = Record<string, FlattenInterpolation<ThemeProps<StyledProps>>>;
 const variants: Variants = {
   left: css`
     transform: translateY(-50%);

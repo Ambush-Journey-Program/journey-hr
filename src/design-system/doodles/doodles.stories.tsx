@@ -1,7 +1,7 @@
-import { Meta, Story } from '@storybook/react';
+import { type Meta, type Story } from '@storybook/react';
 
 import { Doodles } from './doodles';
-import { IDoodlesProps } from './types';
+import { type IDoodlesProps } from './types';
 
 export default {
   component: Doodles,

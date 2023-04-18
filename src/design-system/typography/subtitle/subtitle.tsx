@@ -1,6 +1,6 @@
 import * as Styled from './subtitle.styled';
 
-import { SubtitleProps } from './types';
+import { type SubtitleProps } from './types';
 
 export function Subtitle({
   variant,

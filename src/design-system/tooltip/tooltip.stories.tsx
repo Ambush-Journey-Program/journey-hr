@@ -1,9 +1,9 @@
-import { Meta, Story } from '@storybook/react';
+import { type Meta, type Story } from '@storybook/react';
 import { ThemeProvider } from 'styled-components';
 import { theme } from '@/styles/theme';
 import { Tooltip } from './tooltip';
 
-import { ITooltipProps } from './types';
+import { type ITooltipProps } from './types';
 
 export default {
   component: Tooltip,

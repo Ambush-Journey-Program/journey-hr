@@ -1,5 +1,5 @@
 import * as Styled from './avatar.styled';
-import { AvatarProps } from './types';
+import { type AvatarProps } from './types';
 
 export function Avatar({ src, sizeVariant = 'small', ...props }: AvatarProps) {
   return (

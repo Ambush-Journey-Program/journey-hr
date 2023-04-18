@@ -11,5 +11,5 @@ export const theme = {
     button,
   },
   shadows,
-  font: font,
+  font,
 };

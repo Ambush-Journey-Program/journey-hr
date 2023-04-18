@@ -1,4 +1,4 @@
-import { LinksProps } from './type';
+import { type LinksProps } from './type';
 import * as Styled from './navbar.styled';
 
 export function NavBarLinks({ navigationLinks, colors = 'light' }: LinksProps) {

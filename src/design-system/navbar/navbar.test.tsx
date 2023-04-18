@@ -6,11 +6,11 @@ import { NavBar } from './navbar';
 import { ThemeProvider } from 'styled-components';
 import { theme } from '@/styles/theme';
 
-type Link = {
+interface Link {
   url: string;
   label: string;
   active: boolean;
-};
+}
 
 const navLinksJourneyHR: Link[] = [
   {

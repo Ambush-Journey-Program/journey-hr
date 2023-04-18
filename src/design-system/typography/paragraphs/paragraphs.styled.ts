@@ -1,23 +1,20 @@
 import styled, {
   css,
-  FlattenSimpleInterpolation,
-  FlattenInterpolation,
-  ThemeProps,
+  type FlattenSimpleInterpolation,
+  type FlattenInterpolation,
+  type ThemeProps,
 } from 'styled-components';
-import { WithRequiredProperty } from '../../../types';
-import { ParagraphsProps, ColorType } from './types';
+import { type WithRequiredProperty } from '../../../types';
+import { type ParagraphsProps, type ColorType } from './types';
 
-type ParagraphsStyle = {
-  [key: string]: FlattenSimpleInterpolation;
-};
+type ParagraphsStyle = Record<string, FlattenSimpleInterpolation>;
 
-type TextWeight = {
-  [key: string]: FlattenSimpleInterpolation;
-};
+type TextWeight = Record<string, FlattenSimpleInterpolation>;
 
-type ColorVariants = {
-  [key: string]: FlattenInterpolation<ThemeProps<ColorType>>;
-};
+type ColorVariants = Record<
+  string,
+  FlattenInterpolation<ThemeProps<ColorType>>
+>;
 
 const paragraphsEl: ParagraphsStyle = {
   giant: css`

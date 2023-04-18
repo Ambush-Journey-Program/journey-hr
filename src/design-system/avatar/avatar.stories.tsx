@@ -1,8 +1,8 @@
-import { Meta, Story } from '@storybook/react';
+import { type Meta, type Story } from '@storybook/react';
 import { ThemeProvider } from 'styled-components';
 import { theme } from '@/styles/theme';
 import { Avatar } from './avatar';
-import { AvatarProps } from './types';
+import { type AvatarProps } from './types';
 
 export default {
   component: Avatar,

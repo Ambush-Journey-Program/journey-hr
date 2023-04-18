@@ -1,7 +1,7 @@
-import { ImgHTMLAttributes } from 'react';
-import { WithOptionalProperty } from '../../types';
+import { type ImgHTMLAttributes } from 'react';
+import { type WithOptionalProperty } from '../../types';
 
-import { Logos } from './logosrc';
+import { type Logos } from './logosrc';
 
 export type ColorType = 'red' | 'purple' | 'yellow' | 'dark' | 'light';
 

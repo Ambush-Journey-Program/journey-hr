@@ -2,9 +2,9 @@ import styled, { css } from 'styled-components';
 import checkboxSVGpath from './assets/checked.svg';
 import checkboxHoverSVGpath from './assets/checkedHover.svg';
 
-type checkboxProps = {
+interface checkboxProps {
   disabled: boolean;
-};
+}
 
 const disabledInput = css`
   background-color: ${(props) => props.theme.color.button.disabled};

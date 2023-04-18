@@ -1,5 +1,5 @@
-import { ImgHTMLAttributes } from 'react';
-import { DoodlesLib } from './svgLibrary';
+import { type ImgHTMLAttributes } from 'react';
+import { type DoodlesLib } from './svgLibrary';
 
 export type ColorsProps = 'red' | 'purple' | 'yellow' | 'light' | 'dark';
 

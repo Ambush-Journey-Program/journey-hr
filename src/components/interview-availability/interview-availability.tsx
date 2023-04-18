@@ -63,9 +63,9 @@ export function InterviewAvailability() {
               options={exampleAre}
               required
               value={valuesInput.area}
-              handleSelect={(value) =>
-                setValuesInput({ ...valuesInput, area: value })
-              }
+              handleSelect={(value) => {
+                setValuesInput({ ...valuesInput, area: value });
+              }}
             />
             <SelectInput
               name="shift"
@@ -74,9 +74,9 @@ export function InterviewAvailability() {
               options={shiftOptions}
               required
               value={valuesInput.shift}
-              handleSelect={(value) =>
-                setValuesInput({ ...valuesInput, shift: value })
-              }
+              handleSelect={(value) => {
+                setValuesInput({ ...valuesInput, shift: value });
+              }}
             />
             <SelectInput
               name="opportunity"
@@ -85,9 +85,9 @@ export function InterviewAvailability() {
               options={exampleOpportunity}
               required
               value={valuesInput.opportunity}
-              handleSelect={(value) =>
-                setValuesInput({ ...valuesInput, opportunity: value })
-              }
+              handleSelect={(value) => {
+                setValuesInput({ ...valuesInput, opportunity: value });
+              }}
             />
             <Styled.ContainerBtn>
               <Button sizeVariant="medium" disabled={!isButtonEnabled}>

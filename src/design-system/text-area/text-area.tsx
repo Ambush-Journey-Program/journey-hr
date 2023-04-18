@@ -1,8 +1,8 @@
-import { ChangeEvent, useEffect, useState } from 'react';
+import { type ChangeEvent, useEffect, useState } from 'react';
 import { Label } from '../input/input.styled';
 import { Paragraphs } from '../typography/paragraphs/paragraphs';
 import * as Styled from './text-area.styled';
-import { TextAreaProps } from './types';
+import { type TextAreaProps } from './types';
 
 export function TextArea({
   rows = 3,
@@ -29,10 +29,11 @@ export function TextArea({
 
   function handleValidationError(value: string) {
     if (value.length === 0) {
-      return setError('Description Required');
+      setError('Description Required');
+      return;
     }
     if (props.minLength && props.minLength >= value.length) {
-      return setError('Minimal length must be greater than ' + props.minLength);
+      setError('Minimal length must be greater than ' + props.minLength);
     }
   }
 

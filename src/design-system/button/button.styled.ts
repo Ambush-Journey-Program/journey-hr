@@ -1,33 +1,29 @@
 import styled, {
   css,
-  FlattenSimpleInterpolation,
-  FlattenInterpolation,
-  ThemeProps,
+  type FlattenSimpleInterpolation,
+  type FlattenInterpolation,
+  type ThemeProps,
 } from 'styled-components';
-import { SizeProp, ColorProp, ButtonType } from './types';
+import { type SizeProp, type ColorProp, type ButtonType } from './types';
 
-type ButtonProps = {
+interface ButtonProps {
   haveChildren: boolean;
   sizeVariant: SizeProp;
   color: ColorProp;
   variant: ButtonType;
-};
+}
 
-type Variants = {
-  [key: string]: FlattenSimpleInterpolation;
-};
+type Variants = Record<string, FlattenSimpleInterpolation>;
 
-type ColorVariant = {
-  [key: string]: {
-    [key: string]: FlattenInterpolation<ThemeProps<ButtonType>>;
-  };
-};
+type ColorVariant = Record<
+  string,
+  Record<string, FlattenInterpolation<ThemeProps<ButtonType>>>
+>;
 
-type DisabledButton = {
-  [key: string]: {
-    [key: string]: FlattenInterpolation<ThemeProps<ColorProp>>;
-  };
-};
+type DisabledButton = Record<
+  string,
+  Record<string, FlattenInterpolation<ThemeProps<ColorProp>>>
+>;
 
 const childrenPadding = css`
   padding: 10px 14px;

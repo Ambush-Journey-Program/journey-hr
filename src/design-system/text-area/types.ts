@@ -1,4 +1,4 @@
-import { InputHTMLAttributes, TextareaHTMLAttributes } from 'react';
+import { type InputHTMLAttributes, type TextareaHTMLAttributes } from 'react';
 
 export type TextAreaProps = InputHTMLAttributes<HTMLInputElement> & {
   label: string;
@@ -8,7 +8,7 @@ export type TextAreaProps = InputHTMLAttributes<HTMLInputElement> & {
   touched?: boolean;
 } & TextareaHTMLAttributes<HTMLTextAreaElement>;
 
-export type StyledProps = {
+export interface StyledProps {
   error?: boolean;
   internalTouched?: boolean;
-};
+}

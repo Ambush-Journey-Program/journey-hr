@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import * as Styled from './tooltip.styled';
-import { ITooltipProps } from './types';
+import { type ITooltipProps } from './types';
 
 export function Tooltip({
   text,

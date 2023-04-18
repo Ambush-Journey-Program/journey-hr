@@ -1,6 +1,6 @@
 import { Paragraph } from '../typography/paragraphs/paragraphs.styled';
 import * as Styled from './short-appointment.styled';
-import { ShortHappyHourProps } from './types';
+import { type ShortHappyHourProps } from './types';
 
 export function ShortHappyHour({ appointment, date }: ShortHappyHourProps) {
   return (

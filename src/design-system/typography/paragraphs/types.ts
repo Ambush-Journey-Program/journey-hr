@@ -12,9 +12,9 @@ type TextWeight = 'hair' | 'semihair' | 'light' | 'semibold';
 
 export type ColorType = 'red' | 'purple' | 'yellow' | 'dark' | 'light';
 
-export type ParagraphsProps = {
+export interface ParagraphsProps {
   children: string;
   size: ParagraphType;
   fontWeight: TextWeight;
   colorVariant?: ColorType;
-};
+}

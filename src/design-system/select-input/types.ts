@@ -1,9 +1,9 @@
-import { SelectHTMLAttributes } from 'react';
+import { type SelectHTMLAttributes } from 'react';
 
-type Option = {
+interface Option {
   label: string;
   value: string;
-};
+}
 
 export type ISelectInputProps = SelectHTMLAttributes<HTMLSelectElement> & {
   title?: string;
@@ -13,9 +13,9 @@ export type ISelectInputProps = SelectHTMLAttributes<HTMLSelectElement> & {
   placeholder?: string;
 };
 
-export type StyledProps = {
+export interface StyledProps {
   disabled?: boolean;
-};
+}
 
 export type StyledSelectProps = StyledProps & {
   error?: string;

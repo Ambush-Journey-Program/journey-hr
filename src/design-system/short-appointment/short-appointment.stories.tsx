@@ -1,6 +1,6 @@
-import { Meta, Story } from '@storybook/react';
+import { type Meta, type Story } from '@storybook/react';
 import { ShortHappyHour } from './short-appointment';
-import { ShortHappyHourProps } from './types';
+import { type ShortHappyHourProps } from './types';
 const title = 'Pizza and Games';
 const date = '01/02/2023';
 export default {
@@ -18,5 +18,5 @@ const Template: Story<ShortHappyHourProps> = (args) => {
 export const ShortHappyHourStory = Template.bind({});
 ShortHappyHourStory.args = {
   appointment: title,
-  date: date,
+  date,
 };

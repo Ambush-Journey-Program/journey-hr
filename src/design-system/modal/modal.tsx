@@ -1,5 +1,5 @@
 import { Button, Title } from '@ambush/ui';
-import { ModalProps } from './types';
+import { type ModalProps } from './types';
 import * as Styled from './modal.styled';
 import { useEffect } from 'react';
 
@@ -19,13 +19,15 @@ export function Modal({
         return;
       }
 
-      if (!event.target.closest('#modal')) {
+      if (event.target.closest('#modal') == null) {
         onClose();
       }
     };
 
     window.addEventListener('click', onClickOutside, true);
-    return () => window.removeEventListener('click', onClickOutside, true);
+    return () => {
+      window.removeEventListener('click', onClickOutside, true);
+    };
   }, []);
 
   return (

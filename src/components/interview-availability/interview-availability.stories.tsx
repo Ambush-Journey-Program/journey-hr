@@ -1,6 +1,6 @@
-import { Meta, Story } from '@storybook/react';
+import { type Meta, type Story } from '@storybook/react';
 import { InterviewAvailability } from './interview-availability';
-import { IInterviewAvailabilityProps } from './types';
+import { type IInterviewAvailabilityProps } from './types';
 
 export default {
   component: InterviewAvailability,

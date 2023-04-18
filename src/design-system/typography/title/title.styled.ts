@@ -1,10 +1,11 @@
-import styled, { css, FlattenSimpleInterpolation } from 'styled-components';
+import styled, {
+  css,
+  type FlattenSimpleInterpolation,
+} from 'styled-components';
 import { devices } from '@/styles/devices';
-import { TitleProps } from './types';
+import { type TitleProps } from './types';
 
-type TitleStyle = {
-  [key: string]: FlattenSimpleInterpolation;
-};
+type TitleStyle = Record<string, FlattenSimpleInterpolation>;
 
 const titleEl: TitleStyle = {
   h1: css`

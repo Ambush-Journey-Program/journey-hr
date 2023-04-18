@@ -1,7 +1,7 @@
-import { Meta, Story } from '@storybook/react';
+import { type Meta, type Story } from '@storybook/react';
 
 import { CheckBox } from './checkbox';
-import { CheckboxProps } from './types';
+import { type CheckboxProps } from './types';
 
 export default {
   component: CheckBox,

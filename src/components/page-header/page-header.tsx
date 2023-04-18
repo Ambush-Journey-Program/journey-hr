@@ -1,5 +1,5 @@
 import { Title, Paragraphs } from '@ambush/ui';
-import { PageHeaderProps } from './types';
+import { type PageHeaderProps } from './types';
 import * as Styled from './page-header.styled';
 
 export function PageHeader({ title, subtitle }: PageHeaderProps) {

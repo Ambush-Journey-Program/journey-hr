@@ -1,6 +1,6 @@
 export type ColorProp = 'default' | 'transparent';
 
-export type CardProps = {
+export interface CardProps {
   children: JSX.Element | string | JSX.Element[];
   background?: ColorProp;
-};
+}
