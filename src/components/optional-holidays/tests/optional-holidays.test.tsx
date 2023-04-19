@@ -1,20 +1,19 @@
-import * as React from 'react'
+import * as React from 'react';
+import { OptionalHolidays } from '..';
+import { render, screen } from '@/tests/renderWithProviders';
 
-import { render, screen } from '@testing-library/react'
+describe('<OptionaHolidays/>', () => {
+  it('Label should be displayed', () => {
+    render(<OptionalHolidays />);
+    const label = screen.getByTestId('optionalHolidays');
+    expect(label).toHaveTextContent('Optional Holidays');
+  });
+  it('CheckBox is checked', () => {
+    render(<OptionalHolidays />);
+    const checkbox = screen.getByRole('checkbox', {
+      name: 'Brazilian Republic Proclamation Day Nov 15 Thu, 2023',
+    });
 
-
-import { OptionalHolidays } from '..'
-
-describe('<OptionalHolidays />', () => {
-  describe('should have this remove', () => {
-    it('when the component is actually used', () => {
-      const label = 'it works'
-      const props = { label }
-
-      render(<OptionalHolidays {...props} />)
-      const labelSpan = screen.getByText(label)
-
-      expect(labelSpan).toBeInTheDocument()
-    })
-  })
-})
+    expect(checkbox).toBeChecked();
+  });
+});

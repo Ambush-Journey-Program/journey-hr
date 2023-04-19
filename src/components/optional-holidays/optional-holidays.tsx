@@ -5,7 +5,7 @@ import { Subtitle, Title } from '@/design-system';
 export function OptionalHolidays() {
   return (
     <Styled.Wrapper>
-      <Styled.HeaderWrapper>
+      <Styled.HeaderWrapper data-testid="optionalHolidays">
         <Title children="Optional Holidays" variant={'h6'} />
         <Subtitle
           children="You can save employee's recharge days by adding optional holidays to their Time Off."

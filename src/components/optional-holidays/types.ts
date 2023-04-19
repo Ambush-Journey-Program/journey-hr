@@ -1,1 +1,1 @@
-export interface IOptionalHolidaysProps {}
+export type OptionalHolidaysProps = {};
