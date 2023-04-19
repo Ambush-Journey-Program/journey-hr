@@ -2,10 +2,10 @@ import { Meta, Story } from '@storybook/react'
 
 {{#if includeContainer}}
 import { {{> ComponentViewName}} } from './{{> ComponentViewFileName}}'
-import { I{{> ComponentViewName}}Props } from './types'
+import { {{> ComponentViewName}}Props } from './types'
 {{else}}
 import { {{> ComponentName}} } from './{{> ComponentFileName}}'
-import { I{{> ComponentName}}Props } from './types'
+import { {{> ComponentName}}Props } from './types'
 {{/if}}
 
 {{#if includeContainer}}
@@ -18,7 +18,7 @@ export default {
   },
 } as Meta
 
-const Template: Story<I{{> ComponentViewName}}Props> = (args) => {
+const Template: Story<{{> ComponentViewName}}Props> = (args) => {
   return <{{> ComponentViewName}} {...args} />
 }
 
@@ -33,7 +33,7 @@ export default {
   },
 } as Meta
 
-const Template: Story<I{{> ComponentName}}Props> = (args) => {
+const Template: Story<{{> ComponentName}}Props> = (args) => {
   return <{{> ComponentName}} {...args} />
 }
 
