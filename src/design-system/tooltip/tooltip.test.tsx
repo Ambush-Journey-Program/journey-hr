@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 import { render, screen } from '@/tests/renderWithProviders';
 import { Tooltip } from './tooltip';
 
-describe('<Tooltip />', async () => {
+describe('<Tooltip />', () => {
   it('should be visible when hovering the child element', async () => {
     const text = 'Hi';
     render(<Tooltip text={text}>Hover me</Tooltip>);

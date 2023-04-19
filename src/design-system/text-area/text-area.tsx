@@ -29,10 +29,11 @@ export function TextArea({
 
   function handleValidationError(value: string) {
     if (value.length === 0) {
-      return setError('Description Required');
+      setError('Description Required');
+      return;
     }
-    if (props.minLength && props.minLength >= value.length) {
-      return setError('Minimal length must be greater than ' + props.minLength);
+    if (Boolean(props.minLength) && props.minLength >= value.length) {
+      setError(`Minimal length must be greater than ${props.minLength}`);
     }
   }
 

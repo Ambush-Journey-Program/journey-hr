@@ -1,3 +1,3 @@
-export interface IHappyHourScheduleProps {
+export type IHappyHourScheduleProps = {
   handleSelect: (selectedValue: string) => void;
-}
+};

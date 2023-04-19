@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { describe, test, expect } from 'vitest';
+import { describe, expect } from 'vitest';
 import { render, screen } from '@/tests/renderWithProviders';
 import userEvent from '@testing-library/user-event';
 import { Button } from './button';
