@@ -1,5 +1,5 @@
 import { describe, expect } from 'vitest';
-import { render, screen } from '@/src/../tests/renderWithProviders';
+import { render, screen } from '@/tests/renderWithProviders';
 import { Input } from './input';
 
 describe('<Input />', () => {

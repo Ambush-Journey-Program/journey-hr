@@ -1,1 +1,1 @@
-export { HappyHourSchedule } from './happy-hour-schedule'
+export { HappyHourSchedule } from './happy-hour-schedule';

@@ -32,5 +32,5 @@ export const Card = styled.div<CardProps>`
     padding: 0.75rem 1.25rem;
   }
 
-  ${({ background }) => backgroundVariants[background || 'default']}
+  ${({ background }) => backgroundVariants[background ?? 'default']}
 `;

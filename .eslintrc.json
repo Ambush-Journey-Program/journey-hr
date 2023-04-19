@@ -10,21 +10,23 @@
     "standard-with-typescript",
     "prettier"
   ],
-  "overrides": [
-    {
-      // enable the rule specifically for TypeScript files
-      "files": ["*.mts", "*.cts", "*.tsx"],
-      "rules": {
-        "@typescript-eslint/explicit-function-return-type": "off"
-      }
-    }
-  ],
   "parserOptions": {
+    "project": "./tsconfig.json",
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
   "plugins": ["react", "prettier"],
   "rules": {
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/consistent-type-imports": "off",
+    "@typescript-eslint/consistent-type-definitions": ["error", "type"],
+    "@typescript-eslint/triple-slash-reference": "off",
+    "@typescript-eslint/consistent-indexed-object-style": "off",
+    "@typescript-eslint/consistent-type-assertions": "warn",
+    "@typescript-eslint/restrict-template-expressions": "warn",
+    "@typescript-eslint/strict-boolean-expressions": "off",
+    "@typescript-eslint/ban-ts-comment": "warn",
+
     "prettier/prettier": "error",
     "no-var": "error", // Disable usage of "var"
     "no-console": ["warn", { "allow": ["warn", "error"] }], // Show a warning when you forgot to remove all console.logs
@@ -35,10 +37,15 @@
       { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
     ], // Tells which file extension is valid for a React Component.
     "react/react-in-jsx-scope": "off", // Newer versions of React don't need to import the package in every component
-    "react/jsx-one-expression-per-line": [1], // Break lines to make sure there's only one JSX element per line
     "react/jsx-props-no-spreading": "off", // Disable the rule that does not allow usage of spreading inside a JSX Props.
     "react/prop-types": "off", // Disable the need for Prop Types on a React file
     "react-hooks/rules-of-hooks": "error", // Show errors when a Hook rule is broken,
     "react-hooks/exhaustive-deps": "warn"
+  },
+  "parser": "@typescript-eslint/parser",
+  "settings": {
+    "import/resolver": {
+      "typescript": {}
+    }
   }
 }

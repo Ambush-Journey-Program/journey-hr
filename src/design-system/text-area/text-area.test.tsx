@@ -1,7 +1,7 @@
 import { describe, expect } from 'vitest';
 import userEvent from '@testing-library/user-event';
-import { render, screen } from '@/src/../tests/renderWithProviders';
 import { TextArea } from './text-area';
+import { render, screen } from '@/tests/renderWithProviders';
 
 describe('<TextArea />', () => {
   it('renders the Text Area', () => {

@@ -25,7 +25,9 @@ export function Modal({
     };
 
     window.addEventListener('click', onClickOutside, true);
-    return () => window.removeEventListener('click', onClickOutside, true);
+    return () => {
+      window.removeEventListener('click', onClickOutside, true);
+    };
   }, []);
 
   return (

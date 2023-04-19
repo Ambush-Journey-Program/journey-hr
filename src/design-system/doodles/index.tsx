@@ -1,1 +1,1 @@
-export { Doodles } from './doodles'
+export { Doodles } from './doodles';

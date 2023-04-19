@@ -1,8 +1,7 @@
-import { Button, SelectInput } from '@/design-system';
+import { Button, SelectInput, BackButton } from '@ambush/ui';
 import { devices } from '@/styles/devices';
 import styled from 'styled-components';
 import { IHappyHourScheduleProps } from './types';
-import { BackButton } from '@ambush/ui';
 
 export const select = styled(SelectInput)<IHappyHourScheduleProps>``;
 

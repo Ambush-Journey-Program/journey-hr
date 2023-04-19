@@ -4,7 +4,7 @@ import { GuestListProps, Guests } from './types';
 
 import { GuestList } from './guest-list';
 
-let list: Guests[] = [
+const list: Guests[] = [
   { guest: { id: '1', name: 'Mariana Maia', team: 'Design' } },
   { guest: { id: '2', name: 'Marcello Aragoni', team: 'Developer' } },
   { guest: { id: '3', name: 'Lucas Medeiros', team: 'Developer' } },

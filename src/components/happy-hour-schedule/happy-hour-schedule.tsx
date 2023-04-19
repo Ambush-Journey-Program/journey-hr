@@ -2,9 +2,8 @@ import { Input, SelectInput, TextArea } from '@/design-system';
 import { PageHeader } from '../page-header';
 import { generateAmountPeopleOptions } from './constants';
 import * as Styled from './happy-hour-schedule.styled';
-import { IHappyHourScheduleProps } from './types';
 
-export function HappyHourSchedule({}: IHappyHourScheduleProps) {
+export function HappyHourSchedule() {
   const amountOfPeople = generateAmountPeopleOptions();
   return (
     <Styled.MainWrapper data-testid="happyHourSchedule">

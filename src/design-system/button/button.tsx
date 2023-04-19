@@ -13,7 +13,7 @@ export function Button({
   icon,
   ...props
 }: ButtonProps) {
-  // @ts-ignore /
+  // @ts-expect-error /
 
   const TheIcon = Icons[icon];
   const buttonIcon = icon && <TheIcon data-testid="button-icon" />;
