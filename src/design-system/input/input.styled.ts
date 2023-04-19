@@ -72,9 +72,6 @@ export const InputContainer = styled.div<StyledInputProps>`
       ${(props) => props.theme.color.contrasts.mediumContrast};
     border: 1px solid ${(props) => props.theme.color.brandColors.purple};
   }
-  &::placeholder {
-    color: ${(props) => props.theme.color.contrasts.lowestContrast};
-  }
 
   & input {
     width: calc(100% - 1rem);
@@ -89,6 +86,9 @@ export const InputContainer = styled.div<StyledInputProps>`
     background-position: calc(100% - 0.625rem) center;
     background-size: 1.25em;
     background-repeat: no-repeat;
+    &::placeholder {
+      color: ${(props) => props.theme.color.contrasts.lowestContrast};
+    }
   }
   & input::-webkit-calendar-picker-indicator {
     background: transparent;
