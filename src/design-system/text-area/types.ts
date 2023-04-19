@@ -8,6 +8,8 @@ export type TextAreaProps = InputHTMLAttributes<HTMLInputElement> & {
   touched?: boolean;
 } & TextareaHTMLAttributes<HTMLTextAreaElement>;
 
+export type StyledLabelProps = { disabled?: boolean; required?: boolean };
+
 export type StyledProps = {
   error?: boolean;
   internalTouched?: boolean;

@@ -25,9 +25,6 @@ const errorDisplay = css`
   border: ${(props) => `1px solid ${props.theme.color.auxiliary.error}`};
 `;
 
-const spanOptional = css`
-  display: block;
-`;
 export const Wrapper = styled.div<StyleWrapper>`
   ${({ error }) => error && spanError}
 `;
@@ -43,8 +40,7 @@ export const Label = styled.label<StyledLabelProps>`
   color: ${(props) => props.theme.color.contrasts.mediumContrast};
 
   span {
-    display: none;
-    ${({ optional }) => optional && spanOptional}
+    color: ${(props) => props.theme.color.contrasts.lowContrast};
   }
 `;
 
@@ -76,6 +72,10 @@ export const InputContainer = styled.div<StyledInputProps>`
       ${(props) => props.theme.color.contrasts.mediumContrast};
     border: 1px solid ${(props) => props.theme.color.brandColors.purple};
   }
+  &::placeholder {
+    color: ${(props) => props.theme.color.contrasts.lowestContrast};
+  }
+
   & input {
     width: calc(100% - 1rem);
     font-size: 1rem;
