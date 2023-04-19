@@ -6,7 +6,7 @@ export type Profile = {
 
 export type HappyHourEditProps = {
   guestsListData: Guests[];
-  maxGuests: number;
+  maxGuests?: number;
   minGuests?: number;
 };
 

@@ -23,8 +23,10 @@ export const ContainerInput = styled.div`
 `;
 
 export const IncreaseButton = styled(Button)`
+  margin-top: 16px;
   @media ${devices.tablet} {
-    margin-left: 24px;
+    margin-left: 16px;
+    margin-top: 0rem;
   }
 `;
 export const TextTitle = styled.h2`
@@ -45,8 +47,8 @@ export const TextTitle = styled.h2`
 `;
 
 export const ContainerButton = styled.div`
-  width: 100%;
   margin-top: 18px;
+
   @media ${devices.tablet} {
     display: flex;
     width: auto;
@@ -54,10 +56,8 @@ export const ContainerButton = styled.div`
   }
 `;
 
-export const SubmitButton = styled(Button)`
-  width: 100%;
-  @media ${devices.tablet} {
-    width: auto;
-    margin-right: 0px;
+export const ScheduleButton = styled(Button)`
+  @media ${devices.mobile} {
+    width: 100%;
   }
 `;

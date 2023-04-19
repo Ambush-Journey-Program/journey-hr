@@ -7,7 +7,7 @@ import { GuestList } from './guest-list';
 
 export function HappyHourEdit({
   minGuests = 8,
-  maxGuests,
+  maxGuests = 15,
 }: HappyHourEditProps) {
   const [valueInput, setValueInput] = useState('');
   const [guestsIdList, setGuestsIdList] = useState<string[]>([]);
@@ -112,9 +112,9 @@ export function HappyHourEdit({
         <GuestList guestsList={filteredGuestList} onDelete={handleDelete} />
         <Styled.ContainerButton>
           <Tooltip text={validationError}>
-            <Styled.SubmitButton onClick={handleOnClick}>
+            <Styled.ScheduleButton sizeVariant="medium" onClick={handleOnClick}>
               Schedule
-            </Styled.SubmitButton>
+            </Styled.ScheduleButton>
           </Tooltip>
         </Styled.ContainerButton>
       </Styled.Header>
