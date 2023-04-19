@@ -16,7 +16,7 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["react", "prettier"],
+  "plugins": ["react", "prettier", "jsx-a11y"],
   "rules": {
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/consistent-type-imports": "off",
@@ -41,7 +41,60 @@
     "react/jsx-props-no-spreading": "off", // Disable the rule that does not allow usage of spreading inside a JSX Props.
     "react/prop-types": "off", // Disable the need for Prop Types on a React file
     "react-hooks/rules-of-hooks": "error", // Show errors when a Hook rule is broken,
-    "react-hooks/exhaustive-deps": "warn"
+    "react-hooks/exhaustive-deps": "warn",
+
+    "jsx-a11y/no-interactive-element-to-noninteractive-role": [
+      "error",
+      {
+        "tr": ["none", "presentation"]
+      }
+    ],
+    "jsx-a11y/no-noninteractive-element-interactions": [
+      "error",
+      {
+        "handlers": [
+          "onClick",
+          "onMouseDown",
+          "onMouseUp",
+          "onKeyPress",
+          "onKeyDown",
+          "onKeyUp"
+        ]
+      }
+    ],
+    "jsx-a11y/no-noninteractive-element-to-interactive-role": [
+      "error",
+      {
+        "ul": [
+          "listbox",
+          "menu",
+          "menubar",
+          "radiogroup",
+          "tablist",
+          "tree",
+          "treegrid"
+        ],
+        "ol": [
+          "listbox",
+          "menu",
+          "menubar",
+          "radiogroup",
+          "tablist",
+          "tree",
+          "treegrid"
+        ],
+        "li": ["menuitem", "option", "row", "tab", "treeitem"],
+        "table": ["grid"],
+        "td": ["gridcell"]
+      }
+    ],
+    "jsx-a11y/no-noninteractive-tabindex": [
+      "error",
+      {
+        "tags": [],
+        "roles": ["tabpanel"]
+      }
+    ]
   },
   "parser": "@typescript-eslint/parser",
   "settings": {
