@@ -14,7 +14,6 @@ export function Button({
   ...props
 }: ButtonProps) {
   // @ts-expect-error /
-
   const TheIcon = Icons[icon];
   const buttonIcon = icon && <TheIcon data-testid="button-icon" />;
   return (
