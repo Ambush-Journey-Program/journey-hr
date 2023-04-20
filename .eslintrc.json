@@ -9,7 +9,6 @@
     "plugin:react-hooks/recommended",
     "standard-with-typescript",
     "prettier",
-    "plugin:jsx-a11y/recommended",
     "plugin:styled-components-a11y/recommended"
   ],
   "parserOptions": {
@@ -17,7 +16,7 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["react", "prettier", "jsx-a11y", "styled-components-a11y"],
+  "plugins": ["react", "prettier", "styled-components-a11y"],
   "rules": {
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/consistent-type-imports": "off",
