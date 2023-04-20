@@ -12,10 +12,6 @@ const disabledLabel = css`
   }
 `;
 
-export const containerRadio = styled.div`
-  display: block;
-`;
-
 export const containerInput = styled.div<LabelProps>`
   display: flex;
   margin-bottom: 1rem;
