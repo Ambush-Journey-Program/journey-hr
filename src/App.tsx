@@ -8,7 +8,10 @@ function App() {
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <SegmentedControl
-        label={'Hello'}
+        fontWeight="light"
+        icon="AcademicCapIcon"
+        labelSize="large"
+        label={'search'}
         onClick={function (): void {
           throw new Error('Function not implemented.');
         }}
