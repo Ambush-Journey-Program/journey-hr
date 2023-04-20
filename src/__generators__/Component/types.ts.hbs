@@ -1,4 +1,4 @@
-export interface I{{> ComponentName}}Props {
+export type {{> ComponentName}}Props = {
   {{#if includeSkeletonLoader }}
   isLoading?: boolean
   {{/if }}
@@ -6,7 +6,7 @@ export interface I{{> ComponentName}}Props {
 }
 {{#if includeContainer}}
 
-export interface I{{> ComponentViewName}}Props {
+export type {{> ComponentViewName}}Props = {
   {{#if includeSkeletonLoader }}
   isLoading?: boolean
   {{/if }}

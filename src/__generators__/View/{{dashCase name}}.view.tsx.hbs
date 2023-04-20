@@ -1,15 +1,13 @@
-import { FC } from 'react'
-
 {{#if includeSkeletonLoader }}
 import { {{> SkeletonName}} } from './{{> SkeletonFileName}}'
 {{/if}}
 import { Wrapper } from './{{> ComponentFileName}}.styled'
-import { I{{> ComponentViewName}}Props } from './types'
+import { {{> ComponentViewName}}Props } from './types'
 
 {{#if includeSkeletonLoader }}
-export const {{> ComponentViewName}}: FC<I{{> ComponentViewName}}Props> = ({ isLoading, label }) => {
+export function {{> ComponentViewName}}({ isLoading, label }:{{> ComponentViewName}}Props){
 {{else}}
-export const {{> ComponentViewName}}: FC<I{{> ComponentViewName}}Props> = ({ label }) => {
+export function {{> ComponentViewName}}({ label }:{{> ComponentViewName}}Props){
 {{/if}}
   {{#if includeSkeletonLoader }}
   if (isLoading) {

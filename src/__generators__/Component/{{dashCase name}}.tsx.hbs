@@ -1,5 +1,3 @@
-import { FC } from 'react'
-
 {{#if includeContainer}}
 import { {{> ComponentViewName}} } from './{{> ComponentViewFileName}}'
 {{else}}
@@ -8,12 +6,12 @@ import { {{> SkeletonName}} } from './{{> SkeletonFileName}}'
   {{/if}}
 import { Wrapper } from './{{> ComponentFileName}}.styled'
 {{/if}}
-import { I{{> ComponentName}}Props } from './types'
+import { {{> ComponentName}}Props } from './types'
 
 {{#if includeSkeletonLoader }}
-export const {{> ComponentName}}: FC<I{{> ComponentName}}Props> = ({ isLoading, label }) => {
+export function {{> ComponentName}}({ isLoading, label }:{{> ComponentName}}Props) {
 {{else}}
-export const {{> ComponentName}}: FC<I{{> ComponentName}}Props> = ({ label }) => {
+export function {{> ComponentName}}({ label }:{{> ComponentName}}Props) {
 {{/if}}
 {{#if includeContainer}}
   {{#if includeSkeletonLoader }}
