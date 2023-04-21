@@ -30,7 +30,4 @@ const Template: Story<SummaryProps> = (args) => {
 };
 
 export const SummaryStory = Template.bind({});
-SummaryStory.args = {
-  title: 'Happy Hour Schedule',
-  subtitle: 'Choose the best dates to celebrate',
-};
+SummaryStory.args = {};
