@@ -4,7 +4,7 @@ import { HappyHourSchedule } from '../happy-hour-schedule';
 
 describe('<HappyHourSchedule />', () => {
   it('renders the Happy Hour Schedule', () => {
-    render(<HappyHourSchedule />);
+    render(<HappyHourSchedule handleSelect={() => {}} />);
     const element = screen.getByTestId('happyHourSchedule');
     expect(element).toHaveTextContent('Schedule');
   });

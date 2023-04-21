@@ -9,7 +9,6 @@ type checkboxProps = {
 const disabledInput = css`
   background-color: ${(props) => props.theme.color.button.disabled};
   border: solid ${(props) => props.theme.color.button.disabled};
-  cursor: default;
 
   &:checked,
   :checked:hover {
@@ -20,8 +19,9 @@ const disabledInput = css`
 
   &:hover {
     color: ${(props) => props.theme.color.button.disabled};
-    /* border-color: transparent; */
+    border: ${(props) => props.theme.color.button.disabled};
   }
+  cursor: not-allowed;
 `;
 
 const disabledLabel = css`
@@ -34,12 +34,14 @@ const disabledLabel = css`
       color: ${(props) => props.theme.color.button.disabled};
     }
   }
+  cursor: not-allowed;
 `;
 
 export const Label = styled.label<checkboxProps>`
   gap: 10px;
   display: flex;
   align-items: flex-start;
+  cursor: pointer;
 
   &:hover {
     p {
