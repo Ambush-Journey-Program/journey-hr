@@ -7,6 +7,5 @@ export type CheckboxProps = {
   label: string;
   description: string;
   disabled?: boolean;
-  labelSize?: Extract<ParagraphType, 'medium' | 'default'>;
   labelFontWeight?: Extract<TextWeight, 'light' | 'semibold'>;
 } & InputHTMLAttributes<HTMLInputElement>;

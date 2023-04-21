@@ -6,7 +6,7 @@ export function OptionalHolidays() {
   return (
     <Styled.Wrapper>
       <Styled.HeaderWrapper data-testid="optionalHolidays">
-        <Title children="Optional Holidays" variant={'h6'} />
+        <Title children="Optional Holidays" variant="h6" />
         <Subtitle
           children="You can save employee's recharge days by adding optional holidays to their Time Off."
           variant="s6"
@@ -21,7 +21,6 @@ export function OptionalHolidays() {
           label="All Soul's Day"
           description="Nov 02 Mon, 2023"
           labelFontWeight="semibold"
-          labelSize="default"
         />
         <CheckBox
           onChange={() => {}}
@@ -29,7 +28,6 @@ export function OptionalHolidays() {
           label="Brazilian Republic Proclamation Day"
           description="Nov 15 Thu, 2023"
           labelFontWeight="semibold"
-          labelSize="default"
         />
       </Styled.CheckboxDiv>
     </Styled.Wrapper>

@@ -9,7 +9,6 @@ export function CheckBox({
   label,
   description,
   labelFontWeight = 'semibold',
-  labelSize = 'medium',
 }: CheckboxProps) {
   return (
     <Styled.Label disabled={disabled}>
@@ -22,7 +21,7 @@ export function CheckBox({
       />
 
       <Styled.StyledDiv>
-        <Paragraphs size={labelSize} fontWeight={labelFontWeight}>
+        <Paragraphs size="default" fontWeight={labelFontWeight}>
           {label}
         </Paragraphs>
 
