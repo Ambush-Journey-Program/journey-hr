@@ -34,7 +34,7 @@ const Template: Story<IInputProps> = (args) => {
 export const SelectInputStory = Template.bind({});
 SelectInputStory.args = {
   label: 'Label',
-  optional: false,
+  required: true,
   disabled: false,
   readOnly: false,
 };

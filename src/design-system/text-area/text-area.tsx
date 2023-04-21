@@ -9,7 +9,7 @@ export function TextArea({
   spellCheck,
   placeholder = 'Write the description',
   onTextChange = () => {},
-  required = true,
+  required = false,
   touched = false,
   label,
   ...props
@@ -38,26 +38,26 @@ export function TextArea({
   }
 
   return (
-    <>
-      <Label htmlFor={`textArea-${label}`}>{label}</Label>
-      <Styled.TextAreaContainer>
-        <Styled.TextArea
-          id={`textArea-${label}`}
-          placeholder={placeholder}
-          internalTouched={internalTouched}
-          onChange={onInputChange}
-          rows={rows}
-          spellCheck={spellCheck}
-          required={required}
-          {...props}
-        />
+    <Styled.TextAreaContainer>
+      <Styled.Label htmlFor={`textArea-${label}`}>
+        {label} {required && <span>Required</span>}
+      </Styled.Label>
+      <Styled.TextArea
+        id={`textArea-${label}`}
+        placeholder={placeholder}
+        internalTouched={internalTouched}
+        onChange={onInputChange}
+        rows={rows}
+        spellCheck={spellCheck}
+        required={required}
+        {...props}
+      />
 
-        {internalTouched && (
-          <Paragraphs size="extrasmall" fontWeight="light" colorVariant="red">
-            {error}
-          </Paragraphs>
-        )}
-      </Styled.TextAreaContainer>
-    </>
+      {internalTouched && (
+        <Paragraphs size="extrasmall" fontWeight="light" colorVariant="red">
+          {error}
+        </Paragraphs>
+      )}
+    </Styled.TextAreaContainer>
   );
 }

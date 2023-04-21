@@ -40,5 +40,6 @@ SelectInputStory.args = {
   spellCheck: true,
   rows: 3,
   touched: false,
+  required: true,
   label: 'Description',
 };
