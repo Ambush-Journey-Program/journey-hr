@@ -13,32 +13,23 @@ export function HappyHourEdit({
   const [guestsIdList, setGuestsIdList] = useState<string[]>([]);
   const [validationError, setValidationError] = useState<string>('');
 
-  const filteredEmployeesList = useMemo(() => {
-    return employees.filter(
-      (employee) => !guestsIdList.includes(employee.guest.id),
-    );
-  }, [employees, guestsIdList]);
-
-  const filteredGuestList = useMemo(() => {
-    return employees.filter((employee) =>
-      guestsIdList.includes(employee.guest.id),
-    );
-  }, [employees, guestsIdList]);
-
-  const formattedOptions = useMemo(
-    () =>
-      filteredEmployeesList.map((employee) => ({
-        value: employee.guest.id,
-        label: employee.guest.name,
-      })),
-    [filteredEmployeesList],
+  const filteredEmployeesList = employees.filter(
+    (employee) => !guestsIdList.includes(employee.guest.id),
   );
+
+  const filteredGuestList = employees.filter((employee) =>
+    guestsIdList.includes(employee.guest.id),
+  );
+
+  const formattedOptions = filteredEmployeesList.map((employee) => ({
+    value: employee.guest.id,
+    label: employee.guest.name,
+  }));
 
   function handleIncrease() {
     const newId = filteredEmployeesList.find(
       (item) => item.guest.id === valueInput,
     )?.guest.id;
-
     if (newId) {
       const newState = [...guestsIdList, newId];
       const error = getError(newState);
@@ -67,7 +58,7 @@ export function HappyHourEdit({
     }
 
     if (minGuests > guestList.length) {
-      return 'Minimal length must be greater than ' + (minGuests - 1);
+      return `Minimal length must be greater than  (${minGuests - 1})}`;
     }
 
     return '';
@@ -82,12 +73,8 @@ export function HappyHourEdit({
           <Styled.TextTitle>Group Names</Styled.TextTitle>
         </Styled.ContainerTitle>
         <Styled.ContainerTitle>
-          <Paragraphs
-            fontWeight={'semihair'}
-            size={'medium'}
-            colorVariant="dark"
-          >
-            {`(${[guestsIdList.length]}` + `/` + `${[maxGuests]} People)`}
+          <Paragraphs fontWeight="semihair" size="medium" colorVariant="dark">
+            {`(${guestsIdList.length} / ${maxGuests} People)`}
           </Paragraphs>
         </Styled.ContainerTitle>
         <Styled.ContainerInput>

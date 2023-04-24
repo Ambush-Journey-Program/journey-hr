@@ -26,18 +26,18 @@ describe('<HappyHourEdit />', () => {
     });
     it('calls Add Name button', async () => {
       render(<HappyHourEdit guestsListData={guestsListData} maxGuests={3} />);
-      const schaluleButton = screen.getByText('Schedule');
-      userEvent.click(screen.getByDisplayValue('Label'));
-      userEvent.selectOptions(
+      const scheduleButton = screen.getByText('Schedule');
+      await userEvent.click(screen.getByDisplayValue('Label'));
+      await userEvent.selectOptions(
         screen.getByRole('combobox'),
         screen.getByRole('option', { name: 'Ana Urbano' }),
       );
       const name = screen.getByRole('option', { name: 'Ana Urbano' });
       await userEvent.click(name);
       await userEvent.click(screen.getByText('Add Name'));
-      await userEvent.click(schaluleButton);
+      await userEvent.click(scheduleButton);
       expect(screen.getByText('Ana Urbano')).toBeInTheDocument();
-      expect(schaluleButton).not.toBeDisabled();
+      expect(scheduleButton).not.toBeDisabled();
     });
 
     it('It should have a maxGuest', async () => {

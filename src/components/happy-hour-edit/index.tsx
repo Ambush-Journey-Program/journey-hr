@@ -1,1 +1,1 @@
-export { HappyHourEdit } from './happy-hour-edit'
+export { HappyHourEdit } from './happy-hour-edit';
