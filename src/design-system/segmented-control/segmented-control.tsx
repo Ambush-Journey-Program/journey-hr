@@ -6,24 +6,22 @@ import * as Icons from '@heroicons/react/24/solid';
 export function SegmentedControl({
   label,
   fontWeight = 'light',
-  labelSize = 'large',
-  onClick,
+  labelSize = 'default',
   icon,
 }: SegmentedControlProps) {
   const TheIcon = Icons[icon];
-  const buttonIcon = icon && <TheIcon data-testid="button-icon" />;
+  const LinkIcon = icon && <TheIcon data-testid="button-icon" />;
+
+  console.log(TheIcon);
   return (
     <Styled.Container>
-      <Styled.ButtonLabel>
-        <Paragraphs
-          onClick={onClick}
-          labelSize={labelSize}
-          fontWeight={fontWeight}
-        >
-          {buttonIcon}
+      <Styled.LinkLabel href="#/">
+        <Paragraphs size={labelSize} fontWeight={fontWeight}>
+          {LinkIcon}
           {label}
+          {/* {`${[buttonIcon]}` + `${label}`} */}
         </Paragraphs>
-      </Styled.ButtonLabel>
+      </Styled.LinkLabel>
     </Styled.Container>
   );
 }

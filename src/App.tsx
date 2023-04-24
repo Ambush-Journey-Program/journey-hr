@@ -10,11 +10,8 @@ function App() {
       <SegmentedControl
         fontWeight="light"
         icon="AcademicCapIcon"
-        labelSize="large"
+        labelSize="default"
         label={'search'}
-        onClick={function (): void {
-          throw new Error('Function not implemented.');
-        }}
       ></SegmentedControl>
     </ThemeProvider>
   );
