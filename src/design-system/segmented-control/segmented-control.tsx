@@ -9,8 +9,8 @@ export function SegmentedControl({
   labelSize = 'default',
   icon,
 }: SegmentedControlProps) {
-  const TheIcon = Icons[icon];
-  const LinkIcon = icon && <TheIcon data-testid="button-icon" />;
+  const TheIcon = icon && Icons[icon];
+  const LinkIcon = TheIcon && <TheIcon data-testid="button-icon" />;
 
   console.log(TheIcon);
   return (
@@ -19,7 +19,6 @@ export function SegmentedControl({
         <Paragraphs size={labelSize} fontWeight={fontWeight}>
           {LinkIcon}
           {label}
-          {/* {`${[buttonIcon]}` + `${label}`} */}
         </Paragraphs>
       </Styled.LinkLabel>
     </Styled.Container>
