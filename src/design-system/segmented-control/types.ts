@@ -1,4 +1,3 @@
-import { SizeProp } from '../button/types';
 import { TextWeight, ParagraphType } from '../typography/paragraphs/types';
 import * as HeroIcons from '@heroicons/react/24/solid';
 

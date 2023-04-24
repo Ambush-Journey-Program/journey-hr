@@ -11,16 +11,12 @@ export function SegmentedControl({
 }: SegmentedControlProps) {
   const TheIcon = icon && Icons[icon];
   const LinkIcon = TheIcon && <TheIcon data-testid="button-icon" />;
-
-  console.log(TheIcon);
   return (
-    <Styled.Container>
-      <Styled.LinkLabel href="#/">
-        <Paragraphs size={labelSize} fontWeight={fontWeight}>
-          {LinkIcon}
-          {label}
-        </Paragraphs>
-      </Styled.LinkLabel>
-    </Styled.Container>
+    <Styled.LinkLabel href="#">
+      <Paragraphs size={labelSize} fontWeight={fontWeight}>
+        {LinkIcon}
+        {label}
+      </Paragraphs>
+    </Styled.LinkLabel>
   );
 }

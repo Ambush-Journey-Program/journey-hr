@@ -1,8 +1,5 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
-  width: 96px;
-`;
 export const LinkLabel = styled.a`
   display: flex;
   justify-content: center;
@@ -10,25 +7,35 @@ export const LinkLabel = styled.a`
   padding: 10px;
   color: ${(props) => props.theme.color.brandColors.dark};
   background-color: transparent;
+  text-decoration: none;
   cursor: pointer;
   svg {
     align-self: center;
     margin-right: 6px;
     width: 0.938rem;
     height: 0.938rem;
+    fill: ${(props) => props.theme.color.brandColors.dark};
   }
-  &:hover {
-    color: ${(props) => props.theme.color.contrasts.highContrast};
+  p:hover {
+    color: ${(props) => props.theme.color.button.secondaryHover};
+    svg {
+      fill: ${(props) => props.theme.color.button.secondaryHover};
+    }
   }
-  &:focus {
+  p:focus {
     box-shadow: none;
-    border-bottom: solid 4px ${(props) => props.theme.color.button.secondary};
+    color: ${(props) => props.theme.color.button.secondary};
     svg {
       fill: ${(props) => props.theme.color.button.secondary};
     }
   }
+  &:focus {
+    border-bottom: solid 4px ${(props) => props.theme.color.button.secondary};
+  }
   &:disabled {
-    box-shadow: none;
     color: ${(props) => props.theme.color.button.disabled};
+    svg {
+      fill: ${(props) => props.theme.color.button.disabled};
+    }
   }
 `;
