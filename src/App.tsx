@@ -20,6 +20,7 @@ function App() {
       <HappyHourEdit
         guestsListData={guestsListData}
         maxGuests={3}
+        minGuests={2}
       ></HappyHourEdit>
 >>>>>>> 86ac3de (Feat: adjusted margin button and number and created a default maxGuest.)
     </ThemeProvider>

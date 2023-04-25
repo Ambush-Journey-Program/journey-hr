@@ -1,6 +1,7 @@
-import { Button } from '@/design-system';
+import { Button, SelectInput } from '@/design-system';
 import { devices } from '@/styles/devices';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { StyledSelectProps } from './types';
 
 export const Header = styled.div`
   margin: 20px 0px 28px 0px;
@@ -22,6 +23,10 @@ export const ContainerInput = styled.div`
   }
 `;
 
+export const SelectTheInput = styled(SelectInput)`
+  ${({ error }) => error && errorDisplay}
+`;
+
 export const IncreaseButton = styled(Button)`
   margin-top: 16px;
   @media ${devices.tablet} {
@@ -29,6 +34,7 @@ export const IncreaseButton = styled(Button)`
     margin-top: 0rem;
   }
 `;
+
 export const TextTitle = styled.h2`
   font-size: 18px;
   font-weight: 700;
@@ -59,5 +65,29 @@ export const ContainerButton = styled.div`
 export const ScheduleButton = styled(Button)`
   @media ${devices.mobile} {
     width: 100%;
+  }
+`;
+
+export const SpanError = styled.span`
+  display: block;
+  margin-top: 0.25rem;
+  line-height: 1.125rem;
+`;
+
+const errorDisplay = css`
+  color: ${(props) => props.theme.color.auxiliary.error};
+`;
+
+export const Select = styled.select<StyledSelectProps>`
+  &:focus-within {
+    outline: none;
+    box-shadow: 0 0 0.125rem
+      ${(props) => props.theme.color.contrasts.mediumContrast};
+    border: 0.063rem solid ${(props) => props.theme.color.brandColors.purple};
+  }
+
+  & input {
+    outline: none;
+    border: none;
   }
 `;

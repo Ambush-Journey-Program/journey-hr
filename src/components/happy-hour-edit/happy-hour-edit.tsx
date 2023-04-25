@@ -8,6 +8,7 @@ import { GuestList } from './guest-list';
 export function HappyHourEdit({
   minGuests = 8,
   maxGuests = 15,
+  error,
 }: HappyHourEditProps) {
   const [valueInput, setValueInput] = useState('');
   const [guestsIdList, setGuestsIdList] = useState<string[]>([]);
@@ -58,7 +59,7 @@ export function HappyHourEdit({
     }
 
     if (minGuests > guestList.length) {
-      return `Minimal length must be greater than  (${minGuests - 1})}`;
+      return `Minimal guests must be greater than  ${minGuests - 1}`;
     }
 
     return '';
@@ -78,14 +79,26 @@ export function HappyHourEdit({
           </Paragraphs>
         </Styled.ContainerTitle>
         <Styled.ContainerInput>
-          <SelectInput
+          <Styled.SelectTheInput
             name="guest"
-            placeholder={'Label'}
+            placeholder={'Select a name'}
             options={formattedOptions}
             required
             id={valueInput}
             handleSelect={setValueInput}
+            error={validationError}
           />
+          {/* {!!validationError && (
+            <Styled.SpanError>
+              <Paragraphs
+                size="extrasmall"
+                fontWeight="light"
+                colorVariant="purple"
+              >
+                {error}
+              </Paragraphs>
+            </Styled.SpanError>
+          )} */}
           <Styled.IncreaseButton
             variant="ghost"
             icon="PlusIcon"
@@ -98,11 +111,13 @@ export function HappyHourEdit({
         </Styled.ContainerInput>
         <GuestList guestsList={filteredGuestList} onDelete={handleDelete} />
         <Styled.ContainerButton>
-          <Tooltip text={validationError}>
-            <Styled.ScheduleButton sizeVariant="medium" onClick={handleOnClick}>
-              Schedule
-            </Styled.ScheduleButton>
-          </Tooltip>
+          <Styled.ScheduleButton
+            sizeVariant="medium"
+            onClick={handleOnClick}
+            disabled={isSubmitEnabled}
+          >
+            Schedule
+          </Styled.ScheduleButton>
         </Styled.ContainerButton>
       </Styled.Header>
     </CardWrapper>

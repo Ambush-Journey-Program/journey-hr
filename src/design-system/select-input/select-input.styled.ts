@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { StyledSelectProps, StyleWrapper, StyledProps } from './types';
+import { StyledSelectProps, StyledProps } from './types';
 
 export const SpanRequired = styled.span`
   display: block;
@@ -17,7 +17,7 @@ const errorDisplay = css`
   border: ${(props) => `1px solid ${props.theme.color.auxiliary.error}`};
 `;
 
-export const Wrapper = styled.div<StyleWrapper>`
+export const Wrapper = styled.div`
   width: 100%;
 `;
 
