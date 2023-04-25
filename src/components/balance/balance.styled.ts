@@ -6,6 +6,7 @@ export const Wrapper = styled.div`
   padding: 24px;
   background-color: ${(props) => props.theme.color.contrasts.lightContrast};
 `;
+
 export const Div = styled.div`
   display: flex;
   flex-direction: column;
