@@ -6,7 +6,7 @@ export const employees: Employees[] = [
     employee: {
       value: '1',
       label: 'Ana Urbano',
-      avatar: <Avatar src={''} />,
+      avatar: <Avatar src={'../../../design-system/avatar/User-Photo.png'} />,
     },
   },
   {

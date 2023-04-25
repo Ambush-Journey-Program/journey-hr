@@ -2,6 +2,7 @@ export type Balance = {
   admin: boolean;
 };
 export type Employees = {
+  [x: string]: ReactNode;
   employee: Profile;
 };
 
