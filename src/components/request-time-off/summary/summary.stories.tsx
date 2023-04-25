@@ -30,4 +30,4 @@ const Template: Story<SummaryProps> = (args) => {
 };
 
 export const SummaryStory = Template.bind({});
-SummaryStory.args = {};
+SummaryStory.args = { variant: 'employee' };

@@ -1,25 +1,25 @@
-import { Title, Subtitle, Button, Tooltip } from '@ambush/ui';
+import { Title, Subtitle, Tooltip } from '@ambush/ui';
 import { SummaryProps } from './types';
 import * as Styled from './summary.styled';
 import { ReactComponent as AlertIcon } from './Icons/signalIcon.svg';
 import { ReactComponent as TrashIcon } from './Icons/trashIcon.svg';
 import { ReactComponent as EditIcon } from './Icons/editIcon.svg';
 
-export function Summary({ onDelete, onEdit }: SummaryProps) {
+export function Summary({ onDelete, onEdit, variant }: SummaryProps) {
   return (
-    <Styled.Wrapper data-testid="summary">
+    <Styled.SummaryWrapper data-testid="summary">
       <Title variant="h6">Request Summary</Title>
-      <Styled.SummaryWrapper>
+      <Styled.UlWrapper>
         <Styled.ListComponent>
           <Styled.DatesContainer>
-            <Styled.PeriodContainer>
+            <Styled.PeriodContainer variant={variant}>
               <Subtitle variant="s6" fontWeight="medium">
                 Nov 01 Wed - Nov 30 Thu, 2023
               </Subtitle>
               <Tooltip
                 text={'You need to request your manager to approve this'}
               >
-                <AlertIcon />
+                <AlertIcon data-testid="Alert" />
               </Tooltip>
             </Styled.PeriodContainer>
 
@@ -28,7 +28,7 @@ export function Summary({ onDelete, onEdit }: SummaryProps) {
             </Subtitle>
           </Styled.DatesContainer>
           <Styled.ButtonsContainer>
-            <Button
+            <Styled.IconButton
               color="secondary"
               variant="ghost"
               sizeVariant="large"
@@ -37,9 +37,9 @@ export function Summary({ onDelete, onEdit }: SummaryProps) {
               aria-label="Edit Button"
             >
               <EditIcon />
-            </Button>
+            </Styled.IconButton>
 
-            <Button
+            <Styled.IconButton
               color="primary"
               variant="ghost"
               sizeVariant="large"
@@ -48,10 +48,11 @@ export function Summary({ onDelete, onEdit }: SummaryProps) {
               aria-label="Delete Button"
             >
               <TrashIcon />
-            </Button>
+            </Styled.IconButton>
           </Styled.ButtonsContainer>
+          <Styled.Divider className="divider" />
         </Styled.ListComponent>
-      </Styled.SummaryWrapper>
-    </Styled.Wrapper>
+      </Styled.UlWrapper>
+    </Styled.SummaryWrapper>
   );
 }

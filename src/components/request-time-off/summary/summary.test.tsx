@@ -3,20 +3,20 @@ import { render, screen } from '@/tests/renderWithProviders';
 import { Summary } from '../summary';
 
 describe('<Summary  />', () => {
-  render(<Summary />);
+  render(<Summary variant={'employee'} />);
   it('renders the summary', () => {
     const textTest = screen.getByTestId('summary');
     expect(textTest).toHaveTextContent('Request Summary');
   });
 
-  it('It should have a edit button', () => {
-    render(<Summary />);
+  it('should have a edit button', () => {
+    render(<Summary variant={'employee'} />);
     const summaryButton = screen.getByTestId('Edit');
     expect(summaryButton).toBeInTheDocument();
   });
 
-  it('It should have a delete button', () => {
-    render(<Summary />);
+  it(' should have a delete button', () => {
+    render(<Summary variant={'employee'} />);
     const summaryButton = screen.getByTestId('Delete');
     expect(summaryButton).toBeInTheDocument();
   });
