@@ -6,51 +6,41 @@ import {
   Subtitle,
 } from '@/design-system';
 import * as Styled from './balance.styled';
-import { useState } from 'react';
-import { employees } from './mocking/holidays';
+import { employees as employeesMock } from './mocking/holidays';
+import { BalanceProps } from './types';
+import { ArrowDownIcon } from '@heroicons/react/24/solid';
 
-export function Balance() {
-  const admin = false;
-  const [remainingOptional, SetRemainingOptional] = useState('4');
+export function Balance({
+  employees = employeesMock,
+  buttonClick,
+  buttonText,
+}: BalanceProps) {
   return (
     <Styled.Wrapper>
-      {(() => {
-        if (admin) {
-          return (
-            <Styled.Div2>
-              <select className="teste">
-                {employees.map((option) => (
-                  <option key={option.employee.label} value={option.value}>
-                    {option.employee.label}
-                  </option>
-                ))}
-              </select>
-              <Button
-                variant="outlined"
-                color="alternative"
-                sizeVariant="small"
-              >
-                View Time Off
-              </Button>
-            </Styled.Div2>
-          );
-        } else {
-          return (
-            <Styled.Div2>
-              <Subtitle variant={'s1'} fontWeight={'medium'}>
-                Your Balance
-              </Subtitle>
-              <Button
-                variant="outlined"
-                color="alternative"
-                sizeVariant="small"
-              >
-                View Time Off
-              </Button>
-            </Styled.Div2>
-          );
-        }
-      })()}
+      <Styled.Div2>
+        {employees.length >= 1 && (
+          <Styled.Header>
+            <Avatar src={employees[0].avatar} sizeVariant="small" />
+
+            <Subtitle variant={'s4'} fontWeight={'medium'}>
+              {employees[0].label}
+            </Subtitle>
+            {employees.length > 1 && '--'}
+          </Styled.Header>
+        )}
+
+        {buttonClick && (
+          <Button
+            onClick={buttonClick}
+            variant="outlined"
+            color="alternative"
+            sizeVariant="small"
+          >
+            {buttonText}
+          </Button>
+        )}
+      </Styled.Div2>
+
       <Styled.mainDiv>
         <Styled.Div>
           <Subtitle variant="s6" fontWeight="regular">
@@ -83,7 +73,7 @@ export function Balance() {
           </Subtitle>
 
           <Paragraphs size="extralarge" fontWeight="semibold">
-            0/{remainingOptional} used
+            0/4 used
           </Paragraphs>
         </Styled.Div>
       </Styled.mainDiv>

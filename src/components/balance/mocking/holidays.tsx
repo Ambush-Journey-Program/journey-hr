@@ -1,26 +1,20 @@
-import { Avatar } from '@/design-system';
 import { Employees } from '../types';
 
-export const employees: Employees[] = [
+export const employees: Employees = [
   {
-    employee: {
-      value: '1',
-      label: 'Ana Urbano',
-      avatar: <Avatar src={'../../../design-system/avatar/User-Photo.png'} />,
-    },
+    value: '1',
+    label: 'Nicoli Rodrigues',
+    avatar: 'src/design-system/avatar/User-Photo.png',
   },
   {
-    employee: {
-      value: '2',
-      label: 'Caio Caixão',
-      avatar: <Avatar src={''} />,
-    },
+    value: '2',
+    label: 'Caio Caixão',
+    avatar: 'src/design-system/avatar/User-Photo.png',
   },
+
   {
-    employee: {
-      value: '3',
-      label: 'Dan Donatello',
-      avatar: <Avatar src={''} />,
-    },
+    value: '3',
+    label: 'Dan Donatello',
+    avatar: 'src/design-system/avatar/User-Photo.png',
   },
 ];

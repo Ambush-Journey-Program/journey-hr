@@ -14,6 +14,12 @@ export const Wrapper = styled.div`
   background-color: ${(props) => props.theme.color.contrasts.lightContrast};
 `;
 
+export const Header = styled.header`
+  display: flex;
+  align-items: center;
+  gap: 16px;
+`;
+
 export const Div = styled.div`
   display: flex;
   flex-direction: column;
@@ -25,8 +31,9 @@ export const mainDiv = styled.div`
 `;
 
 export const VeticalLine = styled.hr`
+  display: block;
   border: 1px solid ${(props) => props.theme.color.contrasts.lowestContrast};
-  height: 44px;
+
   margin-bottom: 0;
   padding-bottom: 0;
 `;
