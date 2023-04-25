@@ -1,4 +1,3 @@
-import { Button, Tooltip } from '@/design-system';
 import { devices } from '@/styles/devices';
 import styled from 'styled-components';
 
@@ -11,10 +10,6 @@ export const Wrapper = styled.div`
   border-radius: 10px;
   width: 100%;
   max-width: 100%;
-  @media ${devices.tablet} {
-    gap: 121px;
-  }
-
   @media ${devices.mobile} {
     gap: 14px;
   }
@@ -23,7 +18,7 @@ export const Wrapper = styled.div`
 export const SummaryWrapper = styled.ul`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: center;
   margin-top: 24px;
   gap: 24px;
   width: 100%;
@@ -50,6 +45,16 @@ export const DatesContainer = styled.div`
   }
 `;
 
+export const PeriodContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+
+  @media ${devices.mobile} {
+    gap: 6px;
+  }
+`;
+
 export const ListComponent = styled.li`
   display: flex;
   align-items: center;
@@ -68,20 +73,4 @@ export const ListComponent = styled.li`
 export const ButtonsContainer = styled.div`
   display: flex;
   gap: 1rem;
-`;
-
-export const PeriodContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
-
-  @media ${devices.mobile} {
-    gap: 6px;
-  }
-`;
-
-export const AlertIcon = styled(Tooltip)`
-  display: flex;
-  background: url('../signalIcon.svg');
-  width: 100%;
 `;

@@ -1,13 +1,15 @@
-/* eslint-disable react/no-children-prop */
-import { Title, Subtitle, Paragraphs, Button, Tooltip } from '@ambush/ui';
+import { Title, Subtitle, Button, Tooltip } from '@ambush/ui';
 import { SummaryProps } from './types';
 import * as Styled from './summary.styled';
+import { ReactComponent as AlertIcon } from './Icons/signalIcon.svg';
+import { ReactComponent as TrashIcon } from './Icons/trashIcon.svg';
+import { ReactComponent as EditIcon } from './Icons/editIcon.svg';
 
 export function Summary({ onDelete, onEdit }: SummaryProps) {
   return (
     <Styled.Wrapper data-testid="summary">
       <Title variant="h6">Request Summary</Title>
-      <Styled.SummaryWrapper data-testid="Summary">
+      <Styled.SummaryWrapper>
         <Styled.ListComponent>
           <Styled.DatesContainer>
             <Styled.PeriodContainer>
@@ -16,40 +18,40 @@ export function Summary({ onDelete, onEdit }: SummaryProps) {
               </Subtitle>
               <Tooltip
                 text={'You need to request your manager to approve this'}
-                children={'a'}
-              />
+              >
+                <AlertIcon />
+              </Tooltip>
             </Styled.PeriodContainer>
 
             <Subtitle variant="s6" fontWeight="hair">
-              {
-                /* {summaryList.resume} */ '06 Recharge Days, 1 US Holidays, 1 Optional Holidays'
-              }
+              {'06 Recharge Days, 1 US Holidays, 1 Optional Holidays'}
             </Subtitle>
           </Styled.DatesContainer>
           <Styled.ButtonsContainer>
             <Button
-              icon="PencilIcon"
               color="secondary"
               variant="ghost"
               sizeVariant="large"
+              data-testid="Edit"
               onClick={onEdit}
               aria-label="Edit Button"
-            />
+            >
+              <EditIcon />
+            </Button>
 
             <Button
-              icon="TrashIcon"
               color="primary"
               variant="ghost"
               sizeVariant="large"
+              data-testid="Delete"
               onClick={onDelete}
               aria-label="Delete Button"
-            />
+            >
+              <TrashIcon />
+            </Button>
           </Styled.ButtonsContainer>
         </Styled.ListComponent>
       </Styled.SummaryWrapper>
     </Styled.Wrapper>
   );
 }
-// {
-//   summaryList.map((summaryList, index) => (key = { index }));
-// }
