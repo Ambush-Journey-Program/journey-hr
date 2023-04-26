@@ -7,14 +7,14 @@ export function TimeOffType() {
       <Styled.ParagraphStyle>Aplly For</Styled.ParagraphStyle>
       <RadioButton
         defaultChecked
-        value={'paid-time-off'}
-        label={'Paid Time Off'}
-        name={'time-off'}
+        value="paid-time-off"
+        label="Paid Time Off"
+        name="time-off"
       ></RadioButton>
       <RadioButton
-        value={'personal-leave'}
-        label={'Personal Leave'}
-        name={'time-off'}
+        value="personal-leave"
+        label="Personal Leave"
+        name="time-off"
       ></RadioButton>
     </Styled.Wrapper>
   );
