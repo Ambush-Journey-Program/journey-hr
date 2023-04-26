@@ -30,7 +30,7 @@ type DisabledButton = {
 };
 
 const childrenPadding = css`
-  padding: 10px 14px;
+  padding: 10px;
 `;
 
 const variants: Variants = {
@@ -88,7 +88,7 @@ const colorVariants: ColorVariant = {
       border: solid 1px ${(props) => props.theme.color.button.primary};
 
       svg {
-        fill: ${(props) => props.theme.color.button.primary};
+        color: ${(props) => props.theme.color.button.primary};
       }
 
       &:focus {
@@ -105,7 +105,7 @@ const colorVariants: ColorVariant = {
       background-color: transparent;
 
       svg {
-        fill: ${(props) => props.theme.color.button.primary};
+        color: ${(props) => props.theme.color.button.primary};
       }
 
       &:focus {
@@ -116,7 +116,7 @@ const colorVariants: ColorVariant = {
         color: ${(props) => props.theme.color.button.primaryHover};
 
         svg {
-          fill: ${(props) => props.theme.color.button.primaryHover};
+          color: ${(props) => props.theme.color.button.primaryHover};
         }
       }
     `,
@@ -143,7 +143,7 @@ const colorVariants: ColorVariant = {
       border: solid 1px ${(props) => props.theme.color.button.secondary};
 
       svg {
-        fill: ${(props) => props.theme.color.button.secondary};
+        color: ${(props) => props.theme.color.button.secondary};
       }
 
       &:focus {
@@ -156,7 +156,7 @@ const colorVariants: ColorVariant = {
           props.theme.color.contrasts.lightContrast};
 
         svg {
-          fill: ${(props) => props.theme.color.button.secondaryHover};
+          color: ${(props) => props.theme.color.button.secondaryHover};
         }
       }
     `,
@@ -166,7 +166,7 @@ const colorVariants: ColorVariant = {
       background-color: transparent;
 
       svg {
-        fill: ${(props) => props.theme.color.button.secondary};
+        color: ${(props) => props.theme.color.button.secondary};
       }
 
       &:focus {
@@ -177,7 +177,7 @@ const colorVariants: ColorVariant = {
         color: ${(props) => props.theme.color.button.secondaryHover};
 
         svg {
-          fill: ${(props) => props.theme.color.button.secondaryHover};
+          color: ${(props) => props.theme.color.button.secondaryHover};
         }
       }
     `,
@@ -204,7 +204,7 @@ const colorVariants: ColorVariant = {
       border: solid 1px ${(props) => props.theme.color.brandColors.dark};
 
       svg {
-        fill: ${(props) => props.theme.color.brandColors.dark};
+        color: ${(props) => props.theme.color.brandColors.dark};
       }
 
       &:focus {
@@ -223,7 +223,7 @@ const colorVariants: ColorVariant = {
       background-color: transparent;
 
       svg {
-        fill: ${(props) => props.theme.color.contrasts.highContrast};
+        color: ${(props) => props.theme.color.contrasts.highContrast};
       }
 
       &:focus {
@@ -277,7 +277,7 @@ const disabledButton: DisabledButton = {
         background-color: transparent;
 
         svg {
-          fill: ${(props) => props.theme.color.button.secondary};
+          color: ${(props) => props.theme.color.button.secondary};
         }
       }
     `,
@@ -298,7 +298,7 @@ const disabledButton: DisabledButton = {
         color: ${(props) => props.theme.color.button.primary};
 
         svg {
-          fill: ${(props) => props.theme.color.button.primary};
+          color: ${(props) => props.theme.color.button.primary};
         }
       }
     `,
@@ -310,7 +310,7 @@ const disabledButton: DisabledButton = {
         color: ${(props) => props.theme.color.button.secondary};
 
         svg {
-          fill: ${(props) => props.theme.color.button.secondary};
+          color: ${(props) => props.theme.color.button.secondary};
         }
       }
     `,
@@ -334,6 +334,10 @@ export const ButtonStyle = styled.button<ButtonProps>`
   border-radius: 50px;
   gap: 0.375rem;
   cursor: pointer;
+  svg path {
+    stroke-width: 2.2px;
+    margin-bottom: 0;
+  }
 
   ${({ haveChildren }) => !haveChildren && childrenPadding}
   ${({ sizeVariant }) => variants[sizeVariant]}

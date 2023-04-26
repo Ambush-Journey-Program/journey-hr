@@ -1,4 +1,3 @@
-import { Button } from '@/design-system/button/button';
 import { devices } from '@/styles/devices';
 import styled, { css, FlattenSimpleInterpolation } from 'styled-components';
 
@@ -58,6 +57,7 @@ const User: UserVariants = {
       display: block;
     }
   `,
+
   manager: css`
     div {
       display: none;
@@ -68,26 +68,39 @@ const User: UserVariants = {
 export const PeriodContainer = styled.div<Tooltip>`
   display: flex;
   flex-direction: row;
-  gap: 1rem;
+  gap: 10px;
 
   @media ${devices.mobile} {
     gap: 6px;
   }
 
+  & .alert {
+    width: 1.125rem;
+    height: 1.125rem;
+    color: ${(props) => props.theme.color.brandColors.red};
+
+    path {
+      stroke-width: 2px;
+      margin-bottom: 0;
+    }
+  }
+
   ${({ variant }) => User[variant]}
 `;
+
 export const Divider = styled.span`
+  margin: 2px;
+  height: 1px;
+  width: 100%;
+  background-color: ${(props) => props.theme.color.contrasts.lowestContrast};
   display: none;
+
   @media ${devices.mobile} {
     display: block;
-    margin: 2px;
-    height: 1px;
-    width: 100%;
-    background-color: ${(props) => props.theme.color.contrasts.lowestContrast};
   }
 `;
 
-export const ListComponent = styled.li`
+export const LiWrapper = styled.li`
   display: flex;
   align-items: center;
   gap: 212px;
@@ -101,6 +114,7 @@ export const ListComponent = styled.li`
     flex-direction: column;
     align-items: flex-start;
   }
+
   &:last-of-type .divider {
     display: none;
   }
@@ -108,9 +122,5 @@ export const ListComponent = styled.li`
 
 export const ButtonsContainer = styled.div`
   display: flex;
-  gap: 9px;
-`;
-
-export const IconButton = styled(Button)`
-  padding: 6px;
+  gap: 6px;
 `;
