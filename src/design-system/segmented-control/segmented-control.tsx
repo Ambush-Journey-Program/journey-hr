@@ -10,11 +10,11 @@ export function SegmentedControl({
   icon,
 }: SegmentedControlProps) {
   const TheIcon = icon && Icons[icon];
-  const LinkIcon = TheIcon && <TheIcon data-testid="button-icon" />;
+  const linkIcon = TheIcon && <TheIcon data-testid="button-icon" />;
   return (
     <Styled.LinkLabel href="#">
       <Paragraphs size={labelSize} fontWeight={fontWeight}>
-        {LinkIcon}
+        {linkIcon}
         {label}
       </Paragraphs>
     </Styled.LinkLabel>
