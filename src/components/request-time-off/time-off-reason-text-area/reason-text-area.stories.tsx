@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/consistent-type-assertions */
 import { Meta, Story } from '@storybook/react';
 import { TextAreaRequestReason } from './reason-text-area';
 import { TextAreaRequestReasonProps } from './types';
