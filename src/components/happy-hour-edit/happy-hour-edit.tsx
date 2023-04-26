@@ -8,7 +8,6 @@ import { GuestList } from './guest-list';
 export function HappyHourEdit({
   minGuests = 8,
   maxGuests = 15,
-  error,
 }: HappyHourEditProps) {
   const [valueInput, setValueInput] = useState('');
   const [guestsIdList, setGuestsIdList] = useState<string[]>([]);
@@ -54,14 +53,12 @@ export function HappyHourEdit({
   }
 
   function getError(guestList: string[]) {
-    if (guestList.length === 0) {
-      return 'Guests Required';
-    }
-
     if (minGuests > guestList.length) {
-      return `Minimal guests must be greater than  ${minGuests - 1}`;
+      return `Minimum guests must be greater than  ${minGuests - 1}.`;
     }
-
+    if (maxGuests === guestList.length) {
+      return 'People limit reached.';
+    }
     return '';
   }
 
@@ -86,19 +83,8 @@ export function HappyHourEdit({
             required
             id={valueInput}
             handleSelect={setValueInput}
-            error={validationError}
+            warn={validationError}
           />
-          {/* {!!validationError && (
-            <Styled.SpanError>
-              <Paragraphs
-                size="extrasmall"
-                fontWeight="light"
-                colorVariant="purple"
-              >
-                {error}
-              </Paragraphs>
-            </Styled.SpanError>
-          )} */}
           <Styled.IncreaseButton
             variant="ghost"
             icon="PlusIcon"

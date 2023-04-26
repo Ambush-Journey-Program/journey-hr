@@ -10,7 +10,6 @@ export type HappyHourEditProps = SelectHTMLAttributes<HTMLSelectElement> & {
   guestsListData: Guests[];
   maxGuests?: number;
   minGuests?: number;
-  error?: string;
 };
 
 export type Guests = {

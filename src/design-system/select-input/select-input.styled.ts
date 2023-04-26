@@ -5,16 +5,20 @@ export const SpanRequired = styled.span`
   display: block;
 `;
 
-export const SpanError = styled.span<StyledProps>`
+export const Span = styled.span<StyledProps>`
   display: block;
   margin-top: 0.25rem;
-
   line-height: 1.125rem;
 `;
 
 const errorDisplay = css`
   color: ${(props) => props.theme.color.auxiliary.error};
   border: ${(props) => `1px solid ${props.theme.color.auxiliary.error}`};
+`;
+
+const warnDisplay = css`
+  color: ${(props) => props.theme.color.auxiliary.whiteDarkMode};
+  background-color: ${(props) => props.theme.color.contrasts.lightContrast};
 `;
 
 export const Wrapper = styled.div`
@@ -54,6 +58,7 @@ export const Select = styled.select<StyledSelectProps>`
       : props.theme.color.contrasts.lowestContrast};
   border: 1px solid ${(props) => props.theme.color.contrasts.lowestContrast};
   ${({ error }) => error && errorDisplay}
+  ${({ warn }) => warn && warnDisplay}
 
   &:focus-within {
     outline: none;
