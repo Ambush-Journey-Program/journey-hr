@@ -1,7 +1,7 @@
 import { Button, SelectInput } from '@/design-system';
+import { StyledSelectProps } from '@/design-system/select-input/types';
 import { devices } from '@/styles/devices';
 import styled, { css } from 'styled-components';
-import { StyledSelectProps } from './types';
 
 export const Header = styled.div`
   margin: 20px 0px 28px 0px;
@@ -29,9 +29,12 @@ export const SelectTheInput = styled(SelectInput)`
 
 export const IncreaseButton = styled(Button)`
   margin-top: 16px;
+  &:focus {
+    max-height: 80%;
+  }
   @media ${devices.tablet} {
     margin-left: 16px;
-    margin-top: 0rem;
+    margin-top: 8px;
   }
 `;
 
