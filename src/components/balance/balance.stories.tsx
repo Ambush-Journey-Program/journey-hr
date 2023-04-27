@@ -9,12 +9,26 @@ export default {
 } as Meta;
 
 const Template: Story = (args) => {
-  return <Balance currentUser={false} employees={employees} {...args} />;
+  return (
+    <Balance
+      availableDays={0}
+      isAdmin={false}
+      employees={employees}
+      {...args}
+    />
+  );
+};
+
+export const BalanceStoryWithCTA = Template.bind({});
+BalanceStoryWithCTA.args = {
+  buttonText: 'View Time Off',
+  isAdmin: true,
+  buttonClick: () => {},
+  availableDays: -1,
 };
 
 export const BalanceStory = Template.bind({});
 BalanceStory.args = {
-  buttonText: 'View Time Off',
-  curretUser: true,
-  buttonClick: () => {},
+  isAdmin: true,
+  availableDays: 20,
 };

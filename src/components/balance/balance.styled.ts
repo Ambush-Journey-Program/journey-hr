@@ -10,6 +10,7 @@ export const Wrapper = styled.div`
   gap: 27px;
   padding: 24px;
   margin: 20px;
+  border-radius: 10px;
   background-color: ${(props) => props.theme.color.contrasts.lightContrast};
 
   @media ${devices.mobile} {
@@ -52,9 +53,10 @@ export const BalanceDiv = styled.div`
   gap: 42px;
 
   @media ${devices.mobile} {
-    div:nth-child(1) p:nth-of-type(2) span {
+    span {
       display: none;
     }
+
     gap: 24px;
   }
   @media ${devices.mobile} {

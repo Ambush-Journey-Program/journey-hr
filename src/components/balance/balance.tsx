@@ -2,25 +2,38 @@ import { Avatar, Paragraphs, Subtitle } from '@/design-system';
 import * as Styled from './balance.styled';
 import { employees as employeesMock } from './mocking/holidays';
 import { BalanceProps } from './types';
+import { useState } from 'react';
 
 export function Balance({
   employees = employeesMock,
   buttonClick,
   buttonText,
-  currentUser = false,
+  isAdmin = false,
+  availableDays,
 }: BalanceProps) {
+  const [selectedEmployee] = useState(employees[0]);
+  const isNegativeAvailableDays = availableDays < 0;
+  const availableDaysLabel =
+    availableDays === 1 || availableDays === -1 ? 'day' : 'days';
+
   return (
     <Styled.Wrapper>
-      {!currentUser && (
+      {!isAdmin ? (
+        <Styled.Header>
+          <Subtitle variant="s4" fontWeight="medium">
+            Your Current Balance
+          </Subtitle>
+        </Styled.Header>
+      ) : (
         <Styled.Header>
           {employees.length >= 1 && (
             <Styled.Profile>
-              {employees[0].avatar && (
-                <Avatar src={employees[0].avatar} sizeVariant="small" />
+              {selectedEmployee.avatar && (
+                <Avatar src={selectedEmployee.avatar} sizeVariant="small" />
               )}
 
               <Subtitle variant="s4" fontWeight="medium">
-                {employees[0].label}
+                {selectedEmployee.label}
               </Subtitle>
             </Styled.Profile>
           )}
@@ -38,20 +51,18 @@ export function Balance({
         </Styled.Header>
       )}
 
-      {currentUser && (
-        <Styled.Header>
-          <Subtitle variant="s4" fontWeight="medium">
-            Your Current Balance
-          </Subtitle>
-        </Styled.Header>
-      )}
       <Styled.BalanceDiv>
         <Styled.Div>
           <Subtitle variant="s6" fontWeight="regular">
             Recharge Days
           </Subtitle>
-          <Paragraphs size="extralarge" fontWeight="semibold">
-            20 days <span>available</span>
+          <Paragraphs
+            size="extralarge"
+            fontWeight="semibold"
+            colorVariant={isNegativeAvailableDays ? 'red' : 'dark'}
+          >
+            {availableDays.toString()} {availableDaysLabel}
+            <span> available</span>
           </Paragraphs>
         </Styled.Div>
         <Styled.Div>
