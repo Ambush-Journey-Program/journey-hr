@@ -52,7 +52,7 @@ export function Balance({
       )}
 
       <Styled.BalanceDiv>
-        <Styled.Div>
+        <Styled.Div data-testid="rechargeDays">
           <Subtitle variant="s6" fontWeight="regular">
             Recharge Days
           </Subtitle>

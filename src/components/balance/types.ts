@@ -10,6 +10,6 @@ export type BalanceProps = {
   buttonClick?: () => void;
   buttonText?: string;
   employees?: Employees;
-  isAdmin?: boolean;
+  isAdmin: boolean;
   availableDays: number;
 };

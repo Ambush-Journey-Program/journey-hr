@@ -1,20 +1,27 @@
-import * as React from 'react'
+import * as React from 'react';
 
-import { render, screen } from '@testing-library/react'
-
-
-import { Balance } from '..'
+import { Balance } from '..';
+import { render, screen } from '@/tests/renderWithProviders';
 
 describe('<Balance />', () => {
-  describe('should have this remove', () => {
-    it('when the component is actually used', () => {
-      const label = 'it works'
-      const props = { label }
+  it('It checks if shows employee card', () => {
+    const label = 'Your Current Balance';
+    const props = { label };
 
-      render(<Balance {...props} />)
-      const labelSpan = screen.getByText(label)
+    render(<Balance isAdmin={false} availableDays={0} {...props} />);
+    const labelSpan = screen.getByText(label);
 
-      expect(labelSpan).toBeInTheDocument()
-    })
-  })
-})
+    expect(labelSpan).toHaveTextContent(label);
+  });
+
+  it('It checks if it is a admin card', () => {
+    render(<Balance isAdmin={true} availableDays={0} />);
+    const avatar = screen.getByRole('img');
+    expect(avatar).toBeVisible();
+  });
+  it('It checks if the button is visible', () => {
+    render(<Balance isAdmin={true} availableDays={0} buttonClick={() => {}} />);
+    const button = screen.getByRole('button');
+    expect(button).toBeVisible();
+  });
+});
