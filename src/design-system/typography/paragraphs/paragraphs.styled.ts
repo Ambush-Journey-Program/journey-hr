@@ -69,6 +69,9 @@ const color: ColorVariants = {
   purple: css`
     color: ${(props) => props.theme.color.brandColors.purple};
   `,
+  error: css`
+    color: ${(props) => props.theme.color.auxiliary.error};
+  `,
 };
 
 const paragraphsWeightEl: TextWeight = {

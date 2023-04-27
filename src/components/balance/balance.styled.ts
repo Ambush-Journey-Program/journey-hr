@@ -71,7 +71,7 @@ export const VeticalLine = styled.hr`
   margin-bottom: 0;
   padding-bottom: 0;
 `;
-export const btn = styled(Button)`
+export const StyledButton = styled(Button)`
   align-items: center;
   width: 160px;
   height: 40px;

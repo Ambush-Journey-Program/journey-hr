@@ -39,14 +39,14 @@ export function Balance({
           )}
 
           {buttonClick && (
-            <Styled.btn
+            <Styled.StyledButton
               onClick={buttonClick}
               variant="outlined"
               color="alternative"
               sizeVariant="small"
             >
               {buttonText}
-            </Styled.btn>
+            </Styled.StyledButton>
           )}
         </Styled.Header>
       )}
@@ -59,7 +59,7 @@ export function Balance({
           <Paragraphs
             size="extralarge"
             fontWeight="semibold"
-            colorVariant={isNegativeAvailableDays ? 'red' : 'dark'}
+            colorVariant={isNegativeAvailableDays ? 'error' : 'dark'}
           >
             {availableDays.toString()} {availableDaysLabel}
             <span> available</span>
