@@ -56,20 +56,26 @@ export const BalanceDiv = styled.div`
     span {
       display: none;
     }
-
     gap: 24px;
   }
-  @media ${devices.mobile} {
-    gap: 24px;
+  @media ${devices.desktop} {
+    display: flex;
   }
 `;
 
 export const VeticalLine = styled.hr`
-  display: block;
   border: 1px solid ${(props) => props.theme.color.contrasts.lowestContrast};
-
   margin-bottom: 0;
   padding-bottom: 0;
+  @media ${devices.mobile} {
+    gap: 24px;
+  }
+  @media ${devices.mobile}, ${devices.tablet}, ${devices.tabletLarge} {
+    display: none;
+  }
+  @media ${devices.desktop} {
+    display: block;
+  }
 `;
 export const StyledButton = styled(Button)`
   align-items: center;

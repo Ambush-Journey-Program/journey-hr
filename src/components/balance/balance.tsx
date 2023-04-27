@@ -82,7 +82,7 @@ export function Balance({
             Mar 24, 2024
           </Paragraphs>
         </Styled.Div>
-        {/* <Styled.VeticalLine></Styled.VeticalLine> */}
+        <Styled.VeticalLine />
         <Styled.Div>
           <Subtitle variant="s6" fontWeight="regular">
             Optional Holidays
