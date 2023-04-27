@@ -24,7 +24,7 @@ export default {
             {
               text: 'DaysLists ',
               url: 'https://www.figma.com/file/yOF5DjTKrtqxLiP7A5DsOy/Ambush-Atoms?node-id=522%3A270&t=lXp9G2678yes8yDk-1',
-              description: 'This is the Figma of Schedule Card',
+              description: 'This is the Figma of DaysLists',
             },
           ],
         },
@@ -32,6 +32,10 @@ export default {
     },
   },
   argTypes: {
+    renderRow: {
+      description:
+        'renderRow: Is a callback function that received the details from the current iteration as argument<br/>Details: is the argument for the callback function<br/>RowComponent: is the component that will mount the current row<br/>Type: the type of the array that will be rendered<br/><br/> `renderRow={(<details>) => (<RowComponent> as <type>)}`<br/><br/>',
+    },
     storyType: {
       options: ['holidays', 'timeOff', 'teamCalendar'],
       control: {
@@ -78,8 +82,8 @@ const Template: Story<DaysListsProps> = (args) => {
 
 export const DaysListsStory = Template.bind({});
 DaysListsStory.args = {
-  title: "My Team's Calendar",
-  buttonTitle: "View My Team's Calendar",
+  title: 'Holidays Calendar',
+  buttonTitle: 'View Holidays calendar',
   list: holidays,
   renderRow: (details) => <HolidayRow details={details as HolidaysList} />,
 };
