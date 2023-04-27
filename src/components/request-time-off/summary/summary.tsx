@@ -22,9 +22,9 @@ export function Summary({ onDelete, onEdit, variant }: SummaryProps) {
   return (
     <Styled.SummaryWrapper data-testid="summary">
       <Title variant="h6">Request Summary</Title>
-      <Styled.UlWrapper>
+      <Styled.Ul>
         {requestTimeOffmock.map((requestTimeOff) => (
-          <Styled.LiWrapper key={requestTimeOff.id}>
+          <Styled.Li key={requestTimeOff.id}>
             <Styled.DatesContainer>
               <Styled.PeriodContainer variant={variant}>
                 <Subtitle variant="s6" fontWeight="medium">
@@ -63,10 +63,10 @@ export function Summary({ onDelete, onEdit, variant }: SummaryProps) {
                 icon="TrashIcon"
               />
             </Styled.ButtonsContainer>
-            <Styled.Divider className="divider" />
-          </Styled.LiWrapper>
+            <span className="divider"></span>
+          </Styled.Li>
         ))}
-      </Styled.UlWrapper>
+      </Styled.Ul>
     </Styled.SummaryWrapper>
   );
 }

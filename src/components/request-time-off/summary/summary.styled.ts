@@ -24,7 +24,7 @@ export const SummaryWrapper = styled.div`
   }
 `;
 
-export const UlWrapper = styled.ul`
+export const Ul = styled.ul`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -88,19 +88,7 @@ export const PeriodContainer = styled.div<Tooltip>`
   ${({ variant }) => User[variant]}
 `;
 
-export const Divider = styled.span`
-  margin: 2px;
-  height: 1px;
-  width: 100%;
-  background-color: ${(props) => props.theme.color.contrasts.lowestContrast};
-  display: none;
-
-  @media ${devices.mobile} {
-    display: block;
-  }
-`;
-
-export const LiWrapper = styled.li`
+export const Li = styled.li`
   display: flex;
   align-items: center;
   gap: 212px;
@@ -114,7 +102,17 @@ export const LiWrapper = styled.li`
     flex-direction: column;
     align-items: flex-start;
   }
+  .divider {
+    margin: 2px;
+    height: 1px;
+    width: 100%;
+    background-color: ${(props) => props.theme.color.contrasts.lowestContrast};
+    display: none;
 
+    @media ${devices.mobile} {
+      display: block;
+    }
+  }
   &:last-of-type .divider {
     display: none;
   }
