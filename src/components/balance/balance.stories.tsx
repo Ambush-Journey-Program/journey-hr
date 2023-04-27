@@ -9,7 +9,12 @@ export default {
 } as Meta;
 
 const Template: Story = (args) => {
-  return <Balance employees={employees} {...args} />;
+  return <Balance currentUser={false} employees={employees} {...args} />;
 };
 
 export const BalanceStory = Template.bind({});
+BalanceStory.args = {
+  buttonText: 'View Time Off',
+  curretUser: true,
+  buttonClick: () => {},
+};

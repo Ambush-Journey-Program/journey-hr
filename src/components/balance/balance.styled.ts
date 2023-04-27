@@ -1,33 +1,55 @@
+import { Button } from '@/design-system';
+import { devices } from '@/styles/devices';
 import styled from 'styled-components';
-export const Div2 = styled.div`
-  display: flex;
-  justify-content: space-between;
-  padding: 24px;
-  background-color: ${(props) => props.theme.color.contrasts.lightContrast};
-`;
 
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+  align-self: center;
+  justify-content: center;
   gap: 27px;
   padding: 24px;
   background-color: ${(props) => props.theme.color.contrasts.lightContrast};
+
+  @media ${devices.mobile} {
+    margin: 20px;
+  }
 `;
 
 export const Header = styled.header`
   display: flex;
-  align-items: center;
-  gap: 16px;
+  gap: 21px;
+  @media ${devices.mobile} {
+    flex-direction: column;
+  }
 `;
 
+export const Profile = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 0;
+  @media ${devices.mobile} {
+    /* flex-direction: column; */
+  }
+`;
 export const Div = styled.div`
   display: flex;
   flex-direction: column;
   gap: 8px;
 `;
-export const mainDiv = styled.div`
-  display: flex;
+export const BalanceDiv = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   gap: 42px;
+
+  @media ${devices.mobile} {
+    div:nth-child(1) p:nth-of-type(2) span {
+      display: none;
+    }
+    gap: 24px;
+  }
 `;
 
 export const VeticalLine = styled.hr`
@@ -36,4 +58,11 @@ export const VeticalLine = styled.hr`
 
   margin-bottom: 0;
   padding-bottom: 0;
+`;
+export const btn = styled(Button)`
+  @media ${devices.mobile} {
+    height: 40px;
+    width: 100%;
+    align-content: center;
+  }
 `;

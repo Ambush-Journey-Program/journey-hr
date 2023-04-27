@@ -8,13 +8,23 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <Balance
-        employees={employees}
-        buttonClick={() => {
-          console.log('teste');
-        }}
-        buttonText="teste"
-      />
+      <div>
+        <Balance
+          employees={employees}
+          buttonClick={() => {
+            console.log('teste');
+          }}
+          buttonText="View Time Off"
+          currentUser={false}
+        />
+        <br />
+        <Balance employees={employees} currentUser={false} />
+        <br />
+        <Balance employees={employees} currentUser={true} />
+        <br />
+        <Balance employees={employees[2]} currentUser={false} />
+        <br />
+      </div>
     </ThemeProvider>
   );
 }

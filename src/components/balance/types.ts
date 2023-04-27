@@ -9,5 +9,6 @@ export type Employee = {
 export type BalanceProps = {
   buttonClick?: () => void;
   buttonText?: string;
-  employees: Employees;
+  employees?: Employees;
+  currentUser: boolean;
 };

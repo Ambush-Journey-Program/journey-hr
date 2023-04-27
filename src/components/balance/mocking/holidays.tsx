@@ -15,6 +15,6 @@ export const employees: Employees = [
   {
     value: '3',
     label: 'Dan Donatello',
-    avatar: 'src/design-system/avatar/User-Photo.png',
+    avatar: '',
   },
 ];
