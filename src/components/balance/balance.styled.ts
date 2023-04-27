@@ -9,18 +9,25 @@ export const Wrapper = styled.div`
   justify-content: center;
   gap: 27px;
   padding: 24px;
+  margin: 20px;
   background-color: ${(props) => props.theme.color.contrasts.lightContrast};
 
   @media ${devices.mobile} {
-    margin: 20px;
+    padding: 20px;
+  }
+  @media ${devices.tablet} {
+    gap: 48px;
   }
 `;
 
 export const Header = styled.header`
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   gap: 21px;
   @media ${devices.mobile} {
     flex-direction: column;
+    align-items: start;
   }
 `;
 
@@ -60,9 +67,11 @@ export const VeticalLine = styled.hr`
   padding-bottom: 0;
 `;
 export const btn = styled(Button)`
+  align-items: center;
+  width: 160px;
+  height: 40px;
   @media ${devices.mobile} {
     height: 40px;
     width: 100%;
-    align-content: center;
   }
 `;
