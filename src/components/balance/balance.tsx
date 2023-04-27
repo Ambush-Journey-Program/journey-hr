@@ -19,7 +19,7 @@ export function Balance({
                 <Avatar src={employees[0].avatar} sizeVariant="small" />
               )}
 
-              <Subtitle variant={'s4'} fontWeight={'medium'}>
+              <Subtitle variant="s4" fontWeight="medium">
                 {employees[0].label}
               </Subtitle>
             </Styled.Profile>
@@ -40,7 +40,7 @@ export function Balance({
 
       {currentUser && (
         <Styled.Header>
-          <Subtitle variant={'s4'} fontWeight={'medium'}>
+          <Subtitle variant="s4" fontWeight="medium">
             Your Current Balance
           </Subtitle>
         </Styled.Header>

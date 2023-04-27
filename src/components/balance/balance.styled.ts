@@ -18,6 +18,9 @@ export const Wrapper = styled.div`
   @media ${devices.tablet} {
     gap: 48px;
   }
+  @media ${devices.tabletLarge} {
+    gap: 32px;
+  }
 `;
 
 export const Header = styled.header`
@@ -36,9 +39,6 @@ export const Profile = styled.div`
   align-items: center;
   gap: 16px;
   margin-bottom: 0;
-  @media ${devices.mobile} {
-    /* flex-direction: column; */
-  }
 `;
 export const Div = styled.div`
   display: flex;
@@ -57,6 +57,9 @@ export const BalanceDiv = styled.div`
     }
     gap: 24px;
   }
+  @media ${devices.mobile} {
+    gap: 24px;
+  }
 `;
 
 export const VeticalLine = styled.hr`
@@ -71,7 +74,6 @@ export const btn = styled(Button)`
   width: 160px;
   height: 40px;
   @media ${devices.mobile} {
-    height: 40px;
     width: 100%;
   }
 `;
