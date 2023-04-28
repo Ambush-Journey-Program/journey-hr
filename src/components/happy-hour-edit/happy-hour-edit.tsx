@@ -1,4 +1,4 @@
-import { CardWrapper } from '@/design-system';
+import { CardWrapper, SelectInput } from '@/design-system';
 import { HappyHourEditProps } from './types';
 import { Paragraphs } from '@/design-system/typography';
 import * as Styled from './happy-hour-edit.styled';
@@ -77,7 +77,7 @@ export function HappyHourEdit({
           </Paragraphs>
         </Styled.ContainerTitle>
         <Styled.ContainerInput>
-          <Styled.SelectTheInput
+          <SelectInput
             name="guest"
             placeholder={'Select a name'}
             options={formattedOptions}

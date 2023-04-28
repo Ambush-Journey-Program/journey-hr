@@ -1,7 +1,7 @@
-import { Button, SelectInput } from '@/design-system';
+import { Button } from '@ambush/ui';
 import { StyledSelectProps } from '@/design-system/select-input/types';
 import { devices } from '@/styles/devices';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 export const Header = styled.div`
   margin: 20px 0px 28px 0px;
@@ -21,10 +21,6 @@ export const ContainerInput = styled.div`
     display: grid;
     grid-template-columns: 1fr auto;
   }
-`;
-
-export const SelectTheInput = styled(SelectInput)`
-  ${({ error }) => error && errorDisplay}
 `;
 
 export const IncreaseButton = styled(Button)`
@@ -77,20 +73,11 @@ export const SpanError = styled.span`
   line-height: 1.125rem;
 `;
 
-const errorDisplay = css`
-  color: ${(props) => props.theme.color.auxiliary.error};
-`;
-
 export const Select = styled.select<StyledSelectProps>`
   &:focus-within {
     outline: none;
     box-shadow: 0 0 0.125rem
       ${(props) => props.theme.color.contrasts.mediumContrast};
     border: 0.063rem solid ${(props) => props.theme.color.brandColors.purple};
-  }
-
-  & input {
-    outline: none;
-    border: none;
   }
 `;

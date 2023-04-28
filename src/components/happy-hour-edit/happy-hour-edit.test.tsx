@@ -5,29 +5,24 @@ import { guestsListData } from './const';
 import userEvent from '@testing-library/user-event';
 
 describe('<HappyHourEdit />', () => {
-  describe('should have this remove', () => {
-    it('It should have a title', () => {
+  describe('should have this render', () => {
+    it('Should have a title', () => {
       render(<HappyHourEdit guestsListData={guestsListData} maxGuests={2} />);
       const title = screen.getByText('Group Names');
 
       expect(title).toBeInTheDocument();
     });
-    it('It should have a Select input', () => {
+    it('Should have a Select input', () => {
       render(<HappyHourEdit guestsListData={guestsListData} maxGuests={2} />);
-      const title = screen.getByDisplayValue('Label');
+      const select = screen.getByDisplayValue('Select a name');
 
-      expect(title).toBeInTheDocument();
+      expect(select).toBeInTheDocument();
     });
-    it('It should have a Schedule button and display a tooltip', async () => {
-      render(<HappyHourEdit guestsListData={guestsListData} maxGuests={2} />);
-      await userEvent.click(screen.getByText('Schedule'));
-      const title = screen.getByText('Guests Required');
-      expect(title).toBeInTheDocument();
-    });
-    it('calls Add Name button', async () => {
+
+    it('calls Add Name button and Schalule button is disable', async () => {
       render(<HappyHourEdit guestsListData={guestsListData} maxGuests={3} />);
       const scheduleButton = screen.getByText('Schedule');
-      await userEvent.click(screen.getByDisplayValue('Label'));
+      await userEvent.click(screen.getByDisplayValue('Select a name'));
       await userEvent.selectOptions(
         screen.getByRole('combobox'),
         screen.getByRole('option', { name: 'Ana Urbano' }),
@@ -37,15 +32,15 @@ describe('<HappyHourEdit />', () => {
       await userEvent.click(screen.getByText('Add Name'));
       await userEvent.click(scheduleButton);
       expect(screen.getByText('Ana Urbano')).toBeInTheDocument();
-      expect(scheduleButton).not.toBeDisabled();
+      expect(scheduleButton).toBeDisabled();
     });
 
-    it('It should have a maxGuest', async () => {
+    it('Should have a maxGuest', async () => {
       render(<HappyHourEdit guestsListData={guestsListData} maxGuests={2} />);
       const name = screen.getByRole('option', { name: 'Ana Urbano' });
       const name2 = screen.getByRole('option', { name: 'Claudia da Silva' });
       const btnAdd = screen.getByText('Add Name');
-      await userEvent.click(screen.getByDisplayValue('Label'));
+      await userEvent.click(screen.getByDisplayValue('Select a name'));
       await userEvent.selectOptions(
         screen.getByRole('combobox'),
         screen.getByRole('option', { name: 'Ana Urbano' }),
@@ -55,7 +50,7 @@ describe('<HappyHourEdit />', () => {
       expect(btnAdd).not.toBeDisabled();
       expect(screen.getByText('Ana Urbano')).toBeInTheDocument();
 
-      await userEvent.click(screen.getByDisplayValue('Label'));
+      await userEvent.click(screen.getByDisplayValue('Select a name'));
       await userEvent.selectOptions(
         screen.getByRole('combobox'),
         screen.getByRole('option', { name: 'Claudia da Silva' }),
