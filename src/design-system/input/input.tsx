@@ -16,9 +16,11 @@ export function Input({
 }: IInputProps) {
   const [touched, setTouched] = useState(false);
   function onInputChange(e: ChangeEvent<HTMLInputElement>) {
+    e.preventDefault();
     onTextChange(e.target.value);
     setTouched(true);
   }
+
   return (
     <Styled.Wrapper error={error}>
       <Styled.Label htmlFor={name}>
