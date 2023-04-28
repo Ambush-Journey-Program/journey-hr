@@ -33,9 +33,6 @@ export function SelectPeriod() {
   const [endDate, setEndDate] = useState('');
   const [startDateError, setStartDateError] = useState('');
   const [endDateError, setEndDateError] = useState('');
-  // const dateInput = e.target.value;
-
-  // console.log(`'Data valida? '  ${validate(startDate)}, ${validate(endDate)}`);
 
   function parseDate(originalDate: string) {
     const [year, month, day] = originalDate.split('-');
@@ -54,9 +51,7 @@ export function SelectPeriod() {
     if (isNaN(parsedYear) || isNaN(indexedMonth) || isNaN(parsedDay)) {
       return null;
     }
-    debugger;
 
-    // const today = formatDate(new Date());
     const date = new Date(parsedYear, indexedMonth, parsedDay);
     return date;
   }
@@ -91,24 +86,10 @@ export function SelectPeriod() {
     if (isStartComeFirst) {
       setEndDateError('it is necessary change the start day or the end day');
     }
-    // if (hasError) {
-    //   setError;
-    //   return;
-    // }
 
     setStartDateError('');
     setEndDateError('');
   }, [endDate, startDate]);
-  // function padTo2Digits(num: number) {
-  //   return num.toString().padStart(2, '0');
-  // }
-  // function formatDate(date: Date) {
-  //   return [
-  //     date.getFullYear(),
-  //     padTo2Digits(date.getMonth() + 1),
-  //     padTo2Digits(date.getDate()),
-  //   ];
-  // }
 
   return (
     <Styled.InputsWrapper>
