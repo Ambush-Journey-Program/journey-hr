@@ -5,6 +5,7 @@ export type IInputProps = InputHTMLAttributes<HTMLInputElement> & {
   error?: string;
   onTextChange?: (value: string) => void;
   type?: string;
+  placeholder?: string;
 };
 
 export type StyleWrapper = {

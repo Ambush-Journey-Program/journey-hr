@@ -3,8 +3,8 @@ import * as Styled from './select-period.styled';
 import { useEffect, useState } from 'react';
 
 const isFirstDateAfterSecondDate = (firstDate: Date, secondDate: Date) => {
-  const firstDateTime = firstDate.getTime();
-  const secondDateTime = secondDate.getTime();
+  const firstDateTime = firstDate.getTime;
+  const secondDateTime = secondDate.getTime;
   return firstDateTime > secondDateTime;
 };
 
@@ -44,7 +44,6 @@ export function SelectPeriod() {
     ) {
       return null;
     }
-
     const parsedYear = parseInt(year, 10);
     const indexedMonth = parseInt(month, 10) - 1;
     const parsedDay = parseInt(day, 10);
@@ -59,26 +58,30 @@ export function SelectPeriod() {
   useEffect(() => {
     const parsedStartDate = parseDate(startDate);
     const parsedEndDate = parseDate(endDate);
-    // if (!parsedStartDate || !parsedEndDate) {
-    //   if (!parsedStartDate) {
-    //     setStartDateError('Invalid date Format');
-    //   }
-    //   if (!parsedEndDate) {
-    //     setEndDateError('Invalid date Format');
-    //   }
 
-    //   return;
-    // }
+    if (!parsedStartDate || !parsedEndDate) {
+      if (!parsedStartDate) {
+        // setStartDateError('Invalid date Format');
+        return;
+      }
+      if (!parsedEndDate) {
+        return;
+        // setEndDateError('Invalid date Format');
+      }
+
+      return;
+    }
+
     const isStartBeOnFuture = isStartDateOnFuture(parsedStartDate);
     const isStartComeFirst = isStartComeFirstEnd(
-      parsedStartDate,
+      parsedEndDate,
       parsedStartDate,
     );
     // const isEndDateOnPast = isDateOnPast(parsedEndDate);
     const isDay15DaysOnFuture = isDate15DaysFromNow(parsedStartDate);
 
     if (isStartBeOnFuture) {
-      setEndDateError('inpossible start date on past');
+      setEndDateError('impossible start date on past');
     }
     if (isDay15DaysOnFuture) {
       setEndDateError('it is necessary to request 15 days in advance');
@@ -99,6 +102,7 @@ export function SelectPeriod() {
         onTextChange={setStartDate}
         value={startDate}
         error={startDateError}
+        placeholder="Select Time Off Period"
       />
       <Input
         label={'End Date'}
@@ -106,6 +110,7 @@ export function SelectPeriod() {
         onTextChange={setEndDate}
         value={endDate}
         error={endDateError}
+        placeholder="Select Time Off Period"
       />
       <button type="submit" className="btn btn-primary me-1">
         Submit

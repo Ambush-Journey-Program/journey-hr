@@ -7,7 +7,6 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-
       <SelectPeriod></SelectPeriod>
     </ThemeProvider>
   );

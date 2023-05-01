@@ -10,6 +10,7 @@ export function Input({
   disabled,
   readOnly,
   error,
+  placeholder,
   type = 'text',
   name,
   onTextChange = () => {},
@@ -33,7 +34,7 @@ export function Input({
       >
         <input
           type={type}
-          placeholder="Label"
+          placeholder={placeholder}
           required={required}
           disabled={disabled}
           readOnly={readOnly}
