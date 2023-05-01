@@ -1,15 +1,9 @@
 import { Meta, Story } from '@storybook/react';
 
-import { GuestListProps, Guests } from './types';
+import { GuestListProps } from './types';
 
 import { GuestList } from './guest-list';
-
-const list: Guests[] = [
-  { guest: { id: '1', name: 'Mariana Maia', team: 'Design' } },
-  { guest: { id: '2', name: 'Marcello Aragoni', team: 'Developer' } },
-  { guest: { id: '3', name: 'Lucas Medeiros', team: 'Developer' } },
-  { guest: { id: '4', name: 'Claudia da Silva', team: 'Design' } },
-];
+import { GUESTS_LIST_DATA } from '../const';
 
 export default {
   component: GuestList,
@@ -23,7 +17,7 @@ export default {
           links: [
             {
               text: 'Guest-List',
-              url: 'https://www.figma.com/file/MRpGlW5tom04XStEIw5th9/HH-Sort?node-id=14-32493&t=fFoku2dhra99oAz4-0&fuid=1196819673068025271',
+              url: `https://www.figma.com/file/MRpGlW5tom04XStEIw5th9/HH-Sort?node-id=14-32493&t=fFoku2dhra99oAz4-0&fuid=1196819673068025271`,
               description: 'This is the Figma of Guest-List',
             },
           ],
@@ -39,5 +33,5 @@ const GuestListTemplate: Story<GuestListProps> = (args) => {
 
 export const GuestListStory = GuestListTemplate.bind({});
 GuestListStory.args = {
-  guestsList: list,
+  guestsList: GUESTS_LIST_DATA,
 };

@@ -1,14 +1,13 @@
 import styled, { css } from 'styled-components';
-import { StyledSelectProps, StyleWrapper, StyledProps } from './types';
+import { StyledSelectProps, StyledProps } from './types';
 
 export const SpanRequired = styled.span`
   display: block;
 `;
 
-export const SpanError = styled.span<StyledProps>`
+export const Span = styled.span<StyledProps>`
   display: block;
   margin-top: 0.25rem;
-
   line-height: 1.125rem;
 `;
 
@@ -17,7 +16,12 @@ const errorDisplay = css`
   border: ${(props) => `1px solid ${props.theme.color.auxiliary.error}`};
 `;
 
-export const Wrapper = styled.div<StyleWrapper>`
+const warnDisplay = css`
+  color: ${(props) => props.theme.color.auxiliary.whiteDarkMode};
+  background-color: ${(props) => props.theme.color.contrasts.lightContrast};
+`;
+
+export const Wrapper = styled.div`
   width: 100%;
 `;
 
@@ -54,6 +58,7 @@ export const Select = styled.select<StyledSelectProps>`
       : props.theme.color.contrasts.lowestContrast};
   border: 1px solid ${(props) => props.theme.color.contrasts.lowestContrast};
   ${({ error }) => error && errorDisplay}
+  ${({ warn }) => warn && warnDisplay}
 
   &:focus-within {
     outline: none;
