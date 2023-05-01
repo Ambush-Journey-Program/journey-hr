@@ -2,7 +2,7 @@ import { CardWrapper, SelectInput } from '@/design-system';
 import { HappyHourEditProps } from './types';
 import { Paragraphs } from '@/design-system/typography';
 import * as Styled from './happy-hour-edit.styled';
-import { employees } from './const';
+import { EMPLOYEES } from './const';
 import { GuestList } from './guest-list';
 import { useState } from 'react';
 
@@ -14,11 +14,11 @@ export function HappyHourEdit({
   const [guestsIdList, setGuestsIdList] = useState<string[]>([]);
   const [validationError, setValidationError] = useState<string>('');
 
-  const filteredEmployeesList = employees.filter(
+  const filteredEmployeesList = EMPLOYEES.filter(
     (employee) => !guestsIdList.includes(employee.guest.id),
   );
 
-  const filteredGuestList = employees.filter((employee) =>
+  const filteredGuestList = EMPLOYEES.filter((employee) =>
     guestsIdList.includes(employee.guest.id),
   );
 

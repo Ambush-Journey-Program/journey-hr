@@ -1,15 +1,9 @@
 import { Meta, Story } from '@storybook/react';
 
-import { GuestListProps, Guests } from './types';
+import { GuestListProps } from './types';
 
 import { GuestList } from './guest-list';
-
-const list: Guests[] = [
-  { guest: { id: '1', name: 'Mariana Maia', team: 'Design' } },
-  { guest: { id: '2', name: 'Marcello Aragoni', team: 'Developer' } },
-  { guest: { id: '3', name: 'Lucas Medeiros', team: 'Developer' } },
-  { guest: { id: '4', name: 'Claudia da Silva', team: 'Design' } },
-];
+import { GUESTS_LIST_DATA } from '../const';
 
 export default {
   component: GuestList,
@@ -39,5 +33,5 @@ const GuestListTemplate: Story<GuestListProps> = (args) => {
 
 export const GuestListStory = GuestListTemplate.bind({});
 GuestListStory.args = {
-  guestsList: list,
+  guestsList: GUESTS_LIST_DATA,
 };
