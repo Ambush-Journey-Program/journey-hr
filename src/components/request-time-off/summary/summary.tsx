@@ -4,19 +4,7 @@ import * as Styled from './summary.styled';
 
 // import { ExclamationCircleIcon } from '@heroicons/react/24/solid';
 import * as Icons from '@heroicons/react/24/outline';
-
-const requestTimeOffmock = [
-  {
-    id: `1`,
-    period: 'Nov 01 Wed - Nov 15 Wed , 2023',
-    summary: '06 Recharge Days, 1 US Holidays, 1 Optional Holidays',
-  },
-  {
-    id: `2`,
-    period: 'Jan 01 Mon - Jan 15 Mon, 2024',
-    summary: '06 Recharge Days, 6 US Holidays, 4 Optional Holidays',
-  },
-];
+import { requestTimeOffmock } from './mock-response';
 
 export function Summary({ onDelete, onEdit, variant }: SummaryProps) {
   return (
