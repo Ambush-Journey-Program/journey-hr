@@ -10,6 +10,7 @@ export function Input({
   disabled,
   readOnly,
   error,
+  warn,
   placeholder,
   type = 'text',
   name,
@@ -29,6 +30,7 @@ export function Input({
       </Styled.Label>
       <Styled.InputContainer
         error={error}
+        warn={warn}
         disabled={disabled}
         touched={touched}
       >

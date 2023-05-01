@@ -28,6 +28,7 @@ export function SelectPeriod() {
   const [endDate, setEndDate] = useState('');
   const [startDateError, setStartDateError] = useState('');
   const [endDateError, setEndDateError] = useState('');
+  const [dateWarn, setDateWarn] = useState('');
 
   function parseDate(originalDate: string) {
     const [year, month, day] = originalDate.split('-');
@@ -74,7 +75,7 @@ export function SelectPeriod() {
       setEndDateError("It's necessary change the end day or the end day");
     }
     if (!isDay15DaysOnFuture) {
-      setStartDateError("It's necessary to request 15 days in advance");
+      setDateWarn("It's necessary to request 15 days in advance");
     }
     if (!isStartBeOnFuture) {
       setStartDateError("It's impossible start date on past");
@@ -89,6 +90,7 @@ export function SelectPeriod() {
         onTextChange={setStartDate}
         value={startDate}
         error={startDateError}
+        warn={dateWarn}
         placeholder="Select Time Off Period"
       />
       <Input
