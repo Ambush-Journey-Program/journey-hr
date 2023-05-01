@@ -69,11 +69,17 @@ const color: ColorVariants = {
   purple: css`
     color: ${(props) => props.theme.color.brandColors.purple};
   `,
+  error: css`
+    color: ${(props) => props.theme.color.auxiliary.error};
+  `,
 };
 
 const paragraphsWeightEl: TextWeight = {
   hair: css`
     font-weight: 200;
+  `,
+  semihair: css`
+    font-weight: 300;
   `,
   light: css`
     font-weight: 400;

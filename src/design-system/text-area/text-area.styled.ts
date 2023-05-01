@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { StyledProps } from './types';
+import { StyledProps, StyledLabelProps } from './types';
 
 const error = css`
   &:invalid {
@@ -22,14 +22,13 @@ export const Label = styled.label<StyledLabelProps>`
   color: ${(props) => props.theme.color.contrasts.mediumContrast};
 
   span {
-    display: none;
-    ${({ optional }) => optional && spanOptional}
+    color: ${(props) => props.theme.color.contrasts.lowContrast};
   }
 `;
 
 export const TextAreaContainer = styled.div<StyledProps>`
   display: flex;
-  align-items: center;
+  justify-content: center;
   flex-direction: column;
   width: 100%;
   min-width: 18rem;
@@ -51,6 +50,11 @@ export const TextArea = styled.textarea<StyledProps>`
   padding: 0.75rem 1.375rem;
   margin-bottom: 0.25rem;
   color: ${(props) => props.theme.color.contrasts.highContrast};
+
+  &::placeholder {
+    color: ${(props) => props.theme.color.contrasts.lowestContrast};
+  }
+
   &:focus-within {
     outline: none;
     box-shadow: 0 0 0.125rem

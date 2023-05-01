@@ -70,6 +70,24 @@ describe('<TextArea />', () => {
     expect(msgError).toBeInTheDocument();
   });
 
+  it('does not have a required label when the component is optional', () => {
+    render(
+      <TextArea
+        rows={3}
+        minLength={3}
+        spellCheck
+        placeholder="placeholder"
+        label={''}
+      />,
+    );
+
+    const inputEl = screen.getByPlaceholderText('placeholder');
+    expect(inputEl).toBeInTheDocument();
+
+    const msgError = screen.queryByText('Required');
+    expect(msgError).toBeNull();
+  });
+
   it('has a message declaring that the minimum length of characters are required', async () => {
     render(
       <TextArea

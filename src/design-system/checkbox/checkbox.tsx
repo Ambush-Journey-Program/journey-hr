@@ -8,6 +8,7 @@ export function CheckBox({
   disabled = false,
   label,
   description,
+  labelFontWeight = 'semibold',
 }: CheckboxProps) {
   return (
     <Styled.Label disabled={disabled}>
@@ -20,9 +21,11 @@ export function CheckBox({
       />
 
       <Styled.StyledDiv>
-        <Subtitle variant="s6">{label}</Subtitle>
+        <Paragraphs size="default" fontWeight={labelFontWeight}>
+          {label}
+        </Paragraphs>
 
-        <Paragraphs size="medium" fontWeight="hair">
+        <Paragraphs size="default" fontWeight="semihair">
           {description}
         </Paragraphs>
       </Styled.StyledDiv>
