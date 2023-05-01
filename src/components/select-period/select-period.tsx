@@ -3,29 +3,24 @@ import * as Styled from './select-period.styled';
 import { useEffect, useState } from 'react';
 
 const isFirstDateAfterSecondDate = (firstDate: Date, secondDate: Date) => {
-  const firstDateTime = firstDate.getTime;
-  const secondDateTime = secondDate.getTime;
+  const firstDateTime = firstDate.getTime();
+  const secondDateTime = secondDate.getTime();
   return firstDateTime > secondDateTime;
-};
-
-const isStartDateOnFuture = (date: Date) => {
-  const today = new Date();
-  return isFirstDateAfterSecondDate(date, today);
 };
 
 const isStartComeFirstEnd = (date1: Date, date2: Date) => {
   return isFirstDateAfterSecondDate(date1, date2);
 };
 
-// const isDateOnPast = (date: Date) => {
-//   const today = new Date();
-//   return isFirstDateAfterSecondDate(today, date);
-// };
-
 const isDate15DaysFromNow = (date: Date) => {
   const today = new Date();
-  today.setDate(today.getDate() + 15);
-  return isFirstDateAfterSecondDate(today, date);
+  today.setDate(today.getDate() + 14);
+  return isFirstDateAfterSecondDate(date, today);
+};
+
+const isStartDateOnFuture = (date: Date) => {
+  const today = new Date();
+  return isFirstDateAfterSecondDate(date, today);
 };
 
 export function SelectPeriod() {
@@ -36,7 +31,6 @@ export function SelectPeriod() {
 
   function parseDate(originalDate: string) {
     const [year, month, day] = originalDate.split('-');
-
     if (
       typeof year === 'undefined' ||
       typeof month === 'undefined' ||
@@ -58,40 +52,33 @@ export function SelectPeriod() {
   useEffect(() => {
     const parsedStartDate = parseDate(startDate);
     const parsedEndDate = parseDate(endDate);
-
     if (!parsedStartDate || !parsedEndDate) {
       if (!parsedStartDate) {
-        // setStartDateError('Invalid date Format');
         return;
       }
       if (!parsedEndDate) {
         return;
-        // setEndDateError('Invalid date Format');
       }
 
       return;
     }
 
-    const isStartBeOnFuture = isStartDateOnFuture(parsedStartDate);
     const isStartComeFirst = isStartComeFirstEnd(
       parsedEndDate,
       parsedStartDate,
     );
-    // const isEndDateOnPast = isDateOnPast(parsedEndDate);
     const isDay15DaysOnFuture = isDate15DaysFromNow(parsedStartDate);
+    const isStartBeOnFuture = isStartDateOnFuture(parsedStartDate);
 
-    if (isStartBeOnFuture) {
-      setEndDateError('impossible start date on past');
+    if (!isStartComeFirst) {
+      setEndDateError("It's necessary change the end day or the end day");
     }
-    if (isDay15DaysOnFuture) {
-      setEndDateError('it is necessary to request 15 days in advance');
+    if (!isDay15DaysOnFuture) {
+      setStartDateError("It's necessary to request 15 days in advance");
     }
-    if (isStartComeFirst) {
-      setEndDateError('it is necessary change the start day or the end day');
+    if (!isStartBeOnFuture) {
+      setStartDateError("It's impossible start date on past");
     }
-
-    setStartDateError('');
-    setEndDateError('');
   }, [endDate, startDate]);
 
   return (
