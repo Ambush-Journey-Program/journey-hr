@@ -10,7 +10,7 @@ export function DaysLists({
   renderRow,
 }: DaysListsProps) {
   return (
-    <Styled.ListWrapper>
+    <Styled.ListWrapper data-testid={title}>
       <Title variant="h5">{title}</Title>
       {list.map((details) => renderRow(details))}
       <Button variant="ghost">{buttonTitle}</Button>
