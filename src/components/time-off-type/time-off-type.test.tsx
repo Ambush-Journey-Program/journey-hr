@@ -6,7 +6,7 @@ describe('<TimeOffType />', () => {
   describe('should have this render', () => {
     it('should have a title', () => {
       render(<TimeOffType />);
-      const labelSpan = screen.getByText('Aplly For');
+      const labelSpan = screen.getByText('Apply For');
       expect(labelSpan).toBeInTheDocument();
     });
     it('should be a checked', () => {
