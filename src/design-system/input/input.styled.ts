@@ -19,14 +19,27 @@ const spanError = css`
     border-color: red;
   }
 `;
+const warnError = css`
+  display: block;
+  margin-top: 4px;
+
+  & input::placeholder {
+    color: ${(props) => props.theme.color.auxiliary.whiteDarkMode};
+  }
+`;
 
 const errorDisplay = css`
   color: ${(props) => props.theme.color.auxiliary.error};
   border: ${(props) => `1px solid ${props.theme.color.auxiliary.error}`};
 `;
+const warnDisplay = css`
+  color: ${(props) => props.theme.color.auxiliary.whiteDarkMode};
+  background-color: ${(props) => props.theme.color.contrasts.lightContrast};
+`;
 
 export const Wrapper = styled.div<StyleWrapper>`
   ${({ error }) => error && spanError}
+  ${({ warn }) => warn && warnError}
 `;
 
 export const Label = styled.label<StyledLabelProps>`
@@ -64,6 +77,7 @@ export const InputContainer = styled.div<StyledInputProps>`
   padding-left: 1.25rem;
   margin-top: 0.25rem;
   ${({ error }) => error && errorDisplay}
+  ${({ warn }) => warn && warnDisplay}
   ${({ disabled }) => disabled && disabledInput};
 
   &:focus-within {

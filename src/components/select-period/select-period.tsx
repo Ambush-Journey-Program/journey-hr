@@ -1,6 +1,8 @@
 import { Input } from '@ambush/ui';
 import * as Styled from './select-period.styled';
 import { useEffect, useState } from 'react';
+import * as Icons from '@heroicons/react/24/outline';
+import { selectPeriodProps } from './types';
 
 const isFirstDateAfterSecondDate = (firstDate: Date, secondDate: Date) => {
   const firstDateTime = firstDate.getTime();
@@ -23,7 +25,7 @@ const isStartDateOnFuture = (date: Date) => {
   return isFirstDateAfterSecondDate(date, today);
 };
 
-export function SelectPeriod() {
+export function SelectPeriod({ error = false }: selectPeriodProps) {
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
   const [startDateError, setStartDateError] = useState('');
@@ -73,18 +75,22 @@ export function SelectPeriod() {
 
     if (!isStartComeFirst) {
       setEndDateError("It's necessary change the end day or the end day");
+      error = true;
     }
     if (!isDay15DaysOnFuture) {
       setDateWarn("It's necessary to request 15 days in advance");
+      error = true;
     }
     if (!isStartBeOnFuture) {
       setStartDateError("It's impossible start date on past");
+      error = true;
     }
+    error = false;
   }, [endDate, startDate]);
 
   return (
     <Styled.InputsWrapper>
-      <Input
+      <Styled.InputStyle
         label="Start Date"
         type="date"
         onTextChange={setStartDate}
@@ -100,7 +106,12 @@ export function SelectPeriod() {
         value={endDate}
         error={endDateError}
         placeholder="Select Time Off Period"
-      />
+      ></Input>
+
+      <Styled.Span error={error}>
+        <Icons.ExclamationCircleIcon className="alert" data-testid="Alert" />
+      </Styled.Span>
+
       <button type="submit" className="btn btn-primary me-1">
         Submit
       </button>

@@ -50,6 +50,11 @@ export function Input({
           {error}
         </Paragraphs>
       )}
+      {!!warn && (
+        <Paragraphs size="extrasmall" fontWeight="light" colorVariant="purple">
+          {warn}
+        </Paragraphs>
+      )}
     </Styled.Wrapper>
   );
 }
