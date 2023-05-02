@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { render, screen } from '@/tests/renderWithProviders';
 import { RadioButton } from '.';
 import userEvent from '@testing-library/user-event';
@@ -18,7 +17,9 @@ describe('<RadioButton />', () => {
       expect(radioButton).toBeVisible();
     });
     it('should be a checked checkbox', () => {
-      render(<RadioButton value="large" label="Large" name="Size" checked />);
+      render(
+        <RadioButton value="large" label="Large" name="Size" defaultChecked />,
+      );
       const radioButton = screen.getByLabelText('Large');
       expect(radioButton).toBeChecked();
     });
