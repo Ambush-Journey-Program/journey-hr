@@ -1,5 +1,4 @@
 import { ChangeEvent, useEffect, useState } from 'react';
-import { Label } from '../input/input.styled';
 import { Paragraphs } from '../typography/paragraphs/paragraphs';
 import * as Styled from './text-area.styled';
 import { TextAreaProps } from './types';

@@ -1,3 +1,4 @@
+import { devices } from '@/styles/devices';
 import styled, { css } from 'styled-components';
 
 import { StyledProps, StyledLabelProps } from './types';
@@ -32,8 +33,6 @@ export const TextAreaContainer = styled.div<StyledProps>`
   flex-direction: column;
   width: 100%;
   min-width: 18rem;
-  font-weight: 300;
-  font-size: 1rem;
   color: ${(props) => props.theme.color.contrasts.highContrast};
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
@@ -51,8 +50,17 @@ export const TextArea = styled.textarea<StyledProps>`
   margin-bottom: 0.25rem;
   color: ${(props) => props.theme.color.contrasts.highContrast};
 
+  @media ${devices.mobile} {
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+  }
+
   &::placeholder {
     color: ${(props) => props.theme.color.contrasts.lowestContrast};
+
+    @media ${devices.mobile} {
+      font-size: 0.875rem;
+    }
   }
 
   &:focus-within {
