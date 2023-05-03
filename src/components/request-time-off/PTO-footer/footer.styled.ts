@@ -1,30 +1,90 @@
-import styled from 'styled-components';
+import { devices } from '@/styles/devices';
+import styled, { css, FlattenSimpleInterpolation } from 'styled-components';
+import { FooterProps } from './types';
 
-export const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
+type PageVariants = {
+  [key: string]: FlattenSimpleInterpolation;
+};
 
-  width: 100%;
-  & .border {
-    margin: 2px;
-    height: 1px;
-    width: 100%;
-    background-color: ${(props) => props.theme.color.contrasts.lowestContrast};
-  }
-`;
+const Page: PageVariants = {
+  request: css`
+    & .confirmationButon {
+      display: none;
+    }
+    & .cancelButon {
+      display: block;
+    }
+    & .fowardButon {
+      display: block;
+    }
+  `,
 
-export const FooterCotainer = styled.div`
-  justify-content: flex-end;
-  align-items: center;
-  padding: 40px;
-  border-radius: 0px 0px 20px 20px;
+  timeOff: css`
+    & .confirmationButon {
+      display: none;
+    }
+    & .cancelButon {
+      display: block;
+    }
+    & .fowardButon {
+      display: block;
+    }
+  `,
+
+  confirm: css`
+    & .confirmationButon {
+      display: block;
+    }
+    & .cancelButon {
+      display: none;
+    }
+    & .fowardButon {
+      display: none;
+    }
+  `,
+
+  allDone: css`
+    & {
+      justify-content: center;
+    }
+    & .confirmationButon {
+      display: none;
+    }
+    & .cancelButon {
+      display: none;
+    }
+    & .fowardButon {
+      display: block;
+    }
+  `,
+};
+
+export const Footer = styled.div<FooterProps>`
   display: flex;
   flex-direction: row;
-  width: 866px;
-  & .border {
-    margin: 2px;
-    height: 0.5px;
-    width: 100%;
-    background-color: ${(props) => props.theme.color.contrasts.lowestContrast};
+  justify-content: flex-end;
+  align-items: center;
+  box-sizing: content-box;
+  padding: 40px;
+  width: 100%;
+  min-width: 700px;
+  gap: 8px;
+  border-top: 1px solid;
+  border-color: ${(props) => props.theme.color.contrasts.lightContrast};
+  border-radius: 0px 0px 20px 20px;
+
+  @media ${devices.tablet} {
+    padding: 40px 20px;
+    min-width: 400px;
   }
+
+  @media ${devices.mobile} {
+    width: 328px;
+    padding: 40px 20px;
+    flex-direction: column;
+    & .button {
+      width: 100%;
+    }
+  }
+  ${({ variant }) => Page[variant]}
 `;

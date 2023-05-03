@@ -1,4 +1,7 @@
+export type PageType = 'request' | 'timeOff' | 'confirm' | 'allDone';
+
 export type FooterProps = {
-  Cancel?: () => void;
-  Apply?: () => void;
+  cancel?: () => void;
+  apply?: () => void;
+  variant: PageType;
 };
