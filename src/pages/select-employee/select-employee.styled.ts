@@ -25,7 +25,7 @@ export const SearchBox = styled.div`
   gap: 1rem;
   border: 1px solid #9588a9;
   border-radius: 12px;
-  width: 385px;
+  max-width: 385px;
 `;
 export const StyledLabel = styled.label`
   display: flex;

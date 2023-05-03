@@ -8,3 +8,4 @@ export type Employee = {
   team: string;
 };
 export type Employees = Employee[];
+export type ChangeHandler = React.ChangeEventHandler<HTMLInputElement>;
