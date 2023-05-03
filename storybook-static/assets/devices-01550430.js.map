@@ -1,0 +1,1 @@
+{"version":3,"file":"devices-01550430.js","sources":["../../src/styles/devices.ts"],"sourcesContent":["export const devices = {\n  desktop: '(min-width: 1200px)',\n  tabletLarge: '(min-width: 992px)',\n  tablet: '(min-width: 768px)',\n  mobile: '(max-width: 767px)',\n};\n"],"names":["devices"],"mappings":"AAAO,MAAMA,EAAU,CACrB,QAAS,sBACT,YAAa,qBACb,OAAQ,qBACR,OAAQ,oBACV"}
