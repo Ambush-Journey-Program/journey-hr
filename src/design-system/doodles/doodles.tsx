@@ -5,7 +5,6 @@ import { DoodlesLib } from './svgLibrary';
 
 export function Doodles({ colors, icon }: IDoodlesProps) {
   const doodleIcon = icon && DoodlesLib[icon];
-  console.log(doodleIcon);
 
   return (
     <Styled.wrapper data-testid="doodles" colors={colors}>
