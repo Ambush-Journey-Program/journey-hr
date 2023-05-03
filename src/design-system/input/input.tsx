@@ -12,6 +12,7 @@ export function Input({
   error,
   type = 'text',
   name,
+  placeholder = 'Label',
   onTextChange = () => {},
 }: IInputProps) {
   const [touched, setTouched] = useState(false);
@@ -31,7 +32,7 @@ export function Input({
       >
         <input
           type={type}
-          placeholder="Label"
+          placeholder={placeholder}
           required={required}
           disabled={disabled}
           readOnly={readOnly}
