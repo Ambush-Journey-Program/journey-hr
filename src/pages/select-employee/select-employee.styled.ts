@@ -3,12 +3,11 @@ import {
   MagnifyingGlassIcon,
   UserIcon,
   UsersIcon,
-} from '@heroicons/react/24/solid';
+} from '@heroicons/react/24/outline';
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   width: 100%;
-
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -18,7 +17,7 @@ export const Wrapper = styled.div`
   padding: 40px;
 `;
 
-export const Search = styled.div`
+export const SearchBox = styled.div`
   padding: 0.5rem;
   position: relative;
   display: flex;
@@ -26,11 +25,30 @@ export const Search = styled.div`
   gap: 1rem;
   border: 1px solid #9588a9;
   border-radius: 12px;
+  width: 385px;
+`;
+export const StyledLabel = styled.label`
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 `;
 
-export const RelativeDiv = styled.div`
-  position: relative;
+export const StyledInput = styled.input`
+  border: none;
+  font-family: 'Mundial';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 150%;
+  color: ${(props) => props.theme.color.contrasts.highContrast};
+  ::placeholder {
+    color: ${(props) => props.theme.color.contrasts.lowestContrast};
+  }
+  flex-grow: 1;
+  flex-shrink: 1;
 `;
+
+export const RelativeDiv = styled.div``;
 
 export const DisplayResultsSearch = styled.div`
   /* position: absolute; */
@@ -45,24 +63,15 @@ export const ProfileBox = styled.div`
   gap: 17px;
 `;
 
-export const StyledInput = styled.input`
-  border: none;
-  font-family: 'Mundial';
-  font-style: normal;
-  font-weight: 300;
-  font-size: 16px;
-  line-height: 150%;
-  color: ${(props) => props.theme.color.contrasts.highContrast};
-  ::placeholder {
-    color: ${(props) => props.theme.color.contrasts.lowestContrast};
+export const StyledBadge = styled(Badge)`
+  p {
+    white-space: nowrap !important;
   }
-  flex: 6;
 `;
 
-export const StyeldIcon = styled(UsersIcon)`
-  width: 1.5em;
+export const StyeldUsersIcon = styled(UsersIcon)`
+  width: 16px;
   margin-left: 1rem;
-
   color: ${(props) => props.theme.color.contrasts.lowestContrast};
 `;
 
@@ -75,8 +84,4 @@ export const StyeldUserIcon = styled(UserIcon)`
   width: 1.5em;
   margin-left: 1rem;
   color: ${(props) => props.theme.color.contrasts.lowestContrast};
-`;
-
-export const StyledBadge = styled(Badge)`
-  white-space: nowrap;
 `;
