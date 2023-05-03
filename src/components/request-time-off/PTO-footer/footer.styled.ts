@@ -80,7 +80,6 @@ export const Footer = styled.div<FooterProps>`
 
   @media ${devices.mobile} {
     width: 328px;
-    padding: 40px 20px;
     flex-direction: column;
     & .button {
       width: 100%;

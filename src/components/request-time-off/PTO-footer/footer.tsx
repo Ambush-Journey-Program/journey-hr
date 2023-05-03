@@ -4,7 +4,7 @@ import * as Styled from './footer.styled';
 import { useEffect, useState } from 'react';
 
 const buttonLabel: { [key: string]: string } = {
-  timeOff: 'Apply Time  Off',
+  timeOff: 'Apply Time Off',
   request: 'Request Manager',
   allDone: 'Go to Homepage',
 };
@@ -23,6 +23,7 @@ export function Footer({ cancel, apply, variant = 'timeOff' }: FooterProps) {
         color="secondary"
         variant="outlined"
         sizeVariant="small"
+        data-testid="cancelButton"
       >
         Cancel
       </Button>
@@ -30,6 +31,7 @@ export function Footer({ cancel, apply, variant = 'timeOff' }: FooterProps) {
         onClick={apply}
         className="fowardButon button"
         sizeVariant="small"
+        data-testid="fowardButton"
       >
         {label}
       </Button>
@@ -39,6 +41,7 @@ export function Footer({ cancel, apply, variant = 'timeOff' }: FooterProps) {
         className="confirmationButon button"
         variant="outlined"
         sizeVariant="small"
+        data-testid="confirmationButton"
       >
         Confirm Dates
       </Button>

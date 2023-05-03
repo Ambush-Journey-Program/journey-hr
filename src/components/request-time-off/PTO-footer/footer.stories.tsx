@@ -15,7 +15,7 @@ export default {
           links: [
             {
               text: 'Footer',
-              url: 'https://www.figma.com/file/MRpGlW5tom04XStEIw5th9/HH-Sort?node-id=19%3A34538&t=G5nrEvXtJ4BbktR5-1',
+              url: 'https://www.figma.com/file/DtUfFjZ3an8okk2Jc3QbCs/Fluxo-de-f%C3%A9rias?node-id=272-53804&t=J1zz2jaMslGPnWiD-0',
               description: 'This is the Figma of the Footer and its variations',
             },
           ],
