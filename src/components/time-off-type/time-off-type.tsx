@@ -6,7 +6,7 @@ export function TimeOffType() {
   return (
     <Styled.Wrapper>
       <Styled.ContainerSubtitle>
-        <Subtitle variant={'s5'} fontWeight={'medium'}>
+        <Subtitle variant="s5" fontWeight="medium">
           Apply For
         </Subtitle>
       </Styled.ContainerSubtitle>
