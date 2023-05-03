@@ -11,7 +11,7 @@ type ParagraphsStyle = {
   [key: string]: FlattenSimpleInterpolation;
 };
 
-type WeightStyle = {
+type TextWeight = {
   [key: string]: FlattenSimpleInterpolation;
 };
 
@@ -69,13 +69,18 @@ const color: ColorVariants = {
   purple: css`
     color: ${(props) => props.theme.color.brandColors.purple};
   `,
+  error: css`
+    color: ${(props) => props.theme.color.auxiliary.error};
+  `,
 };
 
-const paragraphsWeightEl: WeightStyle = {
+const paragraphsWeightEl: TextWeight = {
   hair: css`
     font-weight: 200;
   `,
-
+  semihair: css`
+    font-weight: 300;
+  `,
   light: css`
     font-weight: 400;
   `,
@@ -89,6 +94,7 @@ export const Paragraph = styled.p<
   WithRequiredProperty<ParagraphsProps, 'colorVariant'>
 >`
   font-family: ${(props) => props.theme.font.fontFamilyBody};
+  width: 100%;
   ${({ colorVariant }) => color[colorVariant]}
 
   ${({ size }) => paragraphsEl[size]}

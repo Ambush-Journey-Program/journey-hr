@@ -7,6 +7,7 @@ export function SelectInput({
   title,
   options,
   error,
+  warn,
   required,
   handleSelect,
   disabled,
@@ -29,6 +30,7 @@ export function SelectInput({
         data-testid="input-select-test"
         disabled={disabled}
         error={error}
+        warn={warn}
         onChange={handleSelectEvent}
         {...props}
       >
@@ -40,11 +42,22 @@ export function SelectInput({
         ))}
       </Styled.Select>
       {!!error && (
-        <Styled.SpanError>
+        <Styled.Span>
           <Paragraphs size="extrasmall" fontWeight="light" colorVariant="red">
             {error}
           </Paragraphs>
-        </Styled.SpanError>
+        </Styled.Span>
+      )}
+      {!!warn && (
+        <Styled.Span>
+          <Paragraphs
+            size="extrasmall"
+            fontWeight="light"
+            colorVariant="purple"
+          >
+            {warn}
+          </Paragraphs>
+        </Styled.Span>
       )}
     </Styled.Wrapper>
   );

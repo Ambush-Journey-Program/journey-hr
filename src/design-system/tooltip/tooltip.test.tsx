@@ -1,5 +1,6 @@
+import 'jest-styled-components';
 import userEvent from '@testing-library/user-event';
-import { act, render, screen } from '@/tests/renderWithProviders';
+import { render, screen } from '@/tests/renderWithProviders';
 import { Tooltip } from './tooltip';
 
 describe('<Tooltip />', () => {
@@ -9,32 +10,19 @@ describe('<Tooltip />', () => {
 
     const tooltipEL = screen.getByText('Hover me');
     expect(screen.queryByText(text)).not.toBeInTheDocument();
-
-    act(() => {
-      userEvent.hover(tooltipEL);
-    })
-    expect(await screen.findByText(text)).toBeInTheDocument();
+    await userEvent.hover(tooltipEL);
+    expect(screen.getByText(text)).toBeInTheDocument();
   });
 
   it('should be not visible when hovering out the child element', async () => {
     const text = 'Hi';
     render(<Tooltip text={text}>Hover me</Tooltip>);
 
+    const tooltipEL = screen.getByText('Hover me');
     expect(screen.queryByText(text)).not.toBeInTheDocument();
-
-    act(() => {
-      userEvent.hover(screen.getByText('Hover me'));
-    });
-
-    expect(await screen.findByText(text)).toBeInTheDocument();
-
-    act(() => {
-      userEvent.unhover(screen.getByText('Hover me'));
-    });
-    await new Promise((resolve, reject) => {
-      window.setTimeout(resolve, 0);
-    })
-
+    await userEvent.hover(tooltipEL);
+    expect(screen.getByText(text)).toBeInTheDocument();
+    await userEvent.unhover(tooltipEL);
     expect(screen.queryByText(text)).not.toBeInTheDocument();
   });
 });

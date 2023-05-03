@@ -24,7 +24,7 @@ export function Tooltip({
       onMouseLeave={changeVisible}
     >
       {children}
-      {visible && (
+      {visible && text && (
         <Styled.TooltipBox
           data-testid="popUp"
           variantPosition={variantPosition}

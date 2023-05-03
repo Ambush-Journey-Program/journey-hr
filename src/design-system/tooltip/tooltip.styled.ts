@@ -1,7 +1,6 @@
 import styled, {
   css,
   FlattenInterpolation,
-  FlattenSimpleInterpolation,
   ThemeProps,
 } from 'styled-components';
 import { PositionsType } from './types';

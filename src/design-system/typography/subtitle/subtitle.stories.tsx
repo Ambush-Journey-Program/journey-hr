@@ -18,4 +18,5 @@ export const SubtitleStory = SubtitleTemplate.bind({});
 SubtitleStory.args = {
   children: 'Label',
   variant: 's1',
+  fontWeight: 'medium',
 };

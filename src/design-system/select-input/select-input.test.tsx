@@ -1,4 +1,5 @@
-import { render, screen } from '@/tests/renderWithProviders';
+import { describe, expect } from 'vitest';
+import { render, screen } from '../../tests/renderWithProviders';
 import { SelectInput } from './select-input';
 
 const title = 'My title';

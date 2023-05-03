@@ -27,6 +27,6 @@ export const Image = styled.img<AvatarProps>`
   ${({ sizeVariant }) => variants[sizeVariant]}
 
   @media ${devices.mobile} {
-    ${variants['small']}
+    ${variants.small}
   }
 `;

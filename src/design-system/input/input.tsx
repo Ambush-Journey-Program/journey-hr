@@ -10,7 +10,6 @@ export function Input({
   disabled,
   readOnly,
   error,
-  optional,
   type = 'text',
   name,
   onTextChange = () => {},
@@ -21,32 +20,31 @@ export function Input({
     setTouched(true);
   }
   return (
-    <div>
-      <Styled.Wrapper error={error}>
-        <Styled.Label htmlFor={name} optional={optional}>
-          {label} <span>Optional</span>
-        </Styled.Label>
-        <Styled.InputContainer
-          error={error}
+    <Styled.Wrapper error={error}>
+      <Styled.Label htmlFor={name}>
+        {label} {required && <span>Required</span>}
+      </Styled.Label>
+      <Styled.InputContainer
+        error={error}
+        disabled={disabled}
+        touched={touched}
+      >
+        <input
+          type={type}
+          placeholder="Label"
+          required={required}
           disabled={disabled}
-          touched={touched}
-        >
-          <input
-            type={type}
-            placeholder="Label"
-            required={required}
-            disabled={disabled}
-            readOnly={readOnly}
-            value={value}
-            onChange={onInputChange}
-          />
-        </Styled.InputContainer>
-        {!!error && (
-          <Paragraphs size="extrasmall" fontWeight="light" colorVariant="red">
-            {error}
-          </Paragraphs>
-        )}
-      </Styled.Wrapper>
-    </div>
+          readOnly={readOnly}
+          value={value}
+          onChange={onInputChange}
+          data-testid="input-test"
+        />
+      </Styled.InputContainer>
+      {!!error && (
+        <Paragraphs size="extrasmall" fontWeight="light" colorVariant="red">
+          {error}
+        </Paragraphs>
+      )}
+    </Styled.Wrapper>
   );
 }

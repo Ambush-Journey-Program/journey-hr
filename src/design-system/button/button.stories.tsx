@@ -1,6 +1,6 @@
 import { Meta, Story } from '@storybook/react';
 import { Button } from './button';
-import { IButtonProps } from './types';
+import { ButtonProps } from './types';
 
 export default {
   component: Button,
@@ -14,7 +14,8 @@ export default {
           links: [
             {
               text: 'Buttons ',
-              url: 'https://www.figma.com/file/yOF5DjTKrtqxLiP7A5DsOy/Ambush-Atoms?node-id=1039%3A469&t=i4ddngmKFF26EqjW-1',
+              url:
+                'https://www.figma.com/file/yOF5DjTKrtqxLiP7A5DsOy/Ambush-Atoms?node-id=1039%3A469&t=i4ddngmKFF26EqjW-1',
               description: 'This is the Figma of the Button and its variations',
             },
           ],
@@ -24,7 +25,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<IButtonProps> = (args) => {
+const Template: Story<ButtonProps> = (args) => {
   return <Button {...args} />;
 };
 
@@ -32,7 +33,7 @@ export const ButtonStory = Template.bind({});
 ButtonStory.args = {
   children: 'Button',
   disabled: false,
-  color: 'defaultColor',
-  sizeVariant: 'default',
-  variant: 'defaultType',
+  color: 'primary',
+  sizeVariant: 'medium',
+  variant: 'default',
 };

@@ -1,15 +1,8 @@
 import { useState } from 'react';
-import {
-  Subtitle,
-  Title,
-  Button,
-  CardWrapper,
-  Input,
-  SelectInput,
-} from '@ambush/ui';
-
+import { Button, CardWrapper, Input, SelectInput } from '@ambush/ui';
 import { exampleAre, exampleOpportunity, shiftOptions } from './constants';
 import * as Styled from './interview-availability.styled';
+import { PageHeader } from '../page-header';
 
 export function InterviewAvailability() {
   const [inputData, setInputData] = useState('');
@@ -37,14 +30,10 @@ export function InterviewAvailability() {
   return (
     <CardWrapper>
       <Styled.InterviewAvailability>
-        <Styled.ContainerTitle>
-          <Title variant="h1">Technical Interview Availability</Title>
-        </Styled.ContainerTitle>
-        <Styled.ContainerTitle>
-          <Subtitle variant="s4">
-            Schedule a technical interview for a candidate.
-          </Subtitle>
-        </Styled.ContainerTitle>
+        <PageHeader
+          title="Technical Interview Availability"
+          subtitle="Schedule a technical interview for a candidate."
+        />
         <div>
           <Styled.Form
             data-testid="interview-form-test"
@@ -64,10 +53,11 @@ export function InterviewAvailability() {
               options={exampleAre}
               required
               value={valuesInput.area}
-              handleSelect={(value) =>
-                setValuesInput({ ...valuesInput, area: value })
-              }
+              handleSelect={(value) => {
+                setValuesInput({ ...valuesInput, area: value });
+              }}
             />
+
             <SelectInput
               name="shift"
               title={'Shift:'}
@@ -75,9 +65,9 @@ export function InterviewAvailability() {
               options={shiftOptions}
               required
               value={valuesInput.shift}
-              handleSelect={(value) =>
-                setValuesInput({ ...valuesInput, shift: value })
-              }
+              handleSelect={(value) => {
+                setValuesInput({ ...valuesInput, shift: value });
+              }}
             />
             <SelectInput
               name="opportunity"
@@ -86,12 +76,12 @@ export function InterviewAvailability() {
               options={exampleOpportunity}
               required
               value={valuesInput.opportunity}
-              handleSelect={(value) =>
-                setValuesInput({ ...valuesInput, opportunity: value })
-              }
+              handleSelect={(value) => {
+                setValuesInput({ ...valuesInput, opportunity: value });
+              }}
             />
             <Styled.ContainerBtn>
-              <Button sizeVariant={'default'} disabled={!isButtonEnabled}>
+              <Button sizeVariant="medium" disabled={!isButtonEnabled}>
                 Search
               </Button>
             </Styled.ContainerBtn>

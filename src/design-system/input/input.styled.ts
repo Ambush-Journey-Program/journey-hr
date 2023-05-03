@@ -25,9 +25,6 @@ const errorDisplay = css`
   border: ${(props) => `1px solid ${props.theme.color.auxiliary.error}`};
 `;
 
-const spanOptional = css`
-  display: block;
-`;
 export const Wrapper = styled.div<StyleWrapper>`
   ${({ error }) => error && spanError}
 `;
@@ -43,8 +40,7 @@ export const Label = styled.label<StyledLabelProps>`
   color: ${(props) => props.theme.color.contrasts.mediumContrast};
 
   span {
-    display: none;
-    ${({ optional }) => optional && spanOptional}
+    color: ${(props) => props.theme.color.contrasts.lowContrast};
   }
 `;
 
@@ -76,6 +72,7 @@ export const InputContainer = styled.div<StyledInputProps>`
       ${(props) => props.theme.color.contrasts.mediumContrast};
     border: 1px solid ${(props) => props.theme.color.brandColors.purple};
   }
+
   & input {
     width: calc(100% - 1rem);
     font-size: 1rem;
@@ -85,13 +82,20 @@ export const InputContainer = styled.div<StyledInputProps>`
       props.touched
         ? props.theme.color.contrasts.highContrast
         : props.theme.color.contrasts.lowestContrast};
-    background-image: url('src/design-system/input/assets/calendar-day.svg');
+
     background-position: calc(100% - 0.625rem) center;
     background-size: 1.25em;
     background-repeat: no-repeat;
+    &::placeholder {
+      color: ${(props) => props.theme.color.contrasts.lowestContrast};
+    }
   }
   & input::-webkit-calendar-picker-indicator {
     background: transparent;
     background-position: calc(100% - 0.625rem) center;
+  }
+
+  & input[type='date'] {
+    background-image: url('src/design-system/input/assets/calendar-day.svg');
   }
 `;

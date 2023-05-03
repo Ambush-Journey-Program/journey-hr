@@ -1,3 +1,4 @@
+import { describe, expect } from 'vitest';
 import { render, screen } from '@/tests/renderWithProviders';
 import { InterviewTimes } from './interviewTimes';
 import { InterviewOption } from './types';
@@ -22,18 +23,14 @@ const interviews: InterviewOption[] = [
 
 describe('<ScheduleCard />', () => {
   it('renders the InterviewTimes', () => {
-    render(
-      <InterviewTimes onClick={jest.fn()} interviewOptions={interviews} />,
-    );
+    render(<InterviewTimes onClick={vi.fn()} interviewOptions={interviews} />);
 
     const InterviewTimesEl = screen.getByTestId('InterviewTimes');
     expect(InterviewTimesEl).toBeInTheDocument();
   });
 
   it('renders the ScheduleCards and validate interview list quantity', () => {
-    render(
-      <InterviewTimes onClick={jest.fn()} interviewOptions={interviews} />,
-    );
+    render(<InterviewTimes onClick={vi.fn()} interviewOptions={interviews} />);
 
     const listItems = screen.getAllByRole('listitem');
     expect(listItems).toHaveLength(2);

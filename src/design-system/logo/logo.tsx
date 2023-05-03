@@ -2,8 +2,7 @@ import * as Styled from './logo.styled';
 import { LogoProps } from './types';
 import { Logos } from './logosrc';
 
-export function Logo({ colorVariant = 'red', variant = 'symbol' }: LogoProps) {
-  // @ts-ignore
+export function Logo({ colorVariant = 'red', variant }: LogoProps) {
   const logoVariant = variant && Logos[variant];
 
   return (

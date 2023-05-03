@@ -1,6 +1,5 @@
-import { render } from '@/tests/renderWithProviders';
+import { render, screen } from '@/tests/renderWithProviders';
 import { InterviewAvailability } from './interview-availability';
-import { screen } from '@testing-library/dom';
 
 describe('<InterviewAvailability>', () => {
   it('It should have a title', () => {

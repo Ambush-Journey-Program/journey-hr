@@ -8,7 +8,7 @@ export default {
   component: Avatar,
   title: 'UI/Avatar',
   parameters: {
-    src: 'https://placehold.co/600x600',
+    src: 'src/design-system/avatar/User-Photo.png',
     relatedLinks: {
       sections: [
         {
