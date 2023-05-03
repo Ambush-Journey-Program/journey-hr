@@ -3,11 +3,7 @@ import { SelectPeriod } from './select-period';
 
 export default {
   component: SelectPeriod,
-  title: 'UI/SelectPeriod',
-  parameters: {
-    isLoading: false,
-    label: 'SelectPeriod text',
-  },
+  title: 'Components/SelectPeriod',
 } as Meta;
 
 const Template: Story = (args) => {

@@ -1,7 +1,23 @@
 import styled, { css } from 'styled-components';
 
 import { StyledLabelProps, StyledInputProps, StyleWrapper } from './types';
+import { selectPeriodProps } from '@/components/select-period/types';
 
+const VariantInput = css`
+  span {
+    display: block;
+  }
+  & input {
+    background-position: initial;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 25px;
+  }
+  /* & input::-webkit-calendar-picker-indicator {
+    background: transparent;
+    background-position: initial;
+  } */
+`;
 const disabledInput = css`
   background-color: ${(props) => props.theme.color.brandColors.light};
 `;
@@ -34,7 +50,6 @@ const errorDisplay = css`
 `;
 const warnDisplay = css`
   color: ${(props) => props.theme.color.auxiliary.whiteDarkMode};
-  background-color: ${(props) => props.theme.color.contrasts.lightContrast};
 `;
 
 export const Wrapper = styled.div<StyleWrapper>`
@@ -101,6 +116,8 @@ export const InputContainer = styled.div<StyledInputProps>`
     background-size: 1.25em;
     background-repeat: no-repeat;
     &::placeholder {
+      padding-left: 20px;
+      margin-left: 20px;
       color: ${(props) => props.theme.color.contrasts.lowestContrast};
     }
   }
@@ -112,4 +129,17 @@ export const InputContainer = styled.div<StyledInputProps>`
   & input[type='date'] {
     background-image: url('src/design-system/input/assets/calendar-day.svg');
   }
+  span {
+    display: none;
+  }
+
+  ${({ variant }) => variant && VariantInput};
+`;
+export const Span = styled.span<selectPeriodProps>`
+  display: block;
+  margin-right: 18px;
+  line-height: 1.125rem;
+  width: 1.125rem;
+  height: 1.125rem;
+  color: ${(props) => props.theme.color.brandColors.red};
 `;

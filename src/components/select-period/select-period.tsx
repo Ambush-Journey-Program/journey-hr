@@ -74,15 +74,17 @@ export function SelectPeriod({ error = false }: selectPeriodProps) {
     const isStartBeOnFuture = isStartDateOnFuture(parsedStartDate);
 
     if (!isStartComeFirst) {
-      setEndDateError("It's necessary change the end day or the end day");
+      setEndDateError('Invalid work day.');
       error = true;
     }
     if (!isDay15DaysOnFuture) {
-      setDateWarn("It's necessary to request 15 days in advance");
+      setDateWarn(
+        'Settings of your Organization mandate you to request this Timeoff at least 14 days before the Date of timeoff request.',
+      );
       error = true;
     }
     if (!isStartBeOnFuture) {
-      setStartDateError("It's impossible start date on past");
+      setStartDateError('Invalid work day.');
       error = true;
     }
     error = false;
@@ -90,7 +92,7 @@ export function SelectPeriod({ error = false }: selectPeriodProps) {
 
   return (
     <Styled.InputsWrapper>
-      <Styled.InputStyle
+      <Input
         label="Start Date"
         type="date"
         onTextChange={setStartDate}
@@ -100,18 +102,14 @@ export function SelectPeriod({ error = false }: selectPeriodProps) {
         placeholder="Select Time Off Period"
       />
       <Input
-        label={'End Date'}
+        variant
+        label="End Date"
         type="date"
         onTextChange={setEndDate}
         value={endDate}
         error={endDateError}
         placeholder="Select Time Off Period"
-      ></Input>
-
-      <Styled.Span error={error}>
-        <Icons.ExclamationCircleIcon className="alert" data-testid="Alert" />
-      </Styled.Span>
-
+      />
       <button type="submit" className="btn btn-primary me-1">
         Submit
       </button>

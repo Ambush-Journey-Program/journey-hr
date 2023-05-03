@@ -2,8 +2,10 @@ import { ChangeEvent, useState } from 'react';
 import { Paragraphs } from '../typography/paragraphs/paragraphs';
 import * as Styled from './input.styled';
 import { IInputProps } from './types';
+import * as Icons from '@heroicons/react/24/outline';
 
 export function Input({
+  variant,
   label,
   required,
   value,
@@ -29,6 +31,7 @@ export function Input({
         {label} {required && <span>Required</span>}
       </Styled.Label>
       <Styled.InputContainer
+        variant={variant}
         error={error}
         warn={warn}
         disabled={disabled}
@@ -44,6 +47,14 @@ export function Input({
           onChange={onInputChange}
           data-testid="input-test"
         />
+        {!!error && (
+          <Styled.Span>
+            <Icons.ExclamationCircleIcon
+              className="alert"
+              data-testid="Alert"
+            />
+          </Styled.Span>
+        )}
       </Styled.InputContainer>
       {!!error && (
         <Paragraphs size="extrasmall" fontWeight="light" colorVariant="red">

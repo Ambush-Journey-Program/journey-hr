@@ -1,7 +1,6 @@
 import { devices } from '@/styles/devices';
 import styled from 'styled-components';
 import { selectPeriodProps } from './types';
-import { Input } from '@/design-system';
 
 export const InputsWrapper = styled.div`
   display: flex;
@@ -24,5 +23,3 @@ export const Span = styled.span<selectPeriodProps>`
   height: 1.125rem;
   color: ${(props) => props.theme.color.brandColors.red};
 `;
-
-export const InputStyle = styled(Input)``;
