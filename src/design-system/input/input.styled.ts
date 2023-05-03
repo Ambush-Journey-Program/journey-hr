@@ -1,30 +1,13 @@
 import styled, { css } from 'styled-components';
-
 import { StyledLabelProps, StyledInputProps, StyleWrapper } from './types';
 import { selectPeriodProps } from '@/components/select-period/types';
 
-const VariantInput = css`
-  span {
-    display: block;
-  }
-  & input {
-    background-position: initial;
-    display: flex;
-    justify-content: flex-start;
-    padding-left: 25px;
-  }
-  /* & input::-webkit-calendar-picker-indicator {
-    background: transparent;
-    background-position: initial;
-  } */
-`;
 const disabledInput = css`
   background-color: ${(props) => props.theme.color.brandColors.light};
 `;
 
 const spanError = css`
   display: block;
-  margin-top: 4px;
 
   & input::placeholder {
     color: ${(props) => props.theme.color.auxiliary.error};
@@ -40,7 +23,7 @@ const warnError = css`
   margin-top: 4px;
 
   & input::placeholder {
-    color: ${(props) => props.theme.color.auxiliary.whiteDarkMode};
+    color: ${(props) => props.theme.color.contrasts.lowestContrast};
   }
 `;
 
@@ -103,6 +86,9 @@ export const InputContainer = styled.div<StyledInputProps>`
   }
 
   & input {
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 24px;
     width: calc(100% - 1rem);
     font-size: 1rem;
     border: none;
@@ -112,28 +98,28 @@ export const InputContainer = styled.div<StyledInputProps>`
         ? props.theme.color.contrasts.highContrast
         : props.theme.color.contrasts.lowestContrast};
 
-    background-position: calc(100% - 0.625rem) center;
+    background-position: initial;
     background-size: 1.25em;
     background-repeat: no-repeat;
     &::placeholder {
-      padding-left: 20px;
-      margin-left: 20px;
       color: ${(props) => props.theme.color.contrasts.lowestContrast};
     }
   }
   & input::-webkit-calendar-picker-indicator {
     background: transparent;
-    background-position: calc(100% - 0.625rem) center;
+    background-position: initial;
   }
 
   & input[type='date'] {
     background-image: url('src/design-system/input/assets/calendar-day.svg');
   }
-  span {
-    display: none;
-  }
 
-  ${({ variant }) => variant && VariantInput};
+  span {
+    display: block;
+  }
+  /* input:valid + span::after {
+    content: '✓';
+  } */
 `;
 export const Span = styled.span<selectPeriodProps>`
   display: block;

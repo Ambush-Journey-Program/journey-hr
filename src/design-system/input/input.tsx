@@ -5,7 +5,6 @@ import { IInputProps } from './types';
 import * as Icons from '@heroicons/react/24/outline';
 
 export function Input({
-  variant,
   label,
   required,
   value,
@@ -31,7 +30,6 @@ export function Input({
         {label} {required && <span>Required</span>}
       </Styled.Label>
       <Styled.InputContainer
-        variant={variant}
         error={error}
         warn={warn}
         disabled={disabled}

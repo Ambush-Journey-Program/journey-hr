@@ -1,7 +1,6 @@
 import { Input } from '@ambush/ui';
 import * as Styled from './select-period.styled';
 import { useEffect, useState } from 'react';
-import * as Icons from '@heroicons/react/24/outline';
 import { selectPeriodProps } from './types';
 
 const isFirstDateAfterSecondDate = (firstDate: Date, secondDate: Date) => {
@@ -49,6 +48,21 @@ export function SelectPeriod({ error = false }: selectPeriodProps) {
     }
 
     const date = new Date(parsedYear, indexedMonth, parsedDay);
+    const monthNames = [
+      'Jan',
+      'Feb',
+      'Mar',
+      'Apr',
+      'May',
+      'June',
+      'July',
+      'Aug',
+      'Sept',
+      'Oct',
+      'Nov',
+      'Dec',
+    ];
+    console.log(`${monthNames[indexedMonth - 1]} ${parsedDay}, ${year} `);
     return date;
   }
 
@@ -73,6 +87,7 @@ export function SelectPeriod({ error = false }: selectPeriodProps) {
     const isDay15DaysOnFuture = isDate15DaysFromNow(parsedStartDate);
     const isStartBeOnFuture = isStartDateOnFuture(parsedStartDate);
 
+    console.log(parsedEndDate);
     if (!isStartComeFirst) {
       setEndDateError('Invalid work day.');
       error = true;
@@ -102,7 +117,6 @@ export function SelectPeriod({ error = false }: selectPeriodProps) {
         placeholder="Select Time Off Period"
       />
       <Input
-        variant
         label="End Date"
         type="date"
         onTextChange={setEndDate}
