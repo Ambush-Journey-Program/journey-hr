@@ -64,10 +64,8 @@ export const Footer = styled.div<FooterProps>`
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
-  box-sizing: content-box;
   padding: 40px;
   width: 100%;
-  min-width: 700px;
   gap: 8px;
   border-top: 1px solid;
   border-color: ${(props) => props.theme.color.contrasts.lightContrast};
@@ -75,11 +73,9 @@ export const Footer = styled.div<FooterProps>`
 
   @media ${devices.tablet} {
     padding: 40px 20px;
-    min-width: 400px;
   }
 
   @media ${devices.mobile} {
-    width: 328px;
     flex-direction: column;
     & .button {
       width: 100%;
