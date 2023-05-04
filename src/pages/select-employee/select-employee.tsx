@@ -37,6 +37,7 @@ export function SelectEmployee() {
             <Styled.StyeldUsersIcon />
 
             <Styled.StyledInput
+              data-testid="inputTest"
               title="search for employee"
               aria-label="Type employee name"
               onChange={filterBySearch}
@@ -50,7 +51,7 @@ export function SelectEmployee() {
               icon="MagnifyingGlassIcon"
             />
           </Styled.SearchBox>
-          <Styled.Span>
+          <Styled.Span data-testid="errorTest">
             {!!error && (
               <Paragraphs
                 size="extrasmall"
