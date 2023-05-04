@@ -7,9 +7,8 @@ import { ChangeEvent, useState } from 'react';
 
 export function SelectEmployee() {
   const [filteredList, setFilteredList] = useState(employees);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState('');
   function filterBySearch(e: ChangeEvent<HTMLInputElement>) {
-    e.preventDefault();
     let updatedList = [...employees];
 
     updatedList = updatedList.filter((employee) => {
@@ -51,12 +50,17 @@ export function SelectEmployee() {
               icon="MagnifyingGlassIcon"
             />
           </Styled.SearchBox>
-
-          {!!error && (
-            <Paragraphs size="extrasmall" fontWeight="light" colorVariant="red">
-              {error}
-            </Paragraphs>
-          )}
+          <Styled.Span>
+            {!!error && (
+              <Paragraphs
+                size="extrasmall"
+                fontWeight="light"
+                colorVariant="red"
+              >
+                {error}
+              </Paragraphs>
+            )}
+          </Styled.Span>
         </Styled.StyledLabel>
       </Styled.RelativeDiv>
 

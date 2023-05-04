@@ -9,6 +9,12 @@ import { SelectEmployeeProps } from './types';
 
 const errorDisplay = css`
   border-color: ${(props) => props.theme.color.auxiliary.error};
+  box-shadow: 0px 0px 0px 4px rgba(217, 73, 73, 0.2);
+`;
+
+export const Span = styled.span<SelectEmployeeProps>`
+  display: ${(props) => props.error ?? 'block'};
+  max-width: 390px;
 `;
 
 export const Wrapper = styled.div`
