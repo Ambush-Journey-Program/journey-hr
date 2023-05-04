@@ -1,27 +1,39 @@
 import { Button, Paragraphs, Title } from '@/design-system';
 import { Wrapper } from './select-employee.styled';
 import * as Styled from './select-employee.styled';
-import { employees } from './mocking';
 import { UserIcon } from '@heroicons/react/24/outline';
 import { ChangeEvent, useState } from 'react';
+import { SelectEmployeeProps } from './types';
 
-export function SelectEmployee() {
-  const [filteredList, setFilteredList] = useState(employees);
+export function SelectEmployee({
+  currentUser = 'Vinicius Rodrigues',
+  employees,
+}: SelectEmployeeProps) {
+  const me = employees.find((employee) => employee.name === currentUser);
+  const filteredEmployees = employees.filter(
+    (employee) => employee.name !== currentUser,
+  );
+  const employeesList = me
+    ? [{ ...me, name: me.name + ' (Me)' }, ...filteredEmployees]
+    : filteredEmployees;
+
+  const [filteredList, setFilteredList] = useState(employeesList);
   const [error, setError] = useState('');
   function filterBySearch(e: ChangeEvent<HTMLInputElement>) {
-    let updatedList = [...employees];
-
-    updatedList = updatedList.filter((employee) => {
+    const updatedList = employeesList.filter((employee) => {
       return employee.name.toLowerCase().includes(e.target.value.toLowerCase());
     });
 
     setFilteredList(updatedList);
 
-    if (filteredList.length === 0) {
+    if (updatedList.length === 0) {
       setError(
         "We couldn't find anyone with this name. Check your spelling or try a different name.",
       );
+      return;
     }
+
+    setError('');
   }
 
   return (
@@ -44,12 +56,6 @@ export function SelectEmployee() {
               type="text"
               placeholder="Type a name"
             ></Styled.StyledInput>
-            <Button
-              color="alternative"
-              sizeVariant="large"
-              variant="ghost"
-              icon="MagnifyingGlassIcon"
-            />
           </Styled.SearchBox>
           <Styled.Span data-testid="errorTest">
             {!!error && (

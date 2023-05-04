@@ -1,5 +1,7 @@
 export type SelectEmployeeProps = {
   error?: string | null;
+  currentUser?: string;
+  employees: Employees;
 };
 
 export type Employee = {

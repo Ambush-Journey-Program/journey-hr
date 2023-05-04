@@ -11,4 +11,5 @@ export const employees: Employees = [
   { id: '8', name: 'Renata Schneider', team: 'People Team' },
   { id: '9', name: 'Thomas S.', team: 'People Team' },
   { id: '10', name: 'Vinicius Rodrigues', team: 'Design Team' },
+  { id: '11', name: 'Daniela Petry', team: 'People Team' },
 ];
