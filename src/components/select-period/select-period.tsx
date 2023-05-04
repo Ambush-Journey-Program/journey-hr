@@ -124,9 +124,6 @@ export function SelectPeriod({ error = false }: selectPeriodProps) {
         error={endDateError}
         placeholder="Select Time Off Period"
       />
-      <button type="submit" className="btn btn-primary me-1">
-        Submit
-      </button>
     </Styled.InputsWrapper>
   );
 }

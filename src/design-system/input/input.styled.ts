@@ -29,10 +29,11 @@ const warnError = css`
 
 const errorDisplay = css`
   color: ${(props) => props.theme.color.auxiliary.error};
+  box-shadow: 0px 0px 0px 4px rgba(217, 73, 73, 0.2);
   border: ${(props) => `1px solid ${props.theme.color.auxiliary.error}`};
 `;
 const warnDisplay = css`
-  color: ${(props) => props.theme.color.auxiliary.whiteDarkMode};
+  color: ${(props) => props.theme.color.auxiliary.error};
 `;
 
 export const Wrapper = styled.div<StyleWrapper>`
@@ -73,7 +74,7 @@ export const InputContainer = styled.div<StyledInputProps>`
   border: 1px solid ${(props) => props.theme.color.contrasts.lowestContrast};
   border-radius: 0.75rem;
   padding-left: 1.25rem;
-  margin-top: 0.25rem;
+  margin: 0.25rem 0px 4px 0px;
   ${({ error }) => error && errorDisplay}
   ${({ warn }) => warn && warnDisplay}
   ${({ disabled }) => disabled && disabledInput};
@@ -86,9 +87,9 @@ export const InputContainer = styled.div<StyledInputProps>`
   }
 
   & input {
+    position: relative;
     display: flex;
     justify-content: flex-start;
-    padding-left: 24px;
     width: calc(100% - 1rem);
     font-size: 1rem;
     border: none;
@@ -97,25 +98,30 @@ export const InputContainer = styled.div<StyledInputProps>`
       props.touched
         ? props.theme.color.contrasts.highContrast
         : props.theme.color.contrasts.lowestContrast};
-
-    background-position: initial;
-    background-size: 1.25em;
-    background-repeat: no-repeat;
     &::placeholder {
       color: ${(props) => props.theme.color.contrasts.lowestContrast};
     }
   }
-  & input::-webkit-calendar-picker-indicator {
-    background: transparent;
-    background-position: initial;
-  }
 
   & input[type='date'] {
-    background-image: url('src/design-system/input/assets/calendar-day.svg');
   }
 
   span {
     display: block;
+  }
+
+  & input::-webkit-calendar-picker-indicator {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    cursor: pointer;
+    background: red;
+    border: 5px red solid;
   }
   /* input:valid + span::after {
     content: '✓';
@@ -128,4 +134,11 @@ export const Span = styled.span<selectPeriodProps>`
   width: 1.125rem;
   height: 1.125rem;
   color: ${(props) => props.theme.color.brandColors.red};
+`;
+
+export const calendarIcon = styled.div`
+  margin-right: 20px;
+  width: 1.25rem;
+  height: 1.25rem;
+  color: ${(props) => props.theme.color.contrasts.lowestContrast};
 `;

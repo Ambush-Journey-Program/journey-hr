@@ -35,6 +35,9 @@ export function Input({
         disabled={disabled}
         touched={touched}
       >
+        <Styled.calendarIcon>
+          <Icons.CalendarDaysIcon className="alert" data-testid="Alert" />
+        </Styled.calendarIcon>
         <input
           type={type}
           placeholder={placeholder}
