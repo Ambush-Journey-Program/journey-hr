@@ -9,23 +9,23 @@ import { SelectEmployeeProps } from './types';
 
 const errorDisplay = css`
   border-color: ${(props) => props.theme.color.auxiliary.error};
-  box-shadow: 0px 0px 0px 4px rgba(217, 73, 73, 0.2);
+  box-shadow: 0 0 0 0.25rem rgba(217, 73, 73, 0.2);
 `;
 
 export const Span = styled.span<SelectEmployeeProps>`
   display: ${(props) => props.error ?? 'block'};
-  max-width: 390px;
+  max-width: 24.375rem;
 `;
 
 export const Wrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 2.5rem;
   background-color: ${(props) => props.theme.color.auxiliary.white};
   box-shadow: ${(props) => props.theme.shadows.cream};
-  border-radius: 20px;
-  padding: 40px;
+  border-radius: 1.25rem;
+  padding: 2.5rem;
 `;
 
 export const SearchBox = styled.div<SelectEmployeeProps>`
@@ -34,15 +34,15 @@ export const SearchBox = styled.div<SelectEmployeeProps>`
   display: flex;
   align-items: center;
   gap: 1rem;
-  border: 1px solid #9588a9;
+  border: 0.063rem solid ${(props) => props.theme.color.contrasts.lowContrast};
   ${({ error }) => error && errorDisplay}
-  border-radius: 12px;
-  max-width: 385px;
+  border-radius: 0.75rem;
+  max-width: 24.063rem;
 `;
 export const StyledLabel = styled.label`
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 0.25rem;
 `;
 
 export const StyledInput = styled.input`
@@ -50,7 +50,7 @@ export const StyledInput = styled.input`
   font-family: 'Mundial';
   font-style: normal;
   font-weight: 300;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 150%;
   color: ${(props) => props.theme.color.contrasts.highContrast};
   ::placeholder {
@@ -69,13 +69,13 @@ export const DisplayResultsSearch = styled.div`
 export const ProfileBox = styled.div`
   display: flex;
   align-items: center;
-  gap: 17px;
+  gap: 1.063rem;
 `;
 
 export const StyledBadge = styled(Badge)``;
 
 export const StyeldUsersIcon = styled(UsersIcon)`
-  width: 16px;
+  width: 1rem;
   margin-left: 1rem;
   color: ${(props) => props.theme.color.contrasts.lowestContrast};
 `;
