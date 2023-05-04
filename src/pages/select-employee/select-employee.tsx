@@ -26,8 +26,8 @@ export function SelectEmployee() {
 
   return (
     <Wrapper>
-      <Title variant={'h5'}>Select Employee</Title>
-      <Styled.RelativeDiv>
+      <Title variant="h5">Select Employee</Title>
+      <Styled.mainDiv>
         <Styled.StyledLabel htmlFor="search">
           <Paragraphs size="small" fontWeight="semihair">
             Search Employee
@@ -63,7 +63,7 @@ export function SelectEmployee() {
             )}
           </Styled.Span>
         </Styled.StyledLabel>
-      </Styled.RelativeDiv>
+      </Styled.mainDiv>
 
       {filteredList.map((employee, index) => {
         return (

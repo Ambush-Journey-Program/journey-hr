@@ -56,14 +56,11 @@ export const StyledInput = styled.input`
   ::placeholder {
     color: ${(props) => props.theme.color.contrasts.lowestContrast};
   }
-  flex-grow: 1;
-  flex-shrink: 1;
 `;
 
-export const RelativeDiv = styled.div``;
+export const mainDiv = styled.div``;
 
 export const DisplayResultsSearch = styled.div`
-  /* position: absolute; */
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -75,11 +72,7 @@ export const ProfileBox = styled.div`
   gap: 17px;
 `;
 
-export const StyledBadge = styled(Badge)`
-  p {
-    white-space: nowrap !important;
-  }
-`;
+export const StyledBadge = styled(Badge)``;
 
 export const StyeldUsersIcon = styled(UsersIcon)`
   width: 16px;
