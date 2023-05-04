@@ -29,4 +29,13 @@ describe('<SelectEmployee />', () => {
 
     expect(nameTest).toBeInTheDocument();
   });
+
+  it('renders currentUser', async () => {
+    render(
+      <SelectEmployee employees={employees} currentUser="Renata Schneider" />,
+    );
+    const nameTest = screen.getByText('Renata Schneider (Me)');
+
+    expect(nameTest).toBeInTheDocument();
+  });
 });

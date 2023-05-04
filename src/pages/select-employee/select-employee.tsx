@@ -74,7 +74,7 @@ export function SelectEmployee({
           <Styled.DisplayResultsSearch key={index}>
             <Styled.employeeInfo>
               <Styled.StyeldUserIcon />
-              <Styled.ProfileBox>
+              <Styled.ProfileBox data-testid="listTest">
                 <Paragraphs size="medium" fontWeight="semibold">
                   {employee.name}
                 </Paragraphs>
