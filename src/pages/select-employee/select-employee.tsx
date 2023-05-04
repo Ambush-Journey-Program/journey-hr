@@ -1,7 +1,6 @@
 import { Button, Paragraphs, Title } from '@/design-system';
 import { Wrapper } from './select-employee.styled';
 import * as Styled from './select-employee.styled';
-import { UserIcon } from '@heroicons/react/24/outline';
 import { ChangeEvent, useState } from 'react';
 import { SelectEmployeeProps } from './types';
 
@@ -47,7 +46,6 @@ export function SelectEmployee({
 
           <Styled.SearchBox error={error}>
             <Styled.StyeldUsersIcon />
-
             <Styled.StyledInput
               data-testid="inputTest"
               title="search for employee"
@@ -74,13 +72,15 @@ export function SelectEmployee({
       {filteredList.map((employee, index) => {
         return (
           <Styled.DisplayResultsSearch key={index}>
-            <Styled.ProfileBox>
-              <UserIcon width={'30px'} />
-              <Paragraphs size="medium" fontWeight="semibold">
-                {employee.name}
-              </Paragraphs>
-              <Styled.StyledBadge text={employee.team} />
-            </Styled.ProfileBox>
+            <Styled.employeeInfo>
+              <Styled.StyeldUserIcon />
+              <Styled.ProfileBox>
+                <Paragraphs size="medium" fontWeight="semibold">
+                  {employee.name}
+                </Paragraphs>
+                <Styled.StyledBadge text={employee.team} />
+              </Styled.ProfileBox>
+            </Styled.employeeInfo>
             <Button variant="ghost" color="primary" icon="ChevronRightIcon" />
           </Styled.DisplayResultsSearch>
         );

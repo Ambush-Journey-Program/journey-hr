@@ -6,6 +6,7 @@ import {
 } from '@heroicons/react/24/outline';
 import styled, { css } from 'styled-components';
 import { SelectEmployeeProps } from './types';
+import { devices } from '@/styles/devices';
 
 const errorDisplay = css`
   border-color: ${(props) => props.theme.color.auxiliary.error};
@@ -70,6 +71,14 @@ export const ProfileBox = styled.div`
   display: flex;
   align-items: center;
   gap: 1.063rem;
+  @media ${devices.mobile} {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+`;
+
+export const employeeInfo = styled.div`
+  display: flex;
 `;
 
 export const StyledBadge = styled(Badge)``;
@@ -86,7 +95,8 @@ export const StyledSearchIcon = styled(MagnifyingGlassIcon)`
   color: ${(props) => props.theme.color.contrasts.lowestContrast};
 `;
 export const StyeldUserIcon = styled(UserIcon)`
-  width: 1.5em;
+  width: 1rem;
   margin-left: 1rem;
+  margin-right: 1rem;
   color: ${(props) => props.theme.color.contrasts.lowestContrast};
 `;
