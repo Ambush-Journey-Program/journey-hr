@@ -1,6 +1,5 @@
-import 'jest-styled-components';
 import userEvent from '@testing-library/user-event';
-import { render, screen } from '@/tests/renderWithProviders';
+import { render, screen, act } from '@/tests/renderWithProviders';
 import { Tooltip } from './tooltip';
 
 describe('<Tooltip />', () => {
@@ -10,7 +9,9 @@ describe('<Tooltip />', () => {
 
     const tooltipEL = screen.getByText('Hover me');
     expect(screen.queryByText(text)).not.toBeInTheDocument();
-    await userEvent.hover(tooltipEL);
+    act(() => {
+      userEvent.hover(tooltipEL);
+    });
     expect(screen.getByText(text)).toBeInTheDocument();
   });
 
@@ -20,9 +21,13 @@ describe('<Tooltip />', () => {
 
     const tooltipEL = screen.getByText('Hover me');
     expect(screen.queryByText(text)).not.toBeInTheDocument();
-    await userEvent.hover(tooltipEL);
+    act(() => {
+    userEvent.hover(tooltipEL);
+    });
     expect(screen.getByText(text)).toBeInTheDocument();
-    await userEvent.unhover(tooltipEL);
+    act(() => {
+      userEvent.unhover(tooltipEL);
+    });
     expect(screen.queryByText(text)).not.toBeInTheDocument();
   });
 });

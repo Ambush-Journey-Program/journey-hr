@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { describe, expect } from 'vitest';
 import { render, screen } from '@/tests/renderWithProviders';
 import { TitleType } from './types';
 import { Title } from './title';

@@ -1,5 +1,3 @@
-import { describe, expect } from 'vitest';
-
 import { render, screen } from '@testing-library/react';
 
 import { NavBar } from './navbar';

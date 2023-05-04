@@ -1,4 +1,3 @@
-import { describe, expect } from 'vitest';
 import { render, screen } from '@/tests/renderWithProviders';
 import { HappyHourSchedule } from '../happy-hour-schedule';
 
