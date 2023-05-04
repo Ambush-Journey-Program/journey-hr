@@ -1,5 +1,5 @@
 export type SelectEmployeeProps = {
-  results?: Employees[];
+  error?: string | null;
 };
 
 export type Employee = {

@@ -6,34 +6,41 @@ import { UserIcon } from '@heroicons/react/24/outline';
 import { ChangeEvent, useState } from 'react';
 
 export function SelectEmployee() {
-  // const [result, setResults] = useState<Employees>();
   const [filteredList, setFilteredList] = useState(employees);
+  const [error, setError] = useState(null);
   function filterBySearch(e: ChangeEvent<HTMLInputElement>) {
+    e.preventDefault();
     let updatedList = [...employees];
 
-    // eslint-disable-next-line array-callback-return
     updatedList = updatedList.filter((employee) => {
       return employee.name.toLowerCase().includes(e.target.value.toLowerCase());
     });
-    // Trigger render with updated valuesr
 
     setFilteredList(updatedList);
+
+    if (filteredList.length === 0) {
+      setError(
+        "We couldn't find anyone with this name. Check your spelling or try a different name.",
+      );
+    }
   }
 
   return (
     <Wrapper>
       <Title variant={'h5'}>Select Employee</Title>
       <Styled.RelativeDiv>
-        <Styled.StyledLabel>
+        <Styled.StyledLabel htmlFor="search">
           <Paragraphs size="small" fontWeight="semihair">
             Search Employee
           </Paragraphs>
 
-          <Styled.SearchBox>
+          <Styled.SearchBox error={error}>
             <Styled.StyeldUsersIcon />
 
             <Styled.StyledInput
-              onInput={filterBySearch}
+              title="search for employee"
+              aria-label="Type employee name"
+              onChange={filterBySearch}
               type="text"
               placeholder="Type a name"
             ></Styled.StyledInput>
@@ -44,6 +51,12 @@ export function SelectEmployee() {
               icon="MagnifyingGlassIcon"
             />
           </Styled.SearchBox>
+
+          {!!error && (
+            <Paragraphs size="extrasmall" fontWeight="light" colorVariant="red">
+              {error}
+            </Paragraphs>
+          )}
         </Styled.StyledLabel>
       </Styled.RelativeDiv>
 

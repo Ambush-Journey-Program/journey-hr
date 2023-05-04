@@ -4,7 +4,12 @@ import {
   UserIcon,
   UsersIcon,
 } from '@heroicons/react/24/outline';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { SelectEmployeeProps } from './types';
+
+const errorDisplay = css`
+  border-color: ${(props) => props.theme.color.auxiliary.error};
+`;
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -17,13 +22,14 @@ export const Wrapper = styled.div`
   padding: 40px;
 `;
 
-export const SearchBox = styled.div`
+export const SearchBox = styled.div<SelectEmployeeProps>`
   padding: 0.5rem;
   position: relative;
   display: flex;
   align-items: center;
   gap: 1rem;
   border: 1px solid #9588a9;
+  ${({ error }) => error && errorDisplay}
   border-radius: 12px;
   max-width: 385px;
 `;
