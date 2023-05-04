@@ -62,10 +62,8 @@ export const StyledInput = styled.input`
 export const mainDiv = styled.div``;
 
 export const DisplayResultsSearch = styled.div`
-  /* position: absolute; */
   display: flex;
   justify-content: space-between;
-  width: 100%;
 `;
 
 export const ProfileBox = styled.div`
@@ -74,11 +72,7 @@ export const ProfileBox = styled.div`
   gap: 17px;
 `;
 
-export const StyledBadge = styled(Badge)`
-  p {
-    white-space: nowrap !important;
-  }
-`;
+export const StyledBadge = styled(Badge)``;
 
 export const StyeldUsersIcon = styled(UsersIcon)`
   width: 16px;
