@@ -1,22 +1,23 @@
-import { Paragraphs } from '../typography';
+import React from 'react';
 import * as Styled from './segmented-control.styled';
+import { Tab } from './tab';
 import { SegmentedControlProps } from './types';
-import * as Icons from '@heroicons/react/24/solid';
 
-export function SegmentedControl({
-  label,
-  fontWeight = 'light',
-  labelSize = 'default',
-  icon,
-}: SegmentedControlProps) {
-  const TheIcon = icon && Icons[icon];
-  const linkIcon = TheIcon && <TheIcon data-testid="button-icon" />;
+export function SegmentedControl({ label, href }: SegmentedControlProps) {
+  // const [value, setValue] = React.useState(0);
+  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+    // setValue(newValue);
+  };
+
   return (
-    <Styled.LinkLabel href="#">
-      <Paragraphs size={labelSize} fontWeight={fontWeight}>
-        {linkIcon}
-        {label}
-      </Paragraphs>
-    </Styled.LinkLabel>
+    <Styled.Tabs
+      // value={value}
+      onChange={handleChange}
+      aria-label="nav tabs example"
+    >
+      <Tab label={'Page 1'} href="/page1"></Tab>
+      <Tab label={'Page 2'} href="/page2"></Tab>
+      <Tab label={'Page 3'} href="/page3"></Tab>
+    </Styled.Tabs>
   );
 }
