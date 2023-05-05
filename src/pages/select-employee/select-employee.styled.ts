@@ -1,11 +1,10 @@
-import { Badge } from '@/design-system';
 import {
   MagnifyingGlassIcon,
   UserIcon,
   UsersIcon,
 } from '@heroicons/react/24/outline';
 import styled, { css } from 'styled-components';
-import { SelectEmployeeProps } from './types';
+
 import { devices } from '@/styles/devices';
 
 const errorDisplay = css`
@@ -13,8 +12,7 @@ const errorDisplay = css`
   box-shadow: 0 0 0 0.25rem rgba(217, 73, 73, 0.2);
 `;
 
-export const Span = styled.span<SelectEmployeeProps>`
-  display: ${(props) => props.error ?? 'block'};
+export const Span = styled.span`
   max-width: 24.375rem;
 `;
 
@@ -29,7 +27,7 @@ export const Wrapper = styled.div`
   padding: 2.5rem;
 `;
 
-export const SearchBox = styled.div<SelectEmployeeProps>`
+export const SearchBox = styled.div<{ error: boolean }>`
   padding: 0.5rem;
   position: relative;
   display: flex;
@@ -60,8 +58,6 @@ export const StyledInput = styled.input`
   flex-grow: 1;
 `;
 
-export const mainDiv = styled.div``;
-
 export const DisplayResultsSearch = styled.div`
   display: flex;
   justify-content: space-between;
@@ -80,8 +76,6 @@ export const ProfileBox = styled.div`
 export const employeeInfo = styled.div`
   display: flex;
 `;
-
-export const StyledBadge = styled(Badge)``;
 
 export const StyeldUsersIcon = styled(UsersIcon)`
   width: 1rem;

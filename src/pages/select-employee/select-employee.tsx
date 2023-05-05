@@ -1,50 +1,48 @@
-import { Button, Paragraphs, Title } from '@/design-system';
+import { Badge, Button, Paragraphs, Title } from '@/design-system';
 import { Wrapper } from './select-employee.styled';
 import * as Styled from './select-employee.styled';
-import { ChangeEvent, useState } from 'react';
-import { SelectEmployeeProps } from './types';
+import { ChangeEvent, useEffect, useState } from 'react';
+import { Employee, Employees, SelectEmployeeProps } from './types';
 
 export function SelectEmployee({
-  currentUser = 'Vinicius Rodrigues',
+  currentUser = '',
   employees,
 }: SelectEmployeeProps) {
-  const me = employees.find((employee) => employee.name === currentUser);
-  const filteredEmployees = employees.filter(
-    (employee) => employee.name !== currentUser,
-  );
-  const employeesList = me
-    ? [{ ...me, name: me.name + ' (Me)' }, ...filteredEmployees]
-    : filteredEmployees;
+  const [employeesOrdered, setEmployeesOrdered] = useState<Employees>([]);
+  const [employeesFiltered, setEmployeesFiltered] = useState<Employees>([]);
 
-  const [filteredList, setFilteredList] = useState(employeesList);
-  const [error, setError] = useState('');
+  useEffect(() => {
+    const me = employees.find((employee) => employee.name === currentUser);
+    const newEmployeesFiltered = employees.filter(
+      (employee) => employee.name !== currentUser,
+    );
+
+    const employeesRefined = [
+      { ...me, name: `${me.name} (Me)` } as Employee,
+      ...newEmployeesFiltered,
+    ].filter((item) => item);
+
+    setEmployeesOrdered(employeesRefined as Employees);
+    setEmployeesFiltered(employeesRefined as Employees);
+  }, []);
+
   function filterBySearch(e: ChangeEvent<HTMLInputElement>) {
-    const updatedList = employeesList.filter((employee) => {
+    const updatedList = employeesOrdered.filter((employee) => {
       return employee.name.toLowerCase().includes(e.target.value.toLowerCase());
     });
 
-    setFilteredList(updatedList);
-
-    if (updatedList.length === 0) {
-      setError(
-        "We couldn't find anyone with this name. Check your spelling or try a different name.",
-      );
-      return;
-    }
-
-    setError('');
+    setEmployeesFiltered(updatedList);
   }
 
   return (
     <Wrapper>
       <Title variant="h5">Select Employee</Title>
-      <Styled.mainDiv>
+      <div>
         <Styled.StyledLabel htmlFor="search">
           <Paragraphs size="small" fontWeight="semihair">
             Search Employee
           </Paragraphs>
-
-          <Styled.SearchBox error={error}>
+          <Styled.SearchBox error={employeesFiltered.length === 0}>
             <Styled.StyeldUsersIcon />
             <Styled.StyledInput
               data-testid="inputTest"
@@ -55,21 +53,23 @@ export function SelectEmployee({
               placeholder="Type a name"
             ></Styled.StyledInput>
           </Styled.SearchBox>
-          <Styled.Span data-testid="errorTest">
-            {!!error && (
+
+          {employeesFiltered.length === 0 && (
+            <Styled.Span data-testid="errorTest">
               <Paragraphs
                 size="extrasmall"
                 fontWeight="light"
                 colorVariant="red"
               >
-                {error}
+                We couldn't find anyone with this name. Check your spelling or
+                try 0a different name.
               </Paragraphs>
-            )}
-          </Styled.Span>
+            </Styled.Span>
+          )}
         </Styled.StyledLabel>
-      </Styled.mainDiv>
+      </div>
 
-      {filteredList.map((employee, index) => {
+      {employeesFiltered.map((employee, index) => {
         return (
           <Styled.DisplayResultsSearch key={index}>
             <Styled.employeeInfo>
@@ -78,7 +78,7 @@ export function SelectEmployee({
                 <Paragraphs size="medium" fontWeight="semibold">
                   {employee.name}
                 </Paragraphs>
-                <Styled.StyledBadge text={employee.team} />
+                <Badge text={employee.team} />
               </Styled.ProfileBox>
             </Styled.employeeInfo>
             <Button variant="ghost" color="primary" icon="ChevronRightIcon" />
