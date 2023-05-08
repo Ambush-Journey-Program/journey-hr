@@ -5,7 +5,7 @@ import { ChangeEvent, useEffect, useState } from 'react';
 import { Employee, Employees, SelectEmployeeProps } from './types';
 
 export function SelectEmployee({
-  currentUser = '',
+  currentUser = 'Daniela Petry',
   employees,
 }: SelectEmployeeProps) {
   const [employeesOrdered, setEmployeesOrdered] = useState<Employees>([]);
