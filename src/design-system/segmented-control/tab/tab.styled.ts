@@ -1,3 +1,4 @@
+import { Paragraphs } from '@/design-system/typography';
 import styled from 'styled-components';
 
 export const Tab = styled.a`
@@ -38,4 +39,9 @@ export const Tab = styled.a`
       fill: ${(props) => props.theme.color.button.disabled};
     }
   }
+`;
+
+export const ParagraphsStyle = styled(Paragraphs)`
+  display: flex;
+  justify-content: center;
 `;

@@ -8,21 +8,15 @@ export function Tab({
   fontWeight = 'light',
   labelSize = 'default',
   icon,
-  href,
 }: TabProps) {
-  const handleClick = (
-    event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
-  ) => {
-    event.preventDefault();
-  };
   const TheIcon = icon && Icons[icon];
   const linkIcon = TheIcon && <TheIcon data-testid="button-icon" />;
   return (
-    <Styled.Tab href={href} onClick={handleClick}>
-      <Paragraphs size={labelSize} fontWeight={fontWeight}>
+    <Styled.Tab>
+      <Styled.ParagraphsStyle size={labelSize} fontWeight={fontWeight}>
         {linkIcon}
         {label}
-      </Paragraphs>
+      </Styled.ParagraphsStyle>
     </Styled.Tab>
   );
 }

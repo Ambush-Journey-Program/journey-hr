@@ -8,6 +8,5 @@ export type TabProps = {
   label: string;
   labelSize?: Extract<ParagraphType, 'default' | 'small'>;
   fontWeight?: Extract<TextWeight, 'light' | 'semibold'>;
-  icon?: keyof typeof HeroIcons;
-  href?: string;
+  icon: keyof typeof HeroIcons;
 };
