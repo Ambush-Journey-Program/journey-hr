@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
   justify-content: center;
   gap: 27px;
   padding: 24px;
-  margin: 20px 0px;
+  margin: 20px 0;
   border-radius: 10px;
   background-color: ${(props) => props.theme.color.contrasts.lightContrast};
 

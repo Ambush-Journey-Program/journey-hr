@@ -19,15 +19,15 @@ export function PageTimeOff() {
     <CardWrapper>
       <Styled.TimeOffPageHeaderWrapper data-testid="PageTimeOff">
         <Styled.TimeOffPageHeader>
-          <Styled.TimeOffPageTitle>
+          <div>
             <Title variant="h5">Time Off</Title>
             <Subtitle fontWeight="hair" variant="s5">
               Its Friday, Out 30
             </Subtitle>
-          </Styled.TimeOffPageTitle>
-          <Styled.TimeOffPageApplyButton>
+          </div>
+          <div>
             <Button>Apply Time Off</Button>
-          </Styled.TimeOffPageApplyButton>
+          </div>
         </Styled.TimeOffPageHeader>
         <Balance availableDays={20} isAdmin={false} />
       </Styled.TimeOffPageHeaderWrapper>

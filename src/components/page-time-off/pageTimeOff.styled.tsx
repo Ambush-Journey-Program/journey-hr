@@ -12,8 +12,6 @@ export const TimeOffPageHeader = styled.div`
 
 export const TimeOffPageTitle = styled.div``;
 
-export const TimeOffPageApplyButton = styled.div``;
-
 export const TimeOffPageDaysListsGrid = styled.div`
   display: grid;
   grid-template-areas:
