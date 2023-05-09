@@ -3,7 +3,7 @@ import { Wrapper } from './select-employee.styled';
 import * as Styled from './select-employee.styled';
 import { ChangeEvent, useEffect, useState } from 'react';
 import { Employee, Employees, SelectEmployeeProps } from './types';
-
+import { EmployeeNotFound } from './components/EmployeeNotFound';
 export function SelectEmployee({
   currentUser = 'Daniela Petry',
   employees,
@@ -38,42 +38,30 @@ export function SelectEmployee({
     <Wrapper>
       <Title variant="h5">Select Employee</Title>
       <div>
-        <Styled.StyledLabel htmlFor="search">
-          <Paragraphs size="small" fontWeight="semihair">
-            Search Employee
-          </Paragraphs>
-          <Styled.SearchBox error={employeesFiltered.length === 0}>
-            <Styled.StyeldUsersIcon />
-            <Styled.StyledInput
-              data-testid="inputTest"
-              title="search for employee"
-              aria-label="Type employee name"
-              onChange={filterBySearch}
-              type="text"
-              placeholder="Type a name"
-            ></Styled.StyledInput>
-          </Styled.SearchBox>
+        <Styled.StyledLabel htmlFor="search" />
+        <Paragraphs size="small" fontWeight="semihair">
+          Search Employee
+        </Paragraphs>
+        <Styled.SearchBox error={employeesFiltered.length === 0}>
+          <Styled.DoubleUserIcon />
+          <Styled.StyledInput
+            data-testid="inputTest"
+            title="search for employee"
+            aria-label="Type employee name"
+            onChange={filterBySearch}
+            type="text"
+            placeholder="Type a name"
+          ></Styled.StyledInput>
+        </Styled.SearchBox>
 
-          {employeesFiltered.length === 0 && (
-            <Styled.Span data-testid="errorTest">
-              <Paragraphs
-                size="extrasmall"
-                fontWeight="light"
-                colorVariant="red"
-              >
-                We couldn't find anyone with this name. Check your spelling or
-                try 0a different name.
-              </Paragraphs>
-            </Styled.Span>
-          )}
-        </Styled.StyledLabel>
+        {employeesFiltered.length === 0 && <EmployeeNotFound />}
       </div>
 
-      {employeesFiltered.map((employee, index) => {
+      {employeesFiltered.map((employee) => {
         return (
-          <Styled.DisplayResultsSearch key={index}>
+          <Styled.DisplayResultsSearch key={employee.id}>
             <Styled.employeeInfo>
-              <Styled.StyeldUserIcon />
+              <Styled.SingleUserIcon />
               <Styled.ProfileBox data-testid="listTest">
                 <Paragraphs size="medium" fontWeight="semibold">
                   {employee.name}

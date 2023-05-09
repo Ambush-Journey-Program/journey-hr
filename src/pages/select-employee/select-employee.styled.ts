@@ -13,7 +13,10 @@ const errorDisplay = css`
 `;
 
 export const Span = styled.span`
-  max-width: 24.375rem;
+  p {
+    max-width: 24rem;
+    line-height: 150%;
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -34,15 +37,12 @@ export const SearchBox = styled.div<{ error: boolean }>`
   align-items: center;
   gap: 1rem;
   border: 0.063rem solid ${(props) => props.theme.color.contrasts.lowContrast};
-  ${({ error }) => error && errorDisplay}
   border-radius: 0.75rem;
   max-width: 24.063rem;
+  margin: 0.25rem 0;
+  ${({ error }) => error && errorDisplay};
 `;
-export const StyledLabel = styled.label`
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-`;
+export const StyledLabel = styled.label``;
 
 export const StyledInput = styled.input`
   border: none;
@@ -51,6 +51,7 @@ export const StyledInput = styled.input`
   font-weight: 300;
   font-size: 1rem;
   line-height: 150%;
+
   color: ${(props) => props.theme.color.contrasts.highContrast};
   ::placeholder {
     color: ${(props) => props.theme.color.contrasts.lowestContrast};
@@ -77,18 +78,18 @@ export const employeeInfo = styled.div`
   display: flex;
 `;
 
-export const StyeldUsersIcon = styled(UsersIcon)`
+export const DoubleUserIcon = styled(UsersIcon)`
   width: 1rem;
   margin-left: 1rem;
   color: ${(props) => props.theme.color.contrasts.lowestContrast};
 `;
 
-export const StyledSearchIcon = styled(MagnifyingGlassIcon)`
+export const SearchIcon = styled(MagnifyingGlassIcon)`
   width: 1.5em;
   margin-left: 1rem;
   color: ${(props) => props.theme.color.contrasts.lowestContrast};
 `;
-export const StyeldUserIcon = styled(UserIcon)`
+export const SingleUserIcon = styled(UserIcon)`
   width: 1rem;
   margin-left: 1rem;
   margin-right: 1rem;
