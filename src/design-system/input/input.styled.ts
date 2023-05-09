@@ -24,6 +24,10 @@ const warnError = css`
 
   & input::placeholder {
     color: ${(props) => props.theme.color.contrasts.lowestContrast};
+    border-color: red;
+  }
+  & input:active {
+    border-color: red;
   }
 `;
 
@@ -31,9 +35,6 @@ const errorDisplay = css`
   color: ${(props) => props.theme.color.auxiliary.error};
   box-shadow: 0px 0px 0px 4px rgba(217, 73, 73, 0.2);
   border: ${(props) => `1px solid ${props.theme.color.auxiliary.error}`};
-`;
-const warnDisplay = css`
-  color: ${(props) => props.theme.color.auxiliary.error};
 `;
 
 export const Wrapper = styled.div<StyleWrapper>`
@@ -76,7 +77,7 @@ export const InputContainer = styled.div<StyledInputProps>`
   padding-left: 1.25rem;
   margin: 0.25rem 0px 4px 0px;
   ${({ error }) => error && errorDisplay}
-  ${({ warn }) => warn && warnDisplay}
+  ${({ warn }) => warn && errorDisplay}
   ${({ disabled }) => disabled && disabledInput};
 
   &:focus-within {
@@ -123,9 +124,6 @@ export const InputContainer = styled.div<StyledInputProps>`
     background: red;
     border: 5px red solid;
   }
-  /* input:valid + span::after {
-    content: '✓';
-  } */
 `;
 export const Span = styled.span<selectPeriodProps>`
   display: block;
@@ -141,4 +139,12 @@ export const calendarIcon = styled.div`
   width: 1.25rem;
   height: 1.25rem;
   color: ${(props) => props.theme.color.contrasts.lowestContrast};
+`;
+export const SpanCorrect = styled.span<selectPeriodProps>`
+  display: block;
+  margin-right: 18px;
+  line-height: 1.125rem;
+  width: 1.125rem;
+  height: 1.125rem;
+  color: ${(props) => props.theme.color.auxiliary.accepted};
 `;

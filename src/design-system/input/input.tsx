@@ -12,6 +12,7 @@ export function Input({
   readOnly,
   error,
   warn,
+  right,
   placeholder,
   type = 'text',
   name,
@@ -19,7 +20,6 @@ export function Input({
 }: IInputProps) {
   const [touched, setTouched] = useState(false);
   function onInputChange(e: ChangeEvent<HTMLInputElement>) {
-    e.preventDefault();
     onTextChange(e.target.value);
     setTouched(true);
   }
@@ -48,6 +48,11 @@ export function Input({
           onChange={onInputChange}
           data-testid="input-test"
         />
+        {!!right && (
+          <Styled.SpanCorrect>
+            <Icons.CheckIcon className="alert" data-testid="Alert" />
+          </Styled.SpanCorrect>
+        )}
         {!!error && (
           <Styled.Span>
             <Icons.ExclamationCircleIcon
@@ -63,7 +68,7 @@ export function Input({
         </Paragraphs>
       )}
       {!!warn && (
-        <Paragraphs size="extrasmall" fontWeight="light" colorVariant="purple">
+        <Paragraphs size="extrasmall" fontWeight="light" colorVariant="red">
           {warn}
         </Paragraphs>
       )}

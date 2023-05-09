@@ -7,11 +7,13 @@ export type IInputProps = InputHTMLAttributes<HTMLInputElement> & {
   onTextChange?: (value: string) => void;
   type?: string;
   placeholder?: string;
+  right?: boolean | string | JSX.Element;
 };
 
 export type StyleWrapper = {
   error?: string | JSX.Element;
   warn?: string;
+  right?: boolean | string | JSX.Element;
 };
 
 export type StyledLabelProps = { disabled?: boolean };
@@ -21,4 +23,5 @@ export type StyledInputProps = {
   error?: string | JSX.Element;
   touched?: boolean;
   warn?: string;
+  right?: string | JSX.Element;
 };

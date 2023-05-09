@@ -24,7 +24,7 @@ const isStartDateOnFuture = (date: Date) => {
   return isFirstDateAfterSecondDate(date, today);
 };
 
-export function SelectPeriod({ error = false }: selectPeriodProps) {
+export function SelectPeriod({ error = false, correct }: selectPeriodProps) {
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
   const [startDateError, setStartDateError] = useState('');
@@ -48,21 +48,6 @@ export function SelectPeriod({ error = false }: selectPeriodProps) {
     }
 
     const date = new Date(parsedYear, indexedMonth, parsedDay);
-    const monthNames = [
-      'Jan',
-      'Feb',
-      'Mar',
-      'Apr',
-      'May',
-      'June',
-      'July',
-      'Aug',
-      'Sept',
-      'Oct',
-      'Nov',
-      'Dec',
-    ];
-    console.log(`${monthNames[indexedMonth - 1]} ${parsedDay}, ${year} `);
     return date;
   }
 
@@ -87,7 +72,6 @@ export function SelectPeriod({ error = false }: selectPeriodProps) {
     const isDay15DaysOnFuture = isDate15DaysFromNow(parsedStartDate);
     const isStartBeOnFuture = isStartDateOnFuture(parsedStartDate);
 
-    console.log(parsedEndDate);
     if (!isStartComeFirst) {
       setEndDateError('Invalid work day.');
       error = true;
@@ -102,6 +86,7 @@ export function SelectPeriod({ error = false }: selectPeriodProps) {
       setStartDateError('Invalid work day.');
       error = true;
     }
+    correct = true;
     error = false;
   }, [endDate, startDate]);
 
@@ -114,7 +99,7 @@ export function SelectPeriod({ error = false }: selectPeriodProps) {
         value={startDate}
         error={startDateError}
         warn={dateWarn}
-        placeholder="Select Time Off Period"
+        right={correct}
       />
       <Input
         label="End Date"
@@ -122,7 +107,6 @@ export function SelectPeriod({ error = false }: selectPeriodProps) {
         onTextChange={setEndDate}
         value={endDate}
         error={endDateError}
-        placeholder="Select Time Off Period"
       />
     </Styled.InputsWrapper>
   );

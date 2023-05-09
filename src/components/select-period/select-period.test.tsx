@@ -1,19 +1,18 @@
 import * as React from 'react';
-
-import { render, screen } from '@testing-library/react';
-
 import { SelectPeriod } from '.';
+import { render, screen } from '@/tests/renderWithProviders';
 
 describe('<SelectPeriod />', () => {
-  describe('should have this remove', () => {
-    it('when the component is actually used', () => {
-      const label = 'it works';
-      const props = { label };
-
-      render(<SelectPeriod {...props} />);
-      const labelSpan = screen.getByText(label);
-
-      expect(labelSpan).toBeInTheDocument();
+  describe('should have this render', () => {
+    it('renders the Label', () => {
+      render(<SelectPeriod />);
+      const inputEl = screen.getByText('Start Date');
+      expect(inputEl).toBeInTheDocument();
+    });
+    it('renders the second Label', () => {
+      render(<SelectPeriod />);
+      const inputEl = screen.getByText('End Date');
+      expect(inputEl).toBeInTheDocument();
     });
   });
 });

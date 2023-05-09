@@ -12,8 +12,6 @@ const Template: Story = (args) => {
 
 export const SelectPeriodStory = Template.bind({});
 SelectPeriodStory.args = {
-  label: 'Label',
-  required: true,
-  disabled: false,
-  readOnly: false,
+  error: false,
+  correct: false,
 };
