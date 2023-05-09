@@ -1,6 +1,6 @@
 import { render, screen } from '@/tests/renderWithProviders';
-import { SelectEmployee } from '..';
-import { employees } from '../mocking';
+import { SelectEmployee } from '.';
+import { employees } from './mocking';
 
 describe('<SelectEmployee />', () => {
   it('when the component is actually used', () => {

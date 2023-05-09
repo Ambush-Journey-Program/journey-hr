@@ -1,15 +1,17 @@
-import { Badge, Button, Paragraphs, Title } from '@/design-system';
+import { Paragraphs, Title } from '@/design-system';
 import { Wrapper } from './select-employee.styled';
 import * as Styled from './select-employee.styled';
 import { ChangeEvent, useEffect, useState } from 'react';
 import { Employee, Employees, SelectEmployeeProps } from './types';
-import { EmployeeNotFound } from './components/EmployeeNotFound';
+import { EmployeeNotFound } from './components/employee-not-found';
+import { SearchRow } from './components/search-row';
 export function SelectEmployee({
   currentUser = 'Daniela Petry',
   employees,
 }: SelectEmployeeProps) {
   const [employeesOrdered, setEmployeesOrdered] = useState<Employees>([]);
   const [employeesFiltered, setEmployeesFiltered] = useState<Employees>([]);
+  const [touched, setTouched] = useState(false);
 
   useEffect(() => {
     const me = employees.find((employee) => employee.name === currentUser);
@@ -30,7 +32,7 @@ export function SelectEmployee({
     const updatedList = employeesOrdered.filter((employee) => {
       return employee.name.toLowerCase().includes(e.target.value.toLowerCase());
     });
-
+    setTouched(true);
     setEmployeesFiltered(updatedList);
   }
 
@@ -38,40 +40,29 @@ export function SelectEmployee({
     <Wrapper>
       <Title variant="h5">Select Employee</Title>
       <div>
-        <Styled.StyledLabel htmlFor="search" />
-        <Paragraphs size="small" fontWeight="semihair">
-          Search Employee
-        </Paragraphs>
+        <Styled.StyledLabel htmlFor="search">
+          <Paragraphs size="small" fontWeight="semihair">
+            Search Employee
+          </Paragraphs>
+        </Styled.StyledLabel>
         <Styled.SearchBox error={employeesFiltered.length === 0}>
           <Styled.DoubleUserIcon />
           <Styled.StyledInput
+            id="search"
             data-testid="inputTest"
             title="search for employee"
             aria-label="Type employee name"
             onChange={filterBySearch}
             type="text"
             placeholder="Type a name"
-          ></Styled.StyledInput>
+          />
         </Styled.SearchBox>
 
-        {employeesFiltered.length === 0 && <EmployeeNotFound />}
+        {employeesFiltered.length === 0 && touched && <EmployeeNotFound />}
       </div>
 
       {employeesFiltered.map((employee) => {
-        return (
-          <Styled.DisplayResultsSearch key={employee.id}>
-            <Styled.employeeInfo>
-              <Styled.SingleUserIcon />
-              <Styled.ProfileBox data-testid="listTest">
-                <Paragraphs size="medium" fontWeight="semibold">
-                  {employee.name}
-                </Paragraphs>
-                <Badge text={employee.team} />
-              </Styled.ProfileBox>
-            </Styled.employeeInfo>
-            <Button variant="ghost" color="primary" icon="ChevronRightIcon" />
-          </Styled.DisplayResultsSearch>
-        );
+        return <SearchRow key={employee.id} employee={employee} />;
       })}
     </Wrapper>
   );
