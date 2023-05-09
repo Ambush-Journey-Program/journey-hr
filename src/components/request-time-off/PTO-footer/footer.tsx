@@ -8,7 +8,11 @@ const buttonLabel: { [key: string]: string } = {
   request: 'Request Manager',
   allDone: 'Go to Homepage',
 };
-export function Footer({ cancel, apply, variant = 'timeOff' }: FooterProps) {
+export function Footer({
+  onCancel,
+  onApply,
+  variant = 'timeOff',
+}: FooterProps) {
   const [label, setLabel] = useState('');
 
   useEffect(() => {
@@ -18,7 +22,7 @@ export function Footer({ cancel, apply, variant = 'timeOff' }: FooterProps) {
   return (
     <Styled.Footer variant={variant} data-testid="footer">
       <Button
-        onClick={cancel}
+        onClick={onCancel}
         className="cancelButon button"
         color="secondary"
         variant="outlined"
@@ -28,7 +32,7 @@ export function Footer({ cancel, apply, variant = 'timeOff' }: FooterProps) {
         Cancel
       </Button>
       <Button
-        onClick={apply}
+        onClick={onApply}
         className="fowardButon button"
         sizeVariant="small"
         data-testid="fowardButton"
@@ -37,7 +41,7 @@ export function Footer({ cancel, apply, variant = 'timeOff' }: FooterProps) {
       </Button>
 
       <Button
-        onClick={apply}
+        onClick={onApply}
         className="confirmationButon button"
         variant="outlined"
         sizeVariant="small"

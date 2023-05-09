@@ -11,9 +11,7 @@ const Page: PageVariants = {
     & .confirmationButon {
       display: none;
     }
-    & .cancelButon {
-      display: block;
-    }
+    & .cancelButon,
     & .fowardButon {
       display: block;
     }
@@ -23,9 +21,7 @@ const Page: PageVariants = {
     & .confirmationButon {
       display: none;
     }
-    & .cancelButon {
-      display: block;
-    }
+    & .cancelButon,
     & .fowardButon {
       display: block;
     }
@@ -35,9 +31,7 @@ const Page: PageVariants = {
     & .confirmationButon {
       display: block;
     }
-    & .cancelButon {
-      display: none;
-    }
+    & .cancelButon,
     & .fowardButon {
       display: none;
     }
@@ -47,9 +41,7 @@ const Page: PageVariants = {
     & {
       justify-content: center;
     }
-    & .confirmationButon {
-      display: none;
-    }
+    & .confirmationButon,
     & .cancelButon {
       display: none;
     }
@@ -61,7 +53,6 @@ const Page: PageVariants = {
 
 export const Footer = styled.div<FooterProps>`
   display: flex;
-  flex-direction: row;
   justify-content: flex-end;
   align-items: center;
   padding: 40px;
