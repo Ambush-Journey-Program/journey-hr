@@ -1,55 +1,6 @@
 import { devices } from '@/styles/devices';
-import styled, { css, FlattenSimpleInterpolation } from 'styled-components';
+import styled from 'styled-components';
 import { FooterProps } from './types';
-
-type PageVariants = {
-  [key: string]: FlattenSimpleInterpolation;
-};
-
-const Page: PageVariants = {
-  request: css`
-    & .confirmationButon {
-      display: none;
-    }
-    & .cancelButon,
-    & .fowardButon {
-      display: block;
-    }
-  `,
-
-  timeOff: css`
-    & .confirmationButon {
-      display: none;
-    }
-    & .cancelButon,
-    & .fowardButon {
-      display: block;
-    }
-  `,
-
-  confirm: css`
-    & .confirmationButon {
-      display: block;
-    }
-    & .cancelButon,
-    & .fowardButon {
-      display: none;
-    }
-  `,
-
-  allDone: css`
-    & {
-      justify-content: center;
-    }
-    & .confirmationButon,
-    & .cancelButon {
-      display: none;
-    }
-    & .fowardButon {
-      display: block;
-    }
-  `,
-};
 
 export const Footer = styled.div<FooterProps>`
   display: flex;
@@ -72,5 +23,5 @@ export const Footer = styled.div<FooterProps>`
       width: 100%;
     }
   }
-  ${({ variant }) => Page[variant]}
+  justify-content: ${({ variant }) => variant === 'allDone' && 'center'};
 `;

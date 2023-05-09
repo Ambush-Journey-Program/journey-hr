@@ -3,6 +3,9 @@ import { FooterProps } from './types';
 import * as Styled from './footer.styled';
 import { useEffect, useState } from 'react';
 
+const cancelButton = ['request', 'timeOff'];
+const forwardButton = ['allDone', 'request', 'timeOff'];
+
 const buttonLabel: { [key: string]: string } = {
   timeOff: 'Apply Time Off',
   request: 'Request Manager',
@@ -21,38 +24,25 @@ export function Footer({
 
   return (
     <Styled.Footer variant={variant} data-testid="footer">
-      {['request', 'timeOff'].includes(variant) && (
+      {cancelButton.includes(variant) && (
         <Button
           onClick={onCancel}
-          className="cancelButon button"
           color="secondary"
           variant="outlined"
           sizeVariant="small"
-          data-testid="cancelButton"
         >
           Cancel
         </Button>
       )}
 
-      {['allDone', 'request', 'timeOff'].includes(variant) && (
-        <Button
-          onClick={onApply}
-          className="fowardButon button"
-          sizeVariant="small"
-          data-testid="fowardButton"
-        >
+      {forwardButton.includes(variant) && (
+        <Button onClick={onApply} sizeVariant="small">
           {label}
         </Button>
       )}
 
       {variant === 'confirm' && (
-        <Button
-          onClick={onApply}
-          className="confirmationButon button"
-          variant="outlined"
-          sizeVariant="small"
-          data-testid="confirmationButton"
-        >
+        <Button onClick={onApply} variant="outlined" sizeVariant="small">
           Confirm Dates
         </Button>
       )}
