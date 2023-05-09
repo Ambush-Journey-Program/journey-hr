@@ -21,34 +21,41 @@ export function Footer({
 
   return (
     <Styled.Footer variant={variant} data-testid="footer">
-      <Button
-        onClick={onCancel}
-        className="cancelButon button"
-        color="secondary"
-        variant="outlined"
-        sizeVariant="small"
-        data-testid="cancelButton"
-      >
-        Cancel
-      </Button>
-      <Button
-        onClick={onApply}
-        className="fowardButon button"
-        sizeVariant="small"
-        data-testid="fowardButton"
-      >
-        {label}
-      </Button>
+      {['request', 'timeOff'].includes(variant) && (
+        <Button
+          onClick={onCancel}
+          className="cancelButon button"
+          color="secondary"
+          variant="outlined"
+          sizeVariant="small"
+          data-testid="cancelButton"
+        >
+          Cancel
+        </Button>
+      )}
 
-      <Button
-        onClick={onApply}
-        className="confirmationButon button"
-        variant="outlined"
-        sizeVariant="small"
-        data-testid="confirmationButton"
-      >
-        Confirm Dates
-      </Button>
+      {['allDone', 'request', 'timeOff'].includes(variant) && (
+        <Button
+          onClick={onApply}
+          className="fowardButon button"
+          sizeVariant="small"
+          data-testid="fowardButton"
+        >
+          {label}
+        </Button>
+      )}
+
+      {variant === 'confirm' && (
+        <Button
+          onClick={onApply}
+          className="confirmationButon button"
+          variant="outlined"
+          sizeVariant="small"
+          data-testid="confirmationButton"
+        >
+          Confirm Dates
+        </Button>
+      )}
     </Styled.Footer>
   );
 }
