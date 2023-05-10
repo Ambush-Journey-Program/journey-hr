@@ -6,10 +6,7 @@ import { SegmentedControlProps } from './types';
 export default {
   component: SegmentedControl,
   title: 'UI/SegmentedControl',
-  parameters: {
-    isLoading: false,
-    label: 'SegmentedControl text',
-  },
+  parameters: {},
 } as Meta;
 
 const Template: Story<SegmentedControlProps> = (args) => {

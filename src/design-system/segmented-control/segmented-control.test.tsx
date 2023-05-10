@@ -7,7 +7,7 @@ describe('<SegmentedControl />', () => {
     it('when the component is actually used', () => {
       const label = 'Label';
 
-      render(<SegmentedControl label={label} />);
+      render(<SegmentedControl label={label} selected={false} />);
       const link = screen.getByTestId('button-icon');
       expect(link).toBeInTheDocument();
     });

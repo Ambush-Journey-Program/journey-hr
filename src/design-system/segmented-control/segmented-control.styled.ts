@@ -5,4 +5,4 @@ export const Tabs = styled.div`
   width: 100%;
 `;
 
-export const container = styled.div``;
+// ${({ haveChildren }) => !haveChildren && childrenPadding}

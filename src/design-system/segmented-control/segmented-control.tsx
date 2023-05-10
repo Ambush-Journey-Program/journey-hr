@@ -2,52 +2,14 @@ import React, { Children } from 'react';
 import * as Styled from './segmented-control.styled';
 import { Tab } from './tab';
 import { SegmentedControlProps } from './types';
+import { TabContainer } from './tabContainer';
 
-const TabContainer = ({
-  value,
-  children,
-  onChange,
-}: {
-  value: number;
-  children: React.ReactNode[];
-  onChange: (index: number) => void;
-}) => {
-  const handleSelect = (index: number) => {
-    onChange(index);
-  };
-
-  // 1. Implement logic to validate style through index === value
-  // 2. Separate TabContainer in another folder
-
-  return (
-    <>
-      {Children.map(children, (tab, index) => (
-        <Styled.Container
-          key={index}
-          onClick={() => {
-            handleSelect(index);
-          }}
-        >
-          {tab}
-        </Styled.Container>
-      ))}
-    </>
-
-    // {children.map((tab, index) => <div
-    //   onClick={() => {
-    //     handleSelect(index);
-    //   }}
-    // >
-    //   {tab}
-    // </div>)}
-  );
-};
-
-export function SegmentedControl({ label, href }: SegmentedControlProps) {
+export function SegmentedControl({ selected }: SegmentedControlProps) {
   const [value, setValue] = React.useState(0);
   const handleChange = (index: number) => {
     console.log('handle change: ', index);
     setValue(index);
+    selected = true;
   };
 
   return (
@@ -57,6 +19,7 @@ export function SegmentedControl({ label, href }: SegmentedControlProps) {
       aria-label="nav tabs example"
     >
       <Tab
+        selected={selected}
         label={'Page 1'}
         icon={'AcademicCapIcon'}
         fontWeight="light"
