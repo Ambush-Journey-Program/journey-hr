@@ -10,11 +10,18 @@ export function Balance({
   buttonText,
   isAdmin = false,
   availableDays,
+  nextRefill,
+  consumedDays,
+  optionalHolidays,
 }: BalanceProps) {
   const [selectedEmployee] = useState(employees[0]);
+  const maxOptionalDays = 4;
   const isNegativeAvailableDays = availableDays < 0;
   const availableDaysLabel =
     availableDays === 1 || availableDays === -1 ? 'day' : 'days';
+  const isNegativeConsumedDays = consumedDays < 0;
+  const ConsumedDaysLabel =
+    consumedDays === 1 || consumedDays === -1 ? 'day' : 'days';
 
   return (
     <Styled.Wrapper>
@@ -69,8 +76,12 @@ export function Balance({
           <Subtitle variant="s6" fontWeight="regular">
             Consumed
           </Subtitle>
-          <Paragraph size="extralarge" fontWeight="semibold">
-            0 days
+          <Paragraph
+            size="extralarge"
+            fontWeight="semibold"
+            colorVariant={isNegativeConsumedDays ? 'error' : 'dark'}
+          >
+            {consumedDays.toString()} {ConsumedDaysLabel}
           </Paragraph>
         </Styled.Div>
 
@@ -79,7 +90,7 @@ export function Balance({
             Next Refill
           </Subtitle>
           <Paragraph size="extralarge" fontWeight="semibold">
-            Mar 24, 2024
+            {nextRefill}
           </Paragraph>
         </Styled.Div>
         <Styled.VeticalLine />
@@ -89,7 +100,7 @@ export function Balance({
           </Subtitle>
 
           <Paragraph size="extralarge" fontWeight="semibold">
-            0/4 used
+            {optionalHolidays.toString()}/{maxOptionalDays.toString()} used
           </Paragraph>
         </Styled.Div>
       </Styled.BalanceDiv>

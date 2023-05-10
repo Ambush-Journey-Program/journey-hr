@@ -1,4 +1,4 @@
-import { Paragraphs, Title } from '@/design-system';
+import { Paragraph, Title } from '@/design-system';
 import { Wrapper } from './select-employee.styled';
 import * as Styled from './select-employee.styled';
 import { ChangeEvent, useEffect, useState } from 'react';
@@ -41,9 +41,9 @@ export function SelectEmployee({
       <Title variant="h5">Select Employee</Title>
       <div>
         <label htmlFor="search">
-          <Paragraphs size="small" fontWeight="semihair">
+          <Paragraph size="small" fontWeight="semihair">
             Search Employee
-          </Paragraphs>
+          </Paragraph>
         </label>
         <Styled.SearchBox error={employeesFiltered.length === 0}>
           <Styled.DoubleUserIcon />
