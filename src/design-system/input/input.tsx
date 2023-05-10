@@ -53,7 +53,7 @@ export function Input({
             <Icons.CheckIcon className="alert" data-testid="Alert" />
           </Styled.SpanCorrect>
         )}
-        {!!error && (
+        {(!!warn || !!error) && (
           <Styled.Span>
             <Icons.ExclamationCircleIcon
               className="alert"

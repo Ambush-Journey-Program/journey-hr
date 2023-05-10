@@ -24,10 +24,10 @@ const warnError = css`
 
   & input::placeholder {
     color: ${(props) => props.theme.color.contrasts.lowestContrast};
-    border-color: red;
+    border-color: ${(props) => props.theme.color.auxiliary.error};
   }
   & input:active {
-    border-color: red;
+    border-color: ${(props) => props.theme.color.auxiliary.error};
   }
 `;
 
@@ -75,7 +75,7 @@ export const InputContainer = styled.div<StyledInputProps>`
   border: 1px solid ${(props) => props.theme.color.contrasts.lowestContrast};
   border-radius: 0.75rem;
   padding-left: 1.25rem;
-  margin: 0.25rem 0px 4px 0px;
+  margin: 0.25rem 0rem 0.25rem 0rem;
   ${({ error }) => error && errorDisplay}
   ${({ warn }) => warn && errorDisplay}
   ${({ disabled }) => disabled && disabledInput};
@@ -91,7 +91,7 @@ export const InputContainer = styled.div<StyledInputProps>`
     position: relative;
     display: flex;
     justify-content: flex-start;
-    width: calc(100% - 1rem);
+    width: calc(100% - 5rem);
     font-size: 1rem;
     border: none;
     outline: none;
@@ -102,9 +102,6 @@ export const InputContainer = styled.div<StyledInputProps>`
     &::placeholder {
       color: ${(props) => props.theme.color.contrasts.lowestContrast};
     }
-  }
-
-  & input[type='date'] {
   }
 
   span {
@@ -127,7 +124,7 @@ export const InputContainer = styled.div<StyledInputProps>`
 `;
 export const Span = styled.span<selectPeriodProps>`
   display: block;
-  margin-right: 18px;
+  margin-right: 1.125;
   line-height: 1.125rem;
   width: 1.125rem;
   height: 1.125rem;
@@ -135,7 +132,7 @@ export const Span = styled.span<selectPeriodProps>`
 `;
 
 export const calendarIcon = styled.div`
-  margin-right: 20px;
+  margin-right: 1.25rem;
   width: 1.25rem;
   height: 1.25rem;
   color: ${(props) => props.theme.color.contrasts.lowestContrast};

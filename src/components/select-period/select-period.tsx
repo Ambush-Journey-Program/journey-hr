@@ -24,12 +24,14 @@ const isStartDateOnFuture = (date: Date) => {
   return isFirstDateAfterSecondDate(date, today);
 };
 
-export function SelectPeriod({ error = false, correct }: selectPeriodProps) {
+export function SelectPeriod() {
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
   const [startDateError, setStartDateError] = useState('');
   const [endDateError, setEndDateError] = useState('');
   const [dateWarn, setDateWarn] = useState('');
+  const isCorrect =
+    !startDateError && !endDateError && !dateWarn && !!startDate;
 
   function parseDate(originalDate: string) {
     const [year, month, day] = originalDate.split('-');
@@ -71,23 +73,23 @@ export function SelectPeriod({ error = false, correct }: selectPeriodProps) {
     );
     const isDay15DaysOnFuture = isDate15DaysFromNow(parsedStartDate);
     const isStartBeOnFuture = isStartDateOnFuture(parsedStartDate);
-
-    if (!isStartComeFirst) {
-      setEndDateError('Invalid work day.');
-      error = true;
+    if (!isStartComeFirst || !isDay15DaysOnFuture || !isStartBeOnFuture) {
+      if (!isStartComeFirst) {
+        setEndDateError('Invalid work day.');
+      }
+      if (!isDay15DaysOnFuture) {
+        setDateWarn(
+          'Settings of your Organization mandate you to request this Timeoff at least 14 days before the Date of timeoff request.',
+        );
+      }
+      if (!isStartBeOnFuture) {
+        setStartDateError('Invalid work day.');
+      }
+      return;
     }
-    if (!isDay15DaysOnFuture) {
-      setDateWarn(
-        'Settings of your Organization mandate you to request this Timeoff at least 14 days before the Date of timeoff request.',
-      );
-      error = true;
-    }
-    if (!isStartBeOnFuture) {
-      setStartDateError('Invalid work day.');
-      error = true;
-    }
-    correct = true;
-    error = false;
+    setStartDateError('');
+    setEndDateError('');
+    setDateWarn('');
   }, [endDate, startDate]);
 
   return (
@@ -99,7 +101,7 @@ export function SelectPeriod({ error = false, correct }: selectPeriodProps) {
         value={startDate}
         error={startDateError}
         warn={dateWarn}
-        right={correct}
+        right={isCorrect}
       />
       <Input
         label="End Date"
