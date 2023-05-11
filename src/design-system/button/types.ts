@@ -24,6 +24,20 @@ type DefaultButton = {
   onClick: () => void;
 };
 
+type ButtonWithIcon = {
+  children: undefined;
+  ariaLabel: string;
+};
+
+type ButtonWithOutIcon = {
+  children: string;
+  ariaLabel?: string;
+};
+
+type ButtonIconVariable = ButtonWithIcon | ButtonWithOutIcon;
+
 type ButtonPropsVariable = ButtonSubmit | DefaultButton;
 
-export type ButtonProps = BaseButtonProps & ButtonPropsVariable;
+export type ButtonProps = BaseButtonProps &
+  ButtonPropsVariable &
+  ButtonIconVariable;

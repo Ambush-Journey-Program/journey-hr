@@ -10,6 +10,7 @@ export function Button({
   disabled,
   children,
   icon,
+  ariaLabel,
   ...props
 }: ButtonProps) {
   // @ts-expect-error /
@@ -24,6 +25,7 @@ export function Button({
         color={color}
         variant={variant}
         disabled={disabled}
+        aria-label={ariaLabel}
         {...props}
       >
         {buttonIcon}
