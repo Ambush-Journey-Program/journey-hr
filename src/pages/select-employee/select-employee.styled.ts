@@ -29,7 +29,6 @@ export const SearchBox = styled.div<{ error: boolean }>`
   margin: 0.25rem 0;
   ${({ error }) => error && errorDisplay};
 `;
-export const StyledLabel = styled.label``;
 
 export const StyledInput = styled.input`
   border: none;
@@ -40,10 +39,10 @@ export const StyledInput = styled.input`
   line-height: 150%;
 
   color: ${(props) => props.theme.color.contrasts.highContrast};
+  flex-grow: 1;
   ::placeholder {
     color: ${(props) => props.theme.color.contrasts.lowestContrast};
   }
-  flex-grow: 1;
 `;
 export const DoubleUserIcon = styled(UsersIcon)`
   width: 1rem;

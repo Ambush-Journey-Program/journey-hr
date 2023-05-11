@@ -40,16 +40,15 @@ export function SelectEmployee({
     <Wrapper>
       <Title variant="h5">Select Employee</Title>
       <div>
-        <Styled.StyledLabel htmlFor="search">
+        <label htmlFor="search">
           <Paragraphs size="small" fontWeight="semihair">
             Search Employee
           </Paragraphs>
-        </Styled.StyledLabel>
+        </label>
         <Styled.SearchBox error={employeesFiltered.length === 0}>
           <Styled.DoubleUserIcon />
           <Styled.StyledInput
             id="search"
-            data-testid="inputTest"
             title="search for employee"
             aria-label="Type employee name"
             onChange={filterBySearch}
@@ -58,7 +57,9 @@ export function SelectEmployee({
           />
         </Styled.SearchBox>
 
-        {employeesFiltered.length === 0 && touched && <EmployeeNotFound />}
+        {employeesFiltered.length === 0 && touched && (
+          <EmployeeNotFound data-testid="errorTest" />
+        )}
       </div>
 
       {employeesFiltered.map((employee) => {
