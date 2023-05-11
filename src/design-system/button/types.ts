@@ -25,7 +25,7 @@ type DefaultButton = {
 };
 
 type ButtonWithIcon = {
-  children: undefined;
+  children?: undefined;
   ariaLabel: string;
 };
 
