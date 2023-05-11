@@ -11,11 +11,14 @@ export function Tab({
   const TheIcon = icon && Icons[icon];
   const linkIcon = TheIcon && <TheIcon data-testid="button-icon" />;
   return (
-    <Styled.Tab>
-      <Styled.ParagraphsStyle size={labelSize} fontWeight={fontWeight}>
-        {linkIcon}
-        {label}
-      </Styled.ParagraphsStyle>
-    </Styled.Tab>
+    <>
+      <Styled.Tab>
+        <Styled.ParagraphsStyle size={labelSize} fontWeight={fontWeight}>
+          {linkIcon}
+          {label}
+        </Styled.ParagraphsStyle>
+      </Styled.Tab>
+      {/* {children} */}
+    </>
   );
 }

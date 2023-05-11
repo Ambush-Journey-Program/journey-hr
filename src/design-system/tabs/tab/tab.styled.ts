@@ -8,7 +8,6 @@ export const Tab = styled.a`
   padding: 0.625rem;
   color: ${(props) => props.theme.color.brandColors.dark};
   background-color: transparent;
-  text-decoration: none;
   border-bottom: solid 0.25rem
     ${(props) => props.theme.color.contrasts.lightContrast};
   cursor: pointer;

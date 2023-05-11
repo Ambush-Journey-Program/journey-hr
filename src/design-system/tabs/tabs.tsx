@@ -2,7 +2,7 @@ import React from 'react';
 import { Tab } from './tab';
 import { TabContainer } from './tabContainer';
 
-export function SegmentedControl() {
+export function Tabs() {
   const [value, setValue] = React.useState(0);
   const handleChange = (index: number) => {
     setValue(index);
