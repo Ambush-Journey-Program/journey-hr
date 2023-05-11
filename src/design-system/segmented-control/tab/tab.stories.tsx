@@ -6,10 +6,7 @@ import { TabProps } from './types';
 export default {
   component: Tab,
   title: 'UI/Tab',
-  parameters: {
-    isLoading: false,
-    label: 'Tab text',
-  },
+  parameters: {},
 } as Meta;
 
 const Template: Story<TabProps> = (args) => {
@@ -17,3 +14,6 @@ const Template: Story<TabProps> = (args) => {
 };
 
 export const TabStory = Template.bind({});
+TabStory.args = {
+  label: 'Label',
+};

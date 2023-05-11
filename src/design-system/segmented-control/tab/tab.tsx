@@ -1,7 +1,6 @@
 import { TabProps } from './types';
 import * as Styled from './tab.styled';
 import * as Icons from '@heroicons/react/24/solid';
-import { Paragraphs } from '@/design-system';
 
 export function Tab({
   label,

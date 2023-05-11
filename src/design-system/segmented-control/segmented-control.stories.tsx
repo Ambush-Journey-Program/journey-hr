@@ -14,6 +14,3 @@ const Template: Story<SegmentedControlProps> = (args) => {
 };
 
 export const SegmentedControlStory = Template.bind({});
-SegmentedControlStory.args = {
-  label: 'Label',
-};

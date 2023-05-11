@@ -1,19 +1,18 @@
 import * as React from 'react';
-
-import { render, screen } from '@testing-library/react';
-
+import { render, screen } from '@/tests/renderWithProviders';
 import { Tab } from '.';
 
 describe('<Tab />', () => {
-  describe('should have this remove', () => {
-    it('when the component is actually used', () => {
-      const label = 'it works';
-      const props = { label };
-
-      render(<Tab {...props} />);
-      const labelSpan = screen.getByText(label);
-
-      expect(labelSpan).toBeInTheDocument();
+  describe('should have this render', () => {
+    it('should display Label', () => {
+      render(<Tab label={'Page 1'} icon={'AcademicCapIcon'} />);
+      const link = screen.getByText('Page 1');
+      expect(link).toBeInTheDocument();
+    });
+    it('should display Icon', () => {
+      render(<Tab label={'Page 1'} icon={'AcademicCapIcon'} />);
+      const link = screen.getByTestId('button-icon');
+      expect(link).toBeInTheDocument();
     });
   });
 });

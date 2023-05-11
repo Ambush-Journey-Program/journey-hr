@@ -1,31 +1,24 @@
 import { Children } from 'react';
-import * as Styled from './tabContainer';
+import { TabContainerProps } from './types';
+import * as Styled from './tab-container.styled';
 
 export function TabContainer({ value, children, onChange }: TabContainerProps) {
   const handleSelect = (index: number) => {
     onChange(index);
   };
   return (
-    <div>
+    <Styled.Wrapper>
       {Children.map(children, (tab, index) => (
-        <Styled.container
+        <div
           key={index}
           onClick={() => {
             handleSelect(index);
           }}
         >
           {tab}
-        </Styled.container>
+          {value === index && <Styled.Underline />}
+        </div>
       ))}
-    </div>
+    </Styled.Wrapper>
   );
 }
-// {children.map((tab, index) => <div
-//   onClick={() => {
-//     handleSelect(index);
-//   }}
-// >
-//   {tab}
-// </div>)}
-// 1. Implement logic to validate style through index === value
-// 2. Separate TabContainer in another folder

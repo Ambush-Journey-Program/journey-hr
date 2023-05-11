@@ -5,14 +5,16 @@ export const Tab = styled.a`
   display: flex;
   justify-content: center;
   width: 100%;
-  padding: 10px;
+  padding: 0.625rem;
   color: ${(props) => props.theme.color.brandColors.dark};
   background-color: transparent;
   text-decoration: none;
+  border-bottom: solid 0.25rem
+    ${(props) => props.theme.color.contrasts.lightContrast};
   cursor: pointer;
   svg {
     align-self: center;
-    margin-right: 6px;
+    margin-right: 0.375rem;
     width: 0.938rem;
     height: 0.938rem;
     fill: ${(props) => props.theme.color.brandColors.dark};
@@ -29,9 +31,6 @@ export const Tab = styled.a`
     svg {
       fill: ${(props) => props.theme.color.button.secondary};
     }
-  }
-  &:focus {
-    border-bottom: solid 4px ${(props) => props.theme.color.button.secondary};
   }
   &:disabled {
     color: ${(props) => props.theme.color.button.disabled};
