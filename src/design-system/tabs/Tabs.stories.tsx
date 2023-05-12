@@ -1,8 +1,6 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
-import { TabContainer } from './tabContainer';
-import { Tab } from './tab';
-import { TabPanel } from './tabPanel';
+import { Tab, TabPanel, TabContainer } from '@ambush/ui';
 import { Tabs } from './tabs';
 
 export default {
