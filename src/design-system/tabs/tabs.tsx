@@ -1,4 +1,3 @@
-import React from 'react';
 import { Tab } from './tab';
 import { TabContainer } from './tabContainer';
 
