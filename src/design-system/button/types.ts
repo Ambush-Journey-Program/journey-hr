@@ -24,6 +24,20 @@ type DefaultButton = {
   onClick: () => void;
 };
 
+type ButtonWithoutChildren = {
+  children?: undefined;
+  'aria-label': string;
+};
+
+type ButtonWithChildren = {
+  children: string;
+  'aria-label'?: string;
+};
+
+type ButtonChildrenVariable = ButtonWithChildren | ButtonWithoutChildren;
+
 type ButtonPropsVariable = ButtonSubmit | DefaultButton;
 
-export type ButtonProps = BaseButtonProps & ButtonPropsVariable;
+export type ButtonProps = BaseButtonProps &
+  ButtonPropsVariable &
+  ButtonChildrenVariable;
