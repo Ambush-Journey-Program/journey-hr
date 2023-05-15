@@ -1,0 +1,215 @@
+import { theme } from '../styles/theme';
+
+<Meta title="Docs/Spacings" />
+
+<style>
+  {`
+
+    h2{
+      font-family: 'Mundial', sans-serif;
+      font-weight: 700;
+      font-size: ${[theme.spacings.spacing05]};
+      line-height: ${[theme.spacings.spacing03]};
+      color: #301F47;
+    }
+
+    .wrapper {
+      flex-direction: collumn;
+      font-family: 'Mundial', sans-serif;
+      margin-top:${[theme.spacings.spacing05]};
+      font-weight: 700;
+      font-size: ${[theme.spacings.spacing04]};
+      color: #301F47;
+
+    }
+
+    .spacingElement {
+      display: flex;
+      gap: ${[theme.spacings.spacing02]};
+      margin-top:${[theme.spacings.spacing01]};
+      flex-direction: row;
+
+    }
+
+    .subtitle {
+      font-family: 'Mundial', sans-serif;
+      font-weight: 300;
+      font-size: ${[theme.spacings.spacing03]};
+      line-height: ${[theme.spacings.spacing04]};;
+      color: #301F47;
+
+    }
+
+    .spacingBar {
+      height: ${[theme.spacings.spacing04]};
+      box-shadow:${[theme.shadows.purple]};
+      border-radius: ${[theme.spacings.spacing01]};
+      background: ${[theme.color.gradients.up.red]};
+    }
+
+    #space01 {
+      width: ${[theme.spacings.spacing01]};
+    }
+
+    #space02 {
+      width: ${[theme.spacings.spacing02]};
+    }
+
+    #space03 {
+      width: ${[theme.spacings.spacing03]};
+    }
+
+    #space04 {
+      width: ${[theme.spacings.spacing04]};
+    }
+
+    #space05 {
+      width: ${[theme.spacings.spacing05]};
+    }
+
+    #space06 {
+      width: ${[theme.spacings.spacing06]};
+    }
+
+    #space07 {
+      width: ${[theme.spacings.spacing07]};
+    }
+
+    #space08 {
+      width: ${[theme.spacings.spacing08]};
+    }
+
+    #space09 {
+      width: ${[theme.spacings.spacing09]};
+    }
+
+    #space10 {
+      width: ${[theme.spacings.spacing10]};
+    }
+
+    #space11 {
+      width: ${[theme.spacings.spacing11]};
+    }
+
+    #space12 {
+      width: ${[theme.spacings.spacing12]};
+    }
+
+    #space13 {
+      width: ${[theme.spacings.spacing13]};
+    }
+
+    #space14 {
+      width: ${[theme.spacings.spacing14]};
+    }
+
+    #space15 {
+      width: ${[theme.spacings.spacing15]};
+    }
+
+    #space16 {
+      width: ${[theme.spacings.spacing16]};
+    }
+
+`}
+</style>
+
+<h2>Spacing</h2>
+<div className="wrapper">
+  <div className="spacingElement">
+    <span>Spacing-01</span>
+    <span className="spacingBar"  id="space01"/>
+</div>
+<span className="subtitle"> 0.25rem (4px)</span>
+
+<div className="spacingElement">
+  <span>Spacing-02</span>
+  <span className="spacingBar" id="space02" />
+</div>
+<span className="subtitle"> 0.5rem (8px)</span>
+
+<div className="spacingElement">
+  <span>Spacing-03</span>
+  <span className="spacingBar" id="space03" />
+</div>
+<span className="subtitle"> 0.75rem (12px)</span>
+
+<div className="spacingElement">
+  <span>Spacing-04</span>
+  <span className="spacingBar" id="space04" />
+</div>
+<span className="subtitle"> 1rem (16px)</span>
+
+<div className="spacingElement">
+  <span>Spacing-05</span>
+  <span className="spacingBar" id="space05" />
+</div>
+<span className="subtitle"> 1.5rem ( 24px)</span>
+
+<div className="spacingElement">
+  <span>Spacing-06</span>
+  <span className="spacingBar" id="space06" />
+</div>
+<span className="subtitle"> 2rem (32px)</span>
+
+<div className="spacingElement">
+  <span>Spacing-07</span>
+  <span className="spacingBar" id="space07" />
+</div>
+<span className="subtitle"> 3rem (48px)</span>
+
+<div className="spacingElement">
+  <span>Spacing-08</span>
+  <span className="spacingBar" id="space08" />
+</div>
+<span className="subtitle"> 4rem (64px)</span>
+
+<div className="spacingElement">
+  <span>Spacing-09</span>
+  <span className="spacingBar" id="space09" />
+</div>
+<span className="subtitle"> 6rem (96px)</span>
+
+<div className="spacingElement">
+  <span>Spacing-10</span>
+  <span className="spacingBar" id="space10" />
+</div>
+<span className="subtitle"> 8rem (128px)</span>
+
+<div className="spacingElement">
+  <span>Spacing-11</span>
+  <span className="spacingBar" id="space11" />
+</div>
+<span className="subtitle"> 12rem (192px)</span>
+
+<div className="spacingElement">
+  <span>Spacing-12</span>
+  <span className="spacingBar" id="space12" />
+</div>
+<span className="subtitle"> 16rem (256px)</span>
+
+<div className="spacingElement">
+  <span>Spacing-13</span>
+  <span className="spacingBar" id="space13" />
+</div>
+<span className="subtitle"> 24rem (384px)</span>
+
+<div className="spacingElement">
+  <span>Spacing-14</span>
+  <span className="spacingBar" id="space14" />
+</div>
+<span className="subtitle"> 32rem (512px)</span>
+
+<div className="spacingElement">
+  <span>Spacing-15</span>
+  <span className="spacingBar" id="space15" />
+</div>
+<span className="subtitle"> 40rem (640px)</span>
+
+<div className="spacingElement">
+  <span>Spacing-16</span>
+  <span className="spacingBar" id="space16" />
+</div>
+<span className="subtitle"> 48rem (768px)</span>
+
+</div>
