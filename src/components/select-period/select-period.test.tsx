@@ -1,9 +1,8 @@
 import * as React from 'react';
 import { SelectPeriod } from '.';
-import { render, screen } from '@/tests/renderWithProviders';
+import { fireEvent, render, screen } from '@/tests/renderWithProviders';
 
 describe('<SelectPeriod />', () => {
-  describe('should have this render', () => {
     it('renders the Label', () => {
       render(<SelectPeriod />);
       const inputEl = screen.getByText('Start Date');
@@ -14,5 +13,4 @@ describe('<SelectPeriod />', () => {
       const inputEl = screen.getByText('End Date');
       expect(inputEl).toBeInTheDocument();
     });
-  });
 });

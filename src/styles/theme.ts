@@ -10,6 +10,6 @@ export const theme = {
     gradients,
     button,
   },
-  shadows: { shadows },
-  font: { font },
+  shadows: shadows,
+  font: font,
 };
