@@ -1,13 +1,13 @@
-import * as Styled from './paragraphs.styled';
+import * as Styled from './paragraph.styled';
 
-import { ParagraphsProps } from './types';
+import { ParagraphProps } from './types';
 
-export function Paragraphs({
+export function Paragraph({
   size = 'default',
   fontWeight = 'light',
   colorVariant = 'dark',
   children,
-}: ParagraphsProps) {
+}: ParagraphProps) {
   return (
     <Styled.Paragraph
       size={size}

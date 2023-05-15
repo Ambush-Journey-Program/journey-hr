@@ -1,7 +1,7 @@
 import { ISelectInputProps } from './types';
 import * as Styled from './select-input.styled';
 import { ChangeEvent, useState } from 'react';
-import { Paragraphs } from '../typography/paragraphs/paragraphs';
+import { Paragraph } from '../typography/paragraph/paragraph';
 
 export function SelectInput({
   title,
@@ -43,20 +43,16 @@ export function SelectInput({
       </Styled.Select>
       {!!error && (
         <Styled.Span>
-          <Paragraphs size="extrasmall" fontWeight="light" colorVariant="red">
+          <Paragraph size="extrasmall" fontWeight="light" colorVariant="red">
             {error}
-          </Paragraphs>
+          </Paragraph>
         </Styled.Span>
       )}
       {!!warn && (
         <Styled.Span>
-          <Paragraphs
-            size="extrasmall"
-            fontWeight="light"
-            colorVariant="purple"
-          >
+          <Paragraph size="extrasmall" fontWeight="light" colorVariant="purple">
             {warn}
-          </Paragraphs>
+          </Paragraph>
         </Styled.Span>
       )}
     </Styled.Wrapper>

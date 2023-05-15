@@ -1,6 +1,6 @@
 import { CheckboxProps } from './types';
 import * as Styled from './checkbox.styled';
-import { Paragraphs, Subtitle } from '../typography';
+import { Paragraph } from '../typography';
 
 export function CheckBox({
   onChange,
@@ -21,13 +21,13 @@ export function CheckBox({
       />
 
       <Styled.StyledDiv>
-        <Paragraphs size="default" fontWeight={labelFontWeight}>
+        <Paragraph size="default" fontWeight={labelFontWeight}>
           {label}
-        </Paragraphs>
+        </Paragraph>
 
-        <Paragraphs size="default" fontWeight="semihair">
+        <Paragraph size="default" fontWeight="semihair">
           {description}
-        </Paragraphs>
+        </Paragraph>
       </Styled.StyledDiv>
     </Styled.Label>
   );

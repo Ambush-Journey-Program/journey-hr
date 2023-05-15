@@ -1,5 +1,5 @@
 import { ChangeEvent, useState } from 'react';
-import { Paragraphs } from '../typography/paragraphs/paragraphs';
+import { Paragraph } from '../typography/paragraph/paragraph';
 import * as Styled from './input.styled';
 import { IInputProps } from './types';
 import * as Icons from '@heroicons/react/24/outline';
@@ -63,9 +63,9 @@ export function Input({
         )}
       </Styled.InputContainer>
       {!!error && (
-        <Paragraphs size="extrasmall" fontWeight="light" colorVariant="red">
+        <Paragraph size="extrasmall" fontWeight="light" colorVariant="red">
           {error}
-        </Paragraphs>
+        </Paragraph>
       )}
       {!!warn && (
         <Paragraphs size="extrasmall" fontWeight="light" colorVariant="red">

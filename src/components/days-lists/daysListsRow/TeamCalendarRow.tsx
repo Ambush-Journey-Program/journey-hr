@@ -2,7 +2,7 @@ import * as Styled from './teamCalendarRow.styled';
 
 import { Badge, Subtitle } from '@/design-system';
 import { TeamCalendarListProps } from '../types';
-import { Paragraph } from '@/design-system/typography/paragraphs/paragraphs.styled';
+import { Paragraph } from '@/design-system/typography/paragraph/paragraph.styled';
 
 export function TeamCalendarRow({ details }: TeamCalendarListProps) {
   return (

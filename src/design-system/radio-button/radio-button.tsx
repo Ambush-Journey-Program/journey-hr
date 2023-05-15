@@ -1,3 +1,4 @@
+import { Paragraph } from '../typography';
 import * as Styled from './radio-button.styled';
 import { RadioButtonProps } from './types';
 
@@ -24,13 +25,9 @@ export function RadioButton({
         disabled={disabled}
       />
       <Styled.containerLabel htmlFor={value} disabled={disabled}>
-        <Styled.paragraphLabel
-          colorVariant="dark"
-          size="medium"
-          fontWeight={fontWeight}
-        >
+        <Paragraph colorVariant="dark" size="medium" fontWeight={fontWeight}>
           {label}
-        </Styled.paragraphLabel>
+        </Paragraph>
       </Styled.containerLabel>
     </Styled.containerInput>
   );

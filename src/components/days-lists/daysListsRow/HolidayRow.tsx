@@ -2,7 +2,7 @@ import * as Styled from './holidayRow.styled';
 
 import { Subtitle } from '@/design-system';
 import { HolidaysListProps } from '../types';
-import { Paragraph } from '@/design-system/typography/paragraphs/paragraphs.styled';
+import { Paragraph } from '@/design-system/typography/paragraph/paragraph.styled';
 
 export function HolidayRow({ details }: HolidaysListProps) {
   return (
