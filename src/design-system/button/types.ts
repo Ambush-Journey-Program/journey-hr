@@ -11,7 +11,7 @@ type BaseButtonProps = {
   color?: ColorProp;
   sizeVariant?: SizeProp;
   variant?: ButtonType;
-  icon?: keyof typeof HeroIcons | undefined;
+  icon?: keyof typeof HeroIcons;
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
 type ButtonSubmit = {
