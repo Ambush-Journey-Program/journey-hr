@@ -22,9 +22,7 @@ export function GuestList({ guestsList, onDelete }: GuestListProps) {
             variant="ghost"
             icon="TrashIcon"
             color="alternative"
-            onClick={() => {
-              onDelete && onDelete(item.guest.id);
-            }}
+            onClick={() => onDelete && onDelete(item.guest.id)}
             aria-label="Delete Button"
           />
         </Styled.ListComponent>
