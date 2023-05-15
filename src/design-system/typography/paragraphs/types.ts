@@ -8,7 +8,7 @@ export type ParagraphType =
   | 'extrasmall'
   | 'tiny';
 
-export type TextWeight = 'hair' | 'semihair' | 'light' | 'semibold';
+export type TextWeight = 'hair' | 'light' | 'semibold';
 
 export type ColorType =
   | 'red'
@@ -19,7 +19,7 @@ export type ColorType =
   | 'error';
 
 export type ParagraphsProps = {
-  children: string;
+  children?: React.ReactNode;
   size: ParagraphType;
   fontWeight: TextWeight;
   colorVariant?: ColorType;
