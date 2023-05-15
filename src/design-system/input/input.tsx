@@ -2,6 +2,7 @@ import { ChangeEvent, useState } from 'react';
 import { Paragraphs } from '../typography/paragraphs/paragraphs';
 import * as Styled from './input.styled';
 import { IInputProps } from './types';
+import * as Icons from '@heroicons/react/24/outline';
 
 export function Input({
   label,
@@ -10,6 +11,9 @@ export function Input({
   disabled,
   readOnly,
   error,
+  warn,
+  right,
+  placeholder,
   type = 'text',
   name,
   onTextChange = () => {},
@@ -19,6 +23,7 @@ export function Input({
     onTextChange(e.target.value);
     setTouched(true);
   }
+
   return (
     <Styled.Wrapper error={error}>
       <Styled.Label htmlFor={name}>
@@ -26,12 +31,16 @@ export function Input({
       </Styled.Label>
       <Styled.InputContainer
         error={error}
+        warn={warn}
         disabled={disabled}
         touched={touched}
       >
+        <Styled.calendarIcon>
+          <Icons.CalendarDaysIcon className="alert" data-testid="Alert" />
+        </Styled.calendarIcon>
         <input
           type={type}
-          placeholder="Label"
+          placeholder={placeholder}
           required={required}
           disabled={disabled}
           readOnly={readOnly}
@@ -39,10 +48,28 @@ export function Input({
           onChange={onInputChange}
           data-testid="input-test"
         />
+        {!!right && (
+          <Styled.SpanCorrect>
+            <Icons.CheckIcon className="alert" data-testid="Alert" />
+          </Styled.SpanCorrect>
+        )}
+        {(!!warn || !!error) && (
+          <Styled.Span>
+            <Icons.ExclamationCircleIcon
+              className="alert"
+              data-testid="Alert"
+            />
+          </Styled.Span>
+        )}
       </Styled.InputContainer>
       {!!error && (
         <Paragraphs size="extrasmall" fontWeight="light" colorVariant="red">
           {error}
+        </Paragraphs>
+      )}
+      {!!warn && (
+        <Paragraphs size="extrasmall" fontWeight="light" colorVariant="red">
+          {warn}
         </Paragraphs>
       )}
     </Styled.Wrapper>

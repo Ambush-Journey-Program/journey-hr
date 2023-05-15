@@ -17,8 +17,7 @@ const errorDisplay = css`
 `;
 
 const warnDisplay = css`
-  color: ${(props) => props.theme.color.auxiliary.whiteDarkMode};
-  background-color: ${(props) => props.theme.color.contrasts.lightContrast};
+  color: ${(props) => props.theme.color.contrasts.lowestContrast};
 `;
 
 export const Wrapper = styled.div`
