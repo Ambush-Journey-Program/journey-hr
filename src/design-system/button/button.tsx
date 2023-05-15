@@ -10,27 +10,21 @@ export function Button({
   disabled,
   children,
   icon,
-  ariaLabel,
   ...props
 }: ButtonProps) {
-  // @ts-expect-error /
-
-  const TheIcon = Icons[icon];
-  const buttonIcon = icon && <TheIcon data-testid="button-icon" />;
+  const TheIcon = icon && Icons[icon];
+  const buttonIcon = TheIcon && <TheIcon data-testid="button-icon" />;
   return (
-    <>
-      <ButtonStyle
-        haveChildren={Boolean(children)}
-        sizeVariant={sizeVariant}
-        color={color}
-        variant={variant}
-        disabled={disabled}
-        aria-label={ariaLabel}
-        {...props}
-      >
-        {buttonIcon}
-        {children}
-      </ButtonStyle>
-    </>
+    <ButtonStyle
+      haveChildren={Boolean(children)}
+      sizeVariant={sizeVariant}
+      color={color}
+      variant={variant}
+      disabled={disabled}
+      {...props}
+    >
+      {buttonIcon}
+      {children}
+    </ButtonStyle>
   );
 }

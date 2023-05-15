@@ -11,7 +11,7 @@ type BaseButtonProps = {
   color?: ColorProp;
   sizeVariant?: SizeProp;
   variant?: ButtonType;
-  icon?: keyof typeof HeroIcons;
+  icon?: keyof typeof HeroIcons | undefined;
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
 type ButtonSubmit = {
@@ -24,20 +24,20 @@ type DefaultButton = {
   onClick: () => void;
 };
 
-type ButtonWithIcon = {
+type ButtonWithoutChildren = {
   children?: undefined;
-  ariaLabel: string;
+  'aria-label': string;
 };
 
-type ButtonWithOutIcon = {
+type ButtonWithChildren = {
   children: string;
-  ariaLabel?: string;
+  'aria-label'?: string;
 };
 
-type ButtonIconVariable = ButtonWithIcon | ButtonWithOutIcon;
+type ButtonChildrenVariable = ButtonWithChildren | ButtonWithoutChildren;
 
 type ButtonPropsVariable = ButtonSubmit | DefaultButton;
 
 export type ButtonProps = BaseButtonProps &
   ButtonPropsVariable &
-  ButtonIconVariable;
+  ButtonChildrenVariable;
