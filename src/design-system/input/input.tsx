@@ -16,6 +16,7 @@ export function Input({
   placeholder,
   type = 'text',
   name,
+  placeholder = 'Label',
   onTextChange = () => {},
 }: IInputProps) {
   const [touched, setTouched] = useState(false);
