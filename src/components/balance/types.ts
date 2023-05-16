@@ -13,6 +13,6 @@ export type BalanceProps = {
   isAdmin: boolean;
   availableDays: number;
   consumedDays: number;
-  nextRefill: string;
+  nextRefill?: string;
   optionalHolidays: number;
 };

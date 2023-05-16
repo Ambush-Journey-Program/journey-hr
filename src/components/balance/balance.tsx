@@ -17,11 +17,12 @@ export function Balance({
 }: BalanceProps) {
   const [selectedEmployee] = useState(employees[0]);
   const isNegativeAvailableDays = availableDays < 0;
-  const availableDaysLabel =
-    availableDays === 1 || availableDays === -1 ? 'day' : 'days';
   const isNegativeConsumedDays = consumedDays < 0;
-  const ConsumedDaysLabel =
-    consumedDays === 1 || consumedDays === -1 ? 'day' : 'days';
+
+  function daysLabel(days: number) {
+    const dayOrDays = days === 1 || days === -1 ? 'day' : 'days';
+    return `${consumedDays.toString()} ${dayOrDays}`;
+  }
 
   return (
     <Styled.Wrapper>
@@ -68,7 +69,7 @@ export function Balance({
             fontWeight="semibold"
             colorVariant={isNegativeAvailableDays ? 'error' : 'dark'}
           >
-            {availableDays.toString()} {availableDaysLabel}
+            {daysLabel(availableDays)}
             <span> available</span>
           </Paragraph>
         </Styled.Div>
@@ -81,7 +82,7 @@ export function Balance({
             fontWeight="semibold"
             colorVariant={isNegativeConsumedDays ? 'error' : 'dark'}
           >
-            {consumedDays.toString()} {ConsumedDaysLabel}
+            {daysLabel(consumedDays)}
           </Paragraph>
         </Styled.Div>
 

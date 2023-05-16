@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Balance } from '.';
+import { Balance } from './balance';
 import { render, screen } from '@/tests/renderWithProviders';
 
 describe('<Balance />', () => {
@@ -11,7 +11,6 @@ describe('<Balance />', () => {
     render(
       <Balance
         consumedDays={0}
-        nextRefill={''}
         optionalHolidays={0}
         isAdmin={false}
         availableDays={0}
@@ -29,7 +28,6 @@ describe('<Balance />', () => {
         isAdmin={true}
         availableDays={0}
         consumedDays={0}
-        nextRefill={''}
         optionalHolidays={0}
       />,
     );
@@ -43,7 +41,6 @@ describe('<Balance />', () => {
         availableDays={0}
         buttonClick={() => {}}
         consumedDays={0}
-        nextRefill={''}
         optionalHolidays={0}
       />,
     );
