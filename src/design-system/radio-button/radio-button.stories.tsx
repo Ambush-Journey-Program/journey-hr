@@ -9,13 +9,34 @@ export default {
 } as Meta;
 
 const Template: Story<RadioButtonProps> = (args) => {
-  return <RadioButton {...args} />;
+  return (
+    <>
+      <RadioButton
+        defaultChecked={true}
+        label={'Selection 1'}
+        value={'Selection 1'}
+        name={'Selection 1'}
+      />
+      <RadioButton
+        defaultChecked={false}
+        label={'Selection 2'}
+        value={'Selection 2'}
+        name={'Selection 1'}
+      />
+      <RadioButton
+        defaultChecked={false}
+        label={'Selection 3'}
+        value={'Selection 3'}
+        name={'Selection 1'}
+      />
+      <RadioButton
+        defaultChecked={false}
+        label={'Selection 4'}
+        value={'Selection 4'}
+        name={'Selection 1'}
+      />
+    </>
+  );
 };
 
 export const RadioButtonStory = Template.bind({});
-RadioButtonStory.args = {
-  optionDefault: 'Large',
-  option2: 'Medium',
-  fontWeight: 'hair',
-  disabled: false,
-};
