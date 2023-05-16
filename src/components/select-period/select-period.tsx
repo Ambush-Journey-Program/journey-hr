@@ -18,64 +18,100 @@ const isDate15DaysFromNow = (date: Date) => {
   return isFirstDateAfterSecondDate(date, today);
 };
 
-const isStartDateOnFuture = (date: Date) => {
+function findToday() {
   const today = new Date();
-  return isFirstDateAfterSecondDate(date, today);
-};
+  const day = today.getDate();
+  const month = today.getMonth() + 1;
+  const year = today.getFullYear();
+
+  const dayString = day < 10 ? `0${day}` : day;
+  const monthString = month < 10 ? `0${month}` : month;
+
+  return `${year}-${monthString}-${dayString}`;
+}
+const today = findToday();
+
+function parseDate(originalDate: string) {
+  const [year, month, day] = originalDate.split('-');
+  if (
+    typeof year === 'undefined' ||
+    typeof month === 'undefined' ||
+    typeof day === 'undefined'
+  ) {
+    return null;
+  }
+  const parsedYear = parseInt(year, 10);
+  const indexedMonth = parseInt(month, 10) - 1;
+  const parsedDay = parseInt(day, 10);
+  if (isNaN(parsedYear) || isNaN(indexedMonth) || isNaN(parsedDay)) {
+    return null;
+  }
+
+  const date = new Date(parsedYear, indexedMonth, parsedDay);
+  return date;
+}
+
+function isWeekEnd(day: number) {
+  return [0, 6].includes(day);
+}
 
 export function SelectPeriod() {
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
+
   const [startDateError, setStartDateError] = useState('');
+  // const [dateWarn, setDateWarn] = useState('');
+
   const [endDateError, setEndDateError] = useState('');
-  const [dateWarn, setDateWarn] = useState('');
-  const isCorrect =
-    !startDateError && !endDateError && !dateWarn && !!startDate;
 
-  function parseDate(originalDate: string) {
-    const [year, month, day] = originalDate.split('-');
-    if (
-      typeof year === 'undefined' ||
-      typeof month === 'undefined' ||
-      typeof day === 'undefined'
-    ) {
-      return null;
-    }
-    const parsedYear = parseInt(year, 10);
-    const indexedMonth = parseInt(month, 10) - 1;
-    const parsedDay = parseInt(day, 10);
-    if (isNaN(parsedYear) || isNaN(indexedMonth) || isNaN(parsedDay)) {
-      return null;
+  const isCorrect = !startDateError && !endDateError && !!startDate;
+
+  useEffect(() => {
+    if (!startDate) return;
+
+    const parsedStartDate = parseDate(startDate) as Date;
+    if (!isDate15DaysFromNow(parsedStartDate)) {
+      setStartDateError(
+        'Settings of your Organization mandate you to request this Timeoff at least 14 days before the Date of timeoff request.'
+      );
+      return;
     }
 
-    const date = new Date(parsedYear, indexedMonth, parsedDay);
-    console.log(date, parsedYear, indexedMonth, parsedDay);
-    const maxDate = `${parsedYear}-${indexedMonth}-${parsedDay}`;
-    alert(maxDate);
-    return date && maxDate;
-  }
+    if (isWeekEnd(parsedStartDate.getDay())) {
+      setStartDateError('It`s weekend');
+      return;
+    }
+    setStartDateError('');
+  }, [startDate]);
 
-  // const dtToday = new Date();
-  // const dateYear = parseInt(year, 10);
-  // const dateMonth = parseInt(month, 10) - 1;
-  // const dateDay = parseInt(day, 10);
-  // // let month = dtToday.getMonth() + 1;
-  // // let day = dtToday.getDate();
-  // // let year = dtToday.getFullYear();
+  useEffect(() => {
+    if (!endDate) return;
+    const parsedEndDate = parseDate(endDate) as Date;
+    if (isWeekEnd(parsedEndDate.getDay())) {
+      setEndDateError('It`s weekend');
+      return;
+    }
+    setEndDateError('');
+  }, [endDate]);
 
-  // // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
+  useEffect(() => {
+    if (!startDate || !endDate) return;
+    const parsedStartDate = parseDate(startDate) as Date;
+    const parsedEndDate = parseDate(endDate) as Date;
+
+    if (isFirstDateAfterSecondDate(parsedStartDate, parsedEndDate)) {
+      setEndDateError('Invalid work day.');
+      return;
+    }
+
+    setEndDateError('');
+
+  }, [startDate, endDate]);
 
   useEffect(() => {
     const parsedStartDate = parseDate(startDate);
     const parsedEndDate = parseDate(endDate);
     if (!parsedStartDate || !parsedEndDate) {
-      if (!parsedStartDate) {
-        return;
-      }
-      if (!parsedEndDate) {
-        return;
-      }
-
       return;
     }
 
@@ -84,24 +120,20 @@ export function SelectPeriod() {
       parsedStartDate,
     );
     const isDay15DaysOnFuture = isDate15DaysFromNow(parsedStartDate);
-    const isStartBeOnFuture = isStartDateOnFuture(parsedStartDate);
-    if (!isStartComeFirst || !isDay15DaysOnFuture || !isStartBeOnFuture) {
+    if (!isStartComeFirst || !isDay15DaysOnFuture) {
       if (!isStartComeFirst) {
         setEndDateError('Invalid work day.');
       }
       if (!isDay15DaysOnFuture) {
-        setDateWarn(
-          'Settings of your Organization mandate you to request this Timeoff at least 14 days before the Date of timeoff request.',
-        );
-      }
-      if (!isStartBeOnFuture) {
-        setStartDateError('Invalid work day.');
+        // setDateWarn(
+        //   'Settings of your Organization mandate you to request this Timeoff at least 14 days before the Date of timeoff request.',
+        // );
       }
       return;
     }
     setStartDateError('');
     setEndDateError('');
-    setDateWarn('');
+
   }, [endDate, startDate]);
 
   return (
@@ -112,9 +144,8 @@ export function SelectPeriod() {
         onTextChange={setStartDate}
         value={startDate}
         error={startDateError}
-        warn={dateWarn}
         right={isCorrect}
-        min={maxDate}
+        min={today}
       />
       <Input
         label="End Date"
@@ -122,6 +153,8 @@ export function SelectPeriod() {
         onTextChange={setEndDate}
         value={endDate}
         error={endDateError}
+        right={isCorrect}
+        min={today}
       />
     </Styled.InputsWrapper>
   );

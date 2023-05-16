@@ -33,7 +33,7 @@ const warnError = css`
 
 const errorDisplay = css`
   color: ${(props) => props.theme.color.auxiliary.error};
-  box-shadow: ${(props) => props.theme.shadows.shadows.red};
+  box-shadow: ${(props) => props.theme.shadows.red};
   border: ${(props) => `1px solid ${props.theme.color.auxiliary.error}`};
 `;
 

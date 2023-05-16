@@ -11,13 +11,13 @@ export function Input({
   disabled,
   readOnly,
   error,
-  warn,
   right,
   placeholder = 'Label',
   type = 'text',
   name,
 
   onTextChange = () => {},
+  ...props
 }: IInputProps) {
   const [touched, setTouched] = useState(false);
   function onInputChange(e: ChangeEvent<HTMLInputElement>) {
@@ -32,7 +32,6 @@ export function Input({
       </Styled.Label>
       <Styled.InputContainer
         error={error}
-        warn={warn}
         disabled={disabled}
         touched={touched}
       >
@@ -48,13 +47,14 @@ export function Input({
           value={value}
           onChange={onInputChange}
           data-testid="input-test"
+          {...props}
         />
         {!!right && (
           <Styled.SpanCorrect>
             <Icons.CheckIcon className="alert" data-testid="Alert" />
           </Styled.SpanCorrect>
         )}
-        {(!!warn || !!error) && (
+        {!!error && (
           <Styled.Span>
             <Icons.ExclamationCircleIcon
               className="alert"
@@ -66,11 +66,6 @@ export function Input({
       {!!error && (
         <Paragraph size="extrasmall" fontWeight="light" colorVariant="red">
           {error}
-        </Paragraph>
-      )}
-      {!!warn && (
-        <Paragraph size="extrasmall" fontWeight="light" colorVariant="red">
-          {warn}
         </Paragraph>
       )}
     </Styled.Wrapper>
