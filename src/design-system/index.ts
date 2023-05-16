@@ -12,7 +12,7 @@ export { Tooltip } from '../design-system/tooltip';
 export { Title, Subtitle, Paragraph } from '../design-system/typography';
 export { BackButton } from '../components/ui/back-button';
 export { ShortHappyHour } from './short-appointment';
-export { GuestsAppointment } from './guests-appointment';
+export { GuestsAppointment } from '../components/guests-appointment';
 export { Tab } from './tabs/tab';
 export { TabContainer } from './tabs/tabContainer';
 export { TabPanel } from './tabs/tabPanel';

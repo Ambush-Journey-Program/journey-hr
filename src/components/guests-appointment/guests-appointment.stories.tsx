@@ -13,7 +13,7 @@ const listGuests = [
 
 export default {
   component: GuestsAppointment,
-  title: 'UI/GuestsAppointment',
+  title: 'Components/GuestsAppointment',
   parameters: {
     isLoading: false,
   },
