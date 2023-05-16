@@ -5,7 +5,7 @@ const title = 'Pizza and Games';
 const date = '01/02/2023';
 export default {
   component: ShortHappyHour,
-  title: 'UI/ShortHappyHour',
+  title: 'Components/ShortHappyHour',
   parameters: {
     isLoading: false,
   },
