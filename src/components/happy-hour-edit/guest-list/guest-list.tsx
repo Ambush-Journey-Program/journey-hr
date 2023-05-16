@@ -1,5 +1,5 @@
 import * as Styled from './guest-list.styled';
-import { Paragraphs, Badge, Button } from '@ambush/ui';
+import { Paragraph, Badge, Button } from '@ambush/ui';
 import { GuestListProps } from './types';
 import { ReactComponent as UserIcon } from './userIcon.svg';
 
@@ -11,9 +11,9 @@ export function GuestList({ guestsList, onDelete }: GuestListProps) {
           <Styled.UserContainer>
             <UserIcon />
             <Styled.ContainerProfile>
-              <Paragraphs size="large" fontWeight="semibold">
+              <Paragraph size="large" fontWeight="semibold">
                 {item.guest.name}
-              </Paragraphs>
+              </Paragraph>
               <Badge text={item.guest.team} />
             </Styled.ContainerProfile>
           </Styled.UserContainer>

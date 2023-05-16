@@ -1,9 +1,9 @@
 import { Meta, Story } from '@storybook/react';
-import { Paragraphs } from './paragraphs';
-import { ParagraphsProps } from './types';
+import { Paragraph } from './paragraph';
+import { ParagraphProps } from './types';
 
 export default {
-  component: Paragraphs,
+  component: Paragraph,
   title: 'UI/Typography',
   parameters: {
     children: 'Label',
@@ -25,12 +25,12 @@ export default {
   },
 } as Meta;
 
-const ParagraphTemplate: Story<ParagraphsProps> = (args) => {
-  return <Paragraphs {...args} />;
+const ParagraphTemplate: Story<ParagraphProps> = (args) => {
+  return <Paragraph {...args} />;
 };
 
-export const ParagraphStory = ParagraphTemplate.bind({});
-ParagraphStory.args = {
+export const Paragraphtory = ParagraphTemplate.bind({});
+Paragraphtory.args = {
   children: 'Label',
   size: 'large',
   fontWeight: 'light',

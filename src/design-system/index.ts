@@ -9,7 +9,7 @@ export { NavBar } from '../design-system/navbar';
 export { SelectInput } from '../design-system/select-input';
 export { TextArea } from '../design-system/text-area';
 export { Tooltip } from '../design-system/tooltip';
-export { Title, Subtitle, Paragraphs } from '../design-system/typography';
+export { Title, Subtitle, Paragraph } from '../design-system/typography';
 export { BackButton } from '../components/ui/back-button';
 export { ShortHappyHour } from './short-appointment';
 export { GuestsAppointment } from './guests-appointment';

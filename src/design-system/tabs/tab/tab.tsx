@@ -12,10 +12,10 @@ export function Tab({
   const linkIcon = TheIcon && <TheIcon data-testid="button-icon" />;
   return (
     <Styled.Tab>
-      <Styled.ParagraphsStyle size={labelSize} fontWeight={fontWeight}>
+      <Styled.ParagraphStyle size={labelSize} fontWeight={fontWeight}>
         {linkIcon}
         {label}
-      </Styled.ParagraphsStyle>
+      </Styled.ParagraphStyle>
     </Styled.Tab>
   );
 }

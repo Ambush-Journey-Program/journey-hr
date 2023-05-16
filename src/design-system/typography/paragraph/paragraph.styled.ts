@@ -5,9 +5,9 @@ import styled, {
   ThemeProps,
 } from 'styled-components';
 import { WithRequiredProperty } from '../../../types';
-import { ParagraphsProps, ColorType } from './types';
+import { ParagraphProps, ColorType } from './types';
 
-type ParagraphsStyle = {
+type Paragraphtyle = {
   [key: string]: FlattenSimpleInterpolation;
 };
 
@@ -19,7 +19,7 @@ type ColorVariants = {
   [key: string]: FlattenInterpolation<ThemeProps<ColorType>>;
 };
 
-const paragraphsEl: ParagraphsStyle = {
+const paragraphEl: Paragraphtyle = {
   giant: css`
     font-size: 1.5rem;
   `,
@@ -74,7 +74,7 @@ const color: ColorVariants = {
   `,
 };
 
-const paragraphsWeightEl: TextWeight = {
+const paragraphWeightEl: TextWeight = {
   hair: css`
     font-weight: 200;
   `,
@@ -91,12 +91,12 @@ const paragraphsWeightEl: TextWeight = {
 };
 
 export const Paragraph = styled.p<
-  WithRequiredProperty<ParagraphsProps, 'colorVariant'>
+  WithRequiredProperty<ParagraphProps, 'colorVariant'>
 >`
   font-family: ${(props) => props.theme.font.fontFamilyBody};
   width: 100%;
   ${({ colorVariant }) => color[colorVariant]}
 
-  ${({ size }) => paragraphsEl[size]}
-  ${({ fontWeight }) => paragraphsWeightEl[fontWeight]}
+  ${({ size }) => paragraphEl[size]}
+  ${({ fontWeight }) => paragraphWeightEl[fontWeight]}
 `;

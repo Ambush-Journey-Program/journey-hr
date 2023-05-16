@@ -1,6 +1,6 @@
 import { CardWrapper, SelectInput } from '@/design-system';
 import { HappyHourEditProps } from './types';
-import { Paragraphs } from '@/design-system/typography';
+import { Paragraph } from '@/design-system/typography';
 import * as Styled from './happy-hour-edit.styled';
 import { EMPLOYEES } from './const';
 import { GuestList } from './guest-list';
@@ -72,9 +72,9 @@ export function HappyHourEdit({
           <Styled.TextTitle>Group Names</Styled.TextTitle>
         </Styled.ContainerTitle>
         <Styled.ContainerTitle>
-          <Paragraphs fontWeight="semihair" size="medium" colorVariant="dark">
+          <Paragraph fontWeight="semihair" size="medium" colorVariant="dark">
             {`(${guestsIdList.length} / ${maxGuests} People)`}
-          </Paragraphs>
+          </Paragraph>
         </Styled.ContainerTitle>
         <Styled.ContainerInput>
           <SelectInput

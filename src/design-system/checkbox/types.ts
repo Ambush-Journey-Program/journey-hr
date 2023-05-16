@@ -1,5 +1,5 @@
 import { InputHTMLAttributes } from 'react';
-import { TextWeight, ParagraphType } from '../typography/paragraphs/types';
+import { TextWeight } from '../typography/paragraph/types';
 
 export type CheckboxProps = {
   onChange: () => void;

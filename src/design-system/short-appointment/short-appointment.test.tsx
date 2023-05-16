@@ -15,7 +15,7 @@ describe('<ShortHappyHour />', () => {
       const labelDate = screen.getByText(date);
       expect(labelDate).toBeInTheDocument();
     });
-    it('should have two paragraphs', () => {
+    it('should have two Paragraph', () => {
       render(<ShortHappyHour appointment={title} date={date} />);
       const labelTitle = screen.getByText('Name of the event');
       const labelDate = screen.getByText('Date:');

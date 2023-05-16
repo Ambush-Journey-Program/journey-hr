@@ -1,4 +1,4 @@
-import { Avatar, Paragraphs, Subtitle } from '@/design-system';
+import { Avatar, Paragraph, Subtitle } from '@/design-system';
 import * as Styled from './balance.styled';
 import { employees as employeesMock } from './mocking/holidays';
 import { BalanceProps } from './types';
@@ -56,31 +56,31 @@ export function Balance({
           <Subtitle variant="s6" fontWeight="regular">
             Recharge Days
           </Subtitle>
-          <Paragraphs
+          <Paragraph
             size="extralarge"
             fontWeight="semibold"
             colorVariant={isNegativeAvailableDays ? 'error' : 'dark'}
           >
             {availableDays.toString()} {availableDaysLabel}
             <span> available</span>
-          </Paragraphs>
+          </Paragraph>
         </Styled.Div>
         <Styled.Div>
           <Subtitle variant="s6" fontWeight="regular">
             Consumed
           </Subtitle>
-          <Paragraphs size="extralarge" fontWeight="semibold">
+          <Paragraph size="extralarge" fontWeight="semibold">
             0 days
-          </Paragraphs>
+          </Paragraph>
         </Styled.Div>
 
         <Styled.Div>
           <Subtitle variant="s6" fontWeight="regular">
             Next Refill
           </Subtitle>
-          <Paragraphs size="extralarge" fontWeight="semibold">
+          <Paragraph size="extralarge" fontWeight="semibold">
             Mar 24, 2024
-          </Paragraphs>
+          </Paragraph>
         </Styled.Div>
         <Styled.VeticalLine />
         <Styled.Div>
@@ -88,9 +88,9 @@ export function Balance({
             Optional Holidays
           </Subtitle>
 
-          <Paragraphs size="extralarge" fontWeight="semibold">
+          <Paragraph size="extralarge" fontWeight="semibold">
             0/4 used
-          </Paragraphs>
+          </Paragraph>
         </Styled.Div>
       </Styled.BalanceDiv>
     </Styled.Wrapper>

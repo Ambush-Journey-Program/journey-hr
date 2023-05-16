@@ -1,4 +1,4 @@
-import { Paragraphs } from '@/design-system/typography';
+import { Paragraph } from '@/design-system/typography';
 import styled from 'styled-components';
 
 export const Tab = styled.a`
@@ -39,7 +39,7 @@ export const Tab = styled.a`
   }
 `;
 
-export const ParagraphsStyle = styled(Paragraphs)`
+export const ParagraphStyle = styled(Paragraph)`
   display: flex;
   justify-content: center;
 `;
