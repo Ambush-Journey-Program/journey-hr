@@ -22,20 +22,12 @@ describe('<SelectEmployee />', () => {
     expect(input).toBeInTheDocument();
   });
 
-  it('renders list', () => {
-    const name = 'Renata Schneider';
-
-    render(<SelectEmployee employees={employees} />);
-    const nameTest = screen.getByText(name);
-
-    expect(nameTest).toBeInTheDocument();
-  });
-
   it('renders currentUser', async () => {
     render(
       <SelectEmployee employees={employees} currentUser="Renata Schneider" />,
     );
     const list = screen.getAllByTestId('listTest');
+    expect(list).toHaveLength(11);
     expect(list[0]).toHaveTextContent('Renata Schneider (Me)');
     expect(list[1]).toHaveTextContent('Ana Urbano');
   });
@@ -51,7 +43,6 @@ describe('<SelectEmployee />', () => {
     await userEvent.type(input, 'Ana Urbano');
     const list = screen.getByTestId('listTest');
     expect(input.value).toBe('Ana Urbano');
-
     expect(list).toHaveTextContent('Ana Urbano');
     expect([list]).toHaveLength(1);
   });
