@@ -1,7 +1,6 @@
 import { Input } from '@ambush/ui';
 import * as Styled from './select-period.styled';
 import { useEffect, useState } from 'react';
-import { selectPeriodProps } from './types';
 
 const isFirstDateAfterSecondDate = (firstDate: Date, secondDate: Date) => {
   const firstDateTime = firstDate.getTime();
@@ -50,8 +49,21 @@ export function SelectPeriod() {
     }
 
     const date = new Date(parsedYear, indexedMonth, parsedDay);
-    return date;
+    console.log(date, parsedYear, indexedMonth, parsedDay);
+    const maxDate = `${parsedYear}-${indexedMonth}-${parsedDay}`;
+    alert(maxDate);
+    return date && maxDate;
   }
+
+  // const dtToday = new Date();
+  // const dateYear = parseInt(year, 10);
+  // const dateMonth = parseInt(month, 10) - 1;
+  // const dateDay = parseInt(day, 10);
+  // // let month = dtToday.getMonth() + 1;
+  // // let day = dtToday.getDate();
+  // // let year = dtToday.getFullYear();
+
+  // // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
 
   useEffect(() => {
     const parsedStartDate = parseDate(startDate);
@@ -102,6 +114,7 @@ export function SelectPeriod() {
         error={startDateError}
         warn={dateWarn}
         right={isCorrect}
+        min={maxDate}
       />
       <Input
         label="End Date"
