@@ -4,7 +4,7 @@ import { ModalProps } from './types';
 
 export default {
   component: Modal,
-  title: 'Components/Modal',
+  title: 'UI/Modal',
   parameters: {
     relatedLinks: {
       sections: [
@@ -13,7 +13,8 @@ export default {
           links: [
             {
               text: 'Modal ',
-              url: 'https://www.figma.com/file/yOF5DjTKrtqxLiP7A5DsOy/Ambush-Atoms?node-id=522%3A270&t=lXp9G2678yes8yDk-1',
+              url:
+                'https://www.figma.com/file/yOF5DjTKrtqxLiP7A5DsOy/Ambush-Atoms?node-id=522%3A270&t=lXp9G2678yes8yDk-1',
               description: 'This is the Figma of Modal',
             },
           ],
