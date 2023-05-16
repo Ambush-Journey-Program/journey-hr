@@ -29,8 +29,8 @@ const ParagraphTemplate: Story<ParagraphProps> = (args) => {
   return <Paragraph {...args} />;
 };
 
-export const ParagraphStory = ParagraphTemplate.bind({});
-ParagraphStory.args = {
+export const Paragraphtory = ParagraphTemplate.bind({});
+Paragraphtory.args = {
   children: 'Label',
   size: 'large',
   fontWeight: 'light',

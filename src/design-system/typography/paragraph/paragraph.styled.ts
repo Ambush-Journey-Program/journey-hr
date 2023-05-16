@@ -7,7 +7,7 @@ import styled, {
 import { WithRequiredProperty } from '../../../types';
 import { ParagraphProps, ColorType } from './types';
 
-type ParagraphStyle = {
+type Paragraphtyle = {
   [key: string]: FlattenSimpleInterpolation;
 };
 
@@ -19,7 +19,7 @@ type ColorVariants = {
   [key: string]: FlattenInterpolation<ThemeProps<ColorType>>;
 };
 
-const paragraphEl: ParagraphStyle = {
+const paragraphEl: Paragraphtyle = {
   giant: css`
     font-size: 1.5rem;
   `,

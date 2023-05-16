@@ -68,9 +68,9 @@ export function Input({
         </Paragraph>
       )}
       {!!warn && (
-        <Paragraphs size="extrasmall" fontWeight="light" colorVariant="red">
+        <Paragraph size="extrasmall" fontWeight="light" colorVariant="red">
           {warn}
-        </Paragraphs>
+        </Paragraph>
       )}
     </Styled.Wrapper>
   );
