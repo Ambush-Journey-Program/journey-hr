@@ -63,7 +63,13 @@ export function SelectEmployee({
       </div>
 
       {employeesFiltered.map((employee) => {
-        return <SearchRow key={employee.id} employee={employee} />;
+        return (
+          <SearchRow
+            data-testid="listTest"
+            key={employee.id}
+            employee={employee}
+          />
+        );
       })}
     </Wrapper>
   );

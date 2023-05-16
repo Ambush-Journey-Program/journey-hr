@@ -1,6 +1,6 @@
 import { render, screen } from '@/tests/renderWithProviders';
-import { SelectEmployee } from '..';
-import { employees } from '../mocking';
+import { SelectEmployee } from '.';
+import { employees } from './mocking';
 import userEvent from '@testing-library/user-event';
 
 describe('<SelectEmployee />', () => {
@@ -35,9 +35,9 @@ describe('<SelectEmployee />', () => {
     render(
       <SelectEmployee employees={employees} currentUser="Renata Schneider" />,
     );
-    const nameTest = screen.getByText('Renata Schneider (Me)');
-
-    expect(nameTest).toBeInTheDocument();
+    const list = screen.getAllByTestId('listTest');
+    expect(list[0]).toHaveTextContent('Renata Schneider (Me)');
+    expect(list[1]).toHaveTextContent('Ana Urbano');
   });
 
   it('checks the input behaviour', async () => {
@@ -48,9 +48,25 @@ describe('<SelectEmployee />', () => {
     const input = screen.getByRole('textbox', {
       name: 'Type employee name',
     });
-
     await userEvent.type(input, 'Ana Urbano');
+    const list = screen.getByTestId('listTest');
     expect(input.value).toBe('Ana Urbano');
+
+    expect(list).toHaveTextContent('Ana Urbano');
+    expect([list]).toHaveLength(1);
+  });
+
+  it('checks the input lenght', async () => {
+    render(
+      <SelectEmployee employees={employees} currentUser="Renata Schneider" />,
+    );
+
+    const input = screen.getByRole('textbox', {
+      name: 'Type employee name',
+    });
+    await userEvent.type(input, 'ca');
+    const list = screen.getAllByTestId('listTest');
+    expect(list).toHaveLength(2);
   });
 
   it('checks if the error is in the document', async () => {
