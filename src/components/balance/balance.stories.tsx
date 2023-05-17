@@ -13,7 +13,7 @@ const Template: Story = (args) => {
     <Balance
       optionalHolidays={0}
       consumedDays={0}
-      nextRefill={'Mar 24, 2024'}
+      nextRefill="Mar 24, 2024"
       availableDays={0}
       isAdmin={false}
       employees={employees}
