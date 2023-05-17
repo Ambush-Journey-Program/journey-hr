@@ -37,7 +37,7 @@ describe('<Balance />', () => {
   it('It checks if the button is visible', () => {
     render(
       <Balance
-        isAdmin={true}
+        isAdmin
         availableDays={0}
         buttonClick={() => {}}
         consumedDays={0}

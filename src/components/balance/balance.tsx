@@ -3,13 +3,17 @@ import * as Styled from './balance.styled';
 import { employees as employeesMock } from './mocking/holidays';
 import { BalanceProps } from './types';
 import { useState } from 'react';
-const MAX_OPTIOAL_DAYS = '4';
+const MAX_OPTIONAL_DAYS = '4';
+function daysLabel(days: number) {
+  const dayOrDays = days === 1 || days === -1 ? 'day' : 'days';
+  return `${days.toString()} ${dayOrDays}`;
+}
 
 export function Balance({
   employees = employeesMock,
   buttonClick,
   buttonText,
-  isAdmin = false,
+  isAdmin,
   availableDays,
   nextRefill = '',
   consumedDays,
@@ -18,11 +22,6 @@ export function Balance({
   const [selectedEmployee] = useState(employees[0]);
   const isNegativeAvailableDays = availableDays < 0;
   const isNegativeConsumedDays = consumedDays < 0;
-
-  function daysLabel(days: number) {
-    const dayOrDays = days === 1 || days === -1 ? 'day' : 'days';
-    return `${consumedDays.toString()} ${dayOrDays}`;
-  }
 
   return (
     <Styled.Wrapper>
@@ -101,7 +100,7 @@ export function Balance({
           </Subtitle>
 
           <Paragraph size="extralarge" fontWeight="semibold">
-            {optionalHolidays.toString()}/{MAX_OPTIOAL_DAYS.toString()} used
+            {optionalHolidays.toString()}/{MAX_OPTIONAL_DAYS.toString()} used
           </Paragraph>
         </Styled.Div>
       </Styled.BalanceDiv>
