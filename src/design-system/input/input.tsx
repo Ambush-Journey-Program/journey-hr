@@ -13,10 +13,10 @@ export function Input({
   error,
   warn,
   right,
-  placeholder,
+  placeholder = 'Label',
   type = 'text',
   name,
-  placeholder = 'Label',
+
   onTextChange = () => {},
 }: IInputProps) {
   const [touched, setTouched] = useState(false);
