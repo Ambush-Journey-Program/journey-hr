@@ -15,4 +15,5 @@ export type BalanceProps = {
   consumedDays: number;
   nextRefill?: string;
   optionalHolidays: number;
+  title: string;
 };
