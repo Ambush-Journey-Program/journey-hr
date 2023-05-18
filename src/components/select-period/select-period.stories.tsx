@@ -11,7 +11,4 @@ const Template: Story = (args) => {
 };
 
 export const SelectPeriodStory = Template.bind({});
-SelectPeriodStory.args = {
-  error: false,
-  correct: false,
-};
+
