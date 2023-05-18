@@ -5,7 +5,7 @@ import { useTheme } from 'styled-components';
 export function Icon({ color, icon, size }: IconProps) {
   const TheIcon = icon && IconsHero[icon];
   const theme = useTheme();
-  const iconColor = theme.color.icon[color];
+  const iconColor = theme.color.icon[color] || theme.color.icon.primary;
 
   return (
     <>
