@@ -43,14 +43,3 @@ export const button = {
   secondary: '#9B9AD6',
   disabled: '#CDC5D9',
 };
-
-export const icon = {
-  primary: '#FAF7F3',
-  accepted: '#49D971',
-  error: '#D94949',
-  highContrast: '#45365A',
-  mediumContrast: '#5C4C73',
-  lowContrast: '#9588A9',
-  lowestContrast: '#CDC5D9',
-  secondaryHover: '#6866BE;',
-};
