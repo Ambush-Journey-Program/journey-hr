@@ -40,7 +40,8 @@
     "react/jsx-props-no-spreading": "off", // Disable the rule that does not allow usage of spreading inside a JSX Props.
     "react/prop-types": "off", // Disable the need for Prop Types on a React file
     "react-hooks/rules-of-hooks": "error", // Show errors when a Hook rule is broken,
-    "react-hooks/exhaustive-deps": "warn"
+    "react-hooks/exhaustive-deps": "warn",
+    "react/jsx-curly-brace-presence": "error"
   },
   "parser": "@typescript-eslint/parser",
   "settings": {
