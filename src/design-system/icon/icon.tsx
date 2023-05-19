@@ -16,11 +16,7 @@ export function Icon({ color, icon, size }: IconProps) {
   return (
     <>
       {TheIcon && (
-        <TheIcon
-          color={iconColor[color]}
-          width={size}
-          data-testid="test-icon"
-        />
+        <TheIcon color={iconColor[color]} width={size} aria-label="icon" />
       )}
     </>
   );

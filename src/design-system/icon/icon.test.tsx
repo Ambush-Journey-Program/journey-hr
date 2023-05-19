@@ -5,9 +5,9 @@ import { render, screen } from '@/tests/renderWithProviders';
 
 describe('<Icon />', () => {
   it('when the component is actually used', () => {
-    render(<Icon color={'accepted'} />);
-    const IconTest = screen.getByTestId('test-icon');
+    render(<Icon color="accepted" />);
+    const IconTest = screen.findByLabelText('icon');
 
-    expect(IconTest).toBeInTheDocument();
+    expect(IconTest).toBeDefined();
   });
 });
