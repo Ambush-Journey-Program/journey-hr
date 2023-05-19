@@ -18,7 +18,7 @@ export function Balance({
   nextRefill = '',
   consumedDays,
   optionalHolidays,
-  title = ' Your Current Balance',
+  title = 'Your Current Balance',
 }: BalanceProps) {
   const [selectedEmployee] = useState(employees[0]);
   const isNegativeAvailableDays = availableDays < 0;

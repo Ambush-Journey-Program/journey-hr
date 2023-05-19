@@ -2,7 +2,6 @@ import * as React from 'react';
 
 import { Balance } from './balance';
 import { render, screen } from '@/tests/renderWithProviders';
-import { title } from 'process';
 
 describe('<Balance />', () => {
   it('It checks if shows employee card', () => {
@@ -27,7 +26,7 @@ describe('<Balance />', () => {
         availableDays={0}
         consumedDays={0}
         optionalHolidays={0}
-        title={''}
+        title=""
       />,
     );
     const avatar = screen.getByRole('img');
@@ -41,7 +40,7 @@ describe('<Balance />', () => {
         buttonClick={() => {}}
         consumedDays={0}
         optionalHolidays={0}
-        title={''}
+        title=""
       />,
     );
     const button = screen.getByRole('button');

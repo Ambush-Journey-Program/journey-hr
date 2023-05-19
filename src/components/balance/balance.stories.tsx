@@ -11,6 +11,7 @@ export default {
 const Template: Story = (args) => {
   return (
     <Balance
+      title={''}
       optionalHolidays={0}
       consumedDays={0}
       nextRefill="Mar 24, 2024"
@@ -31,6 +32,7 @@ BalanceStoryWithCTA.args = {
   nextRefill: 'Mar 15, 2024',
   consumedDays: 21,
   optionalHolidays: 2,
+  title: 'Your Current Balance',
 };
 
 export const BalanceStory = Template.bind({});
@@ -39,4 +41,5 @@ BalanceStory.args = {
   availableDays: 20,
   nextRefill: 'Mar 24, 2024',
   optionalHolidays: 0,
+  title: 'Your Current Balance',
 };
