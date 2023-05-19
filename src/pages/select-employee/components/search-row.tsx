@@ -1,4 +1,4 @@
-import { Paragraphs, Badge, Button } from '@/design-system';
+import { Paragraph, Badge, Button } from '@/design-system';
 import * as Styled from './search-row-styled';
 
 export function SearchRow({ employee }: any) {
@@ -7,13 +7,18 @@ export function SearchRow({ employee }: any) {
       <Styled.employeeInfo>
         <Styled.SingleUserIcon />
         <Styled.ProfileBox data-testid="listTest">
-          <Paragraphs size="medium" fontWeight="semibold">
+          <Paragraph size="medium" fontWeight="semibold">
             {employee.name}
-          </Paragraphs>
+          </Paragraph>
           <Badge text={employee.team} />
         </Styled.ProfileBox>
       </Styled.employeeInfo>
-      <Button variant="ghost" color="primary" icon="ChevronRightIcon" />
+      <Button
+        variant="ghost"
+        color="primary"
+        icon="ChevronRightIcon"
+        aria-label="Select Employee Button"
+      />
     </Styled.DisplayResultsSearch>
   );
 }
