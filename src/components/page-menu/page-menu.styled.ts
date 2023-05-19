@@ -12,7 +12,7 @@ export const LogoContainer = styled.div`
 
   span {
     svg {
-      height: 40px;
+      height: 2.5rem;
     }
   }
 `;
@@ -44,6 +44,10 @@ export const ListItem = styled.li`
     border-radius: 25px;
     a {
       color: ${(props) => props.theme.color.button.secondaryHover};
+
+      svg {
+        ${(props) => props.theme.color.button.secondaryHover};
+      }
     }
   }
 `;
@@ -59,7 +63,7 @@ export const ButtonContainer = styled.div`
   padding: 3.75rem 4.375rem;
 
   button {
-    font-size: 16px;
+    font-size: 1rem;
     padding: 0;
   }
   svg {

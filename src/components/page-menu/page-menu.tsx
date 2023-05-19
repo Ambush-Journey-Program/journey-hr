@@ -6,7 +6,7 @@ export function PageMenu() {
   return (
     <Styled.Menu data-testid="Menu">
       <Styled.LogoContainer>
-        <Logo colorVariant="dark" variant="horizontal"></Logo>
+        <Logo colorVariant="dark" variant="horizontal" />
       </Styled.LogoContainer>
       <Styled.UserContainer>
         <Paragraph size="small" fontWeight="hair">
