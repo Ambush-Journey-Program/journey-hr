@@ -13,11 +13,7 @@ export function Icon({ color, icon, size }: IconProps) {
     ...theme.color.brandColors,
   };
 
-  return (
-    <>
-      {TheIcon && (
-        <TheIcon color={iconColor[color]} width={size} aria-label="icon" />
-      )}
-    </>
-  );
+  return TheIcon ? (
+    <TheIcon color={iconColor[color]} width={size} aria-label="icon" />
+  ) : null;
 }
