@@ -12,4 +12,8 @@ export type BalanceProps = {
   employees?: Employees;
   isAdmin: boolean;
   availableDays: number;
+  consumedDays: number;
+  nextRefill?: string;
+  optionalHolidays: number;
+  title?: string;
 };
