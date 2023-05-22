@@ -28,5 +28,5 @@ const Template: Story = (args) => {
   return <AsideMenu {...args} />;
 };
 
-export const PageMenuStory = Template.bind({});
-PageMenuStory.args = {};
+export const AsideMenuStory = Template.bind({});
+AsideMenuStory.args = {};
