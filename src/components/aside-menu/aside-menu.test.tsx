@@ -1,9 +1,9 @@
 import { render, screen } from '@/tests/renderWithProviders';
-import { PageMenu } from '.';
+import { AsideMenu } from '.';
 
 describe('<PageHeader  />', () => {
   it('has rendered', () => {
-    render(<PageMenu />);
+    render(<AsideMenu />);
     const textTest = screen.getByTestId('Menu');
     expect(textTest).toBeInTheDocument();
   });

@@ -1,11 +1,11 @@
 import { Meta, Story } from '@storybook/react';
-import { PageMenu } from './page-menu';
+import { AsideMenu } from './aside-menu';
 
 export default {
-  component: PageMenu,
-  title: 'Components/PageMenu',
+  component: AsideMenu,
+  title: 'Components/AsideMenu',
   parameters: {
-    label: 'PageMenu text',
+    label: 'AsideMenu text',
     relatedLinks: {
       sections: [
         {
@@ -25,7 +25,7 @@ export default {
 } as Meta;
 
 const Template: Story = (args) => {
-  return <PageMenu {...args} />;
+  return <AsideMenu {...args} />;
 };
 
 export const PageMenuStory = Template.bind({});

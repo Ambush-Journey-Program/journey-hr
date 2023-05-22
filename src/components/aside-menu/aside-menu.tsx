@@ -1,15 +1,15 @@
 import { Button, Logo, Paragraph } from '@/design-system';
-import { MenuItem } from './';
-import * as Styled from './page-menu.styled';
+import { MenuItem } from '.';
+import * as Styled from './aside-menu.styled';
 
-export function PageMenu() {
+export function AsideMenu() {
   return (
     <Styled.Menu data-testid="Menu">
       <Styled.LogoContainer>
         <Logo colorVariant="dark" variant="horizontal" />
       </Styled.LogoContainer>
       <Styled.UserContainer>
-        <Paragraph size="small" fontWeight="hair">
+        <Paragraph size="large" fontWeight="light">
           Welcome back,
         </Paragraph>
         <Paragraph size="large" fontWeight="semibold">

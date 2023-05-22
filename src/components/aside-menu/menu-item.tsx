@@ -1,6 +1,6 @@
 import * as Icons from '@heroicons/react/24/outline';
 import { MenuLinksProps } from './types';
-import * as Styled from './page-menu.styled';
+import * as Styled from './aside-menu.styled';
 
 export function MenuItem({ icon, children }: MenuLinksProps) {
   const TheIcon = icon && Icons[icon];
