@@ -1,5 +1,6 @@
 import {
   findToday,
+  isDate15DaysFromNow,
   isFirstDateAfterSecondDate,
   isWeekEnd,
   parseDate,
@@ -31,15 +32,24 @@ describe('parseDate', () => {
   });
 });
 
-describe('Error date', () => {
-  it('isDate15DaysFromNow', () => {
+describe('isDate15DaysFromNow', () => {
+  it('should Date be 15 Days From Now', () => {
     const today = new Date();
-    const futureDays = today.setDate(today.getDate() + 14);
-    const stringDate = futureDays as Date;
-    const previousDays = isFirstDateAfterSecondDate(stringDate, today);
+    const futureDays = today.setDate(today.getDate() + 15);
+    const stringDate = new Date(futureDays);
+    const previousDays = isDate15DaysFromNow(stringDate);
     expect(previousDays).toBeTruthy();
   });
-  it('isFirstDateAfterSecondDate', () => {
+  it('should Date be last then 15 Days From Now', () => {
+    const today = new Date();
+    const futureDays = today.setDate(today.getDate() + 10);
+    const stringDate = new Date(futureDays);
+    const previousDays = isDate15DaysFromNow(stringDate);
+    expect(previousDays).toBeFalsy();
+  });
+});
+describe('isFirstDateAfterSecondDate', () => {
+  it('should First Date After Second Date', () => {
     const startDay = '2023-08-17';
     const endDay = '2023-07-18';
     const firstDate = parseDate(startDay) as Date;
