@@ -1,15 +1,33 @@
+import { Button } from '@/design-system';
+import { Title } from '@/design-system/typography/title/title';
+import { devices } from '@/styles/devices';
 import styled from 'styled-components';
-import { SelectPeriod } from '../select-period/select-period';
 
 export const TimeOffPageHeaderWrapper = styled.div`
   margin-bottom: 3rem;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-`;
-export const SelectPeriodProp = styled(SelectPeriod)`
-  flex-direction: 'row';
-  width: 100%;
+  gap: ${(props) => props.theme.spacings.spacing04};
 `;
 
-export const TimeOffPageTitle = styled.div``;
+export const BackButton = styled(Button)`
+  width: max-content;
+`;
+
+export const SpacingWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${(props) => props.theme.spacings.spacing07};
+
+  @media ${devices.tablet} {
+    gap: ${(props) => props.theme.spacings.spacing06};
+  }
+
+  @media ${devices.mobile} {
+    gap: ${(props) => props.theme.spacings.spacing05};
+  }
+`;
+
+export const TimeOffTitle = styled(Title)`
+  margin-bottom: ${(props) => props.theme.spacings.spacing05};
+`;

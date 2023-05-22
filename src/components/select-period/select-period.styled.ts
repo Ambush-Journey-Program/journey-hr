@@ -1,18 +1,13 @@
-import { devices } from '@/styles/devices';
 import styled from 'styled-components';
 
 export const InputsWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  width: 18.75rem;
+  width: 100%;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-column-gap: 1.5rem;
-
-  @media ${devices.desktop} {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
 `;
 export const Span = styled.span`
   display: block;

@@ -1,5 +1,4 @@
 import { Meta, Story } from '@storybook/react';
-
 import { Balance } from './balance';
 import { employees } from './mocking/holidays';
 

@@ -1,4 +1,4 @@
-import { Avatar, Paragraph, Subtitle } from '@/design-system';
+import { Avatar, Subtitle } from '@/design-system';
 import * as Styled from './balance.styled';
 import { employees as employeesMock } from './mocking/holidays';
 import { BalanceProps } from './types';

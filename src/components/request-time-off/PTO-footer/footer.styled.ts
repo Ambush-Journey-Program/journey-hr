@@ -19,7 +19,7 @@ export const Footer = styled.div<FooterProps>`
 
   @media ${devices.mobile} {
     flex-direction: column;
-    & .button {
+    & button {
       width: 100%;
     }
   }
