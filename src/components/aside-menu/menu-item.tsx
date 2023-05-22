@@ -8,7 +8,7 @@ export function MenuItem({ icon, children }: MenuLinksProps) {
 
   return (
     <Styled.ListItem>
-      <a href={''}>
+      <a href="">
         {LinkIcon} {children}
       </a>
     </Styled.ListItem>

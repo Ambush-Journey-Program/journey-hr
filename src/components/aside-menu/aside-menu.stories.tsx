@@ -1,6 +1,7 @@
 import { Meta, Story } from '@storybook/react';
 import { AsideMenu } from './aside-menu';
 
+// eslint-disable-next-line @typescript-eslint/consistent-type-assertions
 export default {
   component: AsideMenu,
   title: 'Components/AsideMenu',
