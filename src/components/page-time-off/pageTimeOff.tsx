@@ -1,5 +1,5 @@
 import * as Styled from './pageTimeOff.styled';
-import { Button, CardWrapper, Subtitle, Title } from '@/design-system';
+import { Button, CardWrapper } from '@/design-system';
 import { Balance } from '../balance';
 import {
   DaysLists,
@@ -13,28 +13,18 @@ import {
   TimeOffList,
   TeamCalendarList,
 } from '../days-lists/types';
+import { PageHeader } from '../page-header';
 
 export function PageTimeOff() {
   return (
     <CardWrapper>
       <Styled.TimeOffPageHeaderWrapper data-testid="PageTimeOff">
-        <Styled.TimeOffPageHeader>
-          <div>
-            <Title variant="h5">Time Off</Title>
-            <Subtitle fontWeight="hair" variant="s5">
-              Its Friday, Out 30
-            </Subtitle>
-          </div>
-          <div>
-            <Button>Apply Time Off</Button>
-          </div>
-        </Styled.TimeOffPageHeader>
-        <Balance
-          consumedDays={4}
-          optionalHolidays={0}
-          availableDays={20}
-          isAdmin={false}
-        />
+        <PageHeader
+          title="Time Off"
+          subtitle="Its Friday, Out 30"
+          button={<Button>Apply Time Off</Button>}
+        ></PageHeader>
+        <Balance availableDays={20} isAdmin={false} consumedDays={0} optionalHolidays={0} />
       </Styled.TimeOffPageHeaderWrapper>
       <Styled.TimeOffPageDaysListsGrid>
         <Styled.GridContainer1>

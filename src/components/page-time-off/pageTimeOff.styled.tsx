@@ -4,12 +4,6 @@ export const TimeOffPageHeaderWrapper = styled.div`
   margin-bottom: 3rem;
 `;
 
-export const TimeOffPageHeader = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-`;
-
 export const TimeOffPageTitle = styled.div``;
 
 export const TimeOffPageDaysListsGrid = styled.div`

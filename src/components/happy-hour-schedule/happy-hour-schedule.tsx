@@ -1,4 +1,4 @@
-import { BackButton, Button, Input, SelectInput, TextArea } from '@/design-system';
+import { BackButton, Input, SelectInput, TextArea } from '@/design-system';
 import { PageHeader } from '../page-header';
 import { generateAmountPeopleOptions } from './constants';
 import * as Styled from './happy-hour-schedule.styled';

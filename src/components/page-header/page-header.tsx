@@ -1,4 +1,4 @@
-import { Title, Subtitle, Button } from '@ambush/ui';
+import { Title, Subtitle } from '@ambush/ui';
 import { PageHeaderProps } from './types';
 import * as Styled from './page-header.styled';
 
