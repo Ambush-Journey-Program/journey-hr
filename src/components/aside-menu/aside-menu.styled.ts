@@ -56,11 +56,12 @@ export const UserContainer = styled.div`
   display: flex;
   flex-direction: column;
   text-align: center;
+  row-gap: 0.375rem;
   padding: 2.5rem;
 `;
 
 export const ButtonContainer = styled.div`
-  padding: 3.75rem 4.375rem;
+  padding: 3.75rem 5.375rem;
 
   button {
     font-size: 1rem;
