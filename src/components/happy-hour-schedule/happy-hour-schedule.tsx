@@ -1,4 +1,4 @@
-import { Input, SelectInput, TextArea } from '@/design-system';
+import { BackButton, Button, Input, SelectInput, TextArea } from '@/design-system';
 import { PageHeader } from '../page-header';
 import { generateAmountPeopleOptions } from './constants';
 import * as Styled from './happy-hour-schedule.styled';
@@ -7,9 +7,8 @@ export function HappyHourSchedule() {
   const amountOfPeople = generateAmountPeopleOptions();
   return (
     <Styled.MainWrapper data-testid="happyHourSchedule">
-      <Styled.StyledBackButton onClick={() => {}} />
-
       <PageHeader
+        backButton={<BackButton onClick={() => {}} />}
         title="Happy Hour Schedule "
         subtitle="Choose the best dates to celebrate"
       />
