@@ -28,7 +28,7 @@ describe('parseDate', () => {
   });
   it('findToday', () => {
     const today = findToday();
-    expect(today).toBeDefined();
+    expect(today).toMatch(/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/);
   });
 });
 
@@ -49,12 +49,20 @@ describe('isDate15DaysFromNow', () => {
   });
 });
 describe('isFirstDateAfterSecondDate', () => {
-  it('should First Date After Second Date', () => {
+  it('should StartDate be before EndDate return true', () => {
     const startDay = '2023-08-17';
     const endDay = '2023-07-18';
     const firstDate = parseDate(startDay) as Date;
     const secondDate = parseDate(endDay) as Date;
     const previousDays = isFirstDateAfterSecondDate(firstDate, secondDate);
-    expect(previousDays).toBeDefined();
+    expect(previousDays).toBeTruthy();
+  });
+  it('should endDate be before StartDay return false', () => {
+    const startDay = '2023-08-17';
+    const endDay = '2023-07-18';
+    const firstDate = parseDate(startDay) as Date;
+    const secondDate = parseDate(endDay) as Date;
+    const previousDays = isFirstDateAfterSecondDate(secondDate, firstDate);
+    expect(previousDays).toBeFalsy();
   });
 });
