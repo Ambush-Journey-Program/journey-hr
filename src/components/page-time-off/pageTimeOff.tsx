@@ -63,7 +63,10 @@ export function PageTimeOff() {
             buttonTitle="View My Team's Calendar"
             list={teamCalendar}
             renderRow={(details) => (
-              <TeamCalendarRow key={details.id} details={details as TeamCalendarList} />
+              <TeamCalendarRow
+                key={details.id}
+                details={details as TeamCalendarList}
+              />
             )}
           />
         </Styled.GridContainer3>
