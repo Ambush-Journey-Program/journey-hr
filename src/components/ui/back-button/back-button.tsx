@@ -7,9 +7,9 @@ export function BackButton({ disabled = false, onClick }: BackButtonProps) {
       onClick={onClick}
       disabled={disabled}
       sizeVariant="small"
-      variant="iconBtn"
+      variant="ghost"
       icon="ChevronLeftIcon"
-      color="purple"
+      color="alternative"
     >
       Back
     </BackBtn>
