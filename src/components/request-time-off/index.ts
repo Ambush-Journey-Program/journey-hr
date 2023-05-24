@@ -1,1 +1,1 @@
-export { PageRequestTimeOff } from './pageRequestTimeOff';
+export { RequestTimeOffContent } from './pageRequestTimeOff';
