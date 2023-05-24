@@ -11,9 +11,9 @@ export function PageHeader({
   return (
     <Styled.Container data-testid="page-header">
       <Styled.BackButtonBox>{backButton}</Styled.BackButtonBox>
-      <Title variant="h1">{title}</Title>
+      <Title variant="h4">{title}</Title>
       <Styled.Wrapper>
-        <Subtitle fontWeight="regular" variant="s4">
+        <Subtitle fontWeight="regular" variant="s5">
           {subtitle}
         </Subtitle>
       </Styled.Wrapper>

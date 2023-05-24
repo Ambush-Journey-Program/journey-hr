@@ -1,11 +1,18 @@
+import { devices } from '@/styles/devices';
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  position: absolute;
-  margin-top: 6px;
+  @media ${devices.tablet} {
+    position: absolute;
+  }
 `;
 export const Container = styled.div`
-  margin-top: 6px;
+  display: flex;
+  flex-direction: column;
+  @media ${devices.tablet} {
+    display: block;
+    flex-direction: row;
+  }
 `;
 
 export const BackButtonBox = styled.div`
@@ -15,7 +22,14 @@ export const BackButtonBox = styled.div`
 
 export const ButtonBox = styled.div`
   display: flex;
-  position: relative;
-  justify-content: flex-end;
-  bottom: 28px;
+  flex-direction: column;
+  margin-top: 24px;
+  @media ${devices.tablet} {
+    display: flex;
+    flex-direction: row;
+    margin-top: 0px;
+    bottom: 28px;
+    position: relative;
+    justify-content: flex-end;
+  }
 `;
