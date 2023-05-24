@@ -14,14 +14,6 @@ export function RequestTimeOffContent() {
     <CardWrapper>
       <Styled.TimeOffPageHeaderWrapper data-testid="PageRequestTimeOff">
         <BackButton />
-        <Styled.BackButton
-          sizeVariant="small"
-          color="secondary"
-          variant="ghost"
-          icon="ChevronLeftIcon"
-        >
-          Back
-        </Styled.BackButton>
 
         <TabContainer value={0}>
           <Tab label="Time Off" icon="ClockIcon" fontWeight="semibold" />

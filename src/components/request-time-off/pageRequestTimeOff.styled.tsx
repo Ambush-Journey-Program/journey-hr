@@ -1,4 +1,4 @@
-import { Button, Title } from '@ambush/ui';
+import { Title } from '@/design-system';
 import { devices } from '@/styles/devices';
 import styled from 'styled-components';
 
@@ -7,10 +7,6 @@ export const TimeOffPageHeaderWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${(props) => props.theme.spacings.spacing04};
-`;
-
-export const BackButton = styled(Button)`
-  width: max-content;
 `;
 
 export const SpacingWrapper = styled.div`

@@ -9,7 +9,10 @@ import { OptionalHolidays } from '@/components/optional-holidays';
 import { SelectPeriod } from '@/components/select-period';
 import { RequestTimeOffProps } from './types';
 
-export function RequestTimeOffTab({ onView }: RequestTimeOffProps) {
+export function RequestTimeOffTab(
+  variant: RequestTimeOffProps,
+  onView: () => void,
+) {
   return (
     <Styled.SpacingWrapper>
       <div>
