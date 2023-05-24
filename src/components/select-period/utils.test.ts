@@ -50,7 +50,7 @@ describe('isDate15DaysFromNow', () => {
 });
 describe('isFirstDateAfterSecondDate', () => {
   it('returns true when StartDate come before EndDate', () => {
-    const startDay = '2023-08-17';
+    const startDay = '2023-06-17';
     const endDay = '2023-07-18';
     const firstDate = parseDate(startDay) as Date;
     const secondDate = parseDate(endDay) as Date;
@@ -62,7 +62,7 @@ describe('isFirstDateAfterSecondDate', () => {
     const endDay = '2023-07-18';
     const firstDate = parseDate(startDay) as Date;
     const secondDate = parseDate(endDay) as Date;
-    const previousDays = isFirstDateAfterSecondDate(secondDate, firstDate);
+    const previousDays = isFirstDateAfterSecondDate(firstDate, secondDate);
     expect(previousDays).toBeFalsy();
   });
 });
