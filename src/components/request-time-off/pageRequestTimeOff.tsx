@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import * as Styled from './pageRequestTimeOff.styled';
-import { CardWrapper, TabContainer, Tab, TabPanel } from '@/design-system';
+import { CardWrapper, TabContainer, Tab, TabPanel } from '@ambush/ui';
 import { RequestTimeOffTab } from './requestTimeOffTab';
 
 export function RequestTimeOffContent() {

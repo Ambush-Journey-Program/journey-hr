@@ -1,4 +1,4 @@
-import { Avatar, Subtitle, Paragraph } from '@/design-system';
+import { Avatar, Subtitle, Paragraph } from '@ambush/ui';
 import * as Styled from './balance.styled';
 import { employees as employeesMock } from './mocking/holidays';
 import { BalanceProps } from './types';

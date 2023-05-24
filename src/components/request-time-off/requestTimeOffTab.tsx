@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import * as Styled from './pageRequestTimeOff.styled';
-import { Button } from '@/design-system';
+import { Button } from '@ambush/ui';
 import { Balance } from '../balance';
 import { TimeOffType } from '../time-off-type';
 import { Summary } from './summary/summary';

@@ -1,4 +1,4 @@
-import { Button, Title } from '@/design-system';
+import { Button, Title } from '@ambush/ui';
 import { devices } from '@/styles/devices';
 import styled from 'styled-components';
 
