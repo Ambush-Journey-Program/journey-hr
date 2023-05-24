@@ -37,4 +37,5 @@ SelectInputStory.args = {
   required: true,
   disabled: false,
   readOnly: false,
+  type: 'test',
 };

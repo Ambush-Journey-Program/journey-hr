@@ -2,26 +2,26 @@ import { InputHTMLAttributes } from 'react';
 
 export type IInputProps = InputHTMLAttributes<HTMLInputElement> & {
   label?: string;
-  error?: string | JSX.Element;
+  error?: string;
   warn?: string;
   onTextChange?: (value: string) => void;
   type?: string;
   placeholder?: string;
-  right?: boolean | string | JSX.Element;
+  right?: boolean;
 };
 
 export type StyleWrapper = {
-  error?: string | JSX.Element;
+  error?: boolean;
   warn?: string;
-  right?: boolean | string | JSX.Element;
+  right?: boolean;
 };
 
 export type StyledLabelProps = { disabled?: boolean };
 
 export type StyledInputProps = {
   disabled?: boolean;
-  error?: string | JSX.Element;
+  error?: string;
   touched?: boolean;
   warn?: string;
-  right?: string | JSX.Element;
+  right?: string;
 };

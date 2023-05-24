@@ -2,7 +2,8 @@ import { ChangeEvent, useState } from 'react';
 import { Paragraph } from '../typography/paragraph/paragraph';
 import * as Styled from './input.styled';
 import { IInputProps } from './types';
-import * as Icons from '@heroicons/react/24/outline';
+
+import { Icon } from '../icon/icon';
 
 export function Input({
   label,
@@ -14,7 +15,7 @@ export function Input({
   warn,
   right,
   placeholder = 'Label',
-  type = 'text',
+  type,
   name,
 
   onTextChange = () => {},
@@ -26,7 +27,7 @@ export function Input({
   }
 
   return (
-    <Styled.Wrapper error={error}>
+    <Styled.Wrapper>
       <Styled.Label htmlFor={name}>
         {label} {required && <span>Required</span>}
       </Styled.Label>
@@ -36,9 +37,11 @@ export function Input({
         disabled={disabled}
         touched={touched}
       >
-        <Styled.calendarIcon>
-          <Icons.CalendarDaysIcon className="alert" data-testid="Alert" />
-        </Styled.calendarIcon>
+        {type === 'date' ? (
+          <Icon color="lowestContrast" icon="CalendarIcon" size="20px" />
+        ) : (
+          <Icon color="lowestContrast" icon="CubeIcon" size="20px" />
+        )}
         <input
           type={type}
           placeholder={placeholder}
@@ -51,19 +54,22 @@ export function Input({
         />
         {!!right && (
           <Styled.SpanCorrect>
-            <Icons.CheckIcon className="alert" data-testid="Alert" />
+            <Icon color="accepted" icon="CheckIcon" size="20px" />
           </Styled.SpanCorrect>
         )}
-        {(!!warn || !!error) && (
+        {error && (
           <Styled.Span>
-            <Icons.ExclamationCircleIcon
+            <Icon
+              color="error"
+              size="16px"
+              icon="ExclamationCircleIcon"
               className="alert"
               data-testid="Alert"
             />
           </Styled.Span>
         )}
       </Styled.InputContainer>
-      {!!error && (
+      {error && (
         <Paragraph size="extrasmall" fontWeight="light" colorVariant="red">
           {error}
         </Paragraph>
