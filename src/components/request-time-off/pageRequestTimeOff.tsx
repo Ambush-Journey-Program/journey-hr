@@ -1,12 +1,19 @@
 /* eslint-disable react/no-unescaped-entities */
 import * as Styled from './pageRequestTimeOff.styled';
-import { CardWrapper, TabContainer, Tab, TabPanel } from '@ambush/ui';
+import {
+  CardWrapper,
+  TabContainer,
+  Tab,
+  TabPanel,
+  BackButton,
+} from '@ambush/ui';
 import { RequestTimeOffTab } from './requestTimeOffTab';
 
 export function RequestTimeOffContent() {
   return (
     <CardWrapper>
       <Styled.TimeOffPageHeaderWrapper data-testid="PageRequestTimeOff">
+        <BackButton />
         <Styled.BackButton
           sizeVariant="small"
           color="secondary"

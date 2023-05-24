@@ -22,6 +22,8 @@ export function RequestTimeOffTab({ onView }: RequestTimeOffProps) {
           availableDays={20}
           buttonClick={onView}
           buttonText="View Time Off"
+          consumedDays={0}
+          optionalHolidays={0}
         />
       </div>
 
