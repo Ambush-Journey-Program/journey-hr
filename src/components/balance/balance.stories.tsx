@@ -3,6 +3,7 @@ import { Meta, Story } from '@storybook/react';
 import { Balance } from './balance';
 import { employees } from './mocking/holidays';
 
+// eslint-disable-next-line @typescript-eslint/consistent-type-assertions
 export default {
   component: Balance,
   title: 'Components/Balance',
@@ -11,7 +12,7 @@ export default {
 const Template: Story = (args) => {
   return (
     <Balance
-      title={''}
+      title=""
       optionalHolidays={0}
       consumedDays={0}
       nextRefill="Mar 24, 2024"

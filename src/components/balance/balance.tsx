@@ -12,7 +12,7 @@ function daysLabel(days: number) {
 export function Balance({
   employees = employeesMock,
   buttonClick,
-  buttonText,
+  buttonText = 'View Time Off',
   isAdmin,
   availableDays,
   nextRefill = '',

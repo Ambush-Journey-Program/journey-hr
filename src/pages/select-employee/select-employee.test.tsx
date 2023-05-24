@@ -8,7 +8,7 @@ describe('<SelectEmployee />', () => {
     const label = 'Select Employee';
 
     render(<SelectEmployee employees={employees} />);
-    const labelSpan = screen.getByText(label);
+    const labelSpan = screen.getByRole('heading', { name: label });
 
     expect(labelSpan).toBeInTheDocument();
   });
@@ -42,7 +42,7 @@ describe('<SelectEmployee />', () => {
     });
     await userEvent.type(input, 'Ana Urbano');
     const list = screen.getByTestId('listTest');
-    expect(input.value).toBe('Ana Urbano');
+    expect(input).toHaveValue('Ana Urbano');
     expect(list).toHaveTextContent('Ana Urbano');
     expect([list]).toHaveLength(1);
   });

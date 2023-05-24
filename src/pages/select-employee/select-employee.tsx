@@ -5,6 +5,7 @@ import { ChangeEvent, useEffect, useState } from 'react';
 import { Employee, Employees, SelectEmployeeProps } from './types';
 import { EmployeeNotFound } from './components/employee-not-found';
 import { SearchRow } from './components/search-row';
+
 export function SelectEmployee({
   currentUser = 'Daniela Petry',
   employees,
@@ -14,13 +15,15 @@ export function SelectEmployee({
   const [touched, setTouched] = useState(false);
 
   useEffect(() => {
-    const me = employees.find((employee) => employee.name === currentUser);
+    const me = employees.find(
+      (employee) => employee.name === currentUser,
+    ) as Employee;
     const newEmployeesFiltered = employees.filter(
       (employee) => employee.name !== currentUser,
     );
 
     const employeesRefined = [
-      { ...me, name: `${me.name} (Me)` } as Employee,
+      { ...me, name: `${me.name} (Me)` },
       ...newEmployeesFiltered,
     ].filter((item) => item);
 
@@ -41,7 +44,7 @@ export function SelectEmployee({
       <Title variant="h5">Select Employee</Title>
       <div>
         <label htmlFor="search">
-          <Paragraph size="small" fontWeight="semihair">
+          <Paragraph size="small" fontWeight="hair">
             Search Employee
           </Paragraph>
         </label>
