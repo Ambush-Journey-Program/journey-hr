@@ -1,5 +1,4 @@
-import { Button } from '@/design-system';
-import { Title } from '@/design-system/typography/title/title';
+import { Button, Title } from '@/design-system';
 import { devices } from '@/styles/devices';
 import styled from 'styled-components';
 

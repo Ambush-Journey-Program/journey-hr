@@ -1,17 +1,9 @@
 /* eslint-disable react/no-unescaped-entities */
 import * as Styled from './pageRequestTimeOff.styled';
-import { Button, CardWrapper, TabContainer } from '@/design-system';
-import { Balance } from '../balance';
-import { TimeOffType } from '../time-off-type';
-import { Summary } from './summary/summary';
-import { Footer } from './PTO-footer';
-import { Tab } from '@/design-system/tabs/tab';
-import { TabPanel } from '@/design-system/tabs/tabPanel';
-import { OptionalHolidays } from '../optional-holidays';
-import { SelectPeriod } from '../select-period';
-import { RequestTimeOffProps } from './types';
+import { CardWrapper, TabContainer, Tab, TabPanel } from '@/design-system';
+import { RequestTimeOffTab } from './requestTimeOffTab';
 
-export function PageRequestTimeOff({ onView }: RequestTimeOffProps) {
+export function RequestTimeOffContent() {
   return (
     <CardWrapper>
       <Styled.TimeOffPageHeaderWrapper data-testid="PageRequestTimeOff">
@@ -34,41 +26,7 @@ export function PageRequestTimeOff({ onView }: RequestTimeOffProps) {
           />
         </TabContainer>
         <TabPanel index={0} value={0}>
-          <Styled.SpacingWrapper>
-            <div>
-              <Styled.TimeOffTitle variant="h6">
-                Request Employee's Time Off
-              </Styled.TimeOffTitle>
-
-              <Balance
-                isAdmin={true}
-                availableDays={20}
-                buttonClick={onView}
-                buttonText="View Time Off"
-              />
-            </div>
-
-            <div>
-              <SelectPeriod />
-
-              <Button
-                sizeVariant="small"
-                color="alternative"
-                variant="ghost"
-                icon="PlusIcon"
-              >
-                Add a Period
-              </Button>
-            </div>
-
-            <TimeOffType />
-
-            <OptionalHolidays />
-
-            <Summary variant="employee" />
-
-            <Footer variant="timeOff" />
-          </Styled.SpacingWrapper>
+          <RequestTimeOffTab />
         </TabPanel>
         <TabPanel index={1} value={1}>
           <div></div>
