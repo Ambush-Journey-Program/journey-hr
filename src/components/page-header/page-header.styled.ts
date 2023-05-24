@@ -17,18 +17,18 @@ export const Container = styled.div`
 
 export const BackButtonBox = styled.div`
   padding-left: 0;
-  margin-bottom: 12px;
+  margin-bottom: ${(props) => props.theme.spacings.spacing03};
 `;
 
 export const ButtonBox = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 24px;
+  margin-top: ${(props) => props.theme.spacings.spacing05};
   @media ${devices.tablet} {
     display: flex;
     flex-direction: row;
-    margin-top: 0px;
-    bottom: 28px;
+    margin-top: 0rem;
+    bottom: ${(props) => props.theme.spacings.spacing06};
     position: relative;
     justify-content: flex-end;
   }
