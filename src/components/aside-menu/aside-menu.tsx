@@ -17,13 +17,27 @@ export function AsideMenu() {
         </Paragraph>
       </Styled.UserContainer>
       <Styled.ListLink>
-        <MenuItem icon="UsersIcon">Interviews</MenuItem>
-        <MenuItem icon="SparklesIcon">Happy Hour</MenuItem>
-        <MenuItem icon="ClockIcon">Time Off</MenuItem>
-        <MenuItem icon="InboxIcon">Inbox</MenuItem>
-        <MenuItem icon="FaceSmileIcon">Feedbacks</MenuItem>
-        <MenuItem icon="EnvelopeIcon">Send an Invite</MenuItem>
-        <MenuItem icon="LinkIcon">Shorty</MenuItem>
+        <MenuItem url="/Interviews" icon="UsersIcon">
+          Interviews
+        </MenuItem>
+        <MenuItem url="/HappyHour" icon="SparklesIcon">
+          Happy Hour
+        </MenuItem>
+        <MenuItem url="/TimeOff" icon="ClockIcon">
+          Time Off
+        </MenuItem>
+        <MenuItem url="/Inbox" icon="InboxIcon">
+          Inbox
+        </MenuItem>
+        <MenuItem url="/Feedbacks" icon="FaceSmileIcon">
+          Feedbacks
+        </MenuItem>
+        <MenuItem url="/SendInvite" icon="EnvelopeIcon">
+          Send an Invite
+        </MenuItem>
+        <MenuItem url="/Shorty" icon="LinkIcon">
+          Shorty
+        </MenuItem>
       </Styled.ListLink>
       <Styled.ButtonContainer>
         <Button

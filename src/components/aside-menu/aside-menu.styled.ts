@@ -10,10 +10,8 @@ export const Menu = styled.div`
 export const LogoContainer = styled.div`
   padding: 2.5rem 4.185rem 0;
 
-  span {
-    svg {
-      height: 2.5rem;
-    }
+  span svg {
+    height: 2.5rem;
   }
 `;
 
