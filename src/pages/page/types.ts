@@ -1,3 +1,3 @@
 export type PageProps = {
-  children: JSX.Element;
+  children: JSX.Element | string | JSX.Element[];
 };

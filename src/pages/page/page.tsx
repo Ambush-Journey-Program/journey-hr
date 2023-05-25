@@ -10,10 +10,10 @@ export function Page({ children }: PageProps) {
         <Styled.cardWrapper background="default">
           <AsideMenu></AsideMenu>
         </Styled.cardWrapper>
+        <Styled.contentContainer>
+          <CardWrapper>{children}</CardWrapper>
+        </Styled.contentContainer>
       </Styled.menuContainer>
-      <Styled.contentContainer>
-        <CardWrapper>{children}</CardWrapper>
-      </Styled.contentContainer>
     </Styled.Container>
   );
 }

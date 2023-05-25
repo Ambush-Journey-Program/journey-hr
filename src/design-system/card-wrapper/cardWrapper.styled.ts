@@ -25,7 +25,7 @@ const backgroundVariants: Background = {
 export const Card = styled.div<CardProps>`
   padding: 1.25rem 2.5rem;
   border-radius: 1.25rem;
-  width: 100%;
+  /* width: 100%; */
   max-width: 100%;
 
   @media ${devices.mobile} {
