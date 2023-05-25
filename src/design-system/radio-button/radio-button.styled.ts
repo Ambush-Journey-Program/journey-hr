@@ -1,4 +1,3 @@
-import { Paragraph } from '@/design-system/typography/paragraphs/paragraphs.styled';
 import styled, { css } from 'styled-components';
 
 type LabelProps = {
@@ -40,5 +39,3 @@ export const containerLabel = styled.label<LabelProps>`
   color: ${(props) => props.theme.color.contrasts.highContrast};
   ${({ disabled }) => disabled && disabledLabel};
 `;
-
-export const paragraphLabel = styled(Paragraph)``;

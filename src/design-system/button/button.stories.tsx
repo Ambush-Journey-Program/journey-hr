@@ -14,8 +14,7 @@ export default {
           links: [
             {
               text: 'Buttons ',
-              url:
-                'https://www.figma.com/file/yOF5DjTKrtqxLiP7A5DsOy/Ambush-Atoms?node-id=1039%3A469&t=i4ddngmKFF26EqjW-1',
+              url: 'https://www.figma.com/file/yOF5DjTKrtqxLiP7A5DsOy/Ambush-Atoms?node-id=1039%3A469&t=i4ddngmKFF26EqjW-1',
               description: 'This is the Figma of the Button and its variations',
             },
           ],
@@ -36,4 +35,13 @@ ButtonStory.args = {
   color: 'primary',
   sizeVariant: 'medium',
   variant: 'default',
+};
+
+export const IconButtonStory = Template.bind({});
+IconButtonStory.args = {
+  disabled: false,
+  color: 'primary',
+  sizeVariant: 'medium',
+  variant: 'default',
+  icon: 'AcademicCapIcon',
 };

@@ -1,5 +1,5 @@
 import { ChangeEvent, useEffect, useState } from 'react';
-import { Paragraphs } from '../typography/paragraphs/paragraphs';
+import { Paragraph } from '../typography/paragraph/paragraph';
 import * as Styled from './text-area.styled';
 import { TextAreaProps } from './types';
 
@@ -53,9 +53,9 @@ export function TextArea({
       />
 
       {internalTouched && (
-        <Paragraphs size="extrasmall" fontWeight="light" colorVariant="red">
+        <Paragraph size="extrasmall" fontWeight="light" colorVariant="red">
           {error}
-        </Paragraphs>
+        </Paragraph>
       )}
     </Styled.TextAreaContainer>
   );

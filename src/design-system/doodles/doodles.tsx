@@ -7,7 +7,7 @@ export function Doodles({ colors, icon }: IDoodlesProps) {
   const doodleIcon = icon && DoodlesLib[icon];
 
   return (
-    <Styled.wrapper data-testid="doodles" colors={colors}>
+    <Styled.wrapper data-testId="doodles" colors={colors}>
       {doodleIcon}
     </Styled.wrapper>
   );

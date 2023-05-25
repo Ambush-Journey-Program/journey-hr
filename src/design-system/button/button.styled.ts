@@ -1,9 +1,4 @@
-import styled, {
-  css,
-  FlattenSimpleInterpolation,
-  FlattenInterpolation,
-  ThemeProps,
-} from 'styled-components';
+import styled, { css } from 'styled-components';
 import { SizeProp, ColorProp, ButtonType } from './types';
 
 type ButtonProps = {
@@ -13,27 +8,11 @@ type ButtonProps = {
   variant: ButtonType;
 };
 
-type Variants = {
-  [key: string]: FlattenSimpleInterpolation;
-};
-
-type ColorVariant = {
-  [key: string]: {
-    [key: string]: FlattenInterpolation<ThemeProps<ButtonType>>;
-  };
-};
-
-type DisabledButton = {
-  [key: string]: {
-    [key: string]: FlattenInterpolation<ThemeProps<ColorProp>>;
-  };
-};
-
 const childrenPadding = css`
   padding: 10px;
 `;
 
-const variants: Variants = {
+const variants = {
   large: css`
     font-size: 22px;
 
@@ -65,7 +44,7 @@ const variants: Variants = {
   `,
 };
 
-const colorVariants: ColorVariant = {
+const colorVariants = {
   primary: {
     default: css`
       color: ${(props) => props.theme.color.brandColors.light};
@@ -237,7 +216,7 @@ const colorVariants: ColorVariant = {
   },
 };
 
-const disabledButton: DisabledButton = {
+const disabledButton = {
   default: {
     primary: css`
       opacity: 70%;
@@ -346,8 +325,8 @@ export const ButtonStyle = styled.button<ButtonProps>`
   ${({ disabled, variant, color }) =>
     disabled && disabledButton[variant]?.[color]}
    ${({ disabled }) =>
-     disabled &&
-     css`
-       cursor: not-allowed;
-     `}
+    disabled &&
+    css`
+      cursor: not-allowed;
+    `}
 `;

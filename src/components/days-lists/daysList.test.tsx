@@ -14,7 +14,7 @@ describe('<ScheduleCard />', () => {
         buttonTitle="test"
         list={holidays}
         renderRow={(details) => (
-          <HolidayRow key={details.id} details={details as HolidaysList} />
+          <HolidayRow details={details as HolidaysList} />
         )}
       />,
     );
@@ -29,7 +29,7 @@ describe('<ScheduleCard />', () => {
         title="timeOffRow"
         buttonTitle="test"
         list={timeOff}
-        renderRow={(details) => <TimeOffRow key={details.id} details={details as TimeOffList} />}
+        renderRow={(details) => <TimeOffRow details={details as TimeOffList} />}
       />,
     );
 
@@ -44,7 +44,7 @@ describe('<ScheduleCard />', () => {
         buttonTitle="test"
         list={teamCalendar}
         renderRow={(details) => (
-          <TeamCalendarRow key={details.id} details={details as TeamCalendarList} />
+          <TeamCalendarRow details={details as TeamCalendarList} />
         )}
       />,
     );
@@ -59,7 +59,7 @@ describe('<ScheduleCard />', () => {
         title="test"
         buttonTitle="test"
         list={timeOff}
-        renderRow={(details) => <TimeOffRow key={details.id} details={details as TimeOffList} />}
+        renderRow={(details) => <TimeOffRow details={details as TimeOffList} />}
       />,
     );
 

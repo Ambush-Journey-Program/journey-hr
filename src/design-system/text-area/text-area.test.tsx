@@ -1,6 +1,6 @@
 import userEvent from '@testing-library/user-event';
 import { TextArea } from './text-area';
-import { render, screen, act } from '@/tests/renderWithProviders';
+import { render, screen } from '@/tests/renderWithProviders';
 
 describe('<TextArea />', () => {
   it('renders the Text Area', () => {
@@ -47,7 +47,7 @@ describe('<TextArea />', () => {
     expect(inputEl).toBeInTheDocument();
   });
 
-  it.only('has a required message when the component is touched and no value is provided', async () => {
+  it('has a required message when the component is touched and no value is provided', async () => {
     render(
       <TextArea
         rows={3}
@@ -59,16 +59,14 @@ describe('<TextArea />', () => {
       />,
     );
 
-    const inputEl = await screen.findByPlaceholderText('placeholder');
+    const inputEl = screen.getByPlaceholderText('placeholder');
     expect(inputEl).toBeRequired();
 
-    userEvent.type(inputEl, 'A');
-    userEvent.type(inputEl, '{Backspace}');
+    await userEvent.type(inputEl, 'A');
+    await userEvent.type(inputEl, '{Backspace}');
 
-    await new Promise((resolve) => { 
-      window.setTimeout(resolve, 0)
-    });
-    expect(screen.getByText('Description Required')).toBeInTheDocument();
+    const msgError = screen.getByText('Description Required');
+    expect(msgError).toBeInTheDocument();
   });
 
   it('does not have a required label when the component is optional', () => {
@@ -104,10 +102,8 @@ describe('<TextArea />', () => {
     const inputEl = screen.getByPlaceholderText('placeholder');
     expect(inputEl).toBeRequired();
 
-    act(() => {
-      userEvent.type(inputEl, 'AB');
-      userEvent.type(inputEl, '{Backspace}');
-    })
+    await userEvent.type(inputEl, 'AB');
+    await userEvent.type(inputEl, '{Backspace}');
 
     const msgError = screen.getByText('Minimal length must be greater than 3');
     expect(msgError).toBeInTheDocument();

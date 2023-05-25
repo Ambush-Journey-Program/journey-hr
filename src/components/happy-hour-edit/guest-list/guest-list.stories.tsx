@@ -1,37 +1,38 @@
 import { Meta, Story } from '@storybook/react';
-
 import { GuestListProps } from './types';
-
 import { GuestList } from './guest-list';
-import { GUESTS_LIST_DATA } from '../const';
+import styled from 'styled-components';
 
 export default {
   component: GuestList,
   title: 'Components/GuestList',
-  parameters: {
-    guestsList: list,
-    relatedLinks: {
-      sections: [
-        {
-          title: 'Figma',
-          links: [
-            {
-              text: 'Guest-List',
-              url: `https://www.figma.com/file/MRpGlW5tom04XStEIw5th9/HH-Sort?node-id=14-32493&t=fFoku2dhra99oAz4-0&fuid=1196819673068025271`,
-              description: 'This is the Figma of Guest-List',
-            },
-          ],
-        },
-      ],
-    },
-  },
+  parameters: {},
 } as Meta;
+const StyledDiv = styled.div`
+  width: calc(768px - 5rem);
+  height: 110vh;
 
+  @media (min-width: 768px) {
+    width: calc(769px - 2rem);
+  }
+  @media (min-width: 992px) {
+    width: calc(992px - 2rem);
+  }
+  @media (min-width: 1200px) {
+    width: calc(1200px - 2rem);
+  }
+`;
+const guestStorybook = [
+  { guest: { id: '11', name: 'Juliana ', team: 'Design' } },
+  { guest: { id: '12', name: 'Lídia ', team: 'Developer' } },
+  { guest: { id: '13', name: 'Carlos', team: 'Design' } },
+];
 const GuestListTemplate: Story<GuestListProps> = (args) => {
-  return <GuestList {...args} />;
+  return (
+    <StyledDiv>
+      <GuestList {...args} guestsList={guestStorybook} />
+    </StyledDiv>
+  );
 };
 
 export const GuestListStory = GuestListTemplate.bind({});
-GuestListStory.args = {
-  guestsList: GUESTS_LIST_DATA,
-};
