@@ -4,8 +4,10 @@ import { InterviewAvailability } from './interview-availability';
 describe('<InterviewAvailability>', () => {
   it('It should have a title', () => {
     render(<InterviewAvailability />);
-    const interviewtitle = screen.getByText('Technical Interview Availability');
-    expect(interviewtitle).toBeInTheDocument();
+    const interviewtitle = screen.getByRole('heading', { level: 4 });
+    expect(interviewtitle).toHaveTextContent(
+      'Technical Interview Availability',
+    );
   });
   it('It should have a subtitle', () => {
     render(<InterviewAvailability />);

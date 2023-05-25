@@ -9,7 +9,7 @@ export function PageHeader({
   button,
 }: PageHeaderProps) {
   return (
-    <Styled.Container data-testid="page-header">
+    <Styled.Container data-testid="header">
       <Styled.BackButtonBox>{backButton}</Styled.BackButtonBox>
       <Title variant="h4">{title}</Title>
       <Styled.Wrapper>

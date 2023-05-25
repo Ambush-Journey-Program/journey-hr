@@ -1,5 +1,5 @@
 import * as Styled from './pageTimeOff.styled';
-import { Button, CardWrapper } from '@/design-system';
+import { Button, CardWrapper } from '@ambush/ui';
 import { Balance } from '../balance';
 import {
   DaysLists,

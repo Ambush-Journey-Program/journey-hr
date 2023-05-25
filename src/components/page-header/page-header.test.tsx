@@ -3,9 +3,20 @@ import { render, screen } from '@/tests/renderWithProviders';
 import { PageHeader } from '.';
 
 describe('<PageHeader  />', () => {
-  render(<PageHeader title="Happy" subtitle="Choose" />);
-  it('should exist', () => {
-    const textTest = screen.getByTestId('page-header');
+  it('has a title', () => {
+    render(<PageHeader title="Happy" subtitle="Choose" />);
+    const textTest = screen.getByRole('heading', { name: /Happy/ });
     expect(textTest).toBeInTheDocument();
+  });
+
+  it('has a subtitle', () => {
+    render(<PageHeader title="Happy" subtitle="Choose" />);
+    const textTest = screen.getByText('Choose');
+    expect(textTest).toBeInTheDocument();
+  });
+
+  it('should exist', () => {
+    const textTest = screen.findByTestId('header');
+    expect(textTest).toBeDefined();
   });
 });
