@@ -5,10 +5,9 @@ import { PageProps } from './types';
 
 export default {
   component: Page,
-  title: 'UI/Page',
+  title: 'Component/Page',
   parameters: {
     isLoading: false,
-    label: 'Page text',
   },
 } as Meta;
 
