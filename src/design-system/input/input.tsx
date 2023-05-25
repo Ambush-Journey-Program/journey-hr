@@ -51,7 +51,6 @@ export function Input({
           <Icons.CalendarDaysIcon className="alert" data-testid="Alert" />
         </Styled.calendarIcon>
         <input
-          type={type}
           placeholder={placeholder}
           required={required}
           disabled={disabled}
