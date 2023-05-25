@@ -11,6 +11,9 @@ function getIconBasedOn(type: string) {
   if (type === 'date') {
     return 'CalendarIcon';
   }
+  if (type === 'search') {
+    return 'UsersIcon';
+  }
 
   return 'CubeIcon';
 }
