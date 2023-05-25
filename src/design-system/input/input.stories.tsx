@@ -37,4 +37,8 @@ SelectInputStory.args = {
   required: true,
   disabled: false,
   readOnly: false,
+<<<<<<< HEAD
+=======
+  type: 'text',
+>>>>>>> 2e81d9d (refacator: created the function to change icons)
 };

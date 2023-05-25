@@ -2,7 +2,19 @@ import { ChangeEvent, useState } from 'react';
 import { Paragraph } from '../typography/paragraph/paragraph';
 import * as Styled from './input.styled';
 import { IInputProps } from './types';
+<<<<<<< HEAD
 import * as Icons from '@heroicons/react/24/outline';
+=======
+
+import { Icon } from '../icon/icon';
+function getIconBasedOn(type: string) {
+  if (type === 'date') {
+    return 'CalendarIcon';
+  }
+
+  return 'CubeIcon';
+}
+>>>>>>> 2e81d9d (refacator: created the function to change icons)
 
 export function Input({
   label,

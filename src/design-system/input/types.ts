@@ -5,7 +5,6 @@ export type IInputProps = InputHTMLAttributes<HTMLInputElement> & {
   error?: string | JSX.Element;
   warn?: string;
   onTextChange?: (value: string) => void;
-  type?: string;
   placeholder?: string;
   right?: boolean | string | JSX.Element;
 };
