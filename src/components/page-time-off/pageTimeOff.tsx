@@ -43,7 +43,7 @@ export function PageTimeOff() {
             buttonTitle="View Holiday Calendar"
             list={holidays}
             renderRow={(details) => (
-              <HolidayRow details={details as HolidaysList} />
+              <HolidayRow key={details.id} details={details as HolidaysList} />
             )}
           />
         </Styled.GridContainer1>
@@ -53,7 +53,7 @@ export function PageTimeOff() {
             buttonTitle="View My Time Off"
             list={timeOff}
             renderRow={(details) => (
-              <TimeOffRow details={details as TimeOffList} />
+              <TimeOffRow key={details.id} details={details as TimeOffList} />
             )}
           />
         </Styled.GridContainer2>
@@ -63,7 +63,7 @@ export function PageTimeOff() {
             buttonTitle="View My Team's Calendar"
             list={teamCalendar}
             renderRow={(details) => (
-              <TeamCalendarRow details={details as TeamCalendarList} />
+              <TeamCalendarRow key={details.id} details={details as TeamCalendarList} />
             )}
           />
         </Styled.GridContainer3>

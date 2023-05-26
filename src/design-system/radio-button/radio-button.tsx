@@ -11,7 +11,7 @@ export function RadioButton({
   name,
 }: RadioButtonProps) {
   function optionChange(event: React.ChangeEvent<HTMLInputElement>) {
-    console.log(event.target.value);
+    // console.log(event.target.value);
   }
   return (
     <Styled.containerInput>

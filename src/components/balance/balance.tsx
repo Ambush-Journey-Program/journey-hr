@@ -6,7 +6,6 @@ import { useState } from 'react';
 
 const MAX_OPTIONAL_DAYS = '4';
 function daysLabel(days: number) {
-  console.log(days)
   const dayOrDays = days === 1 || days === -1 ? 'day' : 'days';
   return `${days.toString()} ${dayOrDays}`;
 }
