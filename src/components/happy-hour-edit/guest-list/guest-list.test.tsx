@@ -1,6 +1,5 @@
 import { render, screen } from '@/tests/renderWithProviders';
 import userEvent from '@testing-library/user-event';
-import { describe, expect } from 'vitest';
 
 import { GuestList } from './guest-list';
 import { EMPLOYEES, GUESTS_LIST_DATA } from '../const';
@@ -19,7 +18,7 @@ describe('<GuestList/>', () => {
   });
 
   it('has a functional button', async () => {
-    const onDeleteMock = vi.fn();
+    const onDeleteMock = jest.fn();
     render(<GuestList guestsList={[EMPLOYEES[0]]} onDelete={onDeleteMock} />);
     const deleteBtn = screen.getByLabelText('Delete Button');
     await userEvent.click(deleteBtn);

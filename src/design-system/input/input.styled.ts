@@ -33,7 +33,7 @@ const warnError = css`
 
 const errorDisplay = css`
   color: ${(props) => props.theme.color.auxiliary.error};
-  box-shadow: ${(props) => props.theme.shadows.red};
+  box-shadow: ${(props) => props.theme.shadows.shadows.red};
   border: ${(props) => `1px solid ${props.theme.color.auxiliary.error}`};
 `;
 
@@ -74,7 +74,7 @@ export const InputContainer = styled.div<StyledInputProps>`
   color: ${(props) => props.theme.color.contrasts.highContrast};
   border: 1px solid ${(props) => props.theme.color.contrasts.lowestContrast};
   border-radius: 0.75rem;
-  padding: 1.25rem 1.25rem;
+  padding-left: 1.25rem;
   margin: 0.25rem 0rem 0.25rem 0rem;
   ${({ error }) => error && errorDisplay}
   ${({ warn }) => warn && errorDisplay}
@@ -91,10 +91,9 @@ export const InputContainer = styled.div<StyledInputProps>`
     position: relative;
     display: flex;
     justify-content: flex-start;
-    min-width: calc(100% - 5rem);
+    width: calc(100% - 5rem);
     font-size: 1rem;
     border: none;
-    margin-left: 0.875rem;
     outline: none;
     color: ${(props) =>
       props.touched
@@ -132,6 +131,17 @@ export const Span = styled.span<selectPeriodProps>`
   color: ${(props) => props.theme.color.brandColors.red};
 `;
 
+export const calendarIcon = styled.div`
+  margin-right: 1.25rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  color: ${(props) => props.theme.color.contrasts.lowestContrast};
+`;
 export const SpanCorrect = styled.span<selectPeriodProps>`
   display: block;
+  margin-right: 18px;
+  line-height: 1.125rem;
+  width: 1.125rem;
+  height: 1.125rem;
+  color: ${(props) => props.theme.color.auxiliary.accepted};
 `;

@@ -1,5 +1,3 @@
-import { describe, expect } from 'vitest';
-
 import { render, screen } from '@/tests/renderWithProviders';
 
 import { Modal } from './modal';
@@ -10,8 +8,8 @@ describe('<Modal />', () => {
     const test = 'Hello';
     render(
       <Modal
-        onConfirm={vi.fn()}
-        onClose={vi.fn()}
+        onConfirm={jest.fn()}
+        onClose={jest.fn()}
         title="teste"
         cancelButtonText="teste3"
         confirmButtonText="teste4"
@@ -25,7 +23,7 @@ describe('<Modal />', () => {
   });
 
   it('call`s back the cancel button', async () => {
-    const onCancelMock = vi.fn();
+    const onCancelMock = jest.fn();
     const test = 'Hello';
     render(
       <Modal
@@ -46,7 +44,7 @@ describe('<Modal />', () => {
   });
 
   it('call`s back the confirm button', async () => {
-    const onConfirmMock = vi.fn();
+    const onConfirmMock = jest.fn();
     const test = 'Hello';
     render(
       <Modal
@@ -67,7 +65,7 @@ describe('<Modal />', () => {
   });
 
   it('call`s back the Close Button', async () => {
-    const onConfirmMock = vi.fn();
+    const onConfirmMock = jest.fn();
     const test = 'Hello';
     render(
       <Modal

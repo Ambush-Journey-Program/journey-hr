@@ -3,6 +3,7 @@ import * as Styled from './balance.styled';
 import { employees as employeesMock } from './mocking/holidays';
 import { BalanceProps } from './types';
 import { useState } from 'react';
+
 const MAX_OPTIONAL_DAYS = '4';
 function daysLabel(days: number) {
   const dayOrDays = days === 1 || days === -1 ? 'day' : 'days';
@@ -14,7 +15,7 @@ export function Balance({
   buttonClick,
   buttonText = 'View Time Off',
   isAdmin,
-  availableDays,
+  availableDays = 0,
   nextRefill = '',
   consumedDays,
   optionalHolidays,

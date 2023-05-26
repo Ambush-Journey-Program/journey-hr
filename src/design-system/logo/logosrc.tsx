@@ -1,6 +1,6 @@
-import { ReactComponent as Symbol } from './images/symbol.svg';
-import { ReactComponent as Vertical } from './images/vertical.svg';
-import { ReactComponent as Horizontal } from './images/horizontal.svg';
+import Symbol from './images/symbol.svg';
+import Vertical from './images/vertical.svg';
+import Horizontal from './images/horizontal.svg';
 
 export const Logos = {
   symbol: <Symbol />,

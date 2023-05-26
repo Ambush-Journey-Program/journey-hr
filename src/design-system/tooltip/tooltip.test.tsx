@@ -1,6 +1,5 @@
-import 'jest-styled-components';
 import userEvent from '@testing-library/user-event';
-import { render, screen } from '@/tests/renderWithProviders';
+import { render, screen, waitFor, waitForElementToBeRemoved } from '@/tests/renderWithProviders';
 import { Tooltip } from './tooltip';
 
 describe('<Tooltip />', () => {
@@ -10,8 +9,10 @@ describe('<Tooltip />', () => {
 
     const tooltipEL = screen.getByText('Hover me');
     expect(screen.queryByText(text)).not.toBeInTheDocument();
-    await userEvent.hover(tooltipEL);
-    expect(screen.getByText(text)).toBeInTheDocument();
+
+    userEvent.hover(tooltipEL);
+
+    expect(await screen.findByText(text)).toBeInTheDocument();
   });
 
   it('should be not visible when hovering out the child element', async () => {
@@ -20,9 +21,14 @@ describe('<Tooltip />', () => {
 
     const tooltipEL = screen.getByText('Hover me');
     expect(screen.queryByText(text)).not.toBeInTheDocument();
-    await userEvent.hover(tooltipEL);
-    expect(screen.getByText(text)).toBeInTheDocument();
-    await userEvent.unhover(tooltipEL);
+
+    userEvent.hover(tooltipEL);
+    expect(await screen.findByText(text)).toBeInTheDocument();
+
+    userEvent.unhover(tooltipEL);
+
+    await waitForElementToBeRemoved(() => screen.queryByText(text));
+
     expect(screen.queryByText(text)).not.toBeInTheDocument();
   });
 });

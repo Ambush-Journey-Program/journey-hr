@@ -1,4 +1,3 @@
-import { describe, expect } from 'vitest';
 import { render, screen } from '../../tests/renderWithProviders';
 import { SelectInput } from './select-input';
 
@@ -21,7 +20,7 @@ const exampleOptions = [
 
 describe('<SelectInput />', () => {
   it('has a title', () => {
-    render(<SelectInput options={exampleOptions} title={title} />);
+    render(<SelectInput handleSelect={jest.fn()} options={exampleOptions} title={title} />);
     const inputEl = screen.getByText(title);
     expect(inputEl).toBeInTheDocument();
   });
@@ -44,14 +43,14 @@ describe('<SelectInput />', () => {
       },
     ];
 
-    render(<SelectInput options={exampleOptions} title={title} />);
+    render(<SelectInput handleSelect={jest.fn()} options={exampleOptions} title={title} />);
 
     const inputOptions = screen.getAllByRole('option');
     expect(inputOptions.length).toBe(4);
   });
 
   it('should be disabled', () => {
-    render(<SelectInput options={exampleOptions} title="title" disabled />);
+    render(<SelectInput handleSelect={jest.fn()} options={exampleOptions} title="title" disabled />);
 
     const inputEl = screen.getByTestId('input-select-test');
     expect(inputEl).toBeDisabled();

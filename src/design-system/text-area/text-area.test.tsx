@@ -1,4 +1,3 @@
-import { describe, expect } from 'vitest';
 import userEvent from '@testing-library/user-event';
 import { TextArea } from './text-area';
 import { render, screen } from '@/tests/renderWithProviders';
