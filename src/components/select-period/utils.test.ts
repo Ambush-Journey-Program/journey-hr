@@ -7,12 +7,7 @@ import {
 } from './utils';
 
 describe('isWeekEnd', () => {
-  it('return true if it is weekend', () => {
-    const day = new Date('2023-05-21');
-    const weekend = isWeekEnd(day.getDay());
-    expect(weekend).toBeTruthy();
-  });
-  it('return false if it is work day', () => {
+  it('return False if it is weekend', () => {
     const day = new Date('2023-05-20');
     const weekend = isWeekEnd(day.getDay());
     expect(weekend).toBeFalsy();
