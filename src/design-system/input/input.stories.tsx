@@ -37,4 +37,18 @@ SelectInputStory.args = {
   required: true,
   disabled: false,
   readOnly: false,
+  type: 'text',
+  right: false,
+  error: '',
+};
+
+export const SelectInputStory2 = Template.bind({});
+SelectInputStory.args = {
+  label: 'Label',
+  required: true,
+  disabled: false,
+  readOnly: false,
+  type: 'text',
+  right: false,
+  error: 'error',
 };

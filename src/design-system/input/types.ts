@@ -1,4 +1,5 @@
 import { InputHTMLAttributes } from 'react';
+import * as HeroIconOutline from '@heroicons/react/24/outline';
 
 export type IInputProps = InputHTMLAttributes<HTMLInputElement> & {
   label?: string;
@@ -7,6 +8,9 @@ export type IInputProps = InputHTMLAttributes<HTMLInputElement> & {
   onTextChange?: (value: string) => void;
   placeholder?: string;
   right?: boolean;
+  iconLeft?: keyof typeof HeroIconOutline;
+  iconRight?: keyof typeof HeroIconOutline;
+  hasIconRight?: boolean;
 };
 
 export type StyleWrapper = {

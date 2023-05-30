@@ -69,21 +69,9 @@ export function Input({
           data-testid="input-test"
           type={type}
         />
-        {!!right && (
-          <Styled.SpanCorrect>
-            <Icon color="accepted" icon="CheckIcon" size="20px" />
-          </Styled.SpanCorrect>
-        )}
-        {error && (
-          <Styled.Span>
-            <Icon
-              color="error"
-              size="16px"
-              icon="ExclamationCircleIcon"
-              className="alert"
-              data-testid="Alert"
-            />
-          </Styled.Span>
+
+        {hasIconRight && (
+          <Styled.SpanCorrect>{IconFactory()}</Styled.SpanCorrect>
         )}
       </Styled.InputContainer>
       {!!error && (

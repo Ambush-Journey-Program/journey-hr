@@ -1,6 +1,5 @@
 import styled, { css } from 'styled-components';
 import { StyledLabelProps, StyledInputProps, StyleWrapper } from './types';
-import { selectPeriodProps } from '@/components/select-period/types';
 
 const disabledInput = css`
   background-color: ${(props) => props.theme.color.brandColors.light};
@@ -74,7 +73,7 @@ export const InputContainer = styled.div<StyledInputProps>`
   color: ${(props) => props.theme.color.contrasts.highContrast};
   border: 1px solid ${(props) => props.theme.color.contrasts.lowestContrast};
   border-radius: 0.75rem;
-  padding-left: 1.25rem;
+  padding: 1.25rem 1.25rem;
   margin: 0.25rem 0rem 0.25rem 0rem;
   ${({ error }) => error && errorDisplay}
   ${({ warn }) => warn && errorDisplay}
@@ -91,9 +90,10 @@ export const InputContainer = styled.div<StyledInputProps>`
     position: relative;
     display: flex;
     justify-content: flex-start;
-    width: calc(100% - 5rem);
+    min-width: calc(100% - 5rem);
     font-size: 1rem;
     border: none;
+    margin-left: 0.875rem;
     outline: none;
     color: ${(props) =>
       props.touched
@@ -122,7 +122,7 @@ export const InputContainer = styled.div<StyledInputProps>`
     border: 5px red solid;
   }
 `;
-export const Span = styled.span<selectPeriodProps>`
+export const Span = styled.span`
   display: block;
   margin-right: 1.125;
   line-height: 1.125rem;
@@ -131,17 +131,6 @@ export const Span = styled.span<selectPeriodProps>`
   color: ${(props) => props.theme.color.brandColors.red};
 `;
 
-export const calendarIcon = styled.div`
-  margin-right: 1.25rem;
-  width: 1.25rem;
-  height: 1.25rem;
-  color: ${(props) => props.theme.color.contrasts.lowestContrast};
-`;
-export const SpanCorrect = styled.span<selectPeriodProps>`
+export const SpanCorrect = styled.span`
   display: block;
-  margin-right: 18px;
-  line-height: 1.125rem;
-  width: 1.125rem;
-  height: 1.125rem;
-  color: ${(props) => props.theme.color.auxiliary.accepted};
 `;
