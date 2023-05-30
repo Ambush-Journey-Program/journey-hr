@@ -4,7 +4,7 @@ import { Button } from '@ambush/ui';
 import { Balance } from '@/components/balance';
 import { TimeOffType } from '@/components/time-off-type';
 import { Summary } from './summary/summary';
-import { Footer } from './PTO-footer';
+import { Footer } from './footer';
 import { OptionalHolidays } from '@/components/optional-holidays';
 import { SelectPeriod } from '@/components/select-period';
 import { RequestTimeOffProps } from './types';
