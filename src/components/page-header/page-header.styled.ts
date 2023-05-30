@@ -25,7 +25,6 @@ export const ButtonBox = styled.div`
   flex-direction: column;
   margin-top: ${(props) => props.theme.spacings.spacing05};
   @media ${devices.tablet} {
-    display: flex;
     flex-direction: row;
     margin-top: 0rem;
     bottom: ${(props) => props.theme.spacings.spacing06};

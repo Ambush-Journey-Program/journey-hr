@@ -23,7 +23,7 @@ export function PageTimeOff() {
           title="Time Off"
           subtitle="Its Friday, Out 30"
           button={<Button>Apply Time Off</Button>}
-        ></PageHeader>
+        />
         <Balance availableDays={20} isAdmin={false} consumedDays={0} optionalHolidays={0} />
       </Styled.TimeOffPageHeaderWrapper>
       <Styled.TimeOffPageDaysListsGrid>

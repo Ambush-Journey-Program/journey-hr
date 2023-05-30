@@ -16,6 +16,7 @@ describe('<PageHeader  />', () => {
   });
 
   it('should exist', () => {
+    render(<PageHeader title="Happy" subtitle="Choose" />);
     const textTest = screen.findByTestId('header');
     expect(textTest).toBeDefined();
   });
