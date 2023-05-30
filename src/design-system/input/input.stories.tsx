@@ -37,8 +37,18 @@ SelectInputStory.args = {
   required: true,
   disabled: false,
   readOnly: false,
-<<<<<<< HEAD
-=======
   type: 'text',
->>>>>>> 2e81d9d (refacator: created the function to change icons)
+  right: false,
+  error: '',
+};
+
+export const SelectInputStory2 = Template.bind({});
+SelectInputStory.args = {
+  label: 'Label',
+  required: true,
+  disabled: false,
+  readOnly: false,
+  type: 'text',
+  right: false,
+  error: 'error',
 };

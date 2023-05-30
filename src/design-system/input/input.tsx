@@ -4,16 +4,6 @@ import * as Styled from './input.styled';
 import { IInputProps } from './types';
 
 import { Icon } from '../icon/icon';
-function getIconBasedOn(type: string) {
-  if (type === 'date') {
-    return 'CalendarIcon';
-  }
-  if (type === 'search') {
-    return 'UsersIcon';
-  }
-
-  return 'CubeIcon';
-}
 
 export function Input({
   label,
@@ -27,13 +17,32 @@ export function Input({
   placeholder = 'Label',
   type = 'text',
   name,
-
+  iconLeft,
+  iconRight,
+  hasIconRight = true,
   onTextChange = () => {},
 }: IInputProps) {
   const [touched, setTouched] = useState(false);
   function onInputChange(e: ChangeEvent<HTMLInputElement>) {
     onTextChange(e.target.value);
     setTouched(true);
+  }
+
+  function IconFactory() {
+    let iconName: any;
+    let color: any;
+    if (iconRight) {
+      iconName = iconRight;
+      color = `mediumContrast`;
+    } else if (right) {
+      iconName = `CheckIcon`;
+      color = `accepted`;
+    } else if (error) {
+      iconName = `ExclamationCircleIcon`;
+      color = `error`;
+    }
+
+    return <Icon color={color} icon={iconName} size="20px" />;
   }
 
   return (
@@ -47,7 +56,10 @@ export function Input({
         disabled={disabled}
         touched={touched}
       >
-        <Icon color="lowestContrast" icon={getIconBasedOn(type)} size="20px" />
+        {iconLeft && (
+          <Icon color="lowestContrast" icon={iconLeft} size="20px" />
+        )}
+
         <input
           placeholder={placeholder}
           required={required}
@@ -56,24 +68,14 @@ export function Input({
           value={value}
           onChange={onInputChange}
           data-testid="input-test"
+          type={type}
         />
-        {!!right && (
-          <Styled.SpanCorrect>
-            <Icon color="accepted" icon="CheckIcon" size="20px" />
-          </Styled.SpanCorrect>
-        )}
-        {error && (
-          <Styled.Span>
-            <Icon
-              color="error"
-              size="16px"
-              icon="ExclamationCircleIcon"
-              className="alert"
-              data-testid="Alert"
-            />
-          </Styled.Span>
+
+        {hasIconRight && (
+          <Styled.SpanCorrect>{IconFactory()}</Styled.SpanCorrect>
         )}
       </Styled.InputContainer>
+
       {error && (
         <Paragraph size="extrasmall" fontWeight="light" colorVariant="red">
           {error}

@@ -4,6 +4,8 @@ import { ThemeProvider } from 'styled-components';
 import StyledComponentsRegistry from '@/lib/registry';
 import { theme } from '@/styles/theme';
 
+import '../styles/reset.css';
+
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <StyledComponentsRegistry>
