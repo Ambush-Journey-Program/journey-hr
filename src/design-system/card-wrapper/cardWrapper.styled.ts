@@ -12,8 +12,7 @@ export type Background = {
 
 const backgroundVariants: Background = {
   default: css`
-    box-shadow: 0px 4px 6px rgba(149, 136, 169, 0.05),
-      0px 0px 30px rgba(231, 222, 209, 0.5);
+    box-shadow: ${(props) => props.theme.shadows.cream};
     background-color: ${(props) => props.theme.color.auxiliary.white};
   `,
   transparent: css`
@@ -25,7 +24,6 @@ const backgroundVariants: Background = {
 export const Card = styled.div<CardProps>`
   padding: 1.25rem 2.5rem;
   border-radius: 1.25rem;
-  /* width: 100%; */
   max-width: 100%;
 
   @media ${devices.mobile} {

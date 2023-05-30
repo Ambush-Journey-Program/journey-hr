@@ -1,27 +1,27 @@
 import * as React from 'react';
 import { render, screen } from '@/tests/renderWithProviders';
-import { Page } from '.';
+import { Layout } from './layout';
 
-describe('<Page />', () => {
+describe('<Layout />', () => {
   it('when the component is actually used', () => {
-    render(<Page>Hello World</Page>);
+    render(<Layout>Hello World</Layout>);
     const labelSpan = screen.getByTestId('Menu');
     expect(labelSpan).toBeInTheDocument();
   });
   it('when the component is actually used', () => {
     const label = 'My children';
-    render(<Page>{label}</Page>);
+    render(<Layout>{label}</Layout>);
     const labelSpan = screen.getByText(label);
     expect(labelSpan).toBeInTheDocument();
   });
   it('when the component is actually used', () => {
     const label = 'My children';
     render(
-      <Page>
+      <Layout>
         <div>
           <h1>{label}</h1>
         </div>
-      </Page>,
+      </Layout>,
     );
     const labelSpan = screen.getByText(label);
     expect(labelSpan).toBeInTheDocument();

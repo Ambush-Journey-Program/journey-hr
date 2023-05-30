@@ -10,7 +10,7 @@ export const pageContainer = styled.div`
 `;
 
 export const menuWrapper = styled(CardWrapper)`
-  padding: 0px;
+  padding: 0;
   width: 278px;
   height: 750px;
 `;

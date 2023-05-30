@@ -1,3 +1,3 @@
-export type PageProps = {
+export type LayoutProps = {
   children: JSX.Element | string | JSX.Element[];
 };
