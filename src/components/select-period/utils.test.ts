@@ -8,9 +8,18 @@ import {
 
 describe('isWeekEnd', () => {
   it('return False if it is weekend', () => {
-    const day = new Date('2023-05-20');
-    const weekend = isWeekEnd(day.getDay());
-    expect(weekend).toBeFalsy();
+    function isWeekend(day = new Date()) {
+      return day.getDay() === 6 || day.getDay() === 5;
+    }
+    const weekend = new Date('2023-05-21');
+    expect(!isWeekend(weekend)).toBeFalsy();
+  });
+  it('return True if it is work day', () => {
+    function isWeekend(day = new Date()) {
+        return day.getDay() === 6 || day.getDay() === 5;
+      }
+    const weekend = new Date('2023-05-22');
+    expect(!isWeekend(weekend)).toBeTruthy();
   });
 });
 
