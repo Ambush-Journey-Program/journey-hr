@@ -20,8 +20,8 @@ export default function Home() {
         hasIconRight={true}
         iconLeft="ArrowDownIcon"
         right
-        error="jsdnaksj.dnasj.kdas.jkjhad"
         iconRight="CubeIcon"
+        error="dssdasds"
       />
     </>
   );

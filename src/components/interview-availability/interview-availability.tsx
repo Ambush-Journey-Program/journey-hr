@@ -45,6 +45,8 @@ export function InterviewAvailability() {
               type="date"
               label="Date:"
               onTextChange={setInputData}
+              hasIconRight={true}
+              iconLeft="CalendarIcon"
             />
             <SelectInput
               name="area"
