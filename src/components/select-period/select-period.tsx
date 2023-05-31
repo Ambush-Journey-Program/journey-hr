@@ -1,7 +1,6 @@
 import { Input } from '@ambush/ui';
 import * as Styled from './select-period.styled';
 import { useEffect, useState } from 'react';
-import { selectPeriodProps } from './types';
 
 const isFirstDateAfterSecondDate = (firstDate: Date, secondDate: Date) => {
   const firstDateTime = firstDate.getTime();
@@ -102,7 +101,7 @@ export function SelectPeriod() {
         error={startDateError}
         warn={dateWarn}
         right={isCorrect}
-        hasIconRight={false}
+        hasIconRight={true}
         iconLeft="CalendarIcon"
       />
       <Input
@@ -111,7 +110,8 @@ export function SelectPeriod() {
         onTextChange={setEndDate}
         value={endDate}
         error={endDateError}
-        hasIconRight={false}
+        hasIconRight={true}
+        iconLeft="CalendarIcon"
       />
     </Styled.InputsWrapper>
   );
