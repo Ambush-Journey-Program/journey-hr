@@ -7,19 +7,17 @@ import {
 } from './utils';
 
 describe('isWeekEnd', () => {
-  it('return False if it is weekend', () => {
-    function isWeekend(day = new Date()) {
-      return day.getDay() === 6 || day.getDay() === 5;
-    }
-    const weekend = new Date('2023-05-21');
-    expect(!isWeekend(weekend)).toBeFalsy();
+  it('return True if it is weekend', () => {
+    const day = new Date('2023-05-20');
+    console.log(day.getDate())
+    const weekend = isWeekEnd(day.getDay())
+    expect(weekend).toBeTruthy();
   });
-  it('return True if it is work day', () => {
-    function isWeekend(day = new Date()) {
-        return day.getDay() === 6 || day.getDay() === 5;
-      }
-    const weekend = new Date('2023-05-22');
-    expect(!isWeekend(weekend)).toBeTruthy();
+
+  it('return False if it is work day', () => {
+    const day = new Date('2023-05-19');
+    const weekend = isWeekEnd(day.getDay())
+    expect(weekend).toBeFalsy();
   });
 });
 
