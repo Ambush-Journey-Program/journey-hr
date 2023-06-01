@@ -3,18 +3,18 @@ import { render, screen } from '@/tests/renderWithProviders';
 import { Layout } from './layout';
 
 describe('<Layout />', () => {
-  it('when the component is actually used', () => {
+  it('renders the component', () => {
     render(<Layout>Hello World</Layout>);
     const labelSpan = screen.getByTestId('Menu');
     expect(labelSpan).toBeInTheDocument();
   });
-  it('when the component is actually used', () => {
+  it('renders the component string children', () => {
     const label = 'My children';
     render(<Layout>{label}</Layout>);
     const labelSpan = screen.getByText(label);
     expect(labelSpan).toBeInTheDocument();
   });
-  it('when the component is actually used', () => {
+  it('renders the component JSX children', () => {
     const label = 'My children';
     render(
       <Layout>

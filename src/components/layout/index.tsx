@@ -1,1 +1,1 @@
-export { Page } from './layout';
+export { Layout } from './layout';

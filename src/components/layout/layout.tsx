@@ -1,6 +1,6 @@
-import { AsideMenu } from '@/components/aside-menu';
+import { AsideMenu } from '@ambush/ui';
 import * as Styled from './layout.styled';
-import { CardWrapper } from '@/design-system';
+import { CardWrapper } from '@ambush/ui';
 import { LayoutProps } from './types';
 
 export function Layout({ children }: LayoutProps) {
