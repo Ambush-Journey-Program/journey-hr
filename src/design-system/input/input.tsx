@@ -12,7 +12,6 @@ export function Input({
   disabled,
   readOnly,
   error,
-  warn,
   right,
   placeholder = 'Label',
   type = 'text',
@@ -52,14 +51,12 @@ export function Input({
       </Styled.Label>
       <Styled.InputContainer
         error={error}
-        warn={warn}
         disabled={disabled}
         touched={touched}
       >
         {iconLeft && (
           <Icon color="lowestContrast" icon={iconLeft} size="20px" />
         )}
-
         <input
           placeholder={placeholder}
           required={required}
@@ -70,20 +67,13 @@ export function Input({
           data-testid="input-test"
           type={type}
         />
-
         {hasIconRight && (
           <Styled.SpanCorrect>{IconFactory()}</Styled.SpanCorrect>
         )}
       </Styled.InputContainer>
-
       {error && (
         <Paragraph size="extrasmall" fontWeight="light" colorVariant="red">
           {error}
-        </Paragraph>
-      )}
-      {!!warn && (
-        <Paragraph size="extrasmall" fontWeight="light" colorVariant="red">
-          {warn}
         </Paragraph>
       )}
     </Styled.Wrapper>

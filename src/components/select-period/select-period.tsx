@@ -2,94 +2,67 @@ import { Input } from '@ambush/ui';
 import * as Styled from './select-period.styled';
 import { useEffect, useState } from 'react';
 
-const isFirstDateAfterSecondDate = (firstDate: Date, secondDate: Date) => {
-  const firstDateTime = firstDate.getTime();
-  const secondDateTime = secondDate.getTime();
-  return firstDateTime > secondDateTime;
+import {
+  findToday,
+  isDate15DaysFromNow,
+  isFirstDateAfterSecondDate,
+  isWeekEnd,
+  parseDate,
+} from './utils';
+
+const messageErrors = {
+  INVALID_DATE: 'Invalid work day.',
+  NOT_15_DAYS_LATER:
+    'Settings of your Organization mandate you to request this Timeoff at least 14 days before the Date of timeoff request.',
+  WEEKEND: 'It`s weekend',
 };
 
-const isStartComeFirstEnd = (date1: Date, date2: Date) => {
-  return isFirstDateAfterSecondDate(date1, date2);
-};
-
-const isDate15DaysFromNow = (date: Date) => {
-  const today = new Date();
-  today.setDate(today.getDate() + 14);
-  return isFirstDateAfterSecondDate(date, today);
-};
-
-const isStartDateOnFuture = (date: Date) => {
-  const today = new Date();
-  return isFirstDateAfterSecondDate(date, today);
-};
-
+const today = findToday();
 export function SelectPeriod() {
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
+
   const [startDateError, setStartDateError] = useState('');
   const [endDateError, setEndDateError] = useState('');
-  const [dateWarn, setDateWarn] = useState('');
-  const isCorrect =
-    !startDateError && !endDateError && !dateWarn && !!startDate;
-
-  function parseDate(originalDate: string) {
-    const [year, month, day] = originalDate.split('-');
-    if (
-      typeof year === 'undefined' ||
-      typeof month === 'undefined' ||
-      typeof day === 'undefined'
-    ) {
-      return null;
-    }
-    const parsedYear = parseInt(year, 10);
-    const indexedMonth = parseInt(month, 10) - 1;
-    const parsedDay = parseInt(day, 10);
-    if (isNaN(parsedYear) || isNaN(indexedMonth) || isNaN(parsedDay)) {
-      return null;
-    }
-
-    const date = new Date(parsedYear, indexedMonth, parsedDay);
-    return date;
-  }
 
   useEffect(() => {
-    const parsedStartDate = parseDate(startDate);
-    const parsedEndDate = parseDate(endDate);
-    if (!parsedStartDate || !parsedEndDate) {
-      if (!parsedStartDate) {
-        return;
-      }
-      if (!parsedEndDate) {
-        return;
-      }
+    if (!startDate) return;
 
+    const parsedStartDate = parseDate(startDate) as Date;
+    if (!isDate15DaysFromNow(parsedStartDate)) {
+      setStartDateError(messageErrors.NOT_15_DAYS_LATER);
       return;
     }
 
-    const isStartComeFirst = isStartComeFirstEnd(
-      parsedEndDate,
-      parsedStartDate,
-    );
-    const isDay15DaysOnFuture = isDate15DaysFromNow(parsedStartDate);
-    const isStartBeOnFuture = isStartDateOnFuture(parsedStartDate);
-    if (!isStartComeFirst || !isDay15DaysOnFuture || !isStartBeOnFuture) {
-      if (!isStartComeFirst) {
-        setEndDateError('Invalid work day.');
-      }
-      if (!isDay15DaysOnFuture) {
-        setDateWarn(
-          'Settings of your Organization mandate you to request this Timeoff at least 14 days before the Date of timeoff request.',
-        );
-      }
-      if (!isStartBeOnFuture) {
-        setStartDateError('Invalid work day.');
-      }
+    if (isWeekEnd(parsedStartDate.getDay())) {
+      setStartDateError(messageErrors.WEEKEND);
       return;
     }
     setStartDateError('');
+  }, [startDate]);
+
+  useEffect(() => {
+    if (!endDate) return;
+    const parsedEndDate = parseDate(endDate) as Date;
+    if (isWeekEnd(parsedEndDate.getDay())) {
+      setEndDateError(messageErrors.INVALID_DATE);
+      return;
+    }
     setEndDateError('');
-    setDateWarn('');
-  }, [endDate, startDate]);
+  }, [endDate]);
+
+  useEffect(() => {
+    if (!startDate || !endDate) return;
+    const parsedStartDate = parseDate(startDate) as Date;
+    const parsedEndDate = parseDate(endDate) as Date;
+
+    if (isFirstDateAfterSecondDate(parsedStartDate, parsedEndDate)) {
+      setEndDateError('Invalid work day.');
+      return;
+    }
+
+    setEndDateError('');
+  }, [startDate, endDate]);
 
   return (
     <Styled.InputsWrapper>
@@ -99,10 +72,10 @@ export function SelectPeriod() {
         onTextChange={setStartDate}
         value={startDate}
         error={startDateError}
-        warn={dateWarn}
-        right={isCorrect}
         hasIconRight
         iconLeft="CalendarIcon"
+        right={!startDateError && startDate}
+        min={today}
       />
       <Input
         label="End Date"
@@ -112,6 +85,8 @@ export function SelectPeriod() {
         error={endDateError}
         hasIconRight
         iconLeft="CalendarIcon"
+        right={!endDateError && endDate}
+        min={today}
       />
     </Styled.InputsWrapper>
   );
