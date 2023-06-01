@@ -17,7 +17,10 @@ describe('<PageHeader  />', () => {
 
   it('should exist', () => {
     render(<PageHeader title="Happy" subtitle="Choose" />);
-    const textTest = screen.findByTestId('header');
+    const textTest = screen.getByRole('heading', {
+      level: 4,
+      name: 'Happy'
+    });
     expect(textTest).toBeDefined();
   });
 });

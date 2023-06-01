@@ -11,7 +11,6 @@ export const Container = styled.div`
   flex-direction: column;
   @media ${devices.tablet} {
     display: block;
-    flex-direction: row;
   }
 `;
 
