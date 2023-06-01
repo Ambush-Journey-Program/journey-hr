@@ -4,14 +4,14 @@ import styled from 'styled-components';
 export const pageContainer = styled.div`
   column-gap: ${(props) => props.theme.spacings.spacing05};;
   display: flex;
-  margin: 80px 140px 0px 140px;
+  margin: 5rem 8.75rem 0rem 8.75rem;
   position: relative;
 `;
 
 export const menuWrapper = styled(CardWrapper)`
   padding: 0;
-  width: 278px;
-  height: 750px;
+  width: 17.375rem;
+  height: 46.875rem;
 `;
 
 export const contentBox = styled.div`
