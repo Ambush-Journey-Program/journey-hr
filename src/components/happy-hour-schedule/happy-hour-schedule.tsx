@@ -19,7 +19,7 @@ export function HappyHourSchedule() {
         <Input
           type="date"
           label="Date"
-          hasIconRight={true}
+          hasIconRight
           iconLeft="CalendarIcon"
         />
         <SelectInput
