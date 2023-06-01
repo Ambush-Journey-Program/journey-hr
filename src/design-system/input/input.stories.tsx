@@ -41,6 +41,7 @@ SelectInputWithIcons.args = {
   right: false,
   error: '',
   iconLeft: 'UserIcon',
+  hasIconRight:true,
   iconRight: 'MagnifyingGlassIcon',
 };
 
@@ -51,13 +52,14 @@ SelectInputWithLeftIconOnly.args = {
   disabled: false,
   readOnly: false,
   type: 'date',
-  right: true,
+  right: false,
   error: '',
   iconLeft: 'CalendarIcon',
+  hasIconRight:true,
 };
 
-export const SelectInpuWithRightIconOnly = Template.bind({});
-SelectInpuWithRightIconOnly.args = {
+export const SelectInputWithRightIconOnly = Template.bind({});
+SelectInputWithRightIconOnly.args = {
   label: 'Label',
   required: true,
   disabled: false,
