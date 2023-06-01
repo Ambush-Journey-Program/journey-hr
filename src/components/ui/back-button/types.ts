@@ -1,4 +1,4 @@
 export type BackButtonProps = {
-  onClick?: () => void;
+  onClick: () => void;
   disabled?: boolean;
 };

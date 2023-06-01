@@ -1,9 +1,9 @@
 import { render, screen } from '@/tests/renderWithProviders';
-import { RequestTimeOffContent } from './pageRequestTimeOff';
+import { RequestTimeOff } from './pageRequestTimeOff';
 
 describe('<PageRequestTimeOff  />', () => {
   it('renders a Page', () => {
-    render(<RequestTimeOffContent />);
+    render(<RequestTimeOff />);
     const PageRequestTimeOffEl = screen.getByTestId('PageRequestTimeOff');
     expect(PageRequestTimeOffEl).toBeInTheDocument();
   });
