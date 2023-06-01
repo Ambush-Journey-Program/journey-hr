@@ -73,10 +73,7 @@ export function SelectPeriod() {
         error={startDateError}
         right={!startDateError && startDate}
         min={today}
-        warn={dateWarn}
-        right={isCorrect}
         hasIconRight
-        iconLeft="CalendarIcon"
       />
       <Input
         label="End Date"
@@ -87,7 +84,6 @@ export function SelectPeriod() {
         right={!endDateError && endDate}
         min={today}
         hasIconRight
-        iconLeft="CalendarIcon"
       />
     </Styled.InputsWrapper>
   );

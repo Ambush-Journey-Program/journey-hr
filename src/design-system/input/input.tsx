@@ -20,7 +20,7 @@ export function Input({
   iconRight,
   hasIconRight,
   onTextChange = () => {},
-  ...props
+
 }: IInputProps) {
   const [touched, setTouched] = useState(false);
   function onInputChange(e: ChangeEvent<HTMLInputElement>) {
@@ -33,13 +33,13 @@ export function Input({
     let color: "mediumContrast" | "accepted" | "error";
     if (iconRight) {
       iconName = iconRight;
-      color = `mediumContrast`;
+      color = 'mediumContrast';
     } else if (right) {
-      iconName = `CheckIcon`;
-      color = `accepted`;
+      iconName = 'CheckIcon';
+      color = 'accepted';
     } else if (error) {
-      iconName = `ExclamationCircleIcon`;
-      color = `error`;
+      iconName = 'ExclamationCircleIcon';
+      color = 'error';
     }
 
     return <Icon color={color} icon={iconName} size="20px" />;
