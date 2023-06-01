@@ -19,7 +19,7 @@ export function Input({
   name,
   iconLeft,
   iconRight,
-  hasIconRight = true,
+  hasIconRight,
   onTextChange = () => {},
 }: IInputProps) {
   const [touched, setTouched] = useState(false);

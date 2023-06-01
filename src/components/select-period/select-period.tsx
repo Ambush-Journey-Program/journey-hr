@@ -101,7 +101,7 @@ export function SelectPeriod() {
         error={startDateError}
         warn={dateWarn}
         right={isCorrect}
-        hasIconRight={true}
+        hasIconRight
         iconLeft="CalendarIcon"
       />
       <Input
@@ -110,7 +110,7 @@ export function SelectPeriod() {
         onTextChange={setEndDate}
         value={endDate}
         error={endDateError}
-        hasIconRight={true}
+        hasIconRight
         iconLeft="CalendarIcon"
       />
     </Styled.InputsWrapper>
