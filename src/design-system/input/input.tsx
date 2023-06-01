@@ -2,7 +2,7 @@ import { ChangeEvent, useState } from 'react';
 import { Paragraph } from '../typography/paragraph/paragraph';
 import * as Styled from './input.styled';
 import { IInputProps } from './types';
-
+import * as HeroIconOutline from '@heroicons/react/24/outline';
 import { Icon } from '../icon/icon';
 
 export function Input({
@@ -29,8 +29,8 @@ export function Input({
   }
 
   function IconFactory() {
-    let iconName: any;
-    let color: any;
+    let iconName:keyof typeof HeroIconOutline;
+    let color: "mediumContrast" | "accepted" | "error";
     if (iconRight) {
       iconName = iconRight;
       color = `mediumContrast`;
