@@ -131,3 +131,11 @@ input {
   box-sizing: border-box;
   outline: none;
 }
+
+body,
+input,
+button,
+select,
+span {
+  font-family: Arial, Helvetica, sans-serif;
+}
