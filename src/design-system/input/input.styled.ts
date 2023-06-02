@@ -73,7 +73,7 @@ export const InputContainer = styled.div<StyledInputProps>`
   color: ${(props) => props.theme.color.contrasts.highContrast};
   border: 1px solid ${(props) => props.theme.color.contrasts.lowestContrast};
   border-radius: 0.75rem;
-  padding: 1.25rem 1.25rem;
+  padding: 1.25rem;
   margin: 0.25rem 0rem 0.25rem 0rem;
   ${({ error }) => error && errorDisplay}
   ${({ warn }) => warn && errorDisplay}

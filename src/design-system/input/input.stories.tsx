@@ -31,8 +31,20 @@ const Template: Story<IInputProps> = (args) => {
   return <Input {...args} />;
 };
 
-export const SelectInputWithIcons = Template.bind({});
-SelectInputWithIcons.args = {
+export const InputWithOnlyHelpers = Template.bind({});
+InputWithOnlyHelpers.args = {
+  label: 'Label',
+  required: true,
+  disabled: false,
+  readOnly: false,
+  type: 'text',
+  right: false,
+  error: '',
+  hasIconRight: true,
+};
+
+export const InputWithIcons = Template.bind({});
+InputWithIcons.args = {
   label: 'Label',
   required: true,
   disabled: false,
@@ -45,8 +57,8 @@ SelectInputWithIcons.args = {
   iconRight: 'MagnifyingGlassIcon',
 };
 
-export const SelectInputWithLeftIconOnly = Template.bind({});
-SelectInputWithLeftIconOnly.args = {
+export const InputWithLeftIconOnly = Template.bind({});
+InputWithLeftIconOnly.args = {
   label: 'Label',
   required: true,
   disabled: false,
@@ -58,15 +70,17 @@ SelectInputWithLeftIconOnly.args = {
   hasIconRight:true,
 };
 
-export const SelectInputWithRightIconOnly = Template.bind({});
-SelectInputWithRightIconOnly.args = {
+export const InputWithRightIconOnly = Template.bind({});
+InputWithRightIconOnly.args = {
   label: 'Label',
   required: true,
   disabled: false,
   readOnly: false,
-  type: 'text',
+  type: 'search',
   right: false,
   error: '',
-  hasIconRight: true,
+  iconLeft: 'UserIcon',
+  hasIconRight:true,
   iconRight: 'MagnifyingGlassIcon',
 };
+

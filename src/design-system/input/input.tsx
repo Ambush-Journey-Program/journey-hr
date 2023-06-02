@@ -20,7 +20,6 @@ export function Input({
   iconRight,
   hasIconRight,
   onTextChange = () => {},
-
 }: IInputProps) {
   const [touched, setTouched] = useState(false);
   function onInputChange(e: ChangeEvent<HTMLInputElement>) {
@@ -33,13 +32,13 @@ export function Input({
     let color: "mediumContrast" | "accepted" | "error";
     if (iconRight) {
       iconName = iconRight;
-      color = 'mediumContrast';
+      color = `mediumContrast`;
     } else if (right) {
-      iconName = 'CheckIcon';
-      color = 'accepted';
+      iconName = `CheckIcon`;
+      color = `accepted`;
     } else if (error) {
-      iconName = 'ExclamationCircleIcon';
-      color = 'error';
+      iconName = `ExclamationCircleIcon`;
+      color = `error`;
     }
 
     return <Icon color={color} icon={iconName} size="20px" />;
@@ -58,7 +57,6 @@ export function Input({
         {iconLeft && (
           <Icon color="lowestContrast" icon={iconLeft} size="20px" />
         )}
-
         <input
           placeholder={placeholder}
           required={required}
@@ -69,12 +67,11 @@ export function Input({
           data-testid="input-test"
           type={type}
         />
-
         {hasIconRight && (
           <Styled.SpanCorrect>{IconFactory()}</Styled.SpanCorrect>
         )}
       </Styled.InputContainer>
-      {!!error && (
+      {error && (
         <Paragraph size="extrasmall" fontWeight="light" colorVariant="red">
           {error}
         </Paragraph>
