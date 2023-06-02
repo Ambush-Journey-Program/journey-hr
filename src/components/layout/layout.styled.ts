@@ -2,9 +2,9 @@ import { CardWrapper } from '@ambush/ui';
 import styled from 'styled-components';
 
 export const pageContainer = styled.div`
-  column-gap: ${(props) => props.theme.spacings.spacing05};;
+  column-gap: ${(props) => props.theme.spacings.spacing05};
   display: flex;
-  margin: 5rem 8.75rem 0rem 8.75rem;
+  margin: 5rem 8.75rem 0 8.75rem;
   position: relative;
 `;
 
