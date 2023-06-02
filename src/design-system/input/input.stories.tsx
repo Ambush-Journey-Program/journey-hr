@@ -79,7 +79,6 @@ InputWithRightIconOnly.args = {
   type: 'search',
   right: false,
   error: '',
-  iconLeft: 'UserIcon',
   hasIconRight:true,
   iconRight: 'MagnifyingGlassIcon',
 };
