@@ -1,26 +1,30 @@
 import { InputHTMLAttributes } from 'react';
+import * as HeroIconOutline from '@heroicons/react/24/outline';
 
 export type IInputProps = InputHTMLAttributes<HTMLInputElement> & {
   label?: string;
-  error?: string | JSX.Element;
+  error?: string;
+  warn?: string;
   onTextChange?: (value: string) => void;
-  type?: string;
   placeholder?: string;
-  right?: boolean | string | JSX.Element;
+  right?: boolean;
+  iconLeft?: keyof typeof HeroIconOutline;
+  iconRight?: keyof typeof HeroIconOutline;
+  hasIconRight?: boolean;
 };
 
 export type StyleWrapper = {
-  error?: string | JSX.Element;
+  error?: boolean;
   warn?: string;
-  right?: boolean | string | JSX.Element;
+  right?: boolean;
 };
 
 export type StyledLabelProps = { disabled?: boolean };
 
 export type StyledInputProps = {
   disabled?: boolean;
-  error?: string | JSX.Element;
+  error?: string;
   touched?: boolean;
   warn?: string;
-  right?: string | JSX.Element;
+  right?: string;
 };

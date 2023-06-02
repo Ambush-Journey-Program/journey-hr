@@ -16,7 +16,12 @@ export function HappyHourSchedule() {
       <Styled.InputsWrapper>
         <Input type="text" label="Name of the event" />
 
-        <Input type="date" label="Date" />
+        <Input
+          type="date"
+          label="Date"
+          hasIconRight
+          iconLeft="CalendarIcon"
+        />
         <SelectInput
           title="Amount of people"
           required

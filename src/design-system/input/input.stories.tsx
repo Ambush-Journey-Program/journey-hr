@@ -31,10 +31,55 @@ const Template: Story<IInputProps> = (args) => {
   return <Input {...args} />;
 };
 
-export const SelectInputStory = Template.bind({});
-SelectInputStory.args = {
+export const InputWithOnlyHelpers = Template.bind({});
+InputWithOnlyHelpers.args = {
   label: 'Label',
   required: true,
   disabled: false,
   readOnly: false,
+  type: 'text',
+  right: false,
+  error: '',
+  hasIconRight: true,
 };
+
+export const InputWithIcons = Template.bind({});
+InputWithIcons.args = {
+  label: 'Label',
+  required: true,
+  disabled: false,
+  readOnly: false,
+  type: 'search',
+  right: false,
+  error: '',
+  iconLeft: 'UserIcon',
+  hasIconRight:true,
+  iconRight: 'MagnifyingGlassIcon',
+};
+
+export const InputWithLeftIconOnly = Template.bind({});
+InputWithLeftIconOnly.args = {
+  label: 'Label',
+  required: true,
+  disabled: false,
+  readOnly: false,
+  type: 'date',
+  right: false,
+  error: '',
+  iconLeft: 'CalendarIcon',
+  hasIconRight:true,
+};
+
+export const InputWithRightIconOnly = Template.bind({});
+InputWithRightIconOnly.args = {
+  label: 'Label',
+  required: true,
+  disabled: false,
+  readOnly: false,
+  type: 'search',
+  right: false,
+  error: '',
+  hasIconRight:true,
+  iconRight: 'MagnifyingGlassIcon',
+};
+

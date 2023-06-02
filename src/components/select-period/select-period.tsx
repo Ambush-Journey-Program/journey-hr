@@ -1,6 +1,7 @@
 import { Input } from '@ambush/ui';
 import * as Styled from './select-period.styled';
 import { useEffect, useState } from 'react';
+
 import {
   findToday,
   isDate15DaysFromNow,
@@ -71,6 +72,8 @@ export function SelectPeriod() {
         onTextChange={setStartDate}
         value={startDate}
         error={startDateError}
+        hasIconRight
+        iconLeft="CalendarIcon"
         right={!startDateError && startDate}
         min={today}
       />
@@ -80,6 +83,8 @@ export function SelectPeriod() {
         onTextChange={setEndDate}
         value={endDate}
         error={endDateError}
+        hasIconRight
+        iconLeft="CalendarIcon"
         right={!endDateError && endDate}
         min={today}
       />

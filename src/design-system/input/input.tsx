@@ -2,7 +2,8 @@ import { ChangeEvent, useState } from 'react';
 import { Paragraph } from '../typography/paragraph/paragraph';
 import * as Styled from './input.styled';
 import { IInputProps } from './types';
-import * as Icons from '@heroicons/react/24/outline';
+import * as HeroIconOutline from '@heroicons/react/24/outline';
+import { Icon } from '../icon/icon';
 
 export function Input({
   label,
@@ -15,9 +16,10 @@ export function Input({
   placeholder = 'Label',
   type = 'text',
   name,
-
+  iconLeft,
+  iconRight,
+  hasIconRight,
   onTextChange = () => {},
-  ...props
 }: IInputProps) {
   const [touched, setTouched] = useState(false);
   function onInputChange(e: ChangeEvent<HTMLInputElement>) {
@@ -25,8 +27,25 @@ export function Input({
     setTouched(true);
   }
 
+  function IconFactory() {
+    let iconName:keyof typeof HeroIconOutline;
+    let color: "mediumContrast" | "accepted" | "error";
+    if (iconRight) {
+      iconName = iconRight;
+      color = `mediumContrast`;
+    } else if (right) {
+      iconName = `CheckIcon`;
+      color = `accepted`;
+    } else if (error) {
+      iconName = `ExclamationCircleIcon`;
+      color = `error`;
+    }
+
+    return <Icon color={color} icon={iconName} size="20px" />;
+  }
+
   return (
-    <Styled.Wrapper error={error}>
+    <Styled.Wrapper>
       <Styled.Label htmlFor={name}>
         {label} {required && <span>Required</span>}
       </Styled.Label>
@@ -35,11 +54,10 @@ export function Input({
         disabled={disabled}
         touched={touched}
       >
-        <Styled.calendarIcon>
-          <Icons.CalendarDaysIcon className="alert" data-testid="Alert" />
-        </Styled.calendarIcon>
+        {iconLeft && (
+          <Icon color="lowestContrast" icon={iconLeft} size="20px" />
+        )}
         <input
-          type={type}
           placeholder={placeholder}
           required={required}
           disabled={disabled}
@@ -47,23 +65,13 @@ export function Input({
           value={value}
           onChange={onInputChange}
           data-testid="input-test"
-          {...props}
+          type={type}
         />
-        {!!right && (
-          <Styled.SpanCorrect>
-            <Icons.CheckIcon className="alert" data-testid="Alert" />
-          </Styled.SpanCorrect>
-        )}
-        {!!error && (
-          <Styled.Span>
-            <Icons.ExclamationCircleIcon
-              className="alert"
-              data-testid="Alert"
-            />
-          </Styled.Span>
+        {hasIconRight && (
+          <Styled.SpanCorrect>{IconFactory()}</Styled.SpanCorrect>
         )}
       </Styled.InputContainer>
-      {!!error && (
+      {error && (
         <Paragraph size="extrasmall" fontWeight="light" colorVariant="red">
           {error}
         </Paragraph>
