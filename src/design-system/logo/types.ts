@@ -5,7 +5,7 @@ export type ColorsProps = 'red' | 'purple' | 'yellow' | 'dark' | 'light';
 
 export type ILogoProps = {
   logoVariation: keyof typeof Logos;
-  colors: ColorsProps;
+  colorVariant: ColorsProps;
 } & ImgHTMLAttributes<HTMLImageElement>;
 
 type WithOptionalProperty<
@@ -13,9 +13,6 @@ type WithOptionalProperty<
   TypeRequired extends keyof Type,
 > = Partial<Type> & Required<Pick<Type, TypeRequired>>;
 
-type RequiredProps = 'colors';
+type RequiredProps = 'colorVariant';
 
-export type LogoStyleProps = WithOptionalProperty<
-  ILogoProps,
-  RequiredProps
->;
+export type LogoStyleProps = WithOptionalProperty<ILogoProps, RequiredProps>;

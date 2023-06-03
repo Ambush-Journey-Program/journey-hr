@@ -36,7 +36,7 @@ const LogoStoryWrapper = styled.div<{ alternate?: boolean }>`
 
 const Template: Story<ILogoProps> = (args) => {
   return (
-    <LogoStoryWrapper alternate={args.colors === 'light'}>
+    <LogoStoryWrapper alternate={args.colorVariant === 'light'}>
       <Logo {...args} />
     </LogoStoryWrapper>
   );
@@ -45,5 +45,5 @@ const Template: Story<ILogoProps> = (args) => {
 export const SelectCardStory = Template.bind({});
 SelectCardStory.args = {
   logoVariation: 'horizontal',
-  colors: 'red',
+  colorVariant: 'red',
 };

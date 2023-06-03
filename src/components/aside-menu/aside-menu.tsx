@@ -1,12 +1,12 @@
-import { Button, Logo, Paragraph } from '@/design-system';
-import { MenuItem } from '.';
-import * as Styled from './aside-menu.styled';
+import { Button, Logo, Paragraph } from "@/design-system";
+import { MenuItem } from ".";
+import * as Styled from "./aside-menu.styled";
 
 export function AsideMenu() {
   return (
     <Styled.Menu data-testid="Menu">
       <Styled.LogoContainer>
-        <Logo colors="dark" logoVariation="horizontal" />
+        <Logo colorVariant="dark" logoVariation="horizontal" />
       </Styled.LogoContainer>
       <Styled.UserContainer>
         <Paragraph size="large" fontWeight="light">
