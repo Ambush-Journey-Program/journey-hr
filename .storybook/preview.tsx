@@ -38,6 +38,7 @@ export const parameters = {
     dark: { ...themes.dark, appBg: 'black' },
     light: { ...themes.normal, appBg: 'white' },
   },
+  assets: ['../src/assets'], // Specify the directory where your images and SVG files are located
 };
 
 const withGlobalStyle = (Story) => (

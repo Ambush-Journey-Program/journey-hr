@@ -10,10 +10,7 @@ module.exports = {
     'storybook-color-picker',
     'storybook-dark-mode',
   ],
-  framework: {
-    name: '@storybook/nextjs',
-    options: {},
-  },
+  framework: '@storybook/nextjs',
   features: {
     storyStoreV7: true,
   },
@@ -44,6 +41,19 @@ module.exports = {
       },
     ];
 
+    // Add file-loader and url-loader for images
+    config.module.rules.push({
+      test: /\.(png|jpe?g|gif)$/i,
+      use: [
+        {
+          loader: 'file-loader',
+          options: {
+            outputPath: 'images',
+          },
+        },
+      ],
+    });
+
     return config;
   },
   typescript: {
@@ -57,6 +67,15 @@ module.exports = {
     },
   },
   docs: {
-    autodocs: true,
+    transformMDX: (mdxCode) => {
+      return `import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+              import { withThemeProvider } from './decorators';
+              export default {
+                component: Meta,
+                title: 'Docs',
+              };
+
+              ${mdxCode}`;
+    },
   },
 };
