@@ -28,7 +28,7 @@ const colorsVariants = {
 export const Image = styled.span<LogoStyleProps>`
   svg {
     width: 100%;
-    height: 100%;
+     height: 100%;
   }
 
    ${({ colors }) => colorsVariants[colors]};
