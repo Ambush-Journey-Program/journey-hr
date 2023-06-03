@@ -1,10 +1,12 @@
+import { StaticImageData } from 'next/image';
+
 type LinkList = Link[];
 
 export type ColorProps = 'dark' | 'light';
 
 export type NavBarProps = {
   navigationLinks: LinkList;
-  avatarSrc?: string;
+  avatarSrc?: StaticImageData;
   colors: ColorProps;
 };
 
