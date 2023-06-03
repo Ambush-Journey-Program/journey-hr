@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { Inter } from 'next/font/google';
-import { Avatar, Doodles, NavBar } from '@/design-system';
+import { Avatar, Doodles, Logo, NavBar } from '@/design-system';
 import { Icon } from '@/design-system/icon/icon';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -19,6 +19,7 @@ export default function Home() {
       <Doodles icon={'arrow1'} colors={'dark'} />
       <Doodles icon={'spinningArrow'} colors={'dark'} />
       <Icon icon="TvIcon" size="58px" color={'error'} />
+      <Logo logoVariation={'vertical'} colors={'dark'} />
     </>
   );
 }
