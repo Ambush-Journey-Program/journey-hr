@@ -4,7 +4,7 @@ import { Logo } from './logo';
 
 describe('<Logo />', () => {
   it('renders the Logo', () => {
-    render(<Logo variant={'symbol'} colorVariant={'red'} />);
+    render(<Logo logoVariation={'symbol'} colors={'red'} />);
 
     const avatarEl = screen.getByTestId('Logo');
     expect(avatarEl).toBeInTheDocument();
