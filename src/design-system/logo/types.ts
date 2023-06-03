@@ -1,14 +1,21 @@
 import { ImgHTMLAttributes } from 'react';
-import { WithOptionalProperty } from '../../types';
-
 import { Logos } from './logosrc';
 
-export type ColorType = 'red' | 'purple' | 'yellow' | 'dark' | 'light';
+export type ColorsProps = 'red' | 'purple' | 'yellow' | 'dark' | 'light';
 
 export type ILogoProps = {
-  variant: keyof typeof Logos;
-  colorVariant: ColorType;
+  logoVariation: keyof typeof Logos;
+  colors: ColorsProps;
 } & ImgHTMLAttributes<HTMLImageElement>;
 
-type RequiredProps = 'colorVariant';
-export type LogoProps = WithOptionalProperty<ILogoProps, RequiredProps>;
+type WithOptionalProperty<
+  Type,
+  TypeRequired extends keyof Type,
+> = Partial<Type> & Required<Pick<Type, TypeRequired>>;
+
+type RequiredProps = 'colors';
+
+export type LogoStyleProps = WithOptionalProperty<
+  ILogoProps,
+  RequiredProps
+>;

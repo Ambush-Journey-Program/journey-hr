@@ -6,7 +6,7 @@ export function AsideMenu() {
   return (
     <Styled.Menu data-testid="Menu">
       <Styled.LogoContainer>
-        <Logo colorVariant="dark" variant="horizontal" />
+        <Logo colors="dark" logoVariation="horizontal" />
       </Styled.LogoContainer>
       <Styled.UserContainer>
         <Paragraph size="large" fontWeight="light">
