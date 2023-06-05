@@ -1,9 +1,9 @@
 import * as Styled from './logo.styled';
-import { LogoProps } from './types';
+import { ILogoProps } from './types';
 import { Logos } from './logosrc';
 
-export function Logo({ colorVariant = 'red', variant }: LogoProps) {
-  const logoVariant = variant && Logos[variant];
+export function Logo({colorVariant,logoVariation}: ILogoProps) {
+  const logoVariant = logoVariation && Logos[logoVariation];
 
   return (
     <Styled.Image

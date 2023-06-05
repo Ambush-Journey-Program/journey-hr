@@ -44,6 +44,6 @@ const Template: Story<ILogoProps> = (args) => {
 
 export const SelectCardStory = Template.bind({});
 SelectCardStory.args = {
-  variant: 'horizontal',
-  colorVariant: 'dark',
+  logoVariation: 'horizontal',
+  colorVariant: 'red',
 };

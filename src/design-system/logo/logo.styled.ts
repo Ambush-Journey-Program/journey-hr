@@ -3,13 +3,9 @@ import styled, {
   FlattenInterpolation,
   ThemeProps,
 } from 'styled-components';
-import { LogoProps, ColorType } from './types';
+import { ColorsProps, LogoStyleProps } from './types';
 
-type ColorVariants = {
-  [key: string]: FlattenInterpolation<ThemeProps<ColorType>>;
-};
-
-const color: ColorVariants = {
+const colorsVariants = {
   dark: css`
     color: ${(props) => props.theme.color.brandColors.dark};
   `,
@@ -27,11 +23,11 @@ const color: ColorVariants = {
   `,
 };
 
-export const Image = styled.span<LogoProps>`
+export const Image = styled.span<LogoStyleProps>`
   svg {
     width: 100%;
     height: 100%;
   }
 
-  ${({ colorVariant }) => color[colorVariant]};
+  ${({ colorVariant }) => colorsVariants[colorVariant]};
 `;

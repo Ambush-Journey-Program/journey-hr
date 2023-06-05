@@ -2,9 +2,7 @@ import styled from 'styled-components';
 
 export const Menu = styled.div`
   width: 17.375rem;
-  svg {
-    width: 7.125rem;
-  }
+
 `;
 
 export const LogoContainer = styled.div`

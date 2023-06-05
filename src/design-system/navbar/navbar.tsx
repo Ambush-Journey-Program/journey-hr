@@ -7,7 +7,7 @@ import { NavBarLinks } from './navbarlinks';
 
 export function NavBar({
   navigationLinks,
-  avatarSrc = 'src/design-system/avatar/User-Photo.png',
+    avatarSrc = '/static/images/UserPhoto.png',
   colors,
 }: NavBarProps & LinksProps) {
   return (
