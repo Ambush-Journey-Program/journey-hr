@@ -1,4 +1,4 @@
-import { Button, Logo, Paragraph } from "@/design-system";
+import { Button, Logo, Paragraph } from "@ambush/ui";
 import { MenuItem } from ".";
 import * as Styled from "./aside-menu.styled";
 
