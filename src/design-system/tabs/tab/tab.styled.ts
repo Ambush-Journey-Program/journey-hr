@@ -2,7 +2,7 @@ import { Paragraph } from '@/design-system/typography';
 import styled from 'styled-components';
 
 export const Tab = styled.a`
-  display: flex;
+  display: grid;
   justify-content: center;
   width: 100%;
   padding: 0.625rem;
@@ -41,5 +41,4 @@ export const Tab = styled.a`
 
 export const ParagraphStyle = styled(Paragraph)`
   display: flex;
-  justify-content: center;
 `;

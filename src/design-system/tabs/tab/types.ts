@@ -1,7 +1,7 @@
 import {
   ParagraphType,
   TextWeight,
-} from '@/design-system/typography/Paragraph/types';
+} from '@/design-system/typography/paragraph/types';
 import * as HeroIcons from '@heroicons/react/24/solid';
 
 export type TabProps = {

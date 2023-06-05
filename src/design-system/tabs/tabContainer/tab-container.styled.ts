@@ -14,4 +14,5 @@ export const Underline = styled.div`
 
 export const buttonTab = styled.div`
   background-color: transparent;
+  width: 100%;
 `;
