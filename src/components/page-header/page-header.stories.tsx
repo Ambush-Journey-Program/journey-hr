@@ -1,6 +1,8 @@
 import { Meta, Story } from '@storybook/react';
 import { PageHeader } from './page-header';
 import { PageHeaderProps } from './types';
+import { BackButton, Button } from '@/design-system';
+import styled from 'styled-components';
 
 export default {
   component: PageHeader,
@@ -24,13 +26,33 @@ export default {
     },
   },
 } as Meta;
+const StyledDiv = styled.div`
+  width: calc(768px - 5rem);
+  height: 110vh;
+
+  @media (min-width: 768px) {
+    width: calc(769px - 2rem);
+  }
+  @media (min-width: 992px) {
+    width: calc(992px - 2rem);
+  }
+  @media (min-width: 1200px) {
+    width: calc(1200px - 2rem);
+  }
+`;
 
 const Template: Story<PageHeaderProps> = (args) => {
-  return <PageHeader {...args} />;
+  return (
+    <StyledDiv>
+      <PageHeader {...args} />
+    </StyledDiv>
+  );
 };
 
 export const PageHeaderStory = Template.bind({});
 PageHeaderStory.args = {
   title: 'Happy Hour Schedule',
   subtitle: 'Choose the best dates to celebrate',
+  button: <Button>Apply Time Off</Button>,
+  backButton: <BackButton onClick={() => {}} />,
 };

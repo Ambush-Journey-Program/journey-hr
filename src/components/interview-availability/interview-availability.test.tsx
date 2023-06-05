@@ -4,8 +4,7 @@ import { InterviewAvailability } from './interview-availability';
 describe('<InterviewAvailability>', () => {
   it('It should have a title', () => {
     render(<InterviewAvailability />);
-    const interviewtitle = screen.getByRole('heading', { level: 1 });
-    expect(interviewtitle).toBeInTheDocument();
+    const interviewtitle = screen.getByRole('heading', { level: 4 });
     expect(interviewtitle).toHaveTextContent(
       'Technical Interview Availability',
     );

@@ -1,15 +1,15 @@
-import { Input, SelectInput, TextArea } from '@/design-system';
+import { BackButton, Input, SelectInput, TextArea } from '@ambush/ui';
 import { PageHeader } from '../page-header';
 import { generateAmountPeopleOptions } from './constants';
 import * as Styled from './happy-hour-schedule.styled';
+import router from 'next/router';
 
 export function HappyHourSchedule() {
   const amountOfPeople = generateAmountPeopleOptions();
   return (
     <Styled.MainWrapper data-testid="happyHourSchedule">
-      <Styled.StyledBackButton onClick={() => {}} />
-
       <PageHeader
+        backButton={<BackButton onClick={() => router.back()} />}
         title="Happy Hour Schedule "
         subtitle="Choose the best dates to celebrate"
       />
