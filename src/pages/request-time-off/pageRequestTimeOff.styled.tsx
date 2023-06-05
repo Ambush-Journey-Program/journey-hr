@@ -9,6 +9,11 @@ export const TimeOffPageHeaderWrapper = styled.div`
   gap: ${(props) => props.theme.spacings.spacing04};
 `;
 
+export const HolidaysWrapper = styled.div`
+  display: flex;
+  gap: ${(props) => props.theme.spacings.spacing04};
+`;
+
 export const SpacingWrapper = styled.div`
   display: flex;
   flex-direction: column;
