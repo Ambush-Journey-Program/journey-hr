@@ -1,7 +1,6 @@
 import { Meta, Story } from '@storybook/react';
 import { NavBar } from './navbar';
 import { NavBarProps, Link } from './type';
-import navPhoto from '../avatar/User-Photo.png';
 
 const navLinksJourneyHR: Link[] = [
   {
@@ -61,5 +60,4 @@ export const NavBarStory = Template.bind({});
 NavBarStory.args = {
   navigationLinks: navLinksJourneyHR,
   colors: 'dark',
-  avatarSrc: navPhoto,
 };

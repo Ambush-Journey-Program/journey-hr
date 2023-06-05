@@ -14,6 +14,7 @@ module.exports = {
   features: {
     storyStoreV7: true,
   },
+  staticDirs: ['../public'],
   webpackFinal: async (config) => {
     config.resolve.alias = {
       ...config.resolve.alias,
@@ -47,9 +48,6 @@ module.exports = {
       use: [
         {
           loader: 'file-loader',
-          options: {
-            outputPath: 'images',
-          },
         },
       ],
     });
