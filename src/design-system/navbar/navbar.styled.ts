@@ -59,17 +59,13 @@ export const LogoContainer = styled.div`
 
   h1 {
     margin-left: 0.5625rem;
-    color: ${(props) => props.theme.color.brandColors.darkPurple};
+    color: ${(props) => props.theme.color.brandColors.dark};
     font-size: 18px;
     font-weight: 700;
   }
 `;
 
-type ColorVariant = {
-  [key: string]: FlattenInterpolation<ThemeProps<LinkColors>>;
-};
-
-const colorsVariants: ColorVariant = {
+const colorsVariants = {
   light: css`
     color: ${(props) => props.theme.color.brandColors.light};
   `,
