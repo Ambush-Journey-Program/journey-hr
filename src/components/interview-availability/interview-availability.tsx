@@ -28,7 +28,6 @@ export function InterviewAvailability() {
     inputData;
 
   return (
-    <CardWrapper>
       <Styled.InterviewAvailability>
         <PageHeader
           title="Technical Interview Availability"
@@ -90,6 +89,5 @@ export function InterviewAvailability() {
           </Styled.Form>
         </div>
       </Styled.InterviewAvailability>
-    </CardWrapper>
   );
 }
