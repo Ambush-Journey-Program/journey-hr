@@ -3,7 +3,6 @@ import { ThemeProvider } from 'styled-components';
 import { theme } from '@/styles/theme';
 import { Avatar } from './avatar';
 import { AvatarProps } from './types';
-import userPhoto from './User-Photo.png';
 
 export default {
   component: Avatar,
@@ -36,6 +35,6 @@ const Template: Story<AvatarProps> = (args) => {
 
 export const SelectCardStory = Template.bind({});
 SelectCardStory.args = {
-  src: userPhoto,
+  src: '/static/images/UserPhoto.png',
   sizeVariant: 'small',
 };

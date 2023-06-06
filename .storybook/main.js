@@ -65,15 +65,6 @@ module.exports = {
     },
   },
   docs: {
-    transformMDX: (mdxCode) => {
-      return `import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
-              import { withThemeProvider } from './decorators';
-              export default {
-                component: Meta,
-                title: 'Docs',
-              };
-
-              ${mdxCode}`;
-    },
+    autodocs: true,
   },
 };
