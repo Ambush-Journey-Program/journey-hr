@@ -10,13 +10,11 @@ module.exports = {
     'storybook-color-picker',
     'storybook-dark-mode',
   ],
-  framework: {
-    name: '@storybook/nextjs',
-    options: {},
-  },
+  framework: '@storybook/nextjs',
   features: {
     storyStoreV7: true,
   },
+  staticDirs: ['../public'],
   webpackFinal: async (config) => {
     config.resolve.alias = {
       ...config.resolve.alias,
@@ -43,6 +41,16 @@ module.exports = {
         use: ['@svgr/webpack'],
       },
     ];
+
+    // Add file-loader and url-loader for images
+    config.module.rules.push({
+      test: /\.(png|jpe?g|gif)$/i,
+      use: [
+        {
+          loader: 'file-loader',
+        },
+      ],
+    });
 
     return config;
   },

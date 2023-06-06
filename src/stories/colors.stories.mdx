@@ -1,0 +1,90 @@
+import { Meta, ColorPalette, ColorItem } from '@storybook/addon-docs';
+import { theme } from '../styles/theme';
+
+<Meta title="Docs/Colors" />
+
+<style>
+  {`
+
+    h2{
+      font-weight: 700;
+      font-size: 22px;
+      line-height: 40px;
+      color: #301F47;
+    }
+
+    h3{
+    margin-top:30px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 150%;
+    color: #301F47;
+    margin-bottom:30px;
+  }
+`}
+</style>
+
+<h2>Solid Colors</h2>
+<h3>Brand Colors</h3>
+<ColorPalette className="group_Colors">
+  <ColorItem title="red" colors={[theme.color.brandColors.red]} />
+  <ColorItem title="purple" colors={[theme.color.brandColors.purple]} />
+  <ColorItem title="yellow" colors={[theme.color.brandColors.yellow]} />
+  <ColorItem title="dark" colors={[theme.color.brandColors.dark]} />
+  <ColorItem title="light" colors={[theme.color.brandColors.light]} />
+</ColorPalette>
+
+<h3>Auxiliary</h3>
+<ColorPalette className="group_Colors">
+  <ColorItem title="white" colors={[theme.color.auxiliary.white]} />
+  <ColorItem
+    title="white dark mode"
+    colors={[theme.color.auxiliary.whiteDarkMode]}
+  />
+  <ColorItem title="blue" colors={[theme.color.auxiliary.blue]} />
+  <ColorItem title="error" colors={[theme.color.auxiliary.error]} />
+  <ColorItem title="accepted" colors={[theme.color.auxiliary.accepted]} />
+</ColorPalette>
+
+<h3>Text</h3>
+<ColorPalette className="group_Colors">
+  <ColorItem
+    title="Text"
+    colors={{
+      highContrast: theme.color.contrasts.highContrast,
+      mediumContrast: theme.color.contrasts.mediumContrast,
+      lowContrast: theme.color.contrasts.lowContrast,
+      lowestContrast: theme.color.contrasts.lowestContrast,
+      lightContrast: theme.color.contrasts.lightContrast,
+    }}
+  />
+</ColorPalette>
+
+<h2>Button</h2>
+<ColorPalette className="group_Colors">
+  <ColorItem title="primary" colors={[theme.color.button.primary]} />
+  <ColorItem title="primary|hover" colors={[theme.color.button.primaryHover]} />
+  <ColorItem title="secondary" colors={[theme.color.button.secondary]} />
+  <ColorItem
+    title="secondary|hover"
+    colors={[theme.color.button.secondaryHover]}
+  />
+  <ColorItem title="disabled" colors={[theme.color.button.disabled]} />
+</ColorPalette>
+
+<h2>Gradients</h2>
+<h3>Brand Colors / Up</h3>
+<ColorPalette className="group_Colors">
+  <ColorItem title="red" colors={[theme.color.gradients.up.red]} />
+  <ColorItem title="purple" colors={[theme.color.gradients.up.purple]} />
+  <ColorItem title="yellow" colors={[theme.color.gradients.up.yellow]} />
+  <ColorItem title="light" colors={[theme.color.gradients.up.light]} />
+</ColorPalette>
+
+<h3>Brand Colors / Down</h3>
+<ColorPalette className="group_Colors">
+  <ColorItem title="red" colors={[theme.color.gradients.down.red]} />
+  <ColorItem title="purple" colors={[theme.color.gradients.down.purple]} />
+  <ColorItem title="yellow" colors={[theme.color.gradients.down.yellow]} />
+  <ColorItem title="light" colors={[theme.color.gradients.down.light]} />
+</ColorPalette>
