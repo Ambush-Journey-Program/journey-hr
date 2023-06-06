@@ -52,10 +52,6 @@ export default {
   },
 } as Meta;
 
-const Template: Story<NavBarProps> = (args) => {
-  return <NavBar {...args} />;
-};
-
 export const NavBarStory: StoryFn<typeof NavBar> = (
   args: JSX.IntrinsicAttributes & NavBarProps,
 ) => <NavBar {...args} />;
