@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/react';
+import { Meta, Story, StoryFn } from '@storybook/react';
 import { Subtitle } from './subtitle';
 import { SubtitleProps } from './types';
 
@@ -10,13 +10,22 @@ export default {
   },
 } as Meta;
 
-const SubtitleTemplate: Story<SubtitleProps> = (args) => {
-  return <Subtitle {...args} />;
-};
-
-export const SubtitleStory = SubtitleTemplate.bind({});
+export const SubtitleStory: StoryFn<typeof Subtitle> = (args) => (
+  <Subtitle {...args} />
+);
 SubtitleStory.args = {
   children: 'Label',
   variant: 's1',
-  fontWeight: 'medium',
+  fontWeight: 'regular',
+};
+
+SubtitleStory.argTypes = {
+  variant: {
+    control: { type: 'select' },
+    options: ['s1', 's2', 's3', 's4', 's5', 's6'],
+  },
+  fontWeight: {
+    control: { type: 'radio' },
+    options: ['hair', 'regular', 'medium'],
+  },
 };
