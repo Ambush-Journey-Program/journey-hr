@@ -5,8 +5,6 @@ import { theme } from '@/styles/theme';
 import { Layout } from '@ambush/ui';
 import '../styles/reset.css';
 
-import '../styles/reset.css';
-
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <StyledComponentsRegistry>
