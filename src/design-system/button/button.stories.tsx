@@ -61,11 +61,11 @@ ButtonStory.argTypes = {
   },
   variant: {
     control: { type: 'radio' },
-    options: ['primary', 'secondary', 'alternative'],
+    options: ['default', 'outlined', 'ghost'],
   },
   sizeVariant: {
     control: { type: 'radio' },
-    options: ['primary', 'secondary', 'alternative'],
+    options: ['small', 'medium', 'large'],
   },
 };
 
@@ -76,11 +76,11 @@ IconButtonStory.argTypes = {
   },
   variant: {
     control: { type: 'radio' },
-    options: ['primary', 'secondary', 'alternative'],
+    options: ['default', 'outlined', 'ghost'],
   },
   sizeVariant: {
     control: { type: 'radio' },
-    options: ['primary', 'secondary', 'alternative'],
+    options: ['small', 'medium', 'large'],
   },
   icon: {
     options: Object.keys(HeroIcons),
