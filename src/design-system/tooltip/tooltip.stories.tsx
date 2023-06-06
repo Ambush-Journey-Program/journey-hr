@@ -1,7 +1,5 @@
-import { Meta, Story } from '@storybook/react';
+import { Meta, Story, StoryFn } from '@storybook/react';
 import { Tooltip } from './tooltip';
-
-import { ITooltipProps } from './types';
 
 export default {
   component: Tooltip,
@@ -28,14 +26,19 @@ export default {
   },
 } as Meta;
 
-const Template: Story<ITooltipProps> = (args) => {
-  return <Tooltip {...args} />;
-};
-
-export const TooltipStory = Template.bind({});
+export const TooltipStory: StoryFn<typeof Tooltip> = (args) => (
+  <Tooltip {...args} />
+);
 
 TooltipStory.args = {
   children: 'Test',
   variantPosition: 'top',
   text: 'Copied!',
+};
+
+TooltipStory.argTypes = {
+  variantPosition: {
+    control: { type: 'radio' },
+    options: ['right', 'top', 'bottom', 'left'],
+  },
 };

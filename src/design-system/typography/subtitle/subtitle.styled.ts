@@ -2,15 +2,7 @@ import styled, { css, FlattenSimpleInterpolation } from 'styled-components';
 import { devices } from '@/styles/devices';
 import { SubtitleProps } from './types';
 
-type SubtitleStyle = {
-  [key: string]: FlattenSimpleInterpolation;
-};
-
-type TextStyle = {
-  [key: string]: FlattenSimpleInterpolation;
-};
-
-const subtitleEl: SubtitleStyle = {
+const subtitleEl = {
   s1: css`
     font-size: 1.75rem;
 
@@ -84,7 +76,7 @@ const subtitleEl: SubtitleStyle = {
   `,
 };
 
-const subtitleWeightEl: TextStyle = {
+const subtitleWeightEl = {
   hair: css`
     font-weight: 300;
   `,

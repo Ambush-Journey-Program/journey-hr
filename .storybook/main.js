@@ -9,6 +9,7 @@ module.exports = {
     '@storybook/addon-interactions',
     'storybook-color-picker',
     'storybook-dark-mode',
+    '@storybook/addon-docs',
   ],
   framework: '@storybook/nextjs',
   features: {

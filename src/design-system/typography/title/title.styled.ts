@@ -2,11 +2,7 @@ import styled, { css, FlattenSimpleInterpolation } from 'styled-components';
 import { devices } from '@/styles/devices';
 import { TitleProps } from './types';
 
-type TitleStyle = {
-  [key: string]: FlattenSimpleInterpolation;
-};
-
-const titleEl: TitleStyle = {
+const titleEl = {
   h1: css`
     font-size: 2rem;
 

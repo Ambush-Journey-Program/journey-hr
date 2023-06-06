@@ -1,7 +1,8 @@
-import { Meta, Story } from '@storybook/react';
+import { Meta, Story, StoryFn } from '@storybook/react';
 import styled, { css } from 'styled-components';
 import { Logo } from './logo';
 import { ILogoProps } from './types';
+import { Logos } from './logosrc';
 
 export default {
   component: Logo,
@@ -34,16 +35,20 @@ const LogoStoryWrapper = styled.div<{ alternate?: boolean }>`
     `}
 `;
 
-const Template: Story<ILogoProps> = (args) => {
-  return (
-    <LogoStoryWrapper alternate={args.colorVariant === 'light'}>
-      <Logo {...args} />
-    </LogoStoryWrapper>
-  );
-};
+export const SelectCardStory: StoryFn<typeof Logo> = (args) => (
+  <LogoStoryWrapper alternate={args.colorVariant === 'light'}>
+    <Logo {...args} />
+  </LogoStoryWrapper>
+);
 
-export const SelectCardStory = Template.bind({});
 SelectCardStory.args = {
   logoVariation: 'horizontal',
   colorVariant: 'red',
+};
+SelectCardStory.argTypes = {
+  logoVariation: { options: Object.keys(Logos), control: { type: 'radio' } },
+  colorVariant: {
+    options: ['light', 'red', 'purple', 'yellow', 'dark'],
+    control: { type: 'radio' },
+  },
 };

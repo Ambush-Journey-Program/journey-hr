@@ -24,3 +24,15 @@ export type ParagraphProps = {
   fontWeight: TextWeight;
   colorVariant?: ColorType;
 };
+
+type WithOptionalProperty<
+  Type,
+  TypeRequired extends keyof Type,
+> = Partial<Type> & Required<Pick<Type, TypeRequired>>;
+
+type RequiredProps = 'colorVariant' | 'fontWeight' | 'size';
+
+export type ParagraphStyleProps = WithOptionalProperty<
+  ParagraphProps,
+  RequiredProps
+>;

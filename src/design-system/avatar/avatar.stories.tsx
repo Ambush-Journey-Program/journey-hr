@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/react';
+import { Meta, Story, StoryFn } from '@storybook/react';
 import { ThemeProvider } from 'styled-components';
 import { theme } from '@/styles/theme';
 import { Avatar } from './avatar';
@@ -33,8 +33,18 @@ const Template: Story<AvatarProps> = (args) => {
   );
 };
 
-export const SelectCardStory = Template.bind({});
+export const SelectCardStory: StoryFn<typeof Avatar> = (args) => (
+  <Avatar {...args} />
+);
+
 SelectCardStory.args = {
   src: '/static/images/UserPhoto.png',
   sizeVariant: 'small',
+};
+
+SelectCardStory.argTypes = {
+  sizeVariant: {
+    control: { type: 'radio' },
+    options: ['small', 'large'],
+  },
 };

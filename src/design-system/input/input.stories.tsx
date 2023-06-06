@@ -1,6 +1,7 @@
 import { Meta, Story } from '@storybook/react';
 import { Input } from './input';
 import { IInputProps } from './types';
+import * as HeroIcons from '@heroicons/react/24/solid';
 
 export default {
   component: Input,
@@ -53,8 +54,22 @@ InputWithIcons.args = {
   right: false,
   error: '',
   iconLeft: 'UserIcon',
-  hasIconRight:true,
+  hasIconRight: true,
   iconRight: 'MagnifyingGlassIcon',
+};
+InputWithIcons.argTypes = {
+  iconLeft: {
+    options: Object.keys(HeroIcons),
+    control: {
+      type: 'select',
+    },
+  },
+  iconRight: {
+    options: Object.keys(HeroIcons),
+    control: {
+      type: 'select',
+    },
+  },
 };
 
 export const InputWithLeftIconOnly = Template.bind({});
@@ -67,7 +82,15 @@ InputWithLeftIconOnly.args = {
   right: false,
   error: '',
   iconLeft: 'CalendarIcon',
-  hasIconRight:true,
+  hasIconRight: true,
+};
+InputWithLeftIconOnly.argTypes = {
+  iconLeft: {
+    options: Object.keys(HeroIcons),
+    control: {
+      type: 'select',
+    },
+  },
 };
 
 export const InputWithRightIconOnly = Template.bind({});
@@ -79,7 +102,14 @@ InputWithRightIconOnly.args = {
   type: 'search',
   right: false,
   error: '',
-  hasIconRight:true,
+  hasIconRight: true,
   iconRight: 'MagnifyingGlassIcon',
 };
-
+InputWithRightIconOnly.argTypes = {
+  iconRight: {
+    options: Object.keys(HeroIcons),
+    control: {
+      type: 'select',
+    },
+  },
+};
