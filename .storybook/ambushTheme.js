@@ -15,7 +15,7 @@ export default create({
   barTextColor: '#45365a',
   barSelectedColor: '#ec6d75',
   barBg: 'linear-gradient(0deg, #FCFBF8 0%, #F7F3EE 100.74%)',
-  inputBg: 'white',
+  inputBg: 'black',
   inputBorder: '#e6e6e6',
   inputTextColor: '#45365a',
   inputBorderRadius: 4,

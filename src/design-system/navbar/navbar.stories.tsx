@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/react';
+import { Meta, Story, StoryFn } from '@storybook/react';
 import { NavBar } from './navbar';
 import { NavBarProps, Link } from './type';
 
@@ -56,8 +56,18 @@ const Template: Story<NavBarProps> = (args) => {
   return <NavBar {...args} />;
 };
 
-export const NavBarStory = Template.bind({});
+export const NavBarStory: StoryFn<typeof NavBar> = (
+  args: JSX.IntrinsicAttributes & NavBarProps,
+) => <NavBar {...args} />;
+
 NavBarStory.args = {
   navigationLinks: navLinksJourneyHR,
   colors: 'dark',
+};
+
+NavBarStory.argTypes = {
+  colors: {
+    control: { type: 'radio' },
+    options: ['light', 'dark'],
+  },
 };
