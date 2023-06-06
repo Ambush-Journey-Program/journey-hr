@@ -25,15 +25,10 @@ export default {
   },
 } as Meta;
 
-// const Template: Story<ButtonProps> = (args) => {
-//   return <Button {...args} />;
-// };
-
 export const ButtonStory: StoryFn<typeof Button> = (
   args: JSX.IntrinsicAttributes & ButtonProps,
 ) => <Button {...args} />;
 
-// export const ButtonStory = Template.bind({});
 ButtonStory.args = {
   children: 'Button',
   disabled: false,

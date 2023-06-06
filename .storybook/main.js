@@ -9,6 +9,7 @@ module.exports = {
     '@storybook/addon-interactions',
     'storybook-color-picker',
     'storybook-dark-mode',
+    '@storybook/addon-docs',
   ],
   framework: '@storybook/nextjs',
   features: {
@@ -65,15 +66,6 @@ module.exports = {
     },
   },
   docs: {
-    transformMDX: (mdxCode) => {
-      return `import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
-              import { withThemeProvider } from './decorators';
-              export default {
-                component: Meta,
-                title: 'Docs',
-              };
-
-              ${mdxCode}`;
-    },
+    autodocs: true,
   },
 };
