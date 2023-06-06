@@ -1,7 +1,8 @@
-import { Meta, Story } from '@storybook/react';
+import { Meta, Story, StoryFn } from '@storybook/react';
 
 import { Doodles } from './doodles';
-import { IDoodlesProps } from './types';
+import { DoodlesStyleProps, IDoodlesProps } from './types';
+import { DoodlesLib } from './svgLibrary';
 
 export default {
   component: Doodles,
@@ -27,11 +28,24 @@ export default {
   },
 } as Meta;
 
-const Template: Story<IDoodlesProps> = (args) => {
-  return <Doodles {...args} />;
-};
-
-export const DoodlesStory = Template.bind({});
+export const DoodlesStory: StoryFn<typeof Doodles> = (
+  args: JSX.IntrinsicAttributes & IDoodlesProps,
+) => <Doodles {...args} />;
 DoodlesStory.args = {
   colors: 'dark',
+  icon: 'arrow2',
+};
+
+DoodlesStory.argTypes = {
+  colors: {
+    control: { type: 'radio' },
+    options: ['red', 'purple', 'yellow', 'light'],
+  },
+
+  icon: {
+    options: Object.keys(DoodlesLib),
+    control: {
+      type: 'select',
+    },
+  },
 };
