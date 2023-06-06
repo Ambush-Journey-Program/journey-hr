@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/react';
+import { Meta, Story, StoryFn } from '@storybook/react';
 import { CardWrapper } from './cardWrapper';
 import { CardProps } from './types';
 
@@ -25,11 +25,18 @@ export default {
   },
 } as Meta;
 
-const Template: Story<CardProps> = (args) => {
-  return <CardWrapper {...args} />;
-};
+export const SelectCardStory: StoryFn<typeof CardWrapper> = (
+  args: JSX.IntrinsicAttributes & CardProps,
+) => <CardWrapper {...args} />;
 
-export const SelectCardStory = Template.bind({});
 SelectCardStory.args = {
   children: 'Label',
+  background: 'default',
+};
+
+SelectCardStory.argTypes = {
+  background: {
+    control: { type: 'radio' },
+    options: ['default', 'transparent'],
+  },
 };
