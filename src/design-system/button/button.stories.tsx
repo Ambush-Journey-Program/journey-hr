@@ -1,6 +1,7 @@
-import { Meta, Story } from '@storybook/react';
+import { Meta, Story, StoryFn } from '@storybook/react';
 import { Button } from './button';
 import { ButtonProps } from './types';
+import * as HeroIcons from '@heroicons/react/24/solid';
 
 export default {
   component: Button,
@@ -24,24 +25,67 @@ export default {
   },
 } as Meta;
 
-const Template: Story<ButtonProps> = (args) => {
-  return <Button {...args} />;
-};
+// const Template: Story<ButtonProps> = (args) => {
+//   return <Button {...args} />;
+// };
 
-export const ButtonStory = Template.bind({});
+export const ButtonStory: StoryFn<typeof Button> = (
+  args: JSX.IntrinsicAttributes & ButtonProps,
+) => <Button {...args} />;
+
+// export const ButtonStory = Template.bind({});
 ButtonStory.args = {
   children: 'Button',
   disabled: false,
-  color: 'primary',
+  color: 'secondary',
   sizeVariant: 'medium',
   variant: 'default',
 };
 
-export const IconButtonStory = Template.bind({});
+export const IconButtonStory: StoryFn<typeof Button> = (
+  args: JSX.IntrinsicAttributes & ButtonProps,
+) => <Button {...args} />;
+
 IconButtonStory.args = {
   disabled: false,
   color: 'primary',
   sizeVariant: 'medium',
   variant: 'default',
   icon: 'AcademicCapIcon',
+};
+
+ButtonStory.argTypes = {
+  color: {
+    control: { type: 'radio' },
+    options: ['primary', 'secondary', 'alternative'],
+  },
+  variant: {
+    control: { type: 'radio' },
+    options: ['primary', 'secondary', 'alternative'],
+  },
+  sizeVariant: {
+    control: { type: 'radio' },
+    options: ['primary', 'secondary', 'alternative'],
+  },
+};
+
+IconButtonStory.argTypes = {
+  color: {
+    control: { type: 'radio' },
+    options: ['primary', 'secondary', 'alternative'],
+  },
+  variant: {
+    control: { type: 'radio' },
+    options: ['primary', 'secondary', 'alternative'],
+  },
+  sizeVariant: {
+    control: { type: 'radio' },
+    options: ['primary', 'secondary', 'alternative'],
+  },
+  icon: {
+    options: Object.keys(HeroIcons),
+    control: {
+      type: 'select',
+    },
+  },
 };
