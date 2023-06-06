@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/react';
+import { Meta, Story, StoryFn } from '@storybook/react';
 import { Title } from './title';
 import { TitleProps } from './types';
 
@@ -10,12 +10,15 @@ export default {
   },
 } as Meta;
 
-const TitleTemplate: Story<TitleProps> = (args) => {
-  return <Title {...args} />;
-};
-
-export const TitleStory = TitleTemplate.bind({});
+export const TitleStory: StoryFn<typeof Title> = (args) => <Title {...args} />;
 TitleStory.args = {
   children: 'Label',
   variant: 'h1',
+};
+
+TitleStory.argTypes = {
+  variant: {
+    control: { type: 'select' },
+    options: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
+  },
 };
