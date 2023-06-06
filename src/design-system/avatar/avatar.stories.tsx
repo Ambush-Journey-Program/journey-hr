@@ -34,9 +34,9 @@ const Template: Story<AvatarProps> = (args) => {
   );
 };
 
-export const SelectCardStory: StoryFn<typeof Avatar> = (
-  args: JSX.IntrinsicAttributes & AvatarProps,
-) => <Avatar {...args} />;
+export const SelectCardStory: StoryFn<typeof Avatar> = (args) => (
+  <Avatar {...args} />
+);
 
 SelectCardStory.args = {
   src: userPhoto,

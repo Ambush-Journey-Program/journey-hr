@@ -28,12 +28,9 @@ export default {
   },
 } as Meta;
 
-const Template: Story<ITooltipProps> = (args) => {
-  return <Tooltip {...args} />;
-};
-export const TooltipStory: StoryFn<typeof Tooltip> = (
-  args: JSX.IntrinsicAttributes & Tooltip,
-) => <Tooltip {...args} />;
+export const TooltipStory: StoryFn<typeof Tooltip> = (args) => (
+  <Tooltip {...args} />
+);
 
 TooltipStory.args = {
   children: 'Test',

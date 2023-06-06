@@ -4,22 +4,15 @@ import styled, {
   FlattenInterpolation,
   ThemeProps,
 } from 'styled-components';
-import { WithRequiredProperty } from '../../../types';
-import { ParagraphProps, ColorType } from './types';
 
-type Paragraphtyle = {
-  [key: string]: FlattenSimpleInterpolation;
-};
+import {
+  ParagraphProps,
+  ColorType,
+  TextWeight,
+  ParagraphStyleProps,
+} from './types';
 
-type TextWeight = {
-  [key: string]: FlattenSimpleInterpolation;
-};
-
-type ColorVariants = {
-  [key: string]: FlattenInterpolation<ThemeProps<ColorType>>;
-};
-
-const paragraphEl: Paragraphtyle = {
+const paragraphEl = {
   giant: css`
     font-size: 1.5rem;
   `,
@@ -53,7 +46,7 @@ const paragraphEl: Paragraphtyle = {
   `,
 };
 
-const color: ColorVariants = {
+const colorsVariants = {
   dark: css`
     color: ${(props) => props.theme.color.brandColors.dark};
   `,
@@ -74,7 +67,7 @@ const color: ColorVariants = {
   `,
 };
 
-const paragraphWeightEl: TextWeight = {
+const paragraphWeightEl = {
   hair: css`
     font-weight: 200;
   `,
@@ -90,12 +83,10 @@ const paragraphWeightEl: TextWeight = {
   `,
 };
 
-export const Paragraph = styled.p<
-  WithRequiredProperty<ParagraphProps, 'colorVariant'>
->`
+export const Paragraph = styled.p<ParagraphStyleProps>`
   font-family: ${(props) => props.theme.font.fontFamilyBody};
   width: 100%;
-  ${({ colorVariant }) => color[colorVariant]}
+  ${({ colorVariant }) => colorsVariants[colorVariant]}
 
   ${({ size }) => paragraphEl[size]}
   ${({ fontWeight }) => paragraphWeightEl[fontWeight]}

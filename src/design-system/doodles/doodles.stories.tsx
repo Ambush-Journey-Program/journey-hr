@@ -28,9 +28,9 @@ export default {
   },
 } as Meta;
 
-export const DoodlesStory: StoryFn<typeof Doodles> = (
-  args: JSX.IntrinsicAttributes & IDoodlesProps,
-) => <Doodles {...args} />;
+export const DoodlesStory: StoryFn<typeof Doodles> = (args) => (
+  <Doodles {...args} />
+);
 DoodlesStory.args = {
   colors: 'dark',
   icon: 'arrow2',

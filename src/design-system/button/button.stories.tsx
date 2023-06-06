@@ -42,9 +42,9 @@ ButtonStory.args = {
   variant: 'default',
 };
 
-export const IconButtonStory: StoryFn<typeof Button> = (
-  args: JSX.IntrinsicAttributes & ButtonProps,
-) => <Button {...args} />;
+export const IconButtonStory: StoryFn<typeof Button> = (args) => (
+  <Button {...args} />
+);
 
 IconButtonStory.args = {
   disabled: false,

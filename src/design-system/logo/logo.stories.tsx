@@ -35,9 +35,7 @@ const LogoStoryWrapper = styled.div<{ alternate?: boolean }>`
     `}
 `;
 
-export const SelectCardStory: StoryFn<typeof Logo> = (
-  args: JSX.IntrinsicAttributes & ILogoProps,
-) => (
+export const SelectCardStory: StoryFn<typeof Logo> = (args) => (
   <LogoStoryWrapper alternate={args.colorVariant === 'light'}>
     <Logo {...args} />
   </LogoStoryWrapper>

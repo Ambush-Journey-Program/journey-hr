@@ -9,7 +9,7 @@ export default {
 } as Meta;
 
 export const RadioButtonStory: StoryFn<typeof RadioButton> = (
-  args: JSX.IntrinsicAttributes & RadioButtonProps,
+  args: RadioButtonProps,
 ) => (
   <>
     <RadioButton

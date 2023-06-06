@@ -25,9 +25,9 @@ export default {
   },
 } as Meta;
 
-export const SelectCardStory: StoryFn<typeof CardWrapper> = (
-  args: JSX.IntrinsicAttributes & CardProps,
-) => <CardWrapper {...args} />;
+export const SelectCardStory: StoryFn<typeof CardWrapper> = (args) => (
+  <CardWrapper {...args} />
+);
 
 SelectCardStory.args = {
   children: 'Label',

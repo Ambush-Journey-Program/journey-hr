@@ -1,4 +1,4 @@
-import { Paragraph } from '../typography/paragraphs/paragraphs.styled';
+import { Paragraph } from '../typography/paragraph/paragraph.styled';
 import * as Styled from './short-appointment.styled';
 import { ShortHappyHourProps } from './types';
 

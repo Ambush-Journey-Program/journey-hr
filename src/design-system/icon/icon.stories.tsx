@@ -17,9 +17,7 @@ export default {
   title: 'UI/Icon',
 } as Meta;
 
-export const IconStory: StoryFn<typeof Icon> = (
-  args: JSX.IntrinsicAttributes & IconProps,
-) => <Icon {...args} />;
+export const IconStory: StoryFn<typeof Icon> = (args) => <Icon {...args} />;
 
 IconStory.args = {
   color: 'accepted',

@@ -52,9 +52,9 @@ export default {
   },
 } as Meta;
 
-export const NavBarStory: StoryFn<typeof NavBar> = (
-  args: JSX.IntrinsicAttributes & NavBarProps,
-) => <NavBar {...args} />;
+export const NavBarStory: StoryFn<typeof NavBar> = (args) => (
+  <NavBar {...args} />
+);
 
 NavBarStory.args = {
   navigationLinks: navLinksJourneyHR,

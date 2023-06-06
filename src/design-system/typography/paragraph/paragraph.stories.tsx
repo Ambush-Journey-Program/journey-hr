@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/react';
+import { Meta, Story, StoryFn } from '@storybook/react';
 import { Paragraph } from './paragraph';
 import { ParagraphProps } from './types';
 
@@ -25,13 +25,36 @@ export default {
   },
 } as Meta;
 
-const ParagraphTemplate: Story<ParagraphProps> = (args) => {
-  return <Paragraph {...args} />;
+export const ParagraphStory: StoryFn<typeof Paragraph> = (args) => (
+  <Paragraph {...args} />
+);
+ParagraphStory.args = {
+  children: 'Label',
+  size: 'default',
+  fontWeight: 'light',
+  colorVariant: 'dark',
 };
 
-export const Paragraphtory = ParagraphTemplate.bind({});
-Paragraphtory.args = {
-  children: 'Label',
-  size: 'large',
-  fontWeight: 'light',
+ParagraphStory.argTypes = {
+  size: {
+    control: { type: 'select' },
+    options: [
+      'giant',
+      'extralarge',
+      'large',
+      'medium',
+      'default',
+      'small',
+      'extrasmall',
+      'tiny',
+    ],
+  },
+  fontWeight: {
+    control: { type: 'select' },
+    options: ['hair', 'light', 'semihair', 'semibold'],
+  },
+  colorVariant: {
+    control: { type: 'select' },
+    options: ['red', 'purple', 'yellow', 'dark', 'light', 'error'],
+  },
 };
