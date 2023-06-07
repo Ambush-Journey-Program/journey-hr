@@ -16,5 +16,5 @@ export { GuestsAppointment } from '../components/guests-appointment';
 export { Tab } from './tabs/tab';
 export { TabContainer } from './tabs/tabContainer';
 export { TabPanel } from './tabs/tabPanel';
-export { AsideMenu } from '../pages/aside-menu';
-export { Layout } from '../pages/layout';
+export { AsideMenu } from '../components/aside-menu';
+export { Layout } from '../layouts/layout';
