@@ -1,7 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import * as Styled from './pageRequestTimeOff.styled';
 import {
-  CardWrapper,
   TabContainer,
   Tab,
   TabPanel,

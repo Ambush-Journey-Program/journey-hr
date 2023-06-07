@@ -4,7 +4,7 @@ import * as Styled from './time-off-type.styled';
 
 export function TimeOffType() {
   return (
-    <Styled.Wrapper>
+    <Styled.Container>
       <Styled.ContainerSubtitle>
         <Subtitle variant="s5" fontWeight="medium">
           Apply For
@@ -21,6 +21,6 @@ export function TimeOffType() {
         label="Personal Leave"
         name="time-off"
       />
-    </Styled.Wrapper>
+    </Styled.Container>
   );
 }
