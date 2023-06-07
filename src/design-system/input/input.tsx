@@ -4,6 +4,7 @@ import * as Styled from './input.styled';
 import { IInputProps } from './types';
 import * as HeroIconOutline from '@heroicons/react/24/outline';
 import { Icon } from '../icon/icon';
+import { Label } from '../label';
 
 export function Input({
   label,
@@ -15,7 +16,6 @@ export function Input({
   right,
   placeholder = 'Label',
   type = 'text',
-  name,
   iconLeft,
   iconRight,
   hasIconRight,
@@ -46,9 +46,7 @@ export function Input({
 
   return (
     <Styled.Wrapper>
-      <Styled.Label htmlFor={name}>
-        {label} {required && <span>Required</span>}
-      </Styled.Label>
+      <Label label={label} required={required}/>
       <Styled.InputContainer
         error={error}
         disabled={disabled}

@@ -2,7 +2,7 @@ import { InputHTMLAttributes } from 'react';
 import * as HeroIconOutline from '@heroicons/react/24/outline';
 
 export type IInputProps = InputHTMLAttributes<HTMLInputElement> & {
-  label?: string;
+  label: string;
   error?: string;
   warn?: string;
   onTextChange?: (value: string) => void;
@@ -18,8 +18,6 @@ export type StyleWrapper = {
   warn?: string;
   right?: boolean;
 };
-
-export type StyledLabelProps = { disabled?: boolean };
 
 export type StyledInputProps = {
   disabled?: boolean;
