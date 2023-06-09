@@ -9,7 +9,7 @@ export const ListWrapper = styled.ul`
     font-size: 1rem;
     font-weight: bold;
     text-decoration: none;
-    font-family: ${(props) => props.theme.font.fontFamilyBody};
+    font-family: ${(props) => props.theme.font.fontFamilyTitle};
     color: ${(props) => props.theme.color.button.primary};
   }
 `;
