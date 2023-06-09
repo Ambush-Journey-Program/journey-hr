@@ -33,6 +33,7 @@ export type DaysListsProps = {
   storyType?: string;
   title: string;
   buttonTitle: string;
+  url: string;
   list: HolidaysList[] | TimeOffList[] | TeamCalendarList[];
   renderRow: (
     details: HolidaysList | TimeOffList | TeamCalendarList,

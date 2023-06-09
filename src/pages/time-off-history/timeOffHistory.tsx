@@ -1,3 +1,4 @@
+import * as Styled from './timeOffHistory.styled';
 import { PageHeader } from '@/components/page-header';
 import { BackButton, Button, Tab, TabContainer, TabPanel } from '@ambush/ui';
 import { Balance } from '@/components/balance';
@@ -22,17 +23,19 @@ export function TimeOffHistory() {
         optionalHolidays={0}
         nextRefill="Mar 24, 2024"
       />
-      <TabContainer value={value} onChange={setTabIndex}>
-        <Tab label="Upcoming Requests" fontWeight="light" />
+      <Styled.TabBox>
+        <TabContainer value={value} onChange={setTabIndex}>
+          <Tab label="Upcoming Requests" fontWeight="light" />
 
-        <Tab label="Past Requests" fontWeight="light" />
-      </TabContainer>
-      <TabPanel index={0} value={value}>
-        <div></div>
-      </TabPanel>
-      <TabPanel index={1} value={value}>
-        <TimeOffHistoryTab />
-      </TabPanel>
+          <Tab label="Past Requests" fontWeight="light" />
+        </TabContainer>
+        <TabPanel index={0} value={value}>
+          <div></div>
+        </TabPanel>
+        <TabPanel index={1} value={value}>
+          <TimeOffHistoryTab />
+        </TabPanel>
+      </Styled.TabBox>
     </div>
   );
 }

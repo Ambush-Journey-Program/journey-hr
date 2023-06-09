@@ -1,5 +1,5 @@
 import { render, screen } from '@/tests/renderWithProviders';
-import { TimeOffHistory } from '.';
+import TimeOffHistory from '.';
 
 describe('<TimeOffHistory  />', () => {
   it('renders a Page', () => {

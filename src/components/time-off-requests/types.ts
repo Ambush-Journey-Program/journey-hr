@@ -1,6 +1,6 @@
 export type TimeOffRequestsProps = {
   title: string;
   subtitle: string;
-  status: string;
+  status: 'Approved' | 'Denied';
   appliedOn: string;
 };

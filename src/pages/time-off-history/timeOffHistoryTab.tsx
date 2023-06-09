@@ -1,5 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
-
 import { TimeOffRequests } from '@/components/time-off-requests';
 
 export function TimeOffHistoryTab() {

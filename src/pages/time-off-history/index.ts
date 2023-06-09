@@ -1,1 +1,1 @@
-export { TimeOffHistory } from './timeOffHistory';
+export { TimeOffHistory as default } from './timeOffHistory';

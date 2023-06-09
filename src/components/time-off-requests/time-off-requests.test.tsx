@@ -6,9 +6,9 @@ describe('<TimeOffRequests  />', () => {
     render(
       <TimeOffRequests
         title="November"
-        subtitle={''}
-        status={''}
-        appliedOn={''}
+        subtitle="example"
+        status="Approved"
+        appliedOn="example"
       />,
     );
     const TimeOffRequestsEl = screen.getByTestId('TimeOffRequests');
@@ -19,12 +19,21 @@ describe('<TimeOffRequests  />', () => {
     render(
       <TimeOffRequests
         title="November"
-        subtitle={''}
-        status={''}
-        appliedOn={''}
+        subtitle="subtitle"
+        status="Approved"
+        appliedOn="example"
       />,
     );
-    const textTest = screen.getByRole('heading', { name: /November/ });
-    expect(textTest).toBeInTheDocument();
+    const title = screen.getByRole('heading', {
+      name: /November/,
+      level: 6,
+    });
+    expect(title).toBeInTheDocument();
+    const subtitle = screen.getByText('subtitle');
+    expect(subtitle).toBeInTheDocument();
+    const status = screen.getByText('Approved');
+    expect(status).toBeInTheDocument();
+    const appliedOn = screen.getByText('example');
+    expect(appliedOn).toBeInTheDocument();
   });
 });

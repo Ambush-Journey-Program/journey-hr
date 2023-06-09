@@ -1,6 +1,6 @@
 import * as Styled from './pageTimeOff.styled';
 import { Button, CardWrapper } from '@ambush/ui';
-import { Balance } from '../../components/balance';
+import { Balance } from '@/components/balance';
 import {
   DaysLists,
   HolidayRow,
@@ -21,7 +21,7 @@ import { PageHeader } from '../../components/page-header';
 
 export function PageTimeOff() {
   return (
-    <CardWrapper>
+    <>
       <Styled.TimeOffPageHeaderWrapper data-testid="PageTimeOff">
         <PageHeader
           title="Time Off"
@@ -41,6 +41,7 @@ export function PageTimeOff() {
             title="Upcoming Holidays"
             buttonTitle="View Holiday Calendar"
             list={holidays}
+            url="holiday-calendar"
             renderRow={(details) => (
               <HolidayRow key={details.id} details={details as HolidaysList} />
             )}
@@ -51,6 +52,7 @@ export function PageTimeOff() {
             title="Upcoming Time Off"
             buttonTitle="View My Time Off"
             list={timeOff}
+            url="time-off-history"
             renderRow={(details) => (
               <TimeOffRow key={details.id} details={details as TimeOffList} />
             )}
@@ -61,6 +63,7 @@ export function PageTimeOff() {
             title="My Team's Calendar"
             buttonTitle="View My Team's Calendar"
             list={teamCalendar}
+            url="team-calendar"
             renderRow={(details) => (
               <TeamCalendarRow
                 key={details.id}
@@ -70,6 +73,6 @@ export function PageTimeOff() {
           />
         </Styled.GridContainer3>
       </Styled.TimeOffPageDaysListsGrid>
-    </CardWrapper>
+    </>
   );
 }

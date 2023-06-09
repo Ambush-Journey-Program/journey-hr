@@ -1,5 +1,5 @@
 import { render, screen } from '@/tests/renderWithProviders';
-import { PageTimeOff } from '.';
+import PageTimeOff from '.';
 
 describe('<PageTimeOff  />', () => {
   it('renders a Page', () => {
