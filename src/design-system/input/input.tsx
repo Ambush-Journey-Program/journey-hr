@@ -3,8 +3,7 @@ import { Paragraph } from '../typography/paragraph/paragraph';
 import * as Styled from './input.styled';
 import { IInputProps } from './types';
 import * as HeroIconOutline from '@heroicons/react/24/outline';
-import { Icon } from '../icon/icon';
-import { Label } from '../label';
+import { Label, Icon  } from '@ambush/ui';
 
 export function Input({
   label,
