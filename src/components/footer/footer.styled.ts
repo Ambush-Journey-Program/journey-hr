@@ -1,8 +1,8 @@
 import { devices } from '@/styles/devices';
 import styled from 'styled-components';
-import { FooterProps } from './types';
+import { FooterStyleProps } from './types';
 
-export const Footer = styled.div<FooterProps>`
+export const Footer = styled.div<FooterStyleProps>`
   display: flex;
   justify-content: flex-end;
   align-items: center;

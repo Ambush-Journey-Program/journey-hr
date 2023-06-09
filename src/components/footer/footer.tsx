@@ -11,10 +11,12 @@ const buttonLabel: { [key: string]: string } = {
   request: 'Request Manager',
   allDone: 'Go to Homepage',
 };
+
 export function Footer({
   onCancel,
   onApply,
   variant = 'timeOff',
+  disabled = true,
 }: FooterProps) {
   const [label, setLabel] = useState('');
 
@@ -22,11 +24,16 @@ export function Footer({
     setLabel(buttonLabel[variant]);
   }, [variant]);
 
+  const isButtonDisabled =
+    disabled = true
+  ;
+
   return (
     <Styled.Footer variant={variant} data-testid="footer">
       {cancelButton.includes(variant) && (
         <Button
           onClick={onCancel}
+          disabled={isButtonDisabled}
           color="secondary"
           variant="outlined"
           sizeVariant="small"
@@ -36,7 +43,7 @@ export function Footer({
       )}
 
       {forwardButton.includes(variant) && (
-        <Button onClick={onApply} sizeVariant="small">
+        <Button onClick={onApply} sizeVariant="small" disabled={isButtonDisabled}>
           {label}
         </Button>
       )}
