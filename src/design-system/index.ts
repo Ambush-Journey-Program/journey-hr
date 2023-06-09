@@ -17,4 +17,4 @@ export { Tab } from './tabs/tab';
 export { TabContainer } from './tabs/tabContainer';
 export { TabPanel } from './tabs/tabPanel';
 export { AsideMenu } from '../components/aside-menu';
-export { Layout } from '../components/layout';
+export { Layout } from '../layouts/layout';
