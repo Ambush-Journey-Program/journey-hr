@@ -2,19 +2,19 @@ import { Title } from '@ambush/ui';
 import { devices } from '@/styles/devices';
 import styled from 'styled-components';
 
-export const TimeOffPageHeaderWrapper = styled.div`
+export const TimeOffPageHeaderContainer = styled.div`
   margin-bottom: 3rem;
   display: flex;
   flex-direction: column;
   gap: ${(props) => props.theme.spacings.spacing04};
 `;
 
-export const HolidaysWrapper = styled.div`
+export const HolidaysContainer = styled.div`
   display: flex;
   gap: ${(props) => props.theme.spacings.spacing04};
 `;
 
-export const SpacingWrapper = styled.div`
+export const SpacingContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${(props) => props.theme.spacings.spacing07};

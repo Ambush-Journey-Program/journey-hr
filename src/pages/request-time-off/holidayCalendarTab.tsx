@@ -1,13 +1,17 @@
 /* eslint-disable react/no-unescaped-entities */
 import * as Styled from './pageRequestTimeOff.styled';
 import { Balance } from '@/components/balance';
-import { Footer } from '../../components/request-time-off/PTO-footer';
+import { Footer } from '../../components/footer';
 import { USHolidays } from '@/components/us-holidays';
 import { BrazilianHolidays } from '@/components/brazilian-holidays';
+import { RequestTimeOffProps } from './types';
 
-export function RequestTimeOffTab(onView: () => void) {
+export function HolidayCalendarTab(
+  variant: RequestTimeOffProps,
+  onView: () => void,
+) {
   return (
-    <Styled.SpacingWrapper>
+    <Styled.SpacingContainer>
       <div>
         <Styled.TimeOffTitle variant="h6">
           Request Employee's Time Off
@@ -23,13 +27,13 @@ export function RequestTimeOffTab(onView: () => void) {
         />
       </div>
 
-      <Styled.HolidaysWrapper>
+      <Styled.HolidaysContainer>
         <USHolidays />
 
         <BrazilianHolidays />
-      </Styled.HolidaysWrapper>
+      </Styled.HolidaysContainer>
 
       <Footer variant="timeOff" />
-    </Styled.SpacingWrapper>
+    </Styled.SpacingContainer>
   );
 }

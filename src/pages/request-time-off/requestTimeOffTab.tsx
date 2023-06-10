@@ -16,7 +16,7 @@ export function RequestTimeOffTab(
   onView: () => void,
 ) {
   return (
-    <Styled.SpacingWrapper>
+    <Styled.SpacingContainer>
       <div>
         <Styled.TimeOffTitle variant="h6">
           Request Employee's Time Off
@@ -52,6 +52,6 @@ export function RequestTimeOffTab(
       <Summary variant="employee" />
 
       <Footer variant="timeOff" />
-    </Styled.SpacingWrapper>
+    </Styled.SpacingContainer>
   );
 }
