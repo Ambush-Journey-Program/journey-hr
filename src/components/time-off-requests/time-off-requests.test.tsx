@@ -15,7 +15,7 @@ describe('<TimeOffRequests  />', () => {
     expect(TimeOffRequestsEl).toBeInTheDocument();
   });
 
-  it('has a title', () => {
+  it('has a title, subtitle, status, and appliedOn', () => {
     render(
       <TimeOffRequests
         title="November"

@@ -6,18 +6,18 @@ import {
   HolidayRow,
   TeamCalendarRow,
   TimeOffRow,
-} from '../../components/days-lists';
+} from '@/components/days-lists';
 import {
   holidays,
   timeOff,
   teamCalendar,
-} from '../../components/days-lists/mockLists';
+} from '@/components/days-lists/mockLists';
 import {
   HolidaysList,
   TimeOffList,
   TeamCalendarList,
-} from '../../components/days-lists/types';
-import { PageHeader } from '../../components/page-header';
+} from '@/components/days-lists/types';
+import { PageHeader } from '@/components/page-header';
 
 export function PageTimeOff() {
   return (
@@ -41,7 +41,7 @@ export function PageTimeOff() {
             title="Upcoming Holidays"
             buttonTitle="View Holiday Calendar"
             list={holidays}
-            url="holiday-calendar"
+            url="/holiday-calendar"
             renderRow={(details) => (
               <HolidayRow key={details.id} details={details as HolidaysList} />
             )}
@@ -52,7 +52,7 @@ export function PageTimeOff() {
             title="Upcoming Time Off"
             buttonTitle="View My Time Off"
             list={timeOff}
-            url="time-off-history"
+            url="/time-off-history"
             renderRow={(details) => (
               <TimeOffRow key={details.id} details={details as TimeOffList} />
             )}
@@ -63,7 +63,7 @@ export function PageTimeOff() {
             title="My Team's Calendar"
             buttonTitle="View My Team's Calendar"
             list={teamCalendar}
-            url="team-calendar"
+            url="/team-calendar"
             renderRow={(details) => (
               <TeamCalendarRow
                 key={details.id}

@@ -2,7 +2,7 @@ import { TimeOffRequests } from '@/components/time-off-requests';
 
 export function TimeOffHistoryTab() {
   return (
-    <div>
+    <>
       <TimeOffRequests
         title="Nov 01 Wed - Nov 30 Thu, 2023"
         subtitle="Includes: 18 Recharge Days, 2 US Holidays, 2 Optional Holidays"
@@ -21,6 +21,6 @@ export function TimeOffHistoryTab() {
         status="Denied"
         appliedOn="Applied on Mar 02, 2023"
       />
-    </div>
+    </>
   );
 }
