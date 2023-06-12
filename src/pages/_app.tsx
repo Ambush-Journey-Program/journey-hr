@@ -9,6 +9,11 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <StyledComponentsRegistry>
       <ThemeProvider theme={theme}>
+      <style jsx global>{`
+        html {
+          font-family: ${theme.font.fontFamilyTitle};
+        }
+      `}</style>
         <Layout>
           <Component {...pageProps} />
         </Layout>
