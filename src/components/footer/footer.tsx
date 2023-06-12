@@ -16,7 +16,8 @@ export function Footer({
   onCancel,
   onApply,
   variant = 'timeOff',
-  disabled = true,
+  DisabledCancelBtn= false,
+  DisabledApplyBtn= true,
 }: FooterProps) {
   const [label, setLabel] = useState('');
 
@@ -24,32 +25,28 @@ export function Footer({
     setLabel(buttonLabel[variant]);
   }, [variant]);
 
-  const isButtonDisabled =
-    disabled = true
-  ;
-
   return (
     <Styled.Footer variant={variant} data-testid="footer">
       {cancelButton.includes(variant) && (
         <Button
           onClick={onCancel}
-          disabled={isButtonDisabled}
           color="secondary"
           variant="outlined"
           sizeVariant="small"
+          disabled={DisabledCancelBtn}
         >
           Cancel
         </Button>
       )}
 
       {forwardButton.includes(variant) && (
-        <Button onClick={onApply} sizeVariant="small" disabled={isButtonDisabled}>
+        <Button onClick={onApply} sizeVariant="small" disabled={DisabledApplyBtn}>
           {label}
         </Button>
       )}
 
       {variant === 'confirm' && (
-        <Button onClick={onApply} variant="outlined" sizeVariant="small">
+        <Button onClick={onApply} variant="outlined" sizeVariant="small" disabled={DisabledCancelBtn}>
           Confirm Dates
         </Button>
       )}
