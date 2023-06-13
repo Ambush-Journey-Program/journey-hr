@@ -8,6 +8,6 @@ export type FooterProps = {
   onCancel?: () => void;
   onApply?: () => void;
   variant: PageType;
-  DisabledCancelBtn?: boolean;
-  DisabledApplyBtn?: boolean;
+  disabledLeftBtn?: boolean;
+  disabledRightBtn?: boolean;
 };

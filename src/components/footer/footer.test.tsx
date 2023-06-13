@@ -55,7 +55,7 @@ describe('<Footer/>', () => {
 
   describe('should check if disabled buttons are applied', () => {
     it('should Button Apply and Cancel be disabled', async () => {
-      render(<Footer variant="timeOff" DisabledCancelBtn={true} DisabledApplyBtn={true}/>);
+      render(<Footer variant="timeOff" disabledLeftBtn={true} disabledRightBtn={true}/>);
       const allDoneBtn = screen.getByText('Apply Time Off')
       const cancelBtn = screen.getByText('Cancel')
       await userEvent.click(allDoneBtn);
@@ -65,7 +65,7 @@ describe('<Footer/>', () => {
       expect(cancelBtn).toBeDisabled();
     });
     it('should Button Apply and Cancel be enabled', async () => {
-      render(<Footer variant="timeOff" DisabledCancelBtn={false} DisabledApplyBtn={false}/>);
+      render(<Footer variant="timeOff" disabledLeftBtn={false} disabledRightBtn={false}/>);
       const allDoneBtn = screen.getByText('Apply Time Off')
       const cancelBtn = screen.getByText('Cancel')
       await userEvent.click(allDoneBtn);
@@ -76,7 +76,7 @@ describe('<Footer/>', () => {
     });
 
     it('should the Button Apply be disabled and button Cancel be enabled', async () => {
-      render(<Footer variant="timeOff" DisabledCancelBtn={false} DisabledApplyBtn={true} />);
+      render(<Footer variant="timeOff" disabledLeftBtn={false} disabledRightBtn={true} />);
       const allDoneBtn = screen.getByText('Apply Time Off')
       const cancelBtn = screen.getByText('Cancel')
       await userEvent.click(allDoneBtn);
@@ -86,7 +86,7 @@ describe('<Footer/>', () => {
       expect(cancelBtn).not.toBeDisabled();
     });
     it('should the Button Apply be enabled and button Cancel be disabled', async () => {
-      render(<Footer variant="timeOff" DisabledCancelBtn={true} DisabledApplyBtn={false}/>);
+      render(<Footer variant="timeOff" disabledLeftBtn={true} disabledRightBtn={false}/>);
       const allDoneBtn = screen.getByText('Apply Time Off')
       const cancelBtn = screen.getByText('Cancel')
       await userEvent.click(allDoneBtn);
