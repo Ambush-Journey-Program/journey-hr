@@ -1,4 +1,4 @@
-import { Button, Title } from '@ambush/ui';
+import { Button, Paragraph, Title } from '@ambush/ui';
 import { ModalProps } from './types';
 import * as Styled from './modal.styled';
 import { useEffect } from 'react';
@@ -42,7 +42,7 @@ export function Modal({
         />
         <Styled.modalContent>
           <Title variant="h2">{title}</Title>
-          <Styled.ModalChildren>{children}</Styled.ModalChildren>
+          <Paragraph size={'medium'} fontWeight={'semihair'}>{children}</Paragraph>
         </Styled.modalContent>
         <Styled.ModalFooter>
           <Button variant="outlined" color="secondary" onClick={onClose}>
