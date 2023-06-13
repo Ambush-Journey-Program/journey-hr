@@ -1,5 +1,4 @@
 import { Meta, Story } from '@storybook/react';
-
 import { Layout} from './layout';
 import { LayoutProps } from './types';
 

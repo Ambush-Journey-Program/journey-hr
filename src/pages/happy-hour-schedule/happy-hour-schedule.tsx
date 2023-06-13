@@ -1,5 +1,5 @@
 import { BackButton, Input, SelectInput, TextArea } from '@ambush/ui';
-import { PageHeader } from '@/components/page-header';
+import { PageHeader } from '@ambush/components';
 import { generateAmountPeopleOptions } from './constants';
 import * as Styled from './happy-hour-schedule.styled';
 import router from 'next/router';

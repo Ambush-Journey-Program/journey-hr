@@ -1,4 +1,5 @@
-import { AsideMenu, CardWrapper } from '@ambush/ui';
+import { CardWrapper } from '@ambush/ui';
+import { AsideMenu } from '@ambush/components';
 import * as Styled from './layout.styled';
 import { LayoutProps } from './types';
 

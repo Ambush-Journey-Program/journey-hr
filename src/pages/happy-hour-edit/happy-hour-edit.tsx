@@ -1,10 +1,9 @@
-import { CardWrapper, SelectInput } from '@/design-system';
+import { useState } from 'react';
 import { HappyHourEditProps } from './types';
-import { Paragraph } from '@/design-system/typography';
+import { Paragraph, SelectInput } from '@ambush/ui';
 import * as Styled from './happy-hour-edit.styled';
 import { EMPLOYEES } from './const';
 import { GuestList } from './guest-list';
-import { useState } from 'react';
 
 export function HappyHourEdit({
   minGuests = 8,

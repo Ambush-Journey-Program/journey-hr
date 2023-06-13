@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { Button, CardWrapper, Input, SelectInput } from '@ambush/ui';
+import { Button, Input, SelectInput } from '@ambush/ui';
+import { PageHeader } from '@ambush/components';
 import { exampleAre, exampleOpportunity, shiftOptions } from './constants';
 import * as Styled from './interview-availability.styled';
-import { PageHeader } from '@/components/page-header';
 
 export function InterviewAvailability() {
   const [inputData, setInputData] = useState('');
