@@ -1,6 +1,4 @@
 import styled, { css } from 'styled-components';
-import checkboxSVGpath from './assets/checked.svg';
-import checkboxHoverSVGpath from './assets/checkedHover.svg';
 
 type checkboxProps = {
   disabled: boolean;
@@ -13,7 +11,7 @@ const disabledInput = css`
   &:checked,
   :checked:hover {
     border: ${(props) => props.theme.color.button.disabled};
-    content: url('${checkboxSVGpath}');
+    content: url('/static/images/checked.svg');
     filter: grayscale(0.8) brightness(2.4);
   }
 
@@ -53,7 +51,7 @@ export const Label = styled.label<checkboxProps>`
 `;
 
 export const CheckBox = styled.input`
-  background-color: ${(props) => props.theme.color.brandColors.white};
+  background-color: ${(props) => props.theme.color.brandColors.light};
   appearance: none;
   display: block;
   width: 20px;
@@ -69,10 +67,10 @@ export const CheckBox = styled.input`
   &:checked {
     background: none;
     border: none;
-    content: url('${checkboxSVGpath}');
+    content: url('/static/images/checked.svg');
   }
   &:checked:hover {
-    content: url('${checkboxHoverSVGpath}');
+    content: url('/static/images/checkedHover.svg');
   }
   &:hover {
     border-color: ${(props) => props.theme.color.button.secondaryHover};
@@ -83,6 +81,7 @@ export const CheckBox = styled.input`
 
 export const StyledDiv = styled.div`
   display: flex;
+  flex: 1;
   flex-direction: column;
   gap: 5px;
 `;

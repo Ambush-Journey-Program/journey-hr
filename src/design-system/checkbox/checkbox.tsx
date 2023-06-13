@@ -4,7 +4,7 @@ import { Paragraph } from '../typography';
 
 export function CheckBox({
   onChange,
-  isChecked,
+  isChecked = false,
   disabled = false,
   label,
   description,
@@ -16,7 +16,7 @@ export function CheckBox({
         data-testid="checkbox-test"
         onChange={onChange}
         type="checkbox"
-        checked={isChecked}
+        defaultChecked={isChecked}
         disabled={disabled}
       />
 

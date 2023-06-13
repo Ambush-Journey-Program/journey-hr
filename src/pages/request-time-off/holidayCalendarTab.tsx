@@ -33,7 +33,7 @@ export function HolidayCalendarTab(
         <BrazilianHolidays />
       </Styled.HolidaysContainer>
 
-      <Footer variant="timeOff" />
+      <Footer variant="confirm" />
     </Styled.SpacingContainer>
   );
 }
