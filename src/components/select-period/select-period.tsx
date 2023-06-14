@@ -18,7 +18,7 @@ const messageErrors = {
 };
 
 const today = findToday();
-export function SelectPeriod() {
+export function SelectPeriod () {
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
 

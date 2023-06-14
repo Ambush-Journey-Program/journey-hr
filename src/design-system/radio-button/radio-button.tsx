@@ -2,7 +2,7 @@ import { Paragraph } from '../typography';
 import * as Styled from './radio-button.styled';
 import { RadioButtonProps } from './types';
 
-export function RadioButton({
+export function RadioButton ({
   value,
   fontWeight = 'hair',
   disabled = false,
@@ -10,8 +10,8 @@ export function RadioButton({
   label,
   name,
 }: RadioButtonProps) {
-  function optionChange(event: React.ChangeEvent<HTMLInputElement>) {
-    // console.log(event.target.value);
+  function optionChange (event: React.ChangeEvent<HTMLInputElement>) {
+    console.log(event.target.value);
   }
   return (
     <Styled.containerInput>

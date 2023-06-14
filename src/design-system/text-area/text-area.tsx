@@ -3,7 +3,7 @@ import { Paragraph } from '../typography/paragraph/paragraph';
 import * as Styled from './text-area.styled';
 import { TextAreaProps } from './types';
 
-export function TextArea({
+export function TextArea ({
   rows = 3,
   spellCheck,
   placeholder = 'Write the description',
@@ -20,13 +20,13 @@ export function TextArea({
     setTouched(touched);
   }, [touched]);
 
-  function onInputChange(e: ChangeEvent<HTMLTextAreaElement>) {
+  function onInputChange (e: ChangeEvent<HTMLTextAreaElement>) {
     onTextChange(e.target.value);
     setTouched(true);
     handleValidationError(e.target.value);
   }
 
-  function handleValidationError(value: string) {
+  function handleValidationError (value: string) {
     if (value.length === 0) {
       setError('Description Required');
       return;

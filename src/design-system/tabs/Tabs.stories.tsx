@@ -9,7 +9,7 @@ export default {
   parameters: {},
 } as Meta;
 
-const Template: Story = (args) => {
+const Template: Story = () => {
   const [value, setTabIndex] = React.useState(0);
   return (
     <>

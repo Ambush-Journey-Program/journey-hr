@@ -7,13 +7,13 @@ const interviews: InterviewOption[] = [
     id: 1,
     schedules: [
       {
-        title: `UX Interview`,
-        interviewerName: `Robson Lopes`,
+        title: 'UX Interview',
+        interviewerName: 'Robson Lopes',
         scheduleTime: '10:15 - 10:45',
       },
       {
-        title: `UI Interview`,
-        interviewerName: `Henrique Bittencourt`,
+        title: 'UI Interview',
+        interviewerName: 'Henrique Bittencourt',
         scheduleTime: '10:45 - 11:30',
       },
     ],

@@ -2,11 +2,10 @@ import { Title, Subtitle, Tooltip, Button } from '@ambush/ui';
 import { SummaryProps } from './types';
 import * as Styled from './summary.styled';
 
-// import { ExclamationCircleIcon } from '@heroicons/react/24/solid';
 import * as Icons from '@heroicons/react/24/outline';
 import { requestTimeOffmock } from './mock-response';
 
-export function Summary({ onDelete, onEdit, variant }: SummaryProps) {
+export function Summary ({ onDelete, onEdit, variant }: SummaryProps) {
   return (
     <Styled.SummaryWrapper data-testid="summary">
       <Title variant="h6">Request Summary</Title>

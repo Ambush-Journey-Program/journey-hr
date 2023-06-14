@@ -14,5 +14,5 @@ export const spacings = {
   spacing13: '24rem',
   spacing14: '32rem',
   spacing15: '40rem',
-  spacing16: '48rem',
+  spacing16: '48rem'
 };

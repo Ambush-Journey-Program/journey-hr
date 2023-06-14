@@ -1,7 +1,6 @@
-import { Meta, Story, StoryFn } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 
 import { Doodles } from './doodles';
-import { DoodlesStyleProps, IDoodlesProps } from './types';
 import { DoodlesLib } from './svgLibrary';
 
 export default {

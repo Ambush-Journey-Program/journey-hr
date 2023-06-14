@@ -5,9 +5,7 @@ describe('<Checkbox />', () => {
   it('CheckBox is rendered', () => {
     render(
       <CheckBox
-        onChange={() => {
-          console.log('teste');
-        }}
+        onChange={() => {}}
         isChecked={false}
         label="Label"
         description={'Description'}
@@ -21,9 +19,7 @@ describe('<Checkbox />', () => {
   it('CheckBox is disabled', () => {
     render(
       <CheckBox
-        onChange={() => {
-          console.log('teste');
-        }}
+        onChange={() => {}}
         isChecked={false}
         label="Label"
         description="Description"
@@ -38,9 +34,7 @@ describe('<Checkbox />', () => {
   it('CheckBox is checked', () => {
     render(
       <CheckBox
-        onChange={() => {
-          console.log('teste');
-        }}
+        onChange={() => {}}
         isChecked={true}
         label="Label"
         description="Description"

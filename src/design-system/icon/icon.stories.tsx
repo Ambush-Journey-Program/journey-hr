@@ -1,7 +1,7 @@
-import { Meta, Story, StoryFn } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import * as HeroIcons from '@heroicons/react/24/solid';
 import { Icon } from './icon';
-import { IconProps, IconColors } from './types';
+import { IconColors } from './types';
 import { theme } from '@/styles/theme';
 
 const iconColor: IconColors = {

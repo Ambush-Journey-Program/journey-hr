@@ -11,4 +11,3 @@ const Template: Story = (args) => {
 };
 
 export const SelectPeriodStory = Template.bind({});
-

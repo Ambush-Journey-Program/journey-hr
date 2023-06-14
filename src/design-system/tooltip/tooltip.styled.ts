@@ -1,7 +1,5 @@
 import styled, {
-  css,
-  FlattenInterpolation,
-  ThemeProps,
+  css
 } from 'styled-components';
 import { PositionsType } from './types';
 
@@ -14,10 +12,8 @@ export const TooltipWrapper = styled.div`
 export type StyledProps = {
   variantPosition: PositionsType;
 };
-type Variants = {
-  [key: string]: FlattenInterpolation<ThemeProps<StyledProps>>;
-};
-const variants: Variants = {
+
+const variants = {
   left: css`
     transform: translateY(-50%);
     top: 50%;

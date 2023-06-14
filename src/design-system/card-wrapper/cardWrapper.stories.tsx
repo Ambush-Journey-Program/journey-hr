@@ -1,6 +1,5 @@
-import { Meta, Story, StoryFn } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import { CardWrapper } from './cardWrapper';
-import { CardProps } from './types';
 
 export default {
   component: CardWrapper,

@@ -6,7 +6,7 @@ import * as HeroIconOutline from '@heroicons/react/24/outline';
 import { Icon } from '../icon/icon';
 import { Label } from '../label';
 
-export function Input({
+export function Input ({
   label,
   required,
   value,
@@ -22,23 +22,23 @@ export function Input({
   onTextChange = () => {},
 }: IInputProps) {
   const [touched, setTouched] = useState(false);
-  function onInputChange(e: ChangeEvent<HTMLInputElement>) {
+  function onInputChange (e: ChangeEvent<HTMLInputElement>) {
     onTextChange(e.target.value);
     setTouched(true);
   }
 
-  function IconFactory() {
-    let iconName:keyof typeof HeroIconOutline;
-    let color: "mediumContrast" | "accepted" | "error";
+  function IconFactory () {
+    let iconName: keyof typeof HeroIconOutline;
+    let color: 'mediumContrast' | 'accepted' | 'error';
     if (iconRight) {
       iconName = iconRight;
-      color = `mediumContrast`;
+      color = 'mediumContrast';
     } else if (right) {
-      iconName = `CheckIcon`;
-      color = `accepted`;
+      iconName = 'CheckIcon';
+      color = 'accepted';
     } else if (error) {
-      iconName = `ExclamationCircleIcon`;
-      color = `error`;
+      iconName = 'ExclamationCircleIcon';
+      color = 'error';
     }
 
     return <Icon color={color} icon={iconName} size="20px" />;

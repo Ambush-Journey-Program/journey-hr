@@ -2,7 +2,7 @@ import * as Styled from './subtitle.styled';
 
 import { SubtitleProps } from './types';
 
-export function Subtitle({
+export function Subtitle ({
   variant,
   children,
   fontWeight = 'medium',

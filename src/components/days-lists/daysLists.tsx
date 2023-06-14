@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 import { DaysListsProps } from './types';
 
-export function DaysLists({
+export function DaysLists ({
   title,
   buttonTitle,
   list,

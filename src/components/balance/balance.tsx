@@ -32,7 +32,8 @@ export function Balance({
             {title}
           </Subtitle>
         </Styled.Header>
-      ) : (
+      )
+        : (
         <Styled.Header>
           {employees.length >= 1 && (
             <Styled.Profile>
@@ -57,7 +58,7 @@ export function Balance({
             </Styled.StyledButton>
           )}
         </Styled.Header>
-      )}
+          )}
 
       <Styled.BalanceDiv>
         <Styled.Div data-testid="rechargeDays">

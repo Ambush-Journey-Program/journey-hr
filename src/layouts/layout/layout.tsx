@@ -3,7 +3,7 @@ import * as Styled from './layout.styled';
 import { LayoutProps } from './types';
 import { AsideMenu } from '@/components';
 
-export function Layout({ children }: LayoutProps) {
+export function Layout ({ children }: LayoutProps) {
   return (
     <Styled.pageContainer>
       <Styled.menuWrapper background="default">

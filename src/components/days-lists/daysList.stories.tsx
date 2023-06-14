@@ -39,7 +39,7 @@ export default {
     storyType: {
       options: ['holidays', 'timeOff', 'teamCalendar'],
       control: {
-        type: `select`,
+        type: 'select',
       },
     },
   },

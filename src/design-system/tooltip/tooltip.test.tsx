@@ -1,6 +1,6 @@
 import userEvent from '@testing-library/user-event';
 import { render, screen, waitForElementToBeRemoved } from '@/tests/renderWithProviders';
-import { Tooltip } from '.';
+import { Tooltip } from './tooltip';
 
 describe('<Tooltip />', () => {
   it('should be visible when hovering the child element', async () => {

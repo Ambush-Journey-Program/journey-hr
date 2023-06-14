@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { StyledLabelProps, StyledInputProps, StyleWrapper } from './types';
+import { StyledInputProps, StyleWrapper } from './types';
 
 const disabledInput = css`
   background-color: ${(props) => props.theme.color.brandColors.light};

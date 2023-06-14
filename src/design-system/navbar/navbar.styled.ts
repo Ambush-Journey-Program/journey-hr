@@ -1,7 +1,5 @@
 import styled, {
-  css,
-  FlattenInterpolation,
-  ThemeProps,
+  css
 } from 'styled-components';
 import { ColorProps } from './type';
 

@@ -1,7 +1,7 @@
 import { LinksProps } from './type';
 import * as Styled from './navbar.styled';
 
-export function NavBarLinks({ navigationLinks, colors = 'light' }: LinksProps) {
+export function NavBarLinks ({ navigationLinks, colors = 'light' }: LinksProps) {
   return (
     <Styled.LinkContainer colors={colors}>
       {navigationLinks.map((links) => (

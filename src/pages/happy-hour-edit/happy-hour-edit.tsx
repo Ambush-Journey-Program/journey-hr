@@ -5,7 +5,7 @@ import * as Styled from './happy-hour-edit.styled';
 import { EMPLOYEES } from './const';
 import { GuestList } from './guest-list';
 
-export function HappyHourEdit({
+export function HappyHourEdit ({
   minGuests = 8,
   maxGuests = 15,
 }: HappyHourEditProps) {
@@ -26,7 +26,7 @@ export function HappyHourEdit({
     label: employee.guest.name,
   }));
 
-  function handleIncrease() {
+  function handleIncrease () {
     const newId = filteredEmployeesList.find(
       (item) => item.guest.id === valueInput,
     )?.guest.id;
@@ -38,11 +38,11 @@ export function HappyHourEdit({
     }
   }
 
-  function handleDelete(id: string) {
+  function handleDelete (id: string) {
     setGuestsIdList((state) => state.filter((item) => item !== id));
   }
 
-  function handleOnClick() {
+  function handleOnClick () {
     const error = getError(guestsIdList);
     setValidationError(error);
 
@@ -52,7 +52,7 @@ export function HappyHourEdit({
     console.log('Scheduled!');
   }
 
-  function getError(guestList: string[]) {
+  function getError (guestList: string[]) {
     if (minGuests > guestList.length) {
       return `Minimum guests must be greater than  ${minGuests - 1}.`;
     }

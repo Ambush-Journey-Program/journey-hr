@@ -4,7 +4,7 @@ import { exampleAre, exampleOpportunity, shiftOptions } from './constants';
 import * as Styled from './interview-availability.styled';
 import { PageHeader } from '@/components';
 
-export function InterviewAvailability() {
+export function InterviewAvailability () {
   const [inputData, setInputData] = useState('');
   const [valuesInput, setValuesInput] = useState({
     area: '',

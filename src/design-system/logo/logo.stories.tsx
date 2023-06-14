@@ -1,7 +1,6 @@
-import { Meta, Story, StoryFn } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import styled, { css } from 'styled-components';
 import { Logo } from './logo';
-import { ILogoProps } from './types';
 import { Logos } from './logosrc';
 
 export default {

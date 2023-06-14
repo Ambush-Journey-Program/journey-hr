@@ -9,9 +9,9 @@ export const theme = {
     auxiliary,
     contrasts,
     gradients,
-    button,
+    button
   },
   shadows,
   font,
-  spacings,
-};
+  spacings
+}

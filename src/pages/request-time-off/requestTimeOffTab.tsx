@@ -11,7 +11,7 @@ import {
 } from '@ambush/components';
 import { RequestTimeOffProps } from './types';
 
-export function RequestTimeOffTab(
+export function RequestTimeOffTab (
   variant: RequestTimeOffProps,
   onView: () => void,
 ) {

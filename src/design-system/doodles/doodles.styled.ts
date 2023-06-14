@@ -1,14 +1,10 @@
 import styled, {
-  css,
-  FlattenInterpolation,
-  ThemeProps,
+  css
 } from 'styled-components';
 
 import { DoodlesStyleProps } from './types';
 
-
-
-const colorsVariants= {
+const colorsVariants = {
   red: css`
     stroke: ${(props) => props.theme.color.brandColors.red};
   `,

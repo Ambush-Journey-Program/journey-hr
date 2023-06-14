@@ -1,9 +1,7 @@
 import styled, {
-  css,
-  FlattenInterpolation,
-  ThemeProps,
+  css
 } from 'styled-components';
-import { ColorsProps, LogoStyleProps } from './types';
+import { LogoStyleProps } from './types';
 
 const colorsVariants = {
   dark: css`

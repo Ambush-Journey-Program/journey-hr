@@ -6,7 +6,7 @@ export default {
   component: InterviewAvailability,
   title: 'Components/InterviewAvailability',
   parameters: {},
-} as Meta;
+} satisfies Meta;
 
 const Template: Story<IInterviewAvailabilityProps> = (args) => {
   return <InterviewAvailability {...args} />;

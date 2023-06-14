@@ -4,7 +4,7 @@ import { Badge, Subtitle } from '@/design-system';
 import { TeamCalendarListProps } from '../types';
 import { Paragraph } from '@/design-system/typography/paragraph/paragraph.styled';
 
-export function TeamCalendarRow({ details }: TeamCalendarListProps) {
+export function TeamCalendarRow ({ details }: TeamCalendarListProps) {
   return (
     <Styled.TeamCalendarRow key={details.id}>
       <Subtitle variant="s4" fontWeight="regular">

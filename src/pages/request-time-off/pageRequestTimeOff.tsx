@@ -6,7 +6,7 @@ import React from 'react';
 import { RequestTimeOffTab } from './requestTimeOffTab';
 import { HolidayCalendarTab } from './holidayCalendarTab';
 
-export function RequestTimeOff() {
+export function RequestTimeOff () {
   const [value, setTabIndex] = React.useState(0);
   return (
     <Styled.TimeOffPageHeaderContainer data-testid="PageRequestTimeOff">
