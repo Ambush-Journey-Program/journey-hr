@@ -85,5 +85,6 @@ DaysListsStory.args = {
   title: 'Holidays Calendar',
   buttonTitle: 'View Holidays calendar',
   list: holidays,
+  url: 'test',
   renderRow: (details) => <HolidayRow details={details as HolidaysList} />,
 };

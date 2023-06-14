@@ -32,7 +32,7 @@ export function TimeOffHistory() {
         <TabPanel index={0} value={value}>
           <div></div>
         </TabPanel>
-        <TabPanel index={1} value={value}>
+        <TabPanel index={1} value={value} data-testid="TabPanel">
           <TimeOffHistoryTab />
         </TabPanel>
       </Styled.TabBox>

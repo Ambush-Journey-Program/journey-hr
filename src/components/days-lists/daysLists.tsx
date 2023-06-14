@@ -1,4 +1,4 @@
-import { Title } from '@/design-system';
+import { Title } from '@ambush/ui';
 import * as Styled from './daysLists.styled';
 
 import Link from 'next/link';
