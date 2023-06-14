@@ -1,6 +1,6 @@
 import { render, screen } from '@/tests/renderWithProviders';
 
-import { Modal } from './modal';
+import { Modal } from '@ambush/ui';
 import userEvent from '@testing-library/user-event';
 
 describe('<Modal />', () => {

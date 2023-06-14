@@ -1,6 +1,5 @@
 import * as React from 'react';
-
-import { Balance } from './balance';
+import { Balance } from '.';
 import { render, screen } from '@/tests/renderWithProviders';
 
 describe('<Balance />', () => {

@@ -13,4 +13,5 @@ export { Title, Subtitle, Paragraph } from '../design-system/typography';
 export { Tab } from './tabs/tab';
 export { TabContainer } from './tabs/tabContainer';
 export { TabPanel } from './tabs/tabPanel';
-export { Layout } from '../layouts/layout';
+export { RadioButton } from '../design-system/radio-button';
+export { Modal } from '../design-system/modal';

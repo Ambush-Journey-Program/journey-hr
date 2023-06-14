@@ -1,7 +1,7 @@
 import { Meta, Story } from '@storybook/react';
-import { PageHeader } from './page-header';
 import { PageHeaderProps } from './types';
-import { BackButton, Button } from '@/design-system';
+import { Button } from '@ambush/ui';
+import { BackButton, PageHeader} from '@ambush/components';
 import styled from 'styled-components';
 
 export default {

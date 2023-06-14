@@ -4,10 +4,10 @@ import {
   TabContainer,
   Tab,
   TabPanel,
-  BackButton,
 } from '@ambush/ui';
-import { RequestTimeOffTab } from './requestTimeOffTab';
+import { BackButton } from '@ambush/components';
 import React from 'react';
+import { RequestTimeOffTab } from './requestTimeOffTab';
 
 export function RequestTimeOff() {
   const [value, setTabIndex] = React.useState(0);

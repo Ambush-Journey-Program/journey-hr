@@ -1,5 +1,5 @@
 import { render, screen } from '@/tests/renderWithProviders';
-import { Summary } from '../summary';
+import { Summary } from '.';
 import * as mockObject from './mock-response';
 
 describe.skip('<Summary  />', () => {
