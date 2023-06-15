@@ -4,7 +4,7 @@ import { Subtitle } from '@/design-system';
 import { HolidaysListProps } from '../types';
 import { Paragraph } from '@/design-system/typography/paragraph/paragraph.styled';
 
-export function HolidayRow ({ details }: HolidaysListProps) {
+export function HolidayRow({ details }: HolidaysListProps) {
   return (
     <Styled.HolidayRow key={details.id}>
       <Subtitle variant="s4" fontWeight="regular">

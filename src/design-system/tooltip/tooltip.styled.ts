@@ -1,6 +1,4 @@
-import styled, {
-  css
-} from 'styled-components';
+import styled, { css } from 'styled-components';
 import { PositionsType } from './types';
 
 export const TooltipWrapper = styled.div`
@@ -58,7 +56,7 @@ const variants = {
     bottom: calc(100% + 15px);
     left: 50%;
     transform: translateX(-50%);
-  `,
+  `
 };
 
 export const TooltipBox = styled.span<StyledProps>`
@@ -73,9 +71,9 @@ export const TooltipBox = styled.span<StyledProps>`
   max-width: 12.5rem;
   font-weight: 600;
   font-size: 0.75rem;
-  font-family: ${prop => prop.theme.font.fontFamilyBody};
-  box-shadow: 0 0.25rem 0.875rem rgba(0, 0, 0, 0.15),
-    0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+  font-family: ${(prop) => prop.theme.font.fontFamilyBody};
+  box-shadow: 0 0.25rem 0.875rem rgba(0, 0, 0, 15%),
+    0 0.25rem 0.5rem rgba(0, 0, 0, 20%);
   overflow-wrap: break-word;
 
   &::after {

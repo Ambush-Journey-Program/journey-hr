@@ -20,7 +20,7 @@ export const ListLink = styled.ul`
 `;
 
 export const ListItem = styled.li`
-  padding: 0.65625rem 0 0.65625rem 1.614375rem;
+  padding: 0.6563rem 0 0.6563rem 1.6144rem;
   font-family: ${prop => prop.theme.font.fontFamilyTitle};
 
   a {
