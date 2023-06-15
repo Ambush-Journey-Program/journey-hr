@@ -10,7 +10,6 @@ export const RequestsWrapper = styled.div`
   }
 
   p {
-    font-size: 0.875rem;
     line-height: 1.6875rem;
   }
 `;
