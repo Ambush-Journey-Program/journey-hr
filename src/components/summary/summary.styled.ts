@@ -73,7 +73,7 @@ export const PeriodContainer = styled.div<SummaryProps>`
     color: ${(props) => props.theme.color.brandColors.red};
 
     path {
-      stroke-width: 2px;
+      stroke-width: 0.125rem;
       margin-bottom: 0;
     }
   }
@@ -98,7 +98,7 @@ export const Li = styled.li`
 
   .divider {
     margin: 2px;
-    height: 1px;
+    height: 0.063rem;
     width: 100%;
     background-color: ${(props) => props.theme.color.contrasts.lowestContrast};
     display: none;

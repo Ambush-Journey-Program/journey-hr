@@ -87,9 +87,8 @@ export const VeticalLine = styled.hr`
 `;
 export const StyledButton = styled(Button)`
   align-items: center;
-  width: 160px;
-  height: 40px;
-
+  width: 10rem;
+  height: 2.5rem;
   @media ${devices.mobile} {
     width: 100%;
   }

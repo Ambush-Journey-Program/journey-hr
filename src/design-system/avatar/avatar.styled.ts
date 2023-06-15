@@ -10,7 +10,7 @@ const variants = {
   `,
 
   small: css`
-    height: 4rem;
+    height: ${prop => prop.theme.spacings.spacing08};
     width: 4rem;
     border-radius: 4rem;
   `

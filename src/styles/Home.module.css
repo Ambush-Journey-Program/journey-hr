@@ -83,15 +83,15 @@
 .center::before {
   background: var(--secondary-glow);
   border-radius: 50%;
-  width: 480px;
-  height: 360px;
+  width: 30rem;
+  height: 22.5rem;
   margin-left: -400px;
 }
 
 .center::after {
   background: var(--primary-glow);
-  width: 240px;
-  height: 180px;
+  width: 15rem;
+  height: 11.25rem;
   z-index: -1;
 }
 
@@ -113,8 +113,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 75px;
-  height: 75px;
+  width: 4.688rem;
+  height: 4.688rem;
   padding: 25px 10px;
   margin-left: 16px;
   transform: translateZ(0);
@@ -200,7 +200,7 @@
 
   .center::before {
     transform: none;
-    height: 300px;
+    height: 18.75rem;
   }
 
   .description {
@@ -240,7 +240,7 @@
     pointer-events: none;
     inset: auto 0 0;
     padding: 2rem;
-    height: 200px;
+    height: 12.5rem;
     background: linear-gradient(
       to bottom,
       transparent 0%,

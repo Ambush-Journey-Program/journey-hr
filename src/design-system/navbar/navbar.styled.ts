@@ -8,7 +8,7 @@ type LinkColors = {
 };
 
 export const NavBarWrapper = styled.div`
-  width: 992px;
+  width: 62rem;
   margin: 0 auto;
 `;
 

@@ -54,8 +54,8 @@ export const CheckBox = styled.input`
   background-color: ${(props) => props.theme.color.brandColors.light};
   appearance: none;
   display: block;
-  width: 20px;
-  height: 20px;
+  width: 1.25rem;
+  height: 1.25rem;
   border: 3px solid ${(props) => props.theme.color.contrasts.highContrast};
   border-radius: 2px;
   cursor: pointer;

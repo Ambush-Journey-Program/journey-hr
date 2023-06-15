@@ -28,19 +28,17 @@ export default {
   },
 } satisfies Meta;
 const StyledDiv = styled.div`
-  width: calc(768px - 5rem);
+  width: calc(48rem - 5rem);
   height: 110vh;
 
-  @media (width >= 768px) {
-    width: calc(769px - 2rem);
+  @media (min-width: 48rem) {
+    width: calc(48rem - 2rem);
   }
-
-  @media (width >= 992px) {
-    width: calc(992px - 2rem);
+  @media (min-width: 62rem) {
+    width: calc(62rem - 2rem);
   }
-
-  @media (width >= 1200px) {
-    width: calc(1200px - 2rem);
+  @media (min-width: 75rem) {
+    width: calc(75rem - 2rem);
   }
 `;
 

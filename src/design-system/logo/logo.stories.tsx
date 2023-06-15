@@ -26,7 +26,7 @@ export default {
 
 const LogoStoryWrapper = styled.div<{ alternate?: boolean }>`
   padding: 32px;
-  width: 200px;
+  width: 12.5rem;
   ${(props) =>
     props.alternate &&
     css`
