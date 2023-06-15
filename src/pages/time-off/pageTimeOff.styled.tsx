@@ -4,8 +4,6 @@ export const TimeOffPageHeaderWrapper = styled.div`
   margin-bottom: 3rem;
 `;
 
-export const TimeOffPageTitle = styled.div``;
-
 export const TimeOffPageDaysListsGrid = styled.div`
   display: grid;
   grid-template-areas:

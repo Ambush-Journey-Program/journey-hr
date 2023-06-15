@@ -19,6 +19,14 @@ export const Tab = styled.a`
     height: 0.938rem;
     fill: ${(props) => props.theme.color.brandColors.dark};
   }
+  
+  &:disabled {
+    color: ${(props) => props.theme.color.button.disabled};
+
+    svg {
+      fill: ${(props) => props.theme.color.button.disabled};
+    }
+  }
 
   p:hover {
     color: ${(props) => props.theme.color.button.secondaryHover};
@@ -34,14 +42,6 @@ export const Tab = styled.a`
 
     svg {
       fill: ${(props) => props.theme.color.button.secondary};
-    }
-  }
-
-  &:disabled {
-    color: ${(props) => props.theme.color.button.disabled};
-
-    svg {
-      fill: ${(props) => props.theme.color.button.disabled};
     }
   }
 `;

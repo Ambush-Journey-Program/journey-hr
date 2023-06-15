@@ -28,7 +28,7 @@ export function InterviewAvailability () {
     inputData;
 
   return (
-      <Styled.InterviewAvailability>
+      <div>
         <PageHeader
           title="Technical Interview Availability"
           subtitle="Schedule a technical interview for a candidate."
@@ -88,6 +88,6 @@ export function InterviewAvailability () {
             </Styled.ContainerBtn>
           </Styled.Form>
         </div>
-      </Styled.InterviewAvailability>
+      </div>
   );
 }

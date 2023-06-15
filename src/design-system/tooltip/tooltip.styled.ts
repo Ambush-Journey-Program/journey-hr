@@ -59,7 +59,6 @@ const variants = {
     left: 50%;
     transform: translateX(-50%);
   `,
-  default: css``,
 };
 
 export const TooltipBox = styled.span<StyledProps>`

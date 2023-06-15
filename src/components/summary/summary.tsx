@@ -1,7 +1,6 @@
 import { Title, Subtitle, Tooltip, Button } from '@ambush/ui';
 import { SummaryProps } from './types';
 import * as Styled from './summary.styled';
-
 import * as Icons from '@heroicons/react/24/outline';
 import { requestTimeOffmock } from './mock-response';
 

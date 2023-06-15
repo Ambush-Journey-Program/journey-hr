@@ -55,7 +55,6 @@ export const Label = styled.label<checkboxProps>`
 `;
 
 export const CheckBox = styled.input`
-  background-color: ${(props) => props.theme.color.brandColors.light};
   appearance: none;
   display: block;
   width: 20px;
@@ -75,11 +74,7 @@ export const CheckBox = styled.input`
   }
 
   &:checked:hover {
-    content: url('/static/images/checkedHover.svg');
-  }
-
-  &:hover {
-    border-color: ${(props) => props.theme.color.button.secondaryHover};
+    content: url('${checkboxHoverSVGpath}');
   }
 
   ${({ disabled }) => disabled && disabledInput};

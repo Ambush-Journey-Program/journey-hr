@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const Menu = styled.div`
   width: 17.375rem;
-
 `;
 
 export const LogoContainer = styled.div`
@@ -31,7 +30,7 @@ export const ListItem = styled.li`
     color: ${(props) => props.theme.color.contrasts.lowContrast};
 
     svg {
-      padding-right: 0.364375rem;
+      padding-right: 0.3644rem;
       width: 1.5rem;
     }
   }

@@ -51,9 +51,9 @@ const colorVariants = {
       background-color: ${(props) => props.theme.color.brandColors.red};
 
       &:focus {
-        opacity: 70%;
+        opacity: 0.7;
         background-color: ${(props) => props.theme.color.button.primary};
-        box-shadow: 0px 0px 0px 4px rgba(236, 109, 117, 0.2);
+        box-shadow: 0 0 0 4px rgba(236, 109, 117, 20%);
       }
 
       &:hover {
@@ -71,11 +71,11 @@ const colorVariants = {
       }
 
       &:focus {
-        box-shadow: 0px 0px 0px 4px rgba(236, 109, 117, 0.2);
+        box-shadow: 0 0 0 4px rgba(236, 109, 117, 20%);
       }
 
       &:hover {
-        background-color: rgba(236, 109, 117, 0.1);
+        background-color: rgba(236, 109, 117, 10%);
       }
     `,
 
@@ -88,7 +88,7 @@ const colorVariants = {
       }
 
       &:focus {
-        box-shadow: 0px 0px 0px 4px rgba(236, 109, 117, 0.25);
+        box-shadow: 0 0 0 4px rgba(236, 109, 117, 25%);
       }
 
       &:hover {
@@ -107,9 +107,9 @@ const colorVariants = {
       background-color: ${(props) => props.theme.color.button.secondary};
 
       &:focus {
-        opacity: 70%;
+        opacity: 0.7;
         background-color: ${(props) => props.theme.color.button.secondary};
-        box-shadow: 0px 0px 0px 4px rgba(155, 154, 214, 0.2);
+        box-shadow: 0 0 0 4px rgba(155, 154, 214, 20%);
       }
 
       &:hover {
@@ -126,7 +126,7 @@ const colorVariants = {
       }
 
       &:focus {
-        box-shadow: 0px 0px 0px 4px rgba(155, 154, 214, 0.2);
+        box-shadow: 0 0 0 4px rgba(155, 154, 214, 20%);
       }
 
       &:hover {
@@ -149,7 +149,7 @@ const colorVariants = {
       }
 
       &:focus {
-        box-shadow: 0px 0px 0px 4px rgba(155, 154, 214, 0.2);
+        box-shadow: 0 0 0 4px rgba(155, 154, 214, 20%);
       }
 
       &:hover {
@@ -169,7 +169,7 @@ const colorVariants = {
 
       &:focus {
         background-color: ${(props) => props.theme.color.brandColors.dark};
-        box-shadow: 0px 0px 0px 4px rgba(92, 76, 115, 0.2);
+        box-shadow: 0 0 0 4px rgba(92, 76, 115, 20%);
       }
 
       &:hover {
@@ -187,8 +187,8 @@ const colorVariants = {
       }
 
       &:focus {
-        background-color: rgba(255, 255, 255, 1e-6);
-        box-shadow: 0px 0px 0px 4px rgba(92, 76, 115, 0.2);
+        background-color: rgba(255, 255, 255, 0.0001%);
+        box-shadow: 0 0 0 4px rgba(92, 76, 115, 20%);
       }
 
       &:hover {
@@ -206,7 +206,7 @@ const colorVariants = {
       }
 
       &:focus {
-        box-shadow: 0px 0px 0px 4px rgba(92, 76, 115, 0.25);
+        box-shadow: 0 0 0 4px rgba(92, 76, 115, 25%);
       }
 
       &:hover {
@@ -219,21 +219,21 @@ const colorVariants = {
 const disabledButton = {
   default: {
     primary: css`
-      opacity: 70%;
+      opacity: 0.7;
 
       &:hover {
         background-color: ${(props) => props.theme.color.button.primary};
       }
     `,
     secondary: css`
-      opacity: 70%;
+      opacity: 0.7;
 
       &:hover {
         background-color: ${(props) => props.theme.color.button.secondary};
       }
     `,
     alternative: css`
-      opacity: 70%;
+      opacity: 0.7;
 
       &:hover {
         background-color: ${(props) => props.theme.color.brandColors.dark};
@@ -242,14 +242,14 @@ const disabledButton = {
   },
   outlined: {
     primary: css`
-      opacity: 70%;
+      opacity: 0.7;
 
       &:hover {
         background-color: transparent;
       }
     `,
     secondary: css`
-      opacity: 70%;
+      opacity: 0.7;
 
       &:hover {
         color: ${(props) => props.theme.color.button.secondary};
@@ -261,7 +261,7 @@ const disabledButton = {
       }
     `,
     alternative: css`
-      opacity: 70%;
+      opacity: 0.7;
 
       &:hover {
         background-color: transparent;
@@ -270,7 +270,7 @@ const disabledButton = {
   },
   ghost: {
     primary: css`
-      opacity: 70%;
+      opacity: 0.7;
 
       &:hover {
         background-color: transparent;
@@ -282,7 +282,7 @@ const disabledButton = {
       }
     `,
     secondary: css`
-      opacity: 70%;
+      opacity: 0.7;
 
       &:hover {
         background-color: transparent;
@@ -294,7 +294,7 @@ const disabledButton = {
       }
     `,
     alternative: css`
-      opacity: 70%;
+      opacity: 0.7;
 
       &:hover {
         background-color: transparent;
@@ -314,6 +314,7 @@ export const ButtonStyle = styled.button<ButtonProps>`
   border-radius: 50px;
   gap: 0.375rem;
   cursor: pointer;
+
   svg path {
     stroke-width: 2.2px;
     margin-bottom: 0;
