@@ -14,7 +14,6 @@ export const MainWrapper = styled.div`
 `;
 
 export const InputsWrapper = styled.div`
-  display: flex;
   flex-direction: column;
   gap: 24px;
   width: 100%;

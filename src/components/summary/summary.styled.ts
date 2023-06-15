@@ -102,6 +102,7 @@ export const Li = styled.li`
     flex-direction: column;
     align-items: flex-start;
   }
+
   .divider {
     margin: 2px;
     height: 1px;
@@ -113,6 +114,7 @@ export const Li = styled.li`
       display: block;
     }
   }
+
   &:last-of-type .divider {
     display: none;
   }

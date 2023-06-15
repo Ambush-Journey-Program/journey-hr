@@ -11,8 +11,7 @@ export const TimeOffPageDaysListsGrid = styled.div`
   grid-template-areas:
     'Grid1 Grid2'
     'Grid3 Grid3';
-  grid-column-gap: 3rem;
-  grid-row-gap: 6.875rem;
+  grid-gap: 6.875rem 3rem;
 `;
 
 export const GridContainer1 = styled.div`

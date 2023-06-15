@@ -43,6 +43,7 @@ export const Guests = styled.ul`
     font-family: ${(props) => props.theme.font.fontFamilyBody};
     color: ${(props) => props.theme.color.contrasts.mediumContrast};
   }
+
   @media ${devices.tablet}, ${devices.tabletLarge}, ${devices.desktop} {
     display: grid;
     grid-template-columns: auto auto;

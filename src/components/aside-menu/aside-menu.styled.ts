@@ -17,7 +17,7 @@ export const ListLink = styled.ul`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 2.6875rem 0 2.6875rem;
+  padding: 0 2.6875rem;
 `;
 
 export const ListItem = styled.li`
@@ -39,6 +39,7 @@ export const ListItem = styled.li`
   :hover {
     background-color: ${(props) => props.theme.color.contrasts.lightContrast};
     border-radius: 25px;
+
     a {
       color: ${(props) => props.theme.color.button.secondaryHover};
 
@@ -64,6 +65,7 @@ export const ButtonContainer = styled.div`
     font-size: 1rem;
     padding: 0;
   }
+
   svg {
     width: 1rem;
   }

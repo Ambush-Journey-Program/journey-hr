@@ -25,6 +25,7 @@ const warnError = css`
     color: ${(props) => props.theme.color.contrasts.lowestContrast};
     border-color: ${(props) => props.theme.color.auxiliary.error};
   }
+
   & input:active {
     border-color: ${(props) => props.theme.color.auxiliary.error};
   }
@@ -60,7 +61,7 @@ export const InputContainer = styled.div<StyledInputProps>`
   border: 1px solid ${(props) => props.theme.color.contrasts.lowestContrast};
   border-radius: 0.75rem;
   padding: 1.25rem;
-  margin: 0.25rem 0rem 0.25rem 0rem;
+  margin: 0.25rem 0;
   ${({ error }) => error && errorDisplay}
   ${({ warn }) => warn && errorDisplay}
   ${({ disabled }) => disabled && disabledInput};
@@ -86,6 +87,7 @@ export const InputContainer = styled.div<StyledInputProps>`
       props.touched
         ? props.theme.color.contrasts.highContrast
         : props.theme.color.contrasts.lowestContrast};
+
     &::placeholder {
       color: ${(props) => props.theme.color.contrasts.lowestContrast};
     }

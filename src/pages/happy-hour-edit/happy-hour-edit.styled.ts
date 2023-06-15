@@ -4,7 +4,7 @@ import { devices } from '@/styles/devices';
 import styled from 'styled-components';
 
 export const Header = styled.div`
-  margin: 20px 0px 28px 0px;
+  margin: 20px 0 28px;
 `;
 
 export const ContainerTitle = styled.div`
@@ -17,6 +17,7 @@ export const ContainerInput = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 16px;
+
   @media ${devices.tablet}, ${devices.tabletLarge}, ${devices.desktop} {
     display: grid;
     grid-template-columns: 1fr auto;
@@ -25,9 +26,11 @@ export const ContainerInput = styled.div`
 
 export const IncreaseButton = styled(Button)`
   margin-top: 16px;
+
   &:focus {
     max-height: 80%;
   }
+
   @media ${devices.tablet} {
     margin-left: 16px;
     margin-top: 8px;
@@ -45,6 +48,7 @@ export const TextTitle = styled.h2`
     font-size: 20px;
     line-height: 25px;
   }
+
   @media ${devices.desktop} {
     font-size: 24px;
     line-height: 30px;

@@ -9,6 +9,7 @@ export const Wrapper = styled.div`
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
+
   @media ${devices.tablet} {
     display: block;
   }
@@ -23,9 +24,10 @@ export const ButtonBox = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: ${(props) => props.theme.spacings.spacing05};
+
   @media ${devices.tablet} {
     flex-direction: row;
-    margin-top: 0rem;
+    margin-top: 0;
     bottom: ${(props) => props.theme.spacings.spacing06};
     position: relative;
     justify-content: flex-end;

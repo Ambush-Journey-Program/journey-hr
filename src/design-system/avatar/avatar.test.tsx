@@ -4,7 +4,7 @@ import { Avatar } from '.';
 
 describe('<Avatar />', () => {
   it('renders the Avatar', () => {
-    render(<Avatar src="src/design-system/avatar/User-Photo.png" />);
+    render(<Avatar src="src/design-system/avatar/User-Photo.png" sizeVariant={'small'} />);
     const avatarEl = screen.getByTestId('Avatar');
     expect(avatarEl).toBeInTheDocument();
   });

@@ -6,6 +6,7 @@ import { StyledProps, StyledLabelProps } from './types';
 const error = css`
   &:invalid {
     color: ${(props) => props.theme.color.auxiliary.error};
+
     + p {
       display: block;
     }
@@ -43,7 +44,7 @@ export const TextAreaContainer = styled.div<StyledProps>`
 export const TextArea = styled.textarea<StyledProps>`
   width: 100%;
   resize: none;
-  font-family: 'Mundial', sans-serif;
+  font-family: Mundial, sans-serif;
   font-weight: 300;
   font-size: 1rem;
   border: 1px solid ${(props) => props.theme.color.contrasts.lowestContrast};
@@ -71,6 +72,7 @@ export const TextArea = styled.textarea<StyledProps>`
       ${(props) => props.theme.color.contrasts.mediumContrast};
     border: 1px solid ${(props) => props.theme.color.brandColors.purple};
   }
+
   & + p {
     display: none;
   }
