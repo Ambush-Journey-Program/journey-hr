@@ -24,6 +24,7 @@ export default function Home() {
           rel="stylesheet"
         />
       </Head>
+      <Input required label={'Mans worlds'} />
     </>
   );
 }
