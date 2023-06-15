@@ -22,7 +22,7 @@ export default {
       ],
     },
   },
-} as Meta;
+} satisfies Meta;
 
 export const SelectCardStory: StoryFn<typeof CardWrapper> = (args) => (
   <CardWrapper {...args} />

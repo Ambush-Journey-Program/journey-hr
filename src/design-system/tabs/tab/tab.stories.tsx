@@ -7,7 +7,7 @@ export default {
   component: Tab,
   title: 'UI/Tab',
   parameters: {},
-} as Meta;
+} satisfies Meta;
 
 const Template: Story<TabProps> = (args) => {
   return <Tab {...args} />;

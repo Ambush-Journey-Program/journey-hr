@@ -1,3 +1,4 @@
+/* eslint-disable react/no-children-prop */
 import { CheckBox } from '@/design-system/checkbox/checkbox';
 import * as Styled from './optional-holidays.styled';
 import { Subtitle, Title } from '@/design-system';

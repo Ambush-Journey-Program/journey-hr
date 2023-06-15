@@ -15,7 +15,7 @@ const iconColor: IconColors = {
 export default {
   component: Icon,
   title: 'UI/Icon',
-} as Meta;
+} satisfies Meta;
 
 export const IconStory: StoryFn<typeof Icon> = (args) => <Icon {...args} />;
 

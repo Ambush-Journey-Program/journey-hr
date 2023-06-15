@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/consistent-type-assertions */
+
 import { Meta, Story } from '@storybook/react';
 import { Footer } from './footer';
 import { FooterProps } from './types';
@@ -23,7 +23,7 @@ export default {
       ],
     },
   },
-} as Meta;
+} satisfies Meta;
 
 const Template: Story<FooterProps> = (args) => {
   return <Footer {...args} />;

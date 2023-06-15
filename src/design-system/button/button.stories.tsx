@@ -23,7 +23,7 @@ export default {
       ],
     },
   },
-} as Meta;
+} satisfies Meta;
 
 export const ButtonStory: StoryFn<typeof Button> = (
   args: JSX.IntrinsicAttributes & ButtonProps,

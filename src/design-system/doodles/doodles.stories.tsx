@@ -25,7 +25,7 @@ export default {
       ],
     },
   },
-} as Meta;
+} satisfies Meta;
 
 export const DoodlesStory: StoryFn<typeof Doodles> = (args) => (
   <Doodles {...args} />

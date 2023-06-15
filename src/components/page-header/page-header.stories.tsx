@@ -26,7 +26,7 @@ export default {
       ],
     },
   },
-} as Meta;
+} satisfies Meta;
 const StyledDiv = styled.div`
   width: calc(768px - 5rem);
   height: 110vh;

@@ -22,7 +22,7 @@ export default {
       ],
     },
   },
-} as Meta;
+} satisfies Meta;
 
 const Template: Story<ModalProps> = (args) => {
   return <Modal {...args} />;

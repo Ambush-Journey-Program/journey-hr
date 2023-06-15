@@ -2,7 +2,7 @@ import { Subtitle } from '@/design-system';
 import { RadioButton } from '@ambush/ui';
 import * as Styled from './time-off-type.styled';
 
-export function TimeOffType () {
+export function TimeOffType() {
   return (
     <Styled.Container>
       <Styled.ContainerSubtitle>

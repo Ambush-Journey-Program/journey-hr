@@ -4,8 +4,6 @@ import styled, {
 } from 'styled-components';
 import { CardProps } from './types';
 
-
-
 const backgroundVariants = {
   default: css`
     box-shadow: ${(props) => props.theme.shadows.cream};

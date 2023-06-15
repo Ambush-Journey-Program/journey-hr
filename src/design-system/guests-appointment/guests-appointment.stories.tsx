@@ -17,7 +17,7 @@ export default {
   parameters: {
     isLoading: false,
   },
-} as Meta;
+} satisfies Meta;
 
 const Template: Story<GuestsAppointmentProps> = (args) => {
   return <GuestsAppointment {...args} />;

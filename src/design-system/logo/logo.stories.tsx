@@ -22,7 +22,7 @@ export default {
       ],
     },
   },
-} as Meta;
+} satisfies Meta;
 
 const LogoStoryWrapper = styled.div<{ alternate?: boolean }>`
   padding: 32px;

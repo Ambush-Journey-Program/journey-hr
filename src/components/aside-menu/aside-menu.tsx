@@ -1,6 +1,6 @@
-import { Button, Logo, Paragraph } from "@ambush/ui";
-import { MenuItem } from ".";
-import * as Styled from "./aside-menu.styled";
+import { Button, Logo, Paragraph } from '@ambush/ui';
+import { MenuItem } from '.';
+import * as Styled from './aside-menu.styled';
 
 export function AsideMenu() {
   return (

@@ -2,7 +2,7 @@ import { Paragraph } from '@/design-system';
 import * as Styled from './short-appointment.styled';
 import { ShortHappyHourProps } from './types';
 
-export function ShortHappyHour ({ appointment, date }: ShortHappyHourProps) {
+export function ShortHappyHour({ appointment, date }: ShortHappyHourProps) {
   return (
     <Styled.Wrapper>
       <Styled.ContainerName>

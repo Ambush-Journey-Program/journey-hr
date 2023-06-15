@@ -3,7 +3,7 @@ import {
   isDate15DaysFromNow,
   isFirstDateAfterSecondDate,
   isWeekEnd,
-  parseDate,
+  parseDate
 } from './utils';
 
 describe('isWeekEnd', () => {

@@ -2,11 +2,10 @@ import { Meta, Story } from '@storybook/react';
 import { Balance } from './balance';
 import { employees } from './mocking/holidays';
 
-// eslint-disable-next-line @typescript-eslint/consistent-type-assertions
 export default {
   component: Balance,
   title: 'Components/Balance',
-} as Meta;
+} satisfies Meta;
 
 const Template: Story = (args) => {
   return (

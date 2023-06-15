@@ -75,6 +75,7 @@ export const InputContainer = styled.div<StyledInputProps>`
       props.touched
         ? props.theme.color.contrasts.highContrast
         : props.theme.color.contrasts.lowestContrast};
+        
     &::placeholder {
       color: ${(props) => props.theme.color.contrasts.lowestContrast};
     }

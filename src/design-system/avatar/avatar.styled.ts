@@ -13,7 +13,7 @@ const variants = {
     height: 4rem;
     width: 4rem;
     border-radius: 4rem;
-  `,
+  `
 };
 
 export const Image = styled.img<AvatarProps>`

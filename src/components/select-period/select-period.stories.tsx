@@ -5,7 +5,7 @@ import styled from 'styled-components';
 export default {
   component: SelectPeriod,
   title: 'Components/SelectPeriod',
-} as Meta;
+} satisfies Meta;
 
 const Wrapper = styled.div`
   width: 866px;

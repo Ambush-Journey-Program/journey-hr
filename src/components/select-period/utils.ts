@@ -1,16 +1,16 @@
-export function isFirstDateAfterSecondDate (firstDate: Date, secondDate: Date) {
+export function isFirstDateAfterSecondDate(firstDate: Date, secondDate: Date) {
   const firstDateTime = firstDate.getTime();
   const secondDateTime = secondDate.getTime();
   return firstDateTime > secondDateTime;
 }
 
-export function isDate15DaysFromNow (date: Date) {
+export function isDate15DaysFromNow(date: Date) {
   const today = new Date();
   today.setDate(today.getDate() + 14);
   return isFirstDateAfterSecondDate(date, today);
 }
 
-export function findToday () {
+export function findToday() {
   const today = new Date();
   const day = today.getDate();
   const month = today.getMonth() + 1;
@@ -22,7 +22,7 @@ export function findToday () {
   return `${year}-${monthString}-${dayString}`;
 }
 
-export function parseDate (originalDate: string) {
+export function parseDate(originalDate: string) {
   const [year, month, day] = originalDate.split('-');
   if (
     typeof year === 'undefined' ||
@@ -42,6 +42,6 @@ export function parseDate (originalDate: string) {
   return date;
 }
 
-export function isWeekEnd (day: number) {
+export function isWeekEnd(day: number) {
   return [0, 6].includes(day);
 }

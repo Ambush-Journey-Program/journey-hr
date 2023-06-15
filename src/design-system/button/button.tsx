@@ -2,7 +2,7 @@ import { ButtonStyle } from './button.styled';
 import type { ButtonProps } from './types';
 import * as Icons from '@heroicons/react/24/outline';
 
-export function Button ({
+export function Button({
   type = 'button',
   sizeVariant = 'medium',
   color = 'primary',

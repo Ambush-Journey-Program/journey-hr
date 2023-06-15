@@ -20,7 +20,7 @@ export default {
       ],
     },
   },
-} as Meta;
+} satisfies Meta;
 
 export const SelectCardStory: StoryFn<typeof Avatar> = (args) => (
   <Avatar {...args} />

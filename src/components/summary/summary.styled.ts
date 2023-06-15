@@ -1,11 +1,6 @@
 import { devices } from '@/styles/devices';
-import styled, { css} from 'styled-components';
+import styled, { css } from 'styled-components';
 import { SummaryProps } from './types';
-
-
-// type Tooltip = {
-//   variant: 'employee' | 'manager';
-// };
 
 export const SummaryWrapper = styled.div`
   display: flex;
