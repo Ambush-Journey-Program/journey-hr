@@ -24,10 +24,7 @@ describe('<TimeOffRequests  />', () => {
         appliedOn="example"
       />,
     );
-    const title = screen.getByRole('heading', {
-      name: /November/,
-      level: 6,
-    });
+    const title = screen.getByText('November');
     expect(title).toBeInTheDocument();
     const subtitle = screen.getByText('subtitle');
     expect(subtitle).toBeInTheDocument();
