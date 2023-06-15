@@ -1,5 +1,5 @@
 import * as Styled from './time-off-requests.styled';
-import { Badge, Subtitle, Title } from '@/design-system';
+import { Badge, Subtitle, Title } from '@ambush/ui';
 import { TimeOffRequestsProps } from './types';
 
 export function TimeOffRequests({
