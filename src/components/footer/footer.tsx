@@ -17,7 +17,7 @@ export function Footer({
   onApply,
   variant = 'timeOff',
   disabledLeftBtn= false,
-  disabledRightBtn= true,
+  disabledRightBtn= false,
 }: FooterProps) {
   const [label, setLabel] = useState('');
 

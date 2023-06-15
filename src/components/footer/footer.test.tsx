@@ -65,7 +65,7 @@ describe('<Footer/>', () => {
       expect(cancelBtn).toBeDisabled();
     });
     it('should Button Apply and Cancel be enabled', async () => {
-      render(<Footer variant="timeOff" disabledLeftBtn={false} disabledRightBtn={false}/>);
+      render(<Footer variant="timeOff"/>);
       const allDoneBtn = screen.getByText('Apply Time Off')
       const cancelBtn = screen.getByText('Cancel')
       await userEvent.click(allDoneBtn);
