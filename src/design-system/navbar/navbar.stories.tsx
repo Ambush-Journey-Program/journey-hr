@@ -50,7 +50,7 @@ export default {
       ],
     },
   },
-} as Meta;
+} satisfies Meta;
 
 export const NavBarStory: StoryFn<typeof NavBar> = (args) => (
   <NavBar {...args} />

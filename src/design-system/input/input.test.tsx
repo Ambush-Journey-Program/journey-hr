@@ -3,13 +3,13 @@ import { Input } from '.';
 
 describe('<Input />', () => {
   it('renders the Input', () => {
-    render(<Input label="label" />);
+    render(<Input label="label" onTextChange={jest.fn()} />);
     const inputEl = screen.getByTestId('input-test');
     expect(inputEl).toBeInTheDocument();
   });
 
   it('could be disabled', () => {
-    render(<Input label="label" disabled />);
+    render(<Input label="label" disabled onTextChange={jest.fn()} />);
 
     const inputEl = screen.getByTestId('input-test');
     expect(inputEl).toBeDisabled();
@@ -17,14 +17,14 @@ describe('<Input />', () => {
   });
 
   it('could be required', () => {
-    render(<Input label="label" required />);
+    render(<Input label="label" required onTextChange={jest.fn()} />);
 
     const inputEl = screen.getByTestId('input-test');
     expect(inputEl).toBeRequired();
   });
 
   it('has a required label on the component when needed', () => {
-    render(<Input required placeholder="placeholder" label={''} />);
+    render(<Input required placeholder="placeholder" onTextChange={jest.fn()} />);
 
     const inputEl = screen.getByTestId('input-test');
     expect(inputEl).toBeRequired();
@@ -33,7 +33,7 @@ describe('<Input />', () => {
   });
 
   it('does not have a required label when the component is optional', () => {
-    render(<Input placeholder="placeholder" label={''} />);
+    render(<Input placeholder="placeholder" onTextChange={jest.fn()} />);
 
     const inputEl = screen.getByTestId('input-test');
     expect(inputEl).toBeInTheDocument();
