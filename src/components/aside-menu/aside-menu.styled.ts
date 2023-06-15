@@ -22,6 +22,7 @@ export const ListLink = styled.ul`
 
 export const ListItem = styled.li`
   padding: 0.65625rem 0 0.65625rem 1.614375rem;
+  font-family: ${prop => prop.theme.font.fontFamilyTitle};
 
   a {
     display: flex;

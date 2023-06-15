@@ -69,12 +69,6 @@ export const modalContent = styled.div`
   }
 `;
 
-export const ModalChildren = styled.div`
-  line-height: 27px;
-  padding: 0 2.6875rem;
-  text-align: center;
-`;
-
 export const ModalFooter = styled.div`
   display: flex;
   flex-direction: row;

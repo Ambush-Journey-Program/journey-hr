@@ -21,6 +21,8 @@ export const Label = styled.label<StyledLabelProps>`
   font-size: 0.875rem;
   line-height: 150%;
   color: ${(props) => props.theme.color.contrasts.mediumContrast};
+  font-family: ${prop => prop.theme.font.fontFamilyBody};
+
 
   span {
     color: ${(props) => props.theme.color.contrasts.lowContrast};
