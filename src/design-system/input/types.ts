@@ -1,14 +1,11 @@
 import { InputHTMLAttributes } from 'react';
 import * as HeroIconOutline from '@heroicons/react/24/outline';
 
-export type IInputProps = Omit<
-  InputHTMLAttributes<HTMLInputElement>,
-  'onChange'
-> & {
+export type InputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange'> & {
   label?: string;
   error?: string | boolean;
   warn?: string;
-  onTextChange?: (value: string) => void;
+  onTextChange: (value: string) => void;
   placeholder?: string;
   right?: boolean;
   iconLeft?: keyof typeof HeroIconOutline | null;

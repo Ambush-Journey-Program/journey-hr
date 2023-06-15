@@ -16,4 +16,5 @@ const Template: Story<TabProps> = (args) => {
 export const TabStory = Template.bind({});
 TabStory.args = {
   label: 'Label',
+  
 };

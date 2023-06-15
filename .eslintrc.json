@@ -9,13 +9,13 @@
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
-    // "standard-with-typescript",
-    "plugin:@typescript-eslint/recommended",
+    "standard-with-typescript",
+    // "plugin:@typescript-eslint/recommended",
     "plugin:@next/next/recommended",
     "plugin:import/errors"
   ],
   "parserOptions": {
-    "ecmaVersion": 2023,
+    "ecmaVersion": "latest",
     "sourceType": "module",
     "ecmaFeatures": {
       "jsx": true
@@ -62,7 +62,9 @@
     "@typescript-eslint/consistent-type-definitions": "off",
     "@typescript-eslint/strict-boolean-expressions": "off",
     "@typescript-eslint/semi": "off",
-    "@typescript-eslint/no-empty-interface": "off"
+    "@typescript-eslint/no-empty-interface": "off",
+    "@typescript-eslint/space-before-function-paren": "off",
+    "@typescript-eslint/member-delimiter-style":"off"
     
   },
   "overrides": [
@@ -72,7 +74,8 @@
         "@typescript-eslint/explicit-function-return-type": "off",
        "@typescript-eslint/comma-dangle":"off",
        "typescript-eslint/member-delimiter-style":"off",
-       "import/namespace":"off"
+       "import/namespace":"off",
+       "@typescript-eslint/member-delimiter-style":"off"
       }
     },
     {

@@ -1,7 +1,7 @@
 import { ChangeEvent, useState } from 'react';
 import { Paragraph } from '../typography/paragraph/paragraph';
 import * as Styled from './input.styled';
-import { Colors, IInputProps } from './types';
+import { Colors, InputProps } from './types';
 import { Icon } from '../icon/icon';
 import { Label } from '../label';
 
@@ -18,8 +18,8 @@ export function Input({
   iconLeft,
   iconRight,
   hasIconRight,
-  onTextChange = (value: string) => void{},
-}: IInputProps) {
+  onTextChange,
+}: InputProps) {
   const [touched, setTouched] = useState(false);
   function onInputChange(e: ChangeEvent<HTMLInputElement>) {
     onTextChange(e.target.value);
@@ -33,7 +33,7 @@ export function Input({
       iconName = 'ExclamationCircleIcon';
       color = 'error';
     } else if (right) {
-      iconName = `CheckIcon`;
+      iconName = 'CheckIcon';
       color = 'accepted';
     } else if (iconRight) {
       iconName = iconRight;
