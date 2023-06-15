@@ -9,6 +9,7 @@ export function TabContainer({ value, children, onChange }: TabContainerProps) {
     <Styled.Wrapper>
       {children.map((tab, index) => (
         <Styled.buttonTab
+          isActive={value === index}
           key={index}
           onClick={() => {
             handleSelect(index);

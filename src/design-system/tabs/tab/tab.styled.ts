@@ -18,6 +18,11 @@ export const Tab = styled.a`
     height: 0.938rem;
     fill: ${(props) => props.theme.color.brandColors.dark};
   }
+
+  p {
+    font-weight: 300;
+  }
+
   p:hover {
     color: ${(props) => props.theme.color.button.secondaryHover};
     svg {
