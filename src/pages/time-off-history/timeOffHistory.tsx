@@ -4,6 +4,7 @@ import { BackButton, Button, Tab, TabContainer, TabPanel } from '@ambush/ui';
 import { Balance } from '@/components/balance';
 import { useState } from 'react';
 import { TimeOffHistoryTab } from './timeOffHistoryTab';
+import { TimeOffRequestList } from './time-off-history-mock';
 
 export function TimeOffHistory() {
   const [value, setTabIndex] = useState(0);
@@ -33,7 +34,7 @@ export function TimeOffHistory() {
           <div></div>
         </TabPanel>
         <TabPanel index={1} value={value} data-testid="TabPanel">
-          <TimeOffHistoryTab />
+          <TimeOffHistoryTab TimeOffRequestList={TimeOffRequestList} />
         </TabPanel>
       </Styled.TabBox>
     </div>
