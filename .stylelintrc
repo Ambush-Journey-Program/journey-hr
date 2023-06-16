@@ -2,5 +2,4 @@
   "extends": ["stylelint-config-standard", "stylelint-a11y/recommended"],
   "customSyntax": "postcss-styled-syntax",
   "plugins": ["stylelint-a11y"]
-   
 }

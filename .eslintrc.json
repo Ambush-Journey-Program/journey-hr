@@ -10,7 +10,6 @@
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "standard-with-typescript",
-    // "plugin:@typescript-eslint/recommended",
     "plugin:@next/next/recommended",
     "plugin:import/errors"
   ],
@@ -27,12 +26,7 @@
       "version": "detect"
     }
   },
-  "plugins": [
-    "react",
-    "@typescript-eslint",
-    "react-hooks",
-    "import"
-  ],
+  "plugins": ["react", "@typescript-eslint", "react-hooks", "import"],
   "rules": {
     "no-var": "error",
     "no-console": ["warn", { "allow": ["warn", "error"] }],
@@ -58,29 +52,25 @@
     "react/prop-types": "off",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
-    "@typescript-eslint/consistent-type-imports": "off",
-    "@typescript-eslint/consistent-type-definitions": "off",
+    "@typescript-eslint/consistent-type-definitions": ["error", "type"],
     "@typescript-eslint/strict-boolean-expressions": "off",
     "@typescript-eslint/semi": "off",
-    "@typescript-eslint/no-empty-interface": "off",
     "@typescript-eslint/space-before-function-paren": "off",
-    "@typescript-eslint/member-delimiter-style":"off"
-    
+    "@typescript-eslint/member-delimiter-style": "off"
   },
   "overrides": [
     {
-      "files": ["*.mts", "*.cts", "*.tsx"],
+      "files": ["*.tsx"],
       "rules": {
         "@typescript-eslint/explicit-function-return-type": "off",
-       "@typescript-eslint/comma-dangle":"off",
-       "typescript-eslint/member-delimiter-style":"off",
-       "import/namespace":"off",
-       "@typescript-eslint/member-delimiter-style":"off"
+        "@typescript-eslint/comma-dangle": "off",
+        "typescript-eslint/member-delimiter-style": "off",
+        "import/namespace": "off",
+        "@typescript-eslint/member-delimiter-style": "off"
       }
     },
     {
       "files": ["*.tsx"]
-    
     }
   ]
 }
