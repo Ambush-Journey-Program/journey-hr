@@ -66,6 +66,6 @@ export const ButtonContainer = styled.div`
   }
 
   svg {
-    width: ${(props) => props.theme.spacings.spacing04};
+    width: 1rem;
   }
 `;
