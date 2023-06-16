@@ -1,5 +1,5 @@
 import { render, screen } from '@/tests/renderWithProviders';
-import { InterviewTimes } from './interviewTimes';
+import { InterviewTimes } from '.';
 import { InterviewOption } from './types';
 
 const interviews: InterviewOption[] = [

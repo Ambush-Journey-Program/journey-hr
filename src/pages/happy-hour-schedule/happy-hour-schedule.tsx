@@ -1,8 +1,8 @@
 import { Input, SelectInput, TextArea } from '@ambush/ui';
-import { BackButton, PageHeader } from '@ambush/components';
 import { generateAmountPeopleOptions } from './constants';
 import * as Styled from './happy-hour-schedule.styled';
 import router from 'next/router';
+import { BackButton, PageHeader } from '@/components';
 
 export function HappyHourSchedule() {
   const amountOfPeople = generateAmountPeopleOptions();

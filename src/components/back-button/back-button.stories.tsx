@@ -1,18 +1,17 @@
 import { Meta, Story } from '@storybook/react';
-
 import { BackButton } from '.';
-import { IBackButtonProps } from './types';
+import { BackButtonProps } from './types';
 
 export default {
   component: BackButton,
-  title: 'UI/BackButton',
+  title: 'Components/BackButton',
   parameters: {
     onClick: () => {},
     disabled: false,
   },
 } as Meta;
 
-const Template: Story<IBackButtonProps> = (args) => {
+const Template: Story<BackButtonProps> = (args) => {
   return <BackButton {...args} />;
 };
 

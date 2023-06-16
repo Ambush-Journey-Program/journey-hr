@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { render, screen } from '@/tests/renderWithProviders';
-import { HappyHourEdit } from '../happy-hour-edit';
+import { HappyHourEdit } from '.';
 import { GUESTS_LIST_DATA } from './const';
 import userEvent from '@testing-library/user-event';
 

@@ -1,7 +1,7 @@
 import { render, screen } from '@/tests/renderWithProviders';
 import userEvent from '@testing-library/user-event';
 import { EMPLOYEES, GUESTS_LIST_DATA } from '../const';
-import { GuestList } from './guest-list';
+import { GuestList } from '.';
 
 describe('<GuestList/>', () => {
   it('renders the GuestList', () => {
