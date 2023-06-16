@@ -1,4 +1,4 @@
-import { render, screen } from '../../tests/renderWithProviders';
+import { render, screen } from '@/tests/renderWithProviders';
 import { SelectInput } from './select-input';
 
 const title = 'My title';

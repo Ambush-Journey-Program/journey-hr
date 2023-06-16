@@ -1,7 +1,6 @@
 import * as React from 'react';
-
-import { Icon } from './icon';
 import { render, screen } from '@/tests/renderWithProviders';
+import { Icon } from '.';
 
 describe('<Icon />', () => {
   it('when the component is actually used', () => {

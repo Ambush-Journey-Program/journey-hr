@@ -1,5 +1,5 @@
 import { render, screen } from '@/tests/renderWithProviders';
-import { AsideMenu } from './aside-menu';
+import { AsideMenu } from '.';
 
 describe('<PageHeader  />', () => {
   it('has rendered', () => {

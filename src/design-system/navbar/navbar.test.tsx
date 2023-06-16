@@ -1,6 +1,5 @@
 import { render, screen } from '@testing-library/react';
-
-import { NavBar } from './navbar';
+import { NavBar } from '.';
 import { ThemeProvider } from 'styled-components';
 import { theme } from '@/styles/theme';
 

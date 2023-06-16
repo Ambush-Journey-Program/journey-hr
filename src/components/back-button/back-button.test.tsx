@@ -1,6 +1,6 @@
 import { render, screen } from '@/tests/renderWithProviders';
 import userEvent from '@testing-library/user-event';
-import { BackButton } from './back-button';
+import { BackButton } from '.';
 
 describe('<BackButton />', () => {
   describe('should display Back button', () => {

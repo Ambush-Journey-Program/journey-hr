@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { render, screen } from '@/tests/renderWithProviders';
-import { PageHeader } from './page-header';
+import { PageHeader } from '.';
 
 describe('<PageHeader  />', () => {
   it('has a title', () => {

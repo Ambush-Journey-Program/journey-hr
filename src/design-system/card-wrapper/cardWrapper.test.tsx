@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { render, screen } from '../../tests/renderWithProviders';
-import { CardWrapper } from './cardWrapper';
+import { render, screen } from '@/tests/renderWithProviders';
+import { CardWrapper } from '.';
 
 describe('<CardWrapper />', () => {
   it('renders the CardWrapper with a child string', () => {

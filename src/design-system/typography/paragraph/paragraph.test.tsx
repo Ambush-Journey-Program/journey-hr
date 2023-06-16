@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { render, screen } from '../../../tests/renderWithProviders';
+import { render, screen } from '@/tests/renderWithProviders';
 import { Paragraph } from './paragraph';
 
 describe('<Paragraph />', () => {

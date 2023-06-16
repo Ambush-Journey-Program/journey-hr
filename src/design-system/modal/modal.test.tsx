@@ -1,5 +1,4 @@
 import { render, screen } from '@/tests/renderWithProviders';
-
 import { Modal } from '@ambush/ui';
 import userEvent from '@testing-library/user-event';
 

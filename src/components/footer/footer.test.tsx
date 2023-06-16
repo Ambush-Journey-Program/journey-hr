@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { render, screen } from '@/tests/renderWithProviders';
 import userEvent from '@testing-library/user-event';
-import { Footer } from './footer';
+import { Footer } from '.';
 
 describe('<Footer/>', () => {
   describe('should render described buttons texts', () => {

@@ -1,6 +1,6 @@
 import userEvent from '@testing-library/user-event';
-import { TextArea } from './text-area';
 import { render, screen } from '@/tests/renderWithProviders';
+import { TextArea } from '.';
 
 describe('<TextArea />', () => {
   it('renders the Text Area', () => {

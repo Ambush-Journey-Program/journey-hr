@@ -3,42 +3,23 @@ import { Balance } from '.';
 import { render, screen } from '@/tests/renderWithProviders';
 
 describe('<Balance />', () => {
-  it('checks if shows employee card', () => {
-    render(
-      <Balance
-        consumedDays={0}
-        optionalHolidays={0}
-        isAdmin={false}
-        availableDays={0}
-      />,
-    );
-    const labelSpan = screen.getByText('Your Current Balance');
+  it('It checks if shows employee card', () => {
+    const label = 'Your Current Balance';
+    const props = { label };
 
-    expect(labelSpan).toHaveTextContent('Your Current Balance');
+    render(<Balance optionalHolidays={0} consumedDays={0} isAdmin={false} availableDays={0} {...props} />);
+    const labelSpan = screen.getByText(label);
+
+    expect(labelSpan).toHaveTextContent(label);
   });
 
-  it('checks if it is a admin card', () => {
-    render(
-      <Balance
-        isAdmin={true}
-        availableDays={0}
-        consumedDays={0}
-        optionalHolidays={0}
-      />,
-    );
+  it('It checks if it is a admin card', () => {
+    render(<Balance  optionalHolidays={0} consumedDays={0} isAdmin={true} availableDays={0} />);
     const avatar = screen.getByRole('img');
     expect(avatar).toBeVisible();
   });
-  it('checks if the button is visible', () => {
-    render(
-      <Balance
-        isAdmin
-        availableDays={0}
-        buttonClick={() => {}}
-        consumedDays={0}
-        optionalHolidays={0}
-      />,
-    );
+  it('It checks if the button is visible', () => {
+    render(<Balance  optionalHolidays={0} consumedDays={0} isAdmin={true} availableDays={0} buttonClick={() => {}} />);
     const button = screen.getByRole('button');
     expect(button).toBeVisible();
   });
