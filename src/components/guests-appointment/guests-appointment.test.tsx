@@ -12,8 +12,9 @@ describe('<GuestsAppointment />', () => {
     });
     it('should render the number of guests', () => {
       render(<GuestsAppointment guests={listGuests} />);
-
+      screen.debug();
       const labelSpan = screen.getByText('Group of 4');
+
       expect(labelSpan).toBeInTheDocument();
     });
   });
