@@ -9,7 +9,7 @@
     "test": "TZ=UTC jest",
     "test:dev": "TZ=UTC jest --watch",
     "lint": "next lint",
-    "lint:css": "stylelint './src/**/*.{ts,tsx}'",
+    "lint:css": "stylelint './src/**/*.styled.{ts,tsx}'",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
