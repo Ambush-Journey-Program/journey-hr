@@ -17,11 +17,8 @@ export const HolidaysContainer = styled.div`
 export const SpacingContainer = styled.div`
   display: flex;
   flex-direction: column;
+  margin-top: ${(props) => props.theme.spacings.spacing07};
   gap: ${(props) => props.theme.spacings.spacing07};
-
-  @media ${devices.tablet} {
-    gap: ${(props) => props.theme.spacings.spacing06};
-  }
 
   @media ${devices.mobile} {
     gap: ${(props) => props.theme.spacings.spacing05};
