@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { TimeOffType } from '.';
 import { render, screen } from '@/tests/renderWithProviders';
+import { TimeOffType } from '.';
 
 describe('<TimeOffType />', () => {
   describe('should have this render', () => {

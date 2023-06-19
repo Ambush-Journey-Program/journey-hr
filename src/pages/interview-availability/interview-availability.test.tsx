@@ -1,5 +1,5 @@
 import { render, screen } from '@/tests/renderWithProviders';
-import { InterviewAvailability } from './interview-availability';
+import { InterviewAvailability } from '.';
 
 describe('<InterviewAvailability>', () => {
   it('It should have a title', () => {

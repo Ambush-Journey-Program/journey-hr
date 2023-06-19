@@ -1,6 +1,5 @@
 import { Button, Title } from '@/design-system';
 import * as Styled from './daysLists.styled';
-
 import { DaysListsProps } from './types';
 
 export function DaysLists({

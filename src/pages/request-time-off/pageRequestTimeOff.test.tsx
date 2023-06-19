@@ -1,5 +1,5 @@
 import { render, screen } from '@/tests/renderWithProviders';
-import { RequestTimeOff } from './pageRequestTimeOff';
+import { RequestTimeOff } from '.';
 
 describe('<PageRequestTimeOff  />', () => {
   it('renders a Page', () => {

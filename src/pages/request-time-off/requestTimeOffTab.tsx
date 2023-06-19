@@ -1,12 +1,14 @@
 /* eslint-disable react/no-unescaped-entities */
 import * as Styled from './pageRequestTimeOff.styled';
 import { Button } from '@ambush/ui';
-import { Balance } from '@/components/balance';
-import { TimeOffType } from '@/components/time-off-type';
-import { Summary } from '@/components/summary/summary';
-import { Footer } from '@/components/footer';
-import { OptionalHolidays } from '@/components/optional-holidays';
-import { SelectPeriod } from '@/components/select-period';
+import {
+  Balance,
+  TimeOffType,
+  Summary,
+  Footer,
+  SelectPeriod,
+  OptionalHolidays,
+} from '@ambush/components';
 import { RequestTimeOffProps } from './types';
 
 export function RequestTimeOffTab(

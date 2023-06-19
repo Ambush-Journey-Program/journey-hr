@@ -1,5 +1,5 @@
 import { render, screen } from '@/tests/renderWithProviders';
-import { DaysLists } from './daysLists';
+import { DaysLists } from '.';
 import { teamCalendar, holidays, timeOff } from './mockLists';
 import { TimeOffList, HolidaysList, TeamCalendarList } from './types';
 import { TimeOffRow } from './daysListsRow/TimeOffRow';

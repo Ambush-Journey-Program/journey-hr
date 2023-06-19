@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { OptionalHolidays } from '..';
+import { OptionalHolidays } from '.';
 import { render, screen } from '@/tests/renderWithProviders';
 
 describe('<OptionaHolidays/>', () => {

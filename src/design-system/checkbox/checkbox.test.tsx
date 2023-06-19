@@ -1,4 +1,4 @@
-import { CheckBox } from '../checkbox';
+import { CheckBox } from '.';
 import { render, screen } from '@/tests/renderWithProviders';
 
 describe('<Checkbox />', () => {

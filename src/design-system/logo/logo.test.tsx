@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { render, screen } from '../../tests/renderWithProviders';
-import { Logo } from './logo';
+import { render, screen } from '@/tests/renderWithProviders';
+import { Logo } from '.';
 
 describe('<Logo />', () => {
   it('renders the Logo', () => {

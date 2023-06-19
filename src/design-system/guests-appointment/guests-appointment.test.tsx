@@ -1,6 +1,7 @@
 import * as React from 'react';
-import { render, screen } from '../../tests/renderWithProviders';
+import { render, screen } from '@/tests/renderWithProviders';
 import { GuestsAppointment } from '.';
+
 describe('<GuestsAppointment />', () => {
   describe('should have this render', () => {
     const listGuests = ['Mariana', 'Marcello', 'Lucas', 'Barbara Santos'];

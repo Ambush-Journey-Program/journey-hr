@@ -8,6 +8,7 @@ const customJestConfig = {
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
     '^@ambush/ui$': '<rootDir>/src/design-system',
+    '^@ambush/components$': '<rootDir>/src/components',
   },
 };
 

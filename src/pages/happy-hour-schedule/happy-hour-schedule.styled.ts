@@ -1,4 +1,5 @@
-import { Button, SelectInput, BackButton } from '@ambush/ui';
+import { Button, SelectInput } from '@ambush/ui';
+import { BackButton } from '@/components';
 import { devices } from '@/styles/devices';
 import styled from 'styled-components';
 import { IHappyHourScheduleProps } from './types';

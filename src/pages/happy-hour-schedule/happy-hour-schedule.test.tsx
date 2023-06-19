@@ -1,5 +1,5 @@
 import { render, screen } from '@/tests/renderWithProviders';
-import { HappyHourSchedule } from '../happy-hour-schedule';
+import { HappyHourSchedule } from '.';
 
 describe('<HappyHourSchedule />', () => {
   it('renders the Happy Hour Schedule', () => {

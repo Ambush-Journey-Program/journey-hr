@@ -1,5 +1,5 @@
 import { Subtitle } from '@/design-system';
-import { RadioButton } from '../../design-system/radio-button';
+import { RadioButton } from '@ambush/ui';
 import * as Styled from './time-off-type.styled';
 
 export function TimeOffType() {
