@@ -19,10 +19,6 @@ export const Tab = styled.a`
     fill: ${(props) => props.theme.color.brandColors.dark};
   }
 
-  p {
-    font-weight: 300;
-  }
-
   p:hover {
     color: ${(props) => props.theme.color.button.secondaryHover};
     svg {
