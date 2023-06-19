@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { render, screen } from '../../tests/renderWithProviders';
-import { Avatar } from './avatar';
+import { render, screen } from '@/tests/renderWithProviders';
+import { Avatar } from '.';
 
 describe('<Avatar />', () => {
   it('renders the Avatar', () => {

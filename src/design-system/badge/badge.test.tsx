@@ -1,5 +1,5 @@
 import { render, screen } from '@/tests/renderWithProviders';
-import { Badge } from './badge';
+import { Badge } from '.';
 
 describe('<Badge  />', () => {
   render(<Badge text={'Dev Team'} />);

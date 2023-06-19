@@ -1,5 +1,5 @@
 import { render, screen } from '@/tests/renderWithProviders';
-import { Input } from './input';
+import { Input } from '.';
 
 describe('<Input />', () => {
   it('renders the Input', () => {

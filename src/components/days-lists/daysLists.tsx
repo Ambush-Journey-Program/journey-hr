@@ -1,8 +1,11 @@
 import { Title } from '@ambush/ui';
 import * as Styled from './daysLists.styled';
+<<<<<<< HEAD
 
 import Link from 'next/link';
 
+=======
+>>>>>>> main
 import { DaysListsProps } from './types';
 
 export function DaysLists({

@@ -8,6 +8,7 @@ export const Label = styled.label<StyledLabelProps>`
   font-style: normal;
   font-weight: 300;
   font-size: 0.875rem;
+  font-family: ${prop => prop.theme.font.fontFamilyBody};
   line-height: 150%;
   color: ${(props) => props.theme.color.contrasts.mediumContrast};
 

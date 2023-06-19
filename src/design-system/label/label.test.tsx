@@ -1,5 +1,5 @@
 import { render, screen } from '@/tests/renderWithProviders';
-import { Label } from './label';
+import { Label } from '.';
 
 describe('<label />', () => {
   it('Render the Label',() =>  {

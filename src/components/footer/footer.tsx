@@ -11,10 +11,13 @@ const buttonLabel: { [key: string]: string } = {
   request: 'Request Manager',
   allDone: 'Go to Homepage',
 };
+
 export function Footer({
   onCancel,
   onApply,
   variant = 'timeOff',
+  disabledLeftBtn= false,
+  disabledRightBtn= false,
 }: FooterProps) {
   const [label, setLabel] = useState('');
 
@@ -30,19 +33,20 @@ export function Footer({
           color="secondary"
           variant="outlined"
           sizeVariant="small"
+          disabled={disabledLeftBtn}
         >
           Cancel
         </Button>
       )}
 
       {forwardButton.includes(variant) && (
-        <Button onClick={onApply} sizeVariant="small">
+        <Button onClick={onApply} sizeVariant="small" disabled={disabledRightBtn}>
           {label}
         </Button>
       )}
 
       {variant === 'confirm' && (
-        <Button onClick={onApply} variant="outlined" sizeVariant="small">
+        <Button onClick={onApply} variant="outlined" sizeVariant="small" disabled={disabledLeftBtn}>
           Confirm Dates
         </Button>
       )}

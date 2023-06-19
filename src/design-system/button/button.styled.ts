@@ -310,7 +310,7 @@ export const ButtonStyle = styled.button<ButtonProps>`
   padding: 10px 24px;
   font-weight: 600;
   line-height: 150%;
-  font-family: Mundial, sans-serif;
+  font-family: ${prop => prop.theme.font.fontFamilyTitle};
   border-radius: 50px;
   gap: 0.375rem;
   cursor: pointer;
