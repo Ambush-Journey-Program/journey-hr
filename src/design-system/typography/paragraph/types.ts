@@ -19,7 +19,7 @@ export type ColorType =
   | 'error';
 
 export type ParagraphProps = {
-  children: string;
+  children: React.ReactNode;
   size: ParagraphType;
   fontWeight: TextWeight;
   colorVariant?: ColorType;
