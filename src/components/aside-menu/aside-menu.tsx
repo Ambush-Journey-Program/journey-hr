@@ -16,6 +16,7 @@ export function AsideMenu() {
           Nicoli Rodrigues
         </Paragraph>
       </Styled.UserContainer>
+
       <Styled.ListLink>
         <MenuItem url="/Interviews" icon="UsersIcon">
           Interviews
@@ -23,7 +24,7 @@ export function AsideMenu() {
         <MenuItem url="/HappyHour" icon="SparklesIcon">
           Happy Hour
         </MenuItem>
-        <MenuItem url="/TimeOff" icon="ClockIcon">
+        <MenuItem url="/time-off" icon="ClockIcon">
           Time Off
         </MenuItem>
         <MenuItem url="/Inbox" icon="InboxIcon">

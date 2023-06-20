@@ -1,30 +1,39 @@
 import * as Styled from './pageTimeOff.styled';
 import { Button, CardWrapper } from '@ambush/ui';
-import { Balance } from '../balance';
+import { Balance } from '@/components/balance';
 import {
   DaysLists,
   HolidayRow,
   TeamCalendarRow,
   TimeOffRow,
-} from '../days-lists';
-import { holidays, timeOff, teamCalendar } from '../days-lists/mockLists';
+} from '@/components/days-lists';
+import {
+  holidays,
+  timeOff,
+  teamCalendar,
+} from '@/components/days-lists/mockLists';
 import {
   HolidaysList,
   TimeOffList,
   TeamCalendarList,
-} from '../days-lists/types';
-import { PageHeader } from '../page-header';
+} from '@/components/days-lists/types';
+import { PageHeader } from '@/components/page-header';
 
 export function PageTimeOff() {
   return (
-    <CardWrapper>
+    <>
       <Styled.TimeOffPageHeaderWrapper data-testid="PageTimeOff">
         <PageHeader
           title="Time Off"
           subtitle="Its Friday, Out 30"
           button={<Button>Apply Time Off</Button>}
         />
-        <Balance availableDays={20} isAdmin={false} consumedDays={0} optionalHolidays={0} />
+        <Balance
+          availableDays={20}
+          isAdmin={false}
+          consumedDays={0}
+          optionalHolidays={0}
+        />
       </Styled.TimeOffPageHeaderWrapper>
       <Styled.TimeOffPageDaysListsGrid>
         <Styled.GridContainer1>
@@ -32,6 +41,7 @@ export function PageTimeOff() {
             title="Upcoming Holidays"
             buttonTitle="View Holiday Calendar"
             list={holidays}
+            url="/holiday-calendar"
             renderRow={(details) => (
               <HolidayRow key={details.id} details={details as HolidaysList} />
             )}
@@ -42,6 +52,7 @@ export function PageTimeOff() {
             title="Upcoming Time Off"
             buttonTitle="View My Time Off"
             list={timeOff}
+            url="/time-off-history"
             renderRow={(details) => (
               <TimeOffRow key={details.id} details={details as TimeOffList} />
             )}
@@ -52,6 +63,7 @@ export function PageTimeOff() {
             title="My Team's Calendar"
             buttonTitle="View My Team's Calendar"
             list={teamCalendar}
+            url="/team-calendar"
             renderRow={(details) => (
               <TeamCalendarRow
                 key={details.id}
@@ -61,6 +73,6 @@ export function PageTimeOff() {
           />
         </Styled.GridContainer3>
       </Styled.TimeOffPageDaysListsGrid>
-    </CardWrapper>
+    </>
   );
 }

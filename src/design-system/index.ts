@@ -15,5 +15,7 @@ export { Title, Subtitle, Paragraph } from './typography';
 export { Tab } from './tabs/tab';
 export { TabContainer } from './tabs/tabContainer';
 export { TabPanel } from './tabs/tabPanel';
+export { AsideMenu } from '../components/aside-menu';
+export { Layout } from '../layouts/layout';
 export { RadioButton } from './radio-button';
 export { Modal } from './modal';

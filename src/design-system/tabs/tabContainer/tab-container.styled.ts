@@ -1,4 +1,8 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+type buttonTabProps = {
+  isActive: boolean;
+};
 
 export const Wrapper = styled.div`
   display: flex;
@@ -12,7 +16,15 @@ export const Underline = styled.div`
   z-index: 1;
 `;
 
-export const buttonTab = styled.div`
+const activeTab = css`
+  p {
+    font-weight: 500;
+  }
+`;
+
+export const buttonTab = styled.div<buttonTabProps>`
   background-color: transparent;
   width: 100%;
+
+  ${({ isActive }) => isActive && activeTab}
 `;
