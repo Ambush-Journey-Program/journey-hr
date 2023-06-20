@@ -1,7 +1,7 @@
 import { CheckBox } from '@/design-system/checkbox/checkbox';
 import * as Styled from './brazilian-holidays.styled';
 import { Subtitle, Title } from '@/design-system';
-import { BrazilianHolidaysConst } from './mocking-holidays';
+import { brazilianHolidaysConst } from './mocking-holidays';
 
 export function BrazilianHolidays() {
   return (
@@ -16,7 +16,7 @@ export function BrazilianHolidays() {
       </Styled.HeaderWrapper>
 
       <Styled.CheckboxDiv>
-        {BrazilianHolidaysConst.map((holiday) => (
+        {brazilianHolidaysConst.map((holiday) => (
           <CheckBox
             onChange={() => {}}
             isChecked={holiday.isChecked}

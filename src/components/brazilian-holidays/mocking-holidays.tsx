@@ -1,6 +1,6 @@
-import { BrazilianHolidaysMock } from './types';
+import { BrazilianHolidaysType } from './types';
 
-export const BrazilianHolidaysConst: BrazilianHolidaysMock[] = [
+export const brazilianHolidaysConst: BrazilianHolidaysType[] = [
   {
     label: 'Carnival Monday',
     date: '20-02-2023',
