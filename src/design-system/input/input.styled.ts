@@ -46,6 +46,7 @@ export const Input = styled.label`
   font-weight: 300;
   font-size: 1rem;
   line-height: 1.5rem;
+  font-family: ${(props) => props.theme.font.fontFamilyBody};
 `;
 
 export const InputContainer = styled.div<StyledInputProps>`
@@ -77,6 +78,7 @@ export const InputContainer = styled.div<StyledInputProps>`
     justify-content: flex-start;
     min-width: calc(100% - 5rem);
     font-size: 1rem;
+    font-family: ${(props) => props.theme.font.fontFamilyBody};
     border: none;
     margin-left: 0.875rem;
     outline: none;

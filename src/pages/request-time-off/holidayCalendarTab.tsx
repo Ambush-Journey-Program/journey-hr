@@ -1,17 +1,12 @@
 /* eslint-disable react/no-unescaped-entities */
 import * as Styled from './pageRequestTimeOff.styled';
-import { Button } from '@ambush/ui';
-import {
-  Balance,
-  TimeOffType,
-  Summary,
-  Footer,
-  SelectPeriod,
-  OptionalHolidays,
-} from '@ambush/components';
+import { Balance } from '@/components/balance';
+import { Footer } from '../../components/footer';
+import { USHolidays } from '@/components/us-holidays';
+import { BrazilianHolidays } from '@/components/brazilian-holidays';
 import { RequestTimeOffProps } from './types';
 
-export function RequestTimeOffTab(
+export function HolidayCalendarTab(
   variant: RequestTimeOffProps,
   onView: () => void,
 ) {
@@ -32,26 +27,13 @@ export function RequestTimeOffTab(
         />
       </div>
 
-      <div>
-        <SelectPeriod />
+      <Styled.HolidaysContainer>
+        <USHolidays />
 
-        <Button
-          sizeVariant="small"
-          color="alternative"
-          variant="ghost"
-          icon="PlusIcon"
-        >
-          Add a Period
-        </Button>
-      </div>
+        <BrazilianHolidays />
+      </Styled.HolidaysContainer>
 
-      <TimeOffType />
-
-      <OptionalHolidays />
-
-      <Summary variant="employee" />
-
-      <Footer variant="timeOff" />
+      <Footer variant="confirm" />
     </Styled.SpacingContainer>
   );
 }

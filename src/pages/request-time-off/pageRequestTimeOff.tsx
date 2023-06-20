@@ -1,18 +1,15 @@
 /* eslint-disable react/no-unescaped-entities */
 import * as Styled from './pageRequestTimeOff.styled';
-import {
-  TabContainer,
-  Tab,
-  TabPanel,
-} from '@ambush/ui';
+import { TabContainer, Tab, TabPanel } from '@ambush/ui';
 import { BackButton } from '@ambush/components';
 import React from 'react';
 import { RequestTimeOffTab } from './requestTimeOffTab';
+import { HolidayCalendarTab } from './holidayCalendarTab';
 
 export function RequestTimeOff() {
   const [value, setTabIndex] = React.useState(0);
   return (
-    <Styled.TimeOffPageHeaderWrapper data-testid="PageRequestTimeOff">
+    <Styled.TimeOffPageHeaderContainer data-testid="PageRequestTimeOff">
       <BackButton onClick={function (): void {}} />
 
       <TabContainer value={value} onChange={setTabIndex}>
@@ -28,8 +25,8 @@ export function RequestTimeOff() {
         <RequestTimeOffTab />
       </TabPanel>
       <TabPanel index={1} value={value}>
-        <div></div>
+        <HolidayCalendarTab />
       </TabPanel>
-    </Styled.TimeOffPageHeaderWrapper>
+    </Styled.TimeOffPageHeaderContainer>
   );
 }

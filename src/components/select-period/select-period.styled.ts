@@ -8,6 +8,7 @@ export const InputsWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 1.5rem;
+  font-family: 'Mundial', sans-serif;
 `;
 export const Span = styled.span`
   display: block;
@@ -15,5 +16,6 @@ export const Span = styled.span`
   line-height: 1.125rem;
   width: 1.125rem;
   height: 1.125rem;
+  font-family: 'Mundial', sans-serif;
   color: ${(props) => props.theme.color.brandColors.red};
 `;
