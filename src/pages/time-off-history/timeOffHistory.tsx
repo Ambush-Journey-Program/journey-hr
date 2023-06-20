@@ -1,7 +1,7 @@
 import * as Styled from './timeOffHistory.styled';
 import { PageHeader } from '@/components/page-header';
-import { BackButton, Button, Tab, TabContainer, TabPanel } from '@ambush/ui';
-import { Balance } from '@/components/balance';
+import { Button, Tab, TabContainer, TabPanel } from '@ambush/ui';
+import { BackButton, Balance } from '@/components';
 import { useState } from 'react';
 import { TimeOffHistoryTab } from './timeOffHistoryTab';
 import { TimeOffRequestList } from './time-off-history-mock';

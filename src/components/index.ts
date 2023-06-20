@@ -7,9 +7,8 @@ export { TeamCalendarRow } from './days-lists/daysListsRow/TeamCalendarRow';
 export { TimeOffRow } from './days-lists/daysListsRow/TimeOffRow';
 export { Footer } from './footer';
 export { GuestsAppointment } from './guests-appointment';
-export { OptionalHolidays } from './optional-holidays'
+export { OptionalHolidays } from './optional-holidays';
 export { PageHeader } from './page-header';
-export { PageTimeOff } from './page-time-off';
 export { SelectPeriod } from './select-period';
 export { ShortHappyHour } from './short-appointment';
 export { Summary } from './summary';
