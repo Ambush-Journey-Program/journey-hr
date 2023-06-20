@@ -49,9 +49,12 @@
       { "allow": ["arrowFunctions"] }
     ],
     "react/jsx-props-no-spreading": "off",
-    "react/prop-types": "off",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
+    "react/jsx-curly-brace-presence": [
+      "error",
+      { "props": "never", "children": "ignore" }
+    ],
     "@typescript-eslint/consistent-type-definitions": ["error", "type"],
     "@typescript-eslint/strict-boolean-expressions": "off",
     "@typescript-eslint/semi": "off",
