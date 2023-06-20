@@ -10,7 +10,7 @@ export function RequestTimeOff () {
   const [value, setTabIndex] = React.useState(0);
   return (
     <Styled.TimeOffPageHeaderContainer data-testid="PageRequestTimeOff">
-      <BackButton onClick={function (): void {}} />
+      <BackButton onClick={() => {}} />
 
       <TabContainer value={value} onChange={setTabIndex}>
         <Tab label="Time Off" icon="ClockIcon" fontWeight="semibold" />

@@ -19,7 +19,6 @@ const disabledInput = css`
     color: ${(props) => props.theme.color.button.disabled};
     border: ${(props) => props.theme.color.button.disabled};
   }
-
   cursor: not-allowed;
 `;
 
@@ -27,15 +26,12 @@ const disabledLabel = css`
   p {
     color: ${(props) => props.theme.color.button.disabled};
   }
-
   &:hover {
     color: ${(props) => props.theme.color.button.disabled};
-
     p {
       color: ${(props) => props.theme.color.button.disabled};
     }
   }
-
   cursor: not-allowed;
 `;
 
@@ -55,6 +51,7 @@ export const Label = styled.label<checkboxProps>`
 `;
 
 export const CheckBox = styled.input`
+  background-color: ${(props) => props.theme.color.brandColors.light};
   appearance: none;
   display: block;
   width: 20px;
@@ -72,9 +69,11 @@ export const CheckBox = styled.input`
     border: none;
     content: url('/static/images/checked.svg');
   }
-
   &:checked:hover {
-    content: url('${checkboxHoverSVGpath}');
+    content: url('/static/images/checkedHover.svg');
+  }
+  &:hover {
+    border-color: ${(props) => props.theme.color.button.secondaryHover};
   }
 
   ${({ disabled }) => disabled && disabledInput};

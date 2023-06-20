@@ -8,7 +8,7 @@ describe('<Checkbox />', () => {
         onChange={() => {}}
         isChecked={false}
         label="Label"
-        description={'Description'}
+        description="Description"
       />,
     );
     const label = screen.getByText('Label');
@@ -19,7 +19,9 @@ describe('<Checkbox />', () => {
   it('CheckBox is disabled', () => {
     render(
       <CheckBox
-        onChange={() => {}}
+        onChange={() => {
+          console.log('teste');
+        }}
         isChecked={false}
         label="Label"
         description="Description"
@@ -34,7 +36,9 @@ describe('<Checkbox />', () => {
   it('CheckBox is checked', () => {
     render(
       <CheckBox
-        onChange={() => {}}
+        onChange={() => {
+          console.log('teste');
+        }}
         isChecked={true}
         label="Label"
         description="Description"
