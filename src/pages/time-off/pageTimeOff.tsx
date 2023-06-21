@@ -41,7 +41,7 @@ export function PageTimeOff() {
             title="Upcoming Holidays"
             buttonTitle="View Holiday Calendar"
             list={holidays}
-            url="/holiday-calendar"
+            url="/request-time-off"
             renderRow={(details) => (
               <HolidayRow key={details.id} details={details as HolidaysList} />
             )}
