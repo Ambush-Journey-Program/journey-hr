@@ -7,21 +7,21 @@ export const Wrapper = styled.div`
 `;
 
 export const HolidaysDiv = styled.div`
-  margin-top: 64px;
+  margin-top: ${(props) => props.theme.spacings.spacing08};
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: ${(props) => props.theme.spacings.spacing04};
   align-items: flex-start;
 `;
 
 export const StyledDiv = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 0.313rem;
 `;
 
 export const HeaderWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: ${(props) => props.theme.spacings.spacing02};
 `;

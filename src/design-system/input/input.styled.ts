@@ -18,6 +18,18 @@ const spanError = css`
     border-color: red;
   }
 `;
+const warnError = css`
+  display: block;
+  margin-top: ${(props) => props.theme.spacings.spacing01};
+
+  & input::placeholder {
+    color: ${(props) => props.theme.color.contrasts.lowestContrast};
+    border-color: ${(props) => props.theme.color.auxiliary.error};
+  }
+  & input:active {
+    border-color: ${(props) => props.theme.color.auxiliary.error};
+  }
+`;
 
 const errorDisplay = css`
   color: ${(props) => props.theme.color.auxiliary.error};
@@ -32,8 +44,8 @@ export const Wrapper = styled.div<StyleWrapper>`
 export const Input = styled.label`
   font-style: normal;
   font-weight: 300;
-  font-size: 1rem;
-  line-height: 1.5rem;
+  font-size: ${(props) => props.theme.spacings.spacing04};
+  line-height: ${(props) => props.theme.spacings.spacing05};
   font-family: ${(props) => props.theme.font.fontFamilyBody};
 `;
 
@@ -43,10 +55,10 @@ export const InputContainer = styled.div<StyledInputProps>`
   height: 3.25rem;
   font-style: normal;
   font-weight: 300;
-  font-size: 1rem;
+  font-size: ${(props) => props.theme.spacings.spacing04};
   color: ${(props) => props.theme.color.contrasts.highContrast};
   border: 1px solid ${(props) => props.theme.color.contrasts.lowestContrast};
-  border-radius: 0.75rem;
+  border-radius: ${(props) => props.theme.spacings.spacing03};
   padding: 1.25rem;
   margin: 0.25rem 0;
   ${({ error }) => error && errorDisplay};
@@ -65,8 +77,7 @@ export const InputContainer = styled.div<StyledInputProps>`
     display: flex;
     justify-content: flex-start;
     min-width: calc(100% - 5rem);
-    width: 100%;
-    font-size: 1rem;
+    font-size: ${(props) => props.theme.spacings.spacing04};
     font-family: ${(props) => props.theme.font.fontFamilyBody};
     border: none;
     margin-left: 0.875rem;
@@ -75,7 +86,7 @@ export const InputContainer = styled.div<StyledInputProps>`
       props.touched
         ? props.theme.color.contrasts.highContrast
         : props.theme.color.contrasts.lowestContrast};
-        
+
     &::placeholder {
       color: ${(props) => props.theme.color.contrasts.lowestContrast};
     }
@@ -97,7 +108,7 @@ export const InputContainer = styled.div<StyledInputProps>`
     opacity: 0;
     cursor: pointer;
     background: red;
-    border: 5px red solid;
+    border: 0.313rem red solid;
   }
 `;
 export const Span = styled.span`

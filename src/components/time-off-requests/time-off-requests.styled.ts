@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const RequestsWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  padding-top: 3rem;
+  padding-top: ${(props) => props.theme.spacings.spacing07};
 
   h6 {
     line-height: 1.875rem;
@@ -18,12 +18,12 @@ export const BadgeWrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding-top: 1.5rem;
-  gap: 1rem;
+  padding-top: ${(props) => props.theme.spacings.spacing05};
+  gap: ${(props) => props.theme.spacings.spacing04};
 
   p {
-    font-size: 0.75rem;
-    line-height: 0.75rem;
+    font-size: ${(props) => props.theme.spacings.spacing03};
+    line-height: ${(props) => props.theme.spacings.spacing03};
   }
 
   span {
