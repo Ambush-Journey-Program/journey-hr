@@ -1,8 +1,6 @@
 import { devices } from '@/styles/devices';
 import styled from 'styled-components';
 
-export const InterviewAvailability = styled.div``;
-
 export const ContainerTitle = styled.div`
   display: flex;
   justify-content: center;

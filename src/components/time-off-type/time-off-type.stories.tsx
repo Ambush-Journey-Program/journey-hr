@@ -8,7 +8,7 @@ export default {
     isLoading: false,
     label: 'TimeOffType text',
   },
-} as Meta;
+} satisfies Meta;
 
 const Template: Story = (args) => {
   return <TimeOffType {...args} />;

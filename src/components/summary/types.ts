@@ -1,4 +1,4 @@
-type UserType = 'employee' | 'manager';
+export type UserType = 'employee' | 'manager';
 
 export type SummaryProps = {
   onDelete?: () => void;

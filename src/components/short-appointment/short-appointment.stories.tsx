@@ -9,7 +9,7 @@ export default {
   parameters: {
     isLoading: false,
   },
-} as Meta;
+} satisfies Meta;
 
 const Template: Story<ShortHappyHourProps> = (args) => {
   return <ShortHappyHour {...args} />;

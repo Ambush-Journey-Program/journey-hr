@@ -4,7 +4,7 @@ import * as Styled from './happy-hour-schedule.styled';
 import router from 'next/router';
 import { BackButton, PageHeader } from '@/components';
 
-export function HappyHourSchedule() {
+export function HappyHourSchedule () {
   const amountOfPeople = generateAmountPeopleOptions();
   return (
     <Styled.MainWrapper data-testid="happyHourSchedule">
@@ -31,12 +31,12 @@ export function HappyHourSchedule() {
           }}
         />
       </Styled.InputsWrapper>
-      <Styled.wrapper>
+      <div>
         <TextArea label="Description" />
-      </Styled.wrapper>
-      <Styled.wrapper>
+      </div>
+      <div>
         <Styled.StyledButton>Generate List</Styled.StyledButton>
-      </Styled.wrapper>
+      </div>
     </Styled.MainWrapper>
   );
 }

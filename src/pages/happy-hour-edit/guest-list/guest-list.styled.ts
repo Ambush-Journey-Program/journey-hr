@@ -15,6 +15,7 @@ export const UserContainer = styled.span`
   display: flex;
   align-items: center;
   gap: 17px;
+
   @media ${devices.tablet}, ${devices.tabletLarge}, ${devices.desktop} {
     align-items: baseline;
   }
@@ -25,6 +26,7 @@ export const ContainerProfile = styled.div`
   align-items: flex-start;
   flex-direction: column;
   gap: 4px;
+
   @media ${devices.tablet} {
     display: flex;
     flex-direction: row;
@@ -40,6 +42,7 @@ export const ListComponent = styled.li`
   width: 100%;
   max-width: 100%;
   padding: 11px;
+  
   @media ${devices.tablet} {
     padding: 7px;
   }

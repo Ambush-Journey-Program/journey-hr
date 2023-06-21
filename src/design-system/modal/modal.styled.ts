@@ -2,10 +2,7 @@ import styled from 'styled-components';
 
 export const ModalLayer = styled.div`
   position: fixed;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   background-color: rgb(231 222 209 / 50%);
   z-index: 100;
   border: none;

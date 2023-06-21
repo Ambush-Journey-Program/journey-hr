@@ -1,4 +1,4 @@
-import { Meta, Story, StoryFn } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import { Button } from './button';
 import { ButtonProps } from './types';
 import * as HeroIcons from '@heroicons/react/24/solid';
@@ -23,7 +23,7 @@ export default {
       ],
     },
   },
-} as Meta;
+} satisfies Meta;
 
 export const ButtonStory: StoryFn<typeof Button> = (
   args: JSX.IntrinsicAttributes & ButtonProps,

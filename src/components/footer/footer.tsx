@@ -16,8 +16,8 @@ export function Footer({
   onCancel,
   onApply,
   variant = 'timeOff',
-  disabledLeftBtn= false,
-  disabledRightBtn= false,
+  disabledLeftBtn = false,
+  disabledRightBtn = false,
 }: FooterProps) {
   const [label, setLabel] = useState('');
 
@@ -31,7 +31,7 @@ export function Footer({
         <Button
           onClick={onCancel}
           color="secondary"
-          variant="outlined"
+          variant='outlined'
           sizeVariant="small"
           disabled={disabledLeftBtn}
         >
@@ -40,13 +40,22 @@ export function Footer({
       )}
 
       {forwardButton.includes(variant) && (
-        <Button onClick={onApply} sizeVariant="small" disabled={disabledRightBtn}>
+        <Button
+          onClick={onApply}
+          sizeVariant="small"
+          disabled={disabledRightBtn}
+        >
           {label}
         </Button>
       )}
 
       {variant === 'confirm' && (
-        <Button onClick={onApply} variant="outlined" sizeVariant="small" disabled={disabledLeftBtn}>
+        <Button
+          onClick={onApply}
+          variant="outlined"
+          sizeVariant="small"
+          disabled={disabledLeftBtn}
+        >
           Confirm Dates
         </Button>
       )}

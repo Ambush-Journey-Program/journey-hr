@@ -11,51 +11,51 @@ type Link = {
 
 const navLinksJourneyHR: Link[] = [
   {
-    url: `/Interviews`,
-    label: `Interviews`,
+    url: '/Interviews',
+    label: 'Interviews',
     active: false,
   },
   {
-    url: `/Happy-Hour`,
-    label: `Happy Hour`,
+    url: '/Happy-Hour',
+    label: 'Happy Hour',
     active: false,
   },
   {
-    url: `/Feedbacks`,
-    label: `Feedbacks`,
+    url: '/Feedbacks',
+    label: 'Feedbacks',
     active: false,
   },
   {
-    url: `/Send-a-invite`,
-    label: `Send a Invite`,
+    url: '/Send-a-invite',
+    label: 'Send a Invite',
     active: false,
   },
   {
-    url: `/Shorty`,
-    label: `Shorty`,
+    url: '/Shorty',
+    label: 'Shorty',
     active: false,
   },
 ];
 
 const navLinksWebsite: Link[] = [
   {
-    url: `/Why-us`,
-    label: `Why us`,
+    url: '/Why-us',
+    label: 'Why us',
     active: false,
   },
   {
-    url: `/Compliant`,
-    label: `Compliant`,
+    url: '/Compliant',
+    label: 'Compliant',
     active: false,
   },
   {
-    url: `/Skill-&-Technology`,
-    label: `Skill & Technology`,
+    url: '/Skill-&-Technology',
+    label: 'Skill & Technology',
     active: false,
   },
   {
-    url: `/Careers`,
-    label: `Careers`,
+    url: '/Careers',
+    label: 'Careers',
     active: false,
   },
 ];
@@ -64,7 +64,7 @@ describe('<NavBar />', () => {
   it('renders the Nav. Bar', () => {
     render(
       <ThemeProvider theme={theme}>
-        <NavBar navigationLinks={navLinksJourneyHR} />
+        <NavBar navigationLinks={navLinksJourneyHR} colors={'light'} />
       </ThemeProvider>,
     );
 
@@ -75,7 +75,7 @@ describe('<NavBar />', () => {
   it('renders the Nav. Bar with the avatar profile picture', () => {
     render(
       <ThemeProvider theme={theme}>
-        <NavBar navigationLinks={navLinksWebsite} />
+        <NavBar navigationLinks={navLinksWebsite} colors={'dark'} />
       </ThemeProvider>,
     );
     const avatarEl = screen.getByTestId('Avatar');
@@ -85,7 +85,7 @@ describe('<NavBar />', () => {
   it('renders the Nav. Bar and validate JourneyHR links quantity', () => {
     render(
       <ThemeProvider theme={theme}>
-        <NavBar navigationLinks={navLinksJourneyHR} />
+        <NavBar navigationLinks={navLinksJourneyHR} colors={'dark'} />
       </ThemeProvider>,
     );
 
@@ -96,7 +96,7 @@ describe('<NavBar />', () => {
   it('renders the Nav. Bar and validate website links quantity', () => {
     render(
       <ThemeProvider theme={theme}>
-        <NavBar navigationLinks={navLinksWebsite} />
+        <NavBar navigationLinks={navLinksWebsite} colors={'dark'} />
       </ThemeProvider>,
     );
 

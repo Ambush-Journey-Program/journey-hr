@@ -1,7 +1,7 @@
 import * as Styled from './guests-appointment.styled';
 import { GuestsAppointmentProps } from './types';
 
-export function GuestsAppointment({ guests }: GuestsAppointmentProps) {
+export function GuestsAppointment ({ guests }: GuestsAppointmentProps) {
   return (
     <Styled.Wrapper>
       <Styled.ContainerNumber>Group of {guests.length}</Styled.ContainerNumber>

@@ -2,14 +2,14 @@ import { useState } from 'react';
 import * as Styled from './tooltip.styled';
 import { ITooltipProps } from './types';
 
-export function Tooltip({
+export function Tooltip ({
   text,
   children,
   variantPosition = 'top',
 }: ITooltipProps) {
   const [visible, setVisible] = useState(false);
 
-  function changeVisible() {
+  function changeVisible () {
     if (visible) {
       setVisible(false);
       return;

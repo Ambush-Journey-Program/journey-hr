@@ -7,13 +7,13 @@ const interviews: InterviewOption[] = [
     id: 1,
     schedules: [
       {
-        title: `UX Interview`,
-        interviewerName: `Robson Lopes`,
+        title: 'UX Interview',
+        interviewerName: 'Robson Lopes',
         scheduleTime: '10:15 - 10:45',
       },
       {
-        title: `UI Interview`,
-        interviewerName: `Henrique Bittencourt`,
+        title: 'UI Interview',
+        interviewerName: 'Henrique Bittencourt',
         scheduleTime: '10:45 - 11:30',
       },
     ],
@@ -22,13 +22,13 @@ const interviews: InterviewOption[] = [
     id: 2,
     schedules: [
       {
-        title: `UX Interview`,
-        interviewerName: `Robson Lopes`,
+        title: 'UX Interview',
+        interviewerName: 'Robson Lopes',
         scheduleTime: '10:15 - 10:45',
       },
       {
-        title: `UI Interview`,
-        interviewerName: `Henrique Bittencourt`,
+        title: 'UI Interview',
+        interviewerName: 'Henrique Bittencourt',
         scheduleTime: '10:45 - 11:30',
       },
     ],
@@ -54,7 +54,7 @@ export default {
       ],
     },
   },
-} as Meta;
+} satisfies Meta;
 
 const Template: Story<InterviewTimesProps> = (args) => {
   return <InterviewTimes {...args} />;

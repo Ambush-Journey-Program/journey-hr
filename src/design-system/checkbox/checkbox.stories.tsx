@@ -10,7 +10,7 @@ export default {
     isLoading: false,
     label: 'Checkbox text',
   },
-} as Meta;
+} satisfies Meta;
 
 const Template: Story<CheckboxProps> = (args) => {
   return <CheckBox {...args} />;

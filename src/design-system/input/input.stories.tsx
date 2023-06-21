@@ -1,6 +1,6 @@
 import { Meta, Story } from '@storybook/react';
 import { Input } from './input';
-import { IInputProps } from './types';
+import { InputProps } from './types';
 import * as HeroIcons from '@heroicons/react/24/solid';
 
 export default {
@@ -26,9 +26,9 @@ export default {
       ],
     },
   },
-} as Meta;
+} satisfies Meta;
 
-const Template: Story<IInputProps> = (args) => {
+const Template: Story<InputProps> = (args) => {
   return <Input {...args} />;
 };
 

@@ -1,13 +1,6 @@
 import { devices } from '@/styles/devices';
-import styled, { css, FlattenSimpleInterpolation } from 'styled-components';
-
-type UserVariants = {
-  [key: string]: FlattenSimpleInterpolation;
-};
-
-type Tooltip = {
-  variant: 'employee' | 'manager';
-};
+import styled, { css } from 'styled-components';
+import { SummaryProps } from './types';
 
 export const SummaryWrapper = styled.div`
   display: flex;
@@ -51,7 +44,7 @@ export const DatesContainer = styled.div`
   }
 `;
 
-const User: UserVariants = {
+const User = {
   employee: css`
     div {
       display: block;
@@ -65,7 +58,7 @@ const User: UserVariants = {
   `,
 };
 
-export const PeriodContainer = styled.div<Tooltip>`
+export const PeriodContainer = styled.div<SummaryProps>`
   display: flex;
   flex-direction: row;
   gap: 10px;
@@ -102,6 +95,7 @@ export const Li = styled.li`
     flex-direction: column;
     align-items: flex-start;
   }
+
   .divider {
     margin: 2px;
     height: 1px;
@@ -113,6 +107,7 @@ export const Li = styled.li`
       display: block;
     }
   }
+
   &:last-of-type .divider {
     display: none;
   }

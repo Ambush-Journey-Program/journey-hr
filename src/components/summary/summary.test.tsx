@@ -15,7 +15,7 @@ describe.skip('<Summary  />', () => {
   it('should have a edit button', () => {
     jest.spyOn(mockObject, 'requestTimeOffmock', 'get').mockReturnValue([
       {
-        id: `1`,
+        id: '1',
         period: 'Nov 01 Wed - Nov 15 Wed , 2023',
         summary: '06 Recharge Days, 1 US Holidays, 1 Optional Holidays',
       },
@@ -28,7 +28,7 @@ describe.skip('<Summary  />', () => {
   it(' should have a delete button', () => {
     jest.spyOn(mockObject, 'requestTimeOffmock', 'get').mockReturnValue([
       {
-        id: `1`,
+        id: '1',
         period: 'Nov 01 Wed - Nov 15 Wed , 2023',
         summary: '06 Recharge Days, 1 US Holidays, 1 Optional Holidays',
       },
@@ -41,12 +41,12 @@ describe.skip('<Summary  />', () => {
   it('should render a list with two itens', () => {
     jest.spyOn(mockObject, 'requestTimeOffmock', 'get').mockReturnValue([
       {
-        id: `1`,
+        id: '1',
         period: 'Nov 01 Wed - Nov 15 Wed , 2023',
         summary: '06 Recharge Days, 1 US Holidays, 1 Optional Holidays',
       },
       {
-        id: `2`,
+        id: '2',
         period: 'Nov 01 Wed - Nov 15 Wed , 2023',
         summary: '06 Recharge Days, 1 US Holidays, 1 Optional Holidays',
       },

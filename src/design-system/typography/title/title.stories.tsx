@@ -1,6 +1,5 @@
-import { Meta, Story, StoryFn } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import { Title } from './title';
-import { TitleProps } from './types';
 
 export default {
   component: Title,

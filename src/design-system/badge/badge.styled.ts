@@ -5,6 +5,7 @@ export const badge = styled.div`
   padding: 10px 12px;
   border-radius: 12px;
   background-color: ${(props) => props.theme.color.contrasts.lightContrast};
+
   p {
     white-space: nowrap;
   }

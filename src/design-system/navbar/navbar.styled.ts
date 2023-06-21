@@ -1,7 +1,5 @@
 import styled, {
-  css,
-  FlattenInterpolation,
-  ThemeProps,
+  css
 } from 'styled-components';
 import { ColorProps } from './type';
 
@@ -34,6 +32,7 @@ export const LinkContainer = styled.ul<LinkColors>`
 
   li {
     margin: 0 1.125rem;
+
     a {
       text-decoration: none;
       font-size: 16px;
@@ -41,9 +40,11 @@ export const LinkContainer = styled.ul<LinkColors>`
       ${({ colors }) => colorsVariants[colors]};
     }
   }
+
   li:first-of-type {
     margin-left: 0;
   }
+
   li:last-of-type {
     margin-right: 0;
   }

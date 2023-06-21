@@ -1,16 +1,6 @@
-import styled, {
-  css,
-  FlattenSimpleInterpolation,
-  FlattenInterpolation,
-  ThemeProps,
-} from 'styled-components';
+import styled, { css } from 'styled-components';
 
-import {
-  ParagraphProps,
-  ColorType,
-  TextWeight,
-  ParagraphStyleProps,
-} from './types';
+import { ParagraphStyleProps } from './types';
 
 const paragraphEl = {
   giant: css`

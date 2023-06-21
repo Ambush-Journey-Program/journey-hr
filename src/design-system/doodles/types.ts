@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/indent */
 import { ImgHTMLAttributes } from 'react';
 import { DoodlesLib } from './svgLibrary';
 

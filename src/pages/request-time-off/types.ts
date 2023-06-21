@@ -1,6 +1,6 @@
 type UserType = 'employee' | 'manager';
 
 export type RequestTimeOffProps = {
-  onView?: () => void;
+  onView?: (value: string) => void;
   variant?: UserType;
 };

@@ -1,6 +1,5 @@
-import { Meta, Story, StoryFn } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import { CardWrapper } from './cardWrapper';
-import { CardProps } from './types';
 
 export default {
   component: CardWrapper,
@@ -23,7 +22,7 @@ export default {
       ],
     },
   },
-} as Meta;
+} satisfies Meta;
 
 export const SelectCardStory: StoryFn<typeof CardWrapper> = (args) => (
   <CardWrapper {...args} />

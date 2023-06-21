@@ -1,13 +1,12 @@
 import { ChangeEvent, useState } from 'react';
 import { Paragraph } from '../typography/paragraph/paragraph';
 import * as Styled from './input.styled';
-import { IInputProps } from './types';
-import * as HeroIconOutline from '@heroicons/react/24/outline';
+import { Colors, InputProps } from './types';
 import { Icon } from '../icon/icon';
 import { Label } from '../label';
 
 export function Input({
-  label,
+  label = 'Select Employee',
   required,
   value,
   disabled,
@@ -19,36 +18,52 @@ export function Input({
   iconLeft,
   iconRight,
   hasIconRight,
-  onTextChange = () => {},
-}: IInputProps) {
+  onTextChange,
+}: InputProps) {
   const [touched, setTouched] = useState(false);
   function onInputChange(e: ChangeEvent<HTMLInputElement>) {
     onTextChange(e.target.value);
     setTouched(true);
   }
 
-  function IconFactory() {
-    let iconName:keyof typeof HeroIconOutline;
-    let color: "mediumContrast" | "accepted" | "error";
-    if (iconRight) {
-      iconName = iconRight;
-      color = `mediumContrast`;
+  function getIconProperties() {
+    let iconName: typeof iconLeft;
+    let color: Colors;
+    if (error) {
+      iconName = 'ExclamationCircleIcon';
+      color = 'error';
     } else if (right) {
-      iconName = `CheckIcon`;
-      color = `accepted`;
-    } else if (error) {
-      iconName = `ExclamationCircleIcon`;
-      color = `error`;
+      iconName = 'CheckIcon';
+      color = 'accepted';
+    } else if (iconRight) {
+      iconName = iconRight;
+      color = 'mediumContrast';
+    } else {
+      iconName = null;
+      color = null;
+    }
+    return { iconName, color };
+  }
+
+  function IconFactory() {
+    const { iconName, color } = getIconProperties();
+
+    if (!hasIconRight || !iconName || !color) {
+      return null;
     }
 
-    return <Icon color={color} icon={iconName} size="20px" />;
+    return (
+      <Styled.SpanCorrect>
+        <Icon color={color} icon={iconName} size="16px" />
+      </Styled.SpanCorrect>
+    );
   }
 
   return (
     <Styled.Wrapper>
-      <Label label={label} required={required}/>
+      <Label label={label} required={required} />
       <Styled.InputContainer
-        error={error}
+        error={!!error}
         disabled={disabled}
         touched={touched}
       >
@@ -65,9 +80,7 @@ export function Input({
           data-testid="input-test"
           type={type}
         />
-        {hasIconRight && (
-          <Styled.SpanCorrect>{IconFactory()}</Styled.SpanCorrect>
-        )}
+        {IconFactory()}
       </Styled.InputContainer>
       {error && (
         <Paragraph size="extrasmall" fontWeight="light" colorVariant="red">

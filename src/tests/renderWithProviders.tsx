@@ -12,5 +12,7 @@ const customRender = (
   options?: Omit<RenderOptions, 'wrapper'>,
 ) => render(ui, { wrapper: AllTheProviders, ...options });
 
+// eslint-disable-next-line import/export
 export * from '@testing-library/react';
+// eslint-disable-next-line import/export
 export { customRender as render };

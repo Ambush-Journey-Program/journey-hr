@@ -1,31 +1,31 @@
-import { Meta, Story, StoryFn } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import { NavBar } from './navbar';
-import { NavBarProps, Link } from './type';
+import { Link } from './type';
 
 const navLinksJourneyHR: Link[] = [
   {
-    url: `/Interviews`,
-    label: `Interviews`,
+    url: '/Interviews',
+    label: 'Interviews',
     active: false,
   },
   {
-    url: `/Happy-Hour`,
-    label: `Happy Hour`,
+    url: '/Happy-Hour',
+    label: 'Happy Hour',
     active: false,
   },
   {
-    url: `/Feedbacks`,
-    label: `Feedbacks`,
+    url: '/Feedbacks',
+    label: 'Feedbacks',
     active: false,
   },
   {
-    url: `/Send-a-invite`,
-    label: `Send a Invite`,
+    url: '/Send-a-invite',
+    label: 'Send a Invite',
     active: false,
   },
   {
-    url: `/Shorty`,
-    label: `Shorty`,
+    url: '/Shorty',
+    label: 'Shorty',
     active: false,
   },
 ];
@@ -50,7 +50,7 @@ export default {
       ],
     },
   },
-} as Meta;
+} satisfies Meta;
 
 export const NavBarStory: StoryFn<typeof NavBar> = (args) => (
   <NavBar {...args} />

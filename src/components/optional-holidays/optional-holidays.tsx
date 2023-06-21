@@ -1,8 +1,9 @@
+/* eslint-disable react/no-children-prop */
 import { CheckBox } from '@/design-system/checkbox/checkbox';
 import * as Styled from './optional-holidays.styled';
 import { Subtitle, Title } from '@/design-system';
 
-export function OptionalHolidays() {
+export function OptionalHolidays () {
   return (
     <Styled.Wrapper>
       <Styled.HeaderWrapper data-testid="optionalHolidays">

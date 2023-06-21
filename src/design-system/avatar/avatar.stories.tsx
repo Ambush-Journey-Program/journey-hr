@@ -1,8 +1,5 @@
-import { Meta, Story, StoryFn } from '@storybook/react';
-import { ThemeProvider } from 'styled-components';
-import { theme } from '@/styles/theme';
+import { Meta, StoryFn } from '@storybook/react';
 import { Avatar } from './avatar';
-import { AvatarProps } from './types';
 
 export default {
   component: Avatar,
@@ -23,15 +20,7 @@ export default {
       ],
     },
   },
-} as Meta;
-
-const Template: Story<AvatarProps> = (args) => {
-  return (
-    <ThemeProvider theme={theme}>
-      <Avatar {...args} />
-    </ThemeProvider>
-  );
-};
+} satisfies Meta;
 
 export const SelectCardStory: StoryFn<typeof Avatar> = (args) => (
   <Avatar {...args} />

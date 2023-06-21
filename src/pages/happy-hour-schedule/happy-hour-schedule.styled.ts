@@ -2,9 +2,6 @@ import { Button, SelectInput } from '@ambush/ui';
 import { BackButton } from '@/components';
 import { devices } from '@/styles/devices';
 import styled from 'styled-components';
-import { IHappyHourScheduleProps } from './types';
-
-export const select = styled(SelectInput)<IHappyHourScheduleProps>``;
 
 export const MainWrapper = styled.div`
   display: flex;
@@ -14,7 +11,6 @@ export const MainWrapper = styled.div`
 `;
 
 export const InputsWrapper = styled.div`
-  display: flex;
   flex-direction: column;
   gap: 24px;
   width: 100%;
@@ -26,7 +22,6 @@ export const InputsWrapper = styled.div`
     grid-template-columns: 1fr 1fr 1fr;
   }
 `;
-export const wrapper = styled.div``;
 
 export const StyledButton = styled(Button)`
   float: right;

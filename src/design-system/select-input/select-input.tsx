@@ -3,7 +3,7 @@ import * as Styled from './select-input.styled';
 import { ChangeEvent, useState } from 'react';
 import { Paragraph } from '../typography/paragraph/paragraph';
 
-export function SelectInput({
+export function SelectInput ({
   title,
   options,
   error,
@@ -14,7 +14,7 @@ export function SelectInput({
   placeholder,
   ...props
 }: ISelectInputProps) {
-  function handleSelectEvent(event: ChangeEvent<HTMLSelectElement>) {
+  function handleSelectEvent (event: ChangeEvent<HTMLSelectElement>) {
     handleSelect(event.target.value);
     setTouched(true);
   }

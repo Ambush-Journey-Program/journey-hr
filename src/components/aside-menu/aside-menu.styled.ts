@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const Menu = styled.div`
   width: 17.375rem;
-
 `;
 
 export const LogoContainer = styled.div`
@@ -17,11 +16,11 @@ export const ListLink = styled.ul`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 2.6875rem 0 2.6875rem;
+  padding: 0 2.6875rem;
 `;
 
 export const ListItem = styled.li`
-  padding: 0.65625rem 0 0.65625rem 1.614375rem;
+  padding: 0.6563rem 0 0.6563rem 1.6144rem;
   font-family: ${prop => prop.theme.font.fontFamilyTitle};
 
   a {
@@ -31,7 +30,7 @@ export const ListItem = styled.li`
     color: ${(props) => props.theme.color.contrasts.lowContrast};
 
     svg {
-      padding-right: 0.364375rem;
+      padding-right: 0.3644rem;
       width: 1.5rem;
     }
   }
@@ -39,6 +38,7 @@ export const ListItem = styled.li`
   :hover {
     background-color: ${(props) => props.theme.color.contrasts.lightContrast};
     border-radius: 25px;
+
     a {
       color: ${(props) => props.theme.color.button.secondaryHover};
 
@@ -64,6 +64,7 @@ export const ButtonContainer = styled.div`
     font-size: 1rem;
     padding: 0;
   }
+
   svg {
     width: 1rem;
   }

@@ -11,7 +11,6 @@ import { TimeOffRow } from './daysListsRow/TimeOffRow';
 import { HolidayRow } from './daysListsRow/HolidayRow';
 import { TeamCalendarRow } from './daysListsRow/TeamCalendarRow';
 
-// eslint-disable-next-line @typescript-eslint/consistent-type-assertions
 export default {
   component: DaysLists,
   title: 'Components/DaysLists',
@@ -39,11 +38,11 @@ export default {
     storyType: {
       options: ['holidays', 'timeOff', 'teamCalendar'],
       control: {
-        type: `select`,
+        type: 'select',
       },
     },
   },
-} as Meta;
+} satisfies Meta;
 
 const Template: Story<DaysListsProps> = (args) => {
   const { storyType, ...rest } = args;

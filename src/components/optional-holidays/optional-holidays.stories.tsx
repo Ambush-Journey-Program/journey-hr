@@ -1,13 +1,13 @@
 import { Meta, Story } from '@storybook/react';
 import { OptionalHolidays } from './optional-holidays';
-import { OptionalHolidaysProps } from './types';
+
 
 export default {
   component: OptionalHolidays,
   title: 'Components/OptionalHolidays',
-} as Meta;
+} satisfies Meta;
 
-const Template: Story<OptionalHolidaysProps> = (args) => {
+const Template: Story = (args) => {
   return <OptionalHolidays {...args} />;
 };
 

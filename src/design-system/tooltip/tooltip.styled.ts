@@ -1,28 +1,22 @@
-import styled, {
-  css,
-  FlattenInterpolation,
-  ThemeProps,
-} from 'styled-components';
+import styled, { css } from 'styled-components';
 import { PositionsType } from './types';
 
 export const TooltipWrapper = styled.div`
   position: relative;
-  cursor: pointer;
   display: inline-block;
   cursor: pointer;
 `;
 export type StyledProps = {
   variantPosition: PositionsType;
 };
-type Variants = {
-  [key: string]: FlattenInterpolation<ThemeProps<StyledProps>>;
-};
-const variants: Variants = {
+
+const variants = {
   left: css`
     transform: translateY(-50%);
     top: 50%;
     right: calc(100% + 15px);
-    &:after {
+
+    &::after {
       border-color: transparent transparent transparent #${(props) => props.theme.color.auxiliary.white};
       left: calc(100% + -1.5px);
       top: calc(50% + -0.5rem);
@@ -33,7 +27,8 @@ const variants: Variants = {
     top: 50%;
     transform: translateY(-50%);
     left: calc(100% + 15px);
-    &:after {
+
+    &::after {
       border-color: transparent #${(props) => props.theme.color.auxiliary.white}
         transparent transparent;
       right: calc(100% + -1.5px);
@@ -46,7 +41,8 @@ const variants: Variants = {
     top: calc(100% + 15px);
     left: 50%;
     transform: translateX(-50%);
-    &:after {
+
+    &::after {
       border-color: transparent transparent #${(props) =>
           props.theme.color.auxiliary.white} transparent;
       top: unset;
@@ -60,8 +56,7 @@ const variants: Variants = {
     bottom: calc(100% + 15px);
     left: 50%;
     transform: translateX(-50%);
-  `,
-  default: css``,
+  `
 };
 
 export const TooltipBox = styled.span<StyledProps>`
@@ -76,11 +71,12 @@ export const TooltipBox = styled.span<StyledProps>`
   max-width: 12.5rem;
   font-weight: 600;
   font-size: 0.75rem;
-  font-family: ${prop => prop.theme.font.fontFamilyBody};
-  box-shadow: 0 0.25rem 0.875rem rgba(0, 0, 0, 0.15),
-    0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+  font-family: ${(prop) => prop.theme.font.fontFamilyBody};
+  box-shadow: 0 0.25rem 0.875rem rgba(0, 0, 0, 15%),
+    0 0.25rem 0.5rem rgba(0, 0, 0, 20%);
   overflow-wrap: break-word;
-  &:after {
+
+  &::after {
     content: '';
     z-index: 10;
     position: absolute;

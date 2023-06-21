@@ -3,13 +3,12 @@ import {
   isDate15DaysFromNow,
   isFirstDateAfterSecondDate,
   isWeekEnd,
-  parseDate,
+  parseDate
 } from './utils';
 
 describe('isWeekEnd', () => {
   it('return True if it is weekend', () => {
     const day = new Date('2023-05-20');
-    console.log(day.getDate());
     const weekend = isWeekEnd(day.getDay());
     expect(weekend).toBeTruthy();
   });

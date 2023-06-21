@@ -4,7 +4,7 @@ import { Label } from './label';
 export default {
   component: Label,
   title: 'UI/Label',
-} as Meta;
+} satisfies Meta;
 
 export const LabelStory: StoryFn<typeof Label> = (args) => (
   <Label {...args} />
@@ -14,4 +14,3 @@ LabelStory.args = {
   label: 'Test',
   required: false,
 };
-

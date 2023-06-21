@@ -7,7 +7,7 @@ export default {
   component: Tab,
   title: 'UI/Tab',
   parameters: {},
-} as Meta;
+} satisfies Meta;
 
 const Template: Story<TabProps> = (args) => {
   return <Tab {...args} />;
@@ -16,4 +16,5 @@ const Template: Story<TabProps> = (args) => {
 export const TabStory = Template.bind({});
 TabStory.args = {
   label: 'Label',
+  
 };

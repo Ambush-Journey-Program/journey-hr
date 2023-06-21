@@ -5,12 +5,10 @@ describe('<Checkbox />', () => {
   it('CheckBox is rendered', () => {
     render(
       <CheckBox
-        onChange={() => {
-          console.log('teste');
-        }}
+        onChange={() => {}}
         isChecked={false}
         label="Label"
-        description={'Description'}
+        description="Description"
       />,
     );
     const label = screen.getByText('Label');

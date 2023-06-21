@@ -1,15 +1,8 @@
-import styled, { css, FlattenSimpleInterpolation } from 'styled-components';
+import styled, { css } from 'styled-components';
 import { devices } from '@/styles/devices';
+import { AvatarProps } from './types';
 
-type AvatarProps = {
-  sizeVariant: string;
-};
-
-type Variants = {
-  [key: string]: FlattenSimpleInterpolation;
-};
-
-const variants: Variants = {
+const variants = {
   large: css`
     height: 7rem;
     width: 7rem;
@@ -20,7 +13,7 @@ const variants: Variants = {
     height: 4rem;
     width: 4rem;
     border-radius: 4rem;
-  `,
+  `
 };
 
 export const Image = styled.img<AvatarProps>`

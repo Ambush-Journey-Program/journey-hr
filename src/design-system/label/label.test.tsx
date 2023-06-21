@@ -2,14 +2,14 @@ import { render, screen } from '@/tests/renderWithProviders';
 import { Label } from '.';
 
 describe('<label />', () => {
-  it('Render the Label',() =>  {
+  it('Render the Label', () => {
     const text = 'Hi';
     render(<Label label={text}/>);
 
     const labelEL = screen.getByText(text);
     expect(labelEL).toBeInTheDocument();
   });
-  it('Render the Required',() => {
+  it('Render the Required', () => {
     render(<Label required label={'hello world'}/>);
 
     const labelEL = screen.getByText('Required');

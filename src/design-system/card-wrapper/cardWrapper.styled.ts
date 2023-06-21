@@ -1,16 +1,10 @@
 import { devices } from '@/styles/devices';
 import styled, {
-  FlattenInterpolation,
-  ThemeProps,
-  css,
+  css
 } from 'styled-components';
-import { ColorProp, CardProps } from './types';
+import { CardProps } from './types';
 
-export type Background = {
-  [key: string]: FlattenInterpolation<ThemeProps<ColorProp>>;
-};
-
-const backgroundVariants: Background = {
+const backgroundVariants = {
   default: css`
     box-shadow: ${(props) => props.theme.shadows.cream};
     background-color: ${(props) => props.theme.color.auxiliary.white};
@@ -18,7 +12,7 @@ const backgroundVariants: Background = {
   transparent: css`
     box-shadow: none;
     background-color: transparent;
-  `,
+  `
 };
 
 export const Card = styled.div<CardProps>`

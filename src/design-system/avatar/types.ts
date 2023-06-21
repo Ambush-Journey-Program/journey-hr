@@ -3,5 +3,5 @@ import { ImgHTMLAttributes } from 'react';
 
 export type AvatarProps = {
   src: string | StaticImageData;
-  sizeVariant?: 'large' | 'small';
+  sizeVariant: 'large' | 'small';
 } & ImgHTMLAttributes<HTMLImageElement>;

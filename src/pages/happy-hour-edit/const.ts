@@ -16,5 +16,5 @@ export const EMPLOYEES: Employees[] = [
   { guest: { id: '12', name: 'Lídia ', team: 'Developer' } },
   { guest: { id: '13', name: 'Carlos', team: 'Design' } },
   { guest: { id: '14', name: 'Beatriz Pereira', team: 'Developer' } },
-  { guest: { id: '15', name: 'Test', team: 'list' } },
+  { guest: { id: '15', name: 'Test', team: 'list' } }
 ];

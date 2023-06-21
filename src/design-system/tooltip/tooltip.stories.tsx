@@ -1,4 +1,4 @@
-import { Meta, Story, StoryFn } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import { Tooltip } from './tooltip';
 
 export default {

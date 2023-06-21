@@ -9,7 +9,7 @@ export default {
     onClick: () => {},
     disabled: false,
   },
-} as Meta;
+} satisfies Meta;
 
 const Template: Story<BackButtonProps> = (args) => {
   return <BackButton {...args} />;

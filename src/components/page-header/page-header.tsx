@@ -2,7 +2,7 @@ import { Title, Subtitle } from '@ambush/ui';
 import { PageHeaderProps } from './types';
 import * as Styled from './page-header.styled';
 
-export function PageHeader({
+export function PageHeader ({
   title,
   subtitle,
   backButton,
