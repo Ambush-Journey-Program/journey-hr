@@ -1,6 +1,4 @@
-import styled, {
-  css
-} from 'styled-components';
+import styled, { css } from 'styled-components';
 import { ColorProps } from './type';
 
 type LinkColors = {
@@ -25,7 +23,7 @@ export const LinkContainer = styled.ul<LinkColors>`
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  margin: 0 6rem;
+  margin: 0 5rem;
   width: 100%;
   max-width: 100%;
   list-style: none;
@@ -56,13 +54,10 @@ export const LogoContainer = styled.div`
   align-items: center;
   width: 100%;
   max-width: 3.75rem 2.5rem;
-  justify-content: space-between;
 
-  h1 {
-    margin-left: 0.5625rem;
-    color: ${(props) => props.theme.color.brandColors.dark};
-    font-size: 18px;
-    font-weight: 700;
+  span {
+    width: 7.75rem;
+    height: 1.5625rem;
   }
 `;
 
