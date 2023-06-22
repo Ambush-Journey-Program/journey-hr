@@ -50,7 +50,7 @@ export const ModalBox = styled.div`
     svg {
       color: ${(props) => props.theme.color.button.secondaryHover};
       width: 1.1875rem;
-      height: 1.1875rem;
+      height: 1.187rem;
     }
   }
 `;

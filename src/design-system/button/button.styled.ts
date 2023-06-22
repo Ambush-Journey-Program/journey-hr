@@ -316,7 +316,7 @@ export const ButtonStyle = styled.button<ButtonProps>`
   cursor: pointer;
 
   svg path {
-    stroke-width: 2.2px;
+    stroke-width: 0.138rem;
     margin-bottom: 0;
   }
 

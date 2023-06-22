@@ -28,9 +28,8 @@ const colorsVariants = {
 
 export const wrapper = styled.span<DoodlesStyleProps>`
   svg {
-    width: 100px;
-    height: 100px;
-
+    width: 6.25rem;
+    height: 6.25rem;
     path {
       ${({ colors }) => colorsVariants[colors]};
     }

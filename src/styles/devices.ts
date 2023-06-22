@@ -1,6 +1,6 @@
 export const devices = {
-  desktop: '(min-width: 1200px)',
-  tabletLarge: '(min-width: 992px)',
-  tablet: '(min-width: 768px)',
-  mobile: '(max-width: 767px)'
+  desktop: '(min-width: 75rem)',
+  tabletLarge: '(min-width: 62rem)',
+  tablet: '(min-width: 48rem)',
+  mobile: '(max-width: 47.938rem)',
 };
