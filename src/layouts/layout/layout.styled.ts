@@ -8,8 +8,12 @@ export const pageContainer = styled.div`
   position: relative;
 `;
 
-export const menuWrapper = styled(CardWrapper)`
-  padding: 0;
+export const menuWrapper = styled.div`
+  box-shadow: ${(props) => props.theme.shadows.cream};
+  background-color: ${(props) => props.theme.color.auxiliary.white};
+  border-radius: 1.25rem;
+  max-width: 100%;
+  padding: ${(props) => props.theme.spacings.spacing01};
   width: 17.375rem;
   height: 46.875rem;
 `;
