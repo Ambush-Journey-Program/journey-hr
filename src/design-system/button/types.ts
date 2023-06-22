@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes } from 'react';
+import { ButtonHTMLAttributes, ReactNode } from 'react';
 import * as HeroIcons from '@heroicons/react/24/solid';
 
 export type SizeProp = 'medium' | 'large' | 'small';
@@ -30,7 +30,7 @@ type ButtonWithoutChildren = {
 };
 
 type ButtonWithChildren = {
-  children: string;
+  children: string | ReactNode;
   'aria-label'?: string;
 };
 

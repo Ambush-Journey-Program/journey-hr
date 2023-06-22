@@ -49,11 +49,6 @@ export function SelectEmployee({
           hasIconRight
           iconRight="MagnifyingGlassIcon"
           label="  Search Employee"
-          error={
-            employeesFiltered.length === 0 &&
-            touched &&
-            "We couldn't find anyone with this name. Check your spelling or try a different name."
-          }
         />
       </Styled.Div>
 

@@ -1,7 +1,7 @@
 import { Paragraph, Badge, Button } from '@ambush/ui';
 import * as Styled from './search-row-styled';
 import { SearchRowProps } from '../types';
-import { Icon } from '@/design-system/icon/icon';
+import { Icon } from '@ambush/ui';
 
 export function SearchRow({ employee }: SearchRowProps) {
   return (

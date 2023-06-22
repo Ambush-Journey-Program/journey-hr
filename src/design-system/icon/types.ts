@@ -14,6 +14,6 @@ export type IconColors = {
 
 export type IconProps = {
   color: Keys;
-  icon?: keyof typeof HeroIconOutline;
-  size?: '16px' | '18px' | '20px' | '58px';
+  icon: keyof typeof HeroIconOutline;
+  size?: string;
 } & SVGAttributes<SVGElement>;
