@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { devices } from '@/styles/devices';
-import { Icon } from '@/design-system/icon/icon';
+import { spacings } from '@/styles/spacing';
 
 export const DisplayResultsSearch = styled.div`
   display: flex;
@@ -10,7 +10,7 @@ export const DisplayResultsSearch = styled.div`
 export const ProfileBox = styled.div`
   display: flex;
   align-items: center;
-  gap: 1.063rem;
+  gap: ${spacings.spacing04};
   @media ${devices.mobile} {
     flex-direction: column;
     align-items: flex-start;
@@ -19,10 +19,5 @@ export const ProfileBox = styled.div`
 
 export const employeeInfo = styled.div`
   display: flex;
-  gap: 1.063rem;
-`;
-
-export const IconUser = styled(Icon)`
-  margin-left: 1rem;
-  margin-right: 1rem;
+  gap: ${spacings.spacing04};
 `;

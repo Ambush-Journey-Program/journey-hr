@@ -7,7 +7,7 @@ export function SearchRow({ employee }: SearchRowProps) {
   return (
     <Styled.DisplayResultsSearch>
       <Styled.employeeInfo>
-        <Styled.IconUser icon="UserIcon" size="18px" color="lowestContrast" />
+        <Icon icon="UserIcon" size="20px" color="lowestContrast" />
         <Styled.ProfileBox data-testid="listTest">
           <Paragraph size="medium" fontWeight="semibold">
             {employee.name}
