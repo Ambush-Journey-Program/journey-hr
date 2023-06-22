@@ -1,3 +1,4 @@
+import { Button } from '@/design-system';
 import { devices } from '@/styles/devices';
 import styled, { css, FlattenSimpleInterpolation } from 'styled-components';
 
@@ -88,6 +89,14 @@ export const PeriodContainer = styled.div<Tooltip>`
   ${({ variant }) => User[variant]}
 `;
 
+export const noButtonPadding = css`
+  gap: 0px;
+`;
+
+export const NoRender = css`
+  display: none;
+`;
+
 export const Li = styled.li`
   display: flex;
   align-items: center;
@@ -95,6 +104,8 @@ export const Li = styled.li`
 
   @media ${devices.tablet} {
     gap: 121px;
+    /* {({ editBtn }) => (!editBtn || undefined) && noButtonPadding} */
+    /* {({ deleteBtn }) =>  (!deleteBtn || undefined || null)  && noButtonPadding} */
   }
 
   @media ${devices.mobile} {
@@ -121,4 +132,7 @@ export const Li = styled.li`
 export const ButtonsContainer = styled.div`
   display: flex;
   gap: 6px;
+`;
+
+export const DeleteButton = styled(Button)`
 `;

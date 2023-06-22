@@ -6,7 +6,7 @@ import * as Styled from './summary.styled';
 import * as Icons from '@heroicons/react/24/outline';
 import { requestTimeOffmock } from './mock-response';
 
-export function Summary({ onDelete, onEdit, variant }: SummaryProps) {
+export function Summary({ onDelete,onEdit, variant, display=true}: SummaryProps) {
   return (
     <Styled.SummaryWrapper data-testid="summary">
       <Title variant="h6">Request Summary</Title>
@@ -30,7 +30,8 @@ export function Summary({ onDelete, onEdit, variant }: SummaryProps) {
                 {requestTimeOff.summary}
               </Subtitle>
             </Styled.DatesContainer>
-            <Styled.ButtonsContainer>
+            {!!display && (
+             <Styled.ButtonsContainer>
               <Button
                 color="alternative"
                 variant="ghost"
@@ -40,8 +41,7 @@ export function Summary({ onDelete, onEdit, variant }: SummaryProps) {
                 aria-label="Edit Button"
                 icon="PencilIcon"
               />
-
-              <Button
+              <Styled.DeleteButton
                 color="primary"
                 variant="ghost"
                 sizeVariant="large"
@@ -50,7 +50,9 @@ export function Summary({ onDelete, onEdit, variant }: SummaryProps) {
                 aria-label="Delete Button"
                 icon="TrashIcon"
               />
-            </Styled.ButtonsContainer>
+              </Styled.ButtonsContainer>
+            )}
+
             <span className="divider"></span>
           </Styled.Li>
         ))}
