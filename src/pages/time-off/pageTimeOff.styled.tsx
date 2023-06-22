@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const TimeOffPageHeaderWrapper = styled.div`
-  margin-bottom: 3rem;
+  margin-bottom: ${(props) => props.theme.spacings.spacing07};
 `;
 
 export const TimeOffPageDaysListsGrid = styled.div`
@@ -9,7 +9,8 @@ export const TimeOffPageDaysListsGrid = styled.div`
   grid-template-areas:
     'Grid1 Grid2'
     'Grid3 Grid3';
-  grid-gap: 6.875rem 3rem;
+  grid-column-gap: ${(props) => props.theme.spacings.spacing07};
+  grid-row-gap: 6.875rem;
 `;
 
 export const GridContainer1 = styled.div`

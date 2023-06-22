@@ -3,7 +3,7 @@ import { devices } from '@/styles/devices';
 import styled from 'styled-components';
 
 export const TimeOffPageHeaderContainer = styled.div`
-  margin-bottom: 3rem;
+  margin-bottom: ${(props) => props.theme.spacings.spacing07};
   display: flex;
   flex-direction: column;
   gap: ${(props) => props.theme.spacings.spacing04};

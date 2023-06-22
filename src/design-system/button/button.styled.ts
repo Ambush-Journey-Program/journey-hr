@@ -311,7 +311,7 @@ export const ButtonStyle = styled.button<ButtonProps>`
   font-weight: 600;
   line-height: 150%;
   font-family: ${(prop) => prop.theme.font.fontFamilyTitle};
-  border-radius: 50px;
+  border-radius: 3.125rem;
   gap: 0.375rem;
   cursor: pointer;
 
