@@ -20,4 +20,5 @@ export const ProfileBox = styled.div`
 export const employeeInfo = styled.div`
   display: flex;
   gap: ${spacings.spacing04};
+  align-items: center;
 `;

@@ -54,7 +54,7 @@ export function Input({
 
     return (
       <Styled.SpanCorrect>
-        <Icon color={color} icon={iconName} size="16px" />
+        <Icon color={color} icon={iconName} />
       </Styled.SpanCorrect>
     );
   }
@@ -68,7 +68,7 @@ export function Input({
         touched={touched}
       >
         {iconLeft && (
-          <Icon color="lowestContrast" icon={iconLeft} size="20px" />
+          <Icon color="lowestContrast" icon={iconLeft} size="1.5rem" />
         )}
         <input
           placeholder={placeholder}

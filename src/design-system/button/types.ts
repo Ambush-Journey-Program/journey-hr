@@ -30,7 +30,7 @@ type ButtonWithoutChildren = {
 };
 
 type ButtonWithChildren = {
-  children: string | ReactNode;
+  children: ReactNode;
   'aria-label'?: string;
 };
 

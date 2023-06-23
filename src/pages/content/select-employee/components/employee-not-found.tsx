@@ -5,7 +5,7 @@ export function EmployeeNotFound() {
   return (
     <Styled.Main>
       <Styled.Div>
-        <Icon color="lowContrast" icon="UserIcon" size="24px" />
+        <Icon color="lowContrast" icon="UserIcon"/>
         <Paragraph size="small" fontWeight="light" colorVariant="lowContrast">
           No matches found
         </Paragraph>

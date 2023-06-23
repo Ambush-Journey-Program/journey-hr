@@ -1,13 +1,12 @@
-import { Paragraph, Badge, Button } from '@ambush/ui';
+import { Paragraph, Badge, Button, Icon } from '@ambush/ui';
 import * as Styled from './search-row-styled';
 import { SearchRowProps } from '../types';
-import { Icon } from '@ambush/ui';
 
 export function SearchRow({ employee }: SearchRowProps) {
   return (
     <Styled.DisplayResultsSearch>
       <Styled.employeeInfo>
-        <Icon icon="UserIcon" size="20px" color="lowestContrast" />
+        <Icon icon="UserIcon" color="lowestContrast" />
         <Styled.ProfileBox data-testid="listTest">
           <Paragraph size="medium" fontWeight="semibold">
             {employee.name}
@@ -16,7 +15,7 @@ export function SearchRow({ employee }: SearchRowProps) {
         </Styled.ProfileBox>
       </Styled.employeeInfo>
       <Button type="button" variant="ghost" onClick={() => {}}>
-        <Icon icon="ChevronRightIcon" size="16px" color="red" />
+        <Icon icon="ChevronRightIcon" color="red" size='1.5rem'/>
       </Button>
     </Styled.DisplayResultsSearch>
   );
