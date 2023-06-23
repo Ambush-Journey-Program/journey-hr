@@ -25,7 +25,7 @@ export const LinkContainer = styled.ul<LinkColors>`
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  margin: 0 6rem;
+  margin: 0 ${(props) => props.theme.spacings.spacing09};
   width: 100%;
   max-width: 100%;
   list-style: none;
@@ -35,7 +35,7 @@ export const LinkContainer = styled.ul<LinkColors>`
 
     a {
       text-decoration: none;
-      font-size: 16px;
+      font-size: ${(props) => props.theme.spacings.spacing04};
       font-weight: 600;
       ${({ colors }) => colorsVariants[colors]};
     }
@@ -59,9 +59,9 @@ export const LogoContainer = styled.div`
   justify-content: space-between;
 
   h1 {
-    margin-left: 0.5625rem;
+    margin-left: ${(props) => props.theme.spacings.spacing02};
     color: ${(props) => props.theme.color.brandColors.dark};
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: 700;
   }
 `;

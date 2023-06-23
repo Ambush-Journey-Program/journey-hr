@@ -7,7 +7,7 @@ export const SpanRequired = styled.span`
 
 export const Span = styled.span<StyledProps>`
   display: block;
-  margin-top: 0.25rem;
+  margin-top: ${(props) => props.theme.spacings.spacing01};
   line-height: 1.125rem;
 `;
 
@@ -33,7 +33,7 @@ export const Legend = styled.legend<StyledProps>`
   font-size: 0.875rem;
   line-height: 150%;
   color: ${(props) => props.theme.color.contrasts.mediumContrast};
-  font-family: ${prop => prop.theme.font.fontFamilyBody};
+  font-family: ${(prop) => prop.theme.font.fontFamilyBody};
 `;
 
 export const Select = styled.select<StyledSelectProps>`
@@ -41,10 +41,10 @@ export const Select = styled.select<StyledSelectProps>`
   align-items: center;
   width: 100%;
   height: 3.25rem;
-  font-size: 1rem;
-  border-radius: 0.75rem;
+  font-size: ${(props) => props.theme.spacings.spacing04};
+  border-radius: ${(props) => props.theme.spacings.spacing03};
   padding-left: 1.25rem;
-  margin-top: 0.25rem;
+  margin-top: ${(props) => props.theme.spacings.spacing01};
   padding: 0.875rem;
   -webkit-appearance: none;
   -moz-appearance: none;

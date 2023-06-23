@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const ListWrapper = styled.ul`
   h5 {
-    padding-bottom: 2rem;
+    padding-bottom: ${(props) => props.theme.spacings.spacing06};
   }
 
   a {

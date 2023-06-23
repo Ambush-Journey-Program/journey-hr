@@ -9,12 +9,12 @@ type ButtonProps = {
 };
 
 const childrenPadding = css`
-  padding: 10px;
+  padding: 0.625rem;
 `;
 
 const variants = {
   large: css`
-    font-size: 22px;
+    font-size: 1.375rem;
 
     svg {
       align-self: center;
@@ -307,11 +307,11 @@ export const ButtonStyle = styled.button<ButtonProps>`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px 24px;
+  padding: 0.625rem 1.5rem;
   font-weight: 600;
   line-height: 150%;
-  font-family: ${prop => prop.theme.font.fontFamilyTitle};
-  border-radius: 50px;
+  font-family: ${(prop) => prop.theme.font.fontFamilyTitle};
+  border-radius: 3.125rem;
   gap: 0.375rem;
   cursor: pointer;
 

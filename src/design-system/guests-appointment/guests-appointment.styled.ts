@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 0.75rem;
+  padding: ${(props) => props.theme.spacings.spacing03};
   width: 100%;
   border-radius: 0.625rem;
   background-color: ${(props) => props.theme.color.contrasts.lightContrast};
@@ -15,7 +15,7 @@ export const Wrapper = styled.div`
 `;
 
 export const ContainerNumber = styled.div`
-  margin-top: 0.5rem;
+  margin-top: ${(props) => props.theme.spacings.spacing02};
   margin-bottom: 1.125rem;
   font-size: 1.125rem;
   font-weight: 700;
@@ -35,7 +35,7 @@ export const Guests = styled.ul`
   margin-top: 0.375rem;
 
   li {
-    padding-bottom: 0.25rem;
+    padding-bottom: ${(props) => props.theme.spacings.spacing01};
     font-size: 1.125rem;
     font-weight: 300;
     line-height: 1.688rem;
@@ -47,6 +47,6 @@ export const Guests = styled.ul`
   @media ${devices.tablet}, ${devices.tabletLarge}, ${devices.desktop} {
     display: grid;
     grid-template-columns: auto auto;
-    column-gap: 2.938rem;
+    column-gap: ${(props) => props.theme.spacings.spacing07};
   }
 `;

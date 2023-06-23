@@ -36,7 +36,7 @@ const disabledLabel = css`
 `;
 
 export const Label = styled.label<checkboxProps>`
-  gap: 10px;
+  gap: 0.625rem;
   display: flex;
   align-items: flex-start;
   cursor: pointer;
@@ -83,5 +83,5 @@ export const StyledDiv = styled.div`
   display: flex;
   flex: 1;
   flex-direction: column;
-  gap: 5px;
+  gap: 0.313rem;
 `;

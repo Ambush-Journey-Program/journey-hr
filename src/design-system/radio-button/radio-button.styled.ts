@@ -13,7 +13,7 @@ const disabledLabel = css`
 
 export const containerInput = styled.div<LabelProps>`
   display: flex;
-  margin-bottom: 1rem;
+  margin-bottom: ${(props) => props.theme.spacings.spacing04};
   cursor: pointer;
   accent-color: ${(props) => props.theme.color.contrasts.highContrast};
 

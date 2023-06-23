@@ -9,14 +9,14 @@ export const Wrapper = styled.div`
 `;
 
 export const CheckboxDiv = styled.div`
-  margin-top: 32px;
+  margin-top: ${(props) => props.theme.spacings.spacing06};
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: ${(props) => props.theme.spacings.spacing04};
 `;
 
 export const HeaderWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: ${(props) => props.theme.spacings.spacing02};
 `;
