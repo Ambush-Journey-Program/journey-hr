@@ -15,7 +15,7 @@ export function NavBar({
       <CardWrapper>
         <Styled.NavBar>
           <Styled.LogoContainer>
-            <Logo logoVariation={'horizontal'} colorVariant={'dark'}></Logo>
+            <Logo logoVariation="horizontal" colorVariant="dark"></Logo>
           </Styled.LogoContainer>
           <NavBarLinks
             colors={colors}
