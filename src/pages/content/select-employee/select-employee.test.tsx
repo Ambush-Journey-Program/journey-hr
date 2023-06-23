@@ -5,8 +5,6 @@ import userEvent from '@testing-library/user-event';
 
 describe('<SelectEmployee />', () => {
   it('when the component is actually used', () => {
-    const label = 'Select Employee';
-
     render(<SelectEmployee employees={employees} />);
     const labelSpan = screen.getByTestId('titleTest');
 
@@ -30,7 +28,7 @@ describe('<SelectEmployee />', () => {
     expect(list[1]).toHaveTextContent('Ana Urbano');
   });
 
-  it('checks the input behaviour', async () => {
+  it('shows at the list "Ana Urbana" when searching for her', async () => {
     render(
       <SelectEmployee employees={employees} currentUser="Renata Schneider" />,
     );
@@ -43,7 +41,7 @@ describe('<SelectEmployee />', () => {
     expect([list]).toHaveLength(1);
   });
 
-  it('checks the input lenght', async () => {
+  it('Checks how many employees are being displayed when the user types "ca"', async () => {
     render(
       <SelectEmployee employees={employees} currentUser="Renata Schneider" />,
     );
@@ -54,16 +52,14 @@ describe('<SelectEmployee />', () => {
     expect(list).toHaveLength(2);
   });
 
-  it('checks if the error is in the document', async () => {
+  it('returns a "No matches found" message if no item is found', async () => {
     render(
       <SelectEmployee employees={employees} currentUser="Renata Schneider" />,
     );
 
     const input = screen.getByRole('textbox');
     await userEvent.type(input, 'Aaa');
-    const error = screen.getByText(
-      "No matches found",
-    );
+    const error = screen.getByText('No matches found');
 
     expect(error).toBeInTheDocument();
   });
