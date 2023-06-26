@@ -1,9 +1,9 @@
 import * as Styled from './navbar.styled';
 import { Avatar } from '../avatar';
-import AmbushLogo from './Union.svg';
 import { CardWrapper } from '../card-wrapper';
 import { LinksProps, NavBarProps } from './type';
 import { NavBarLinks } from './navbarlinks';
+import { Logo } from '../logo';
 
 export function NavBar({
   navigationLinks,
@@ -15,8 +15,7 @@ export function NavBar({
       <CardWrapper>
         <Styled.NavBar>
           <Styled.LogoContainer>
-            <AmbushLogo />
-            <h1>Ambush</h1>
+            <Logo logoVariation="horizontal" colorVariant="dark"></Logo>
           </Styled.LogoContainer>
           <NavBarLinks
             colors={colors}
