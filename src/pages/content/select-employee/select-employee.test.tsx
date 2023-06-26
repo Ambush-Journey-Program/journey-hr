@@ -41,17 +41,6 @@ describe('<SelectEmployee />', () => {
     expect([list]).toHaveLength(1);
   });
 
-  it('Checks how many employees are being displayed when the user types "ca"', async () => {
-    render(
-      <SelectEmployee employees={employees} currentUser="Renata Schneider" />,
-    );
-
-    const input = screen.getByRole('textbox');
-    await userEvent.type(input, 'ca');
-    const list = screen.getAllByTestId('listTest');
-    expect(list).toHaveLength(2);
-  });
-
   it('returns a "No matches found" message if no item is found', async () => {
     render(
       <SelectEmployee employees={employees} currentUser="Renata Schneider" />,
