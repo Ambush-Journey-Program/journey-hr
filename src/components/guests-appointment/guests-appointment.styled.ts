@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 0.75rem;
+  padding: ${(props) => props.theme.spacings.spacing03};
   width: 100%;
   border-radius: 0.625rem;
   background-color: ${(props) => props.theme.color.contrasts.lightContrast};
@@ -15,7 +15,7 @@ export const Wrapper = styled.div`
 `;
 
 export const ContainerNumber = styled.div`
-  margin-top: 0.5rem;
+  margin-top: ${(props) => props.theme.spacings.spacing02};
   margin-bottom: 1.125rem;
   font-size: 1.125rem;
   font-weight: 700;

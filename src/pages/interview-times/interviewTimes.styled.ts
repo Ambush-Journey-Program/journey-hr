@@ -5,7 +5,7 @@ export const InterviewTimesWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
-  grid-gap: 1rem;
+  grid-gap: ${(props) => props.theme.spacings.spacing04};
 
   div {
     padding: 0;

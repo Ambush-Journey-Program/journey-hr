@@ -20,7 +20,7 @@ export const ModalScreen = styled.div`
   transform: translate(-50%, -50%);
   z-index: 101;
   background-size: cover;
-  padding: 20px;
+  padding: 1.25rem;
 `;
 
 export const ModalBox = styled.div`
@@ -42,7 +42,7 @@ export const ModalBox = styled.div`
 
   .closeButton {
     position: absolute;
-    top: 15px;
+    top: ${(props) => props.theme.spacings.spacing04};
     padding-top: 1.375rem;
     align-self: flex-end;
     background-color: transparent;
@@ -50,7 +50,7 @@ export const ModalBox = styled.div`
     svg {
       color: ${(props) => props.theme.color.button.secondaryHover};
       width: 1.1875rem;
-      height: 1.1875rem;
+      height: 1.187rem;
     }
   }
 `;
@@ -62,7 +62,7 @@ export const modalContent = styled.div`
 
   h2 {
     text-align: center;
-    padding-bottom: 1rem;
+    padding-bottom: ${(props) => props.theme.spacings.spacing04};
   }
 `;
 
@@ -70,10 +70,10 @@ export const ModalFooter = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-top: 2rem;
+  margin-top: ${(props) => props.theme.spacings.spacing06};
   padding-top: 0;
 
   > * + * {
-    margin-left: 2rem;
+    margin-left: ${(props) => props.theme.spacings.spacing06};
   }
 `;

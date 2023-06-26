@@ -36,7 +36,7 @@ const disabledLabel = css`
 `;
 
 export const Label = styled.label<checkboxProps>`
-  gap: 10px;
+  gap: 0.625rem;
   display: flex;
   align-items: flex-start;
   cursor: pointer;
@@ -54,8 +54,8 @@ export const CheckBox = styled.input`
   background-color: ${(props) => props.theme.color.brandColors.light};
   appearance: none;
   display: block;
-  width: 20px;
-  height: 20px;
+  width: 1.25rem;
+  height: 1.25rem;
   border: 3px solid ${(props) => props.theme.color.contrasts.highContrast};
   border-radius: 2px;
   cursor: pointer;
@@ -83,5 +83,5 @@ export const StyledDiv = styled.div`
   display: flex;
   flex: 1;
   flex-direction: column;
-  gap: 5px;
+  gap: 0.313rem;
 `;

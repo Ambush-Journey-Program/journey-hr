@@ -6,7 +6,7 @@ type LinkColors = {
 };
 
 export const NavBarWrapper = styled.div`
-  width: 992px;
+  width: 62rem;
   margin: 0 auto;
 `;
 
@@ -23,7 +23,7 @@ export const LinkContainer = styled.ul<LinkColors>`
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  margin: 0 5rem;
+  margin: 0 ${(props) => props.theme.spacings.spacing08};
   width: 100%;
   max-width: 100%;
   list-style: none;
@@ -33,7 +33,7 @@ export const LinkContainer = styled.ul<LinkColors>`
 
     a {
       text-decoration: none;
-      font-size: 16px;
+      font-size: ${(props) => props.theme.spacings.spacing04};
       font-weight: 600;
       ${({ colors }) => colorsVariants[colors]};
     }
@@ -58,6 +58,12 @@ export const LogoContainer = styled.div`
   span {
     width: 7.75rem;
     height: 1.5625rem;
+  }
+  h1 {
+    margin-left: ${(props) => props.theme.spacings.spacing02};
+    color: ${(props) => props.theme.color.brandColors.dark};
+    font-size: 1.125rem;
+    font-weight: 700;
   }
 `;
 

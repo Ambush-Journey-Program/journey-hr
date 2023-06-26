@@ -22,8 +22,7 @@ export const Label = styled.label<StyledLabelProps>`
   font-size: 0.875rem;
   line-height: 150%;
   color: ${(props) => props.theme.color.contrasts.mediumContrast};
-  font-family: ${prop => prop.theme.font.fontFamilyBody};
-
+  font-family: ${(prop) => prop.theme.font.fontFamilyBody};
 
   span {
     color: ${(props) => props.theme.color.contrasts.lowContrast};
@@ -46,11 +45,11 @@ export const TextArea = styled.textarea<StyledProps>`
   resize: none;
   font-family: Mundial, sans-serif;
   font-weight: 300;
-  font-size: 1rem;
+  font-size: ${(props) => props.theme.spacings.spacing04};
   border: 1px solid ${(props) => props.theme.color.contrasts.lowestContrast};
-  border-radius: 0.75rem;
+  border-radius: ${(props) => props.theme.spacings.spacing03};
   padding: 0.75rem 1.375rem;
-  margin-bottom: 0.25rem;
+  margin-bottom: ${(props) => props.theme.spacings.spacing01};
   color: ${(props) => props.theme.color.contrasts.highContrast};
 
   @media ${devices.mobile} {

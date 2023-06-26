@@ -21,7 +21,7 @@ export const ListLink = styled.ul`
 
 export const ListItem = styled.li`
   padding: 0.6563rem 0 0.6563rem 1.6144rem;
-  font-family: ${prop => prop.theme.font.fontFamilyTitle};
+  font-family: ${(prop) => prop.theme.font.fontFamilyTitle};
 
   a {
     display: flex;
@@ -37,8 +37,7 @@ export const ListItem = styled.li`
 
   :hover {
     background-color: ${(props) => props.theme.color.contrasts.lightContrast};
-    border-radius: 25px;
-
+    border-radius: 1.563rem;
     a {
       color: ${(props) => props.theme.color.button.secondaryHover};
 
@@ -66,6 +65,6 @@ export const ButtonContainer = styled.div`
   }
 
   svg {
-    width: 1rem;
+    width: ${(props) => props.theme.spacings.spacing04};
   }
 `;

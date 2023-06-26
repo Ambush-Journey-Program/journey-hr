@@ -1,2 +1,2 @@
-export { RequestTimeOff } from './pageRequestTimeOff';
+export { RequestTimeOff as default } from './pageRequestTimeOff';
 export { RequestTimeOffTab } from './requestTimeOffTab';

@@ -56,7 +56,7 @@ const variants = {
     bottom: calc(100% + 15px);
     left: 50%;
     transform: translateX(-50%);
-  `
+  `,
 };
 
 export const TooltipBox = styled.span<StyledProps>`
@@ -66,14 +66,14 @@ export const TooltipBox = styled.span<StyledProps>`
   color: ${(props) => props.theme.color.contrasts.highContrast};
   text-align: center;
   border-radius: 0.938rem;
-  padding: 0.75rem;
+  padding: ${(props) => props.theme.spacings.spacing01};
   min-width: 6.25rem;
   max-width: 12.5rem;
   font-weight: 600;
-  font-size: 0.75rem;
+  font-size: ${(props) => props.theme.spacings.spacing03};
   font-family: ${(prop) => prop.theme.font.fontFamilyBody};
-  box-shadow: 0 0.25rem 0.875rem rgba(0, 0, 0, 15%),
-    0 0.25rem 0.5rem rgba(0, 0, 0, 20%);
+  box-shadow: 0 0.25rem 0.875rem rgba(0, 0, 0, 0.15),
+    0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
   overflow-wrap: break-word;
 
   &::after {
@@ -81,7 +81,7 @@ export const TooltipBox = styled.span<StyledProps>`
     z-index: 10;
     position: absolute;
     width: 0.063rem;
-    border-width: 0.5rem;
+    border-width: ${(props) => props.theme.spacings.spacing02};
     border-style: solid;
     border-color: ${(props) => props.theme.color.auxiliary.white} transparent
       transparent transparent;
