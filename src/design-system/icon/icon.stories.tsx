@@ -21,7 +21,6 @@ export const IconStory: StoryFn<typeof Icon> = (args) => <Icon {...args} />;
 
 IconStory.args = {
   color: 'accepted',
-  size: '58px',
   icon: 'HeartIcon',
 };
 
@@ -39,6 +38,6 @@ IconStory.argTypes = {
   },
   size: {
     control: { type: 'radio' },
-    options: ['16px', '18px', '20px', '58px'],
+    options: ['24px'],
   },
 };

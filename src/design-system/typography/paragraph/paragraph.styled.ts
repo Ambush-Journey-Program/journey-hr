@@ -49,6 +49,9 @@ const colorsVariants = {
   yellow: css`
     color: ${(props) => props.theme.color.brandColors.yellow};
   `,
+  lowContrast: css`
+  color: ${(props) => props.theme.color.contrasts.lowContrast};
+`,
   purple: css`
     color: ${(props) => props.theme.color.brandColors.purple};
   `,

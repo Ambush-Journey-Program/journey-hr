@@ -16,6 +16,7 @@ export type ColorType =
   | 'yellow'
   | 'dark'
   | 'light'
+  | 'lowContrast'
   | 'error';
 
 export type ParagraphProps = {

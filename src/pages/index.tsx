@@ -1,4 +1,6 @@
 import Head from 'next/head';
+import { SelectEmployee } from './content/select-employee';
+import { employees } from './content/select-employee/mocking';
 
 export default function Home() {
   return (
@@ -20,6 +22,7 @@ export default function Home() {
           rel="stylesheet"
         />
       </Head>
+      <SelectEmployee employees={employees}/>
     </>
   );
 }
