@@ -33,6 +33,6 @@ type WithOptionalProperty<
 type RequiredProps = 'colorVariant' | 'fontWeight' | 'size';
 
 export type ParagraphStyleProps = WithOptionalProperty<
-  ParagraphProps,
-  RequiredProps
+ParagraphProps,
+RequiredProps
 >;
